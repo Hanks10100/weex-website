@@ -1,0 +1,36 @@
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+weex-brand,
+weex-menu,
+scene {
+  display: block;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+}
+
+scene {
+  height: 100%;
+}
+
+scene:nth-child(even) {
+  background: #00BDFF; color: white;
+}
+
+scene:nth-child(odd) {
+  color: #00BDFF;
+}
+
+h1,h2,h3,h4,h5,h6,p {
+  margin: 0 0 1em;
+}
