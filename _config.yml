@@ -8,6 +8,8 @@ subtitle:
 description:
 author: Jinjiang
 language:
+  default
+  zh-CN
 timezone:
 
 # URL

@@ -1,5 +1,7 @@
 <%- partial('_partial/head') %>
-<body>
-<%- body %>
+<body id="<%= page.path === 'index.html' ? 'index' : 'docs' %>">
+  <%- body %>
+  <%- partial('_partial/footer') %>
+  <%- partial('_partial/after-footer') %>
 </body>
 </html>
