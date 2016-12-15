@@ -1,6 +1,10 @@
-<%- partial('_partial/header') %>
-
-<scene class="edge">
+<div class="scene header" style="background: #00BDFF;">
+  <div class="scene-container">
+    <%- partial('_partial/header') %>
+    <%- partial('_partial/slider') %>
+  </div>
+</div>
+<div class="scene edge overlength horizon">
   <div class="scene-container">
     <div class="textbox">
       <h2>Competitive Edge</h2>
@@ -23,9 +27,9 @@
       </div>
     </div>
   </div>
-</scene>
+</div>
 
-<scene class="feature">
+<div class="scene feature">
   <div class="scene-container">
     <div class="feature-content">
       <div class="left-text">
@@ -35,53 +39,45 @@
       <img class="right-img" src="<%= config.root %>/images/feature.png" alt="Help You Build REAL Native App">
     </div>
   </div>
-</scene>
+</div>
 
-<scene class="cross-platform horizon">
+<div class="scene cross-platform horizon">
   <div class="scene-container">
     <div class="textbox">
       <h2>Write Once Run Everywhere</h2>
       <p>Weex provides the ability to cross platform, such as the web, Android and IOS can use the same API development function. At the same time, we provide a rich extension of the interface. In this way, it will be very convenient when you need to extend native components or modules.</p>
     </div>
     <div class="sketch-content">
-      <div class="inner-box ">
-        <div class="imgbox ios"></div>
-      </div>
-      <div class="inner-box">
-        <div class="imgbox android"></div>
-      </div>
-      <div class="inner-box">
-        <div class="imgbox h5"></div>
-      </div>
+      <div class="inner-box imgbox ios"></div>
+      <div class="inner-box imgbox android"></div>
+      <div class="inner-box imgbox h5"></div>
     </div>
   </div>
-</scene>
+</div>
 
-<scene class="supporting-vue horizon">
+<div class="scene supporting-vue horizon">
   <div class="scene-container">
     <div class="textbox">
       <h2>Supporing Vue Syntax</h2>
       <p>Weex follows the web standard, while supporting the "vue.js" syntax. So, you can use the "vue.js" syntax to develop applications.</p>
     </div>
-    <div class="sketch-content">
-      <div class="imgbox"></div>
+    <div class="sketch-content imgbox">
     </div>
   </div>
-</scene>
+</div>
 
-<scene class="schematic horizon">
+<div class="scene schematic horizon">
   <div class="scene-container">
     <div class="textbox">
       <h2>How it works</h2>
       <p>Weex is a extendable cross-platform solution for dynamic programming and publishing projects. In the source code you can write pages or components with &lt;template&gt;, &lt;style&gt; and &lt;script&gt; tags, and then transform them into bundles for deploying. In server-side we can use these JS bundles for client request. When client get a bundle from server, it will be processed by client-side JavaScript engine and manages the native view rendering, the native API invoking and user interactions.</p>
     </div>
-    <div class="sketch-content">
-      <div class="imgbox"></div>
+    <div class="sketch-content imgbox">
     </div>
   </div>
-</scene>
+</div>
 
-<scene class="users horizon">
+<div class="scene users horizon overlength">
   <div class="scene-container">
     <div class="textbox">
       <h2>Who use weex</h2>
@@ -148,9 +144,9 @@
       <a class="more" href="">More</a>
     </div>
   </div>
-</scene>
+</div>
 
-<scene class="feedback horizon">
+<div class="scene feedback horizon overlength">
   <div class="scene-container">
     <div class="textbox">
       <h2>People says</h2>
@@ -185,9 +181,12 @@
       <a href="/docs/get-started.html" class="button get-started"><%= _p('index.get_started') %> →</a>
     </div>
   </div>
-</scene>
+</div>
+
+<%- partial('_partial/sidebar', {page_type: 'index'}) %>
 
 <%- js('js/swiper.min') %>
+
 <script>
 var swiper = new Swiper('.swiper-container', {
   nextButton: '.swiper-button-next',

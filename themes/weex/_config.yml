@@ -33,3 +33,10 @@ twitter:
 google_plus:
 fb_admins:
 fb_app_id:
+
+# SCSS
+node_sass:
+  debug: false
+  outputStyle: nested
+  precision: 5
+  sourceComments: false

@@ -1,38 +1,20 @@
-<scene class="header" style="background: #00BDFF;">
-  <div class="scene-container">
-    <header id="header">
-      <a id="logo" href="/">
-        <img src="<%= config.root %>/images/logo.png" />
-      </a>
-      <div id="main-nav">
-        <ul id="links">
-          <li><a href="/guide"><%= _p('index.doc') %></a></li>
-          <li><a href="/showcase"><%= _p('index.showcase') %></a></li>
-          <li><a href="/download"><%= _p('index.download') %></a></li>
-        </ul>
-        <ul id="info">
-          <li><a href="https://baichuan.taobao.com/"><span class="btn-baichuan iconfont icon-baichuan"></span></a></li>
-          <li><a href="https://github.com/alibaba/weex/"><span class="btn-github iconfont icon-github"></span></a></li>
-        </ul>
-        <ul id="tools">
-          <li><a class="btn-search"><span class="iconfont icon-search"></span></a></li>
-          <li><a class="btn-menu"><span class="iconfont icon-nav"></span></a></li>
-        </ul>
-      </div>
-    </header>
-
-    <div id="slider">
-      <div class="swiper-container swiper-container-horizontal">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide" style="background:url('<%= config.root %>/images/slide1.png') 50% 50% / contain no-repeat">
-            <div class="slide-content">
-               <a href="/docs/get-started.html" class="button get-started"><%= _p('index.get_started') %> →</a>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-button-next iconfont icon-arrow-small"></div>
-        <div class="swiper-button-prev iconfont icon-arrow-small"></div>
-      </div>
-    </div>
+<header id="header">
+  <a id="logo" href="/">
+    <img src="<%= config.root %>/images/logo.png" />
+  </a>
+  <div class="main-nav">
+    <ul class="links">
+      <li><a href="/guide"><%= _p('index.doc') %></a></li>
+      <li><a href="/showcase"><%= _p('index.showcase') %></a></li>
+      <li><a href="/download"><%= _p('index.download') %></a></li>
+    </ul>
+    <ul class="info">
+      <li><a href="https://baichuan.taobao.com/"><span class="btn-baichuan iconfont icon-baichuan"></span></a></li>
+      <li><a href="https://github.com/alibaba/weex/"><span class="btn-github iconfont icon-github"></span></a></li>
+    </ul>
+    <ul class="tools">
+      <li><a class="btn-search"><span class="iconfont icon-search"></span></a></li>
+      <li><a class="btn-menu"><span class="iconfont icon-nav"></span></a></li>
+    </ul>
   </div>
-</scene>
+</header>
