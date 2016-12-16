@@ -176,3 +176,11 @@ h1,h2,h3,h4,h5,h6,p {
 a.current:hover {
   border-bottom: .2em solid $text-blue;
 }
+
+.scrollbar-measure {
+  position: absolute;
+  top: -9999px;
+  width: 50px;
+  height: 50px;
+  overflow: scroll;
+}

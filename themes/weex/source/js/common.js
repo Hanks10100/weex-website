@@ -1,5 +1,5 @@
 ;(function () {
-
+  var BODY = document.body
   /**
    * Toggling sidebar
    */
@@ -7,6 +7,7 @@
     var sidebar = el
     var bg = sidebar.querySelector('.sidebar-backdrop')
     var menu = sidebar.querySelector('.sidebar-menu')
+    var scrollbarWidth = getScrollerWidth()
 
     function scrollHandler(e) {
       e.preventDefault()
@@ -26,8 +27,9 @@
       Velocity.RunSequence(showSequence)
       sidebar.classList.add('open')
 
-      document.body.style.overflow = 'hidden'
-      document.body.addEventListener('touchmove', scrollHandler)
+      BODY.style.overflow = 'hidden'
+      BODY.style.paddingRight = scrollbarWidth + 'px'
+      BODY.addEventListener('touchmove', scrollHandler)
     }
 
     var hide = function () {
@@ -41,8 +43,20 @@
       Velocity.RunSequence(hideSequence)
       sidebar.classList.remove('open')
 
-      document.body.style.overflow = 'auto'
-      document.body.removeEventListener('touchmove', scrollHandler)
+      BODY.style.overflow = 'auto'
+      BODY.style.paddingRight = 0
+      BODY.removeEventListener('touchmove', scrollHandler)
+    }
+
+    function getScrollerWidth() {
+      if (BODY.clientWidth >= window.innerWidth) return 0
+
+      var div = document.createElement("div")
+      div.classList.add("scrollbar-measure")
+      BODY.append(div)
+      var width = div.offsetWidth - div.clientWidth
+      BODY.removeChild(div)
+      return width 
     }
 
     return {
@@ -65,7 +79,7 @@
       sidebar.show()
     })
 
-    document.body.addEventListener('click', function (e) {
+    BODY.addEventListener('click', function (e) {
       var target = e.target
 
       if (sidebarEl.classList.contains('open')) {
