@@ -28,6 +28,12 @@
     margin: .7em 0;
     text-align: center;
   }
+
+  ul, li , ol {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
 }
 
 .horizon .scene-container, .edge .scene-container {
