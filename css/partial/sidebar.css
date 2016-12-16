@@ -16,6 +16,10 @@
   z-index: 99999;
   padding: 80px 40px;
   overflow: hidden; }
+  #sidebar ul, #sidebar li, #sidebar ol {
+    margin: 0;
+    padding: 0;
+    list-style-type: none; }
   #sidebar .sidebar-backdrop {
     display: none;
     overflow: hidden;

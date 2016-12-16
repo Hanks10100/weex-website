@@ -17,12 +17,12 @@ html, body {
   padding: 0; }
 
 body {
+  background: #FAFAFA;
   font-family: "PingFang SC","Helvetica Neue",Arial,STHeiti,"Microsoft YaHei","Source Han Sans SC","Noto Sans CJK SC","Source Han Sans CN","Noto Sans SC","Noto Sans CJK TC",SimSun,sans-serif;
   font-size: 14px;
   line-height: 1.2;
   color: #363539;
-  -webkit-tap-highlight-color: transparent;
-  user-select: none; }
+  -webkit-tap-highlight-color: transparent; }
 
 @font-face {
   font-family: "iconfont";
@@ -71,11 +71,6 @@ a {
 
 img {
   vertical-align: middle; }
-
-ul, li, ol {
-  margin: 0;
-  padding: 0;
-  list-style-type: none; }
 
 h1, h2, h3, h4, h5, h6, p {
   font-weight: normal;
@@ -153,3 +148,10 @@ h1, h2, h3, h4, h5, h6, p {
 
 a.current:hover {
   border-bottom: 0.2em solid #00BDFF; }
+
+.scrollbar-measure {
+  position: absolute;
+  top: -9999px;
+  width: 50px;
+  height: 50px;
+  overflow: scroll; }

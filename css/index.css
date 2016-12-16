@@ -13,10 +13,10 @@
 .scene {
   position: relative;
   height: calc(100% - 72px); }
-  .scene:nth-child(odd) {
-    background: #F0F2F3;
-    color: #00BDFF; }
   .scene:nth-child(even) {
+    background: #FAFAFA;
+    color: #00BDFF; }
+  .scene:nth-child(odd) {
     background: #00BDFF;
     color: #fff; }
   .scene h2 {
@@ -25,6 +25,10 @@
     font-size: 2.64em;
     margin: .7em 0;
     text-align: center; }
+  .scene ul, .scene li, .scene ol {
+    margin: 0;
+    padding: 0;
+    list-style-type: none; }
 
 .horizon .scene-container, .edge .scene-container {
   max-width: 940px;
@@ -314,103 +318,3 @@
   display: flex;
   justify-content: center;
   align-items: center; }
-
-#footer {
-  width: 100%;
-  padding: 20px 65px; }
-  #footer .ali-logo {
-    width: 83px;
-    height: 41px;
-    float: left; }
-    #footer .ali-logo img {
-      width: 100%; }
-
-#footer .select-lang {
-  width: 105px;
-  height: 25px;
-  line-height: 25px;
-  float: right; }
-
-#footer .select-lang .dropdown-toggle {
-  color: #00293D;
-  border: 1px solid #999ba4; }
-
-#footer .select-lang .dropdown-menu {
-  width: 105px;
-  border: 1px solid #999ba4; }
-
-.caret {
-  display: inline-block;
-  width: 0;
-  height: 0;
-  margin-left: 2px;
-  vertical-align: middle;
-  border-top: 4px solid;
-  border-right: 4px solid transparent;
-  border-left: 4px solid transparent; }
-
-#footer .row {
-  font-size: .657em;
-  margin: 8px 0; }
-
-#footer .row span {
-  color: #999; }
-
-#footer .row .icon-baichuan {
-  font-size: .657em;
-  color: #363539; }
-
-#footer .row .cell {
-  float: left;
-  color: #999;
-  margin: 0 20px 10px 0; }
-
-@media screen and (max-width: 940px) {
-  body {
-    font-size: 13px; }
-  #header, #footer {
-    padding: 0 20px; }
-  .links {
-    display: none !important; }
-  .info {
-    display: none !important; }
-  .edge .scene-container .sketch-content {
-    flex-direction: column;
-    align-items: center; }
-  .horizon .sketch-content {
-    padding: 0 5em; }
-  .horizon .sketch-content .inner-box {
-    padding: 0 2em; }
-  .users .scene-container .textbox {
-    flex: 1; }
-  .feedback .sketch-content {
-    align-content: center; }
-  .feedback .scene-container .textbox {
-    flex: 1; } }
-
-@media screen and (max-width: 700px) {
-  .scene.overlength {
-    height: auto;
-    min-height: calc(100% - 72px); }
-  .horizon .textbox {
-    flex: 4; }
-  .horizon .sketch-content {
-    padding: 0 1em; }
-  .horizon .sketch-content .inner-box {
-    padding: 0 1em; }
-  .horizon .textbox p {
-    width: 100%; }
-  .users .sketch-content .user-logo {
-    width: 140px;
-    height: 140px;
-    background-size: 45px; }
-  .users .sketch-content .user-info p {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical; }
-  .users .more {
-    /*align-items: flex-end;*/ }
-  .feedback .user-feedback {
-    flex: 1 0 140px; } }

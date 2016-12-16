@@ -17,12 +17,12 @@ html, body {
   padding: 0; }
 
 body {
+  background: #FAFAFA;
   font-family: "PingFang SC","Helvetica Neue",Arial,STHeiti,"Microsoft YaHei","Source Han Sans SC","Noto Sans CJK SC","Source Han Sans CN","Noto Sans SC","Noto Sans CJK TC",SimSun,sans-serif;
   font-size: 14px;
   line-height: 1.2;
   color: #363539;
-  -webkit-tap-highlight-color: transparent;
-  user-select: none; }
+  -webkit-tap-highlight-color: transparent; }
 
 @font-face {
   font-family: "iconfont";
@@ -71,11 +71,6 @@ a {
 
 img {
   vertical-align: middle; }
-
-ul, li, ol {
-  margin: 0;
-  padding: 0;
-  list-style-type: none; }
 
 h1, h2, h3, h4, h5, h6, p {
   font-weight: normal;
@@ -154,6 +149,13 @@ h1, h2, h3, h4, h5, h6, p {
 a.current:hover {
   border-bottom: 0.2em solid #00BDFF; }
 
+.scrollbar-measure {
+  position: absolute;
+  top: -9999px;
+  width: 50px;
+  height: 50px;
+  overflow: scroll; }
+
 /***********************
 * Variable
 ***********************/
@@ -166,6 +168,10 @@ a.current:hover {
   left: 0;
   right: 0;
   z-index: 9999; }
+  #header ul, #header li, #header ol {
+    margin: 0;
+    padding: 0;
+    list-style-type: none; }
   #header .navbar {
     height: 72px;
     padding: 0 65px;
@@ -215,6 +221,10 @@ a.current:hover {
   z-index: 99999;
   padding: 80px 40px;
   overflow: hidden; }
+  #sidebar ul, #sidebar li, #sidebar ol {
+    margin: 0;
+    padding: 0;
+    list-style-type: none; }
   #sidebar .sidebar-backdrop {
     display: none;
     overflow: hidden;
@@ -281,6 +291,139 @@ a.current:hover {
 /***********************
 * Mixin
 ***********************/
+#footer {
+  width: 100%;
+  padding: 20px 65px;
+  margin-top: 2em;
+  background: #FAFAFA;
+  border-top: 2px solid #DDDDDD; }
+  #footer .ali-logo {
+    width: 83px;
+    height: 41px;
+    float: left; }
+    #footer .ali-logo img {
+      width: 100%; }
+  #footer .select-lang {
+    width: 105px;
+    height: 25px;
+    line-height: 25px;
+    float: right; }
+  #footer .select-lang .dropdown-toggle {
+    color: #00293D;
+    border: 1px solid #999ba4; }
+  #footer .select-lang .dropdown-menu {
+    width: 105px;
+    border: 1px solid #999ba4; }
+  #footer .row {
+    font-size: .657em;
+    margin: 8px 0; }
+  #footer .row span {
+    color: #999; }
+  #footer .row .icon-baichuan {
+    font-size: .657em;
+    color: #363539; }
+  #footer .row .cell {
+    float: left;
+    color: #999;
+    margin: 0 20px 10px 0; }
+  #footer .caret {
+    display: inline-block;
+    margin-left: 2px;
+    width: 0;
+    height: 0;
+    vertical-align: middle;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 4px solid #999ba4; }
+
+code, pre {
+  font-family: Source Code Pro,Monaco,Menlo,Consolas,monospace;
+  color: #abb2bf;
+  font-size: .95em; }
+
+code {
+  color: #e06c75;
+  background: #eaeaea;
+  padding: 0 5px; }
+
+pre {
+  padding: 10px 15px;
+  overflow-x: auto;
+  line-height: 22px; }
+
+pre code {
+  border: none;
+  display: block;
+  padding: 0;
+  -moz-tab-size: 2;
+  tab-size: 2; }
+
+.highlight {
+  background: #353639;
+  padding: 10px 15px;
+  color: #abb2bf;
+  overflow: auto;
+  margin: 20px 0;
+  border-radius: 5px; }
+
+.highlight table {
+  margin: 0 !important;
+  border: 0; }
+
+.highlight table td, .highlight table th {
+  padding: 0; }
+
+.highlight figcaption {
+  margin: -5px 0 5px;
+  font-size: .9em;
+  color: #abb2bf; }
+
+.highlight figcaption:after, .highlight figcaption:before {
+  content: "";
+  display: table; }
+
+.highlight figcaption:after {
+  clear: both; }
+
+.highlight figcaption a {
+  float: right; }
+
+.highlight pre {
+  padding: 0;
+  border: none;
+  background: none; }
+
+.highlight .line {
+  height: 22px; }
+
+pre .comment, pre .title {
+  color: #5c6370; }
+
+pre .attribute, pre .css .class, pre .css .id, pre .css .pseudo, pre .html .doctype, pre .regexp, pre .ruby .constant, pre .tag, pre .variable, pre .xml .doctype, pre .xml .pi, pre .xml .tag .title {
+  color: #e06c75; }
+
+pre .built_in, pre .constant, pre .literal, pre .number, pre .params, pre .preprocessor {
+  color: #d19a66; }
+
+pre .class, pre .css .rules .attribute, pre .header, pre .inheritance, pre .ruby .class .title, pre .ruby .symbol, pre .string, pre .value, pre .xml .cdata {
+  color: #98c379; }
+
+pre .css .hexcolor {
+  color: #3e999f; }
+
+pre .coffeescript .title, pre .function, pre .javascript .title, pre .perl .sub, pre .python .decorator, pre .python .title, pre .ruby .function .title, pre .ruby .title .keyword {
+  color: #8e908c; }
+
+pre .javascript .function, pre .keyword {
+  color: #8e908c; }
+
+/*LANDINGPAGE*/
+/***********************
+* Variable
+***********************/
+/***********************
+* Mixin
+***********************/
 .scene-container {
   max-width: 1680px;
   height: 100%;
@@ -290,10 +433,10 @@ a.current:hover {
 .scene {
   position: relative;
   height: calc(100% - 72px); }
-  .scene:nth-child(odd) {
-    background: #F0F2F3;
-    color: #00BDFF; }
   .scene:nth-child(even) {
+    background: #FAFAFA;
+    color: #00BDFF; }
+  .scene:nth-child(odd) {
     background: #00BDFF;
     color: #fff; }
   .scene h2 {
@@ -302,6 +445,10 @@ a.current:hover {
     font-size: 2.64em;
     margin: .7em 0;
     text-align: center; }
+  .scene ul, .scene li, .scene ol {
+    margin: 0;
+    padding: 0;
+    list-style-type: none; }
 
 .horizon .scene-container, .edge .scene-container {
   max-width: 940px;
@@ -592,65 +739,87 @@ a.current:hover {
   justify-content: center;
   align-items: center; }
 
-#footer {
-  width: 100%;
-  padding: 20px 65px; }
-  #footer .ali-logo {
-    width: 83px;
-    height: 41px;
-    float: left; }
-    #footer .ali-logo img {
-      width: 100%; }
+/*POST*/
+/***********************
+* Variable
+***********************/
+/***********************
+* Mixin
+***********************/
+.article-wrapper {
+  width: 100%; }
+  .article-wrapper .article {
+    width: 100%;
+    max-width: 940px;
+    margin: 90px auto;
+    padding: 0 1.4em;
+    position: relative;
+    line-height: 1.8; }
+    .article-wrapper .article h1 {
+      font-size: 2em;
+      color: #333;
+      padding-bottom: 5px;
+      margin-bottom: 1.67em;
+      border-bottom: 1px solid #ddd; }
+    .article-wrapper .article h2 {
+      font-size: 1.75em;
+      margin: 1.7em 0 .5em; }
+    .article-wrapper .article h3 {
+      font-size: 1.5em;
+      margin: 1.7em 0 .5em; }
+    .article-wrapper .article h4 {
+      font-size: 1.25em;
+      margin: 1.7em 0 .5em; }
+    .article-wrapper .article h5 {
+      font-size: 1.1em;
+      margin: 1.7em 0 .5em; }
+    .article-wrapper .article img[alt="mobile_preview"] {
+      position: absolute;
+      left: 940px;
+      width: 200px; }
+    .article-wrapper .article a {
+      color: #4078c0; }
+      .article-wrapper .article a:hover {
+        text-decoration: underline; }
+    .article-wrapper .article .article-date {
+      position: absolute;
+      top: 60px;
+      left: 20px;
+      font-size: .9em;
+      color: #999; }
+    .article-wrapper .article .weex-version {
+      display: inline-block;
+      padding: .3em .8em;
+      color: #fff;
+      background: #23CEFD;
+      border-radius: 2em;
+      line-height: 1.2;
+      position: absolute;
+      top: 15px;
+      right: 20px; }
 
-#footer .select-lang {
-  width: 105px;
-  height: 25px;
-  line-height: 25px;
-  float: right; }
-
-#footer .select-lang .dropdown-toggle {
-  color: #00293D;
-  border: 1px solid #999ba4; }
-
-#footer .select-lang .dropdown-menu {
-  width: 105px;
-  border: 1px solid #999ba4; }
-
-.caret {
-  display: inline-block;
-  width: 0;
-  height: 0;
-  margin-left: 2px;
-  vertical-align: middle;
-  border-top: 4px solid;
-  border-right: 4px solid transparent;
-  border-left: 4px solid transparent; }
-
-#footer .row {
-  font-size: .657em;
-  margin: 8px 0; }
-
-#footer .row span {
-  color: #999; }
-
-#footer .row .icon-baichuan {
-  font-size: .657em;
-  color: #363539; }
-
-#footer .row .cell {
-  float: left;
-  color: #999;
-  margin: 0 20px 10px 0; }
+/***********************
+* Variable
+***********************/
+/***********************
+* Mixin
+***********************/
+@media screen and (max-width: 1300px) {
+  .article img[alt="mobile_preview"] {
+    position: static !important; } }
 
 @media screen and (max-width: 940px) {
   body {
+    user-select: none;
     font-size: 13px; }
-  #header, #footer {
+  #header .navbar {
     padding: 0 20px; }
-  .links {
+  #header .links {
     display: none !important; }
-  .info {
+  #header .info {
     display: none !important; }
+  #footer {
+    padding: 0 20px; }
   .edge .scene-container .sketch-content {
     flex-direction: column;
     align-items: center; }
@@ -687,7 +856,5 @@ a.current:hover {
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical; }
-  .users .more {
-    /*align-items: flex-end;*/ }
   .feedback .user-feedback {
     flex: 1 0 140px; } }
