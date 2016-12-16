@@ -1,28 +1,4 @@
-/***********************
-* Variable
-***********************/
-
-$text-light-black: #363539;
-$text-black: #333;
-$text-white: #fff;
-$text-gray: #999;
-$text-blue: #00BDFF;
-$bg-blue: $text-blue;
-$bg-light-blue: #23CEFD;
-$bg-gray: #F0F2F3;
-$content-max-width: 940px;
-
-/***********************
-* Mixin
-***********************/
-
-@mixin lines ($length: 2) {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: $length;
-  -webkit-box-orient: vertical;
-}
+@import "variable.scss";
 
 /***********************
 * Reset
@@ -44,6 +20,7 @@ body {
   line-height: 1.2;
   color: $text-light-black;
   -webkit-tap-highlight-color: transparent;
+  user-select: none;
 }
 
 
@@ -81,6 +58,7 @@ body {
 
 
 a {
+  cursor: pointer;
   color: $text-light-black;
   text-decoration: none;
   &:hover {

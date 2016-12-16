@@ -1,4 +1,4 @@
-@import "../common.scss";
+@import "../variable.scss";
 
 #sidebar {
   display: none;
@@ -12,18 +12,6 @@
   z-index: 99999;
   padding: 80px 40px;
   overflow: hidden;
-
-  &.open {
-    /*display: block;*/
-
-    /*.sidebar-backdrop {
-      opacity: .7;
-    }
-
-    .sidebar-menu {
-      transform: translateX(0);
-    }*/
-  }
 
   .sidebar-backdrop {  
     display: none;

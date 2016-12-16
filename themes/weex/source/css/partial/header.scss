@@ -1,0 +1,62 @@
+@import "../variable.scss";
+
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+
+  .navbar {
+    height: 72px; 
+    padding: 0 65px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    box-shadow:0 2px 4px 0 rgba(0,0,0,0.12);
+
+    #logo {
+      display: block;
+
+      img {
+        width: 72px;
+        height: 44px;
+      }
+    }
+
+    .main-nav {
+      display: flex;
+      justify-content: space-between;
+
+      ul {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      li a {
+        font-size: 1.3em;
+        color: $text-light-black;
+      }
+    }
+
+    .links {
+      & > li > a:hover {
+        border-bottom: .2em solid $text-blue;
+      }
+
+      li + li {
+        margin-left: 40px;
+      }
+    }
+
+    .info li {
+      margin-left: 50px;
+    }
+
+    .tools li {
+      margin-left: 4em;
+    }
+  }
+
+}

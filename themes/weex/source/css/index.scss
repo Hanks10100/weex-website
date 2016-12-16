@@ -1,4 +1,4 @@
-@import "common.scss";
+@import "variable.scss";
 
 .scene-container {
   max-width: 1680px;
@@ -11,12 +11,12 @@
   position: relative;
   height: calc(100% - 72px);
 
-  &:nth-child(even) {
+  &:nth-child(odd) {
     background: $bg-gray;
     color: $text-blue;
   }
 
-  &:nth-child(odd) {
+  &:nth-child(even) {
     background: $bg-blue; 
     color: $text-white;
   }
@@ -112,63 +112,6 @@
   }
 }
 
-#header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 72px; 
-  padding: 0 65px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 9999;
-  background-color: white;
-  box-shadow:0 2px 4px 0 rgba(0,0,0,0.12);
-
-  #logo {
-    display: block;
-
-    img {
-      width: 72px;
-      height: 44px;
-    }
-  }
-
-  .main-nav {
-    display: flex;
-    justify-content: space-between;
-
-    ul {
-      display: flex;
-      justify-content: space-between;
-    }
-
-    li a {
-      font-size: 1.3em;
-      color: $text-light-black;
-    }
-  }
-
-  .links {
-    & > li > a:hover {
-      border-bottom: .2em solid $text-blue;
-    }
-
-    li + li {
-      margin-left: 40px;
-    }
-  }
-
-  .info li {
-    margin-left: 50px;
-  }
-
-  .tools li {
-    margin-left: 4em;
-  }
-}
-
 .edge {
 
   .scene-container {
@@ -214,9 +157,11 @@
 
 .feature {
   .feature-content {
+    height: 100%;
     max-width: $content-max-width;
     margin: 0 auto;
     position: relative;
+    overflow: hidden;
   }
 
   .left-text {
@@ -236,6 +181,76 @@
     text-align: left;
   }
 
+  .right-box {
+    width: 660px;
+    height: 405px;
+    position: absolute;
+    top: 30%;
+    right: -40px;
+    z-index: 1;
+    .imgbox {
+      position: absolute;
+    }
+    .level1 {
+      width: 660px;
+      height: 405px;
+      background: url("../images/level1.png")  50% 50% / contain no-repeat;
+      background-origin: content-box;
+      z-index: 9;
+    }
+    .level2 {
+      width: 660px;
+      height: 405px;
+      /*transform: translate3d(48px, -4px, 0);*/
+      background: url("../images/level2.png")  50% 50% / contain no-repeat;
+      background-origin: content-box;
+      z-index: 99;
+      .imgbox {
+        width: 250px;
+        height: 170px;
+        position: absolute;
+        bottom: -65px;
+        left: 90px;
+        background: url("../images/level2-t.png")  0 0 / contain no-repeat;
+        background-origin: content-box;
+      }
+    }
+    .level3 {
+      width: 660px;
+      height: 405px;
+      /*transform: translate3d(48px, -4px, 0);*/
+      background: url("../images/level2.png")  50% 50% / contain no-repeat;
+      background-origin: content-box;
+      z-index: 99;
+      .imgbox {
+        width: 250px;
+        height: 170px;
+        position: absolute;
+        bottom: -50px;
+        left: 65px;
+        background: url("../images/level3-t.png")  0 0 / contain no-repeat;
+        background-origin: content-box;
+      }
+
+    }
+    .level4 {
+      width: 660px;
+      height: 405px;
+      /*transform: translate3d(55px, -14px, 0);*/
+      background: url("../images/level4.png")  50% 50% / contain no-repeat;
+      background-origin: content-box;
+      z-index: 999;
+      .imgbox {
+        width: 250px;
+        height: 170px;
+        position: absolute;
+        bottom: -40px;
+        left: 40px;
+        background: url(../images/level4-t.png) 0 0 / contain no-repeat;
+        background-origin: content-box;
+      }
+    }
+  }
   .right-img {
     width: 70%;
     position: absolute;
