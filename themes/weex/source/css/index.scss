@@ -11,12 +11,12 @@
   position: relative;
   height: calc(100% - 72px);
 
-  &:nth-child(odd) {
+  &:nth-child(even) {
     background: $bg-gray;
     color: $text-blue;
   }
 
-  &:nth-child(even) {
+  &:nth-child(odd) {
     background: $bg-blue; 
     color: $text-white;
   }
@@ -407,157 +407,5 @@
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-}
-
-#footer {
-  width: 100%;
-  padding: 20px 65px;
-
-  .ali-logo {
-    width: 83px;
-    height: 41px;
-    float: left;
-
-    img {
-      width: 100%;
-    }
-  }
-}
-
-
-#footer .select-lang {
-  width: 105px;
-  height: 25px;
-  line-height: 25px;
-  float: right;
-}
-
-#footer .select-lang .dropdown-toggle {
-  color: #00293D;
-  border: 1px solid #999ba4;
-}
-
-#footer .select-lang .dropdown-menu {
-  width: 105px;
-  border: 1px solid #999ba4;
-}
-
-.caret {
-  display: inline-block;
-  width: 0;
-  height: 0;
-  margin-left: 2px;
-  vertical-align: middle;
-  border-top: 4px solid;
-  border-right: 4px solid transparent;
-  border-left: 4px solid transparent;
-}
-
-#footer .row {
-  font-size: .657em;
-  margin: 8px 0;
-} 
-
-#footer .row span {
-  color: $text-gray;
-} 
-
-#footer .row .icon-baichuan {
-  font-size: .657em;
-  color: $text-light-black;
-} 
-
-#footer .row .cell {
-  float: left;
-  color: $text-gray;
-  margin: 0 20px 10px 0;
-} 
-
-@media screen and (max-width: $content-max-width) {
-  body {
-    font-size: 13px;
-  }
-
-  #header, #footer {
-    padding: 0 20px; 
-  }
-
-  .links {
-    display: none !important;
-  }
-
-  .info {
-    display: none !important;
-  }
-
-  .edge .scene-container .sketch-content {
-    flex-direction: column; 
-    align-items: center;
-  }
-
-  .horizon .sketch-content {
-    padding: 0 5em;
-  }
-
-  .horizon .sketch-content .inner-box {
-    padding: 0 2em;
-  }
-
-  .users .scene-container .textbox {
-    flex: 1;
-  }
-
-  .feedback .sketch-content {
-    align-content: center;
-  }
-
-  .feedback .scene-container .textbox {
-    flex: 1;
-  }
-}
-
-@media screen and (max-width: 700px) {
-
-  .scene.overlength {
-    height: auto;
-    min-height: calc(100% - 72px);
-  }
-
-  .horizon .textbox {
-    flex: 4;
-  }
-
-  .horizon .sketch-content {
-    padding: 0 1em;
-  }
-
-  .horizon .sketch-content .inner-box {
-    padding: 0 1em;
-  }
-
-  .horizon .textbox p {
-      width: 100%;
-  }
-
-  .users .sketch-content {
-    .user-logo {
-      width: 140px;
-      height: 140px;
-      background-size: 45px;
-    }
-    .user-info p {
-      @include lines(3);
-    }
-  }
-
-  .users .more {
-    /*align-items: flex-end;*/
-  }
-
-  .feedback {
-    .user-feedback {
-      flex: 1 0 140px;
-    }
   }
 }

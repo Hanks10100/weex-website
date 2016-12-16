@@ -15,7 +15,7 @@ timezone:
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: http://alibaba.github.io/
-root: /weex-website/
+root: /weex/
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 
@@ -42,9 +42,9 @@ relative_link: false
 future: true
 highlight:
   enable: true
-  line_number: true
+  line_number: false
   auto_detect: false
-  tab_replace:
+  tab_replace: 2
 
 # Category & Tag
 default_category: uncategorized

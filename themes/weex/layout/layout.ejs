@@ -1,6 +1,10 @@
 <%- partial('_partial/head') %>
-<body id="<%= page.path === 'index.html' ? 'index' : 'docs' %>">
+<body id="<%- page.type ? page.type : page.path.slice(0, -5) %>">
+  <% page_type = page.type ? page.type : page.path.slice(0, -5) %>
+  <%- partial('_partial/header') %>
+  <%- partial('_partial/sidebar', {page_type: page_type}) %>
   <%- body %>
+  <script>window.PAGE_TYPE = "<%= page_type %>"</script>
   <%- partial('_partial/footer') %>
   <%- partial('_partial/after-footer') %>
   <%- js('js/velocity.js') %>

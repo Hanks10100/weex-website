@@ -1,4 +1,6 @@
-index: 
+index:
+  guide: Guide
+  reference: Reference
   doc: Docs
   showcase: Showcase
   download: Download

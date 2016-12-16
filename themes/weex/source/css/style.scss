@@ -2,4 +2,13 @@
 
 @import "partial/header.scss";
 @import "partial/sidebar.scss";
+@import "partial/footer.scss";
+@import "partial/highlight.scss";
+
+/*LANDINGPAGE*/
 @import "index.scss";
+
+/*POST*/
+@import "post.scss";
+
+@import "media-queries.scss";

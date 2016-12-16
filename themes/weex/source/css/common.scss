@@ -15,12 +15,12 @@ html, body {
 }
 
 body {
+  background: $bg-gray;
   font-family: "PingFang SC","Helvetica Neue",Arial,STHeiti,"Microsoft YaHei","Source Han Sans SC","Noto Sans CJK SC","Source Han Sans CN","Noto Sans SC","Noto Sans CJK TC",SimSun,sans-serif;
   font-size: 14px;
   line-height: 1.2;
   color: $text-light-black;
   -webkit-tap-highlight-color: transparent;
-  user-select: none;
 }
 
 

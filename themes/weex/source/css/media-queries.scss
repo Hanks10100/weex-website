@@ -1,0 +1,100 @@
+@import "variable.scss";
+
+@media screen and (max-width: 1300px) {
+  .article {
+    img[alt="mobile_preview"] {
+      position: static !important;
+    }
+  }
+}
+
+@media screen and (max-width: $content-max-width) {
+  body {
+    user-select: none;
+    font-size: 13px;
+  }
+
+  #header {
+    .navbar {
+      padding: 0 20px;
+    }
+    
+    .links {
+      display: none !important;
+    }
+
+    .info {
+      display: none !important;
+    }
+  }
+
+  #footer {
+    padding: 0 20px;
+  }
+
+  .edge .scene-container .sketch-content {
+    flex-direction: column; 
+    align-items: center;
+  }
+
+  .horizon .sketch-content {
+    padding: 0 5em;
+  }
+
+  .horizon .sketch-content .inner-box {
+    padding: 0 2em;
+  }
+
+  .users .scene-container .textbox {
+    flex: 1;
+  }
+
+  .feedback .sketch-content {
+    align-content: center;
+  }
+
+  .feedback .scene-container .textbox {
+    flex: 1;
+  }
+}
+
+@media screen and (max-width: 700px) {
+
+  .scene.overlength {
+    height: auto;
+    min-height: calc(100% - 72px);
+  }
+
+  .horizon .textbox {
+    flex: 4;
+  }
+
+  .horizon .sketch-content {
+    padding: 0 1em;
+  }
+
+  .horizon .sketch-content .inner-box {
+    padding: 0 1em;
+  }
+
+  .horizon .textbox p {
+    width: 100%;
+  }
+
+  .users .sketch-content {
+    .user-logo {
+      width: 140px;
+      height: 140px;
+      background-size: 45px;
+    }
+    .user-info p {
+      @include lines(3);
+    }
+  }
+
+  .feedback {
+    .user-feedback {
+      flex: 1 0 140px;
+    }
+  }
+}

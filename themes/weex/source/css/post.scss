@@ -1,0 +1,66 @@
+@import "variable.scss";
+
+.article-wrapper {
+  width: 100%;
+
+  .article {
+    width: 100%;
+    max-width: 940px;
+    margin: 90px auto;
+    padding: 0 1.4em;
+    position: relative;
+
+    h1 {
+      font-size: 2em;
+      color: #333;
+      padding-bottom: 20px;
+      margin-bottom: 1.67em;
+      border-bottom: 1px solid $border-light;
+    }
+
+    h2 {
+      font-size: 1.75em;
+      margin: 2em 0 .7em;
+    }
+
+    h3 {
+      font-size: 1.5em;
+      margin: 2em 0 .7em;
+    }
+
+    h4 {
+      font-size: 1.25em;
+      margin: 2em 0 .7em;
+    }
+
+    h5 {
+      font-size: 1.1em;
+      margin: 2em 0 .7em;
+    }
+
+    img[alt="mobile_preview"] {
+      position: absolute;
+      left: 940px;
+      width: 200px;
+    }
+
+    .article-date {
+      position: absolute;
+      top: 60px;
+      left: 20px;
+      font-size: .9em;
+      color: $text-gray;
+    }
+
+    .weex-version {
+      display: inline-block;
+      padding: .3em .8em;
+      color: #fff;
+      background: $bg-light-blue;
+      border-radius: 2em;
+      position: absolute;
+      top: 55px;
+      left: 185px;
+    }   
+  }
+}
