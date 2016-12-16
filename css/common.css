@@ -21,7 +21,8 @@ body {
   font-size: 14px;
   line-height: 1.2;
   color: #363539;
-  -webkit-tap-highlight-color: transparent; }
+  -webkit-tap-highlight-color: transparent;
+  user-select: none; }
 
 @font-face {
   font-family: "iconfont";
@@ -62,6 +63,7 @@ body {
   content: "\e604"; }
 
 a {
+  cursor: pointer;
   color: #363539;
   text-decoration: none; }
   a:hover {

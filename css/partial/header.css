@@ -1,0 +1,42 @@
+/***********************
+* Variable
+***********************/
+/***********************
+* Mixin
+***********************/
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999; }
+  #header .navbar {
+    height: 72px;
+    padding: 0 65px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12); }
+    #header .navbar #logo {
+      display: block; }
+      #header .navbar #logo img {
+        width: 72px;
+        height: 44px; }
+    #header .navbar .main-nav {
+      display: flex;
+      justify-content: space-between; }
+      #header .navbar .main-nav ul {
+        display: flex;
+        justify-content: space-between; }
+      #header .navbar .main-nav li a {
+        font-size: 1.3em;
+        color: #363539; }
+    #header .navbar .links > li > a:hover {
+      border-bottom: 0.2em solid #00BDFF; }
+    #header .navbar .links li + li {
+      margin-left: 40px; }
+    #header .navbar .info li {
+      margin-left: 50px; }
+    #header .navbar .tools li {
+      margin-left: 4em; }
