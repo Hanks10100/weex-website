@@ -36,6 +36,9 @@
   .main-nav {
     border-bottom: 1px solid #DDDDDD;
     overflow: hidden;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
 
     li {
       margin-bottom: 25px;
