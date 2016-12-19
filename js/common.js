@@ -3,67 +3,6 @@
   /**
    * Toggling sidebar
    */
-  function Sidebar (el) {
-    var sidebar = el
-    var bg = sidebar.querySelector('.sidebar-backdrop')
-    var menu = sidebar.querySelector('.sidebar-menu')
-    var scrollbarWidth = getScrollerWidth()
-
-    function scrollHandler(e) {
-      e.preventDefault()
-      e.stopPropagation()
-
-      return false
-    }
-
-    var show = function () {
-
-      var showSequence = [
-        { e: sidebar, p: {opacity: 1}, o: { display: 'block', duration: 0 } },
-        { e: bg, p: 'fadeIn', o: { easing: 'ease-in', duration: 300, sequenceQueue: false  } },
-        { e: menu, p: 'transition.slideRightIn', o: { easing: 'ease-in', duration: 300, sequenceQueue: false } }
-      ]
-
-      Velocity.RunSequence(showSequence)
-      sidebar.classList.add('open')
-
-      BODY.style.overflow = 'hidden'
-      BODY.style.paddingRight = scrollbarWidth + 'px'
-      BODY.addEventListener('touchmove', scrollHandler)
-    }
-
-    var hide = function () {
-
-      var hideSequence = [
-        { e: bg, p: 'fadeOut', o: { easing: 'ease-in', duration: 300 } },
-        { e: menu, p: 'transition.slideRightOut', o: { easing: 'ease-in', duration: 300 , sequenceQueue: false } },
-        { e: sidebar, p: { opacity: 0 }, o: { display: 'none', duration: 0 } }
-      ]
-
-      Velocity.RunSequence(hideSequence)
-      sidebar.classList.remove('open')
-
-      BODY.style.overflow = 'auto'
-      BODY.style.paddingRight = 0
-      BODY.removeEventListener('touchmove', scrollHandler)
-    }
-
-    function getScrollerWidth() {
-      if (BODY.clientWidth >= window.innerWidth) return 0
-
-      var div = document.createElement("div")
-      div.classList.add("scrollbar-measure")
-      BODY.append(div)
-      var width = div.offsetWidth - div.clientWidth
-      BODY.removeChild(div)
-      return width 
-    }
-
-    return {
-      show: show,
-      hide: hide
-    }
-  }
 
   function initSidebar () {
     var sidebarEl = document.querySelector('#sidebar')
@@ -71,13 +10,11 @@
     var closeBtn = sidebarEl.querySelector('.btn-close-sidebar')
     var sidebarMenu = sidebarEl.querySelector('.sidebar-menu')
 
-    var sidebar = Sidebar(sidebarEl)
-
     menuBtn.addEventListener('click', function (e) {
       e.preventDefault()
       e.stopPropagation()
       
-      sidebar.show()
+      sidebarEl.classList.toggle('open')
     })
 
     BODY.addEventListener('click', function (e) {
@@ -85,7 +22,7 @@
 
       if (sidebarEl.classList.contains('open')) {
         if (target === closeBtn || !sidebarMenu.contains(target)) {
-          sidebar.hide()
+          sidebarEl.classList.remove('open')
         }
       }
     })

@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Data-Binding | Weex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Data-Binding0.4
+In Weex, we use the mustache syntax {{...}} to bind data in &amp;lt;template&amp;gt; which are defined in &amp;lt;script&amp;gt;. Once data and template is bound, the data changes will influence the c">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Data-Binding">
+<meta property="og:url" content="http://alibaba.github.io/guide/syntax/data-binding.html">
+<meta property="og:site_name" content="Weex">
+<meta property="og:description" content="Data-Binding0.4
+In Weex, we use the mustache syntax {{...}} to bind data in &amp;lt;template&amp;gt; which are defined in &amp;lt;script&amp;gt;. Once data and template is bound, the data changes will influence the c">
+<meta property="og:updated_time" content="2016-12-19T10:57:17.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Data-Binding">
+<meta name="twitter:description" content="Data-Binding0.4
+In Weex, we use the mustache syntax {{...}} to bind data in &amp;lt;template&amp;gt; which are defined in &amp;lt;script&amp;gt;. Once data and template is bound, the data changes will influence the c">
+  
+    <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/weex-website/css/style.css">
+  <link rel="stylesheet" href="/weex-website/css/swiper.min.css">
+  
+
+</head>
+
+<body id="guide">
+  
+  <header id="header">
+  <div class="navbar">
+    <a id="logo" href="/">
+      <img src="/weex-website//images/logo.png" />
+    </a>
+    <div class="main-nav">
+      <ul class="links">
+        <li><a href="/weex-website/guide">Guide</a></li>
+        <li><a href="/weex-website/reference">Reference</a></li>
+        <li><a href="/weex-website/FAQ">FAQ</a></li>
+        <li><a href="/weex-website/download">Download</a></li>
+      </ul>
+      <ul class="info">
+        <li><a href="https://github.com/alibaba/weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+      </ul>
+      <ul class="tools">
+        <li><a class="btn-search"><span class="iconfont icon-search"></span></a></li>
+        <!--<li></li>-->
+      </ul>
+    </div>
+  </div>
+  <div id="mobile-nav">
+    <a id="logo" href="/">
+      <img src="/weex-website//images/logo.png" />
+    </a>
+    <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
+  </div>
+</header>
+  <div id="sidebar" class="">
+  <div class="sidebar-menu">
+    
+      <div class="summary">
+  <h2 class="part-title">Guide</h2>  
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+   
+    
+      <li>
+        <h3 class="chapter-title"><a href="/weex-website/guide/index.html" class="sidebar-link  ">Tutorial</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/weex-website/guide/syntax/index.html" class="sidebar-link  ">Syntax</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/weex-website/guide/syntax/data-binding.html" class="sidebar-link current ">Data-Binding</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/syntax/style-n-class.html" class="sidebar-link  ">Style & Class</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/syntax/events.html" class="sidebar-link  ">Events</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/syntax/display-logic.html" class="sidebar-link  ">Display Logic Control</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/syntax/render-logic.html" class="sidebar-link  ">Render Logic Control</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/syntax/composed-component.html" class="sidebar-link  ">Composed Component</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/syntax/id.html" class="sidebar-link  ">Find an Element</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/syntax/comm.html" class="sidebar-link  ">Communications</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/syntax/config-n-data.html" class="sidebar-link  ">Page Config & Data</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+</div>
+    
+    <a class="btn-close-sidebar iconfont  icon-close"></a>
+  </div>
+</div>
+  <div class="article-wrapper">
+  <div class="left-nav">
+    <div class="summary">
+  <h2 class="part-title">Guide</h2>  
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+   
+    
+      <li>
+        <h3 class="chapter-title"><a href="/weex-website/guide/index.html" class="sidebar-link  ">Tutorial</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/weex-website/guide/syntax/index.html" class="sidebar-link  ">Syntax</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/weex-website/guide/syntax/data-binding.html" class="sidebar-link current ">Data-Binding</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/syntax/style-n-class.html" class="sidebar-link  ">Style & Class</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/syntax/events.html" class="sidebar-link  ">Events</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/syntax/display-logic.html" class="sidebar-link  ">Display Logic Control</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/syntax/render-logic.html" class="sidebar-link  ">Render Logic Control</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/syntax/composed-component.html" class="sidebar-link  ">Composed Component</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/syntax/id.html" class="sidebar-link  ">Find an Element</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/syntax/comm.html" class="sidebar-link  ">Communications</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/syntax/config-n-data.html" class="sidebar-link  ">Page Config & Data</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+</div>
+  </div>
+  <article id="page-undefined" class="article article-type-guide">
+  <div class="article-entry" itemprop="articleBody">
+    <div class="article-meta">
+      <time class="article-date" datetime="2016-12-19T10:57:17.000Z">Updated time: 19/12/2016</time>
+    </div>
+    <h1 id="Data-Binding"><a href="#Data-Binding" class="headerlink" title="Data-Binding"></a>Data-Binding</h1><p><span class="weex-version">0.4</span></p>
+<p>In Weex, we use the <em>mustache</em> syntax <code>{{...}}</code> to bind data in <code>&lt;template&gt;</code> which are defined in <code>&lt;script&gt;</code>. Once data and template is bound, the data changes will influence the corresponding template content immediately and automatically.</p>
+<h2 id="Binding-data-path"><a href="#Binding-data-path" class="headerlink" title="Binding data path"></a>Binding data path</h2><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">container</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">text</span> <span class="attr">style</span>=<span class="string">"font-size: &#123;&#123;size&#125;&#125;"</span>&gt;</span>&#123;&#123;title&#125;&#125;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">container</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line">  module.exports = &#123;</div><div class="line">    data: &#123;</div><div class="line">      size: 48,</div><div class="line">      title: 'Alibaba Weex Team'</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>The code above will bind the <code>title</code> and <code>size</code> data field to <code>template</code>.</p>
+<p>We can also use <code>.</code> syntax to bind cascading data structure. Let’s look at the following code snippet:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">container</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">text</span> <span class="attr">style</span>=<span class="string">"font-size: &#123;&#123;title.size&#125;&#125;"</span>&gt;</span>&#123;&#123;title.value&#125;&#125;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">container</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line">  module.exports = &#123;</div><div class="line">    data: &#123;</div><div class="line">      title: &#123;</div><div class="line">        size: 48,</div><div class="line">        value: 'Alibaba Weex Team'</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="In-template-expression"><a href="#In-template-expression" class="headerlink" title="In-template expression"></a>In-template expression</h2><p>Inside data bindings, Weex supports simply javascript expressions, e.g.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">container</span> <span class="attr">style</span>=<span class="string">"flex-direction: row;"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">text</span>&gt;</span>&#123;&#123;firstName + ' ' + lastName&#125;&#125;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">container</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line">  </div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line">  module.exports = &#123;</div><div class="line">    data: &#123;</div><div class="line">      firstName: 'John',</div><div class="line">      lastName: 'Smith'</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>The expression will be evaluated in the data scope of current context.</p>
+<p><strong>NOTE: EACH BINDING CAN ONLY CONTAIN ONE SINGLE EXPRESSION</strong></p>
+<h2 id="Computed-Properties"><a href="#Computed-Properties" class="headerlink" title="Computed Properties"></a>Computed Properties</h2><p><span class="weex-version">0.5</span></p>
+<p>According to simple operations, in-template expressions are very convenient. But if you want to put more logic into the template, you should use a computed property.</p>
+<p>e.g.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">container</span> <span class="attr">style</span>=<span class="string">"flex-direction: row;"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">text</span>&gt;</span>&#123;&#123;fullName&#125;&#125;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">text</span> <span class="attr">onclick</span>=<span class="string">"changeName"</span> <span class="attr">style</span>=<span class="string">"margin-left:10px;"</span>&gt;</span>CHANGE NAME<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">container</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line">  </div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line">  module.exports = &#123;</div><div class="line">    data: &#123;</div><div class="line">      firstName: 'John',</div><div class="line">      lastName: 'Smith'</div><div class="line">    &#125;,</div><div class="line">    computed: &#123;</div><div class="line">      fullName: &#123;</div><div class="line">        get: function() &#123;</div><div class="line">          return this.firstName + ' ' + this.lastName</div><div class="line">        &#125;,</div><div class="line"></div><div class="line">        set: function(v) &#123;</div><div class="line">          var s = v.split(' ')</div><div class="line">          this.firstName = s[0]</div><div class="line">          this.lastName = s[1]</div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">    &#125;,</div><div class="line">    methods: &#123;</div><div class="line">      changeName: function() &#123;</div><div class="line">        this.fullName = 'Terry King'</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>Here we have declared a computed property fullName. The function we provided will be used as the getter function for concating firstName and lastName.</p>
+<p>Otherwise when you call <code>changeName</code> after click, the setter will be invoked and this.firstName and this.lastName will be updated accordingly.</p>
+<p><strong>NOTE: <code>data</code> and <code>methods</code> can’t have duplicated fields. ‘Cause in the execution context – <code>this</code>, we can access both of them.</strong></p>
+<h2 id="Usage-of-some-special-attributes-in-Data-Binding"><a href="#Usage-of-some-special-attributes-in-Data-Binding" class="headerlink" title="Usage of some special attributes in Data-Binding"></a>Usage of some special attributes in Data-Binding</h2><h3 id="Styles-style-or-class"><a href="#Styles-style-or-class" class="headerlink" title="Styles: style or class"></a>Styles: <code>style</code> or <code>class</code></h3><p>the style of a component can be bind using the <code>style</code> attribute:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">text</span> <span class="attr">style</span>=<span class="string">"font-size: &#123;&#123;size&#125;&#125;; color: &#123;&#123;color&#125;&#125;; ..."</span>&gt;</span>...<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>while style can also get bound with <code>class</code> attribute, multiple classnames can be split by spaces:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">container</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"&#123;&#123;size&#125;&#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"title &#123;&#123;status&#125;&#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">container</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>here if <code></code> and <code></code> have empty value, then only <code>class=&quot;title&quot;</code> will be rendered.</p>
+<ul>
+<li><a href="./style-n-class.md">See more about style and class</a></li>
+</ul>
+<h3 id="Event-Handler-on"><a href="#Event-Handler-on" class="headerlink" title="Event Handler: on..."></a>Event Handler: <code>on...</code></h3><p>The event handler is an attribute which name has a prefix <code>on...</code>. The other part of attribute name is event type and the value is event handler name. We don’t need to add mustache around the method name or add parentheses to call it.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">text</span> <span class="attr">onclick</span>=<span class="string">"toggle"</span>&gt;</span>Toggle<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line">  module.exports = &#123;</div><div class="line">    methods: &#123;</div><div class="line">      toggle: function () &#123;</div><div class="line">        // todo</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="if-amp-repeat"><a href="#if-amp-repeat" class="headerlink" title="if &amp; repeat"></a><code>if</code> &amp; <code>repeat</code></h3><p><code>if</code> attribute can control the display of a component by a truthy/falsy value.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">container</span> <span class="attr">style</span>=<span class="string">"flex-direction: column;"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">text</span> <span class="attr">onclick</span>=<span class="string">"toggle"</span>&gt;</span>Toggle<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">image</span> <span class="attr">src</span>=<span class="string">"..."</span> <span class="attr">if</span>=<span class="string">"&#123;&#123;shown&#125;&#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">container</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line">  module.exports = &#123;</div><div class="line">    data: &#123;</div><div class="line">      shown: true</div><div class="line">    &#125;,</div><div class="line">    methods: &#123;</div><div class="line">      toggle: function () &#123;</div><div class="line">        this.shown = !this.shown</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>We can also use <code>repeat</code> attribute to generate a list.</p>
+<p><strong>NOTE: When you want to mutate an array in <code>data</code>. Something limitations existing below:</strong></p>
+<p>When you directly set an item with the index (<code>vm.items[0] = {};</code>), it won’t trigger view update. So we have a prototype methods: <code>$set(index, item)</code>.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">// same as `example1.items[0] = ...` but triggers view update</div><div class="line">example1.items.$set(0, &#123; childMsg: &apos;Changed!&apos;&#125;)</div></pre></td></tr></table></figure>
+<p>When you modify the length of the Array (<code>vm.items.length = 0</code>), it won’t trigger view update too. We recommend you just replace <code>items</code> with an empty array instead.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">// same as `example2.items.length = 0` but triggers view update</div><div class="line">example2.items = []</div></pre></td></tr></table></figure>
+<ul>
+<li><a href="./display-logic.md">See more about display logic control</a></li>
+</ul>
+<h3 id="static"><a href="#static" class="headerlink" title="static"></a><code>static</code></h3><p><code>static</code> attribute can cancel the data binding, and the data changes will not be synchronized to UI.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">static</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">text</span>&gt;</span>&#123;&#123; word &#125;&#125;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line">  module.exports = &#123;</div><div class="line">    ready: function() &#123;</div><div class="line">      this.word = 'Data changes'</div><div class="line">    &#125;,</div><div class="line">    data: &#123;</div><div class="line">      word: 'Hello, static'</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>As shown above, after the <code>static</code> attribute is added, the rendering result will be <code>Hello, static</code>, which is equivalent to rendering a static node. The change of the data <code>word</code> in ready function will not be listened, so the text value will not change.<br><code>static</code> property is designed to reduce the long list or pure static page memory overhead. Be careful with it, as it will likely break your page logic.</p>
+<p>Next, let’s have a look at <a href="./style-n-class.md">style and class</a>.</p>
+
+  </div>
+</article>
+</div>
+  <script>window.PAGE_TYPE = "guide"</script>
+  <footer id="footer">
+  <div class="row clearfix">
+    <div class="ali-logo">
+      <img src="/weex-website//images/ali-open-source.png" alt="Alibaba">
+    </div>
+    <div class="dropdown select-lang">
+      <a href="javascript:;" class="dropdown-toggle">
+        Language
+        <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu">
+        <li>
+          <a href="/zh-cn">Chine</a>
+        </li>
+        <li>
+          <a href="/">English</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <p><span>Released under </span><a href="">Apache License 2.0</a></p>
+  </div>
+  <div class="row clearfix">
+    <div class="cell"><span>Copyright(c) 2016 </span><a href="https://www.alibaba.com">Alibaba</a></div>
+    <div class="cell"><span>GroupMade by </span><a href="">阿里云UED AX</a></div>
+    <div class="cell"><span>Proudly Produced by </span><a href="https://baichuan.taobao.com/">Alibaichuan</a> <span class="iconfont icon-baichuan"></span></div>
+  </div>
+</footer>
+  
+
+<!--<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>-->
+
+
+  <script src="/weex-website/js/velocity.js"></script>
+  <script src="/weex-website/js/common.js"></script>
+</body>
+</html>

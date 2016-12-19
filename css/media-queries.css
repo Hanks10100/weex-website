@@ -4,22 +4,37 @@
 /***********************
 * Mixin
 ***********************/
-@media screen and (max-width: 1300px) {
+@media screen and (max-width: 1350px) {
   .article img[alt="mobile_preview"] {
     position: static !important; } }
 
+@media screen and (max-width: 1350px) and (min-width: 940px) {
+  /*.article-wrapper .article {
+   margin-left: 215px;
+ }*/ }
+
 @media screen and (max-width: 940px) {
+  /***********************************************
+   * Global
+   **********************************************/
   body {
     user-select: none;
     font-size: 13px; }
   #header .navbar {
-    padding: 0 20px; }
-  #header .links {
     display: none !important; }
-  #header .info {
-    display: none !important; }
+  #header #mobile-nav {
+    display: flex; }
+  #sidebar {
+    display: block !important;
+    transform: translateX(-230px);
+    transition: all .3s ease; }
+    #sidebar.open {
+      transform: translateX(0); }
   #footer {
     padding: 0 20px; }
+  /***********************************************
+   * Index
+   **********************************************/
   .edge .scene-container .sketch-content {
     flex-direction: column;
     align-items: center; }
@@ -32,9 +47,19 @@
   .feedback .sketch-content {
     align-content: center; }
   .feedback .scene-container .textbox {
-    flex: 1; } }
+    flex: 1; }
+  /***********************************************
+   * Post
+   **********************************************/
+  .summary {
+    display: none; }
+  .article-wrapper .article {
+    margin-left: 0; } }
 
 @media screen and (max-width: 700px) {
+  /***********************************************
+   * Index
+   **********************************************/
   .scene.overlength {
     height: auto;
     min-height: calc(100% - 72px); }

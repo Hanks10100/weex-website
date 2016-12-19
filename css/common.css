@@ -76,6 +76,21 @@ h1, h2, h3, h4, h5, h6, p {
   font-weight: normal;
   margin: 0 0 1em; }
 
+h1 {
+  font-size: 2em; }
+
+h2 {
+  font-size: 1.75em; }
+
+h3 {
+  font-size: 1.5em; }
+
+h4 {
+  font-size: 1.25em; }
+
+h5 {
+  font-size: 1.1em; }
+
 /***********************
 * Common style
 ***********************/
@@ -146,7 +161,7 @@ h1, h2, h3, h4, h5, h6, p {
   .dropdown:hover .dropdown-menu {
     display: block; }
 
-a.current:hover {
+a.current {
   border-bottom: 0.2em solid #00BDFF; }
 
 .scrollbar-measure {

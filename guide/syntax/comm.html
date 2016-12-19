@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Communications | Weex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Communicate Between Components0.4
+For Child-Parent CommunicationChildren component can use this.$dispatch([String type], [Object detail]) method passing information to parent component. first argument">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Communications">
+<meta property="og:url" content="http://alibaba.github.io/guide/syntax/comm.html">
+<meta property="og:site_name" content="Weex">
+<meta property="og:description" content="Communicate Between Components0.4
+For Child-Parent CommunicationChildren component can use this.$dispatch([String type], [Object detail]) method passing information to parent component. first argument">
+<meta property="og:updated_time" content="2016-12-19T13:27:34.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Communications">
+<meta name="twitter:description" content="Communicate Between Components0.4
+For Child-Parent CommunicationChildren component can use this.$dispatch([String type], [Object detail]) method passing information to parent component. first argument">
+  
+    <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/weex-website/css/style.css">
+  <link rel="stylesheet" href="/weex-website/css/swiper.min.css">
+  
+
+</head>
+
+<body id="guide">
+  
+  <header id="header">
+  <div class="navbar">
+    <a id="logo" href="/">
+      <img src="/weex-website//images/logo.png" />
+    </a>
+    <div class="main-nav">
+      <ul class="links">
+        <li><a href="/weex-website/guide">Guide</a></li>
+        <li><a href="/weex-website/reference">Reference</a></li>
+        <li><a href="/weex-website/FAQ">FAQ</a></li>
+        <li><a href="/weex-website/download">Download</a></li>
+      </ul>
+      <ul class="info">
+        <li><a href="https://github.com/alibaba/weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+      </ul>
+      <ul class="tools">
+        <li><a class="btn-search"><span class="iconfont icon-search"></span></a></li>
+        <!--<li></li>-->
+      </ul>
+    </div>
+  </div>
+  <div id="mobile-nav">
+    <a id="logo" href="/">
+      <img src="/weex-website//images/logo.png" />
+    </a>
+    <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
+  </div>
+</header>
+  <div id="sidebar" class="">
+  <div class="sidebar-menu">
+    
+      <div class="summary">
+  <h2 class="part-title">Guide</h2>  
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+   
+    
+      <li>
+        <h3 class="chapter-title"><a href="/weex-website/guide/index.html" class="sidebar-link  ">Tutorial</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/weex-website/guide/syntax/index.html" class="sidebar-link  ">Syntax</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/weex-website/guide/syntax/data-binding.html" class="sidebar-link  ">Data-Binding</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/syntax/style-n-class.html" class="sidebar-link  ">Style & Class</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/syntax/events.html" class="sidebar-link  ">Events</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/syntax/display-logic.html" class="sidebar-link  ">Display Logic Control</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/syntax/render-logic.html" class="sidebar-link  ">Render Logic Control</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/syntax/composed-component.html" class="sidebar-link  ">Composed Component</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/syntax/id.html" class="sidebar-link  ">Find an Element</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/syntax/comm.html" class="sidebar-link current ">Communications</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/syntax/config-n-data.html" class="sidebar-link  ">Page Config & Data</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+</div>
+    
+    <a class="btn-close-sidebar iconfont  icon-close"></a>
+  </div>
+</div>
+  <div class="article-wrapper">
+  <div class="left-nav">
+    <div class="summary">
+  <h2 class="part-title">Guide</h2>  
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+   
+    
+      <li>
+        <h3 class="chapter-title"><a href="/weex-website/guide/index.html" class="sidebar-link  ">Tutorial</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/weex-website/guide/syntax/index.html" class="sidebar-link  ">Syntax</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/weex-website/guide/syntax/data-binding.html" class="sidebar-link  ">Data-Binding</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/syntax/style-n-class.html" class="sidebar-link  ">Style & Class</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/syntax/events.html" class="sidebar-link  ">Events</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/syntax/display-logic.html" class="sidebar-link  ">Display Logic Control</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/syntax/render-logic.html" class="sidebar-link  ">Render Logic Control</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/syntax/composed-component.html" class="sidebar-link  ">Composed Component</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/syntax/id.html" class="sidebar-link  ">Find an Element</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/syntax/comm.html" class="sidebar-link current ">Communications</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/syntax/config-n-data.html" class="sidebar-link  ">Page Config & Data</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+</div>
+  </div>
+  <article id="page-undefined" class="article article-type-guide">
+  <div class="article-entry" itemprop="articleBody">
+    <div class="article-meta">
+      <time class="article-date" datetime="2016-12-19T13:27:34.000Z">Updated time: 19/12/2016</time>
+    </div>
+    <h1 id="Communicate-Between-Components"><a href="#Communicate-Between-Components" class="headerlink" title="Communicate Between Components"></a>Communicate Between Components</h1><p><span class="weex-version">0.4</span></p>
+<h2 id="For-Child-Parent-Communication"><a href="#For-Child-Parent-Communication" class="headerlink" title="For Child-Parent Communication"></a>For Child-Parent Communication</h2><p>Children component can use <code>this.$dispatch([String type], [Object detail])</code> method passing information to parent component. first argument meaning type of message , second argument is the message object. If any parent of the child component register the same type of listener using <code>$on([String type], [Function callback])</code> method , the callback will be execute with one argument , the message object will be <code>detail</code> property of the the argument.</p>
+<p>eg:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">we-element</span> <span class="attr">name</span>=<span class="string">"foo"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">image</span> <span class="attr">src</span>=<span class="string">"&#123;&#123;imageUrl&#125;&#125;"</span> <span class="attr">onclick</span>=<span class="string">"test"</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">text</span>&gt;</span>&#123;&#123;title&#125;&#125;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line">    module.exports = &#123;</div><div class="line">      data: &#123;</div><div class="line">        title: '',</div><div class="line">        imageUrl: ''</div><div class="line">      &#125;,</div><div class="line">      methods: &#123;</div><div class="line">        test: function () &#123;</div><div class="line">          this.$dispatch('notify', &#123;a: 1&#125;)</div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  <span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">we-element</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">foo</span> <span class="attr">title</span>=<span class="string">"..."</span> <span class="attr">image-url</span>=<span class="string">"..."</span>&gt;</span><span class="tag">&lt;/<span class="name">foo</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="xml"></span></div><div class="line">  module.exports = &#123;</div><div class="line">    created: function () &#123;</div><div class="line">      this.$on('notify', function(e) &#123;</div><div class="line">        //  when <span class="tag">&lt;<span class="name">foo</span>&gt;</span> image tag  be clicked ,the function will be executing.</div><div class="line">        // e.detail is  `&#123;a: 1&#125;`</div><div class="line">      &#125;)</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="For-Parent-Child-Communication"><a href="#For-Parent-Child-Communication" class="headerlink" title="For Parent-Child Communication"></a>For Parent-Child Communication</h2><p>Parent component can use <code>this.$vm([String id])</code> get vm instance of child component. you can access child component information using the vm instance.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">we-element</span> <span class="attr">name</span>=<span class="string">"foo"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">image</span> <span class="attr">src</span>=<span class="string">"&#123;&#123;imageUrl&#125;&#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">text</span>&gt;</span>&#123;&#123;title&#125;&#125;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line">    module.exports = &#123;</div><div class="line">      data: &#123;</div><div class="line">        title: '',</div><div class="line">        imageUrl: ''</div><div class="line">      &#125;,</div><div class="line">      methods: &#123;</div><div class="line">        setTitle: function (t) &#123;</div><div class="line">          this.title = t</div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  <span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">we-element</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">text</span> <span class="attr">onclick</span>=<span class="string">"test"</span>&gt;</span>click to update foo<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">foo</span> <span class="attr">id</span>=<span class="string">"fooEl"</span> <span class="attr">title</span>=<span class="string">"..."</span> <span class="attr">image-url</span>=<span class="string">"..."</span>&gt;</span><span class="tag">&lt;/<span class="name">foo</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line">  module.exports = &#123;</div><div class="line">    methods: &#123;</div><div class="line">      test: function (e) &#123;</div><div class="line">        var foo = this.$vm('fooEl')</div><div class="line">        foo.setTitle('...')</div><div class="line">        foo.imageUrl = '...'</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="Parent-to-Children-multi-child-Communication"><a href="#Parent-to-Children-multi-child-Communication" class="headerlink" title="Parent to Children (multi-child) Communication"></a>Parent to Children (multi-child) Communication</h2><p>Parent can using <code>this.$broadcast([String type], [Object detail])</code> broadcast message to all of children.</p>
+<p>eg:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">we-element</span> <span class="attr">name</span>=<span class="string">"bar"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">image</span> <span class="attr">src</span>=<span class="string">"&#123;&#123;imageUrl&#125;&#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line">    module.exports = &#123;</div><div class="line">      data: &#123;</div><div class="line">        imageUrl: ''</div><div class="line">      &#125;,</div><div class="line">      created: function() &#123;</div><div class="line">        var self = this</div><div class="line">        this.$on('changeImage', function(e) &#123;</div><div class="line">          self.imageUrl = e.detail.imageUrl</div><div class="line">        &#125;)</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  <span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">we-element</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">we-element</span> <span class="attr">name</span>=<span class="string">"foo"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">bar</span>&gt;</span><span class="tag">&lt;/<span class="name">bar</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">text</span>&gt;</span>&#123;&#123;title&#125;&#125;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line">    module.exports = &#123;</div><div class="line">      data: &#123;</div><div class="line">        title: ''</div><div class="line">      &#125;,</div><div class="line">      created: function() &#123;</div><div class="line">        var self = this</div><div class="line">        this.$on('changeTitle', function(e) &#123;</div><div class="line">          self.title = e.detail.title</div><div class="line">        &#125;)</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  <span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">we-element</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">text</span> <span class="attr">onclick</span>=<span class="string">"test"</span>&gt;</span>click to update foo<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">foo</span>&gt;</span><span class="tag">&lt;/<span class="name">foo</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">bar</span>&gt;</span><span class="tag">&lt;/<span class="name">bar</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line">  module.exports = &#123;</div><div class="line">    methods: &#123;</div><div class="line">      test: function (e) &#123;</div><div class="line">        this.$broadcast('changeTitle', &#123;</div><div class="line">          title: '...'</div><div class="line">        &#125;)</div><div class="line">        this.$broadcast('changeImage', &#123;</div><div class="line">          imageUrl: '...'</div><div class="line">        &#125;)</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="Siblings-Communication"><a href="#Siblings-Communication" class="headerlink" title="Siblings Communication"></a>Siblings Communication</h2><p>siblings components can using common parent as bridge for passing information</p>
+<p>eg:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">we-element</span> <span class="attr">name</span>=<span class="string">"foo"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">template</span>&gt;</span>...<span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line">    module.exports = &#123;</div><div class="line">      methods: &#123;</div><div class="line">        callbar: function () &#123;</div><div class="line">          this.$dispatch('callbar', &#123;a: 1&#125;)</div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  <span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">we-element</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">we-element</span> <span class="attr">name</span>=<span class="string">"bar"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">template</span>&gt;</span>...<span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line">    module.exports = &#123;</div><div class="line">      created: function() &#123;</div><div class="line">        this.$on('callbar', function(e) &#123;</div><div class="line">          // e.detail.a</div><div class="line">        &#125;)</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  <span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">we-element</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">foo</span>&gt;</span><span class="tag">&lt;/<span class="name">foo</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">bar</span>&gt;</span><span class="tag">&lt;/<span class="name">bar</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line">  module.exports = &#123;</div><div class="line">    created: function () &#123;</div><div class="line">      var self = this</div><div class="line">      this.$on('callbar', function(e) &#123;</div><div class="line">        self.$broadcast('callbar', e.detail)</div><div class="line">      &#125;)</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>At last, you can learn how to write <a href="./config-n-data.md">config &amp; data</a> for a Weex page.</p>
+
+  </div>
+</article>
+</div>
+  <script>window.PAGE_TYPE = "guide"</script>
+  <footer id="footer">
+  <div class="row clearfix">
+    <div class="ali-logo">
+      <img src="/weex-website//images/ali-open-source.png" alt="Alibaba">
+    </div>
+    <div class="dropdown select-lang">
+      <a href="javascript:;" class="dropdown-toggle">
+        Language
+        <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu">
+        <li>
+          <a href="/zh-cn">Chine</a>
+        </li>
+        <li>
+          <a href="/">English</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <p><span>Released under </span><a href="">Apache License 2.0</a></p>
+  </div>
+  <div class="row clearfix">
+    <div class="cell"><span>Copyright(c) 2016 </span><a href="https://www.alibaba.com">Alibaba</a></div>
+    <div class="cell"><span>GroupMade by </span><a href="">阿里云UED AX</a></div>
+    <div class="cell"><span>Proudly Produced by </span><a href="https://baichuan.taobao.com/">Alibaichuan</a> <span class="iconfont icon-baichuan"></span></div>
+  </div>
+</footer>
+  
+
+<!--<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>-->
+
+
+  <script src="/weex-website/js/velocity.js"></script>
+  <script src="/weex-website/js/common.js"></script>
+</body>
+</html>

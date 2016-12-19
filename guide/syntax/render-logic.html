@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Render Logic Control | Weex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Render Logic Control0.4
+appendAttribute append do not have data-binding. It won’t change the final rendering effect. But it determines whether this component should be rendered as a whole tree or a si">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Render Logic Control">
+<meta property="og:url" content="http://alibaba.github.io/guide/syntax/render-logic.html">
+<meta property="og:site_name" content="Weex">
+<meta property="og:description" content="Render Logic Control0.4
+appendAttribute append do not have data-binding. It won’t change the final rendering effect. But it determines whether this component should be rendered as a whole tree or a si">
+<meta property="og:updated_time" content="2016-12-19T13:28:13.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Render Logic Control">
+<meta name="twitter:description" content="Render Logic Control0.4
+appendAttribute append do not have data-binding. It won’t change the final rendering effect. But it determines whether this component should be rendered as a whole tree or a si">
+  
+    <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/weex-website/css/style.css">
+  <link rel="stylesheet" href="/weex-website/css/swiper.min.css">
+  
+
+</head>
+
+<body id="guide">
+  
+  <header id="header">
+  <div class="navbar">
+    <a id="logo" href="/">
+      <img src="/weex-website//images/logo.png" />
+    </a>
+    <div class="main-nav">
+      <ul class="links">
+        <li><a href="/weex-website/guide">Guide</a></li>
+        <li><a href="/weex-website/reference">Reference</a></li>
+        <li><a href="/weex-website/FAQ">FAQ</a></li>
+        <li><a href="/weex-website/download">Download</a></li>
+      </ul>
+      <ul class="info">
+        <li><a href="https://github.com/alibaba/weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+      </ul>
+      <ul class="tools">
+        <li><a class="btn-search"><span class="iconfont icon-search"></span></a></li>
+        <!--<li></li>-->
+      </ul>
+    </div>
+  </div>
+  <div id="mobile-nav">
+    <a id="logo" href="/">
+      <img src="/weex-website//images/logo.png" />
+    </a>
+    <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
+  </div>
+</header>
+  <div id="sidebar" class="">
+  <div class="sidebar-menu">
+    
+      <div class="summary">
+  <h2 class="part-title">Guide</h2>  
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+   
+    
+      <li>
+        <h3 class="chapter-title"><a href="/weex-website/guide/index.html" class="sidebar-link  ">Tutorial</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/weex-website/guide/syntax/index.html" class="sidebar-link  ">Syntax</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/weex-website/guide/syntax/data-binding.html" class="sidebar-link  ">Data-Binding</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/syntax/style-n-class.html" class="sidebar-link  ">Style & Class</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/syntax/events.html" class="sidebar-link  ">Events</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/syntax/display-logic.html" class="sidebar-link  ">Display Logic Control</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/syntax/render-logic.html" class="sidebar-link current ">Render Logic Control</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/syntax/composed-component.html" class="sidebar-link  ">Composed Component</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/syntax/id.html" class="sidebar-link  ">Find an Element</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/syntax/comm.html" class="sidebar-link  ">Communications</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/syntax/config-n-data.html" class="sidebar-link  ">Page Config & Data</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+</div>
+    
+    <a class="btn-close-sidebar iconfont  icon-close"></a>
+  </div>
+</div>
+  <div class="article-wrapper">
+  <div class="left-nav">
+    <div class="summary">
+  <h2 class="part-title">Guide</h2>  
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+   
+    
+      <li>
+        <h3 class="chapter-title"><a href="/weex-website/guide/index.html" class="sidebar-link  ">Tutorial</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/weex-website/guide/syntax/index.html" class="sidebar-link  ">Syntax</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/weex-website/guide/syntax/data-binding.html" class="sidebar-link  ">Data-Binding</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/syntax/style-n-class.html" class="sidebar-link  ">Style & Class</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/syntax/events.html" class="sidebar-link  ">Events</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/syntax/display-logic.html" class="sidebar-link  ">Display Logic Control</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/syntax/render-logic.html" class="sidebar-link current ">Render Logic Control</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/syntax/composed-component.html" class="sidebar-link  ">Composed Component</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/syntax/id.html" class="sidebar-link  ">Find an Element</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/syntax/comm.html" class="sidebar-link  ">Communications</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/syntax/config-n-data.html" class="sidebar-link  ">Page Config & Data</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+</div>
+  </div>
+  <article id="page-undefined" class="article article-type-guide">
+  <div class="article-entry" itemprop="articleBody">
+    <div class="article-meta">
+      <time class="article-date" datetime="2016-12-19T13:28:13.000Z">Updated time: 19/12/2016</time>
+    </div>
+    <h1 id="Render-Logic-Control"><a href="#Render-Logic-Control" class="headerlink" title="Render Logic Control"></a>Render Logic Control</h1><p><span class="weex-version">0.4</span></p>
+<h2 id="append"><a href="#append" class="headerlink" title="append"></a><code>append</code></h2><p>Attribute <code>append</code> do not have data-binding. It won’t change the final rendering effect. But it determines whether this component should be rendered as a whole tree or a single node with child nodes appended after.</p>
+<p><code>append</code> has two key attributes, <code>tree</code> and <code>node</code>, the usage is:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">container</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">container</span> <span class="attr">id</span>=<span class="string">"world"</span> <span class="attr">append</span>=<span class="string">"tree"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">text</span>&gt;</span>Hello World!<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">container</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">container</span> <span class="attr">id</span>=<span class="string">"weex"</span> <span class="attr">append</span>=<span class="string">"node"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">text</span>&gt;</span>Hello Weex!<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">container</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">container</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>In the code snippet above, the element with id ‘world’ will wait for all its children to be rendered then it will be rendered entirely, while the element with id ‘weex’ will only render itself to the page, then its child elements will be rendered to page one by one.</p>
+<p>The rendering result is obvious, The latter statement will render the element a bit faster on the first-paint, but the total time might be longger than <code>append=&quot;tree&quot;</code> case.</p>
+<p>By default, elements are rendered as <code>node</code> mode. Once an element is in <code>tree</code> rendering mode, its children elements will always be rendered in <code>tree</code> mode.</p>
+<p>Next we will introduce <a href="./composed-component.md">composed component</a>.</p>
+
+  </div>
+</article>
+</div>
+  <script>window.PAGE_TYPE = "guide"</script>
+  <footer id="footer">
+  <div class="row clearfix">
+    <div class="ali-logo">
+      <img src="/weex-website//images/ali-open-source.png" alt="Alibaba">
+    </div>
+    <div class="dropdown select-lang">
+      <a href="javascript:;" class="dropdown-toggle">
+        Language
+        <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu">
+        <li>
+          <a href="/zh-cn">Chine</a>
+        </li>
+        <li>
+          <a href="/">English</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <p><span>Released under </span><a href="">Apache License 2.0</a></p>
+  </div>
+  <div class="row clearfix">
+    <div class="cell"><span>Copyright(c) 2016 </span><a href="https://www.alibaba.com">Alibaba</a></div>
+    <div class="cell"><span>GroupMade by </span><a href="">阿里云UED AX</a></div>
+    <div class="cell"><span>Proudly Produced by </span><a href="https://baichuan.taobao.com/">Alibaichuan</a> <span class="iconfont icon-baichuan"></span></div>
+  </div>
+</footer>
+  
+
+<!--<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>-->
+
+
+  <script src="/weex-website/js/velocity.js"></script>
+  <script src="/weex-website/js/common.js"></script>
+</body>
+</html>

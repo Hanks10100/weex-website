@@ -6,48 +6,26 @@
 ***********************/
 #sidebar {
   display: none;
-  width: 100%;
   height: 100%;
+  width: 220px;
   position: fixed;
   top: 0;
-  right: 0;
-  bottom: 0;
   left: 0;
-  z-index: 99999;
-  padding: 80px 40px;
+  z-index: 999;
+  padding: 90px 20px 10px;
+  background: #fff;
+  box-shadow: -3px 0 20px rgba(0, 0, 0, 0.2);
   overflow: hidden; }
-  #sidebar ul, #sidebar li, #sidebar ol {
-    margin: 0;
-    padding: 0;
-    list-style-type: none; }
-  #sidebar .sidebar-backdrop {
-    display: none;
-    overflow: hidden;
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 9;
-    background: rgba(0, 0, 0, 0.7); }
   #sidebar .sidebar-menu {
-    width: 390px;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    right: 0;
-    background: #fff;
     z-index: 999;
-    padding: 80px 40px;
-    overflow-y: scroll;
-    transform: translateX(390px); }
+    overflow-y: auto; }
     #sidebar .sidebar-menu .btn-close-sidebar {
       cursor: pointer;
       display: block;
       font-size: 1.5em;
       position: absolute;
       top: 18px;
-      right: 18px;
+      left: 18px;
       background: transparent;
       border: none; }
       #sidebar .sidebar-menu .btn-close-sidebar:hover {
@@ -63,19 +41,21 @@
       color: #333; }
       #sidebar .main-nav a:hover {
         border-bottom: 0.2em solid #00BDFF; }
-  #sidebar .summary li {
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis; }
-  #sidebar .summary h3, #sidebar .summary h4, #sidebar .summary a {
-    height: 30px;
-    line-height: 30px;
-    margin: 0; }
-  #sidebar .summary h3 {
-    font-size: 1em;
-    font-weight: 600;
-    color: #333; }
-  #sidebar .summary h4 {
-    font-size: 1em;
-    color: #333;
-    margin: 0; }
+  #sidebar .summary {
+    display: block; }
+    #sidebar .summary li {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis; }
+    #sidebar .summary h3, #sidebar .summary h4, #sidebar .summary a {
+      height: 30px;
+      line-height: 30px;
+      margin: 0; }
+    #sidebar .summary h3 {
+      font-size: 1em;
+      font-weight: 600;
+      color: #333; }
+    #sidebar .summary h4 {
+      font-size: 1em;
+      color: #333;
+      margin: 0; }

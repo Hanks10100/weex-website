@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Find an Element | Weex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Find an Element0.4
+In Weex, we may set the id property for a particular element, just as unique identification of a particular element.
+id can be used by this.$el(id) to find an element with a certain">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Find an Element">
+<meta property="og:url" content="http://alibaba.github.io/guide/syntax/id.html">
+<meta property="og:site_name" content="Weex">
+<meta property="og:description" content="Find an Element0.4
+In Weex, we may set the id property for a particular element, just as unique identification of a particular element.
+id can be used by this.$el(id) to find an element with a certain">
+<meta property="og:updated_time" content="2016-12-19T13:27:41.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Find an Element">
+<meta name="twitter:description" content="Find an Element0.4
+In Weex, we may set the id property for a particular element, just as unique identification of a particular element.
+id can be used by this.$el(id) to find an element with a certain">
+  
+    <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/weex-website/css/style.css">
+  <link rel="stylesheet" href="/weex-website/css/swiper.min.css">
+  
+
+</head>
+
+<body id="guide">
+  
+  <header id="header">
+  <div class="navbar">
+    <a id="logo" href="/">
+      <img src="/weex-website//images/logo.png" />
+    </a>
+    <div class="main-nav">
+      <ul class="links">
+        <li><a href="/weex-website/guide">Guide</a></li>
+        <li><a href="/weex-website/reference">Reference</a></li>
+        <li><a href="/weex-website/FAQ">FAQ</a></li>
+        <li><a href="/weex-website/download">Download</a></li>
+      </ul>
+      <ul class="info">
+        <li><a href="https://github.com/alibaba/weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+      </ul>
+      <ul class="tools">
+        <li><a class="btn-search"><span class="iconfont icon-search"></span></a></li>
+        <!--<li></li>-->
+      </ul>
+    </div>
+  </div>
+  <div id="mobile-nav">
+    <a id="logo" href="/">
+      <img src="/weex-website//images/logo.png" />
+    </a>
+    <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
+  </div>
+</header>
+  <div id="sidebar" class="">
+  <div class="sidebar-menu">
+    
+      <div class="summary">
+  <h2 class="part-title">Guide</h2>  
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+   
+    
+      <li>
+        <h3 class="chapter-title"><a href="/weex-website/guide/index.html" class="sidebar-link  ">Tutorial</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/weex-website/guide/syntax/index.html" class="sidebar-link  ">Syntax</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/weex-website/guide/syntax/data-binding.html" class="sidebar-link  ">Data-Binding</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/syntax/style-n-class.html" class="sidebar-link  ">Style & Class</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/syntax/events.html" class="sidebar-link  ">Events</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/syntax/display-logic.html" class="sidebar-link  ">Display Logic Control</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/syntax/render-logic.html" class="sidebar-link  ">Render Logic Control</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/syntax/composed-component.html" class="sidebar-link  ">Composed Component</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/syntax/id.html" class="sidebar-link current ">Find an Element</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/syntax/comm.html" class="sidebar-link  ">Communications</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/syntax/config-n-data.html" class="sidebar-link  ">Page Config & Data</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+</div>
+    
+    <a class="btn-close-sidebar iconfont  icon-close"></a>
+  </div>
+</div>
+  <div class="article-wrapper">
+  <div class="left-nav">
+    <div class="summary">
+  <h2 class="part-title">Guide</h2>  
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+   
+    
+      <li>
+        <h3 class="chapter-title"><a href="/weex-website/guide/index.html" class="sidebar-link  ">Tutorial</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/weex-website/guide/syntax/index.html" class="sidebar-link  ">Syntax</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/weex-website/guide/syntax/data-binding.html" class="sidebar-link  ">Data-Binding</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/syntax/style-n-class.html" class="sidebar-link  ">Style & Class</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/syntax/events.html" class="sidebar-link  ">Events</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/syntax/display-logic.html" class="sidebar-link  ">Display Logic Control</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/syntax/render-logic.html" class="sidebar-link  ">Render Logic Control</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/syntax/composed-component.html" class="sidebar-link  ">Composed Component</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/syntax/id.html" class="sidebar-link current ">Find an Element</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/syntax/comm.html" class="sidebar-link  ">Communications</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/syntax/config-n-data.html" class="sidebar-link  ">Page Config & Data</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+</div>
+  </div>
+  <article id="page-undefined" class="article article-type-guide">
+  <div class="article-entry" itemprop="articleBody">
+    <div class="article-meta">
+      <time class="article-date" datetime="2016-12-19T13:27:41.000Z">Updated time: 19/12/2016</time>
+    </div>
+    <h1 id="Find-an-Element"><a href="#Find-an-Element" class="headerlink" title="Find an Element"></a>Find an Element</h1><p><span class="weex-version">0.4</span></p>
+<p>In Weex, we may set the <code>id</code> property for a particular element, just as unique identification of a particular element.</p>
+<p><code>id</code> can be used by <code>this.$el(id)</code> to find an element with a certain id. Take the API <a href="../modules/dom.md#scrolltoelementnode-options"><code>scrollToElement()</code></a> For example:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">&lt;template&gt;</div><div class="line">  &lt;container&gt;</div><div class="line">    &lt;text id=&quot;top&quot;&gt;Top&lt;/text&gt;</div><div class="line">    &lt;container style=&quot;height: 10000; background-color: #999999;&quot;&gt;</div><div class="line">    &lt;/container&gt;</div><div class="line">    &lt;text onclick=&quot;back2Top&quot;&gt;Back to Top&lt;/text&gt;</div><div class="line">  &lt;/container&gt;</div><div class="line">&lt;/template&gt;</div><div class="line">&lt;script&gt;</div><div class="line">  var dom = require(&apos;@weex-module/dom&apos;)</div><div class="line">  module.exports = &#123;</div><div class="line">    methods: &#123;</div><div class="line">      back2Top: function () &#123;</div><div class="line">        var top = this.$el(&apos;top&apos;)</div><div class="line">        dom.scrollToElement(top)</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  &lt;/script&gt;</div></pre></td></tr></table></figure>
+<p><code>id</code> can also work with <code>repeat</code> attribute <a href="./display-logic.md">See more about display logical control</a>, and ensure repetitive elements with different <code>id</code>:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">&lt;template&gt;</div><div class="line">  &lt;container&gt;</div><div class="line">    &lt;image id=&quot;&#123;&#123;imgId&#125;&#125;&quot; src=&quot;&#123;&#123;imgUrl&#125;&#125;&quot; onclick=&quot;getImageId&quot; repeat=&quot;&#123;&#123;images&#125;&#125;&quot;&gt;&lt;/image&gt;</div><div class="line">  &lt;/container&gt;</div><div class="line">&lt;/template&gt;</div><div class="line">&lt;script&gt;</div><div class="line">module.exports = &#123;</div><div class="line">  data: &#123;</div><div class="line">    images: [</div><div class="line">      &#123;imgId: 1, imgUrl: &apos;...&apos;&#125;,</div><div class="line">      &#123;imgId: 2, imgUrl: &apos;...&apos;&#125;,</div><div class="line">      &#123;imgId: 3, imgUrl: &apos;...&apos;&#125;,</div><div class="line">      ...</div><div class="line">    ]</div><div class="line">  &#125;,</div><div class="line">  methods: &#123;</div><div class="line">    getImageId: function(e) &#123;</div><div class="line">      // get e.target.id</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<p>Additionally, in the <a href="./composed-component.md">composed components</a>, we can get the corresponding sub component through <code>this.$vm(id)</code> APIs.</p>
+<p>Next is how to <a href="./comm.md">send messages between composed components</a>.</p>
+
+  </div>
+</article>
+</div>
+  <script>window.PAGE_TYPE = "guide"</script>
+  <footer id="footer">
+  <div class="row clearfix">
+    <div class="ali-logo">
+      <img src="/weex-website//images/ali-open-source.png" alt="Alibaba">
+    </div>
+    <div class="dropdown select-lang">
+      <a href="javascript:;" class="dropdown-toggle">
+        Language
+        <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu">
+        <li>
+          <a href="/zh-cn">Chine</a>
+        </li>
+        <li>
+          <a href="/">English</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <p><span>Released under </span><a href="">Apache License 2.0</a></p>
+  </div>
+  <div class="row clearfix">
+    <div class="cell"><span>Copyright(c) 2016 </span><a href="https://www.alibaba.com">Alibaba</a></div>
+    <div class="cell"><span>GroupMade by </span><a href="">阿里云UED AX</a></div>
+    <div class="cell"><span>Proudly Produced by </span><a href="https://baichuan.taobao.com/">Alibaichuan</a> <span class="iconfont icon-baichuan"></span></div>
+  </div>
+</footer>
+  
+
+<!--<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>-->
+
+
+  <script src="/weex-website/js/velocity.js"></script>
+  <script src="/weex-website/js/common.js"></script>
+</body>
+</html>
