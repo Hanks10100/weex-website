@@ -1,5 +1,5 @@
 <div class="summary">
-  <h2 class="part-title"><%- type.charAt(0).toUpperCase() + type.slice(1) %></h2>  
+  <h2 class="part-title"><%- type && (type.charAt(0).toUpperCase() + type.slice(1)) %></h2>  
   <ul class="doc-summary">
     <% var pagesArr = site.pages.find({type: type}).sort('order') %>
     <% var pages = [] %>
