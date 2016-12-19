@@ -33,7 +33,10 @@
         color: #777; }
   #sidebar .main-nav {
     border-bottom: 1px solid #DDDDDD;
-    overflow: hidden; }
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    list-style-type: none; }
     #sidebar .main-nav li {
       margin-bottom: 25px; }
     #sidebar .main-nav a {
