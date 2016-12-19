@@ -1,0 +1,39 @@
+@import "../variable.scss";
+
+.summary {
+
+  ul, li , ol {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+
+  a {
+    &.current {
+      /*border: none;*/
+      /*color: $text-blue;*/
+    }
+    &:hover {
+      color: $text-blue;
+    }
+  }
+
+  h2.part-title {
+    font-size: 1.5em;
+  }
+    
+  h3.chapter-title {
+    font-size: 1.2em;
+  }
+    
+  ul.chapter {
+    margin-left: 20px;
+    li {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;    
+      padding-bottom: 15px;
+    }
+  }
+
+}

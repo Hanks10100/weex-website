@@ -1,6 +1,7 @@
 @import "variable.scss";
 
-@media screen and (max-width: 1300px) {
+
+@media screen and (max-width: $article-max-width) {
   .article {
     img[alt="mobile_preview"] {
       position: static !important;
@@ -8,7 +9,17 @@
   }
 }
 
+@media screen and (max-width: $article-max-width) and (min-width: $content-max-width) {
+ /*.article-wrapper .article {
+   margin-left: 215px;
+ }*/
+}
+
 @media screen and (max-width: $content-max-width) {
+
+  /***********************************************
+   * Global
+   **********************************************/
   body {
     user-select: none;
     font-size: 13px;
@@ -16,15 +27,20 @@
 
   #header {
     .navbar {
-      padding: 0 20px;
-    }
-    
-    .links {
       display: none !important;
     }
 
-    .info {
-      display: none !important;
+    #mobile-nav {
+      display: flex;
+    }
+  }
+
+  #sidebar {
+    display: block !important;
+    transform: translateX(-230px);
+    transition: all .3s ease;
+    &.open {
+      transform: translateX(0);
     }
   }
 
@@ -32,6 +48,9 @@
     padding: 0 20px;
   }
 
+  /***********************************************
+   * Index
+   **********************************************/
   .edge .scene-container .sketch-content {
     flex-direction: column; 
     align-items: center;
@@ -56,10 +75,24 @@
   .feedback .scene-container .textbox {
     flex: 1;
   }
+
+  /***********************************************
+   * Post
+   **********************************************/
+  .summary {
+    display: none;
+  }
+  
+  .article-wrapper .article {
+    margin-left: 0;
+  }
 }
 
 @media screen and (max-width: 700px) {
 
+  /***********************************************
+   * Index
+   **********************************************/
   .scene.overlength {
     height: auto;
     min-height: calc(100% - 72px);
