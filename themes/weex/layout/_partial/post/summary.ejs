@@ -1,7 +1,7 @@
 <div class="summary">
   <h2 class="part-title"><%- type && (type.charAt(0).toUpperCase() + type.slice(1)) %></h2>  
   <ul class="doc-summary">
-    <% var pagesArr = site.pages.find({type: type}).sort('order') %>
+    <% var pagesArr = site.pages.find({type: type, lang: page.lang}).sort('order') %>
     <% var pages = [] %>
     <% pagesArr.each(function (item) { %>
       <% var i = Math.floor(item.order) - 1 %>
@@ -14,12 +14,12 @@
    
     <% pages.forEach(function (item, index) { %>
       <li>
-        <h3 class="chapter-title"><a href="/weex-website/<%- item[0].path %>" class="sidebar-link <%- is_current(item[0].path, 'strict') ? 'current' : '' %> <%- item[0].is_new ? 'new' : '' %>"><%- item[0].title %></a></h3>
+        <h3 class="chapter-title"><a href="<%= url_for(item[0].path) %>" class="sidebar-link <%- is_current(item[0].path, 'strict') ? 'current' : '' %> <%- item[0].is_new ? 'new' : '' %>"><%- item[0].title %></a></h3>
         <% if (item.length > 1) { %>
           <ul class="chapter">
             <% for (var i = 1; i < item.length; i++) { %>
               <li>
-                <a href="/weex-website/<%- item[i].path %>" class="sidebar-link <%- is_current(item[i].path) ? 'current' : '' %> <%- item[i].is_new ? 'new' : '' %>"><%- item[i].title %></a>
+                <a href="<%= url_for(item[i].path) %>" class="sidebar-link <%- is_current(item[i].path) ? 'current' : '' %> <%- item[i].is_new ? 'new' : '' %>"><%- item[i].title %></a>
               </li>
             <% } %>
           </ul>

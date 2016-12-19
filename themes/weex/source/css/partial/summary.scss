@@ -19,15 +19,18 @@
   }
 
   h2.part-title {
-    font-size: 1.5em;
+    color: $text-blue;
+    font-size: 1.2em;
+    font-weight: 600;
   }
     
   h3.chapter-title {
-    font-size: 1.2em;
+    font-size: 1.1em;
+    font-weight: 600;
   }
     
   ul.chapter {
-    margin-left: 20px;
+    margin-left: 15px;
     li {
       white-space: nowrap;
       overflow: hidden;

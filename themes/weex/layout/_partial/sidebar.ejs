@@ -3,32 +3,27 @@
     <% if (page_type === 'index') { %>
       <ul class="main-nav">
         <li>
-          <a class="" href="/weex-website/guide/index.html">
+          <a class="" href="<%- url_for('guide') %>">
             <%= _p('index.guide') %>
           </a>
         </li>
         <li>
-          <a class="" href="/weex-website/reference/index.html">
+          <a class="" href="<%= url_for('reference') %>">
             <%= _p('index.reference') %>
           </a>
         </li>
         <li>
-          <a href="/weex-website/faq">
+          <a href="<%= url_for('faq') %>">
             <%= _p('index.faq') %>
           </a>
         </li>
         <li>
-          <a href="/weex-website/download">
+          <a href="<%= url_for('download') %>">
             <%= _p('index.download') %>
           </a>
         </li>
         <li>
-          <a href="https://baichuan.taobao.com/" target="_blank">
-            <%= _p('index.baichuan') %>
-          </a>
-        </li>
-        <li>
-          <a href="https://github.com/alibaba/weex-website/" target="_blank">
+          <a href="https://github.com/alibaba/weex" target="_blank">
             <%= _p('index.github') %>
           </a>
         </li>

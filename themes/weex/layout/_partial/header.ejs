@@ -1,14 +1,14 @@
 <header id="header">
   <div class="navbar">
-    <a id="logo" href="/">
-      <img src="<%= config.root %>/images/logo.png" />
+    <a id="logo" href="<%= config.root %>">
+      <img src="<%= config.root %>images/logo.png" />
     </a>
     <div class="main-nav">
       <ul class="links">
-        <li><a href="/weex-website/guide"><%= _p('index.guide') %></a></li>
-        <li><a href="/weex-website/reference"><%= _p('index.reference') %></a></li>
-        <li><a href="/weex-website/FAQ"><%= _p('index.faq') %></a></li>
-        <li><a href="/weex-website/download"><%= _p('index.download') %></a></li>
+        <li><a href="<%= url_for('guide') %>"><%= _p('index.guide') %></a></li>
+        <li><a href="<%= url_for('reference') %>"><%= _p('index.reference') %></a></li>
+        <li><a href="<%= url_for('FAQ') %>"><%= _p('index.faq') %></a></li>
+        <li><a href="<%= url_for('download') %>"><%= _p('index.download') %></a></li>
       </ul>
       <ul class="info">
         <li><a href="https://github.com/alibaba/weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
@@ -21,7 +21,7 @@
   </div>
   <div id="mobile-nav">
     <a id="logo" href="/">
-      <img src="<%= config.root %>/images/logo.png" />
+      <img src="<%= config.root %>images/logo.png" />
     </a>
     <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
   </div>
