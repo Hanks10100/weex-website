@@ -17,13 +17,16 @@
   color: #00BDFF; }
 
 .summary h2.part-title {
-  font-size: 1.5em; }
+  color: #00BDFF;
+  font-size: 1.2em;
+  font-weight: 600; }
 
 .summary h3.chapter-title {
-  font-size: 1.2em; }
+  font-size: 1.1em;
+  font-weight: 600; }
 
 .summary ul.chapter {
-  margin-left: 20px; }
+  margin-left: 15px; }
   .summary ul.chapter li {
     white-space: nowrap;
     overflow: hidden;

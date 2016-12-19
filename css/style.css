@@ -276,23 +276,28 @@ a.current {
       #sidebar .main-nav a:hover {
         border-bottom: 0.2em solid #00BDFF; }
   #sidebar .summary {
-    display: block; }
+    display: block;
+    /*h3, h4, a {
+      height: 30px;
+      line-height: 30px;
+      margin: 0;
+    }
+
+    h3 {
+      font-size: 1em;
+      font-weight: 600;
+      color: $text-black;
+    }
+
+    h4 {
+      font-size: 1em;
+      color: $text-black;
+      margin: 0;
+    }*/ }
     #sidebar .summary li {
       overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis; }
-    #sidebar .summary h3, #sidebar .summary h4, #sidebar .summary a {
-      height: 30px;
-      line-height: 30px;
-      margin: 0; }
-    #sidebar .summary h3 {
-      font-size: 1em;
-      font-weight: 600;
-      color: #333; }
-    #sidebar .summary h4 {
-      font-size: 1em;
-      color: #333;
-      margin: 0; }
 
 /***********************
 * Variable
@@ -833,13 +838,16 @@ pre .javascript .function, pre .keyword {
   color: #00BDFF; }
 
 .summary h2.part-title {
-  font-size: 1.5em; }
+  color: #00BDFF;
+  font-size: 1.2em;
+  font-weight: 600; }
 
 .summary h3.chapter-title {
-  font-size: 1.2em; }
+  font-size: 1.1em;
+  font-weight: 600; }
 
 .summary ul.chapter {
-  margin-left: 20px; }
+  margin-left: 15px; }
   .summary ul.chapter li {
     white-space: nowrap;
     overflow: hidden;
@@ -899,7 +907,7 @@ pre .javascript .function, pre .keyword {
   /***********************************************
    * Post
    **********************************************/
-  .summary {
+  .article-wrapper .left-nav {
     display: none; }
   .article-wrapper .article {
     margin-left: 0; } }

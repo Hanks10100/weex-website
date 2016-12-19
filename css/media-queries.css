@@ -51,7 +51,7 @@
   /***********************************************
    * Post
    **********************************************/
-  .summary {
+  .article-wrapper .left-nav {
     display: none; }
   .article-wrapper .article {
     margin-left: 0; } }
