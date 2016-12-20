@@ -7,7 +7,7 @@
 #sidebar {
   display: none;
   height: 100%;
-  width: 220px;
+  width: 300px;
   position: fixed;
   top: 0;
   left: 0;
@@ -15,7 +15,9 @@
   padding: 90px 20px 10px;
   background: #fff;
   box-shadow: -3px 0 20px rgba(0, 0, 0, 0.2);
-  overflow: hidden; }
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch; }
   #sidebar .sidebar-menu {
     z-index: 999;
     overflow-y: auto; }
@@ -45,25 +47,4 @@
       #sidebar .main-nav a:hover {
         border-bottom: 0.2em solid #00BDFF; }
   #sidebar .summary {
-    display: block;
-    /*h3, h4, a {
-      height: 30px;
-      line-height: 30px;
-      margin: 0;
-    }
-
-    h3 {
-      font-size: 1em;
-      font-weight: 600;
-      color: $text-black;
-    }
-
-    h4 {
-      font-size: 1em;
-      color: $text-black;
-      margin: 0;
-    }*/ }
-    #sidebar .summary li {
-      overflow: hidden;
-      white-space: nowrap;
-      text-overflow: ellipsis; }
+    display: block; }

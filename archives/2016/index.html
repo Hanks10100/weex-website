@@ -59,55 +59,93 @@
   <div id="sidebar" class="">
   <div class="sidebar-menu">
     
-      <div class="summary">
-  <h2 class="part-title">Archives/2016/index</h2>  
-  <ul class="doc-summary">
-    
-    
-    
-   
-    
-  </ul>
-</div>
+      <ul class="main-nav">
+        <li>
+          <a class="" href="/weex-website/guide">
+            Guide
+          </a>
+        </li>
+        <li>
+          <a class="" href="/weex-website/reference">
+            Reference
+          </a>
+        </li>
+        <li>
+          <a href="/weex-website/faq">
+            FAQ
+          </a>
+        </li>
+        <li>
+          <a href="/weex-website/download">
+            Download
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/alibaba/weex" target="_blank">
+            Github
+          </a>
+        </li>
+      </ul>
     
     <a class="btn-close-sidebar iconfont  icon-close"></a>
   </div>
 </div>
-  
-  
+  <div class="blog-wrapper">
+  <div class="archives">
   
     
+      <article class="blog-article blog-type-post">
+  <div class="blog-article-inner">
+    <header class="article-header">
+  
     
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/weex-website/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
+      <h1 itemprop="name">
+        <a class="article-title" href="/weex-website/2016/12/20/co/">Child-Parent Communication</a>
+      </h1>
     
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/weex-website/2016/12/19/hello_world/" class="archive-article-date">
   
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/weex-website/2016/12/19/hello_world/">Hello World</a>
-    </h1>
-  
-
-    </header>
+  <time class="article-date" datetime="2016-12-20T06:36:23.000Z">Updated time: 20/12/2016</time>
+</header>
+    
+      <div class="article-excerpt article">
+        <h1 id="Hello-world"><a href="#Hello-world" class="headerlink" title="Hello world"></a>Hello world</h1><p><span class="weex-version">0.4</span></p>
+<h2 id="For-Child-Parent-Communication"><a href="#For-Child-Parent-Communication" class="headerlink" title="For Child-Parent Communication"></a>For Child-Parent Communication</h2><p>Children component can use <code>this.$dispatch([String type], [Object detail])</code> method passing information to parent component. first argument meaning type of message , second argument is the message object. If any parent of the child component register the same type of listener using <code>$on([String type], [Function callback])</code> method , the callback will be execute with one argument , the message object will be <code>detail</code> property of the the argument.</p>
+<p>eg:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">we-element</span> <span class="attr">name</span>=<span class="string">"foo"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">image</span> <span class="attr">src</span>=<span class="string">"&#123;&#123;imageUrl&#125;&#125;"</span> <span class="attr">onclick</span>=<span class="string">"test"</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">text</span>&gt;</span>&#123;&#123;title&#125;&#125;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></div><div class="line">    module.exports = &#123;</div><div class="line">      data: &#123;</div><div class="line">        title: '',</div><div class="line">        imageUrl: ''</div><div class="line">      &#125;,</div><div class="line">      methods: &#123;</div><div class="line">        test: function () &#123;</div><div class="line">          this.$dispatch('notify', &#123;a: 1&#125;)</div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">we-element</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">foo</span> <span class="attr">title</span>=<span class="string">"..."</span> <span class="attr">image-url</span>=<span class="string">"..."</span>&gt;</span><span class="tag">&lt;/<span class="name">foo</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="xml"></div><div class="line">  module.exports = &#123;</div><div class="line">    created: function () &#123;</div><div class="line">      this.$on('notify', function(e) &#123;</div><div class="line">        //  when <span class="tag">&lt;<span class="name">foo</span>&gt;</span> image tag  be clicked ,the function will be executing.</div><div class="line">        // e.detail is  `&#123;a: 1&#125;`</div><div class="line">      &#125;)</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+      </div>
+      <a href="/weex-website/2016/12/20/co/" class="more-link">Read more...</a>
+    
   </div>
 </article>
+    
+      <article class="blog-article blog-type-post">
+  <div class="blog-article-inner">
+    <header class="article-header">
+  
+    
+      <h1 itemprop="name">
+        <a class="article-title" href="/weex-website/2016/12/19/hello_world/">Hello World</a>
+      </h1>
+    
+  
+  <time class="article-date" datetime="2016-12-19T14:16:52.000Z">Updated time: 19/12/2016</time>
+</header>
+    
+      <div class="article-excerpt article">
+        <h1 id="Hello-world"><a href="#Hello-world" class="headerlink" title="Hello world"></a>Hello world</h1><p><span class="weex-version">0.4</span></p>
+<h2 id="For-Child-Parent-Communication"><a href="#For-Child-Parent-Communication" class="headerlink" title="For Child-Parent Communication"></a>For Child-Parent Communication</h2><p>Children component can use <code>this.$dispatch([String type], [Object detail])</code> method passing information to parent component. first argument meaning type of message , second argument is the message object. If any parent of the child component register the same type of listener using <code>$on([String type], [Function callback])</code> method , the callback will be execute with one argument , the message object will be <code>detail</code> property of the the argument.</p>
+<p>eg:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">we-element</span> <span class="attr">name</span>=<span class="string">"foo"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">image</span> <span class="attr">src</span>=<span class="string">"&#123;&#123;imageUrl&#125;&#125;"</span> <span class="attr">onclick</span>=<span class="string">"test"</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">text</span>&gt;</span>&#123;&#123;title&#125;&#125;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></div><div class="line">    module.exports = &#123;</div><div class="line">      data: &#123;</div><div class="line">        title: '',</div><div class="line">        imageUrl: ''</div><div class="line">      &#125;,</div><div class="line">      methods: &#123;</div><div class="line">        test: function () &#123;</div><div class="line">          this.$dispatch('notify', &#123;a: 1&#125;)</div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">we-element</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">foo</span> <span class="attr">title</span>=<span class="string">"..."</span> <span class="attr">image-url</span>=<span class="string">"..."</span>&gt;</span><span class="tag">&lt;/<span class="name">foo</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="xml"></div><div class="line">  module.exports = &#123;</div><div class="line">    created: function () &#123;</div><div class="line">      this.$on('notify', function(e) &#123;</div><div class="line">        //  when <span class="tag">&lt;<span class="name">foo</span>&gt;</span> image tag  be clicked ,the function will be executing.</div><div class="line">        // e.detail is  `&#123;a: 1&#125;`</div><div class="line">      &#125;)</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+      </div>
+      <a href="/weex-website/2016/12/19/hello_world/" class="more-link">Read more...</a>
+    
+  </div>
+</article>
+    
   
   
-    </div></section>
-  
-
-
+</div>
+</div>
   <script>window.PAGE_TYPE = "archives/2016/index"</script>
   <footer id="footer">
   <div class="row clearfix">

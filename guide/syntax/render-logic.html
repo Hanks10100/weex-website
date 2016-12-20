@@ -185,8 +185,8 @@ appendAttribute append do not have data-binding. It won’t change the final ren
     <a class="btn-close-sidebar iconfont  icon-close"></a>
   </div>
 </div>
-  <div class="article-wrapper">
-  <div class="left-nav">
+  <div class="article-wrapper page-layout">
+  <div class="doc-nav">
     <div class="summary">
   <h2 class="part-title">Guide</h2>  
   <ul class="doc-summary">
@@ -303,11 +303,20 @@ appendAttribute append do not have data-binding. It won’t change the final ren
   </ul>
 </div>
   </div>
-  <article id="page-undefined" class="article article-type-guide">
+  
+
+<article id="page-undefined" class="article article-type-guide">
   <div class="article-entry" itemprop="articleBody">
-    <div class="article-meta">
-      <time class="article-date" datetime="2016-12-19T13:28:13.000Z">Updated time: 19/12/2016</time>
-    </div>
+    <header class="article-header">
+  
+    
+      <h1 class="article-title" itemprop="name">
+        Render Logic Control
+      </h1>
+    
+  
+  <time class="article-date" datetime="2016-12-19T13:28:13.000Z">Updated time: 19/12/2016</time>
+</header>
     <h1 id="Render-Logic-Control"><a href="#Render-Logic-Control" class="headerlink" title="Render Logic Control"></a>Render Logic Control</h1><p><span class="weex-version">0.4</span></p>
 <h2 id="append"><a href="#append" class="headerlink" title="append"></a><code>append</code></h2><p>Attribute <code>append</code> do not have data-binding. It won’t change the final rendering effect. But it determines whether this component should be rendered as a whole tree or a single node with child nodes appended after.</p>
 <p><code>append</code> has two key attributes, <code>tree</code> and <code>node</code>, the usage is:</p>
@@ -318,6 +327,7 @@ appendAttribute append do not have data-binding. It won’t change the final ren
 <p>Next we will introduce <a href="./composed-component.md">composed component</a>.</p>
 
   </div>
+  
 </article>
 </div>
   <script>window.PAGE_TYPE = "guide"</script>

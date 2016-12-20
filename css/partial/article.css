@@ -4,3 +4,44 @@
 /***********************
 * Mixin
 ***********************/
+.article {
+  max-width: 900px;
+  margin: 120px 0 90px 300px;
+  position: relative;
+  line-height: 1.8;
+  /*img[alt="mobile_preview"] {
+    position: absolute;
+    left: 900px;
+    width: 200px;
+  }*/ }
+  .article.article-type-article {
+    margin-left: 0; }
+  .article h2 {
+    font-size: 1.75em;
+    margin: 1.7em 0 .5em; }
+  .article h3 {
+    font-size: 1.5em;
+    margin: 1.7em 0 .5em; }
+  .article h4 {
+    font-size: 1.25em;
+    margin: 1.7em 0 .5em; }
+  .article h5 {
+    font-size: 1.1em;
+    margin: 1.7em 0 .5em; }
+  .article a {
+    color: #4078c0; }
+    .article a:hover {
+      text-decoration: underline; }
+  .article .weex-version {
+    display: inline-block;
+    padding: .3em .8em;
+    color: #fff;
+    background: #23CEFD;
+    border-radius: 2em;
+    line-height: 1.2;
+    position: absolute;
+    top: 15px;
+    right: 20px; }
+
+#blog .article {
+  margin-left: 0; }

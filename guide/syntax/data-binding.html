@@ -185,8 +185,8 @@ In Weex, we use the mustache syntax {{...}} to bind data in &amp;lt;template&amp
     <a class="btn-close-sidebar iconfont  icon-close"></a>
   </div>
 </div>
-  <div class="article-wrapper">
-  <div class="left-nav">
+  <div class="article-wrapper page-layout">
+  <div class="doc-nav">
     <div class="summary">
   <h2 class="part-title">Guide</h2>  
   <ul class="doc-summary">
@@ -303,11 +303,20 @@ In Weex, we use the mustache syntax {{...}} to bind data in &amp;lt;template&amp
   </ul>
 </div>
   </div>
-  <article id="page-undefined" class="article article-type-guide">
+  
+
+<article id="page-undefined" class="article article-type-guide">
   <div class="article-entry" itemprop="articleBody">
-    <div class="article-meta">
-      <time class="article-date" datetime="2016-12-19T10:57:17.000Z">Updated time: 19/12/2016</time>
-    </div>
+    <header class="article-header">
+  
+    
+      <h1 class="article-title" itemprop="name">
+        Data-Binding
+      </h1>
+    
+  
+  <time class="article-date" datetime="2016-12-19T10:57:17.000Z">Updated time: 19/12/2016</time>
+</header>
     <h1 id="Data-Binding"><a href="#Data-Binding" class="headerlink" title="Data-Binding"></a>Data-Binding</h1><p><span class="weex-version">0.4</span></p>
 <p>In Weex, we use the <em>mustache</em> syntax <code>{{...}}</code> to bind data in <code>&lt;template&gt;</code> which are defined in <code>&lt;script&gt;</code>. Once data and template is bound, the data changes will influence the corresponding template content immediately and automatically.</p>
 <h2 id="Binding-data-path"><a href="#Binding-data-path" class="headerlink" title="Binding data path"></a>Binding data path</h2><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">container</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">text</span> <span class="attr">style</span>=<span class="string">"font-size: &#123;&#123;size&#125;&#125;"</span>&gt;</span>&#123;&#123;title&#125;&#125;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">container</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line">  module.exports = &#123;</div><div class="line">    data: &#123;</div><div class="line">      size: 48,</div><div class="line">      title: 'Alibaba Weex Team'</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
@@ -352,6 +361,7 @@ In Weex, we use the mustache syntax {{...}} to bind data in &amp;lt;template&amp
 <p>Next, let’s have a look at <a href="./style-n-class.md">style and class</a>.</p>
 
   </div>
+  
 </article>
 </div>
   <script>window.PAGE_TYPE = "guide"</script>

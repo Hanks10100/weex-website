@@ -69,22 +69,39 @@ A simple Weex page sample is just a piece of &amp;lt;template&amp;">
   <div id="sidebar" class="">
   <div class="sidebar-menu">
     
-      <div class="summary">
-  <h2 class="part-title">Guide/syntax/main</h2>  
-  <ul class="doc-summary">
-    
-    
-    
-   
-    
-  </ul>
-</div>
+      <ul class="main-nav">
+        <li>
+          <a class="" href="/weex-website/guide">
+            Guide
+          </a>
+        </li>
+        <li>
+          <a class="" href="/weex-website/reference">
+            Reference
+          </a>
+        </li>
+        <li>
+          <a href="/weex-website/faq">
+            FAQ
+          </a>
+        </li>
+        <li>
+          <a href="/weex-website/download">
+            Download
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/alibaba/weex" target="_blank">
+            Github
+          </a>
+        </li>
+      </ul>
     
     <a class="btn-close-sidebar iconfont  icon-close"></a>
   </div>
 </div>
-  <div class="article-wrapper">
-  <div class="left-nav">
+  <div class="article-wrapper page-layout">
+  <div class="doc-nav">
     <div class="summary">
   <h2 class="part-title"></h2>  
   <ul class="doc-summary">
@@ -96,11 +113,14 @@ A simple Weex page sample is just a piece of &amp;lt;template&amp;">
   </ul>
 </div>
   </div>
-  <article id="page-undefined" class="article article-type-guide/syntax/main">
+  
+
+<article id="page-undefined" class="article article-type-guide/syntax/main">
   <div class="article-entry" itemprop="articleBody">
-    <div class="article-meta">
-      <time class="article-date" datetime="2016-12-19T13:24:32.000Z">Updated time: 19/12/2016</time>
-    </div>
+    <header class="article-header">
+  
+  <time class="article-date" datetime="2016-12-19T13:24:32.000Z">Updated time: 19/12/2016</time>
+</header>
     <h1 id="Syntax"><a href="#Syntax" class="headerlink" title="Syntax"></a>Syntax</h1><p><span class="weex-version">0.4</span></p>
 <p><em>The syntax of Weex is deeply inspired from <a href="http://vuejs.org/" target="_blank" rel="external">Vue.js</a>, an elegant JavaScript framework with component system and reactive data binding.</em></p>
 <p>A simple Weex page sample is just a piece of <code>&lt;template&gt;</code> code, a piece of <code>&lt;style&gt;</code> code and a piece of <code>&lt;script&gt;</code> code. The three parts together describe a whole Weex page.</p>
@@ -141,6 +161,7 @@ A simple Weex page sample is just a piece of &amp;lt;template&amp;">
 <p>Next, let’s have a look at <a href="./data-binding.md">data-binding</a>.</p>
 
   </div>
+  
 </article>
 </div>
   <script>window.PAGE_TYPE = "guide/syntax/main"</script>

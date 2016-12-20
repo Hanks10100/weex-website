@@ -4,15 +4,6 @@
 /***********************
 * Mixin
 ***********************/
-@media screen and (max-width: 1350px) {
-  .article img[alt="mobile_preview"] {
-    position: static !important; } }
-
-@media screen and (max-width: 1350px) and (min-width: 940px) {
-  /*.article-wrapper .article {
-   margin-left: 215px;
- }*/ }
-
 @media screen and (max-width: 940px) {
   /***********************************************
    * Global
@@ -26,7 +17,7 @@
     display: flex; }
   #sidebar {
     display: block !important;
-    transform: translateX(-230px);
+    transform: translateX(-320px);
     transition: all .3s ease; }
     #sidebar.open {
       transform: translateX(0); }
@@ -51,7 +42,7 @@
   /***********************************************
    * Post
    **********************************************/
-  .article-wrapper .left-nav {
+  .article-wrapper .doc-nav {
     display: none; }
   .article-wrapper .article {
     margin-left: 0; } }
@@ -62,6 +53,7 @@
    **********************************************/
   .scene.overlength {
     height: auto;
+    min-height: 100%;
     min-height: calc(100% - 72px); }
   .horizon .textbox {
     flex: 4; }

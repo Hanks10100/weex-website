@@ -188,8 +188,8 @@ id can be used by this.$el(id) to find an element with a certain">
     <a class="btn-close-sidebar iconfont  icon-close"></a>
   </div>
 </div>
-  <div class="article-wrapper">
-  <div class="left-nav">
+  <div class="article-wrapper page-layout">
+  <div class="doc-nav">
     <div class="summary">
   <h2 class="part-title">Guide</h2>  
   <ul class="doc-summary">
@@ -306,11 +306,20 @@ id can be used by this.$el(id) to find an element with a certain">
   </ul>
 </div>
   </div>
-  <article id="page-undefined" class="article article-type-guide">
+  
+
+<article id="page-undefined" class="article article-type-guide">
   <div class="article-entry" itemprop="articleBody">
-    <div class="article-meta">
-      <time class="article-date" datetime="2016-12-19T13:27:41.000Z">Updated time: 19/12/2016</time>
-    </div>
+    <header class="article-header">
+  
+    
+      <h1 class="article-title" itemprop="name">
+        Find an Element
+      </h1>
+    
+  
+  <time class="article-date" datetime="2016-12-19T13:27:41.000Z">Updated time: 19/12/2016</time>
+</header>
     <h1 id="Find-an-Element"><a href="#Find-an-Element" class="headerlink" title="Find an Element"></a>Find an Element</h1><p><span class="weex-version">0.4</span></p>
 <p>In Weex, we may set the <code>id</code> property for a particular element, just as unique identification of a particular element.</p>
 <p><code>id</code> can be used by <code>this.$el(id)</code> to find an element with a certain id. Take the API <a href="../modules/dom.md#scrolltoelementnode-options"><code>scrollToElement()</code></a> For example:</p>
@@ -321,6 +330,7 @@ id can be used by this.$el(id) to find an element with a certain">
 <p>Next is how to <a href="./comm.md">send messages between composed components</a>.</p>
 
   </div>
+  
 </article>
 </div>
   <script>window.PAGE_TYPE = "guide"</script>

@@ -185,8 +185,8 @@ Weex allow &amp;lt;template&amp;gt; to bind event type and handler on an Element
     <a class="btn-close-sidebar iconfont  icon-close"></a>
   </div>
 </div>
-  <div class="article-wrapper">
-  <div class="left-nav">
+  <div class="article-wrapper page-layout">
+  <div class="doc-nav">
     <div class="summary">
   <h2 class="part-title">Guide</h2>  
   <ul class="doc-summary">
@@ -303,11 +303,20 @@ Weex allow &amp;lt;template&amp;gt; to bind event type and handler on an Element
   </ul>
 </div>
   </div>
-  <article id="page-undefined" class="article article-type-guide">
+  
+
+<article id="page-undefined" class="article article-type-guide">
   <div class="article-entry" itemprop="articleBody">
-    <div class="article-meta">
-      <time class="article-date" datetime="2016-12-19T13:27:48.000Z">Updated time: 19/12/2016</time>
-    </div>
+    <header class="article-header">
+  
+    
+      <h1 class="article-title" itemprop="name">
+        Events
+      </h1>
+    
+  
+  <time class="article-date" datetime="2016-12-19T13:27:48.000Z">Updated time: 19/12/2016</time>
+</header>
     <h1 id="Events"><a href="#Events" class="headerlink" title="Events"></a>Events</h1><p><span class="weex-version">0.4</span></p>
 <p>Weex allow <code>&lt;template&gt;</code> to bind event type and handler on an Element. The attribute name is the event type with prefix <code>on...</code> and the attribute value is handler method name. For instance: <code>onclick=&quot;handler&quot;</code>. e.g.</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">image</span> <span class="attr">onclick</span>=<span class="string">"handler"</span> <span class="attr">...</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line">  module.exports = &#123;</div><div class="line">    methods: &#123;</div><div class="line">      handler: function (e) &#123;</div><div class="line">        // TODO</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
@@ -324,6 +333,7 @@ Weex allow &amp;lt;template&amp;gt; to bind event type and handler on an Element
 <p>Next, let’s have a look at <a href="./display-logic.md">display logic control</a>.</p>
 
   </div>
+  
 </article>
 </div>
   <script>window.PAGE_TYPE = "guide"</script>
