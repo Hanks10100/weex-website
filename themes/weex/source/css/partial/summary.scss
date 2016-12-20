@@ -1,6 +1,9 @@
 @import "../variable.scss";
 
 .summary {
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 
   ul, li , ol {
     margin: 0;
@@ -10,8 +13,8 @@
 
   a {
     &.current {
-      /*border: none;*/
-      /*color: $text-blue;*/
+      border: none;
+      color: $text-blue;
     }
     &:hover {
       color: $text-blue;

@@ -1,13 +1,14 @@
 @import "variable.scss";
 
 .article-wrapper {
+  position: relative;
   width: 100%;
-  max-width: 1330px;
-  margin: auto;
+  max-width: 1200px;
+  margin: 90px auto 0;
 
   .article {
     max-width: 900px;
-    margin: 90px 0 0 220px;
+    margin: 90px 0 0 300px;
     padding: 0 1.4em;
     position: relative;
     line-height: 1.8;
@@ -40,11 +41,11 @@
       margin: 1.7em 0 .5em;
     }
 
-    img[alt="mobile_preview"] {
+    /*img[alt="mobile_preview"] {
       position: absolute;
       left: 900px;
       width: 200px;
-    }
+    }*/
 
     a {
       color: #4078c0;
@@ -75,10 +76,15 @@
   }
 
   .left-nav {
-    float: left;
-    width: 220px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background: $bg-gray;
+    width: 300px;
     z-index: 999;
     padding: 15px;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
   }
 }

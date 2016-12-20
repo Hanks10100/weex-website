@@ -1,20 +1,5 @@
 @import "variable.scss";
 
-
-@media screen and (max-width: $article-max-width) {
-  .article {
-    img[alt="mobile_preview"] {
-      position: static !important;
-    }
-  }
-}
-
-@media screen and (max-width: $article-max-width) and (min-width: $content-max-width) {
- /*.article-wrapper .article {
-   margin-left: 215px;
- }*/
-}
-
 @media screen and (max-width: $content-max-width) {
 
   /***********************************************
@@ -37,7 +22,7 @@
 
   #sidebar {
     display: block !important;
-    transform: translateX(-230px);
+    transform: translateX(-320px);
     transition: all .3s ease;
     &.open {
       transform: translateX(0);
@@ -95,6 +80,7 @@
    **********************************************/
   .scene.overlength {
     height: auto;
+    min-height: 100%;
     min-height: calc(100% - 72px);
   }
 
