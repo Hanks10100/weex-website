@@ -10,6 +10,11 @@
 
 /*POST*/
 @import "post.scss";
+@import "partial/article-title.scss";
+@import "partial/article.scss";
 @import "partial/summary.scss";
+
+/*BLOG*/
+@import "blog.scss";
 
 @import "media-queries.scss";
