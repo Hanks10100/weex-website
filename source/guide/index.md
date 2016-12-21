@@ -79,7 +79,7 @@ Style describes how Weex tags are to be displayed. We prefer CSS very much. So w
 
 Script adds *data* & *logic* to Weex tags, helping you easily access local or remote data and update tags. You can also define some methods for your tag to respond to different events. Weex Script organization learns a lot from CommonJS module style.
 
-More information about Weex syntax can be found in our [Syntax chapter](syntax/main.md).
+More information about Weex syntax can be found in our [Syntax chapter](syntax/main.html).
 
 ## Add More Items
 
@@ -207,6 +207,6 @@ You should see a slider prepend to our list.
 
 ![Third Example](images/tut4.gif)
 
-More information about Slider component can be found [here](components/slider.md).
+More information about Slider component can be found [here](components/slider.html).
 
-Just as the previous example, the slider can be rendered in native, easily in Weex playground, or in your App. Please refer [the document](advanced/integrate-to-android.md) for integrating Weex into your App.
+Just as the previous example, the slider can be rendered in native, easily in Weex playground, or in your App. Please refer [the document](advanced/integrate-to-android.html) for integrating Weex into your App.

@@ -172,4 +172,4 @@ Particularly for the `if` and `repeat` attribute, the [mustache](https://mustach
 
 The two `<text>` components are both displayed.
 
-Next is [render logic control](./render-logic.md).
+Next is [render logic control](./render-logic.html).

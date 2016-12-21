@@ -37,9 +37,11 @@
       display: flex;
       justify-content: space-between;
 
-      ul {
+      & > ul {
         display: flex;
         justify-content: space-between;
+        height: 72px;
+        line-height: 72px;
       }
 
       li a {
@@ -53,7 +55,7 @@
         border-bottom: .2em solid $text-blue;
       }
 
-      li + li {
+      > li + li {
         margin-left: 40px;
       }
     }
@@ -64,6 +66,21 @@
 
     .tools li {
       margin-left: 4em;
+    }
+
+    .dropdown {
+      .dropdown-menu {
+        width: 200px;
+        left: -60%;
+        top: 98%;
+        border: none;
+        padding: 10px 0;
+
+        a {
+          font-size: 1.55em;
+          padding: 5px 10px;
+        }
+      }
     }
   }
 

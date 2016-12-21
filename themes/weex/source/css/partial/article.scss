@@ -30,11 +30,9 @@
     margin: 1.7em 0 .5em;
   }
 
-  /*img[alt="mobile_preview"] {
-    position: absolute;
-    left: 900px;
+  img[alt="mobile_preview"] {
     width: 200px;
-  }*/
+  }
 
   a {
     color: #4078c0;
@@ -57,5 +55,9 @@
 }
 
 #blog .article {
+  margin-left: 0;
+}
+
+#faq .article {
   margin-left: 0;
 }

@@ -107,8 +107,8 @@ The `main.we` uses `<foo-list>` from `foo-list.we`. And `<foo-list>` uses `<foo>
 ## Notes
 
 - Every composed component have an independent `<style>` work scope.
-- If child component have `id` attribute, you can access the context of the child component by `this.$vm(id)` and find an element by `this.$el(id)`. See more about [find an element](./id.md).
-- Please refer to [communicate between components](./comm.md) for more communication issues.
+- If child component have `id` attribute, you can access the context of the child component by `this.$vm(id)` and find an element by `this.$el(id)`. See more about [find an element](./id.html).
+- Please refer to [communicate between components](./comm.html) for more communication issues.
 - The keys must be existed in `data` options **explicitly** if you want to make the data observation work both through inside data changes and outside attribute changes.
 
-Next is how to [find an element](./id.md).
+Next is how to [find an element](./id.html).

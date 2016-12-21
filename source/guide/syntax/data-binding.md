@@ -150,7 +150,7 @@ while style can also get bound with `class` attribute, multiple classnames can b
 
 here if `{{size}}` and `{{status}}` have empty value, then only `class="title"` will be rendered.
 
-* [See more about style and class](./style-n-class.md)
+* [See more about style and class](./style-n-class.html)
 
 ### Event Handler: `on...`
 
@@ -216,7 +216,7 @@ When you modify the length of the Array (`vm.items.length = 0`), it won't trigge
 example2.items = []
 ```
 
-* [See more about display logic control](./display-logic.md)
+* [See more about display logic control](./display-logic.html)
 
 ### `static`
 
@@ -244,5 +244,5 @@ example2.items = []
 As shown above, after the `static` attribute is added, the rendering result will be `Hello, static`, which is equivalent to rendering a static node. The change of the data `word` in ready function will not be listened, so the text value will not change. 
 `static` property is designed to reduce the long list or pure static page memory overhead. Be careful with it, as it will likely break your page logic.
 
-Next, let's have a look at [style and class](./style-n-class.md).
+Next, let's have a look at [style and class](./style-n-class.html).
 

@@ -19,7 +19,7 @@
           <ul class="chapter">
             <% for (var i = 1; i < item.length; i++) { %>
               <li>
-                <a href="<%= url_for(item[i].path) %>" class="sidebar-link <%- is_current(item[i].path) ? 'current' : '' %> <%- item[i].is_new ? 'new' : '' %>"><%- item[i].title %></a>
+                <a href="<%= url_for(item[i].path) %>" class="sidebar-link <%- is_current(item[i].path) ? 'current' : '' %> <%- item[i].is_new ? 'new' : '' %>"><%= item[i].title %></a>
               </li>
             <% } %>
           </ul>

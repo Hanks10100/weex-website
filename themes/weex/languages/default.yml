@@ -1,10 +1,11 @@
 index:
   guide: Guide
-  reference: Reference
+  references: References
   doc: Docs
   faq: FAQ
   showcase: Showcase
   download: Download
+  resources: Resources
   get_started: Get started
   baichuan: AliBaichuan
   github: Github

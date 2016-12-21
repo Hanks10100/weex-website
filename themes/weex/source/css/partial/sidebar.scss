@@ -36,6 +36,7 @@
   }
 
   .main-nav {
+    font-size: 1.3em;
     border-bottom: 1px solid #DDDDDD;
     overflow: hidden;
     margin: 0;
@@ -44,14 +45,20 @@
 
     li {
       margin-bottom: 25px;
+      color: $text-black;
     }
 
     a {
-      font-size: 1.3em;
       color: $text-black;
       &:hover {
         border-bottom: .2em solid $text-blue;
       }
+    }
+
+    .subnav {
+      font-size: .8em;
+      list-style: none;
+      padding-left: 20px;
     }
   }
 
