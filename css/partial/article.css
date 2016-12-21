@@ -8,12 +8,7 @@
   max-width: 900px;
   margin: 120px 0 90px 300px;
   position: relative;
-  line-height: 1.8;
-  /*img[alt="mobile_preview"] {
-    position: absolute;
-    left: 900px;
-    width: 200px;
-  }*/ }
+  line-height: 1.8; }
   .article.article-type-article {
     margin-left: 0; }
   .article h2 {
@@ -28,6 +23,8 @@
   .article h5 {
     font-size: 1.1em;
     margin: 1.7em 0 .5em; }
+  .article img[alt="mobile_preview"] {
+    width: 200px; }
   .article a {
     color: #4078c0; }
     .article a:hover {
@@ -44,4 +41,7 @@
     right: 20px; }
 
 #blog .article {
+  margin-left: 0; }
+
+#faq .article {
   margin-left: 0; }

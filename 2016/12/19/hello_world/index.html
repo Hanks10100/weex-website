@@ -13,7 +13,7 @@ For Child-Parent CommunicationChildren component can use this.$dispatch([String 
 <meta property="og:site_name" content="Weex">
 <meta property="og:description" content="Hello world0.4
 For Child-Parent CommunicationChildren component can use this.$dispatch([String type], [Object detail]) method passing information to parent component. first argument meaning type of me">
-<meta property="og:updated_time" content="2016-12-20T10:00:30.000Z">
+<meta property="og:updated_time" content="2016-12-21T03:01:32.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hello World">
 <meta name="twitter:description" content="Hello world0.4
@@ -43,9 +43,19 @@ For Child-Parent CommunicationChildren component can use this.$dispatch([String 
     <div class="main-nav">
       <ul class="links">
         <li><a href="/weex-website/guide">Guide</a></li>
-        <li><a href="/weex-website/reference">Reference</a></li>
-        <li><a href="/weex-website/FAQ">FAQ</a></li>
-        <li><a href="/weex-website/download">Download</a></li>
+        <li><a href="/weex-website/references">References</a></li>
+        <li><a href="/weex-website/faq.html">FAQ</a></li>
+        <li class="dropdown">
+            <a href="javascript:;">Resources</a>
+            <ul class="dropdown-menu subnav">
+              <li>
+                <a href="./playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
+              </li>
+            </ul>
+        </li>
       </ul>
       <ul class="info">
         <li><a href="https://github.com/alibaba/weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
@@ -73,8 +83,8 @@ For Child-Parent CommunicationChildren component can use this.$dispatch([String 
           </a>
         </li>
         <li>
-          <a class="" href="/weex-website/reference">
-            Reference
+          <a class="" href="/weex-website/references">
+            References
           </a>
         </li>
         <li>
@@ -83,9 +93,15 @@ For Child-Parent CommunicationChildren component can use this.$dispatch([String 
           </a>
         </li>
         <li>
-          <a href="/weex-website/download">
-            Download
-          </a>
+            <p>Resources</p>
+            <ul class="subnav">
+              <li>
+                <a href="./playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
+              </li>
+            </ul>
         </li>
         <li>
           <a href="https://github.com/alibaba/weex" target="_blank">
@@ -125,7 +141,7 @@ For Child-Parent CommunicationChildren component can use this.$dispatch([String 
 <h2 id="Siblings-Communication"><a href="#Siblings-Communication" class="headerlink" title="Siblings Communication"></a>Siblings Communication</h2><p>siblings components can using common parent as bridge for passing information</p>
 <p>eg:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">we-element</span> <span class="attr">name</span>=<span class="string">"foo"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">template</span>&gt;</span>...<span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line">    module.exports = &#123;</div><div class="line">      methods: &#123;</div><div class="line">        callbar: function () &#123;</div><div class="line">          this.$dispatch('callbar', &#123;a: 1&#125;)</div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  <span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">we-element</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">we-element</span> <span class="attr">name</span>=<span class="string">"bar"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">template</span>&gt;</span>...<span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line">    module.exports = &#123;</div><div class="line">      created: function() &#123;</div><div class="line">        this.$on('callbar', function(e) &#123;</div><div class="line">          // e.detail.a</div><div class="line">        &#125;)</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  <span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">we-element</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">foo</span>&gt;</span><span class="tag">&lt;/<span class="name">foo</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">bar</span>&gt;</span><span class="tag">&lt;/<span class="name">bar</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line">  module.exports = &#123;</div><div class="line">    created: function () &#123;</div><div class="line">      var self = this</div><div class="line">      this.$on('callbar', function(e) &#123;</div><div class="line">        self.$broadcast('callbar', e.detail)</div><div class="line">      &#125;)</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>At last, you can learn how to write <a href="./config-n-data.md">config &amp; data</a> for a Weex page.</p>
+<p>At last, you can learn how to write <a href="./config-n-data.html">config &amp; data</a> for a Weex page.</p>
 
   </div>
   

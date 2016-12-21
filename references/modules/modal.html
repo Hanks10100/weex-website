@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>modal | Weex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="modal0.4
+SummaryA series of modal dialog api like toast, alert, confirm and prompt.
+APItoast(options)Arguments
+options(object): some options.
+message(string): the message that the toast shows.
+duratio">
+<meta property="og:type" content="website">
+<meta property="og:title" content="modal">
+<meta property="og:url" content="http://alibaba.github.io/references/modules/modal.html">
+<meta property="og:site_name" content="Weex">
+<meta property="og:description" content="modal0.4
+SummaryA series of modal dialog api like toast, alert, confirm and prompt.
+APItoast(options)Arguments
+options(object): some options.
+message(string): the message that the toast shows.
+duratio">
+<meta property="og:updated_time" content="2016-12-21T02:21:09.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="modal">
+<meta name="twitter:description" content="modal0.4
+SummaryA series of modal dialog api like toast, alert, confirm and prompt.
+APItoast(options)Arguments
+options(object): some options.
+message(string): the message that the toast shows.
+duratio">
+  
+    <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/weex-website/css/style.css">
+  <link rel="stylesheet" href="/weex-website/css/swiper.min.css">
+  
+
+</head>
+
+<body id="references">
+  
+  <header id="header">
+  <div class="navbar">
+    <a id="logo" href="/weex-website/">
+      <img src="/weex-website/images/logo.png" />
+    </a>
+    <div class="main-nav">
+      <ul class="links">
+        <li><a href="/weex-website/guide">Guide</a></li>
+        <li><a href="/weex-website/references">References</a></li>
+        <li><a href="/weex-website/faq.html">FAQ</a></li>
+        <li class="dropdown">
+            <a href="javascript:;">Resources</a>
+            <ul class="dropdown-menu subnav">
+              <li>
+                <a href="./playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
+              </li>
+            </ul>
+        </li>
+      </ul>
+      <ul class="info">
+        <li><a href="https://github.com/alibaba/weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+      </ul>
+      <ul class="tools">
+        <li><a class="btn-search"><span class="iconfont icon-search"></span></a></li>
+        <!--<li></li>-->
+      </ul>
+    </div>
+  </div>
+  <div id="mobile-nav">
+    <a id="logo" href="/">
+      <img src="/weex-website/images/logo.png" />
+    </a>
+    <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
+  </div>
+</header>
+  <div id="sidebar" class="">
+  <div class="sidebar-menu">
+    
+      <ul class="main-nav">
+        <li>
+          <a class="" href="/weex-website/guide">
+            Guide
+          </a>
+        </li>
+        <li>
+          <a class="" href="/weex-website/references">
+            References
+          </a>
+        </li>
+        <li>
+          <a href="/weex-website/faq">
+            FAQ
+          </a>
+        </li>
+        <li>
+            <p>Resources</p>
+            <ul class="subnav">
+              <li>
+                <a href="./playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
+              </li>
+            </ul>
+        </li>
+        <li>
+          <a href="https://github.com/alibaba/weex" target="_blank">
+            Github
+          </a>
+        </li>
+      </ul>
+    
+    <a class="btn-close-sidebar iconfont  icon-close"></a>
+  </div>
+</div>
+  <div class="article-wrapper page-layout">
+  <div class="doc-nav">
+    <div class="summary">
+  <h2 class="part-title">References</h2>  
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+   
+    
+      <li>
+        <h3 class="chapter-title"><a href="/weex-website/references/index.html" class="sidebar-link  ">Common options</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/weex-website/references/bootstrap.html" class="sidebar-link  ">Bootstrap</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/references/special-element.html" class="sidebar-link  ">Special Element</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/references/component-defs.html" class="sidebar-link  ">Component Definition</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/references/api.html" class="sidebar-link  ">Component APIs</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/references/gesture.html" class="sidebar-link  ">Gesture</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/references/common-attrs.html" class="sidebar-link  ">Common Attribute</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/references/common-style.html" class="sidebar-link  ">Common Style</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/references/color-names.html" class="sidebar-link  ">List of the names of colors</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/references/text-style.html" class="sidebar-link  ">Text Style</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/references/common-event.html" class="sidebar-link  ">Common Events</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/weex-website/references/components/main.html" class="sidebar-link  ">Build-in Components</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/weex-website/references/components/a.html" class="sidebar-link  ">&lt;a&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/references/components/switch.html" class="sidebar-link  ">&lt;switch&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/references/components/text.html" class="sidebar-link  ">&lt;text&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/references/components/textarea.html" class="sidebar-link  ">&lt;textarea&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/references/components/video.html" class="sidebar-link  ">&lt;video&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/references/components/web.html" class="sidebar-link  ">&lt;web&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/references/components/wxc-navpage.html" class="sidebar-link  ">&lt;wxc-navpage&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/references/components/wxc-tabbar.html" class="sidebar-link  ">&lt;wxc-tabbar&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/references/components/div.html" class="sidebar-link  ">&lt;div&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/references/components/image.html" class="sidebar-link  ">&lt;image&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/references/components/cell.html" class="sidebar-link  ">&lt;list&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/references/components/refresh-loading.html" class="sidebar-link  ">&lt;refresh&gt; &amp; &lt;loading&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/references/components/scroller.html" class="sidebar-link  ">&lt;scroller&gt;</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/references/components/slider.html" class="sidebar-link  ">&lt;slider&gt;</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/weex-website/references/modules/index.html" class="sidebar-link  ">Built-in Modules</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/weex-website/references/modules/animation.html" class="sidebar-link  ">animation</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/references/modules/globalevent.html" class="sidebar-link  ">globalEvent</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/references/modules/clipboard.html" class="sidebar-link  ">clipboard</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/references/modules/dom.html" class="sidebar-link  ">dom</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/references/modules/modal.html" class="sidebar-link current ">modal</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/references/modules/navigator.html" class="sidebar-link  ">navigator</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/references/modules/storage.html" class="sidebar-link  ">storage</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/references/modules/stream.html" class="sidebar-link  ">stream</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/references/modules/timer.html" class="sidebar-link  ">Timer</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/references/modules/webview.html" class="sidebar-link  ">webview</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/weex-website/references/specs/index.html" class="sidebar-link  ">Low-level Specs</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/weex-website/references/specs/js-bundle-format.html" class="sidebar-link  ">JS Bundle format</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/references/specs/js-framework-apis.html" class="sidebar-link  ">JS Framework APIs</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/references/specs/virtual-dom-apis.html" class="sidebar-link  ">Virtual DOM APIs</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+</div>
+  </div>
+  
+
+<article id="page-undefined" class="article article-type-references">
+  <div class="article-entry" itemprop="articleBody">
+    <header class="article-header">
+  
+    
+      <h1 class="article-title" itemprop="name">
+        modal
+      </h1>
+    
+  
+  <time class="article-date" datetime="2016-12-21T02:21:09.000Z">Updated time: 21/12/2016</time>
+</header>
+    <h1 id="modal"><a href="#modal" class="headerlink" title="modal"></a>modal</h1><p><span class="weex-version">0.4</span></p>
+<h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p>A series of modal dialog api like <code>toast</code>, <code>alert</code>, <code>confirm</code> and <code>prompt</code>.</p>
+<h2 id="API"><a href="#API" class="headerlink" title="API"></a>API</h2><h3 id="toast-options"><a href="#toast-options" class="headerlink" title="toast(options)"></a>toast(options)</h3><h4 id="Arguments"><a href="#Arguments" class="headerlink" title="Arguments"></a>Arguments</h4><ul>
+<li><code>options</code><em>(object)</em>: some options.<ul>
+<li><code>message</code><em>(string)</em>: the message that the toast shows.</li>
+<li><code>duration</code><em>(number)</em>: the duration(seconds) that the toast shows.</li>
+</ul>
+</li>
+</ul>
+<h5 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h5><figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> modal = <span class="built_in">require</span>(<span class="string">'@weex-module/modal'</span>);</div><div class="line">modal.toast(&#123;<span class="string">'message'</span>: <span class="string">'I am toast!'</span>, <span class="string">'duration'</span>: <span class="number">1</span>&#125;);</div></pre></td></tr></table></figure>
+<h3 id="alert-options-callback"><a href="#alert-options-callback" class="headerlink" title="alert(options, callback)"></a>alert(options, callback)</h3><h4 id="Arguments-1"><a href="#Arguments-1" class="headerlink" title="Arguments"></a>Arguments</h4><ul>
+<li><code>options</code><em>(object)</em>: some options.<ul>
+<li><code>message</code><em>(string)</em>: the message that the alert shows.</li>
+<li><code>okTitle</code><em>(string)</em>: the title of alert button, default is OK.</li>
+</ul>
+</li>
+<li><code>callback</code><em>(function)</em>: callback when complete.</li>
+</ul>
+<h4 id="Example-1"><a href="#Example-1" class="headerlink" title="Example"></a>Example</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> arg1 = <span class="string">'I am alert!'</span>;</div><div class="line"><span class="keyword">var</span> arg2 = <span class="string">'I am ok'</span>;</div><div class="line"><span class="keyword">var</span> modal = <span class="built_in">require</span>(<span class="string">'@weex-module/modal'</span>);</div><div class="line">modal.alert(&#123;</div><div class="line">  <span class="attr">message</span>: arg1,</div><div class="line">  <span class="attr">okTitle</span>: arg2</div><div class="line">&#125;, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="comment">// TODO after the alert is complete.</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h3 id="confirm-options-callback"><a href="#confirm-options-callback" class="headerlink" title="confirm(options, callback)"></a>confirm(options, callback)</h3><h4 id="Arguments-2"><a href="#Arguments-2" class="headerlink" title="Arguments"></a>Arguments</h4><ul>
+<li><code>options</code><em>(object)</em>: some options.<ul>
+<li><code>message</code><em>(string)</em>: the message that the confirm shows.</li>
+<li><code>okTitle</code><em>(string)</em>: the title of confirm button, default is ‘OK’.</li>
+<li><code>cancelTitle</code><em>(string)</em>: the title of cancel button, default is ‘Cancel’.</li>
+</ul>
+</li>
+<li><code>callback</code><em>(function)</em>: callback when complete.</li>
+</ul>
+<p>This method has a callback function whose arguments will be:</p>
+<ul>
+<li><code>result</code><em>(string)</em>: the title of the button that clicked by user.</li>
+</ul>
+<h4 id="Example-2"><a href="#Example-2" class="headerlink" title="Example"></a>Example</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> arg1 = <span class="string">'I am alert!'</span></div><div class="line"><span class="keyword">var</span> arg2 = <span class="string">'I am ok'</span></div><div class="line"><span class="keyword">var</span> arg3 = <span class="string">'I am cancel'</span></div><div class="line"><span class="keyword">var</span> modal = <span class="built_in">require</span>(<span class="string">'@weex-module/modal'</span>);</div><div class="line">modal.confirm(&#123;</div><div class="line">  <span class="attr">message</span>: arg1,</div><div class="line">  <span class="attr">okTitle</span>: arg2,</div><div class="line">  <span class="attr">cancelTitle</span>: arg3</div><div class="line">&#125;, <span class="function"><span class="keyword">function</span>(<span class="params">result</span>) </span>&#123;</div><div class="line">  nativeLog(result)</div><div class="line">  <span class="comment">// TODO after the confirm is complete.</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h3 id="prompt-options-callback"><a href="#prompt-options-callback" class="headerlink" title="prompt(options, callback)"></a>prompt(options, callback)</h3><h4 id="Arguments-3"><a href="#Arguments-3" class="headerlink" title="Arguments"></a>Arguments</h4><ul>
+<li><code>options</code><em>(object)</em>: some options.<ul>
+<li><code>message</code><em>(string)</em>: the message that the prompt shows.</li>
+<li><code>okTitle</code><em>(string)</em>: the title of confirm button, default is ‘OK’.</li>
+<li><code>cancelTitle</code><em>(string)</em>: the title of cancel button, default is ‘Cancel’.</li>
+</ul>
+</li>
+<li><code>callback</code><em>(function)</em>: callback when complete.</li>
+</ul>
+<p>This method has a callback function whose arguments will be:</p>
+<ul>
+<li><code>res</code><em>(object)</em>: the argument will be a object, which has attributes <code>result</code> and <code>data</code>, like <code>{ result: &#39;OK&#39;, data: &#39;hello world&#39; }</code><ul>
+<li><code>result</code><em>(string)</em>: the title of the button that clicked by user.</li>
+<li><code>data</code><em>(string)</em>: the value of the text that entered by user.</li>
+</ul>
+</li>
+</ul>
+<h4 id="Example-3"><a href="#Example-3" class="headerlink" title="Example"></a>Example</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> arg1 = <span class="string">'I am prompt!'</span></div><div class="line"><span class="keyword">var</span> arg2 = <span class="string">'I am ok'</span></div><div class="line"><span class="keyword">var</span> arg3 = <span class="string">'I am cancel'</span></div><div class="line"><span class="keyword">var</span> modal = <span class="built_in">require</span>(<span class="string">'@weex-module/modal'</span>);</div><div class="line">modal.prompt(&#123;</div><div class="line">  <span class="attr">message</span>: arg1,</div><div class="line">  <span class="attr">okTitle</span>: arg2,</div><div class="line">  <span class="attr">cancelTitle</span>: arg3</div><div class="line">&#125;, <span class="function"><span class="keyword">function</span>(<span class="params">res</span>) </span>&#123;</div><div class="line">  nativeLog(res.result + <span class="string">', '</span> + res.data);</div><div class="line">  <span class="comment">// TODO after the prompt is complete.</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+
+  </div>
+  
+</article>
+</div>
+  <script>window.PAGE_TYPE = "references"</script>
+  <footer id="footer">
+  <div class="row clearfix">
+    <div class="ali-logo">
+      <img src="/weex-website/images/ali-open-source.png" alt="Alibaba">
+    </div>
+    <div class="dropdown select-lang">
+      <a href="javascript:;" class="dropdown-toggle">
+        Language
+        <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu">
+        <li>
+          <a href="/weex-website/">English</a>
+        </li>
+        <li>
+          <a href="/weex-website/cn">中文</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <p><span>Released under </span><a href="">Apache License 2.0</a></p>
+  </div>
+  <div class="row clearfix">
+    <div class="cell"><span>Copyright(c) 2016 </span><a href="https://www.alibaba.com">Alibaba</a></div>
+    <div class="cell"><span>GroupMade by </span><a href="">阿里云UED AX</a></div>
+    <div class="cell"><span>Proudly Produced by </span><a href="https://baichuan.taobao.com/">Alibaichuan</a> <span class="iconfont icon-baichuan"></span></div>
+  </div>
+</footer>
+  
+
+<!--<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>-->
+
+
+  <script src="/weex-website/js/velocity.js"></script>
+  <script src="/weex-website/js/common.js"></script>
+</body>
+</html>

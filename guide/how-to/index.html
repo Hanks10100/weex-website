@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>How-tos | Weex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="How-tosYou will learn how to preview and debug in native and html5, how to require external js libs and more.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="How-tos">
+<meta property="og:url" content="http://alibaba.github.io/guide/how-to/index.html">
+<meta property="og:site_name" content="Weex">
+<meta property="og:description" content="How-tosYou will learn how to preview and debug in native and html5, how to require external js libs and more.">
+<meta property="og:updated_time" content="2016-12-20T15:19:22.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="How-tos">
+<meta name="twitter:description" content="How-tosYou will learn how to preview and debug in native and html5, how to require external js libs and more.">
+  
+    <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/weex-website/css/style.css">
+  <link rel="stylesheet" href="/weex-website/css/swiper.min.css">
+  
+
+</head>
+
+<body id="guide">
+  
+  <header id="header">
+  <div class="navbar">
+    <a id="logo" href="/weex-website/">
+      <img src="/weex-website/images/logo.png" />
+    </a>
+    <div class="main-nav">
+      <ul class="links">
+        <li><a href="/weex-website/guide">Guide</a></li>
+        <li><a href="/weex-website/references">References</a></li>
+        <li><a href="/weex-website/faq.html">FAQ</a></li>
+        <li class="dropdown">
+            <a href="javascript:;">Resources</a>
+            <ul class="dropdown-menu subnav">
+              <li>
+                <a href="./playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
+              </li>
+            </ul>
+        </li>
+      </ul>
+      <ul class="info">
+        <li><a href="https://github.com/alibaba/weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+      </ul>
+      <ul class="tools">
+        <li><a class="btn-search"><span class="iconfont icon-search"></span></a></li>
+        <!--<li></li>-->
+      </ul>
+    </div>
+  </div>
+  <div id="mobile-nav">
+    <a id="logo" href="/">
+      <img src="/weex-website/images/logo.png" />
+    </a>
+    <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
+  </div>
+</header>
+  <div id="sidebar" class="">
+  <div class="sidebar-menu">
+    
+      <div class="summary">
+  <h2 class="part-title">Guide</h2>  
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+   
+    
+      <li>
+        <h3 class="chapter-title"><a href="/weex-website/guide/index.html" class="sidebar-link  ">Tutorial</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/weex-website/guide/syntax/index.html" class="sidebar-link  ">Syntax</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/weex-website/guide/syntax/data-binding.html" class="sidebar-link  ">Data-Binding</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/syntax/style-n-class.html" class="sidebar-link  ">Style &amp; Class</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/syntax/events.html" class="sidebar-link  ">Events</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/syntax/display-logic.html" class="sidebar-link  ">Display Logic Control</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/syntax/render-logic.html" class="sidebar-link  ">Render Logic Control</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/syntax/composed-component.html" class="sidebar-link  ">Composed Component</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/syntax/id.html" class="sidebar-link  ">Find an Element</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/syntax/comm.html" class="sidebar-link  ">Communications</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/syntax/config-n-data.html" class="sidebar-link  ">Page Config &amp; Data</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/weex-website/guide/how-to/index.html" class="sidebar-link current ">How-tos</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/weex-website/guide/how-to/preview-in-browser.html" class="sidebar-link  ">Preview in browser</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/how-to/preview-in-playground-app.html" class="sidebar-link  ">Preview in native</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/how-to/customize-a-native-component.html" class="sidebar-link  ">Customize a native Component</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/how-to/cuszomize-native-apis.html" class="sidebar-link  ">Customize native APIs</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/how-to/debug-with-html5.html" class="sidebar-link  ">Debug in html5 renderer</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/how-to/require-3rd-party-libs.html" class="sidebar-link  ">Require 3rd Party Libs</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/how-to/transform-code-into-js-bundle.html" class="sidebar-link  ">Transform Code into Js Bundle</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/weex-website/guide/advanced/index.html" class="sidebar-link  ">Advanced</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/weex-website/guide/advanced/how-it-works.html" class="sidebar-link  ">How it works</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/advanced/how-data-binding-works.html" class="sidebar-link  ">How data-binding works</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/advanced/integrate-to-android.html" class="sidebar-link  ">Integrate to Android</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/advanced/integrate-to-ios.html" class="sidebar-link  ">Integrate to iOS</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/advanced/integrate-to-html5.html" class="sidebar-link  ">Integrate to web</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/advanced/extend-to-android.html" class="sidebar-link  ">Extend to Android</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/advanced/extend-to-ios.html" class="sidebar-link  ">Extend to iOS</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/advanced/extend-to-html5.html" class="sidebar-link  ">Extend to web</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+</div>
+    
+    <a class="btn-close-sidebar iconfont  icon-close"></a>
+  </div>
+</div>
+  <div class="article-wrapper page-layout">
+  <div class="doc-nav">
+    <div class="summary">
+  <h2 class="part-title">Guide</h2>  
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+   
+    
+      <li>
+        <h3 class="chapter-title"><a href="/weex-website/guide/index.html" class="sidebar-link  ">Tutorial</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/weex-website/guide/syntax/index.html" class="sidebar-link  ">Syntax</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/weex-website/guide/syntax/data-binding.html" class="sidebar-link  ">Data-Binding</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/syntax/style-n-class.html" class="sidebar-link  ">Style &amp; Class</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/syntax/events.html" class="sidebar-link  ">Events</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/syntax/display-logic.html" class="sidebar-link  ">Display Logic Control</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/syntax/render-logic.html" class="sidebar-link  ">Render Logic Control</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/syntax/composed-component.html" class="sidebar-link  ">Composed Component</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/syntax/id.html" class="sidebar-link  ">Find an Element</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/syntax/comm.html" class="sidebar-link  ">Communications</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/syntax/config-n-data.html" class="sidebar-link  ">Page Config &amp; Data</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/weex-website/guide/how-to/index.html" class="sidebar-link current ">How-tos</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/weex-website/guide/how-to/preview-in-browser.html" class="sidebar-link  ">Preview in browser</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/how-to/preview-in-playground-app.html" class="sidebar-link  ">Preview in native</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/how-to/customize-a-native-component.html" class="sidebar-link  ">Customize a native Component</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/how-to/cuszomize-native-apis.html" class="sidebar-link  ">Customize native APIs</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/how-to/debug-with-html5.html" class="sidebar-link  ">Debug in html5 renderer</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/how-to/require-3rd-party-libs.html" class="sidebar-link  ">Require 3rd Party Libs</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/how-to/transform-code-into-js-bundle.html" class="sidebar-link  ">Transform Code into Js Bundle</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/weex-website/guide/advanced/index.html" class="sidebar-link  ">Advanced</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/weex-website/guide/advanced/how-it-works.html" class="sidebar-link  ">How it works</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/advanced/how-data-binding-works.html" class="sidebar-link  ">How data-binding works</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/advanced/integrate-to-android.html" class="sidebar-link  ">Integrate to Android</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/advanced/integrate-to-ios.html" class="sidebar-link  ">Integrate to iOS</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/advanced/integrate-to-html5.html" class="sidebar-link  ">Integrate to web</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/advanced/extend-to-android.html" class="sidebar-link  ">Extend to Android</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/advanced/extend-to-ios.html" class="sidebar-link  ">Extend to iOS</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/guide/advanced/extend-to-html5.html" class="sidebar-link  ">Extend to web</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+</div>
+  </div>
+  
+
+<article id="page-undefined" class="article article-type-guide">
+  <div class="article-entry" itemprop="articleBody">
+    <header class="article-header">
+  
+    
+      <h1 class="article-title" itemprop="name">
+        How-tos
+      </h1>
+    
+  
+  <time class="article-date" datetime="2016-12-20T15:19:22.000Z">Updated time: 20/12/2016</time>
+</header>
+    <h1 id="How-tos"><a href="#How-tos" class="headerlink" title="How-tos"></a>How-tos</h1><p>You will learn how to preview and debug in native and html5, how to require external js libs and more.</p>
+
+  </div>
+  
+</article>
+</div>
+  <script>window.PAGE_TYPE = "guide"</script>
+  <footer id="footer">
+  <div class="row clearfix">
+    <div class="ali-logo">
+      <img src="/weex-website/images/ali-open-source.png" alt="Alibaba">
+    </div>
+    <div class="dropdown select-lang">
+      <a href="javascript:;" class="dropdown-toggle">
+        Language
+        <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu">
+        <li>
+          <a href="/weex-website/">English</a>
+        </li>
+        <li>
+          <a href="/weex-website/cn">中文</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <p><span>Released under </span><a href="">Apache License 2.0</a></p>
+  </div>
+  <div class="row clearfix">
+    <div class="cell"><span>Copyright(c) 2016 </span><a href="https://www.alibaba.com">Alibaba</a></div>
+    <div class="cell"><span>GroupMade by </span><a href="">阿里云UED AX</a></div>
+    <div class="cell"><span>Proudly Produced by </span><a href="https://baichuan.taobao.com/">Alibaichuan</a> <span class="iconfont icon-baichuan"></span></div>
+  </div>
+</footer>
+  
+
+<!--<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>-->
+
+
+  <script src="/weex-website/js/velocity.js"></script>
+  <script src="/weex-website/js/common.js"></script>
+</body>
+</html>
