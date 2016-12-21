@@ -1,6 +1,6 @@
 <div id="sidebar" class="<%= page_type === 'index' ? 'index-sidebar' : '' %>">
   <div class="sidebar-menu">
-    <% if (page_type =='guide' || page_type === 'reference') { %>
+    <% if (page_type =='guide' || page_type === 'references') { %>
       <%- partial('_partial/post/summary', {post: page, index: false, type: page_type}) %>
     <% } else { %>
       <ul class="main-nav">
