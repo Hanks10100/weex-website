@@ -7,9 +7,10 @@ title: Weex
 subtitle:
 description:
 author: Jinjiang
-language:
-  default
-  zh-CN
+language: 
+  - en
+  - cn
+
 timezone:
 
 # URL

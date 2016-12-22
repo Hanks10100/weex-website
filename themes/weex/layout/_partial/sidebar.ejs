@@ -5,22 +5,22 @@
     <% } else { %>
       <ul class="main-nav">
         <li>
-          <a class="" href="<%- url_for('guide') %>">
-            <%= _p('index.guide') %>
+          <a class="" href="<%- url_for_lang('guide') %>">
+            <%= _p('menu.guide') %>
           </a>
         </li>
         <li>
-          <a class="" href="<%= url_for('references') %>">
-            <%= _p('index.references') %>
+          <a class="" href="<%= url_for_lang('references') %>">
+            <%= _p('menu.references') %>
           </a>
         </li>
         <li>
-          <a href="<%= url_for('faq') %>">
-            <%= _p('index.faq') %>
+          <a href="<%= url_for_lang('faq') %>">
+            <%= _p('menu.faq') %>
           </a>
         </li>
         <li>
-            <p><%= _p('index.resources') %></p>
+            <p><%= _p('menu.resources') %></p>
             <ul class="subnav">
               <li>
                 <a href="./playground.html">Playground</a>
@@ -32,7 +32,7 @@
         </li>
         <li>
           <a href="https://github.com/alibaba/weex" target="_blank">
-            <%= _p('index.github') %>
+            <%= _p('menu.github') %>
           </a>
         </li>
       </ul>

@@ -1,13 +1,17 @@
 index:
-  guide: Guide
-  references: References
-  doc: Docs
+  get_started: 上手教程
+
+menu: 
+  guide: 教程
+  references: 手册
+  doc: 文档
   faq: FAQ
-  showcase: Showcase
-  download: Download
-  resources: Resources
-  get_started: Get started
-  baichuan: AliBaichuan
+  index: 首页
+  blog: 博客
+  showcase: 示例
+  download: 下载
+  resources: 资源
+  baichuan: 阿里百川
   github: Github
 
 categories: Categories
