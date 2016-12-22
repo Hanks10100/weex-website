@@ -19,7 +19,7 @@ hexo.extend.helper.register('pick_lang', function(lang){
   var currentLang = this.page.lang
   var path = this.page.path
   var url = ''
-  console.log(path)
+
   if (path.split('/')[0] === currentLang) {
     path = path.substring(currentLang.length)
   }

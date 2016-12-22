@@ -29,7 +29,6 @@
     
   h3.chapter-title {
     font-size: 1.1em;
-    font-weight: 600;
   }
     
   ul.chapter {
@@ -42,4 +41,8 @@
     }
   }
 
+}
+
+.lang-en .summary h3.chapter-title{
+  font-weight: 600;
 }

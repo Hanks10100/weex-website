@@ -5,7 +5,8 @@ order: 2.2
 ---
 
 # &lt;div&gt;
-<span class="weex-version">0.4</span>
+
+<span class="weex-version">0.4+</span>
 
 ### Summary
 

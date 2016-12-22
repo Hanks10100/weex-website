@@ -1,212 +1,58 @@
 ---
-title: 教程
+title: 上手教程
 type: guide
 order: 1
 ---
 
-# Tutorial
+# 起步教程
 
-<span class="weex-version">0.4+</span>
+Weex 是一套简单易用的跨平台开发方案，能以 web 的开发体验构建高性能、可扩展的 native 应用，为了做到这些，Weex 与  Vue 合作，使用 Vue 作为上层框架，并遵循 W3C 标准实现了统一的 JSEngine 和 DOM API，这样一来，你甚至可以使用其他框架驱动 Weex，打造三端一致的 native 应用。
 
-We will make a simple but realistic list, in which the technologies Weex uses will be shown. This form of list also works for a lot of e-commercial apps and mobile sites.
+尝试 Weex 最简单的方法是使用 [Playground App](https://alibaba.github.io/weex/download.html) 和在 [dotWe](http://dotwe.org) 编写一个 [Hello World](http://dotwe.org/656345423a7ef46f4b897ff471fd2ab5) 例子。你不需要考虑安装开发环境或编写 native 代码，只需要做下面两件事：
 
-## Getting Started
+- 为你的手机安装 [Playground App](https://alibaba.github.io/weex/download.html)，当然，Weex 是跨平台的框架，你依然可以使用浏览器进行预览，只是这样你就无法感受到 native 优秀的体验了。
+- 在新标签页中打开 [Hello World](http://dotwe.org/656345423a7ef46f4b897ff471fd2ab5) 例子，点击预览，然后用  Playground 扫码即可。
 
-Let's get started with the list item, which contains one `image` element and one `text` right behind.
+在这个例子中，我们看到了熟悉的 HTML 语义化标签、CSS 样式和 Javascript 代码。这是一个最简单的 Weex 示例，它在页面中渲染了一个 "Hello World"。
 
-```html
+![mobile_preview](https://img.alicdn.com/tps/TB1Ymw3OpXXXXcvXpXXXXXXXXXX-500-1013.jpg)
+
+## 发生了什么？
+
+就如示例代码所示：
+
+```javascript
 <template>
-  <div class="container">
-    <div class="cell">
-      <image class="thumb" src="http://t.cn/RGE3AJt"></image>
-      <text class="title">JavaScript</text>
-    </div>
+  <div>
+    <text class="text">{{text}}</text>
   </div>
 </template>
 
 <style>
-  .cell { margin-top: 10; margin-left: 10; flex-direction: row; }
-  .thumb { width: 200; height: 200; }
-  .title { text-align: center; flex: 1; color: grey; font-size: 50; }
-</style>
-```
-
-You can directly copy and paste the above code into a Weex file named `tech_list.we` (`.we` is our recommended filename extension).
-
-## Preview
-
-Once created, we want to see the running result of the `.we` file. But before that, we must make sure the dependencies are installed.
-
-We should install [Node](https://nodejs.org/en/download/) first, which our Weex CLI program [Weex Toolkit](https://www.npmjs.com/package/weex-toolkit) depends on. Then install `weex-toolkit` by running the command:
-
-```
-npm install -g weex-toolkit
-```
-
-When installation completed, you can check if Weex CLI is installed properly by running `weex` command in the command line. The following text is expected:
-
-```
-Usage: weex foo/bar/your_next_best_weex_script_file.we  [options]
-
-Options:
-  --qr     display QR code for native runtime, 
-  -o,--output  transform weex we file to JS Bundle, output path (single JS bundle file or dir)
-  -s,--server  start a http file server, weex .we file will be transforme to JS bundle on the server , specify local root path using the option  
-  ......
-  --help  Show help         
-  -h, --host [default: "127.0.0.1"]
-```
-
-If all work well, navigate to the directory where you saved `tech_list.we`, then type:
-
-```
-weex tech_list.we
-```
-
-A browser window will be opened automatically to display the running result like below     (weex-toolkit version should be greater than 0.1.0, use `weex --version` to check it):
-
-![mobile_preview](https://gtms02.alicdn.com/tps/i2/TB1y151LVXXXXXXaXXXoRYgWVXX-495-584.jpg)
-
-## Introduce to Weex Syntax
-
-So it's time for introducing the syntax. 
-
-Given the content of `tech_list.we`, Weex source code is composed of three parts -- *template*, *style*, and *script*, just like html, css, and javascript for the Web.
-
-Template is the skeleton that gives Weex structure. It is composed of tags which surround content and apply meaning to it. Tags have *attributes*, different attribute means different feature, for example, `class` attribute makes it possible to define the same styles for multiple tags, `onclick` attribute makes the tag respond to click event.
-
-Style describes how Weex tags are to be displayed. We prefer CSS very much. So we try to keep consistent with CSS standard as possible. Weex Style supports a lot of CSS features, like margin, padding, fixed and so on. Better yet, flexbox layout (flex) is well supported in Weex Style.
-
-Script adds *data* & *logic* to Weex tags, helping you easily access local or remote data and update tags. You can also define some methods for your tag to respond to different events. Weex Script organization learns a lot from CommonJS module style.
-
-More information about Weex syntax can be found in our [Syntax chapter](syntax/main.html).
-
-## Add More Items
-
-We can't call one item an list, so we need to add more items to our tech list. Open `tech_list.we` in your favorite editor and update it's content like below:
-
-```html
-<template>
-  <div class="container">
-    <div class="cell">
-      <image class="thumb" src="http://t.cn/RGE3AJt"></image>
-      <text class="title">JavaScript</text>
-    </div>
-    <div class="cell">
-      <image class="thumb" src="http://t.cn/RGE3uo9"></image>
-      <text class="title">Java</text>
-    </div>
-    <div class="cell">
-      <image class="thumb" src="http://t.cn/RGE31hq"></image>
-      <text class="title">Objective C</text>
-    </div>
-  </div>
-</template>
-
-<style>
-  .cell{ margin-top:10 ; margin-left:10 ; flex-direction: row; }
-  .thumb { width: 200; height: 200; }
-  .title { text-align: center ; flex: 1; color: grey; font-size: 50; }
-</style>
-```
-
-Now we will try to  render our  `tech_list.we`  with Weex native renderer.  Open your terminal and  navigate to the directory where you save the `tech_list.we` again, then type:
-
-```
-weex tech_list.we --qr -h {ip or hostname}
-```
-
-It's ***RECOMMENDED*** to use `-h` option to specify your local ip address or hostname.
-
-An QR code will be displayed in the terminal window like below:
-
-![Weex CLI](images/tut-cli-qrcode.png)
-
-The QR code can work together with [Weex Playground App](http://alibaba.github.io/weex/download.html). Open it and tap the scan icon at the top-right corner, then scan the Qr code displayed in your terminal. If all work well, a beautiful list will be displayed in your phone.
-
-![Second Example](images/tut-second.png)
-
-Here, I must stress that the list is rendered by a native view, instead of Webkit, so your app gets faster loading and less memory overhead than common Webview renderer.
-
-Now open `tech_list.we` again and try to change some text, after changes saved the Weex playground App will immediately display these changes. We call that **Hot-Reload**, which is intended to help you use Weex better.
-
-## Add Built-in Components
-
-Instead of writing basic tags by yourself, Weex provides a lot of built-in components. For example, Slider is common to many apps and mobile websites, so Weex includes a built-in Slider so that you can easily use it in your script. Let's open `tech_list.we` and update it's content like below.
-
-```html
-<template>
-  <div style="flex-direction: column;">
-    <slider class="slider" interval="{{intervalValue}}" auto-play="{{isAutoPlay}}" >
-      <div class="slider-pages" repeat="{{itemList}}" onclick="goWeexSite" >
-      <image class="thumb" src="{{pictureUrl}}"></image>
-      <text class="title">{{title}}</text>
-      </div>
-    </slider>
-
-  <div class="container" onclick="goWeexSite" >
-    <div class="cell">
-      <image class="thumb" src="http://t.cn/RGE3AJt"></image>
-      <text class="title">JavaScript</text>
-    </div>
-    <div class="cell">
-      <image class="thumb" src="http://t.cn/RGE3uo9"></image>
-      <text class="title">Java</text>
-    </div>
-    <div class="cell">
-      <image class="thumb" src="http://t.cn/RGE31hq"></image>
-      <text class="title">Objective C</text>
-    </div>
-  </div>
-</template>
-
-<style>
-  .cell { margin-top:10 ; margin-left:10 ; flex-direction: row; }
-  .thumb { width: 200; height: 200; }
-  .title { text-align: center ; flex: 1; color: grey; font-size: 50; }
-  .slider {
-    margin: 18;
-    width: 714;
-    height: 230;
-  }
-  .slider-pages {
-    flex-direction: row;
-    width: 714;
-    height: 200;
+  .text {
+    font-size: 50;
   }
 </style>
 
 <script>
-module.exports = {
-  data: {
-    intervalValue:"1000",
-    isShowIndicators:"true",
-    isAutoPlay:"true",
-    itemList: [
-      {title: 'Java', pictureUrl: 'http://t.cn/RGE3uo9'},
-      {title: 'Objective C', pictureUrl: 'http://t.cn/RGE31hq'},
-      {title: 'JavaScript', pictureUrl: 'http://t.cn/RGE3AJt'}
-    ]
-  },
-  methods: {
-    goWeexSite: function () {
-      this.$openURL('http://alibaba.github.io/weex/')
+  module.exports = {
+    data: {
+        text: 'Hello World.'
     }
   }
-}
 </script>
 ```
 
-Open terminal and run the command again:
+我们暂时不去关心 Weex 的技术细节，仅看大致的代码结构。Weex 代码由三部分构成：`template`、`style`、`script`，这三个概念之于 Weex 就如 HTML，CSS，JavaScript 之于 Web。
 
-```
-weex tech_list.we
-```
+模板部分赋予 Weex 以骨架，由标签以及标签包围的内容构成，标签中能添加 `attribute（特性）`，不同的 `attribute` 有不同的含义，例如 class 特性让同样的样式可以作用于多组 Weex 标签， onclick 特性让标签能对用户点击事件作出回应。
 
-You should see a slider prepend to our list.
+样式部分描述 Weex 标签如何显示。和你一样，我们喜欢 CSS，所以 Weex 中的样式尽量和 CSS 标准一致。Weex 支持很多 CSS 中的特性： margin, padding, fixed...... 更好的是， flexbox 布局模型在 Weex 中获得了很好的支持。
 
-![Third Example](images/tut4.gif)
+脚本部分为 Weex 标签添加数据与逻辑，在这里你能方便的访问本地或远程的数据并动态更新。你还能定义方法并让这些方法响应不同的事件。Weex 脚本的组织方式基本遵循于 CommonJS module 规范。
 
-More information about Slider component can be found [here](components/slider.html).
+是不是觉得这些语法有些眼熟？没错，Weex 语法参考了 [Vue](https://github.com/vuejs/vue)，如果你熟悉 Vue，你会很快适应 Weex 语法（最新的 Weex framework 将会基于 [Vue 2.0](https://github.com/vuejs/vue) 开发，完全兼容 Vue，可参见我们的 [Roadmap](https://github.com/weexteam/weex-vue-framework/issues/9)），更好的是，我们拥抱规范，尽可能的按照 W3C 标准进行实现，因此，你大可不必担心 Weex 三端差异。
 
-Just as the previous example, the slider can be rendered in native, easily in Weex playground, or in your App. Please refer [the document](advanced/integrate-to-android.html) for integrating Weex into your App.
+你可以试着修改 [Hello World](http://dotwe.org/656345423a7ef46f4b897ff471fd2ab5) 的代码，再次点击预览即可生成新的二维码进行扫描。
+
+Weex 不止是个 Demo，在接下来的章节中，你还会看到更多 Weex 开发 native 应用并将其集成到你的 App 中的精彩教程。不要忘了随时在 [dotWe](http://dotwe.org) 中编写代码验证并通过 [Playground App](https://alibaba.github.io/weex/download.html) 预览。
