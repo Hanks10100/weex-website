@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Weex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="如何在 app 中预览 Weex 页面？第一步：安装依赖你需要安装 Node.js 和 weex-toolkit。如果你已经安装过，可跳过此步。
+安装 Node.js 方式多种多样，最简单的方式是在 Node.js 官网 下载可执行程序直接安装即可。
+对于 Mac，可以使用 Homebrew 进行安装：
+brew install node
+
+更多安装方式可参考 Node.js 官方信息
+
+安装完成">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Weex">
+<meta property="og:url" content="http://alibaba.github.io/cn/guide/how-to/preview-in-app.html">
+<meta property="og:site_name" content="Weex">
+<meta property="og:description" content="如何在 app 中预览 Weex 页面？第一步：安装依赖你需要安装 Node.js 和 weex-toolkit。如果你已经安装过，可跳过此步。
+安装 Node.js 方式多种多样，最简单的方式是在 Node.js 官网 下载可执行程序直接安装即可。
+对于 Mac，可以使用 Homebrew 进行安装：
+brew install node
+
+更多安装方式可参考 Node.js 官方信息
+
+安装完成">
+<meta property="og:image" content="https://img.alicdn.com/tps/TB1kHFrOFXXXXaYXXXXXXXXXXXX-615-308.jpg">
+<meta property="og:image" content="https://img.alicdn.com/tps/TB1a4OaLpXXXXbAaFXXXXXXXXXX-782-649.jpg">
+<meta property="og:updated_time" content="2016-12-03T09:37:28.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Weex">
+<meta name="twitter:description" content="如何在 app 中预览 Weex 页面？第一步：安装依赖你需要安装 Node.js 和 weex-toolkit。如果你已经安装过，可跳过此步。
+安装 Node.js 方式多种多样，最简单的方式是在 Node.js 官网 下载可执行程序直接安装即可。
+对于 Mac，可以使用 Homebrew 进行安装：
+brew install node
+
+更多安装方式可参考 Node.js 官方信息
+
+安装完成">
+<meta name="twitter:image" content="https://img.alicdn.com/tps/TB1kHFrOFXXXXaYXXXXXXXXXXXX-615-308.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/weex-website/css/style.css">
+  <link rel="stylesheet" href="/weex-website/css/swiper.min.css">
+  
+
+</head>
+
+<body id="cn/guide/how-to/preview-in-app" class="lang-cn">
+  
+  <header id="header">
+  <div class="navbar">
+    <a id="logo" href="/weex-website/cn/">
+      <img src="/weex-website/images/logo.png" />
+    </a>
+    <div class="main-nav">
+      <ul class="links">
+        <li><a href="/weex-website/cn/guide">教程</a></li>
+        <li><a href="/weex-website/cn/references">手册</a></li>
+        <li><a href="/weex-website/cn/faq.html">FAQ</a></li>
+        <li class="dropdown">
+            <a href="javascript:;">资源</a>
+            <ul class="dropdown-menu subnav">
+              <li>
+                <a href="/weex-website/cn/playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="/weex-website/cn/tools">工具和服务</a>
+              </li>
+              <li>
+                <a href="/weex-website/cn/advanced">高阶知识</a>
+              </li>
+              <li>
+                <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
+              </li>
+            </ul>
+        </li>
+      </ul>
+      <ul class="info">
+        <li><a href="https://github.com/alibaba/weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+      </ul>
+      <ul class="tools">
+        <li><a class="btn-search"><span class="iconfont icon-search"></span></a></li>
+        <!--<li></li>-->
+      </ul>
+    </div>
+  </div>
+  <div id="mobile-nav">
+    <a id="logo" href="/">
+      <img src="/weex-website/images/logo.png" />
+    </a>
+    <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
+  </div>
+</header>
+  <div id="sidebar" class="">
+  <div class="sidebar-menu">
+    
+      <ul class="main-nav">
+        <li>
+          <a class="" href="/weex-website/cn/guide">
+            教程
+          </a>
+        </li>
+        <li>
+          <a class="" href="/weex-website/cn/references">
+            手册
+          </a>
+        </li>
+        <li>
+          <a href="/weex-website/cn/faq">
+            FAQ
+          </a>
+        </li>
+        <li>
+            <p>资源</p>
+            <ul class="subnav">
+              <li>
+                <a href="./playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="/weex-website/cn/tools">工具和服务</a>
+              </li>
+              <li>
+                <a href="/weex-website/cn/advanced">高阶知识</a>
+              </li>
+              <li>
+                <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
+              </li>
+            </ul>
+        </li>
+        <li>
+          <a href="https://github.com/alibaba/weex" target="_blank">
+            Github
+          </a>
+        </li>
+      </ul>
+    
+    <a class="btn-close-sidebar iconfont  icon-close"></a>
+  </div>
+</div>
+  <div class="article-wrapper page-layout">
+  <div class="doc-nav">
+    <div class="summary">
+  <h2 class="part-title">
+    
+  </h2>
+  <ul class="doc-summary">
+    
+    
+    
+   
+    
+  </ul>
+</div>
+  </div>
+  
+
+<article id="page-undefined" class="article article-type-cn/guide/how-to/preview-in-app">
+  <div class="article-entry" itemprop="articleBody">
+    <header class="article-header">
+  
+  <time class="article-date" datetime="2016-12-03T09:37:28.000Z">Updated time: 03/12/2016</time>
+</header>
+    <h1 id="如何在-app-中预览-Weex-页面？"><a href="#如何在-app-中预览-Weex-页面？" class="headerlink" title="如何在 app 中预览 Weex 页面？"></a>如何在 app 中预览 Weex 页面？</h1><h2 id="第一步：安装依赖"><a href="#第一步：安装依赖" class="headerlink" title="第一步：安装依赖"></a>第一步：安装依赖</h2><p>你需要安装 Node.js 和 <code>weex-toolkit</code>。如果你已经安装过，可跳过此步。</p>
+<p>安装 Node.js 方式多种多样，最简单的方式是在 <a href="https://nodejs.org/en/" target="_blank" rel="external">Node.js 官网</a> 下载可执行程序直接安装即可。</p>
+<p>对于 Mac，可以使用 <a href="http://brew.sh/" target="_blank" rel="external">Homebrew</a> 进行安装：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">brew install node</div></pre></td></tr></table></figure>
+<blockquote>
+<p>更多安装方式可参考 <a href="https://nodejs.org/en/download/" target="_blank" rel="external">Node.js 官方信息</a></p>
+</blockquote>
+<p>安装完成后，可以使用以下命令检测是否安装成功：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ node -v</div><div class="line">v6.3.1</div><div class="line">$ npm -v</div><div class="line">3.10.3</div></pre></td></tr></table></figure>
+<p>通常，安装了 Node.js 环境，npm 包管理工具也随之安装了。因此，直接使用 npm 来安装 <code>weex-toolkit</code>。</p>
+<blockquote>
+<p>npm 是一个 JavaScript 包管理工具，它可以让开发者轻松共享和重用代码。Weex 很多依赖来自社区，同样，Weex 也将很多工具发布到社区方便开发者使用。</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ npm install -g weex-toolkit    </div><div class="line">```	  </div><div class="line"></div><div class="line">国内开发者可以考虑使用淘宝的 npm 镜像 —— [cnpm](https://npm.taobao.org/) 安装 `weex-toolkit`</div><div class="line"></div><div class="line">```bash</div><div class="line">$ npm install -g cnpm</div><div class="line">$ cnpm install -g weex-toolkit</div></pre></td></tr></table></figure>
+<p><em>提示：</em></p>
+<p>如果提示权限错误（<em>permission error</em>），使用 <code>sudo</code> 关键字进行安装</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ sudo cnpm install -g weex-toolkit</div></pre></td></tr></table></figure>
+<p>安装结束后你可以直接使用 <code>weex</code> 命令验证是否安装成功，它会显示 <code>weex</code> 命令行工具各参数：</p>
+<p><img src="https://img.alicdn.com/tps/TB1kHFrOFXXXXaYXXXXXXXXXXXX-615-308.jpg" alt=""></p>
+<h2 id="第二步：使用-Playground-预览"><a href="#第二步：使用-Playground-预览" class="headerlink" title="第二步：使用 Playground 预览"></a>第二步：使用 Playground 预览</h2><p>使用 <a href="https://alibaba.github.io/weex/download.html">Playground APP</a> 预览是最简单的方式。你只需要在手机上安装 <a href="https://alibaba.github.io/weex/download.html">Playground</a>。</p>
+<p>我们用 <code>weex-toolkit</code> 编译 <code>.we</code> 文件并开启静态服务器：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ weex demo.we --qr</div></pre></td></tr></table></figure>
+<p><img src="https://img.alicdn.com/tps/TB1a4OaLpXXXXbAaFXXXXXXXXXX-782-649.jpg" alt=""></p>
+<p>终端会生成一个二维码，我们只需用 Playground 扫码即可预览。</p>
+<h2 id="构建一个全新的-App-并预览"><a href="#构建一个全新的-App-并预览" class="headerlink" title="构建一个全新的 App 并预览"></a>构建一个全新的 App 并预览</h2><p>这里可参考<a href="https://alibaba.github.io/weex/cn/doc/how-to/create-a-weex-project.html">《如何创建一个 Weex 项目》</a>。</p>
+
+  </div>
+  
+</article>
+</div>
+  <script>window.PAGE_TYPE = "cn/guide/how-to/preview-in-app"</script>
+  <footer id="footer">
+  <div class="row clearfix">
+    <div class="ali-logo">
+      <img src="/weex-website/images/ali-open-source.png" alt="Alibaba">
+    </div>
+    <div class="dropdown select-lang">
+      <a href="javascript:;" class="dropdown-toggle">
+        Language
+        <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu">
+        <li>
+          <a href="/weex-website/guide/how-to/preview-in-app.html">English</a>
+        </li>
+        <li>
+          <a href="/weex-website/cn/guide/how-to/preview-in-app.html">中文</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <p><span>Released under </span><a href="">Apache License 2.0</a></p>
+  </div>
+  <div class="row clearfix">
+    <div class="cell"><span>Copyright(c) 2016 </span><a href="https://www.alibaba.com">Alibaba</a></div>
+    <div class="cell"><span>GroupMade by </span><a href="">阿里云UED AX</a></div>
+    <div class="cell"><span>Proudly Produced by </span><a href="https://baichuan.taobao.com/">Alibaichuan</a> <span class="iconfont icon-baichuan"></span></div>
+  </div>
+</footer>
+  
+
+<!--<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>-->
+
+
+  <script src="/weex-website/js/velocity.js"></script>
+  <script src="/weex-website/js/common.js"></script>
+</body>
+</html>

@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>数据绑定原理 | Weex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="数据绑定实现原理Weex 的 JS Framework 是一个 MVVM，即 Model-View-ViewModel 框架。他会自动监听数据的变化，并通过 {{字段名}} 的语法把数据和视图中所展示的内容自动绑定起来。当数据被改写的时候，视图会自动根据数据的变化而发生相应的变化。
+比如下面这个例子，&amp;lt;text&amp;gt; 的内容被绑定在了 notes 数据字段上：
+&amp;lt;template&amp;g">
+<meta property="og:type" content="website">
+<meta property="og:title" content="数据绑定原理">
+<meta property="og:url" content="http://alibaba.github.io/cn/advanced/how-data-binding-works.html">
+<meta property="og:site_name" content="Weex">
+<meta property="og:description" content="数据绑定实现原理Weex 的 JS Framework 是一个 MVVM，即 Model-View-ViewModel 框架。他会自动监听数据的变化，并通过 {{字段名}} 的语法把数据和视图中所展示的内容自动绑定起来。当数据被改写的时候，视图会自动根据数据的变化而发生相应的变化。
+比如下面这个例子，&amp;lt;text&amp;gt; 的内容被绑定在了 notes 数据字段上：
+&amp;lt;template&amp;g">
+<meta property="og:updated_time" content="2016-12-22T12:06:29.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="数据绑定原理">
+<meta name="twitter:description" content="数据绑定实现原理Weex 的 JS Framework 是一个 MVVM，即 Model-View-ViewModel 框架。他会自动监听数据的变化，并通过 {{字段名}} 的语法把数据和视图中所展示的内容自动绑定起来。当数据被改写的时候，视图会自动根据数据的变化而发生相应的变化。
+比如下面这个例子，&amp;lt;text&amp;gt; 的内容被绑定在了 notes 数据字段上：
+&amp;lt;template&amp;g">
+  
+    <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/weex-website/css/style.css">
+  <link rel="stylesheet" href="/weex-website/css/swiper.min.css">
+  
+
+</head>
+
+<body id="advanced" class="lang-cn">
+  
+  <header id="header">
+  <div class="navbar">
+    <a id="logo" href="/weex-website/cn/">
+      <img src="/weex-website/images/logo.png" />
+    </a>
+    <div class="main-nav">
+      <ul class="links">
+        <li><a href="/weex-website/cn/guide">教程</a></li>
+        <li><a href="/weex-website/cn/references">手册</a></li>
+        <li><a href="/weex-website/cn/faq.html">FAQ</a></li>
+        <li class="dropdown">
+            <a href="javascript:;">资源</a>
+            <ul class="dropdown-menu subnav">
+              <li>
+                <a href="/weex-website/cn/playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="/weex-website/cn/tools">工具和服务</a>
+              </li>
+              <li>
+                <a href="/weex-website/cn/advanced">高阶知识</a>
+              </li>
+              <li>
+                <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
+              </li>
+            </ul>
+        </li>
+      </ul>
+      <ul class="info">
+        <li><a href="https://github.com/alibaba/weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+      </ul>
+      <ul class="tools">
+        <li><a class="btn-search"><span class="iconfont icon-search"></span></a></li>
+        <!--<li></li>-->
+      </ul>
+    </div>
+  </div>
+  <div id="mobile-nav">
+    <a id="logo" href="/">
+      <img src="/weex-website/images/logo.png" />
+    </a>
+    <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
+  </div>
+</header>
+  <div id="sidebar" class="">
+  <div class="sidebar-menu">
+    
+      <ul class="main-nav">
+        <li>
+          <a class="" href="/weex-website/cn/guide">
+            教程
+          </a>
+        </li>
+        <li>
+          <a class="" href="/weex-website/cn/references">
+            手册
+          </a>
+        </li>
+        <li>
+          <a href="/weex-website/cn/faq">
+            FAQ
+          </a>
+        </li>
+        <li>
+            <p>资源</p>
+            <ul class="subnav">
+              <li>
+                <a href="./playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="/weex-website/cn/tools">工具和服务</a>
+              </li>
+              <li>
+                <a href="/weex-website/cn/advanced">高阶知识</a>
+              </li>
+              <li>
+                <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
+              </li>
+            </ul>
+        </li>
+        <li>
+          <a href="https://github.com/alibaba/weex" target="_blank">
+            Github
+          </a>
+        </li>
+      </ul>
+    
+    <a class="btn-close-sidebar iconfont  icon-close"></a>
+  </div>
+</div>
+  <div class="article-wrapper page-layout">
+  <div class="doc-nav">
+    <div class="summary">
+  <h2 class="part-title">
+    
+      高阶知识
+    
+  </h2>
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+   
+    
+      <li>
+        <h3 class="chapter-title"><a href="/weex-website/cn/advanced/index.html" class="sidebar-link  ">Weex 工作原理</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/weex-website/cn/advanced/how-data-binding-works.html" class="sidebar-link current ">数据绑定原理</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/weex-website/cn/advanced/create-a-weex-project.html" class="sidebar-link  ">如何创建一个 Weex 项目</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/weex-website/cn/advanced/integrate-to-android.html" class="sidebar-link  ">集成到 Android</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/weex-website/cn/advanced/integrate-to-ios.html" class="sidebar-link  ">集成到 iOS</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/weex-website/cn/advanced/integrate-to-html5.html" class="sidebar-link  ">集成到 web</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/weex-website/cn/advanced/customize-a-native-component.html" class="sidebar-link  ">自定义 native 组件</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/weex-website/cn/advanced/cuszomize-native-apis.html" class="sidebar-link  ">自定义 native API</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/weex-website/cn/advanced/extend-to-android.html" class="sidebar-link  ">Android 扩展</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/weex-website/cn/advanced/extend-to-ios.html" class="sidebar-link  ">iOS 扩展</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/weex-website/cn/advanced/extend-to-html5.html" class="sidebar-link  ">weex-html5 扩展</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/weex-website/cn/advanced/integrate-devtools-to-android.html" class="sidebar-link  ">集成 Devtools 到 Android</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/weex-website/cn/advanced/integrate-devtools-to-ios.html" class="sidebar-link  ">集成 Devtools 到 iOS</a></h3>
+        
+      </li>
+    
+  </ul>
+</div>
+  </div>
+  
+
+<article id="page-undefined" class="article article-type-advanced">
+  <div class="article-entry" itemprop="articleBody">
+    <header class="article-header">
+  
+    
+      <h1 class="article-title" itemprop="name">
+        数据绑定原理
+      </h1>
+    
+  
+  <time class="article-date" datetime="2016-12-22T12:06:29.000Z">Updated time: 22/12/2016</time>
+</header>
+    <h1 id="数据绑定实现原理"><a href="#数据绑定实现原理" class="headerlink" title="数据绑定实现原理"></a>数据绑定实现原理</h1><p>Weex 的 JS Framework 是一个 MVVM，即 Model-View-ViewModel 框架。他会自动监听数据的变化，并通过 <code>{{字段名}}</code> 的语法把数据和视图中所展示的内容自动绑定起来。当数据被改写的时候，视图会自动根据数据的变化而发生相应的变化。</p>
+<p>比如下面这个例子，<code>&lt;text&gt;</code> 的内容被绑定在了 <code>notes</code> 数据字段上：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">text</span>&gt;</span>&#123;&#123;notes&#125;&#125;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="built_in">module</span>.exports = &#123;</div><div class="line">    <span class="attr">data</span>: &#123;</div><div class="line">      <span class="attr">notes</span>: <span class="string">'Hello'</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>Weex 的 JS Framework 会首先对 <code>data</code> 里的数据进行监听，这样未来的数据变化都能够被监听到。然后我们会编译整个 <code>&lt;template&gt;</code> 标签里的内容。当我们找到 <code>&lt;text&gt;</code> 标签里的 <code>{{notes}}</code> 时，JS Framework 会跟踪 <code>data.notes</code> 的变化并在其发生变化时触发一个句柄，将 <code>&lt;text&gt;</code> 的内容设置为 <code>data.notes</code> 最新的值。这样的话开发者就不必手动关心数据和视图之间的数据同步问题了。</p>
+<p>在这个基础上我们还设计了一些特殊的语法：</p>
+<ul>
+<li><code>&lt;foo if=&quot;...&quot;&gt;</code> 代表一个条件监听，当其值为 <code>true</code> 时，<code>&lt;foo&gt;</code> 元素将会被创建和载入，反之则不会被创建或被移除掉。</li>
+<li><code>&lt;foo repeat=&quot;...&quot;&gt;</code> 代表一个列表监听，第一次加载的时候 <code>&lt;foo&gt;</code> 元素会被按照数组里的数据逐条 clone 并赋值。而当有列表项增加、移动或移除时，视图层也会自动触发相应的改变，并且智能优化至最小变更策略</li>
+<li><code>&lt;foo if=&quot;...&quot; repeat=&quot;...&quot;&gt;</code> 两个特殊语法共用时，将会优先展开 <code>repeat</code> 然后逐条判断 <code>if</code>。</li>
+</ul>
+<p>相比于一些 virtual-DOM 的 diff 计算机制，我们会直接对数据进行 diff，而且只会 diff 由于用户操作或数据操作发生改变的那部分数据和视图，这是一种更小范围的计算方式。尤其在追求轻量快速的移动端界面上，这种更新机制更加显得具有优势。</p>
+
+  </div>
+  
+</article>
+</div>
+  <script>window.PAGE_TYPE = "advanced"</script>
+  <footer id="footer">
+  <div class="row clearfix">
+    <div class="ali-logo">
+      <img src="/weex-website/images/ali-open-source.png" alt="Alibaba">
+    </div>
+    <div class="dropdown select-lang">
+      <a href="javascript:;" class="dropdown-toggle">
+        Language
+        <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu">
+        <li>
+          <a href="/weex-website/advanced/how-data-binding-works.html">English</a>
+        </li>
+        <li>
+          <a href="/weex-website/cn/advanced/how-data-binding-works.html">中文</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <p><span>Released under </span><a href="">Apache License 2.0</a></p>
+  </div>
+  <div class="row clearfix">
+    <div class="cell"><span>Copyright(c) 2016 </span><a href="https://www.alibaba.com">Alibaba</a></div>
+    <div class="cell"><span>GroupMade by </span><a href="">阿里云UED AX</a></div>
+    <div class="cell"><span>Proudly Produced by </span><a href="https://baichuan.taobao.com/">Alibaichuan</a> <span class="iconfont icon-baichuan"></span></div>
+  </div>
+</footer>
+  
+
+<!--<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>-->
+
+
+  <script src="/weex-website/js/velocity.js"></script>
+  <script src="/weex-website/js/common.js"></script>
+</body>
+</html>

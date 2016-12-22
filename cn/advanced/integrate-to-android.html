@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>集成到 Android | Weex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="WEEX SDK 集成到 Android 工程注：以下文档都是假设您已经具备一定的Android开发经验。
+Android 集成有两种方式
+源码依赖：能够快速使用WEEX最新功能，可以根据自己项目的特性进行相关改进。
+SDK依赖：WEEX 会在jcenter 定期发布稳定版本。jcenter注:国内可能需要翻墙
+
+前期准备
+已经安装了JDK version&amp;gt;=1.7 并配置了环境变量
+已经安">
+<meta property="og:type" content="website">
+<meta property="og:title" content="集成到 Android">
+<meta property="og:url" content="http://alibaba.github.io/cn/advanced/integrate-to-android.html">
+<meta property="og:site_name" content="Weex">
+<meta property="og:description" content="WEEX SDK 集成到 Android 工程注：以下文档都是假设您已经具备一定的Android开发经验。
+Android 集成有两种方式
+源码依赖：能够快速使用WEEX最新功能，可以根据自己项目的特性进行相关改进。
+SDK依赖：WEEX 会在jcenter 定期发布稳定版本。jcenter注:国内可能需要翻墙
+
+前期准备
+已经安装了JDK version&amp;gt;=1.7 并配置了环境变量
+已经安">
+<meta property="og:updated_time" content="2016-12-22T12:29:24.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="集成到 Android">
+<meta name="twitter:description" content="WEEX SDK 集成到 Android 工程注：以下文档都是假设您已经具备一定的Android开发经验。
+Android 集成有两种方式
+源码依赖：能够快速使用WEEX最新功能，可以根据自己项目的特性进行相关改进。
+SDK依赖：WEEX 会在jcenter 定期发布稳定版本。jcenter注:国内可能需要翻墙
+
+前期准备
+已经安装了JDK version&amp;gt;=1.7 并配置了环境变量
+已经安">
+  
+    <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/weex-website/css/style.css">
+  <link rel="stylesheet" href="/weex-website/css/swiper.min.css">
+  
+
+</head>
+
+<body id="advanced" class="lang-cn">
+  
+  <header id="header">
+  <div class="navbar">
+    <a id="logo" href="/weex-website/cn/">
+      <img src="/weex-website/images/logo.png" />
+    </a>
+    <div class="main-nav">
+      <ul class="links">
+        <li><a href="/weex-website/cn/guide">教程</a></li>
+        <li><a href="/weex-website/cn/references">手册</a></li>
+        <li><a href="/weex-website/cn/faq.html">FAQ</a></li>
+        <li class="dropdown">
+            <a href="javascript:;">资源</a>
+            <ul class="dropdown-menu subnav">
+              <li>
+                <a href="/weex-website/cn/playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="/weex-website/cn/tools">工具和服务</a>
+              </li>
+              <li>
+                <a href="/weex-website/cn/advanced">高阶知识</a>
+              </li>
+              <li>
+                <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
+              </li>
+            </ul>
+        </li>
+      </ul>
+      <ul class="info">
+        <li><a href="https://github.com/alibaba/weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+      </ul>
+      <ul class="tools">
+        <li><a class="btn-search"><span class="iconfont icon-search"></span></a></li>
+        <!--<li></li>-->
+      </ul>
+    </div>
+  </div>
+  <div id="mobile-nav">
+    <a id="logo" href="/">
+      <img src="/weex-website/images/logo.png" />
+    </a>
+    <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
+  </div>
+</header>
+  <div id="sidebar" class="">
+  <div class="sidebar-menu">
+    
+      <ul class="main-nav">
+        <li>
+          <a class="" href="/weex-website/cn/guide">
+            教程
+          </a>
+        </li>
+        <li>
+          <a class="" href="/weex-website/cn/references">
+            手册
+          </a>
+        </li>
+        <li>
+          <a href="/weex-website/cn/faq">
+            FAQ
+          </a>
+        </li>
+        <li>
+            <p>资源</p>
+            <ul class="subnav">
+              <li>
+                <a href="./playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="/weex-website/cn/tools">工具和服务</a>
+              </li>
+              <li>
+                <a href="/weex-website/cn/advanced">高阶知识</a>
+              </li>
+              <li>
+                <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
+              </li>
+            </ul>
+        </li>
+        <li>
+          <a href="https://github.com/alibaba/weex" target="_blank">
+            Github
+          </a>
+        </li>
+      </ul>
+    
+    <a class="btn-close-sidebar iconfont  icon-close"></a>
+  </div>
+</div>
+  <div class="article-wrapper page-layout">
+  <div class="doc-nav">
+    <div class="summary">
+  <h2 class="part-title">
+    
+      高阶知识
+    
+  </h2>
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+   
+    
+      <li>
+        <h3 class="chapter-title"><a href="/weex-website/cn/advanced/index.html" class="sidebar-link  ">Weex 工作原理</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/weex-website/cn/advanced/how-data-binding-works.html" class="sidebar-link  ">数据绑定原理</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/weex-website/cn/advanced/create-a-weex-project.html" class="sidebar-link  ">如何创建一个 Weex 项目</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/weex-website/cn/advanced/integrate-to-android.html" class="sidebar-link current ">集成到 Android</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/weex-website/cn/advanced/integrate-to-ios.html" class="sidebar-link  ">集成到 iOS</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/weex-website/cn/advanced/integrate-to-html5.html" class="sidebar-link  ">集成到 web</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/weex-website/cn/advanced/customize-a-native-component.html" class="sidebar-link  ">自定义 native 组件</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/weex-website/cn/advanced/cuszomize-native-apis.html" class="sidebar-link  ">自定义 native API</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/weex-website/cn/advanced/extend-to-android.html" class="sidebar-link  ">Android 扩展</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/weex-website/cn/advanced/extend-to-ios.html" class="sidebar-link  ">iOS 扩展</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/weex-website/cn/advanced/extend-to-html5.html" class="sidebar-link  ">weex-html5 扩展</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/weex-website/cn/advanced/integrate-devtools-to-android.html" class="sidebar-link  ">集成 Devtools 到 Android</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/weex-website/cn/advanced/integrate-devtools-to-ios.html" class="sidebar-link  ">集成 Devtools 到 iOS</a></h3>
+        
+      </li>
+    
+  </ul>
+</div>
+  </div>
+  
+
+<article id="page-undefined" class="article article-type-advanced">
+  <div class="article-entry" itemprop="articleBody">
+    <header class="article-header">
+  
+    
+      <h1 class="article-title" itemprop="name">
+        集成到 Android
+      </h1>
+    
+  
+  <time class="article-date" datetime="2016-12-22T12:29:24.000Z">Updated time: 22/12/2016</time>
+</header>
+    <h1 id="WEEX-SDK-集成到-Android-工程"><a href="#WEEX-SDK-集成到-Android-工程" class="headerlink" title="WEEX SDK 集成到 Android 工程"></a>WEEX SDK 集成到 Android 工程</h1><p>注：以下文档都是假设您已经具备一定的Android开发经验。</p>
+<h3 id="Android-集成有两种方式"><a href="#Android-集成有两种方式" class="headerlink" title="Android 集成有两种方式"></a>Android 集成有两种方式</h3><ol>
+<li>源码依赖：能够快速使用WEEX最新功能，可以根据自己项目的特性进行相关改进。</li>
+<li>SDK依赖：WEEX 会在jcenter 定期发布稳定版本。<a href="https://bintray.com/alibabaweex/maven/weex_sdk/view" target="_blank" rel="external">jcenter</a><br>注:国内可能需要翻墙</li>
+</ol>
+<h2 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h2><ul>
+<li>已经安装了<a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" rel="external">JDK</a> version&gt;=1.7 并配置了环境变量</li>
+<li>已经安装<a href="https://developer.android.com/studio/index.html" target="_blank" rel="external">Android SDK</a> 并配置环境变量。</li>
+<li>Android SDK version 23 (compileSdkVersion in <a href="https://github.com/alibaba/weex/blob/master/android/sdk/build.gradle" target="_blank" rel="external"><code>build.gradle</code></a>)</li>
+<li>SDK build tools version 23.0.1 (buildToolsVersion in <a href="https://github.com/alibaba/weex/blob/master/android/sdk/build.gradle" target="_blank" rel="external"><code>build.gradle</code></a>)</li>
+<li>Android Support Repository &gt;= 17 (for Android Support Library)</li>
+</ul>
+<h2 id="快速接入"><a href="#快速接入" class="headerlink" title="快速接入"></a>快速接入</h2><p>如果你是尝鲜或者对稳定性要求比较高可以使用依赖SDK的方式。<br>步骤如下：  </p>
+<ol>
+<li>创建Android工程，没有什么要特别说明的，按照你的习惯来。</li>
+<li><p>修改build.gradle 加入如下基础依赖  </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">compile &apos;com.android.support:recyclerview-v7:23.1.1&apos;</div><div class="line">compile &apos;com.android.support:support-v4:23.1.1&apos;</div><div class="line">compile &apos;com.android.support:appcompat-v7:23.1.1&apos;</div><div class="line">compile &apos;com.alibaba:fastjson:1.1.46.android&apos;</div><div class="line">compile &apos;com.taobao.android:weex_sdk:0.5.1@aar&apos;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>   注:版本可以高不可以低。  </p>
+<h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><p>注:附录中有完整代码地址</p>
+<ul>
+<li>实现图片下载接口，初始化时设置。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">package com.weex.sample;</div><div class="line"></div><div class="line">import android.widget.ImageView;</div><div class="line"></div><div class="line">import com.taobao.weex.adapter.IWXImgLoaderAdapter;</div><div class="line">import com.taobao.weex.common.WXImageStrategy;</div><div class="line">import com.taobao.weex.dom.WXImageQuality;</div><div class="line"></div><div class="line">/**</div><div class="line"> * Created by lixinke on 16/6/1.</div><div class="line"> */</div><div class="line">public class ImageAdapter implements IWXImgLoaderAdapter &#123;</div><div class="line"></div><div class="line"></div><div class="line">  @Override</div><div class="line">  public void setImage(String url, ImageView view, WXImageQuality quality, WXImageStrategy strategy) &#123;</div><div class="line">    //实现你自己的图片下载，否则图片无法显示。</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>初始化</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">package com.weex.sample;</div><div class="line"></div><div class="line">import android.app.Application;</div><div class="line"></div><div class="line">import com.taobao.weex.InitConfig;</div><div class="line">import com.taobao.weex.WXSDKEngine;</div><div class="line"></div><div class="line">/**</div><div class="line"> * 注意要在Manifest中设置android:name=&quot;.WXApplication&quot;</div><div class="line"> * 要实现ImageAdapter 否则图片不能下载</div><div class="line"> * gradle 中一定要添加一些依赖，否则初始化会失败。</div><div class="line"> * compile &apos;com.android.support:recyclerview-v7:23.1.1&apos;</div><div class="line"> * compile &apos;com.android.support:support-v4:23.1.1&apos;</div><div class="line"> * compile &apos;com.android.support:appcompat-v7:23.1.1&apos;</div><div class="line"> * compile &apos;com.alibaba:fastjson:1.1.45&apos;</div><div class="line"> */</div><div class="line">public class WXApplication extends Application &#123;</div><div class="line"></div><div class="line">  @Override</div><div class="line">  public void onCreate() &#123;</div><div class="line">    super.onCreate();</div><div class="line">    InitConfig config=new InitConfig.Builder().setImgAdapter(new ImageAdapter()).build();</div><div class="line">    WXSDKEngine.initialize(this,config);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>开始渲染</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">package com.weex.sample;</div><div class="line"></div><div class="line">import android.os.Bundle;</div><div class="line">import android.support.v7.app.AppCompatActivity;</div><div class="line">import android.view.View;</div><div class="line"></div><div class="line">import com.taobao.weex.IWXRenderListener;</div><div class="line">import com.taobao.weex.WXSDKInstance;</div><div class="line">import com.taobao.weex.common.WXRenderStrategy;</div><div class="line">import com.taobao.weex.utils.WXFileUtils;</div><div class="line"></div><div class="line">public class MainActivity extends AppCompatActivity implements IWXRenderListener &#123;</div><div class="line"></div><div class="line">  WXSDKInstance mWXSDKInstance;</div><div class="line"></div><div class="line">  @Override</div><div class="line">  protected void onCreate(Bundle savedInstanceState) &#123;</div><div class="line">    super.onCreate(savedInstanceState);</div><div class="line">    setContentView(R.layout.activity_main);</div><div class="line"></div><div class="line">    mWXSDKInstance = new WXSDKInstance(this);</div><div class="line">    mWXSDKInstance.registerRenderListener(this);</div><div class="line">    /**</div><div class="line">     * WXSample 可以替换成自定义的字符串，针对埋点有效。</div><div class="line">     * template 是.we transform 后的 js文件。</div><div class="line">     * option 可以为空，或者通过option传入 js需要的参数。例如bundle js的地址等。</div><div class="line">     * jsonInitData 可以为空。</div><div class="line">     * width 为-1 默认全屏，可以自己定制。</div><div class="line">     * height =-1 默认全屏，可以自己定制。</div><div class="line">     */</div><div class="line">    mWXSDKInstance.render(&quot;WXSample&quot;, WXFileUtils.loadFileContent(&quot;hello.js&quot;, this), null, null, -1, -1, WXRenderStrategy.APPEND_ASYNC);</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  @Override</div><div class="line">  public void onViewCreated(WXSDKInstance instance, View view) &#123;</div><div class="line">    setContentView(view);</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  @Override</div><div class="line">  public void onRenderSuccess(WXSDKInstance instance, int width, int height) &#123;</div><div class="line"></div><div class="line">  &#125;</div><div class="line"></div><div class="line">  @Override</div><div class="line">  public void onRefreshSuccess(WXSDKInstance instance, int width, int height) &#123;</div><div class="line"></div><div class="line">  &#125;</div><div class="line"></div><div class="line">  @Override</div><div class="line">  public void onException(WXSDKInstance instance, String errCode, String msg) &#123;</div><div class="line"></div><div class="line">  &#125;</div><div class="line"></div><div class="line"></div><div class="line">  @Override</div><div class="line">  protected void onResume() &#123;</div><div class="line">    super.onResume();</div><div class="line">    if(mWXSDKInstance!=null)&#123;</div><div class="line">      mWXSDKInstance.onActivityResume();</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  @Override</div><div class="line">  protected void onPause() &#123;</div><div class="line">    super.onPause();</div><div class="line">    if(mWXSDKInstance!=null)&#123;</div><div class="line">      mWXSDKInstance.onActivityPause();</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  @Override</div><div class="line">  protected void onStop() &#123;</div><div class="line">    super.onStop();</div><div class="line">    if(mWXSDKInstance!=null)&#123;</div><div class="line">      mWXSDKInstance.onActivityStop();</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  @Override</div><div class="line">  protected void onDestroy() &#123;</div><div class="line">    super.onDestroy();</div><div class="line">    if(mWXSDKInstance!=null)&#123;</div><div class="line">      mWXSDKInstance.onActivityDestroy();</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="源码依赖-IDE-Android-Studio"><a href="#源码依赖-IDE-Android-Studio" class="headerlink" title="源码依赖(IDE Android Studio)"></a>源码依赖(IDE Android Studio)</h2><ol>
+<li>下载源码 <code>git clone https://github.com/alibaba/weex</code></li>
+<li>创建Android 工程。</li>
+<li>通过以下路径引入SDK Module<br>File-&gt;New-Import Module-&gt;选择WEEX SDK Module(weex/android/sdk)-&gt;Finish  </li>
+<li>app 的build.gradle 中添加如下依赖:<code>compile project(&#39;:weex_sdk&#39;)</code></li>
+<li>其他设置请参考上面快速接入</li>
+</ol>
+<h3 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h3><p>WXSample地址<br><code>https://github.com/xkli/WXSample.git</code></p>
+
+  </div>
+  
+</article>
+</div>
+  <script>window.PAGE_TYPE = "advanced"</script>
+  <footer id="footer">
+  <div class="row clearfix">
+    <div class="ali-logo">
+      <img src="/weex-website/images/ali-open-source.png" alt="Alibaba">
+    </div>
+    <div class="dropdown select-lang">
+      <a href="javascript:;" class="dropdown-toggle">
+        Language
+        <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu">
+        <li>
+          <a href="/weex-website/advanced/integrate-to-android.html">English</a>
+        </li>
+        <li>
+          <a href="/weex-website/cn/advanced/integrate-to-android.html">中文</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <p><span>Released under </span><a href="">Apache License 2.0</a></p>
+  </div>
+  <div class="row clearfix">
+    <div class="cell"><span>Copyright(c) 2016 </span><a href="https://www.alibaba.com">Alibaba</a></div>
+    <div class="cell"><span>GroupMade by </span><a href="">阿里云UED AX</a></div>
+    <div class="cell"><span>Proudly Produced by </span><a href="https://baichuan.taobao.com/">Alibaichuan</a> <span class="iconfont icon-baichuan"></span></div>
+  </div>
+</footer>
+  
+
+<!--<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>-->
+
+
+  <script src="/weex-website/js/velocity.js"></script>
+  <script src="/weex-website/js/common.js"></script>
+</body>
+</html>

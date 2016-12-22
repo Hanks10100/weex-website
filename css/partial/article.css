@@ -6,7 +6,7 @@
 ***********************/
 .article {
   max-width: 900px;
-  margin: 120px 0 90px 300px;
+  margin: 0 0 90px 300px;
   position: relative;
   line-height: 1.8; }
   .article.article-type-article {

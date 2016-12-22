@@ -22,8 +22,7 @@
     font-size: 1.2em;
     font-weight: 600; }
   .summary h3.chapter-title {
-    font-size: 1.1em;
-    font-weight: 600; }
+    font-size: 1.1em; }
   .summary ul.chapter {
     margin-left: 15px; }
     .summary ul.chapter li {
@@ -31,3 +30,6 @@
       overflow: hidden;
       text-overflow: ellipsis;
       padding-bottom: 15px; }
+
+.lang-en .summary h3.chapter-title {
+  font-weight: 600; }

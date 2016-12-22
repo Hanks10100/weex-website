@@ -761,8 +761,10 @@ pre .javascript .function, pre .keyword {
 .article-wrapper {
   position: relative;
   width: 100%;
-  margin: 90px auto 0;
-  min-height: 100%; }
+  margin: 0 auto;
+  padding: 120px 0 0;
+  min-height: 80%;
+  min-height: calc(100% - 240px); }
   .article-wrapper.post-layout {
     max-width: 900px; }
   .article-wrapper.page-layout {
@@ -773,7 +775,7 @@ pre .javascript .function, pre .keyword {
       display: none; }
   .article-wrapper .doc-nav {
     position: absolute;
-    top: 0;
+    top: 120px;
     left: 0;
     bottom: 0;
     background: #FAFAFA;
@@ -833,7 +835,7 @@ pre .javascript .function, pre .keyword {
 ***********************/
 .article {
   max-width: 900px;
-  margin: 120px 0 90px 300px;
+  margin: 0 0 90px 300px;
   position: relative;
   line-height: 1.8; }
   .article.article-type-article {
@@ -897,8 +899,7 @@ pre .javascript .function, pre .keyword {
     font-size: 1.2em;
     font-weight: 600; }
   .summary h3.chapter-title {
-    font-size: 1.1em;
-    font-weight: 600; }
+    font-size: 1.1em; }
   .summary ul.chapter {
     margin-left: 15px; }
     .summary ul.chapter li {
@@ -906,6 +907,9 @@ pre .javascript .function, pre .keyword {
       overflow: hidden;
       text-overflow: ellipsis;
       padding-bottom: 15px; }
+
+.lang-en .summary h3.chapter-title {
+  font-weight: 600; }
 
 /*BLOG*/
 /***********************

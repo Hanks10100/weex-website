@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>上手教程 | Weex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="起步教程Weex 是一套简单易用的跨平台开发方案，能以 web 的开发体验构建高性能、可扩展的 native 应用，为了做到这些，Weex 与  Vue 合作，使用 Vue 作为上层框架，并遵循 W3C 标准实现了统一的 JSEngine 和 DOM API，这样一来，你甚至可以使用其他框架驱动 Weex，打造三端一致的 native 应用。
+尝试 Weex 最简单的方法是使用 Playgroun">
+<meta property="og:type" content="website">
+<meta property="og:title" content="上手教程">
+<meta property="og:url" content="http://alibaba.github.io/cn/guide/index.html">
+<meta property="og:site_name" content="Weex">
+<meta property="og:description" content="起步教程Weex 是一套简单易用的跨平台开发方案，能以 web 的开发体验构建高性能、可扩展的 native 应用，为了做到这些，Weex 与  Vue 合作，使用 Vue 作为上层框架，并遵循 W3C 标准实现了统一的 JSEngine 和 DOM API，这样一来，你甚至可以使用其他框架驱动 Weex，打造三端一致的 native 应用。
+尝试 Weex 最简单的方法是使用 Playgroun">
+<meta property="og:image" content="https://img.alicdn.com/tps/TB1Ymw3OpXXXXcvXpXXXXXXXXXX-500-1013.jpg">
+<meta property="og:updated_time" content="2016-12-22T10:14:51.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="上手教程">
+<meta name="twitter:description" content="起步教程Weex 是一套简单易用的跨平台开发方案，能以 web 的开发体验构建高性能、可扩展的 native 应用，为了做到这些，Weex 与  Vue 合作，使用 Vue 作为上层框架，并遵循 W3C 标准实现了统一的 JSEngine 和 DOM API，这样一来，你甚至可以使用其他框架驱动 Weex，打造三端一致的 native 应用。
+尝试 Weex 最简单的方法是使用 Playgroun">
+<meta name="twitter:image" content="https://img.alicdn.com/tps/TB1Ymw3OpXXXXcvXpXXXXXXXXXX-500-1013.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/weex-website/css/style.css">
+  <link rel="stylesheet" href="/weex-website/css/swiper.min.css">
+  
+
+</head>
+
+<body id="guide" class="lang-cn">
+  
+  <header id="header">
+  <div class="navbar">
+    <a id="logo" href="/weex-website/cn/">
+      <img src="/weex-website/images/logo.png" />
+    </a>
+    <div class="main-nav">
+      <ul class="links">
+        <li><a href="/weex-website/cn/guide">教程</a></li>
+        <li><a href="/weex-website/cn/references">手册</a></li>
+        <li><a href="/weex-website/cn/faq.html">FAQ</a></li>
+        <li class="dropdown">
+            <a href="javascript:;">资源</a>
+            <ul class="dropdown-menu subnav">
+              <li>
+                <a href="/weex-website/cn/playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="/weex-website/cn/tools">工具和服务</a>
+              </li>
+              <li>
+                <a href="/weex-website/cn/advanced">高阶知识</a>
+              </li>
+              <li>
+                <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
+              </li>
+            </ul>
+        </li>
+      </ul>
+      <ul class="info">
+        <li><a href="https://github.com/alibaba/weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+      </ul>
+      <ul class="tools">
+        <li><a class="btn-search"><span class="iconfont icon-search"></span></a></li>
+        <!--<li></li>-->
+      </ul>
+    </div>
+  </div>
+  <div id="mobile-nav">
+    <a id="logo" href="/">
+      <img src="/weex-website/images/logo.png" />
+    </a>
+    <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
+  </div>
+</header>
+  <div id="sidebar" class="">
+  <div class="sidebar-menu">
+    
+      <div class="summary">
+  <h2 class="part-title">
+    
+      教程
+    
+  </h2>
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+   
+    
+      <li>
+        <h3 class="chapter-title"><a href="/weex-website/cn/guide/index.html" class="sidebar-link current ">上手教程</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/weex-website/cn/guide/develop-on-your-local-machine.html" class="sidebar-link  ">如何在本地开发 Weex 页面</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/weex-website/cn/guide/syntax/index.html" class="sidebar-link  ">语法介绍</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/weex-website/cn/guide/syntax/data-binding.html" class="sidebar-link  ">数据绑定</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/cn/guide/syntax/style-n-class.html" class="sidebar-link  ">CSS 样式和类</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/cn/guide/syntax/events.html" class="sidebar-link  ">事件处理</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/cn/guide/syntax/display-logic.html" class="sidebar-link  ">展示逻辑控制</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/cn/guide/syntax/render-logic.html" class="sidebar-link  ">渲染过程控制</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/cn/guide/syntax/composed-component.html" class="sidebar-link  ">组件封装</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/cn/guide/syntax/id.html" class="sidebar-link  ">找节点</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/cn/guide/syntax/comm.html" class="sidebar-link  ">组件通信</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/cn/guide/syntax/config-n-data.html" class="sidebar-link  ">页面配置和页面数据</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/weex-website/cn/guide/how-to/index.html" class="sidebar-link  ">最佳实践</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/weex-website/cn/guide/how-to/debug-with-devtools.html" class="sidebar-link  ">使用 Devtools 调试 Weex 页面</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/cn/guide/how-to/debug-with-html5.html" class="sidebar-link  ">在浏览器中调试</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/cn/guide/how-to/require-3rd-party-libs.html" class="sidebar-link  ">如何引入第三方库</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/cn/guide/how-to/transform-code-into-js-bundle.html" class="sidebar-link  ">将 `.we` 源代码转换成 JS Bundle</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+</div>
+    
+    <a class="btn-close-sidebar iconfont  icon-close"></a>
+  </div>
+</div>
+  <div class="article-wrapper page-layout">
+  <div class="doc-nav">
+    <div class="summary">
+  <h2 class="part-title">
+    
+      教程
+    
+  </h2>
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+   
+    
+      <li>
+        <h3 class="chapter-title"><a href="/weex-website/cn/guide/index.html" class="sidebar-link current ">上手教程</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/weex-website/cn/guide/develop-on-your-local-machine.html" class="sidebar-link  ">如何在本地开发 Weex 页面</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/weex-website/cn/guide/syntax/index.html" class="sidebar-link  ">语法介绍</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/weex-website/cn/guide/syntax/data-binding.html" class="sidebar-link  ">数据绑定</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/cn/guide/syntax/style-n-class.html" class="sidebar-link  ">CSS 样式和类</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/cn/guide/syntax/events.html" class="sidebar-link  ">事件处理</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/cn/guide/syntax/display-logic.html" class="sidebar-link  ">展示逻辑控制</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/cn/guide/syntax/render-logic.html" class="sidebar-link  ">渲染过程控制</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/cn/guide/syntax/composed-component.html" class="sidebar-link  ">组件封装</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/cn/guide/syntax/id.html" class="sidebar-link  ">找节点</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/cn/guide/syntax/comm.html" class="sidebar-link  ">组件通信</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/cn/guide/syntax/config-n-data.html" class="sidebar-link  ">页面配置和页面数据</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/weex-website/cn/guide/how-to/index.html" class="sidebar-link  ">最佳实践</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/weex-website/cn/guide/how-to/debug-with-devtools.html" class="sidebar-link  ">使用 Devtools 调试 Weex 页面</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/cn/guide/how-to/debug-with-html5.html" class="sidebar-link  ">在浏览器中调试</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/cn/guide/how-to/require-3rd-party-libs.html" class="sidebar-link  ">如何引入第三方库</a>
+              </li>
+            
+              <li>
+                <a href="/weex-website/cn/guide/how-to/transform-code-into-js-bundle.html" class="sidebar-link  ">将 `.we` 源代码转换成 JS Bundle</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+</div>
+  </div>
+  
+
+<article id="page-undefined" class="article article-type-guide">
+  <div class="article-entry" itemprop="articleBody">
+    <header class="article-header">
+  
+    
+      <h1 class="article-title" itemprop="name">
+        上手教程
+      </h1>
+    
+  
+  <time class="article-date" datetime="2016-12-22T10:14:51.000Z">Updated time: 22/12/2016</time>
+</header>
+    <h1 id="起步教程"><a href="#起步教程" class="headerlink" title="起步教程"></a>起步教程</h1><p>Weex 是一套简单易用的跨平台开发方案，能以 web 的开发体验构建高性能、可扩展的 native 应用，为了做到这些，Weex 与  Vue 合作，使用 Vue 作为上层框架，并遵循 W3C 标准实现了统一的 JSEngine 和 DOM API，这样一来，你甚至可以使用其他框架驱动 Weex，打造三端一致的 native 应用。</p>
+<p>尝试 Weex 最简单的方法是使用 <a href="https://alibaba.github.io/weex/download.html">Playground App</a> 和在 <a href="http://dotwe.org" target="_blank" rel="external">dotWe</a> 编写一个 <a href="http://dotwe.org/656345423a7ef46f4b897ff471fd2ab5" target="_blank" rel="external">Hello World</a> 例子。你不需要考虑安装开发环境或编写 native 代码，只需要做下面两件事：</p>
+<ul>
+<li>为你的手机安装 <a href="https://alibaba.github.io/weex/download.html">Playground App</a>，当然，Weex 是跨平台的框架，你依然可以使用浏览器进行预览，只是这样你就无法感受到 native 优秀的体验了。</li>
+<li>在新标签页中打开 <a href="http://dotwe.org/656345423a7ef46f4b897ff471fd2ab5" target="_blank" rel="external">Hello World</a> 例子，点击预览，然后用  Playground 扫码即可。</li>
+</ul>
+<p>在这个例子中，我们看到了熟悉的 HTML 语义化标签、CSS 样式和 Javascript 代码。这是一个最简单的 Weex 示例，它在页面中渲染了一个 “Hello World”。</p>
+<p><img src="https://img.alicdn.com/tps/TB1Ymw3OpXXXXcvXpXXXXXXXXXX-500-1013.jpg" alt="mobile_preview"></p>
+<h2 id="发生了什么？"><a href="#发生了什么？" class="headerlink" title="发生了什么？"></a>发生了什么？</h2><p>就如示例代码所示：</p>
+<figure class="highlight"><table><tr><td class="code"><pre><div class="line">&lt;template&gt;</div><div class="line">  &lt;div&gt;</div><div class="line">    &lt;text class="text"&gt;&#123;&#123;text&#125;&#125;&lt;/text&gt;</div><div class="line">  &lt;/div&gt;</div><div class="line">&lt;/template&gt;</div><div class="line"></div><div class="line">&lt;style&gt;</div><div class="line">  .text &#123;</div><div class="line">    font-size: 50;</div><div class="line">  &#125;</div><div class="line">&lt;/style&gt;</div><div class="line"></div><div class="line">&lt;script&gt;</div><div class="line">  module.exports = &#123;</div><div class="line">    data: &#123;</div><div class="line">        text: 'Hello World.'</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<p>我们暂时不去关心 Weex 的技术细节，仅看大致的代码结构。Weex 代码由三部分构成：<code>template</code>、<code>style</code>、<code>script</code>，这三个概念之于 Weex 就如 HTML，CSS，JavaScript 之于 Web。</p>
+<p>模板部分赋予 Weex 以骨架，由标签以及标签包围的内容构成，标签中能添加 <code>attribute（特性）</code>，不同的 <code>attribute</code> 有不同的含义，例如 class 特性让同样的样式可以作用于多组 Weex 标签， onclick 特性让标签能对用户点击事件作出回应。</p>
+<p>样式部分描述 Weex 标签如何显示。和你一样，我们喜欢 CSS，所以 Weex 中的样式尽量和 CSS 标准一致。Weex 支持很多 CSS 中的特性： margin, padding, fixed…… 更好的是， flexbox 布局模型在 Weex 中获得了很好的支持。</p>
+<p>脚本部分为 Weex 标签添加数据与逻辑，在这里你能方便的访问本地或远程的数据并动态更新。你还能定义方法并让这些方法响应不同的事件。Weex 脚本的组织方式基本遵循于 CommonJS module 规范。</p>
+<p>是不是觉得这些语法有些眼熟？没错，Weex 语法参考了 <a href="https://github.com/vuejs/vue" target="_blank" rel="external">Vue</a>，如果你熟悉 Vue，你会很快适应 Weex 语法（最新的 Weex framework 将会基于 <a href="https://github.com/vuejs/vue" target="_blank" rel="external">Vue 2.0</a> 开发，完全兼容 Vue，可参见我们的 <a href="https://github.com/weexteam/weex-vue-framework/issues/9" target="_blank" rel="external">Roadmap</a>），更好的是，我们拥抱规范，尽可能的按照 W3C 标准进行实现，因此，你大可不必担心 Weex 三端差异。</p>
+<p>你可以试着修改 <a href="http://dotwe.org/656345423a7ef46f4b897ff471fd2ab5" target="_blank" rel="external">Hello World</a> 的代码，再次点击预览即可生成新的二维码进行扫描。</p>
+<p>Weex 不止是个 Demo，在接下来的章节中，你还会看到更多 Weex 开发 native 应用并将其集成到你的 App 中的精彩教程。不要忘了随时在 <a href="http://dotwe.org" target="_blank" rel="external">dotWe</a> 中编写代码验证并通过 <a href="https://alibaba.github.io/weex/download.html">Playground App</a> 预览。</p>
+
+  </div>
+  
+</article>
+</div>
+  <script>window.PAGE_TYPE = "guide"</script>
+  <footer id="footer">
+  <div class="row clearfix">
+    <div class="ali-logo">
+      <img src="/weex-website/images/ali-open-source.png" alt="Alibaba">
+    </div>
+    <div class="dropdown select-lang">
+      <a href="javascript:;" class="dropdown-toggle">
+        Language
+        <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu">
+        <li>
+          <a href="/weex-website/guide/index.html">English</a>
+        </li>
+        <li>
+          <a href="/weex-website/cn/guide/index.html">中文</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <p><span>Released under </span><a href="">Apache License 2.0</a></p>
+  </div>
+  <div class="row clearfix">
+    <div class="cell"><span>Copyright(c) 2016 </span><a href="https://www.alibaba.com">Alibaba</a></div>
+    <div class="cell"><span>GroupMade by </span><a href="">阿里云UED AX</a></div>
+    <div class="cell"><span>Proudly Produced by </span><a href="https://baichuan.taobao.com/">Alibaichuan</a> <span class="iconfont icon-baichuan"></span></div>
+  </div>
+</footer>
+  
+
+<!--<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>-->
+
+
+  <script src="/weex-website/js/velocity.js"></script>
+  <script src="/weex-website/js/common.js"></script>
+</body>
+</html>
