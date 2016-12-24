@@ -13,6 +13,30 @@ language:
 
 timezone:
 
+jsonContent:
+  meta: true
+  keywords: false # language name option
+  dateFormat: undefined # format string
+  root: true
+  ignore:
+    - index.md
+  pages:
+    title: true
+    path: true
+    link: true
+    permalink: true
+    text: true
+    content: false
+    type: true
+  posts:
+    title: true
+    path: true
+    link: true
+    permalink: true
+    text: true
+    content: false
+    type: true
+
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: http://alibaba.github.io/

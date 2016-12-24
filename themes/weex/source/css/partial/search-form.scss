@@ -1,0 +1,60 @@
+@import "../variable.scss";
+
+.search-form {
+  .search {
+    font-size: 1em;
+    padding: 6px 35px 6px 10px;
+    border: 1px solid $border-light;
+    border-radius: 20px;
+
+    &:focus {
+      border: 1px solid $border-blue;
+      outline: none;
+    }
+  }
+
+  .search-label {
+    position: relative;
+    display: block;
+  }
+  .icon-search {
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    color: $text-gray;
+  }
+}
+.results-panel {
+  display: none;
+  position: absolute;
+  width: 400px;
+  height: 300px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background: #fff;
+  right: -80px;
+  top: 100%;
+  padding: 20px;
+  line-height: 1.5;
+  border: solid #999ba4;
+  border-width: 0 1px 1px 1px;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.1);
+
+  .matching-post {
+    border-bottom: 1px solid #ddd;
+    h2 {
+      font-size: 1.2em;
+      margin: 10px 0;
+    }
+
+    p {
+      @include lines(2);
+    }
+  }
+
+  .search-keyword {
+    font-style: normal;
+    color: $text-blue;
+  }
+
+}
