@@ -7,7 +7,7 @@
 #footer {
   width: 100%;
   padding: 20px 65px;
-  margin-top: 2em;
+  margin: 0;
   background: #FAFAFA;
   border-top: 2px solid #DDDDDD; }
   #footer .ali-logo {
@@ -28,12 +28,12 @@
     width: 105px;
     border: 1px solid #999ba4; }
   #footer .row {
-    font-size: .657em;
+    font-size: 14px;
     margin: 8px 0; }
   #footer .row span {
     color: #999; }
   #footer .row .icon-baichuan {
-    font-size: .657em;
+    font-size: 14px;
     color: #363539; }
   #footer .row .cell {
     float: left;

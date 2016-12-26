@@ -129,7 +129,6 @@
       var scroll = new AppearController(featureEl, {
         threshold: -30,
         callback: function (el, offset) {
-          console.log('show')
         }
       })
     }
@@ -137,4 +136,136 @@
     initLayerAnim()
   } else {}
 
+function initSearch() {
+  var form = document.getElementById('search-form')
+  var input = form.querySelector('#search-input')
+  var panel = document.querySelector('.results-panel')
+
+  BODY.addEventListener('click', function (e) {
+    var target = e.target
+
+      if (!panel.contains(target)) {
+        panel.classList.remove('show')
+      }
+  })
+
+  reqwest({
+    url: '/weex-website/content.json', 
+    type: 'json'
+  })
+  .then(function (resp) {
+    var root = resp.meta.root || '/weex-website/'
+
+    input.addEventListener('input', function (e) {
+      var target = e.target,
+          keywords = target.value.trim().split(/[\s\-\，\\/]+/)
+
+      if (target.value.trim() !== '') {
+        var matchingPosts = searchFromJSON(resp.pages, keywords)
+        var html = ''
+
+        matchingPosts.forEach(function (post, index) {
+          var url = root + post.url
+          var htmlSnippet = '<div class=\"matching-post\">' +
+                              '<h2>' +
+                                '<a href=\"' + url + '\">' + post.title + '</a>' +
+                              '</h2>' +
+                              '<p>' + post.content + '</p>' +
+                            '</div>'
+          
+          html += htmlSnippet
+        })
+        
+        panel.classList.add('show')
+        panel.innerHTML = html ? html : '<p>No Results!</p>'
+      } else {
+        panel.classList.remove('show')
+        panel.innerHTML = ''
+      }
+    })
+  })
+}
+
+function searchFromJSON (data, keywords) {
+  var matchingResults = []
+
+  for (var i = 0; i < data.length; i++) {
+    // if (i > 7) break; 
+
+    var post = data[i]
+    var isMatch = false
+    var postTitle = post.title && post.title.trim(),
+        postContent = post.text && post.text.trim(),
+        postUrl = post.path || '',
+        postType = post.type
+    var matchingNum = 0
+    var resultStr = ''
+
+    if(postTitle !== '' && postContent !== '') {
+      keywords.forEach(function(keyword, i) {
+        var regEx = new RegExp(keyword, "gi")
+        var indexTitle = -1,
+            indexContent = -1,
+            indexTitle = postTitle.search(regEx),
+            indexContent = postContent.search(regEx)
+
+        if(indexTitle < 0 && indexContent < 0){
+          isMatch = false;
+        } else {
+          isMatch = true
+          matchingNum++
+          if (indexContent < 0) {
+            indexContent = 0;
+          }
+          
+          var start = 0,
+              end = 0
+          
+          start = indexContent < 11 ? 0 : indexContent - 10
+          end = start === 0 ? 70 : indexContent + keyword.length + 60
+          if (end > postContent.length) {
+            end = postContent.length
+          }
+
+          var matchContent = '...' + postContent.substring(start, end).replace(regEx, "<em class=\"search-keyword\">"+keyword+"</em>") + '...'
+          resultStr += matchContent
+        }
+      })
+
+      if (isMatch) {
+        var matchingPost = {
+          title: escapeHtml(postTitle),
+          content: resultStr,
+          url: postUrl,
+          type: postType,
+          matchingNum: matchingNum
+        }
+
+        matchingResults.push(matchingPost)
+      }
+    }
+  }
+  // matchingResults.sort(function (a, b) {
+  //   return a.matchingNum > b.matchingNum
+  // })
+
+  return matchingResults
+}
+
+function escapeHtml(string) {
+  var entityMap = {
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': '&quot;',
+    "'": '&#39;',
+    "/": '&#x2F;'
+  }
+
+  return String(string).replace(/[&<>"'\/]/g, function (s) {
+      return entityMap[s];
+  })
+}
+
+initSearch()
 })();

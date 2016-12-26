@@ -72,7 +72,16 @@ Elements使用 Elements 面板来检查 weex-html5 页面的布局和设计，�
         <li><a href="https://github.com/alibaba/weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
       </ul>
       <ul class="tools">
-        <li><a class="btn-search"><span class="iconfont icon-search"></span></a></li>
+        <li>
+          <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+  <label class="search-label">
+    <input type="text" id="search-input" name="q" results="0" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </label>
+</form>
+<div class="results-panel">
+</div>
+        </li>
         <!--<li></li>-->
       </ul>
     </div>
@@ -521,6 +530,7 @@ Elements使用 Elements 面板来检查 weex-html5 页面的布局和设计，�
 <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>-->
 
 
+  <script src="/weex-website/js/reqwest.js"></script>
   <script src="/weex-website/js/velocity.js"></script>
   <script src="/weex-website/js/common.js"></script>
 </body>

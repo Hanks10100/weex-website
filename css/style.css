@@ -127,7 +127,7 @@ h5 {
   position: relative; }
   .dropdown .dropdown-toggle {
     display: block;
-    font-size: .657em;
+    font-size: 14px;
     text-align: center;
     color: #363539;
     text-decoration: none; }
@@ -140,7 +140,7 @@ h5 {
     float: left;
     padding: 5px 0;
     margin: 0;
-    font-size: .657em;
+    font-size: 14px;
     text-align: left;
     list-style: none;
     background-color: #fff;
@@ -171,6 +171,9 @@ a.current {
   width: 50px;
   height: 50px;
   overflow: scroll; }
+
+.show {
+  display: block !important; }
 
 /***********************
 * Variable
@@ -203,34 +206,6 @@ a.current {
     display: flex;
     justify-content: space-between;
     align-items: center; }
-    #header .navbar .main-nav {
-      display: flex;
-      justify-content: space-between; }
-      #header .navbar .main-nav > ul {
-        display: flex;
-        justify-content: space-between;
-        height: 72px;
-        line-height: 72px; }
-      #header .navbar .main-nav li a {
-        font-size: 1.3em;
-        color: #363539; }
-    #header .navbar .links > li > a:hover {
-      border-bottom: 0.2em solid #00BDFF; }
-    #header .navbar .links > li + li {
-      margin-left: 40px; }
-    #header .navbar .info li {
-      margin-left: 50px; }
-    #header .navbar .tools li {
-      margin-left: 4em; }
-    #header .navbar .dropdown .dropdown-menu {
-      width: 200px;
-      left: -60%;
-      top: 98%;
-      border: none;
-      padding: 10px 0; }
-      #header .navbar .dropdown .dropdown-menu a {
-        font-size: 1.55em;
-        padding: 5px 10px; }
   #header #mobile-nav {
     display: none;
     height: 72px;
@@ -240,6 +215,35 @@ a.current {
     #header #mobile-nav .btn-menu {
       position: absolute;
       left: 20px; }
+  #header .main-nav {
+    display: flex;
+    justify-content: space-between; }
+    #header .main-nav > ul {
+      display: flex;
+      justify-content: space-between;
+      height: 72px;
+      line-height: 72px; }
+    #header .main-nav li > a {
+      font-size: 1.3em;
+      color: #363539; }
+  #header .links > li > a:hover {
+    border-bottom: 0.2em solid #00BDFF; }
+  #header .links > li + li {
+    margin-left: 40px; }
+  #header .info li {
+    margin-left: 50px; }
+  #header .tools li {
+    position: relative;
+    margin-left: 4em; }
+  #header .dropdown .dropdown-menu {
+    width: 200px;
+    left: -60%;
+    top: 98%;
+    border: none;
+    padding: 10px 0; }
+    #header .dropdown .dropdown-menu a {
+      font-size: 15px;
+      padding: 5px 10px; }
 
 /***********************
 * Variable
@@ -306,7 +310,7 @@ a.current {
 #footer {
   width: 100%;
   padding: 20px 65px;
-  margin-top: 2em;
+  margin: 0;
   background: #FAFAFA;
   border-top: 2px solid #DDDDDD; }
   #footer .ali-logo {
@@ -327,12 +331,12 @@ a.current {
     width: 105px;
     border: 1px solid #999ba4; }
   #footer .row {
-    font-size: .657em;
+    font-size: 14px;
     margin: 8px 0; }
   #footer .row span {
     color: #999; }
   #footer .row .icon-baichuan {
-    font-size: .657em;
+    font-size: 14px;
     color: #363539; }
   #footer .row .cell {
     float: left;
@@ -751,6 +755,59 @@ pre .javascript .function, pre .keyword {
   justify-content: center;
   align-items: center; }
 
+/***********************
+* Variable
+***********************/
+/***********************
+* Mixin
+***********************/
+.search-form .search {
+  font-size: 1em;
+  padding: 6px 35px 6px 10px;
+  border: 1px solid #ddd;
+  border-radius: 20px; }
+  .search-form .search:focus {
+    border: 1px solid #00BDFF;
+    outline: none; }
+
+.search-form .search-label {
+  position: relative;
+  display: block; }
+
+.search-form .icon-search {
+  position: absolute;
+  top: 0px;
+  right: 10px;
+  color: #999; }
+
+.results-panel {
+  display: none;
+  position: absolute;
+  width: 400px;
+  height: 300px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background: #fff;
+  right: -66px;
+  top: 100%;
+  padding: 20px;
+  line-height: 1.5;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); }
+  .results-panel .matching-post {
+    border-bottom: 1px solid #ddd; }
+    .results-panel .matching-post h2 {
+      font-size: 1.2em;
+      margin: 10px 0; }
+    .results-panel .matching-post p {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical; }
+  .results-panel .search-keyword {
+    font-style: normal;
+    color: #00BDFF; }
+
 /*POST*/
 /***********************
 * Variable
@@ -764,7 +821,8 @@ pre .javascript .function, pre .keyword {
   margin: 0 auto;
   padding: 120px 0 0;
   min-height: 80%;
-  min-height: calc(100% - 240px); }
+  min-height: calc(100% - 160px);
+  overflow: hidden; }
   .article-wrapper.post-layout {
     max-width: 900px; }
   .article-wrapper.page-layout {
@@ -775,13 +833,13 @@ pre .javascript .function, pre .keyword {
       display: none; }
   .article-wrapper .doc-nav {
     position: absolute;
-    top: 120px;
+    top: 72px;
     left: 0;
     bottom: 0;
     background: #FAFAFA;
     width: 300px;
     z-index: 999;
-    padding: 15px;
+    padding: 63px 15px 15px;
     overflow-x: hidden;
     overflow-y: auto; }
   .article-wrapper .article-nav {

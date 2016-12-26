@@ -1,0 +1,52 @@
+/***********************
+* Variable
+***********************/
+/***********************
+* Mixin
+***********************/
+.search-form .search {
+  font-size: 1em;
+  padding: 6px 35px 6px 10px;
+  border: 1px solid #ddd;
+  border-radius: 20px; }
+  .search-form .search:focus {
+    border: 1px solid #00BDFF;
+    outline: none; }
+
+.search-form .search-label {
+  position: relative;
+  display: block; }
+
+.search-form .icon-search {
+  position: absolute;
+  top: 0px;
+  right: 10px;
+  color: #999; }
+
+.results-panel {
+  display: none;
+  position: absolute;
+  width: 400px;
+  height: 300px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background: #fff;
+  right: -66px;
+  top: 100%;
+  padding: 20px;
+  line-height: 1.5;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); }
+  .results-panel .matching-post {
+    border-bottom: 1px solid #ddd; }
+    .results-panel .matching-post h2 {
+      font-size: 1.2em;
+      margin: 10px 0; }
+    .results-panel .matching-post p {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical; }
+  .results-panel .search-keyword {
+    font-style: normal;
+    color: #00BDFF; }
