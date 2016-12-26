@@ -18,8 +18,12 @@ jsonContent:
   keywords: false # language name option
   dateFormat: undefined # format string
   root: true
+  lang: 
+    - default
+    - cn
   ignore:
     - index.md
+    - faq.md
   pages:
     title: true
     path: true

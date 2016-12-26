@@ -141,6 +141,14 @@ function initSearch() {
   var input = form.querySelector('#search-input')
   var panel = document.querySelector('.results-panel')
 
+  BODY.addEventListener('click', function (e) {
+    var target = e.target
+
+      if (!panel.contains(target)) {
+        panel.classList.remove('show')
+      }
+  })
+
   reqwest({
     url: '/weex-website/content.json', 
     type: 'json'
@@ -150,7 +158,7 @@ function initSearch() {
 
     input.addEventListener('input', function (e) {
       var target = e.target,
-          keywords = target.value.trim().toLowerCase().split(/[\s\-\，]+/)
+          keywords = target.value.trim().split(/[\s\-\，\\/]+/)
 
       if (target.value.trim() !== '') {
         var matchingPosts = searchFromJSON(resp.pages, keywords)
@@ -167,11 +175,11 @@ function initSearch() {
           
           html += htmlSnippet
         })
-
-        panel.style.display = 'block'
-        panel.innerHTML = html
+        
+        panel.classList.add('show')
+        panel.innerHTML = html ? html : '<p>No Results!</p>'
       } else {
-        panel.style.display = 'none'
+        panel.classList.remove('show')
         panel.innerHTML = ''
       }
     })
@@ -186,7 +194,7 @@ function searchFromJSON (data, keywords) {
 
     var post = data[i]
     var isMatch = false
-    var postTitle = post.title && post.title.trim().toLowerCase(),
+    var postTitle = post.title && post.title.trim(),
         postContent = post.text && post.text.trim(),
         postUrl = post.path || '',
         postType = post.type
@@ -195,11 +203,11 @@ function searchFromJSON (data, keywords) {
 
     if(postTitle !== '' && postContent !== '') {
       keywords.forEach(function(keyword, i) {
-
-      var indexTitle = -1,
-          indexContent = -1,
-          indexTitle = postTitle.indexOf(keyword),
-          indexContent = postContent.indexOf(keyword)
+        var regEx = new RegExp(keyword, "gi")
+        var indexTitle = -1,
+            indexContent = -1,
+            indexTitle = postTitle.search(regEx),
+            indexContent = postContent.search(regEx)
 
         if(indexTitle < 0 && indexContent < 0){
           isMatch = false;
@@ -219,9 +227,7 @@ function searchFromJSON (data, keywords) {
             end = postContent.length
           }
 
-          var regEx = new RegExp(keyword, "gi");
           var matchContent = '...' + postContent.substring(start, end).replace(regEx, "<em class=\"search-keyword\">"+keyword+"</em>") + '...'
-
           resultStr += matchContent
         }
       })

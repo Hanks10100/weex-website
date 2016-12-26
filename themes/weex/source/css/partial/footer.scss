@@ -3,7 +3,7 @@
 #footer {
   width: 100%;
   padding: 20px 65px;
-  margin-top: 2em;
+  margin: 0;
   background: $bg-gray;
   border-top: 2px solid #DDDDDD;
 
@@ -35,7 +35,7 @@
   }
 
   .row {
-    font-size: .657em;
+    font-size: 14px;
     margin: 8px 0;
   } 
 
@@ -44,7 +44,7 @@
   } 
 
   .row .icon-baichuan {
-    font-size: .657em;
+    font-size: 14px;
     color: $text-light-black;
   } 
 
