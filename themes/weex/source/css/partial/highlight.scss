@@ -38,7 +38,9 @@ pre code {
   border: 0;
 }
 
-.highlight table td,.highlight table th {
+.highlight table td,.highlight table th, .highlight tr {
+  background: #353639;
+  border: 0;
   padding: 0;
 }
 
@@ -92,9 +94,13 @@ pre .css .hexcolor {
 }
 
 pre .coffeescript .title,pre .function,pre .javascript .title,pre .perl .sub,pre .python .decorator,pre .python .title,pre .ruby .function .title,pre .ruby .title .keyword {
-  color: #8e908c;
+  color: #c678dd;
 }
 
 pre .javascript .function,pre .keyword {
-  color: #8e908c;
+  color: #c678dd;
+}
+
+pre .attr {
+  color: #61afef;
 }

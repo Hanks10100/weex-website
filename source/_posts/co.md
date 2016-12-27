@@ -1,6 +1,5 @@
 title: Child-Parent Communication
 type: blog
-order: 2
 ---
 
 # Hello world 

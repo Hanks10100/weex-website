@@ -21,7 +21,7 @@
       var target = e.target
 
       if (sidebarEl.classList.contains('open')) {
-        if (target === closeBtn || !sidebarMenu.contains(target)) {
+        if (target === closeBtn || !sidebarEl.contains(target)) {
           sidebarEl.classList.remove('open')
         }
       }
@@ -137,16 +137,18 @@
   } else {}
 
 function initSearch() {
-  var form = document.getElementById('search-form')
-  var input = form.querySelector('#search-input')
-  var panel = document.querySelector('.results-panel')
+  var form = document.querySelector('.search-form')
+  var inputElements = document.querySelectorAll('.search-input')
 
   BODY.addEventListener('click', function (e) {
-    var target = e.target
+    var target = e.target,
+        resultsPanel = document.querySelectorAll('.results-panel.show')
 
-      if (!panel.contains(target)) {
-        panel.classList.remove('show')
+    Array.prototype.forEach.call(resultsPanel, function (item, index) {
+      if (!item.contains(target)) {
+        item.classList.remove('show')
       }
+    })
   })
 
   reqwest({
@@ -156,32 +158,38 @@ function initSearch() {
   .then(function (resp) {
     var root = resp.meta.root || '/weex-website/'
 
-    input.addEventListener('input', function (e) {
-      var target = e.target,
-          keywords = target.value.trim().split(/[\s\-\，\\/]+/)
+    Array.prototype.forEach.call(inputElements, function (input, index) {
+      input.addEventListener('input', function (e) {
+        var target = e.target,
+            panel = target.parentElement && target.parentElement.nextElementSibling,
+            keywords = target.value.trim().split(/[\s\-\，\\/]+/)
 
-      if (target.value.trim() !== '') {
-        var matchingPosts = searchFromJSON(resp.pages, keywords)
-        var html = ''
+        if (target.value.trim() !== '') {
+          var matchingPosts = searchFromJSON(resp.pages, keywords)
+          var html = ''
 
-        matchingPosts.forEach(function (post, index) {
-          var url = root + post.url
-          var htmlSnippet = '<div class=\"matching-post\">' +
-                              '<h2>' +
-                                '<a href=\"' + url + '\">' + post.title + '</a>' +
-                              '</h2>' +
-                              '<p>' + post.content + '</p>' +
-                            '</div>'
-          
-          html += htmlSnippet
-        })
-        
-        panel.classList.add('show')
-        panel.innerHTML = html ? html : '<p>No Results!</p>'
-      } else {
-        panel.classList.remove('show')
-        panel.innerHTML = ''
-      }
+          matchingPosts.forEach(function (post, index) {
+            var url = root + post.url
+            var htmlSnippet = '<div class=\"matching-post\">' +
+                                '<h2>' +
+                                  '<a href=\"' + url + '\">' + post.title + '</a>' +
+                                '</h2>' +
+                                '<p>' + post.content + '</p>' +
+                              '</div>'
+            
+            html += htmlSnippet
+          })
+          if (panel.classList.contains('results-panel')) {
+            panel.classList.add('show')
+            panel.innerHTML = html ? html : '<p>No Results!</p>'
+          }
+        } else {
+          if (panel.classList.contains('results-panel')) {
+            panel.classList.remove('show')
+            panel.innerHTML = ''
+          }
+        }
+      })
     })
   })
 }
@@ -190,7 +198,6 @@ function searchFromJSON (data, keywords) {
   var matchingResults = []
 
   for (var i = 0; i < data.length; i++) {
-    // if (i > 7) break; 
 
     var post = data[i]
     var isMatch = false
@@ -227,7 +234,12 @@ function searchFromJSON (data, keywords) {
             end = postContent.length
           }
 
-          var matchContent = '...' + postContent.substring(start, end).replace(regEx, "<em class=\"search-keyword\">"+keyword+"</em>") + '...'
+          var matchContent = '...' + 
+            postContent
+              .substring(start, end)
+              .replace(regEx, "<em class=\"search-keyword\">" + keyword + "</em>") + 
+              '...'
+
           resultStr += matchContent
         }
       })
@@ -263,7 +275,7 @@ function escapeHtml(string) {
   }
 
   return String(string).replace(/[&<>"'\/]/g, function (s) {
-      return entityMap[s];
+    return entityMap[s];
   })
 }
 

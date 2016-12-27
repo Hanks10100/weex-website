@@ -152,7 +152,7 @@ flex 属性定义了 flex 成员项可以占用容器中剩余空间的大小。
 
 一个简单的网格布局。
 
-![mobile_preview](../images/style_1.jpg)
+![mobile_preview](images/style_1.jpg)
 
 ```html
 <template>
@@ -250,7 +250,7 @@ Weex 支持 `position` 定位，用法与 CSS position 类似。为元素设置 
 
 ### 示例
 
-![mobile_preview](../images/style_1.jpg)
+![mobile_preview](images/style_2.jpg)
 
 ```html
 <template>

@@ -1,5 +1,5 @@
 ---
-title: <list>
+title: <cell>
 type: references
 order: 2.6
 ---

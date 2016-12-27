@@ -1,14 +1,14 @@
 <div class="archives">
   <% if (pagination == 2){ %>
-    <% page.posts.each(function(post){ %>
+    <% site.posts.find({lang: page.lang}).each(function(post){ %>
       <%- partial('article', {post: post, index: true}) %>
     <% }) %>
   <% } else { %>
-    <% page.posts.each(function(post, i){ %>
+    <% site.posts.find({lang: page.lang}).each(function(post, i){ %>
       <%- partial('archive-post', {post: post, even: i % 2 == 0}) %>
     <% }) %>
   <% } %>
-  <% if (page.total > 1){ %>
+  <% if (site.total > 1){ %>
   <nav id="page-nav">
     <%- paginator({
       prev_text: "&laquo; __('prev')",
