@@ -36,6 +36,10 @@
   /***********************************************
    * Index
    **********************************************/
+  .header .galaxy {
+    display: none;
+  }
+
   .edge .scene-container .sketch-content {
     flex-direction: column; 
     align-items: center;

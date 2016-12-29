@@ -1,5 +1,32 @@
 index:
   get_started: 上手教程
+  edge:
+    title: 竞争优势
+    edge1: 
+      title: 轻量
+      content: 体积小、语法简单、易于掌握
+    edge2: 
+      title: 可扩展
+      content: 可以横向扩展和定制原生组件和功能
+    edge3: 
+      title: 高性能
+      content: 对加载时间和资源占用深度优化，给你更好的体验
+  feature: 
+    title: 帮助你构建原生应用
+    content: 与 Web App、HTML5 App 或 hybrid App 不同，您可以使用 Weex 构建一个真正的原生应用。更贴心的是你的代码只需使用 HTML、CSS、JavaScript 可以构建原生应用，上手非常简单。但实际上，应用的底层是 Objective-C 或 Java， 同时，Weex 提供很多 native 组件或模块供开发人员使用。
+  cross_platform:
+    title: 一次编写，多端运行
+    content: Weex 提供强大的跨平台能力，可以使用相同的 API 开发 Web，Android 和 iOS 应用。 同时，我们对接口了丰富的扩展能力。 这样，当您需要扩展原生组件或模块时，这将非常方便。
+  vue:
+    title: 支持 Vue 语法
+    content: Weex 遵循 Web 标准，同时支持 vue.js 的语法。因此，您可以使用 vue.js 语法来开发应用程序。
+  schematic:
+    title: 工作原理
+    content: Weex 是一个动态化的高扩展跨平台解决方案。 在 Weex 代码中，您可以使用 <template>，<style> 和 <script> 标签编写页面或组件，然后将它们转换为 JS bundle 以进行部署。当服务器返回给客户端 JS bundle 时，JS bundle 会被客户端的 JavaScript 引擎处理，并管理渲染 native 视图，调用原生 API 和用户交互。
+  users: 
+    title: 谁在使用 Weex
+  feedback:
+    title: 他们说
 
 menu: 
   guide: 教程

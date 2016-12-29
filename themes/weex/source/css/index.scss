@@ -74,9 +74,11 @@
 
 .header {
   height: 100%;
+  position: relative;
 
   #slider {
     margin-top: 73px;
+    height: 100%;
     height: calc(100% - 72px);
   }
 
@@ -116,6 +118,22 @@
     left: 50%;
     margin-left: -6.3em;
   }
+
+  .galaxy {
+    height: 560px;
+    width: 560px;
+    position: absolute;
+    top: 50%;
+    margin-top: -230px;
+  }
+
+  .left {
+    left: 20px;
+  } 
+
+  .right {
+    right: 20px;
+  } 
 }
 
 .edge {
@@ -282,6 +300,10 @@
       background: url("../images/h5.png")  50% 50% / contain no-repeat;
       background-origin: content-box;
     }
+  }
+
+  .textbox p {
+    color: $text-light-black;
   }
 }
 

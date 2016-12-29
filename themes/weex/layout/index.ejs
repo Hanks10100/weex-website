@@ -1,28 +1,34 @@
 <div class="scene header" style="background: #00BDFF;">
   <div class="scene-container">
+    <div class="galaxy left">
+      <canvas width="560" height="560" id="left-canvas"></canvas>
+    </div>
+    <div class="galaxy right">
+      <canvas width="560" height="560" id="right-canvas"></canvas>
+    </div>
     <%- partial('_partial/slider') %>
   </div>
 </div>
 <div class="scene edge overlength horizon">
   <div class="scene-container">
     <div class="textbox">
-      <h2>Competitive Edge</h2>
+      <h2><%= _p('index.edge.title') %></h2>
     </div>
     <div class="sketch-content">
       <div class="inner-box">
         <img src="<%= config.root %>/images/lightweight.svg" alt="Lightweight">
-        <h3>Lightweight</h3>
-        <p>Low footprint，simple syntax，and easy to use.</p>
+        <h3><%= _p('index.edge.edge1.title') %></h3>
+        <p><%= _p('index.edge.edge1.content') %></p>
       </div>
       <div class="inner-box">
         <img src="<%= config.root %>/images/extendable.svg" alt="Extendable">
-        <h3>Extendable</h3>
-        <p>Abundant build-in components，extendable apis，various events.</p>
+        <h3><%= _p('index.edge.edge2.title') %></h3>
+        <p><%= _p('index.edge.edge2.content') %></p>
       </div>
       <div class="inner-box">
         <img src="<%= config.root %>/images/performance.svg" alt="High Performance">
-        <h3>High Performance</h3>
-        <p>Load fast，render fast，better Experience.</p>
+        <h3><%= _p('index.edge.edge3.title') %></h3>
+        <p><%= _p('index.edge.edge3.content') %></p>
       </div>
     </div>
   </div>
@@ -32,8 +38,8 @@
   <div class="scene-container">
     <div class="feature-content">
       <div class="left-text">
-        <h2>Help you build real Native App</h2>
-        <p>Different from "web app" , "HTML5 app" and "hybrid app", you can use Weex to build a real mobile app. More intimate is that you write the code is relatively simple, just use HTML, CSS, Javascript can build native applications.But in fact, the bottom of the application is Objective-C or Java. At the same time, Weex will provide a lot of native components or modules for developers to use.</p>
+        <h2><%= _p('index.feature.title') %></h2>
+        <p><%= _p('index.feature.content') %></p>
       </div>
       <div class="right-box">
         <div class="imgbox phone-layer level1">
@@ -55,8 +61,8 @@
 <div class="scene cross-platform horizon">
   <div class="scene-container">
     <div class="textbox">
-      <h2>Write Once Run Everywhere</h2>
-      <p>Weex provides the ability to cross platform, such as the web, Android and IOS can use the same API development function. At the same time, we provide a rich extension of the interface. In this way, it will be very convenient when you need to extend native components or modules.</p>
+      <h2><%= _p('index.cross_platform.title') %></h2>
+      <p><%= _p('index.cross_platform.content') %></p>
     </div>
     <div class="sketch-content">
       <div class="inner-box imgbox ios"></div>
@@ -69,8 +75,8 @@
 <div class="scene supporting-vue horizon">
   <div class="scene-container">
     <div class="textbox">
-      <h2>Supporing Vue Syntax</h2>
-      <p>Weex follows the web standard, while supporting the "vue.js" syntax. So, you can use the "vue.js" syntax to develop applications.</p>
+      <h2><%= _p('index.vue.title') %></h2>
+      <p><%= _p('index.vue.content') %></p>
     </div>
     <div class="sketch-content imgbox">
     </div>
@@ -80,8 +86,8 @@
 <div class="scene schematic horizon">
   <div class="scene-container">
     <div class="textbox">
-      <h2>How it works</h2>
-      <p>Weex is a extendable cross-platform solution for dynamic programming and publishing projects. In the source code you can write pages or components with &lt;template&gt;, &lt;style&gt; and &lt;script&gt; tags, and then transform them into bundles for deploying. In server-side we can use these JS bundles for client request. When client get a bundle from server, it will be processed by client-side JavaScript engine and manages the native view rendering, the native API invoking and user interactions.</p>
+      <h2><%= _p('index.schematic.title') %></h2>
+      <p><%= _p('index.schematic.content') %></p>
     </div>
     <div class="sketch-content imgbox">
     </div>
@@ -91,7 +97,7 @@
 <div class="scene users horizon overlength">
   <div class="scene-container">
     <div class="textbox">
-      <h2>Who use weex</h2>
+      <h2><%= _p('index.users.title') %></h2>
     </div>
     <div class="sketch-content">
       <div class="user-logo tmall-logo">
@@ -160,7 +166,7 @@
 <div class="scene feedback horizon overlength">
   <div class="scene-container">
     <div class="textbox">
-      <h2>People says</h2>
+      <h2><%= _p('index.feedback.title') %></h2>
     </div>
     <div class="sketch-content">
       <div class="user-feedback">

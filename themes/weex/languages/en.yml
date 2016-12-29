@@ -1,5 +1,32 @@
 index:
   get_started: Get started
+  edge:
+    title: Competitive Edge
+    edge1: 
+      title: Lightweight
+      content: low footprint，simple syntax，and easy to use
+    edge2: 
+      title: Extendable
+      content: abundant build-in components，extendable apis，various events
+    edge3: 
+      title: High Performance
+      content: load fast，render fast，better Experience
+  feature: 
+    title: Help you build real Native App
+    content: Different from "web app" , "HTML5 app" and "hybrid app", you can use Weex to build a real mobile app. More intimate is that you write the code is relatively simple, just use HTML, CSS, Javascript can build native applications.But in fact, the bottom of the application is Objective-C or Java. At the same time, Weex will provide a lot of native components or modules for developers to use.
+  cross_platform:
+    title: Write Once Run Everywhere
+    content: Weex provides the ability to cross platform, such as the web, Android and IOS can use the same API development function. At the same time, we provide a rich extension of the interface. In this way, it will be very convenient when you need to extend native components or modules.
+  vue:
+    title: Supporting Vue syntax
+    content: Weex follows the web standard, while supporting the "vue.js" syntax. So, you can use the "vue.js" syntax to develop applications.
+  schematic:
+    title: How it works
+    content: Weex is a extendable cross-platform solution for dynamic programming and publishing projects. In the source code you can write pages or components with <template>, <style> and <script> tags, and then transform them into bundles for deploying. In server-side we can use these JS bundles for client request. When client get a bundle from server, it will be processed by client-side JavaScript engine and manages the native view rendering, the native API invoking and user interactions.
+  users: 
+    title: Who use it
+  feedback:
+    title: People says
 
 menu: 
   guide: Guide
