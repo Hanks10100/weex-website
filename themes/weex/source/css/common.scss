@@ -231,3 +231,10 @@ table tr:nth-child(2n) {
 table th {
     font-weight: 700
 }
+
+.api-version {
+  padding: 3px 5px;
+  background: $text-blue;
+  color: #fff;
+  border-radius: 20px;
+}

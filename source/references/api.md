@@ -5,7 +5,6 @@ order: 1.3
 ---
 
 # APIs
-<span class="weex-version">0.4</span>
 
 You can access these apis through `this`(Vm) context in script methods.
 
@@ -41,7 +40,7 @@ Return the element referenced by specific id.
 
 ### Tips
 * id is only guaranteed to be unique within the current (page)components, if you are looking for the parent components or child components, you can make use of the communication mode between components.
-* Further reading: [id](../syntax/id.html), [Communicate Between Components](../syntax/comm.html)
+* Further reading: [id](../guide/syntax/id.html), [Communicate Between Components](../guide/syntax/comm.html)
 
 ## $vm(id)
 
@@ -57,7 +56,7 @@ Return the vm object referenced by specific id.
 
 ### Tips
 * id is only guaranteed to be unique within the current (page)components, if you are looking for the parent components or child components, you can make use of the communication mode between components.
-* Further reading: [id](../syntax/id.html), [Communicate Between Components](../syntax/comm.html)
+* Further reading: [id](../guide/syntax/id.html), [Communicate Between Components](../guide/syntax/comm.html)
 
 ## $getConfig()
 
@@ -80,5 +79,5 @@ Get the current global environment variables and configuration information.
 
 ## $call(module, method, ...args)
 
-**Deprecated**, please use `require('@weex-module/module')[method](...args)` instead. See [modules](../modules/REAME.html) for more information
+**Deprecated**, please use `require('@weex-module/module')[method](...args)` instead. See [modules](./modules/index.html) for more information
 

@@ -5,8 +5,6 @@ order: 3.3
 ---
 
 # dom
-<span class="weex-version">0.4</span>
-
 
 ## Summary
 

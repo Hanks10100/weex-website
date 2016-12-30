@@ -5,12 +5,12 @@ order: 2.13
 ---
 
 # &lt;textarea&gt;
-<span class="weex-version">0.8</span>
+<span class="weex-version">v0.8+</span>
 
 
 ### Summary
 
-The weex builtin component ``textarea`` is used to create interactive controls to accept data from users. It can be a multi-line [input](./input.html).
+The weex builtin component `textarea` is used to create interactive controls to accept data from users. It can be a multi-line [input](./input.html).
 
 **Notes:** `<textarea>` support all event which `<input>` had.
 
@@ -26,11 +26,11 @@ This component supports no child components.
 - `autofocus`: &lt;boolean&gt; a boolean attribute lets you specify that a form control should have input focus when the page loads.
 - `rows:`&lt;number&gt; a number which can specify the height of textarea, default is `2`.
 
-Other attributes please check out the [common attributes](../references/common-attrs.html).
+Other attributes please check out the [common attributes](../common-attrs.html).
 
 ### Styles
 
-**text styles**: checkout [text styles](../references/text-style.html)
+**text styles**: checkout [text styles](../text-style.html)
 
 - support `color` style.
 - support `font-size` style.
@@ -39,7 +39,7 @@ Other attributes please check out the [common attributes](../references/common-a
 - support `text-align` style.
 
 
-**common styles**: check out [common styles for components](../references/common-style.html)
+**common styles**: check out [common styles for components](../common-style.html)
 
 - support flexbox related styles.
 - support box model related styles.
@@ -53,9 +53,9 @@ Other attributes please check out the [common attributes](../references/common-a
 - `focus`: a component has received focus.
 - `blur`: a component has lost focus.
 
-**common events**: check out the [common events](../references/common-event.html)
+**common events**: check out the [common events](../common-event.html)
 
-- support `appear` / `disappear` event. Check out [common events](../references/common-event.html).
+- support `appear` / `disappear` event. Check out [common events](../common-event.html).
 
 **Notes:** `<textarea>` does not support the common-event `click`. Please listen to the `input` or `change` event instead.
 
@@ -69,7 +69,7 @@ Other attributes please check out the [common attributes](../references/common-a
 
 ### Example
 
-```
+```html
 <div>
   <textarea
     autofocus="true"

@@ -5,11 +5,10 @@ order: 2.10
 ---
 
 # &lt;indicator&gt;
-<span class="weex-version">0.4</span>
 
 ### Summary
 
-This component must be used as a subcomponent of a [`slider`](slider.html) component.
+This component must be used as a subcomponent of a [`slider`](./slider.html) component.
 
 ### Child Components
 
@@ -17,7 +16,7 @@ This component supports no child components.
 
 ### Attributes
 
-There is no specific attribute for this component other than the [common attributes](../references/common-attrs.html).
+There is no specific attribute for this component other than the [common attributes](../common-attrs.html).
 
 ### Styles
 
@@ -25,7 +24,7 @@ There is no specific attribute for this component other than the [common attribu
 - `item-selectedColor`: &lt;colors&gt; This style attribute sets the selected item color using either a named color or a color specified in the hexadecimal #RRGGBB format.
 - `item-size`: &lt;length&gt; The size of the indicator elements, which is an float attribute.
 
-**common styles**: check out the [common styles](../references/common-attrs.html)
+**common styles**: check out the [common styles](../common-attrs.html)
 
 - support flexbox related styles
 - support box model related styles
@@ -37,14 +36,14 @@ There is no specific attribute for this component other than the [common attribu
 
 ### Events
 
-**common events**: check out the [common events](../references/common-event.html)
+**common events**: check out the [common events](../common-event.html)
 
-- support `click` event. Check out [common events](../references/common-event.html)
-- support `appear` / `disappear` event. Check out [common events](../references/common-event.html)
+- support `click` event. Check out [common events](../common-event.html)
+- support `appear` / `disappear` event. Check out [common events](../common-event.html)
 
 ### Example
 
-```
+```html
 <template>
   <div>
     <slider class="slider">

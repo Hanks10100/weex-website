@@ -5,7 +5,7 @@ order: 3.6
 ---
 
 # storage
-<span class="weex-version">0.7</span>
+<span class="weex-version">v0.7+</span>
 
 ## Summary
 
@@ -26,7 +26,7 @@ or update that key's value if it already exists.
 
 ##### Example
 
-```js
+```javascript
 var storage = require('@weex-module/storage');
 storage.setItem('bar', 'bar-value', function(e) {
   // callback.'e' is an object that contains 'result' and 'data'. e.result indicate whether `setItem` is succeed.
@@ -45,7 +45,7 @@ When passed a key name, will return that key's value.
 
 ##### Example
 
-```js
+```javascript
 var storage = require('@weex-module/storage');
 storage.getItem('foo', function(e) {
   //callback.'e' is an object that contains 'result' and 'data'.
@@ -64,7 +64,7 @@ When passed a key name, will remove that key from the storage.
 
 ##### Example
 
-```js
+```javascript
 var storage = require('@weex-module/storage');
 storage.removeItem('foo', function(e) {
   // callback. 'e' is an object that contains 'result' and 'data'.
@@ -83,7 +83,7 @@ Returns an integer representing the number of data items stored in the Storage o
 
 ##### Example
 
-```js
+```javascript
 var storage = require('@weex-module/storage');
 storage.length(function(e) {
   // callback. 'e' is an object that contains 'result' and 'data'.
@@ -101,7 +101,7 @@ Returns an array that contains all keys stored in Storage object.
 
 ##### Example
 
-```js
+```javascript
 var storage = require('@weex-module/storage');
 storage.getAllKeys(function(e) {
   // callback. 'e' is an object that contains 'result' and 'data'.

@@ -5,7 +5,6 @@ order: 1.2
 ---
 
 # Component Definition
-<span class="weex-version">0.4</span>
 
 A component definition is a set of options to describe a component. It's always assigned to `module.exports` in `<script>`.
 
@@ -37,7 +36,7 @@ Each `data` or `methods` property will be proxied to the ViewModel instance. So 
 
 A whole example:
 
-```
+```html
 <template>
   <div style="width: {{w}}; height: {{h}}; background-color: red;" onclick="update"></div>
 </template>

@@ -5,11 +5,12 @@ order: 3.10
 ---
 
 # globalEvent
-<span class="weex-version">0.8 (developing)</span>
+<span class="weex-version">v0.8+ (developing)</span>
 
 ## Summary
 
-`globalEvent` are used to listen for persistent events, such as changes in positioning information, gyroscopes, and so on. A global event is a secondary API that requires additional APIs to work with.</br>
+`globalEvent` are used to listen for persistent events, such as changes in positioning information, gyroscopes, and so on. A global event is a secondary API that requires additional APIs to work with.
+
 You can register events via `addEventListener`, which can be removed by `removingEventListener` when you do not need to listen for `globalEvent`.
 
 *AUCTION* 
@@ -17,7 +18,8 @@ You can register events via `addEventListener`, which can be removed by `removin
 
 ## How to make your Module support global events
 API development is complete, when the event needs to be sent, the need through the following methods:
-```
+
+```javascript
 /**
   * 
   * @param eventName eventName
@@ -25,7 +27,9 @@ API development is complete, when the event needs to be sent, the need through t
   */
 instance.fireGlobalEventCallback(eventName,params);
 ```
+
 How to dispatch a global event in a weex-html5 component or module ? Just dispatch the event on the document element:
+
 ```javascript
 var evt = new Event('some-type')
 evt.data = { foo: 'bar' }
@@ -35,12 +39,14 @@ document.dispatchEvent(evt)
 ### Example
 
 #### Android
+
 ```java
 Map<String,Object> params=new HashMap<>();
 params.put("key","value");
 mWXSDKInstance.fireGlobalEventCallback("geolocation",params);
 ```
 #### iOS
+
 ```Objective-C
 [weexInstance fireGlobalEvent:@"geolocation" params:@{@"key":@"value"}];
 ```

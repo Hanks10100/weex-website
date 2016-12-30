@@ -23,7 +23,7 @@ Weex's native runtime support load image file from device's disk, all you have t
 This's is caused by weex-toolkit's dependency 'http-server', whose old version is not working well in chinese windows environment. We have fixed that, you should upgrade weex-toolkit before use that.
 
 ## Playground app display nothing (white screen) after scan    
-Best way to find out what's happening is read debug log, you can follow [this document](/tools/how-to-debug.html) to firgure out how to do that.
+Best way to find out what's happening is read debug log, you can follow [this document](./tools/devtools.html) to firgure out how to do that.
 
 ## About ECMAScript Version
 
@@ -121,9 +121,83 @@ else {
 </script>
 ```
 
-## Transfer data between pages
+## How to transfer data between pages
 
 If you have 2 pages, A and B.
 
-0. A -> B, use [getConfig api](http://alibaba.github.io/weex/doc/references/api.html#getconfig) or [storage module](http://alibaba.github.io/weex/doc/modules/storage.html) to transfer data
-0. B -> A, use [storage module](http://alibaba.github.io/weex/doc/modules/storage.html) to transfer data
+0. A -> B, use [getConfig api](./references/api.html#getconfig) or [storage module](./references/modules/storage.html) to transfer data
+0. B -> A, use [storage module](./references/modules/storage.html) to transfer data
+
+## How to use `repeat` in Parent-Child components
+
+If you want, You can make a `repeat` operation between Parent-Child components. But you must be strictly in accordance with the document syntax to write code. If there is no child component defined data, or there is no specify `props` that need to be passed down. It will lead to the page does not render properly.
+
+A correct example:
+
+```html
+<element name="child">
+  <template>
+    <div>
+      <text style="font-size:100">{{title}}</text>
+    </div>
+  </template>
+  
+  <script>
+    module.exports = {
+      data: {
+        title: null
+      }
+    }
+  </script>
+</element>
+<template>
+  <div>
+    <child repeat="item in lists" title="{{ item.title }}"></child>
+  </div>
+</template>
+<script>
+  module.exports = {
+    data: {
+      lists: [
+        { title: 'A' },
+        { title: 'B' },
+        { title: 'C' }
+      ]
+    },
+    ready: function () {
+      this.lists.splice(0, 1)
+    }
+  }
+</script>
+```
+
+A wrong example：
+
+```html
+<element name="child">
+  <template>
+    <div>
+      <text style="font-size:100">{{title}}</text>
+    </div>
+  </template>
+</element>
+<template>
+  <div>
+    <child repeat="item in lists"></child>
+  </div>
+</template>
+<script>
+  module.exports = {
+    data: {
+      lists: [
+        { title: 'A' },
+        { title: 'B' },
+        { title: 'C' }
+      ]
+    },
+    ready: function () {
+      this.lists.splice(0, 1)
+    }
+  }
+</script>
+```

@@ -5,15 +5,16 @@ order: 1.10
 ---
 
 # Special Element
-<span class="weex-version">0.4</span>
 
-## &lt;content&gt;
+## Content
 
 The element serves as content distribution outlet in a composed component template. The element itself will be replaced.
 
-alias: `<slot>`
+alias: 'slot'.
 
-### Code Example
+## Example
+
+As shown in the example, 'content' replaced by 'text'.
 
 ```html
 <we-element name="item">
@@ -32,4 +33,3 @@ alias: `<slot>`
   </div>
 </template>
 ```
-

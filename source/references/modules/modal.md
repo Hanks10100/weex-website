@@ -4,117 +4,188 @@ type: references
 order: 3.4
 ---
 
-# modal
-<span class="weex-version">0.4</span>
+# modal  
 
-## Summary
+Weex provides a series of message boxes: `toast`, `alert`, `confirm` and `prompt`.    
 
-A series of modal dialog api like `toast`, `alert`, `confirm` and `prompt`.
+## API    
+### toast(options)   
 
-## API
-
-### toast(options)
+A toast provides simple feedback about an operation in a small popup. For example, navigating away from an email before you send it triggers a "Draft saved" toast to let you know that you can continue editing later. Toasts automatically disappear after a timeout.    
 
 #### Arguments
+- `options` (object): toast options.
+ - `message` (string): the text message that the toast shows.
+ - `duration` (number): the duration(seconds) that the toast shows.   
 
-* `options`*(object)*: some options.
-  * `message`*(string)*: the message that the toast shows.
-  * `duration`*(number)*: the duration(seconds) that the toast shows.
+**Example:**
 
+```html
+<template>
+  <div style="height: 200px; width: 400px; background-color: #00bfff;
+    justify-content: center; align-items: center" onclick="{{perform}}">
+    <text style="font-size: 60px; color: #ffffff">Toast</text>
+  </div>
+</template>
 
-##### Example
+<script>
+  module.exports = {
+    methods: {
+      perform: function () {
+        var modal = require('@weex-module/modal');
+        modal.toast({
+          'message': 'I am a toast',
+          'duration': 3
+        });
+      }
+    }
+  }
+</script>
+```    
+### alert(options, callback)    
 
-```javascript
-var modal = require('@weex-module/modal');
-modal.toast({'message': 'I am toast!', 'duration': 1});
+An alert box is often used if you want to make sure information comes through to the user.    
+When an alert box pops up, the user will have to click "OK" to proceed.    
+
+#### Arguments  
+
+- `options` (object): alert box options.
+ - `message` (string): the text message that the alert shows.
+ - `okTitle` (string): the text of positive button, default is 'OK'.
+ - `callback` (function): callback when complete.    
+  This method has a callback function whose arguments will be:    
+- `result` (string): the title text of the confirm button that clicked by user.
+
+**Example:**
+
+```html
+<template>
+  <div>
+    <div style="height: 200px; width: 400px; background-color: #00bfff;
+  justify-content: center; align-items: center" onclick="{{perform}}">
+      <text style="font-size: 60px; color: #ffffff">Alert</text>
+    </div>
+    <text>{{params}}</text>
+  </div>
+</template>
+
+<script>
+  module.exports = {
+    data: {
+      params: ''
+    },
+    methods: {
+      perform: function () {
+        var modal = require('@weex-module/modal');
+        var self = this;
+        modal.alert({
+          'message': 'I am alert message',
+          'okTitle' : 'YES'
+        }, function (result) {
+          self.params = String(result)
+        });
+      }
+    }
+  }
+</script>
 ```
 
-### alert(options, callback)
+### confirm(options, callback)    
+A confirm box is often used if you want the user to verify or accept something.    
+
+When a confirm box pops up, the user will have to click either confirm or cancel button to proceed.    
 
 #### Arguments
+- `options` (object): confirm box options.
+  - `message` (string): the message that the confirm shows.
+  - `okTitle` (string): the title of confirm button, default is 'OK'.
+  - `cancelTitle` (string): the title of cancel button, default is 'Cancel'.
+- `callback` (function): callback when complete.
 
-* `options`*(object)*: some options.
-  * `message`*(string)*: the message that the alert shows.
-  * `okTitle`*(string)*: the title of alert button, default is OK.
-* `callback`*(function)*: callback when complete.
+This method has a callback function whose arguments will be:    
+- `result`(string): the title text of the button that clicked by user.    
+**Example:**
 
-#### Example
+```html
+<template>
+  <div>
+    <div style="height: 200px; width: 400px; background-color: #00bfff;
+  justify-content: center; align-items: center" onclick="{{perform}}">
+      <text style="font-size: 60px; color: #ffffff">Confirm</text>
+    </div>
+    <text>{{params}}</text>
+  </div>
+</template>
 
-```javascript
-var arg1 = 'I am alert!';
-var arg2 = 'I am ok';
-var modal = require('@weex-module/modal');
-modal.alert({
-  message: arg1,
-  okTitle: arg2
-}, function() {
-  // TODO after the alert is complete.
-})
+<script>
+  module.exports = {
+    data: {
+      params: ''
+    },
+    methods: {
+      perform: function () {
+        var modal = require('@weex-module/modal');
+        var self = this;
+        modal.confirm({
+          'message': 'I have read and accept the terms.',
+          'okTitle' : 'YES',
+          'cancelTitle' : 'NO'
+        }, function (e) {
+          self.params = String(e)
+        });
+      }
+    }
+  }
+</script>
+```    
+
+### prompt(options, callback)    
+
+A prompt box is often used if you want the user to input a value before entering a page.    
+When a prompt box pops up, the user will have to click either confirm or cancel button to proceed after entering an input value.    
+
+#### Arguments    
+- `options` (object): some options.
+  - `message` (string): the message that the prompt shows.
+  - `okTitle` (string): the title text of confirm button, default is 'OK'.
+  - `cancelTitle` (string): the title text of cancel button, default is 'Cancel'.
+- `callback` (function): callback when complete.     
+  This method has a callback function whose arguments will be:    
+- `ret` (object): the argument will be a object, which has attributes `result` and `data`,  like `{ result: 'OK', data: 'hello world' }`
+  - `result` (string): the title of the button that clicked by user.
+  - `data` (string): the value of the text that entered by user.     
+
+**Example:**    
+
+```html
+<template>
+  <div>
+    <div style="height: 200px; width: 400px; background-color: #00bfff;
+  justify-content: center; align-items: center" onclick="{{perform}}">
+      <text style="font-size: 60px; color: #ffffff">Prompt</text>
+    </div>
+    <text>{{params}}</text>
+  </div>
+</template>
+
+<script>
+  module.exports = {
+    data: {
+      params: ''
+    },
+    methods: {
+      perform: function () {
+        var modal = require('@weex-module/modal');
+        var self = this;
+        modal.prompt({
+          'message': 'I am a prompt',
+          'okTitle' : 'YES',
+          'cancelTitle' : 'NO'
+        }, function (e) {
+          self.params = JSON.stringify(e)
+        });
+      }
+    }
+  }
+</script>
 ```
-    
-### confirm(options, callback)
-
-#### Arguments
-
-* `options`*(object)*: some options.
-  * `message`*(string)*: the message that the confirm shows.
-  * `okTitle`*(string)*: the title of confirm button, default is 'OK'.
-  * `cancelTitle`*(string)*: the title of cancel button, default is 'Cancel'.
-* `callback`*(function)*: callback when complete.
-
-This method has a callback function whose arguments will be:
-
-* `result`*(string)*: the title of the button that clicked by user.
-  
-#### Example
-
-```javascript
-var arg1 = 'I am alert!'
-var arg2 = 'I am ok'
-var arg3 = 'I am cancel'
-var modal = require('@weex-module/modal');
-modal.confirm({
-  message: arg1,
-  okTitle: arg2,
-  cancelTitle: arg3
-}, function(result) {
-  nativeLog(result)
-  // TODO after the confirm is complete.
-});
-```
-
-### prompt(options, callback)
-
-#### Arguments
-
-* `options`*(object)*: some options.
-  * `message`*(string)*: the message that the prompt shows.
-  * `okTitle`*(string)*: the title of confirm button, default is 'OK'.
-  * `cancelTitle`*(string)*: the title of cancel button, default is 'Cancel'.
-* `callback`*(function)*: callback when complete.
-   
-This method has a callback function whose arguments will be:
-
-* `res`*(object)*: the argument will be a object, which has attributes `result` and `data`, like `{ result: 'OK', data: 'hello world' }`
-  * `result`*(string)*: the title of the button that clicked by user.
-  * `data`*(string)*: the value of the text that entered by user.
-
-#### Example
-
-```javascript
-var arg1 = 'I am prompt!'
-var arg2 = 'I am ok'
-var arg3 = 'I am cancel'
-var modal = require('@weex-module/modal');
-modal.prompt({
-  message: arg1,
-  okTitle: arg2,
-  cancelTitle: arg3
-}, function(res) {
-  nativeLog(res.result + ', ' + res.data);
-  // TODO after the prompt is complete.
-});
-```
-
-
-

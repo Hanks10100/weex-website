@@ -5,49 +5,10 @@ order: 2.17
 ---
 
 # &lt;wxc-tabbar&gt;
-<span class="weex-version">0.5</span>
 
-### Summary
+The `wxc-tabbar` is a custom component, which belongs to the `weex-components` node package, implements a specialized component that corresponds to the radio-style selection. It displays tabs at the bottom of the window for switching between different tab pages.
 
-The "wxc-tabbar" tag implements a specialized component that corresponds to the radio-style selection. It displays tabs at the bottom of the window for selecting between the different modes and for displaying different weex pages for that mode.
-
-### Child Components
-
-This component supports no child components.
-
-### Attributes
-
-- `tab-items`: This attribute contains an array of tabitem objects, each of which corresponds to the radio-style selection. The order of the items in this attribute corresponds to the order of the items onscreen. You can configure the appearance of tabbar by setting tabitem. Each tabitem properties can be described as follows.
-  + index: &lt;integer&gt; This attribute must be set to identify the order of the item.
-  + title: &lt;string&gt; The item’s title. If null, a title is not displayed.
-  + titleColor: &lt;color&gt;The item’s titleColor. Default is black color.  
-  + image: &lt;string&gt;The icon displayed when the tabitem is unselected. If null, the icon is not displayed.
-  + selectedImage:  &lt;string&gt;The icon displayed when the tabitem is selected. If null, the icon is not displayed.
-  + src: &lt;string&gt;The  custom weex page to display.
-  + icon: &lt;string&gt;This is a special attribute. Be careful, You need to set the property even if it is empty.
-  + visibility: &lt;string&gt;`visible` | `hidden`. This attribute must be set to identify the display status. Default value is `visible`.         
-
-+ `selected-color`: &lt;color&gt; The color of the title when it is selected. Default is red color.
-+ `unselected-color`: &lt;color&gt; The color of the title when it is unselected. Default is black color.  
-                 
-Other attributes please check out the [common attributes](../references/common-attrs.html).
-
-### Styles
-
-**common styles**: check out [common styles for components](../references/common-style.html)
-
-- support flexbox related styles
-- support box model related styles
-- support ``position`` related styles
-- support ``opacity``, ``background-color`` etc.
-
-### Events
-
-- `tabBar.onClick`: triggered when the tabitem is selected. You need to register the observer in ready or create block.
-
-### Example
-
-`require('weex-components')` should be used with webpack, see [example](https://github.com/alibaba/weex/blob/example/examples/component/tabbar/tabbar-demo.we) for more detail.
+Usage: You can use this component by a `require` statement, `require('weex-components');`, in the script tag. e.g.
 
 ```html
 <template>
@@ -58,40 +19,75 @@ Other attributes please check out the [common attributes](../references/common-a
 
 <script>
   require('weex-components');
+  // Other javascript statements.
+</script>
+```
+
+Before requiring `weex-components'`, you need to specify `weex-components` dependency in your project's package.json file. e.g.
+
+```json
+"dependencies": {
+  "weex-components": "^0.2.0"
+}
+```
+
+## Child Components
+
+`wxc-tabbar` has no child components.
+
+
+## Attributes
+
+* `selected-index` : &lt;number&gt; default value is 0
+* `selected-color`: &lt;color&gt; The color of the title when it is selected. Default is red color.
+* `unselected-color`: &lt;color&gt; The color of the title when it is unselected. Default is black color.
+* `tab-items` This attribute accepts an array of `tabitem` objects, each of which corresponds to the tab pages. And the order of the items equals to the order of the tab pages onscreen. You can configure the appearance of tabbar by setting the tabitem object's properties. Each tabitem properties are listed as below:
+  * `index`: &lt;integer&gt; This attribute is required, and it specifies the order of the item.
+  * `title`: &lt;string&gt; The item’s title. and it is optional. The tile will not be displayed if empty or not provided.
+  * `titleColor`: &lt;color&gt;The item’s titleColor. Default is black color.
+  * `image`: &lt;string&gt;The icon displayed when the tabitem is unselected. The image will not be displayed if empty or not provided.
+  * `selectedImage` : &lt;string&gt;The icon displayed when the tabitem is selected. The icon will not be displayed if empty or not provided.
+  * `src` : &lt;string&gt; The weex page for the tab page.
+  * `visibility`: &lt;string&gt;visible | hidden. This attribute specifies display status of the tab page. Default value is visible.
+
+Other attributes please check out the [common attributes](../common-attrs.html).
+
+## Styles
+common styles: check out [common styles](../common-style.html) for components
+
+* support flexbox related styles
+* support box model related styles
+* support position related styles
+* support opacity, background-color etc.
+
+## Events
+* `tabBar.onClick`: triggered when the tabitem is selected. You need to register the observer in ready or create block.
+e.g.
+
+
+```html
+<template&gt;
+  <div style="flex-direction: column;"&gt;
+    <wxc-tabbar tab-items = {{tabItems}}&gt;</wxc-tabbar&gt;
+  </div&gt;
+</template&gt;
+
+<script>
+  require('weex-components');
   module.exports = {
     data: {
-      tabItems: [
-        {
-          index: 0,
-          title: '...',
-          titleColor: '#000000',
-          icon: '',
-          image: '...',
-          selectedImage: '...',
-          src: '...',
-          visibility: 'visible',
-        },
-        {
-          index: 1,
-          title: '...',
-          titleColor: '#000000',
-          icon: '',
-          image: '...',
-          selectedImage: '...',
-          src: '...',
-          visibility: 'hidden',
-        }
-      ],
-    },
+      },
     methods: {
       ready: function (e) {
         var vm = this;
         vm.$on('tabBar.onClick',function(e){
           var index = e.detail.index;
-       	  ....
         });
       },
     }
   }
 </script>
 ```
+
+## Example
+You should checkout the playground's `tabbar` example.

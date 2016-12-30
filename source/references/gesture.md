@@ -54,19 +54,20 @@ Currently, Weex Android do not support listening to gesture on `scroller`, `list
 
 Example:
 
+```html
+<template>
+	<div ontouchstart="handleTouchstart"></div>
+</template>
 
-	<template>
-	  <div ontouchstart="handleTouchstart"></div>
-	</template>
-	
-	<script>
-	module.exports = {
-	  methods: {
-	    handleTouchstart: function(eventProperties) {
-	      // handling with the Event Properties
-	    }
-	  }
+<script>
+module.exports = {
+	methods: {
+		handleTouchstart: function(eventProperties) {
+			// handling with the Event Properties
+		}
 	}
-	</script>
+}
+</script>
+```
 
 With the code above, a `touchstart` event will be fired when a touch point is placed on the touch surface.

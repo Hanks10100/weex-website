@@ -5,7 +5,6 @@ order: 2.6
 ---
 
 # Composed Component
-<span class="weex-version">0.4</span>
 
 If some part of weex file is reused often, you could create a composed component represent these part.
 

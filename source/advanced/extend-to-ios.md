@@ -11,54 +11,56 @@ order: 7
 Weex SDK provides only rendering capabilities, rather than have other capabilities, such as network, picture, and URL redirection. If you want these features, you need to implement it.
 
 For example: If you want to implement an address jumping function, you can achieve a Module following the steps below.
+
 #### Step to customize a module
+
 1. Module 
-customized must implement WXModuleProtocol
-2. A macro named `WX_EXPORT_METHOD` must be added, as it is the only way to be recognized by Weex. It takes arguments that specifies the method in module called by JavaScript code.
+    customized must implement WXModuleProtocol
+2. A macro named `WX_EXPORT_METHOD` must be added, as it is the only way to be recognized by Weex. It takes arguments that specifies the method in module   called by JavaScript code.
 3. The weexInstance should be synthesized. Each module object is bind to a specific instance.
-4. Module methods will be invoked in UI thread, so do not put time consuming operation there. If you want to  execute the whole module methods in other thread, please implement the method `- (NSThread *)targetExecuteThread` in protocol. In the way, tasks distributed to this module will be executed in targetExecuteThread. 
+4. Module methods will be invoked in UI thread, so do not put time consuming operation there. If you want to  execute the whole module methods in other     thread, please implement the method `- (NSThread *)targetExecuteThread` in protocol. In the way, tasks distributed to this module will be executed in targetExecuteThread. 
 5. Weex params can be String or Map.
 6. Module supports to return results to Javascript in callback. This callback is type of `WXModuleCallback`, the params of which can be String or Map.
 
 ```objective-c
-      
-    @implementation WXEventModule
-    @synthesize weexInstance;
-       WX_EXPORT_METHOD(@selector(openURL:callback))
-    
-    - (void)openURL:(NSString *)url callback:(WXModuleCallback)callback
-    {
-        NSString *newURL = url;
-        if ([url hasPrefix:@"//"]) {
-            newURL = [NSString stringWithFormat:@"http:%@", url];
-        } else if (![url hasPrefix:@"http"]) {
-           newURL = [NSURL URLWithString:url relativeToURL:weexInstance.scriptURL].absoluteString;
-        }
-    
-        UIViewController *controller = [[WXDemoViewController alloc] init];
-        ((WXDemoViewController *)controller).url = [NSURL URLWithString:newURL];
-    
-        [[weexInstance.viewController navigationController] pushViewController:controller animated:YES];
-        callback(@{@"result":@"success"});
+@implementation WXEventModule
+@synthesize weexInstance;
+    WX_EXPORT_METHOD(@selector(openURL:callback))
+
+- (void)openURL:(NSString *)url callback:(WXModuleCallback)callback
+{
+    NSString *newURL = url;
+    if ([url hasPrefix:@"//"]) {
+        newURL = [NSString stringWithFormat:@"http:%@", url];
+    } else if (![url hasPrefix:@"http"]) {
+        newURL = [NSURL URLWithString:url relativeToURL:weexInstance.scriptURL].absoluteString;
     }
-    
-    @end```
+
+    UIViewController *controller = [[WXDemoViewController alloc] init];
+    ((WXDemoViewController *)controller).url = [NSURL URLWithString:newURL];
+
+    [[weexInstance.viewController navigationController] pushViewController:controller animated:YES];
+    callback(@{@"result":@"success"});
+}
+
+@end
+```
     
 #### Register the module
 
 You can register the customized module by calling the method `registerModule:withClass` in WXSDKEngine.
 
 ```objective-c
-      
-      WXSDKEngine.h
-      /**
- 		*  @abstract Registers a module for a given name
- 		*  @param name The module name to register
- 		*  @param clazz  The module class to register
- 	   **/
-		+ (void)registerModule:(NSString *)name withClass:(Class)clazz;
-		
-    	[WXSDKEngine registerModule:@"event" withClass:[WXEventModule class]];```
+WXSDKEngine.h
+/**
+*  @abstract Registers a module for a given name
+*  @param name The module name to register
+*  @param clazz  The module class to register
+**/
++ (void)registerModule:(NSString *)name withClass:(Class)clazz;
+
+[WXSDKEngine registerModule:@"event" withClass:[WXEventModule class]];
+```
     	
 ### Handler extend
 
@@ -69,61 +71,61 @@ Weex SDK doesn't have capabilitis, such as image download 、navigator operation
 Weex SDK has no image download capability, you need to implement `WXImgLoaderProtocol`. Refer to the following examples.
 
 ```objective-c
-      
-    WXImageLoaderProtocol.h
-    @protocol WXImgLoaderProtocol <WXModuleProtocol>
+WXImageLoaderProtocol.h
+@protocol WXImgLoaderProtocol <WXModuleProtocol>
 
-    /**
-      * @abstract Creates a image download handler with a given URL
-      * @param imageUrl The URL of the image to download
-      * @param imageFrame  The frame of the image you want to set
-      * @param options : The options to be used for this download
-      * @param completedBlock : A block called once the download is completed.
-        image : the image which has been download to local.
-        error : the error which has happened in download.
-        finished : a Boolean value indicating whether download action has finished.
-     */
-	 -(id<WXImageOperationProtocol>)downloadImageWithURL:(NSString *)url imageFrame:(CGRect)imageFrame userInfo:(NSDictionary *)options completed:(void(^)(UIImage *image,  NSError *error, BOOL finished))completedBlock;
-	 @end```
+/**
+    * @abstract Creates a image download handler with a given URL
+    * @param imageUrl The URL of the image to download
+    * @param imageFrame  The frame of the image you want to set
+    * @param options : The options to be used for this download
+    * @param completedBlock : A block called once the download is completed.
+    image : the image which has been download to local.
+    error : the error which has happened in download.
+    finished : a Boolean value indicating whether download action has finished.
+    */
+    -(id<WXImageOperationProtocol>)downloadImageWithURL:(NSString *)url imageFrame:(CGRect)imageFrame userInfo:(NSDictionary *)options completed:(void(^)(UIImage *image,  NSError *error, BOOL finished))completedBlock;
+    @end
+```
 
 Implement above protocol as follows.
 
 
 ```objective-c
-			
-	@implementation WXImgLoaderDefaultImpl
-	#pragma mark -
-	#pragma mark WXImgLoaderProtocol
+@implementation WXImgLoaderDefaultImpl
+#pragma mark -
+#pragma mark WXImgLoaderProtocol
 
-	- (id<WXImageOperationProtocol>)downloadImageWithURL:(NSString *)url imageFrame:(CGRect)imageFrame userInfo:(NSDictionary *)userInfo completed:(void(^)(UIImage *image,  NSError *error, BOOL finished))completedBlock
-	{
-    	if ([url hasPrefix:@"//"]) {
-        	url = [@"http:" stringByAppendingString:url];
-    	}
-    	return (id<WXImageOperationProtocol>)[[SDWebImageManager sharedManager] downloadImageWithURL:[NSURL URLWithString:url] options:0 progress:^(NSInteger receivedSize, NSInteger expectedSize) {     
-    	} completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
-        if (completedBlock) {
-            completedBlock(image, error, finished);
-        }
-    	}];
-	}
-	@end```
+- (id<WXImageOperationProtocol>)downloadImageWithURL:(NSString *)url imageFrame:(CGRect)imageFrame userInfo:(NSDictionary *)userInfo completed:(void(^)(UIImage *image,  NSError *error, BOOL finished))completedBlock
+{
+    if ([url hasPrefix:@"//"]) {
+        url = [@"http:" stringByAppendingString:url];
+    }
+    return (id<WXImageOperationProtocol>)[[SDWebImageManager sharedManager] downloadImageWithURL:[NSURL URLWithString:url] options:0 progress:^(NSInteger receivedSize, NSInteger expectedSize) {     
+    } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
+    if (completedBlock) {
+        completedBlock(image, error, finished);
+    }
+    }];
+}
+@end
+```
 	
 #### Register the handler
 
 You can register the handler which implements the protocol by calling  `registerHandler:withProtocol` in WXSDKEngine.
 
 ```objective-c
-      
-      WXSDKEngine.h
-      /**
- 	   * @abstract Registers a handler for a given handler instance and specific protocol
- 	   * @param handler The handler instance to register
- 	   * @param protocol The protocol to confirm
- 	   */
-       + (void)registerHandler:(id)handler withProtocol:(Protocol *)protocol;
-		       
-       [WXSDKEngine registerHandler:[WXImgLoaderDefaultImpl new] withProtocol:@protocol(WXImgLoaderProtocol)];```
+WXSDKEngine.h
+/**
+* @abstract Registers a handler for a given handler instance and specific protocol
+* @param handler The handler instance to register
+* @param protocol The protocol to confirm
+*/
++ (void)registerHandler:(id)handler withProtocol:(Protocol *)protocol;
+        
+[WXSDKEngine registerHandler:[WXImgLoaderDefaultImpl new] withProtocol:@protocol(WXImgLoaderProtocol)];
+```
               
 ## Custom Native Components for iOS
 
@@ -137,7 +139,7 @@ This guide will use the implementation of existing component `image` to show you
 
 Defining a custom native component is simple. Just call `[WXSDKEngine registerComponent:withClass:]` with the component's tag name as first argument.
 
-```
+```objective-c
 [WXSDKEngine registerComponent:@"image" withClass:[WXImageComponent class]];
 ```
 
@@ -145,7 +147,7 @@ Then you can create a `WXImageComponent` class to represent the implementation o
 
 Now you can use `<image>` wherever you want in the template.
 
-```
+```html
 <image></image>
 ```
 
@@ -153,7 +155,7 @@ Now you can use `<image>` wherever you want in the template.
 
 The next thing we can do is to extend some native properties to make the component more powerful. As an image, let's say we should have a `src` attribute as image's remote source and a `resize` attribute as image's resize mode(contain/cover/stretch).
 
-```
+```objective-c
 @interface WXImageComponent ()
 
 @property (nonatomic, strong) NSString *imageSrc;
@@ -164,7 +166,7 @@ The next thing we can do is to extend some native properties to make the compone
 
 All of the styles, attributes and events will be passed to the component's initialization method, so here you can store the properties which you are interested in.
 
-```
+```objective-c
 @implementation WXImageComponent
 
 - (instancetype)initWithRef:(NSString *)ref type:(NSString *)type styles:(NSDictionary *)styles attributes:(NSDictionary *)attributes events:(NSArray *)events weexInstance:(WXSDKInstance *)weexInstance
@@ -207,7 +209,7 @@ removeEvent:| Called when removing an event frome the component.
 As in the image component example, if we need to use our own image view, we can override the `loadView` method.
 
 
-```
+```objective-c
 - (UIView *)loadView
 {
     return [[WXImageView alloc] init];
@@ -219,7 +221,7 @@ Now Weex will use `WXImageView` to render the `image` component.
 As an image component, we will need to fetch the remote image and set it to the image view.  This can be done in `viewDidLoad` method when the view is created and loaded. `viewDidLoad` is also the best time to perform additional initialization for your view， such as content mode changing.
 
 
-```
+```objective-c
 - (void)viewDidLoad
 {
     UIImageView *imageView = (UIImageView *)self.view;
@@ -235,7 +237,7 @@ As an image component, we will need to fetch the remote image and set it to the 
 If image's remote source can be changed, you can also hook the `updateAttributes:` method to perform your attributes changing logic. Component's view always has been loaded while `updateAttributes:` or `updateStyles:` is called.
 
 
-```
+```objective-c
 - (void)updateAttributes:(NSDictionary *)attributes
 {
     if (attributes[@"src"]) {
@@ -254,7 +256,7 @@ Maybe there is even more life cycle hooks you might need to consider, such as `l
 
 Now you can use `<image>` and its attributes wherever you want in the template.
 
-```
+```html
 <image style="your-custom-style" src="image-remote-source" resize="contain/cover/stretch"></image>
 ```
 

@@ -6,8 +6,6 @@ order: 1
 
 # Tutorial
 
-<span class="weex-version">0.4+</span>
-
 We will make a simple but realistic list, in which the technologies Weex uses will be shown. This form of list also works for a lot of e-commercial apps and mobile sites.
 
 ## Getting Started
@@ -39,8 +37,8 @@ Once created, we want to see the running result of the `.we` file. But before th
 
 We should install [Node](https://nodejs.org/en/download/) first, which our Weex CLI program [Weex Toolkit](https://www.npmjs.com/package/weex-toolkit) depends on. Then install `weex-toolkit` by running the command:
 
-```
-npm install -g weex-toolkit
+```bash
+$ npm install -g weex-toolkit
 ```
 
 When installation completed, you can check if Weex CLI is installed properly by running `weex` command in the command line. The following text is expected:
@@ -59,8 +57,8 @@ Options:
 
 If all work well, navigate to the directory where you saved `tech_list.we`, then type:
 
-```
-weex tech_list.we
+```bash
+$ weex tech_list.we
 ```
 
 A browser window will be opened automatically to display the running result like below     (weex-toolkit version should be greater than 0.1.0, use `weex --version` to check it):
@@ -79,7 +77,7 @@ Style describes how Weex tags are to be displayed. We prefer CSS very much. So w
 
 Script adds *data* & *logic* to Weex tags, helping you easily access local or remote data and update tags. You can also define some methods for your tag to respond to different events. Weex Script organization learns a lot from CommonJS module style.
 
-More information about Weex syntax can be found in our [Syntax chapter](syntax/main.html).
+More information about Weex syntax can be found in our [Syntax chapter](./syntax/index.html).
 
 ## Add More Items
 
@@ -112,8 +110,8 @@ We can't call one item an list, so we need to add more items to our tech list. O
 
 Now we will try to  render our  `tech_list.we`  with Weex native renderer.  Open your terminal and  navigate to the directory where you save the `tech_list.we` again, then type:
 
-```
-weex tech_list.we --qr -h {ip or hostname}
+```bash
+$ weex tech_list.we --qr -h {ip or hostname}
 ```
 
 It's ***RECOMMENDED*** to use `-h` option to specify your local ip address or hostname.
@@ -199,14 +197,14 @@ module.exports = {
 
 Open terminal and run the command again:
 
-```
-weex tech_list.we
+```bash
+$ weex tech_list.we
 ```
 
 You should see a slider prepend to our list.
 
 ![Third Example](images/tut4.gif)
 
-More information about Slider component can be found [here](components/slider.html).
+More information about Slider component can be found [here](../references/components/slider.html).
 
-Just as the previous example, the slider can be rendered in native, easily in Weex playground, or in your App. Please refer [the document](advanced/integrate-to-android.html) for integrating Weex into your App.
+Just as the previous example, the slider can be rendered in native, easily in Weex playground, or in your App. Please refer [the document](./advanced/integrate-to-android.html) for integrating Weex into your App.

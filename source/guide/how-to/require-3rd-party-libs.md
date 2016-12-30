@@ -5,9 +5,8 @@ order: 3.6
 ---
 
 # How to require 3rd Party Libs ?
-<span class="weex-version">0.4</span>
 
-In the paragraph [Maintain Your Component Code](./maintain-your-component-code.html), we learn that JavaScript code can be written in `<script>` tag in one component. But there must be some common functions or modules in your project, such as parsing url params, extending properties from some objects to another object and so on. It's a bad practice to copy and paste them in each component, therefore there's a urgent need of `require`. Weex provides CommonJS `require` syntax for developers.
+In the paragraph Maintain Your Component Code, we learn that JavaScript code can be written in `<script>` tag in one component. But there must be some common functions or modules in your project, such as parsing url params, extending properties from some objects to another object and so on. It's a bad practice to copy and paste them in each component, therefore there's a urgent need of `require`. Weex provides CommonJS `require` syntax for developers.
 
 Let take `extend` for example.
 
@@ -15,7 +14,7 @@ Let take `extend` for example.
 
 A basic implementation of `extend` is as follows, and it's placed in directory path `./common/utils.js`.
 
-```
+```javascript
 function extend(dest, src) {
   for (var key in src) {
     dest[key] = src[key]
@@ -26,7 +25,7 @@ exports.extend = extend
 
 In a `.we` file, `extend` can be used with the help of `require`:
 
-```
+```html
 <script>
   var utils = require('./common/utils')
   var obj1 = {a: 1}
@@ -41,11 +40,11 @@ Besides, [underscore](http://underscorejs.org) is a JavaScript library that prov
 
 We can use underscore's extend instead of the version implemented by ourselves. After installing `underscore` to the `node_modules` directory, we can `require` and use it.
 
-```
-npm install underscore
+```bash
+$ npm install underscore
 ```
 
-```
+```html
 <script>
   var _ = require('underscore')
   var obj1 = {a: 1}

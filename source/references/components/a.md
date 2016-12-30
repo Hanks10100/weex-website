@@ -6,27 +6,44 @@ order: 2.1
 
 # &lt;a&gt;
 
-<span class="weex-version">0.5+</span>
+`a` defines a hyperlink to a page in the web. Its purpose and syntax is very similar to [<a>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a) in HTML5.
 
-###Summary
-&lt;a&gt; defines a hyperlink to a page in the web. Its purpose and syntax is very similar to [&lt;a&gt;](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a) in HTML5.
+## Child Components
 
-### Child Components
+This type of component supports all kinds of weex component as it's child components except for its own kind.
 
-This type of component supports all kinds of weex component as its child components except for its own kind.
+## Attributes
 
-### Attributes
-##### href
-href attributes defines the URL of the hyperlink.
+* href: href attributes defines the URL of the hyperlink.
 
-### Styles
-**common styles**: check out the [common styles](../references/common-attrs.html)
+## Styles:
 
-### Events
-**common events**: check out the [common events](../references/common-event.html)  
-tip: we can't guarantee the order of execution between onclick function and href
+### common styles
 
-### Examples
-    <a href="http://g.tbcdn.cn/ali-wireless-h5/res/0.0.16/hello.js">
-       <text>Click me to see how 'A' element opens a new world.</text>
-    </a>
+Check out the [common styles](../common-style.html)
+
+## Events
+
+### common events
+
+Check out the [common events](../common-event.html)
+
+### Notes
+
+We can't guarantee the order of execution between onclick function and href. we recommend that do not use the click event in `a`.
+
+## Examples
+
+```html
+<template>
+  <div>
+    <a href="http://h5.m.taobao.com">
+    <text>Click me to see how 'A' element opens a new world.</text>
+  </a>
+  </div>
+</template>
+```
+
+[Try it](http://dotwe.org/d99f6eb55aa501c836a195ec824cada0)
+
+Use [Weex Playground](https://alibaba.github.io/weex/download.html) App to Scan the QR image and view the example for  'a'. 

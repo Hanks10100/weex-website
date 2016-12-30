@@ -5,50 +5,48 @@ order: 3.2
 ---
 
 # clipboard
-<span class="weex-version">0.8 (developing)</span>
+<span class="weex-version">v0.8+ (developing)</span>
 
-## Summary
+clipboard allows you to `getString()` or `setString()` from the system clipboard.
 
-`clipboard` allows you to `getString()` or `setString()` from the system clipboard.<br>
-Image a scene, you have send a verification code by SMS. Now most phone has a feature to capture the code from whole SMS text, and copy to the clipboard. In the past, you need to input the code manually. Now just click a button which calls `clipboard.getString()` .<p>
+Not long ago, We're still suffering from such a situation that we got a verification code sent by SMS, and we had no way to get the code from the SMS text but to typed it by our hands. How frustrated it is! But now you can enable your app to get the code from the system clipboard by calling  `clipboard.getString()` .
 
-*AUCTION* 
-- only support text. 
-- only works in Android and iOS. NOT works in html5, for web security reason.
+## Caution
+
+* only support text.
+* only works on Android and iOS. NOT works for html5, for web security reason.
 
 ## API
 
 ### getString(callback)
 
-read from clipboard.
+reads from clipboard.
 
-#### Arguments
+##### Arguments
 
-* `callback`*(function)*: the callback function after executing this action. `data` is the return value. 
+`callback(function)`: the callback function after executing this action. `data` is the return value.
 
-#### Example
+Example
 
-```javascript
+```js
 var clipboard = require('@weex-module/clipboard');
 clipboard.getString(function(ret) {
   // callback. 'ret' is an object that contains 'result' and 'data'.
   // use 'ret.data' to fetch the value.
   console.log("read from clipboard is " + ret.data);
 });
-```
 
+```
 ### setString(text)
 
-set the text into clipboard, as the same as copy manually. 
+sets the text to clipboard, having the same effect as copying manually.
 
-#### Arguments
+##### Arguments
 
-* `text`*(string)*: the string to copy into the clipboard.
+`text(string)`: the text copied to clipboard.
+Example
 
-#### Example
-
-```javascript
+```js
 var clipboard = require('@weex-module/clipboard');
 clipboard.setString("SomeStringHere");
 ```
-

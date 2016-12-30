@@ -21,35 +21,37 @@ Weex has wrapped up the most critical platform components, such as `ScrollView`,
 
 #### Refer to the following example: 
 
-	package com.taobao.weex.ui.component;
-	……
+```java
+package com.taobao.weex.ui.component;
+……
 
-    public class  MyViewComponent extends WXComponent{
+public class  MyViewComponent extends WXComponent{
 
-           public MyViewComponent(WXSDKInstance instance, WXDomObject node, 
-                        WXVContainer parent,  String instanceId, boolean lazy) {                
-               super(instance, node, parent, instanceId, lazy);
-            }
+        public MyViewComponent(WXSDKInstance instance, WXDomObject node, 
+                    WXVContainer parent,  String instanceId, boolean lazy) {                
+            super(instance, node, parent, instanceId, lazy);
+        }
 
-           @Override
-           protected void initView() {
-              //TODO:your own code ……
-           }
+        @Override
+        protected void initView() {
+            //TODO:your own code ……
+        }
 
-          @Override
-          public WXFrameLayout getView() {
-             //TODO:your own code ………        
-          }
-          @WXComponentProp(name=WXDomPropConstant.WX_ATTR_VALUE)
-	      public void setMyViewValue(String value) {
-	         ((TextView)mHost).setText(value);
-	      }
+        @Override
+        public WXFrameLayout getView() {
+            //TODO:your own code ………        
+        }
+        @WXComponentProp(name=WXDomPropConstant.WX_ATTR_VALUE)
+        public void setMyViewValue(String value) {
+            ((TextView)mHost).setText(value);
+        }
 
-    }
-
+}
+```
 #### Component should be registered 
 
-	WXSDKEngine.registerComponent("MyView", MyViewComponent.class);
-	  	
+```java
+WXSDKEngine.registerComponent("MyView", MyViewComponent.class);
+```  	
 	  	
 

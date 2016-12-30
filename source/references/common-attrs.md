@@ -5,82 +5,73 @@ order: 1.5
 ---
 
 # Common Attribute
-<span class="weex-version">0.4</span>
 
-All of weex tags share some common attributes
+Attributes provide additional information about weex tags. All weex tags can have attributes, attributes are always specified in the start tag and usually come in name/value pairs like: name="value". Mustache can be used inside a value. 
+All of weex tags have the following attributes：  
 
 ## id
 
-```
-id="logo"
-id="item-{{index}}"
-```
+Specifies a unique id for an element in `<template>` scope. With `id` attribute you can easily refer a weex tag.    
 
-`id` gives weex tag a unique mark in `<template>` scope. With id attribute you can easily refer a weex tag.
+```html
+<div id="logo"></div>
+<div id="item-{{index}}"></div>
+```     
 
-[more information](../syntax/id.html)
+## style    
 
-## style
+Specifies an inline style for an element.    
 
-```
-style="width: 200; height: 200"
-style="padding: {{x}}; margin: 0"
-```
+```html
+<div style="width: 200; height: 200"></div>
+<div style="padding: {{x}}; margin: 0"></div>
+```     
 
-weex tag inline style.
+## class    
 
-[more information](../syntax/style-n-class.html)
+Specifies one or more classnames for an element (refers to a class in a style sheet).    
 
-## class
+```html
+<div class="button"></div>
+<div class="button {{btnStatus}}"></div>
+```    
 
-```
-class="button"
-class="button {{btnStatus}}"
-```
+## repeat    
 
-to add classname for weex tag, you can use class attribute for tag classification.
+We can use the `repeat` attribute to render a list of items based on an array. The `repeat` attribute has a special syntax in the form of `item in items`, where `items` is the source data array and `item` is an alias for the array element being iterated on.     
 
-## repeat
-
-```
-repeat="{{items}}"
-```
-
-provide a list of data, using current tag as a template to repeatedly generate the same weex tags.
-
-[more information](../syntax/display-logic.html)
+```html
+<div repeat={{list}}></div>
+<div repeat={{item in list}}></div>
+```    
 
 ## if
 
-```
-if="{{opened}}"
-```
+Provide a boolean value to decide whether or not to display current tag.    
 
-provide a boolean value to decide whether or not to display current tag.
-
-[more information](../syntax/display-logic.html)
+```html
+<div if="true"></div>
+<div if="{{opened}}"></div>
+<div if="{{direction === 'row'}}"></div>
+```    
 
 ## append
 
-```
-append="tree/node"
-```
+By providing the value of tree or node, it determines the progress of rendering.    
 
-by providing the value of `tree` or `node`, it determines the progress of rendering.
-
-[more information](../syntax/render-logic.html)
+```html
+<div append="tree/node"></div>
+```    
 
 ## Event Handing (on...)
 
-```
-onclick="gotoDetail"
-onappear="loadMore"
-```
+Register event handlers on weex tag.
 
-register event handlers on weex tag
+```html
+<div onclick="openDetail"></div>
+<div onappear="{{loadMore}}"></div>
+```    
 
-[more information](../syntax/events.html)
+## Notes!
 
-### Notes!
-weex is basically following [HTML attribute](https://en.wikipedia.org/wiki/HTML_attribute) naming rule , so please **do not use CamelCase** in your attribute , **kebab-case** with “-” as delimiter is much better.
-
+Weex is basically following [HTML attribute](https://en.wikipedia.org/wiki/HTML_attribute) naming rule, so please **do not use CamelCase** in your attribute, **kebab-case** with "-" as delimiter is much better.

@@ -18,13 +18,14 @@ pre {
 
 pre code {
   border: none;
+  background: #353639;
   display: block;
   padding: 0;
   -moz-tab-size: 2;
   tab-size: 2;
 }
 
-.highlight {
+.highlight, pre {
   background: #353639;
   padding: 10px 15px;
   color: #abb2bf;
@@ -67,6 +68,7 @@ pre code {
   padding: 0;
   border: none;
   background: none;
+  margin: 0;
 }
 
 .highlight .line {

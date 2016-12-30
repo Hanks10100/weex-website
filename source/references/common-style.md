@@ -5,54 +5,53 @@ order: 1.6
 ---
 
 # Common Style
-<span class="weex-version">0.4</span>
 
 All of weex tags share some common style rules
 
 ## Box Model
 
-![box model](../images/css-boxmodel.png)
+![box model](./images/css-boxmodel.png)
 
 Weex box model based on the CSS box model, all of weex elements can be considered as boxes.  The term "box model" is used when talking about design and layout. The box model is essentially a box that wraps around every HTML element. It consists of margins, borders, paddings, and the actual content.
 
 you can use the definition below in weex box model.
 
-- `width`: [length](styles/units/length.html) type, default value `0`
-- `height`: [length](styles/units/length.html) type, default value `0`
-- `padding`: [length](styles/units/length.html) type, default value `0`, (space around content, between element content and the element border)
-  - `padding-left`: [length](styles/units/length.html) type, default value `0`
-  - `padding-right`: [length](styles/units/length.html) type, default value `0`
-  - `padding-top`: [length](styles/units/length.html) type, default value `0`
-  - `padding-bottom`: [length](styles/units/length.html) type, default value `0`
-- `margin`: [length](styles/units/length.html) type, default value `0`, (space around elements, outside the border)
-  - `margin-left`: [length](styles/units/length.html) type, default value `0`
-  - `margin-right`: [length](styles/units/length.html) type, default value `0`
-  - `margin-top`: [length](styles/units/length.html) type, default value `0`
-  - `margin-bottom`: [length](styles/units/length.html) type, default value `0`
+- `width`: `length` type, default value `0`
+- `height`: `length` type, default value `0`
+- `padding`: `length` type, default value `0`, (space around content, between element content and the element border)
+  - `padding-left`: `length` type, default value `0`
+  - `padding-right`: `length` type, default value `0`
+  - `padding-top`: `length` type, default value `0`
+  - `padding-bottom`: `length` type, default value `0`
+- `margin`: `length` type, default value `0`, (space around elements, outside the border)
+  - `margin-left`: `length` type, default value `0`
+  - `margin-right`: `length` type, default value `0`
+  - `margin-top`: `length` type, default value `0`
+  - `margin-bottom`: `length` type, default value `0`
 - `border`
   - `border-style`: values `solid` | `dashed` | `dotted`, default value `solid`
     - `border-left-style`: values `solid` | `dashed` | `dotted`, default value `solid`
     - `border-top-style`: values `solid` | `dashed` | `dotted`, default value `solid`
     - `border-right-style`: values `solid` | `dashed` | `dotted`, default value `solid`
     - `border-bottom-style`: values `solid` | `dashed` | `dotted`, default value `solid`
-  - `border-width`: [length](styles/units/length.html) type, non-negative, default value `0`
+  - `border-width`: `length` type, non-negative, default value `0`
     **DO NOT** use `border-width:1`. There is a default viewport `<viewport width="750">`, if the actual width of a device is 720px, then `border-width:1` will be `border-width:0.96`. As weex **do not** support sub-pixel, this border would not be rendered.
-    - `border-left-width`: [length](styles/units/length.html) type, non-negative, default value `0`
-    - `border-top-width`: [length](styles/units/length.html) type, non-negative, default value `0`
-    - `border-right-width`: [length](styles/units/length.html) type, non-negative, default value `0`
-    - `border-bottom-width`: [length](styles/units/length.html) type, non-negative, default value `0`
-  - `border-color`: [color](styles/units/color.html) type, default value `#000000`
-    - `border-left-color`: [color](styles/units/color.html) type, default value `#000000`
-    - `border-top-color`: [color](styles/units/color.html) type, default value `#000000`
-    - `border-right-color`: [color](styles/units/color.html) type, default value `#000000`
-    - `border-bottom-color`: [color](styles/units/color.html) type, default value `#000000`
-  - `border-radius`: [length](styles/units/length.html) type, default value `0`, (rounded borders to elements , default value is 0 meaning right angle )
+    - `border-left-width`: `length` type, non-negative, default value `0`
+    - `border-top-width`: `length` type, non-negative, default value `0`
+    - `border-right-width`: `length` type, non-negative, default value `0`
+    - `border-bottom-width`: `length` type, non-negative, default value `0`
+  - `border-color`: `color` type, default value `#000000`
+    - `border-left-color`: `color` type, default value `#000000`
+    - `border-top-color`: `color` type, default value `#000000`
+    - `border-right-color`: `color` type, default value `#000000`
+    - `border-bottom-color`: `color` type, default value `#000000`
+  - `border-radius`: `length` type, default value `0`, (rounded borders to elements , default value is 0 meaning right angle )
 
   Although the the default overflow style is `overflow:hidden` in android, a view will not be clipped by its parents' `border-radius`. This only happens on Android, it works fine on iOS.
-    - `border-bottom-left-radius`: [length](styles/units/length.html) type, non-negative, default value `0`
-    - `border-bottom-right-radius`: [length](styles/units/length.html) type, non-negative, default value `0`
-    - `border-top-left-radius`: [length](styles/units/length.html) type, non-negative, default value `0`
-    - `border-top-right-radius`: [length](styles/units/length.html) type, non-negative, default value `0`
+    - `border-bottom-left-radius`: `length` type, non-negative, default value `0`
+    - `border-bottom-right-radius`: `length` type, non-negative, default value `0`
+    - `border-top-left-radius`: `length` type, non-negative, default value `0`
+    - `border-top-right-radius`: `length` type, non-negative, default value `0`
 
 Notes: The rule of border-radius for a specific corner such as `border-top-left-radius` is not currently supported for component `<image>` and `<text>`.
 
@@ -88,17 +87,17 @@ The flex-direction property specifies the direction of the flexible items inside
 
 The justify-content property horizontally aligns the flexible container's items when the items do not use all available space on the main-axis. Default value is `flex-start` meaning the flex items are positioned at the beginning of the container. `flex-end` means the items are positioned at the end of the container. `center` means the items are positioned at the center of the container. `space-between` means the items are positioned with space between the lines.
 
-![justify-content](../images/css-flexbox-justify.svg)
+![justify-content](./images/css-flexbox-justify.svg)
 
 - `align-items`: values `stretch` | `flex-start` | `center` | `flex-end`, default value `stretch`
 
 The align-items property vertically aligns the flexible container's items when the items do not use all available space on the cross-axis. Default value is `stretch` meaning the items are stretched to fit the container. `flex-start` means the items are positioned at the top of the container; `flex-end` means the items are positioned at the bottom of the container; `center` means items are positioned at the center of the container (vertically).
 
-![align-items](../images/css-flexbox-align.jpg)
+![align-items](./images/css-flexbox-align.jpg)
 
 ### Flex item
 
-- `flex`: [number](styles/units/number.html) type, default value `0`
+- `flex`: `number` type, default value `0`
 
 the flex property specifies the length of the flex item, relative to the rest of the flex items inside the same container.  If all of the flex items set `flex: 1`, they will have equal width or height on direction of flex container's `flex-direction`. If there are two flex items, with one setting `flex: 1`, and the other setting `flex: 2`, the first one will take 1/3 container space, and the second one will take 2/3 container space. If all of flex items don't set `flex`, they will be aligned depending on the container's `justify-content` property.
 
@@ -144,7 +143,7 @@ mixed direction alignment:
 
 one text align left , the other float right:
 
-![one text align left , the other float right](../images/css-flexbox-sample.png)
+![one text align left , the other float right](./images/css-flexbox-sample.png)
 
 ```html
 <template>
@@ -163,10 +162,10 @@ we can use properties below to control placement of weex tag
 
 `relative` means the item is positioned relative to its normal position. `absolute` means the item is positioned relative to its container. `fixed` keeps the elements position fixed when the page is scrolling. `sticky` keeps elements positioned inside the viewport as "stuck" at the top or "relative" at its original place depending on whether does it about to scroll out of the view.
 
-- `top`: [number](styles/units/number.html) type, default value `0`, upward offset value
-- `bottom`: [number](styles/units/number.html) type, default value `0`, downward offset value
-- `left`: [number](styles/units/number.html) type, default value `0`, leftward offset value
-- `right`: [number](styles/units/number.html) type, default value `0`, rightward offset value
+- `top`: `number` type, default value `0`, upward offset value
+- `bottom`: `number` type, default value `0`, downward offset value
+- `left`: `number` type, default value `0`, leftward offset value
+- `right`: `number` type, default value `0`, rightward offset value
 
 ### Examples
 
@@ -188,14 +187,14 @@ we can use properties below to control placement of weex tag
 
 ## Other Common Style
 
-- [`opacity`](styles/opacity.html)
-- [`background-color`](styles/background-color.html)
+- `opacity`
+- `background-color`
 
 ## Type of Style Value
 
-- [length](styles/units/length.html) type
-- [number](styles/units/number.html) type
-- [color](styles/units/color.html) type (*[The list of color keywords.](./color-names.html)*)
+- `length` type
+- `number` type
+- `color` type (*[The list of color keywords.](./color-names.html)*)
 - enumerated type
 
 ## Simple Step

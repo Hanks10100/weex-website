@@ -5,7 +5,6 @@ order: 2.16
 ---
 
 # &lt;wxc-navpage&gt;
-<span class="weex-version">0.5</span>
 
 ### Summary
 

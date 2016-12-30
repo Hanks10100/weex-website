@@ -1,6 +1,6 @@
 <% var page_type = page.type ? page.type : page.path.slice(0, -5) %>
 
-<article id="<%= post.layout %>-<%= post.slug %>" class="article article-type-<%= page_type %>">
+<article class="article article-type-<%= page_type %>">
   <div class="article-entry" itemprop="articleBody">
     <%- partial('post/title', {post: post}) %>
     <%- post.content %>

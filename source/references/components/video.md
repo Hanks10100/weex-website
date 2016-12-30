@@ -5,51 +5,70 @@ order: 2.14
 ---
 
 # &lt;video&gt;
-<span class="weex-version">0.4</span>
+<span class="weex-version">v0.6.1+</span>
 
-### Summary
+The video component can be used to embed video content in a weex page.
 
-Use the &lt;video&gt; component to embed video content in a weex page. The video component use src attribute to specify the source of a video.
+**example**
 
-### Child Components
-
-This component supports no child components but a text content.
-
-### Attributes
-
-- `src`: &lt;string&gt; The URL of the video to embed.
-- `play-status`: &lt;boolean&gt; `play` | `pause`. Use it to control video's play/pause. Default value is `pause`.
-- `auto-play`: &lt;boolean&gt; `true` | `false`. Use it to control whether it is playing when the page initialization finished. Defalut value is `false`.
-
-Other attributes please check out the [common attributes](../references/common-attrs.html).
-
-### Styles
-
-**common styles**: check out the [common styles](../references/common-attrs.html)
-
-- support flexbox related styles
-- support box model related styles
-- support ``position`` related styles
-- support ``opacity``, ``background-color`` etc.
-
-### Events
-
-- `start`: triggered when playback state is Playing.
-- `pause`: triggered when playback state is Paused.
-- `finish`: triggered when playback state is Finished.
-- `fail`: triggered when playback state is Failed.
-
-**common events**: check out the [common events](../references/common-event.html)
-
-- support `click` event. Check out [common events](../references/common-event.html)
-- support `appear` / `disappear` event. Check out [common events](../references/common-event.html)
-
-### Example
-
-```
-<div>
-	<video class="video" auto-play="true" play-status="play" src="..." style="width:500;height:500;"></video>
+```html
+<template>
+  <div>
+    <text>Big Eater!</text>
+    <video onstart='onstart' onpause='onpause' onfinish='onfinish' onfail='onfail'
+           auto-play="false" play-status="pause" src="{{src}}" style="width:750;height:500;"></video>
 </div>
+
+  </div>
+</template>
+
+<script>
+  module.exports ={
+    data: {
+      src:'http://flv2.bn.netease.com/videolib3/1611/01/XGqSL5981/SD/XGqSL5981-mobile.mp4'
+    },
+    methods:{
+      onstart:function(e){
+        console.log('onstart');
+        console.log(e);
+      },
+      onpause:function(e){
+        console.log('onpause');
+      },
+      onfinish:function(e){
+        console.log('onfinish');
+      },
+      onfail:function(e){
+        console.log('onfail');
+      },
+    }
+  }
+</script>
 ```
 
+[try it](http://dotwe.org/97938570cddf76c792a1a5f9542253b1)
 
+## Child Components
+* text is the only valid type of child component.
+
+## Attributes
+
+* src: &lt;string&gt; The URL of the video to embed.
+* play-status: &lt;boolean&gt; play | pause. Use it to control video's play/pause status. Default value is pause.
+* auto-play: &lt;boolean&gt; true | false. Use it to control whether it is playing when the page initialization finished. Defalut value is false.
+
+Other attributes please check out the [common attributes](../common-attrs.html).
+
+## Styles
+common styles: check out [common styles for components](../common-style.html)
+
+* support flexbox related styles
+* support box model related styles
+* support position related styles
+* support opacity, background-color etc.
+
+## Events
+* onstart: triggered when playback state is Playing.
+* onpause: triggered when playback state is Paused.
+* onfinish: triggered when playback state is Finished.
+* onfail: triggered when playback state is Failed.

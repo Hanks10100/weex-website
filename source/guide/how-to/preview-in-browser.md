@@ -10,8 +10,8 @@ order: 3.1
 
 We strongly suggest you use weex-toolkit to preview weex code in your browser. This tool is Node.JS based, so you need to install Node at first. Please download and install latest stable version of Node from [https://nodejs.org/en/download/stable/](https://nodejs.org/en/download/stable/). Then you can install weex-toolkit using npm install:
 
-```
-npm install -g weex-toolkit
+```bash
+$ npm install -g weex-toolkit
 ```
 
 Check that the toolkit does work by typing `weex` in the command line. Normally you should see the following help text:
@@ -26,7 +26,8 @@ Options:
 ```
 
 If all work well, navigate to the path the xxx.we file you want to preview in, and type the command:
-```
+
+```bash
 weex xxx.we
 ```
 

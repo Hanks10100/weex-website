@@ -5,7 +5,6 @@ order: 2.9
 ---
 
 # Page Config & Data
-<span class="weex-version">0.4</span>
 
 You can write some instance config and data in some additional `<script>` at the **top-level** Weex component.
 
@@ -22,7 +21,7 @@ They all make Weex files more extendable and configurable and works easy with ot
 
 <!-- definition of top-level component -->
 <template>...</template>
-<style>...</style>
+<style></style>
 <script>
   module.exports = {
     data: function () {return {x: 1, y: 2}}
@@ -57,5 +56,5 @@ Notice that these two additional `<script>` are both optinal and have `type="con
 
 So that's all about Weex syntax. For more reading, please check out:
 
-* [how-tos](../how-to/main.html) articles and
-* [advanced](../advanced/main.html) topics.
+* [how-tos](../how-to/index.html) articles and
+* [advanced](../../advanced/index.html) topics.

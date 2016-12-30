@@ -5,7 +5,6 @@ order: 2.1
 ---
 
 # Data-Binding
-<span class="weex-version">0.4</span>
 
 In Weex, we use the *mustache* syntax `{% raw %}{{...}}{% endraw %}` to bind data in `<template>` which are defined in `<script>`. Once data and template is bound, the data changes will influence the corresponding template content immediately and automatically.
 
@@ -204,14 +203,14 @@ We can also use `repeat` attribute to generate a list.
 
 When you directly set an item with the index (`vm.items[0] = {};`), it won't trigger view update. So we have a prototype methods: `$set(index, item)`.
 
-```
+```javascript
 // same as `example1.items[0] = ...` but triggers view update
 example1.items.$set(0, { childMsg: 'Changed!'})
 ```
 
 When you modify the length of the Array (`vm.items.length = 0`), it won't trigger view update too. We recommend you just replace `items` with an empty array instead.
 
-```
+```javascript
 // same as `example2.items.length = 0` but triggers view update
 example2.items = []
 ```

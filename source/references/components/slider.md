@@ -5,18 +5,16 @@ order: 2.9
 ---
 
 # &lt;slider&gt;
-<span class="weex-version">0.4</span>
 
-
-### Summary
+## Summary
 
 A slide's player to show slides (mostly as pictures) one page by another. The default interval between two slides is 3 seconds.
 
-### Child Components
+## Child Components
 
 It supports all kinds of weex components as its slides, especially the `indicator` component which can be used only as a child component of `slider`.
 
-### Attributes
+## Attributes
 
 - `auto-play`: &lt;boolean&gt; `true` | `false`. This value determines whether the slides plays automatically after the page rendering finished. The default value is `false`.
 - `interval`: &lt;number&gt; millisecond. This value determines time interval for each page displayed in slider.
@@ -24,7 +22,7 @@ It supports all kinds of weex components as its slides, especially the `indicato
 
 Other attributes please check out the [common attributes](../references/common-attrs.html).
 
-### Styles
+## Styles
 
 **common styles**: check out [common styles for components](../references/common-style.html)
 
@@ -33,7 +31,7 @@ Other attributes please check out the [common attributes](../references/common-a
 - support ``position`` related styles
 - support ``opacity``, ``background-color`` etc.
 
-### Events
+## Events
 
 - `change`: triggerd when the slide's index is changed. The event object contains the attribute of `index`, which is the index number of the currently shown slide.
 
@@ -44,7 +42,7 @@ Other attributes please check out the [common attributes](../references/common-a
 
 ### Example
 
-```
+```html
 <template>
   <div>
     <slider class="slider" interval="3000" auto-play="true">
@@ -106,5 +104,3 @@ Other attributes please check out the [common attributes](../references/common-a
   }
 </script>
 ```
-
-

@@ -5,6 +5,7 @@
   height: 100%;
   margin: 0 auto;
   overflow: hidden;
+  position: relative;
 }
 
 .scene {
@@ -128,11 +129,11 @@
   }
 
   .left {
-    left: 20px;
+    left: -40px;
   } 
 
   .right {
-    right: 20px;
+    right: -40px;
   } 
 }
 
@@ -140,7 +141,7 @@
 
   .scene-container {
     .textbox {
-      flex: 1;
+      flex: 3;
       display: flex;
       flex-direction: row;
       align-items: center;

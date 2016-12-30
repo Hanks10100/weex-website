@@ -7,7 +7,7 @@ order: 1.8
 # Text Style
 <span class="weex-version">0.5</span>
 
-Text alike components share some common style rules. The text alike components currently includes [`text`](../components/text.html) and [`input`](../components/input.html).
+Text alike components share some common style rules. The text alike components currently includes [`text`](./components/text.html) and [`input`](./components/input.html).
 
 ## Properties
 
@@ -24,7 +24,7 @@ The property `color` support multiple fomats of values, contains rgb, rgba, #fff
 
 Example:
 
-```
+```css
 .my-class { color: red; }
 .my-class { color: #f00; }
 .my-class { color: #ff0000; }

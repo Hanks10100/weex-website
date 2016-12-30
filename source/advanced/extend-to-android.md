@@ -12,7 +12,9 @@ weex sdk support Module extend,
 Weex SDK provides only rendering capabilities, rather than have other capabilities, such as network, picture, and URL redirection. If you want the these features, you need to implement it.  
 
 For example: If you want to implement an address jumping function, you can achieve a Module Follow the steps below. 
+
 #### Step to customize a module 
+
 1. Customize module must extend WXModule  
 2. @WXModuleAnno annotation must be added, as it is the only the way to recognized by Weex  
 3. The access levels of mehtod must be **public**  
@@ -24,7 +26,7 @@ For example: If you want to implement an address jumping function, you can achie
 Refer to the following example: 
 
 ```java
-    public class WXEventModule extends WXModule{
+public class WXEventModule extends WXModule{
 	
 	private static final String WEEX_CATEGORY="com.taobao.android.intent.category.WEEX";
 	
@@ -32,31 +34,29 @@ Refer to the following example:
 		public void openURL(String url){
 			//implement your module logic here
 		}
-    }
+}
 
 ```
 
 #### Register the moulde
 
 ```java
-
   WXSDKEngine.registerModule("event", WXEventModule.class);
-
 ```
 
 ### Use this module in weex DSL   
 Now `event` moudle is avaiable in weex, use the module like this:   
-```javascript
 
+```javascript
 var event = require('@weex-module/event');
 event.openURL("http://www.github.com");
-
 ```
 
 ### Javascript callback
-If the module need implement a callback to javascript, you just add `JSCallback` argument to the method you want expose to javascript:   
-```java
 
+If the module need implement a callback to javascript, you just add `JSCallback` argument to the method you want expose to javascript:   
+
+```java
 	@WXModuleAnno
 	public void openURL(String url,JSCallback callback){
 		//implement your module logic here
@@ -64,17 +64,16 @@ If the module need implement a callback to javascript, you just add `JSCallback`
 		resp.put("result","ok");
 		callback.invoke(resp);
 	}
-	
 ```
+
 At the javascript side, call the module with javascript function to receive callback data:   
+
 ```javascript
-
 event.openURL("http://www.github.com",function(resp){ console.log(resp.result); });
-
 ```
 
 ### Component extend
-<font color="gray">
+
 There are label, image, div, scroll, ect. components in weex, you can also customize your own components.  
 
 #### Step to customize a component
@@ -91,8 +90,7 @@ There are label, image, div, scroll, ect. components in weex, you can also custo
 Refer to the following example 
 
 ```java
-
-	public class MyViewComponent extends WXComponent{ 
+public class MyViewComponent extends WXComponent{ 
 	public MyViewComponent(WXSDKInstance instance, WXDomObject dom,
 	                   WXVContainer parent, String instanceId, boolean isLazy) 
 	 { 
@@ -109,25 +107,23 @@ Refer to the following example
 	 public void setMyViewValue(String value) {
 	    ((TextView)mHost).setText(value);
 	 }
-	}
-
+}
 ```
  
 #### Register the Component
 
 
 ```java 
-   WXSDKEngine.registerComponent("MyView", MyViewComponent.class);
+WXSDKEngine.registerComponent("MyView", MyViewComponent.class);
 ```
 
 ### Adapter extend
 
 #### ImagedownloadAdapter
-<font color="gray">
+
 Weex SDK has no image download capability, you need to implement `IWXImgLoaderAdapter`. Refer to the following examples.
 
 ```java
-
 public class ImageAdapter implements IWXImgLoaderAdapter {
 
 	private Activity mContext;
@@ -162,5 +158,4 @@ public class ImageAdapter implements IWXImgLoaderAdapter {
 		});
 	}
 }
-
 ```

@@ -5,14 +5,13 @@ order: 1.1
 ---
 
 # Bootstrap
-<span class="weex-version">0.4</span>
 
 Besides its default meaning, `<script>` tag supports two more configuration with its `type` property *in the top level component of a page*.
 
 * `type="data"`: For initial data configuration, the data defined here will overwrite the data definition in the `<script>`.
 * `type="config"`: For configuration definition.
 
-```
+```html
 <script type="data">
   /* (optional) the definition of initial data */
 </script>
@@ -30,10 +29,10 @@ here is an example:
 
 ```html
 <script type="data">
-  {
-      title: 'Alibaba',
-      date: new Date().toLocaleString()
-  }
+{
+  title: 'Alibaba',
+  date: new Date().toLocaleString()
+}
 </script>
 ```
 

@@ -253,6 +253,5 @@ Weex.install(loader)
 })();
 ```
 
-
 That's the major extension feature weex brought to you. The deep details can be found in the [weex's repo](https://github.com/alibaba/weex) and the weex's community.
 
