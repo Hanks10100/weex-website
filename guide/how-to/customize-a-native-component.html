@@ -11,7 +11,7 @@
 <meta property="og:url" content="http://alibaba.github.io/guide/how-to/customize-a-native-component.html">
 <meta property="og:site_name" content="Weex">
 <meta property="og:description" content="How to customize a native Component ?Weex has wrapped up the most critical platform components, such as ScrollView, ListView, Text, Imageview and so on. Certainly these components can not completely m">
-<meta property="og:updated_time" content="2016-12-20T15:20:31.000Z">
+<meta property="og:updated_time" content="2016-12-30T08:23:48.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Customize a native Component">
 <meta name="twitter:description" content="How to customize a native Component ?Weex has wrapped up the most critical platform components, such as ScrollView, ListView, Text, Imageview and so on. Certainly these components can not completely m">
@@ -46,16 +46,22 @@
             <a href="javascript:;">Resources</a>
             <ul class="dropdown-menu subnav">
               <li>
-                <a href="/weex-website/playground.html">Playground</a>
-              </li>
-              <li>
-                <a href="/weex-website/tools">Tools</a>
+                <a href="/weex-website/tools">Service &amp; Tools</a>
               </li>
               <li>
                 <a href="/weex-website/advanced">Advanced</a>
               </li>
               <li>
+                <a href="/weex-website/playground.html">Playground</a>
+              </li>
+              <li>
                 <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
+              </li>
+              <li>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Dot we</a>
               </li>
             </ul>
         </li>
@@ -65,13 +71,13 @@
       </ul>
       <ul class="tools">
         <li>
-          <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-  <label class="search-label">
-    <input type="text" id="search-input" name="q" results="0" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off"/>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
-  </label>
-</form>
-<div class="results-panel">
+  </form>
+  <div class="results-panel">
+  </div>
 </div>
         </li>
         <!--<li></li>-->
@@ -489,7 +495,7 @@
   </div>
   
 
-<article id="page-undefined" class="article article-type-guide">
+<article class="article article-type-guide">
   <div class="article-entry" itemprop="articleBody">
     <header class="article-header">
   
@@ -499,7 +505,7 @@
       </h1>
     
   
-  <time class="article-date" datetime="2016-12-20T15:20:31.000Z">Updated time: 20/12/2016</time>
+  <time class="article-date" datetime="2016-12-30T08:23:48.000Z">Updated time: 30/12/2016</time>
 </header>
     <h1 id="How-to-customize-a-native-Component"><a href="#How-to-customize-a-native-Component" class="headerlink" title="How to customize a native Component ?"></a>How to customize a native Component ?</h1><p>Weex has wrapped up the most critical platform components, such as <code>ScrollView</code>, <code>ListView</code>, <code>Text</code>, <code>Imageview</code> and so on. Certainly these components can not completely meet your need. And  thousands of native UI components that always be using in our project may be required to integrate into Weex easily. Fortunately, it’s quite convenient to wrap up your own components that should be from any existing components.</p>
 <h5 id="Step-By-Step"><a href="#Step-By-Step" class="headerlink" title="Step By Step"></a>Step By Step</h5><ol>
@@ -511,33 +517,10 @@
 <li>Component methods will be invoked on the UI thread, so do not contain time-consuming operations here;  </li>
 <li>Weex parameter’s type can be int, double, float, String, Map, List, self-defined class that implements WXObject interface;</li>
 </ol>
-<h4 id="Refer-to-the-following-example"><a href="#Refer-to-the-following-example" class="headerlink" title="Refer to the following example:"></a>Refer to the following example:</h4><pre><code>package com.taobao.weex.ui.component;
-……
-
-public class  MyViewComponent extends WXComponent{
-
-       public MyViewComponent(WXSDKInstance instance, WXDomObject node, 
-                    WXVContainer parent,  String instanceId, boolean lazy) {                
-           super(instance, node, parent, instanceId, lazy);
-        }
-
-       @Override
-       protected void initView() {
-          //TODO:your own code ……
-       }
-
-      @Override
-      public WXFrameLayout getView() {
-         //TODO:your own code ………        
-      }
-      @WXComponentProp(name=WXDomPropConstant.WX_ATTR_VALUE)
-      public void setMyViewValue(String value) {
-         ((TextView)mHost).setText(value);
-      }
-
-}
-</code></pre><h4 id="Component-should-be-registered"><a href="#Component-should-be-registered" class="headerlink" title="Component should be registered"></a>Component should be registered</h4><pre><code>WXSDKEngine.registerComponent(&quot;MyView&quot;, MyViewComponent.class);
+<h4 id="Refer-to-the-following-example"><a href="#Refer-to-the-following-example" class="headerlink" title="Refer to the following example:"></a>Refer to the following example:</h4><figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">package</span> com.taobao.weex.ui.component;</div><div class="line">……</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span>  <span class="title">MyViewComponent</span> <span class="keyword">extends</span> <span class="title">WXComponent</span></span>&#123;</div><div class="line"></div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="title">MyViewComponent</span><span class="params">(WXSDKInstance instance, WXDomObject node, </span></span></div><div class="line">                    WXVContainer parent,  String instanceId, <span class="keyword">boolean</span> lazy) &#123;                </div><div class="line">            <span class="keyword">super</span>(instance, node, parent, instanceId, lazy);</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">initView</span><span class="params">()</span> </span>&#123;</div><div class="line">            <span class="comment">//<span class="doctag">TODO:</span>your own code ……</span></div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">public</span> WXFrameLayout <span class="title">getView</span><span class="params">()</span> </span>&#123;</div><div class="line">            <span class="comment">//<span class="doctag">TODO:</span>your own code ………        </span></div><div class="line">        &#125;</div><div class="line">        <span class="meta">@WXComponentProp</span>(name=WXDomPropConstant.WX_ATTR_VALUE)</div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setMyViewValue</span><span class="params">(String value)</span> </span>&#123;</div><div class="line">            ((TextView)mHost).setText(value);</div><div class="line">        &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="Component-should-be-registered"><a href="#Component-should-be-registered" class="headerlink" title="Component should be registered"></a>Component should be registered</h4><pre><code class="java">WXSDKEngine.registerComponent(<span class="string">"MyView"</span>, MyViewComponent.class);
 </code></pre>
+
   </div>
   
 </article>

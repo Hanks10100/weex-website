@@ -5,22 +5,19 @@
   
   <title>Composed Component | Weex</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Composed Component0.4
-If some part of weex file is reused often, you could create a composed component represent these part.
-You can create a file named foo.we to define a composed component, the comp">
+  <meta name="description" content="Composed ComponentIf some part of weex file is reused often, you could create a composed component represent these part.
+You can create a file named foo.we to define a composed component, the componen">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Composed Component">
 <meta property="og:url" content="http://alibaba.github.io/guide/syntax/composed-component.html">
 <meta property="og:site_name" content="Weex">
-<meta property="og:description" content="Composed Component0.4
-If some part of weex file is reused often, you could create a composed component represent these part.
-You can create a file named foo.we to define a composed component, the comp">
-<meta property="og:updated_time" content="2016-12-21T03:01:23.000Z">
+<meta property="og:description" content="Composed ComponentIf some part of weex file is reused often, you could create a composed component represent these part.
+You can create a file named foo.we to define a composed component, the componen">
+<meta property="og:updated_time" content="2016-12-30T08:28:18.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Composed Component">
-<meta name="twitter:description" content="Composed Component0.4
-If some part of weex file is reused often, you could create a composed component represent these part.
-You can create a file named foo.we to define a composed component, the comp">
+<meta name="twitter:description" content="Composed ComponentIf some part of weex file is reused often, you could create a composed component represent these part.
+You can create a file named foo.we to define a composed component, the componen">
   
     <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
   
@@ -52,16 +49,22 @@ You can create a file named foo.we to define a composed component, the comp">
             <a href="javascript:;">Resources</a>
             <ul class="dropdown-menu subnav">
               <li>
-                <a href="/weex-website/playground.html">Playground</a>
-              </li>
-              <li>
-                <a href="/weex-website/tools">Tools</a>
+                <a href="/weex-website/tools">Service &amp; Tools</a>
               </li>
               <li>
                 <a href="/weex-website/advanced">Advanced</a>
               </li>
               <li>
+                <a href="/weex-website/playground.html">Playground</a>
+              </li>
+              <li>
                 <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
+              </li>
+              <li>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Dot we</a>
               </li>
             </ul>
         </li>
@@ -71,13 +74,13 @@ You can create a file named foo.we to define a composed component, the comp">
       </ul>
       <ul class="tools">
         <li>
-          <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-  <label class="search-label">
-    <input type="text" id="search-input" name="q" results="0" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off"/>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
-  </label>
-</form>
-<div class="results-panel">
+  </form>
+  <div class="results-panel">
+  </div>
 </div>
         </li>
         <!--<li></li>-->
@@ -495,7 +498,7 @@ You can create a file named foo.we to define a composed component, the comp">
   </div>
   
 
-<article id="page-undefined" class="article article-type-guide">
+<article class="article article-type-guide">
   <div class="article-entry" itemprop="articleBody">
     <header class="article-header">
   
@@ -505,10 +508,9 @@ You can create a file named foo.we to define a composed component, the comp">
       </h1>
     
   
-  <time class="article-date" datetime="2016-12-21T03:01:23.000Z">Updated time: 21/12/2016</time>
+  <time class="article-date" datetime="2016-12-30T08:28:18.000Z">Updated time: 30/12/2016</time>
 </header>
-    <h1 id="Composed-Component"><a href="#Composed-Component" class="headerlink" title="Composed Component"></a>Composed Component</h1><p><span class="weex-version">0.4</span></p>
-<p>If some part of weex file is reused often, you could create a composed component represent these part.</p>
+    <h1 id="Composed-Component"><a href="#Composed-Component" class="headerlink" title="Composed Component"></a>Composed Component</h1><p>If some part of weex file is reused often, you could create a composed component represent these part.</p>
 <p>You can create a file named <code>foo.we</code> to define a composed component, the component name is just <code>&lt;foo&gt;</code>.</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- foo.we --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">container</span> <span class="attr">style</span>=<span class="string">"flex-direction: row;"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">image</span> <span class="attr">src</span>=<span class="string">"&#123;&#123;image&#125;&#125;"</span> <span class="attr">style</span>=<span class="string">"width:100;height:100;"</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">text</span>&gt;</span>&#123;&#123;title&#125;&#125;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">container</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="built_in">module</span>.exports = &#123;</div><div class="line">    <span class="attr">data</span>: &#123;</div><div class="line">      <span class="attr">title</span>: <span class="literal">null</span>,</div><div class="line">      <span class="attr">image</span>: <span class="literal">null</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>The content of <code>foo.we</code> also consists of <code>&lt;template&gt;</code>, <code>&lt;style&gt;</code> and <code>&lt;script&gt;</code>.</p>

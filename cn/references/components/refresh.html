@@ -15,7 +15,7 @@
 <meta property="og:description" content="&amp;lt;refresh&amp;gt;v0.6.1+
 &amp;lt;refresh&amp;gt; 为 &amp;lt;scroller&amp;gt; 和 &amp;lt;list&amp;gt; 提供下拉加载功能。用法与特性与 &amp;lt;loading&amp;gt; 类似，&amp;lt;scroller&amp;gt; 和 &amp;lt;list&amp;gt; 的子组件，且只能在被 &amp;lt;scroller&amp;gt; 和 &amp;lt;list&amp;gt; 包含时才能被正确的渲染。
 一个简单">
-<meta property="og:updated_time" content="2016-12-22T12:21:17.000Z">
+<meta property="og:updated_time" content="2017-01-01T02:27:37.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="<refresh>">
 <meta name="twitter:description" content="&amp;lt;refresh&amp;gt;v0.6.1+
@@ -52,16 +52,22 @@
             <a href="javascript:;">资源</a>
             <ul class="dropdown-menu subnav">
               <li>
-                <a href="/weex-website/cn/playground.html">Playground</a>
-              </li>
-              <li>
                 <a href="/weex-website/cn/tools">工具和服务</a>
               </li>
               <li>
                 <a href="/weex-website/cn/advanced">高阶知识</a>
               </li>
               <li>
+                <a href="/weex-website/cn/playground.html">Playground</a>
+              </li>
+              <li>
                 <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
+              </li>
+              <li>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Dot we</a>
               </li>
             </ul>
         </li>
@@ -71,13 +77,13 @@
       </ul>
       <ul class="tools">
         <li>
-          <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-  <label class="search-label">
-    <input type="text" id="search-input" name="q" results="0" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off"/>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
-  </label>
-</form>
-<div class="results-panel">
+  </form>
+  <div class="results-panel">
+  </div>
 </div>
         </li>
         <!--<li></li>-->
@@ -436,11 +442,11 @@
               </li>
             
               <li>
-                <a href="/weex-website/cn/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
+                <a href="/weex-website/cn/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
               </li>
             
               <li>
-                <a href="/weex-website/cn/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
+                <a href="/weex-website/cn/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
               </li>
             
               <li>
@@ -905,11 +911,11 @@
               </li>
             
               <li>
-                <a href="/weex-website/cn/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
+                <a href="/weex-website/cn/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
               </li>
             
               <li>
-                <a href="/weex-website/cn/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
+                <a href="/weex-website/cn/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
               </li>
             
               <li>
@@ -1029,7 +1035,7 @@
   </div>
   
 
-<article id="page-undefined" class="article article-type-references">
+<article class="article article-type-references">
   <div class="article-entry" itemprop="articleBody">
     <header class="article-header">
   
@@ -1039,7 +1045,7 @@
       </h1>
     
   
-  <time class="article-date" datetime="2016-12-22T12:21:17.000Z">Updated time: 22/12/2016</time>
+  <time class="article-date" datetime="2017-01-01T02:27:37.000Z">Updated time: 01/01/2017</time>
 </header>
     <h1 id="lt-refresh-gt"><a href="#lt-refresh-gt" class="headerlink" title="&lt;refresh&gt;"></a>&lt;refresh&gt;</h1><p><span class="weex-version">v0.6.1+</span></p>
 <p><code>&lt;refresh&gt;</code> 为 <code>&lt;scroller&gt;</code> 和 <code>&lt;list&gt;</code> 提供下拉加载功能。用法与特性与 <code>&lt;loading&gt;</code> 类似，<code>&lt;scroller&gt;</code> 和 <code>&lt;list&gt;</code> 的子组件，且只能在被 <code>&lt;scroller&gt;</code> 和 <code>&lt;list&gt;</code> 包含时才能被正确的渲染。</p>
@@ -1047,8 +1053,8 @@
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">list</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">header</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"center"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">text</span> <span class="attr">style</span>=<span class="string">"text-align:center"</span>&gt;</span>I am the header<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">header</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">refresh</span> <span class="attr">onpullingdown</span>=<span class="string">'onpullingdown'</span> <span class="attr">onrefresh</span>=<span class="string">"onrefresh"</span> <span class="attr">display</span>=<span class="string">"&#123;&#123;refreshDisplay&#125;&#125;"</span> <span class="attr">style</span>=<span class="string">"width:750;flex-direction: row;justify-content: center;"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">loading-indicator</span> <span class="attr">style</span>=<span class="string">"height:160;width:160;color:#3192e1"</span>&gt;</span><span class="tag">&lt;/<span class="name">loading-indicator</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">refresh</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">cell</span> <span class="attr">class</span>=<span class="string">"row"</span> <span class="attr">repeat</span>=<span class="string">"i in staffs"</span> <span class="attr">index</span>=<span class="string">"&#123;&#123;$index&#125;&#125;"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"item"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">text</span>&gt;</span>&#123;&#123;i.name&#125;&#125;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">cell</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">list</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></div><div class="line">  <span class="selector-class">.row</span> &#123;</div><div class="line">    <span class="attribute">width</span>: <span class="number">750</span>;</div><div class="line">  &#125;</div><div class="line">  <span class="selector-class">.item</span> &#123;</div><div class="line">    <span class="attribute">justify-content</span>: center;</div><div class="line">    <span class="attribute">border-bottom-width</span>: <span class="number">2</span>;</div><div class="line">    <span class="attribute">border-bottom-color</span>: <span class="number">#c0c0c0</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">100</span>;</div><div class="line">    <span class="attribute">padding</span>:<span class="number">20</span>;</div><div class="line">  &#125;</div><div class="line">  <span class="selector-class">.center</span> &#123;</div><div class="line">    <span class="attribute">border-bottom-width</span>: <span class="number">2</span>;</div><div class="line">    <span class="attribute">border-bottom-color</span>: <span class="number">#cccccc</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">100</span>;</div><div class="line">    <span class="attribute">padding</span>:<span class="number">20</span>;</div><div class="line">    <span class="attribute">background-color</span>:<span class="number">#FFFFFF</span>;</div><div class="line">    <span class="attribute">justify-content</span>: center;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="built_in">module</span>.exports = &#123;</div><div class="line">    <span class="attr">data</span>: &#123;</div><div class="line">      <span class="attr">staffs</span>:[],</div><div class="line">      <span class="attr">refreshDisplay</span>: <span class="string">'show'</span>,</div><div class="line">      <span class="attr">loadingDisplay</span>: <span class="string">'show'</span>,</div><div class="line">      <span class="attr">loadingText</span>: <span class="string">'pull up to load more'</span>,</div><div class="line">      <span class="attr">refreshText</span>: <span class="string">'pull down to refresh'</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">created</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">      <span class="keyword">this</span>.refreshDisplay=<span class="string">'show'</span></div><div class="line">      <span class="keyword">this</span>.staffs=[&#123;<span class="attr">name</span>:<span class="string">'inns'</span>&#125;,&#123;<span class="attr">name</span>:<span class="string">'connon'</span>&#125;,&#123;<span class="attr">name</span>:<span class="string">'baos'</span>&#125;,&#123;<span class="attr">name</span>:<span class="string">'anna'</span>&#125;,&#123;<span class="attr">name</span>:<span class="string">'dolley'</span>&#125;,&#123;<span class="attr">name</span>:<span class="string">'lucy'</span>&#125;,&#123;<span class="attr">name</span>:<span class="string">'john'</span>&#125;, &#123;<span class="attr">name</span>:<span class="string">'lily'</span>&#125;,&#123;<span class="attr">name</span>:<span class="string">'locke'</span>&#125;,&#123;<span class="attr">name</span>:<span class="string">'jack'</span>&#125;,&#123;<span class="attr">name</span>:<span class="string">'danny'</span>&#125;,&#123;<span class="attr">name</span>:<span class="string">'rose'</span>&#125;,&#123;<span class="attr">name</span>:<span class="string">'harris'</span>&#125;,&#123;<span class="attr">name</span>:<span class="string">'lotus'</span>&#125;,&#123;<span class="attr">name</span>:<span class="string">'louis'</span>&#125;];</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">methods</span>:&#123;</div><div class="line">      <span class="attr">onrefresh</span>:<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</div><div class="line">        <span class="keyword">this</span>.refreshDisplay=<span class="string">'show'</span>;</div><div class="line">        <span class="keyword">this</span>.staffs=[&#123;<span class="attr">name</span>:<span class="string">'anna'</span>&#125;,&#123;<span class="attr">name</span>:<span class="string">'baos'</span>&#125;,&#123;<span class="attr">name</span>:<span class="string">'connon'</span>&#125;,&#123;<span class="attr">name</span>:<span class="string">'inns'</span>&#125;];</div><div class="line">        <span class="keyword">this</span>.refreshDisplay=<span class="string">'hide'</span></div><div class="line">      &#125;,</div><div class="line">      <span class="attr">onpullingdown</span>:<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'onpullingdown triggered.'</span>);</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'dy:'</span>+e.dy);</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'headerHeight:'</span>+e.headerHeight);</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'maxHeight:'</span>+e.maxHeight);</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
 <p><a href="http://dotwe.org/64cb982f67186c76f9f27fe3000a2fe8" target="_blank" rel="external">体验一下</a></p>
 <h2 id="子组件"><a href="#子组件" class="headerlink" title="子组件"></a>子组件</h2><ul>
-<li><a href="https://alibaba.github.io/weex/cn/doc/components/text.html"><code>&lt;text&gt;</code></a></li>
-<li><a href="https://alibaba.github.io/weex/cn/doc/components/image.html"><code>&lt;image&gt;</code></a></li>
+<li><a href="./text.html"><code>&lt;text&gt;</code></a></li>
+<li><a href="./image.html"><code>&lt;image&gt;</code></a></li>
 <li><code>&lt;loading-indicator&gt;</code>: <code>&lt;refresh&gt;</code> 和 <code>&lt;loading&gt;</code> 组件的子组件，拥有默认的动画效果的实现。</li>
 </ul>
 <h2 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h2><ul>
@@ -1062,7 +1068,7 @@
 <li><code>opacity</code></li>
 <li><code>background-color</code></li>
 </ul>
-<p>查看 <a href="https://alibaba.github.io/weex/cn/doc/references/common-style.html">组件通用样式</a></p>
+<p>查看 <a href="../common-style.html">组件通用样式</a></p>
 <h2 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h2><ul>
 <li><code>refresh</code>： 当 <code>&lt;scroller&gt;</code>/<code>&lt;list&gt;</code> 被下拉时触发。</li>
 <li><code>pullingdown</code>：仅在 Android 支持。当 <code>&lt;scroller&gt;</code>/<code>&lt;list&gt;</code> 被下拉时触发，可以从事件的参数对象中获取 dy，headerHeight，maxHeight</li>
@@ -1081,7 +1087,7 @@
 </ul>
 <h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">scroller</span> <span class="attr">onloadmore</span>=<span class="string">"onloadmore"</span> <span class="attr">loadmoreoffset</span>=<span class="string">"1000"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">refresh</span> <span class="attr">onrefresh</span>=<span class="string">"onrefresh"</span> <span class="attr">display</span>=<span class="string">"&#123;&#123;refreshDisplay&#125;&#125;"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">id</span>=<span class="string">"refreshText"</span>&gt;</span>&#123;&#123;refreshText&#125;&#125;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">refresh</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">repeat</span>=<span class="string">"v in items"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">style</span>=<span class="string">"font-size: 40; color: #000000"</span>&gt;</span>&#123;&#123;v.item&#125;&#125;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">loading</span> <span class="attr">onloading</span>=<span class="string">"onloading"</span> <span class="attr">display</span>=<span class="string">"&#123;&#123;loadingDisplay&#125;&#125;"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">id</span>=<span class="string">"loadingText"</span>&gt;</span>&#123;&#123;loadingText&#125;&#125;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">loading</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">scroller</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="built_in">module</span>.exports = &#123;</div><div class="line">    <span class="attr">data</span>: &#123;</div><div class="line">      <span class="attr">refreshDisplay</span>: <span class="string">'show'</span>,</div><div class="line">      <span class="attr">loadingDisplay</span>: <span class="string">'show'</span>,</div><div class="line">      <span class="attr">loadingText</span>: <span class="string">'pull up to load more'</span>,</div><div class="line">      <span class="attr">refreshText</span>: <span class="string">'pull down to refresh'</span>,</div><div class="line">      <span class="attr">items</span>: []</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">created</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">      <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">30</span>; i++) &#123;</div><div class="line">        <span class="keyword">this</span>.items.push(&#123;</div><div class="line">          <span class="string">'item'</span>: <span class="string">'test data'</span> + i</div><div class="line">        &#125;);</div><div class="line">      &#125;</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">methods</span>: &#123;</div><div class="line">      <span class="attr">onrefresh</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> vm = <span class="keyword">this</span>;</div><div class="line">        vm.refreshDisplay = <span class="string">'show'</span></div><div class="line">        <span class="keyword">if</span> (vm.items.length &gt; <span class="number">50</span>) &#123;</div><div class="line">          vm.refreshText = <span class="string">"no more data!"</span></div><div class="line">          vm.refreshDisplay = <span class="string">'hide'</span></div><div class="line">          <span class="keyword">return</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">var</span> len = vm.items.length;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> i = len; i &lt; (len + <span class="number">20</span>); i++) &#123;</div><div class="line">          vm.items.unshift(&#123;</div><div class="line">            <span class="string">'item'</span>: <span class="string">'test data '</span> + i</div><div class="line">          &#125;);</div><div class="line">        &#125;</div><div class="line">        vm.refreshDisplay = <span class="string">'hide'</span></div><div class="line">      &#125;,</div><div class="line">      <span class="attr">onloading</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> vm = <span class="keyword">this</span>;</div><div class="line">        vm.loadingDisplay = <span class="string">'show'</span></div><div class="line">        <span class="keyword">if</span> (vm.items.length &gt; <span class="number">30</span>) &#123;</div><div class="line">          vm.loadingText = <span class="string">"no more data!"</span></div><div class="line">          vm.loadingDisplay = <span class="string">'hide'</span></div><div class="line">          <span class="keyword">return</span>;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="keyword">var</span> len = vm.items.length;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> i = len; i &lt; (len + <span class="number">20</span>); i++) &#123;</div><div class="line">          vm.items.push(&#123;</div><div class="line">            <span class="string">'item'</span>: <span class="string">'test data '</span> + i</div><div class="line">          &#125;);</div><div class="line">        &#125;</div><div class="line">        vm.loadingDisplay = <span class="string">'hide'</span></div><div class="line">      &#125;,</div><div class="line">      <span class="attr">onloadmore</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">"into--[onloadmore]"</span>)</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
 <p><a href="http://dotwe.org/80c027d6bfb337195c25cc0ba9317ea5" target="_blank" rel="external">体验一下</a></p>
-<p>更多示例可查看 <a href="https://alibaba.github.io/weex/cn/doc/components/list.html"><code>&lt;list&gt;</code></a></p>
+<p>更多示例可查看 <a href="./list.html"><code>&lt;list&gt;</code></a></p>
 
   </div>
   

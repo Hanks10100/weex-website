@@ -5,22 +5,25 @@
   
   <title>clipboard | Weex</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="clipboard 剪切板 (WeexSDK 0.8+)我们可以通过 clipboard 模块的 getString()、setString() 接口从系统的粘贴板获取内容或者设置内容。
+  <meta name="description" content="clipboard 剪切板v0.8+
+我们可以通过 clipboard 模块的 getString()、setString() 接口从系统的粘贴板获取内容或者设置内容。
 以前当我们收到一条短信验证码信息时，除了人肉拷贝，我们无法获取拷贝短信的内容。这是非常苦恼的。但是现在我们可以通过简单的调用 clipboard.getString() 接口来获取短信内容了。
-示例&amp;lt;tem">
+示例&amp;lt;template&amp;gt;">
 <meta property="og:type" content="website">
 <meta property="og:title" content="clipboard">
 <meta property="og:url" content="http://alibaba.github.io/cn/references/modules/clipboard.html">
 <meta property="og:site_name" content="Weex">
-<meta property="og:description" content="clipboard 剪切板 (WeexSDK 0.8+)我们可以通过 clipboard 模块的 getString()、setString() 接口从系统的粘贴板获取内容或者设置内容。
+<meta property="og:description" content="clipboard 剪切板v0.8+
+我们可以通过 clipboard 模块的 getString()、setString() 接口从系统的粘贴板获取内容或者设置内容。
 以前当我们收到一条短信验证码信息时，除了人肉拷贝，我们无法获取拷贝短信的内容。这是非常苦恼的。但是现在我们可以通过简单的调用 clipboard.getString() 接口来获取短信内容了。
-示例&amp;lt;tem">
-<meta property="og:updated_time" content="2016-12-22T11:54:32.000Z">
+示例&amp;lt;template&amp;gt;">
+<meta property="og:updated_time" content="2017-01-01T02:30:59.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="clipboard">
-<meta name="twitter:description" content="clipboard 剪切板 (WeexSDK 0.8+)我们可以通过 clipboard 模块的 getString()、setString() 接口从系统的粘贴板获取内容或者设置内容。
+<meta name="twitter:description" content="clipboard 剪切板v0.8+
+我们可以通过 clipboard 模块的 getString()、setString() 接口从系统的粘贴板获取内容或者设置内容。
 以前当我们收到一条短信验证码信息时，除了人肉拷贝，我们无法获取拷贝短信的内容。这是非常苦恼的。但是现在我们可以通过简单的调用 clipboard.getString() 接口来获取短信内容了。
-示例&amp;lt;tem">
+示例&amp;lt;template&amp;gt;">
   
     <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
   
@@ -52,16 +55,22 @@
             <a href="javascript:;">资源</a>
             <ul class="dropdown-menu subnav">
               <li>
-                <a href="/weex-website/cn/playground.html">Playground</a>
-              </li>
-              <li>
                 <a href="/weex-website/cn/tools">工具和服务</a>
               </li>
               <li>
                 <a href="/weex-website/cn/advanced">高阶知识</a>
               </li>
               <li>
+                <a href="/weex-website/cn/playground.html">Playground</a>
+              </li>
+              <li>
                 <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
+              </li>
+              <li>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Dot we</a>
               </li>
             </ul>
         </li>
@@ -71,13 +80,13 @@
       </ul>
       <ul class="tools">
         <li>
-          <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-  <label class="search-label">
-    <input type="text" id="search-input" name="q" results="0" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off"/>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
-  </label>
-</form>
-<div class="results-panel">
+  </form>
+  <div class="results-panel">
+  </div>
 </div>
         </li>
         <!--<li></li>-->
@@ -436,11 +445,11 @@
               </li>
             
               <li>
-                <a href="/weex-website/cn/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
+                <a href="/weex-website/cn/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
               </li>
             
               <li>
-                <a href="/weex-website/cn/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
+                <a href="/weex-website/cn/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
               </li>
             
               <li>
@@ -905,11 +914,11 @@
               </li>
             
               <li>
-                <a href="/weex-website/cn/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
+                <a href="/weex-website/cn/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
               </li>
             
               <li>
-                <a href="/weex-website/cn/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
+                <a href="/weex-website/cn/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
               </li>
             
               <li>
@@ -1029,7 +1038,7 @@
   </div>
   
 
-<article id="page-undefined" class="article article-type-references">
+<article class="article article-type-references">
   <div class="article-entry" itemprop="articleBody">
     <header class="article-header">
   
@@ -1039,9 +1048,10 @@
       </h1>
     
   
-  <time class="article-date" datetime="2016-12-22T11:54:32.000Z">Updated time: 22/12/2016</time>
+  <time class="article-date" datetime="2017-01-01T02:30:59.000Z">Updated time: 01/01/2017</time>
 </header>
-    <h1 id="clipboard-剪切板-WeexSDK-0-8"><a href="#clipboard-剪切板-WeexSDK-0-8" class="headerlink" title="clipboard 剪切板 (WeexSDK 0.8+)"></a><code>clipboard</code> 剪切板 <sup>(WeexSDK 0.8+)</sup></h1><p>我们可以通过 <code>clipboard</code> 模块的 <code>getString()</code>、<code>setString()</code> 接口从系统的粘贴板获取内容或者设置内容。</p>
+    <h1 id="clipboard-剪切板"><a href="#clipboard-剪切板" class="headerlink" title="clipboard 剪切板"></a><code>clipboard</code> 剪切板</h1><p><span class="weex-version">v0.8+</span></p>
+<p>我们可以通过 <code>clipboard</code> 模块的 <code>getString()</code>、<code>setString()</code> 接口从系统的粘贴板获取内容或者设置内容。</p>
 <p>以前当我们收到一条短信验证码信息时，除了人肉拷贝，我们无法获取拷贝短信的内容。这是非常苦恼的。但是现在我们可以通过简单的调用 <code>clipboard.getString()</code> 接口来获取短信内容了。</p>
 <h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"div"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"text"</span> <span class="attr">onclick</span>=<span class="string">"onItemClick"</span>&gt;</span>hello &#123;&#123;message&#125;&#125;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"div"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"text"</span> <span class="attr">onclick</span>=<span class="string">"setContent"</span>&gt;</span>click me to set: &#123;&#123;tobecopied&#125;&#125;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="keyword">var</span> clipboard = <span class="built_in">require</span>(<span class="string">'@weex-module/clipboard'</span>);</div><div class="line">  <span class="built_in">module</span>.exports =&#123;</div><div class="line">    <span class="attr">data</span>:&#123;</div><div class="line">      <span class="attr">tobecopied</span>:<span class="string">'yay!'</span>,</div><div class="line">      <span class="attr">message</span>:<span class="string">"nothing."</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">methods</span>:&#123;</div><div class="line">      <span class="attr">setContent</span>:<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</div><div class="line">        clipboard.setString(<span class="keyword">this</span>.tobecopied);</div><div class="line">      &#125;,</div><div class="line">      <span class="attr">onItemClick</span>:<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</div><div class="line">        <span class="keyword">this</span>.message=<span class="string">'clicked! '</span>;</div><div class="line">        clipboard.getString(<span class="function"><span class="keyword">function</span>(<span class="params">ret</span>) </span>&#123;</div><div class="line">          <span class="keyword">this</span>.message = <span class="string">'text from clipboard:'</span>+ ret;</div><div class="line">        &#125;.bind(<span class="keyword">this</span>));</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></div><div class="line">  <span class="selector-class">.div</span> &#123;</div><div class="line">    <span class="attribute">flex-direction</span>: row;</div><div class="line">    <span class="attribute">justify-content</span>: space-between;</div><div class="line">    <span class="attribute">align-items</span>: center;</div><div class="line">    <span class="attribute">width</span>: <span class="number">750</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">90</span>;</div><div class="line">    <span class="attribute">padding-left</span>:<span class="number">30</span>;</div><div class="line">    <span class="attribute">padding-right</span>:<span class="number">30</span>;</div><div class="line"></div><div class="line">    <span class="attribute">border-bottom-width</span>: <span class="number">1</span>;</div><div class="line">    <span class="attribute">border-style</span>: solid;</div><div class="line">    <span class="attribute">border-color</span>: <span class="number">#dddddd</span>;</div><div class="line">  &#125;</div><div class="line">  <span class="selector-class">.text</span> &#123;</div><div class="line">    <span class="attribute">width</span>: <span class="number">750</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">90</span>;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure>
 <p><a href="http://dotwe.org/b6a9d613462d85dce56f81085b094dfa" target="_blank" rel="external">体验一下</a></p>

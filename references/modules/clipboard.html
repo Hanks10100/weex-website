@@ -5,19 +5,22 @@
   
   <title>clipboard | Weex</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="clipboard0.8 (developing)
-Summaryclipboard allows you to getString() or setString() from the system clipboard.Image a scene, you have send a verification code by SMS. Now most phone has a feature to c">
+  <meta name="description" content="clipboardv0.8+ (developing)
+clipboard allows you to getString() or setString() from the system clipboard.
+Not long ago, We’re still suffering from such a situation that we got a verification code sent">
 <meta property="og:type" content="website">
 <meta property="og:title" content="clipboard">
 <meta property="og:url" content="http://alibaba.github.io/references/modules/clipboard.html">
 <meta property="og:site_name" content="Weex">
-<meta property="og:description" content="clipboard0.8 (developing)
-Summaryclipboard allows you to getString() or setString() from the system clipboard.Image a scene, you have send a verification code by SMS. Now most phone has a feature to c">
-<meta property="og:updated_time" content="2016-12-21T02:20:45.000Z">
+<meta property="og:description" content="clipboardv0.8+ (developing)
+clipboard allows you to getString() or setString() from the system clipboard.
+Not long ago, We’re still suffering from such a situation that we got a verification code sent">
+<meta property="og:updated_time" content="2016-12-30T06:49:46.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="clipboard">
-<meta name="twitter:description" content="clipboard0.8 (developing)
-Summaryclipboard allows you to getString() or setString() from the system clipboard.Image a scene, you have send a verification code by SMS. Now most phone has a feature to c">
+<meta name="twitter:description" content="clipboardv0.8+ (developing)
+clipboard allows you to getString() or setString() from the system clipboard.
+Not long ago, We’re still suffering from such a situation that we got a verification code sent">
   
     <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
   
@@ -49,16 +52,22 @@ Summaryclipboard allows you to getString() or setString() from the system clipbo
             <a href="javascript:;">Resources</a>
             <ul class="dropdown-menu subnav">
               <li>
-                <a href="/weex-website/playground.html">Playground</a>
-              </li>
-              <li>
-                <a href="/weex-website/tools">Tools</a>
+                <a href="/weex-website/tools">Service &amp; Tools</a>
               </li>
               <li>
                 <a href="/weex-website/advanced">Advanced</a>
               </li>
               <li>
+                <a href="/weex-website/playground.html">Playground</a>
+              </li>
+              <li>
                 <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
+              </li>
+              <li>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Dot we</a>
               </li>
             </ul>
         </li>
@@ -68,13 +77,13 @@ Summaryclipboard allows you to getString() or setString() from the system clipbo
       </ul>
       <ul class="tools">
         <li>
-          <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-  <label class="search-label">
-    <input type="text" id="search-input" name="q" results="0" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off"/>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
-  </label>
-</form>
-<div class="results-panel">
+  </form>
+  <div class="results-panel">
+  </div>
 </div>
         </li>
         <!--<li></li>-->
@@ -329,11 +338,11 @@ Summaryclipboard allows you to getString() or setString() from the system clipbo
           <ul class="chapter">
             
               <li>
-                <a href="/weex-website/references/bootstrap.html" class="sidebar-link  ">Bootstrap</a>
+                <a href="/weex-website/references/special-element.html" class="sidebar-link  ">Special Element</a>
               </li>
             
               <li>
-                <a href="/weex-website/references/special-element.html" class="sidebar-link  ">Special Element</a>
+                <a href="/weex-website/references/bootstrap.html" class="sidebar-link  ">Bootstrap</a>
               </li>
             
               <li>
@@ -430,7 +439,7 @@ Summaryclipboard allows you to getString() or setString() from the system clipbo
               </li>
             
               <li>
-                <a href="/weex-website/references/components/cell.html" class="sidebar-link  ">&lt;list&gt;</a>
+                <a href="/weex-website/references/components/cell.html" class="sidebar-link  ">&lt;cell&gt;</a>
               </li>
             
               <li>
@@ -765,11 +774,11 @@ Summaryclipboard allows you to getString() or setString() from the system clipbo
           <ul class="chapter">
             
               <li>
-                <a href="/weex-website/references/bootstrap.html" class="sidebar-link  ">Bootstrap</a>
+                <a href="/weex-website/references/special-element.html" class="sidebar-link  ">Special Element</a>
               </li>
             
               <li>
-                <a href="/weex-website/references/special-element.html" class="sidebar-link  ">Special Element</a>
+                <a href="/weex-website/references/bootstrap.html" class="sidebar-link  ">Bootstrap</a>
               </li>
             
               <li>
@@ -866,7 +875,7 @@ Summaryclipboard allows you to getString() or setString() from the system clipbo
               </li>
             
               <li>
-                <a href="/weex-website/references/components/cell.html" class="sidebar-link  ">&lt;list&gt;</a>
+                <a href="/weex-website/references/components/cell.html" class="sidebar-link  ">&lt;cell&gt;</a>
               </li>
             
               <li>
@@ -960,7 +969,7 @@ Summaryclipboard allows you to getString() or setString() from the system clipbo
   </div>
   
 
-<article id="page-undefined" class="article article-type-references">
+<article class="article article-type-references">
   <div class="article-entry" itemprop="articleBody">
     <header class="article-header">
   
@@ -970,25 +979,22 @@ Summaryclipboard allows you to getString() or setString() from the system clipbo
       </h1>
     
   
-  <time class="article-date" datetime="2016-12-21T02:20:45.000Z">Updated time: 21/12/2016</time>
+  <time class="article-date" datetime="2016-12-30T06:49:46.000Z">Updated time: 30/12/2016</time>
 </header>
-    <h1 id="clipboard"><a href="#clipboard" class="headerlink" title="clipboard"></a>clipboard</h1><p><span class="weex-version">0.8 (developing)</span></p>
-<h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p><code>clipboard</code> allows you to <code>getString()</code> or <code>setString()</code> from the system clipboard.<br><br>Image a scene, you have send a verification code by SMS. Now most phone has a feature to capture the code from whole SMS text, and copy to the clipboard. In the past, you need to input the code manually. Now just click a button which calls <code>clipboard.getString()</code> .</p><p></p>
-<p><em>AUCTION</em> </p>
-<ul>
-<li>only support text. </li>
-<li>only works in Android and iOS. NOT works in html5, for web security reason.</li>
+    <h1 id="clipboard"><a href="#clipboard" class="headerlink" title="clipboard"></a>clipboard</h1><p><span class="weex-version">v0.8+ (developing)</span></p>
+<p>clipboard allows you to <code>getString()</code> or <code>setString()</code> from the system clipboard.</p>
+<p>Not long ago, We’re still suffering from such a situation that we got a verification code sent by SMS, and we had no way to get the code from the SMS text but to typed it by our hands. How frustrated it is! But now you can enable your app to get the code from the system clipboard by calling  <code>clipboard.getString()</code> .</p>
+<h2 id="Caution"><a href="#Caution" class="headerlink" title="Caution"></a>Caution</h2><ul>
+<li>only support text.</li>
+<li>only works on Android and iOS. NOT works for html5, for web security reason.</li>
 </ul>
-<h2 id="API"><a href="#API" class="headerlink" title="API"></a>API</h2><h3 id="getString-callback"><a href="#getString-callback" class="headerlink" title="getString(callback)"></a>getString(callback)</h3><p>read from clipboard.</p>
-<h4 id="Arguments"><a href="#Arguments" class="headerlink" title="Arguments"></a>Arguments</h4><ul>
-<li><code>callback</code><em>(function)</em>: the callback function after executing this action. <code>data</code> is the return value. </li>
-</ul>
-<h4 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> clipboard = <span class="built_in">require</span>(<span class="string">'@weex-module/clipboard'</span>);</div><div class="line">clipboard.getString(<span class="function"><span class="keyword">function</span>(<span class="params">ret</span>) </span>&#123;</div><div class="line">  <span class="comment">// callback. 'ret' is an object that contains 'result' and 'data'.</span></div><div class="line">  <span class="comment">// use 'ret.data' to fetch the value.</span></div><div class="line">  <span class="built_in">console</span>.log(<span class="string">"read from clipboard is "</span> + ret.data);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<h3 id="setString-text"><a href="#setString-text" class="headerlink" title="setString(text)"></a>setString(text)</h3><p>set the text into clipboard, as the same as copy manually. </p>
-<h4 id="Arguments-1"><a href="#Arguments-1" class="headerlink" title="Arguments"></a>Arguments</h4><ul>
-<li><code>text</code><em>(string)</em>: the string to copy into the clipboard.</li>
-</ul>
-<h4 id="Example-1"><a href="#Example-1" class="headerlink" title="Example"></a>Example</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> clipboard = <span class="built_in">require</span>(<span class="string">'@weex-module/clipboard'</span>);</div><div class="line">clipboard.setString(<span class="string">"SomeStringHere"</span>);</div></pre></td></tr></table></figure>
+<h2 id="API"><a href="#API" class="headerlink" title="API"></a>API</h2><h3 id="getString-callback"><a href="#getString-callback" class="headerlink" title="getString(callback)"></a>getString(callback)</h3><p>reads from clipboard.</p>
+<h5 id="Arguments"><a href="#Arguments" class="headerlink" title="Arguments"></a>Arguments</h5><p><code>callback(function)</code>: the callback function after executing this action. <code>data</code> is the return value.</p>
+<p>Example</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> clipboard = <span class="built_in">require</span>(<span class="string">'@weex-module/clipboard'</span>);</div><div class="line">clipboard.getString(<span class="function"><span class="keyword">function</span>(<span class="params">ret</span>) </span>&#123;</div><div class="line">  <span class="comment">// callback. 'ret' is an object that contains 'result' and 'data'.</span></div><div class="line">  <span class="comment">// use 'ret.data' to fetch the value.</span></div><div class="line">  <span class="built_in">console</span>.log(<span class="string">"read from clipboard is "</span> + ret.data);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h3 id="setString-text"><a href="#setString-text" class="headerlink" title="setString(text)"></a>setString(text)</h3><p>sets the text to clipboard, having the same effect as copying manually.</p>
+<h5 id="Arguments-1"><a href="#Arguments-1" class="headerlink" title="Arguments"></a>Arguments</h5><p><code>text(string)</code>: the text copied to clipboard.<br>Example</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> clipboard = <span class="built_in">require</span>(<span class="string">'@weex-module/clipboard'</span>);</div><div class="line">clipboard.setString(<span class="string">"SomeStringHere"</span>);</div></pre></td></tr></table></figure>
 
   </div>
   

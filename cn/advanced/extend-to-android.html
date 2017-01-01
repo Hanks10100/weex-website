@@ -7,26 +7,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Android 扩展Weex 提供了扩展机制，可以根据自己的业务进行定制自己的功能。主要分为两类扩展：  
 
-Module 扩展 非UI的特定功能。例如sendHttp、openURL 等。
-Component 扩展 实现特别功能的Native控件。例如：RichTextview，RefreshListview等。
-Adapter 扩展 Weex 对一些基础功能实现了统一的接口，可实现这些接口来定">
+Module 扩展 非 UI 的特定功能。例如 sendHttp、openURL 等。
+Component 扩展 实现特别功能的 Native 控件。例如：RichTextview，RefreshListview 等。
+Adapter 扩展 Weex 对一些基础功能实现了统一的接口，可实现">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Android 扩展">
 <meta property="og:url" content="http://alibaba.github.io/cn/advanced/extend-to-android.html">
 <meta property="og:site_name" content="Weex">
 <meta property="og:description" content="Android 扩展Weex 提供了扩展机制，可以根据自己的业务进行定制自己的功能。主要分为两类扩展：  
 
-Module 扩展 非UI的特定功能。例如sendHttp、openURL 等。
-Component 扩展 实现特别功能的Native控件。例如：RichTextview，RefreshListview等。
-Adapter 扩展 Weex 对一些基础功能实现了统一的接口，可实现这些接口来定">
-<meta property="og:updated_time" content="2016-12-22T12:28:46.000Z">
+Module 扩展 非 UI 的特定功能。例如 sendHttp、openURL 等。
+Component 扩展 实现特别功能的 Native 控件。例如：RichTextview，RefreshListview 等。
+Adapter 扩展 Weex 对一些基础功能实现了统一的接口，可实现">
+<meta property="og:updated_time" content="2016-12-30T09:11:01.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android 扩展">
 <meta name="twitter:description" content="Android 扩展Weex 提供了扩展机制，可以根据自己的业务进行定制自己的功能。主要分为两类扩展：  
 
-Module 扩展 非UI的特定功能。例如sendHttp、openURL 等。
-Component 扩展 实现特别功能的Native控件。例如：RichTextview，RefreshListview等。
-Adapter 扩展 Weex 对一些基础功能实现了统一的接口，可实现这些接口来定">
+Module 扩展 非 UI 的特定功能。例如 sendHttp、openURL 等。
+Component 扩展 实现特别功能的 Native 控件。例如：RichTextview，RefreshListview 等。
+Adapter 扩展 Weex 对一些基础功能实现了统一的接口，可实现">
   
     <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
   
@@ -58,16 +58,22 @@ Adapter 扩展 Weex 对一些基础功能实现了统一的接口，可实现这
             <a href="javascript:;">资源</a>
             <ul class="dropdown-menu subnav">
               <li>
-                <a href="/weex-website/cn/playground.html">Playground</a>
-              </li>
-              <li>
                 <a href="/weex-website/cn/tools">工具和服务</a>
               </li>
               <li>
                 <a href="/weex-website/cn/advanced">高阶知识</a>
               </li>
               <li>
+                <a href="/weex-website/cn/playground.html">Playground</a>
+              </li>
+              <li>
                 <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
+              </li>
+              <li>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Dot we</a>
               </li>
             </ul>
         </li>
@@ -77,13 +83,13 @@ Adapter 扩展 Weex 对一些基础功能实现了统一的接口，可实现这
       </ul>
       <ul class="tools">
         <li>
-          <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-  <label class="search-label">
-    <input type="text" id="search-input" name="q" results="0" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off"/>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
-  </label>
-</form>
-<div class="results-panel">
+  </form>
+  <div class="results-panel">
+  </div>
 </div>
         </li>
         <!--<li></li>-->
@@ -101,6 +107,16 @@ Adapter 扩展 Weex 对一些基础功能实现了统一的接口，可实现这
   <div class="sidebar-menu">
     
       <ul class="main-nav">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-sidebar" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
         <li>
           <a class="" href="/weex-website/cn/guide">
             教程
@@ -120,16 +136,22 @@ Adapter 扩展 Weex 对一些基础功能实现了统一的接口，可实现这
             <p>资源</p>
             <ul class="subnav">
               <li>
-                <a href="./playground.html">Playground</a>
-              </li>
-              <li>
                 <a href="/weex-website/cn/tools">工具和服务</a>
               </li>
               <li>
                 <a href="/weex-website/cn/advanced">高阶知识</a>
               </li>
               <li>
+                <a href="/weex-website/cn/playground.html">Playground</a>
+              </li>
+              <li>
                 <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
+              </li>
+              <li>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Dot we</a>
               </li>
             </ul>
         </li>
@@ -292,7 +314,7 @@ Adapter 扩展 Weex 对一些基础功能实现了统一的接口，可实现这
   </div>
   
 
-<article id="page-undefined" class="article article-type-advanced">
+<article class="article article-type-advanced">
   <div class="article-entry" itemprop="articleBody">
     <header class="article-header">
   
@@ -302,39 +324,41 @@ Adapter 扩展 Weex 对一些基础功能实现了统一的接口，可实现这
       </h1>
     
   
-  <time class="article-date" datetime="2016-12-22T12:28:46.000Z">Updated time: 22/12/2016</time>
+  <time class="article-date" datetime="2016-12-30T09:11:01.000Z">Updated time: 30/12/2016</time>
 </header>
     <h1 id="Android-扩展"><a href="#Android-扩展" class="headerlink" title="Android 扩展"></a>Android 扩展</h1><p>Weex 提供了扩展机制，可以根据自己的业务进行定制自己的功能。<br>主要分为两类扩展：  </p>
 <ul>
-<li>Module 扩展 非UI的特定功能。例如sendHttp、openURL 等。</li>
-<li>Component 扩展 实现特别功能的Native控件。例如：RichTextview，RefreshListview等。</li>
+<li>Module 扩展 非 UI 的特定功能。例如 sendHttp、openURL 等。</li>
+<li>Component 扩展 实现特别功能的 Native 控件。例如：RichTextview，RefreshListview 等。</li>
 <li>Adapter 扩展 Weex 对一些基础功能实现了统一的接口，可实现这些接口来定制自己的业务。例如：图片下载等。</li>
 </ul>
 <h2 id="Module-扩展"><a href="#Module-扩展" class="headerlink" title="Module 扩展"></a>Module 扩展</h2><ol>
-<li>Module扩展必须继承WXModule类。</li>
-<li>扩展方法必须加上@WXModuleAnno 注解。Weex会根据注解来判断当前方法是否要运行在UI线程，和当前方法是否是扩展方法。</li>
-<li>Weex是根据反射来进行调用Module扩展方法，所以Module中的扩展方法必须是public类型。</li>
-<li>同样因为是通过反射调用，Module不能被混淆。请在混淆文件中添加代码：<code>-keep public class * extends com.taobao.weex.common.WXModule{*;}</code></li>
-<li>Module 扩展的方法可以使用int, double, float, String, Map, List 类型的参数</li>
-<li>完成Module后一定要在初始化时注册 <code>WXSDKEngine.registerModule(&quot;myModule&quot;, MyModule.class);</code> 否则会报类似错误：<code>ReportException :undefined:9: TypeError: Object #&lt;Object&gt; has no method &#39;printLog&#39;</code></li>
+<li>Module 扩展必须继承 WXModule 类。</li>
+<li>扩展方法必须加上 @WXModuleAnno 注解。Weex 会根据注解来判断当前方法是否要运行在 UI 线程，和当前方法是否是扩展方法。</li>
+<li>Weex是根据反射来进行调用 Module 扩展方法，所以Module中的扩展方法必须是 public 类型。</li>
+<li>同样因为是通过反射调用，Module 不能被混淆。请在混淆文件中添加代码：<code>-keep public class * extends com.taobao.weex.common.WXModule{*;}</code></li>
+<li>Module 扩展的方法可以使用 int, double, float, String, Map, List 类型的参数</li>
+<li>完成 Module 后一定要在初始化时注册 <code>WXSDKEngine.registerModule(&quot;myModule&quot;, MyModule.class);</code> 否则会报类似错误：<code>ReportException :undefined:9: TypeError: Object #&lt;Object&gt; has no method &#39;printLog&#39;</code></li>
 </ol>
 <p>示例如下：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">public class MyModule extends WXModule &#123;</div><div class="line"></div><div class="line">  @WXModuleAnno(runOnUIThread = true)</div><div class="line">  public void printLog(String msg) &#123;</div><div class="line">    Toast.makeText(mWXSDKInstance.getContext(),msg,Toast.LENGTH_SHORT).show();</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyModule</span> <span class="keyword">extends</span> <span class="title">WXModule</span> </span>&#123;</div><div class="line"></div><div class="line">  <span class="meta">@WXModuleAnno</span>(runOnUIThread = <span class="keyword">true</span>)</div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">printLog</span><span class="params">(String msg)</span> </span>&#123;</div><div class="line">    Toast.makeText(mWXSDKInstance.getContext(),msg,Toast.LENGTH_SHORT).show();</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>JS 调用如下：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">&lt;template&gt;</div><div class="line">  &lt;div&gt;</div><div class="line">    &lt;text onclick=&quot;click&quot;&gt;点击我测试&lt;/text&gt;</div><div class="line">  &lt;/div&gt;</div><div class="line">&lt;/template&gt;</div><div class="line"></div><div class="line">&lt;script&gt;</div><div class="line">  module.exports = &#123;</div><div class="line">    methods: &#123;</div><div class="line">      click: function() &#123;</div><div class="line">        require(&apos;@weex-module/myModule&apos;).printLog(&quot;我是一个测试!&quot;);</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">text</span> <span class="attr">onclick</span>=<span class="string">"click"</span>&gt;</span>点击我测试<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="built_in">module</span>.exports = &#123;</div><div class="line">    <span class="attr">methods</span>: &#123;</div><div class="line">      <span class="attr">click</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="built_in">require</span>(<span class="string">'@weex-module/myModule'</span>).printLog(<span class="string">"我是一个测试!"</span>);</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
 <h2 id="Component-扩展"><a href="#Component-扩展" class="headerlink" title="Component 扩展"></a>Component 扩展</h2><ol>
-<li>Component 扩展类必须集成WXComponent.</li>
-<li>Component 对应的设置属性的方法必须添加注解@WXComponentProp(name=value(value is attr or style of dsl))</li>
-<li>Weex sdk 通过反射调用对应的方法，所以Component对应的属性方法必须是public，并且不能被混淆。请在混淆文件中添加代码  <code>-keep public class * extends com.taobao.weex.ui.component.WXComponent{*;}</code></li>
-<li>Component 扩展的方法可以使用int, double, float, String, Map, List 类型的参数</li>
-<li>完成Component后一定要在初始化时注册 <code>WXSDKEngine.registerComponent(&quot;richtext&quot;,RichText.class);</code></li>
+<li>Component 扩展类必须集成 WXComponent.</li>
+<li>Component 对应的设置属性的方法必须添加注解 @WXComponentProp(name=value(value is attr or style of dsl))</li>
+<li>Weex sdk 通过反射调用对应的方法，所以 Component 对应的属性方法必须是 public，并且不能被混淆。请在混淆文件中添加代码  <code>-keep public class * extends com.taobao.weex.ui.component.WXComponent{*;}</code></li>
+<li>Component 扩展的方法可以使用 int, double, float, String, Map, List 类型的参数</li>
+<li>完成 Component 后一定要在初始化时注册 <code>WXSDKEngine.registerComponent(&quot;richtext&quot;,RichText.class);</code></li>
 </ol>
 <p>示例如下:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">public class RichText extends WXComponent &#123;</div><div class="line"></div><div class="line">  public RichText(WXSDKInstance instance, WXDomObject dom, WXVContainer parent, boolean isLazy) &#123;</div><div class="line">    super(instance, dom, parent, isLazy);</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  @Override</div><div class="line">  protected void initView() &#123;</div><div class="line">    mHost=new TextView(mContext);</div><div class="line">    ((TextView)mHost).setMovementMethod(LinkMovementMethod.getInstance());</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  @WXComponentProp(name = &quot;tel&quot;)</div><div class="line">  public void setTelLink(String tel)&#123;</div><div class="line">    SpannableString spannable=new SpannableString(tel);</div><div class="line">    spannable.setSpan(new URLSpan(&quot;tel:&quot;+tel),0,tel.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);</div><div class="line">    ((TextView)mHost).setText(spannable);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RichText</span> <span class="keyword">extends</span> <span class="title">WXComponent</span> </span>&#123;</div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="title">RichText</span><span class="params">(WXSDKInstance instance, WXDomObject dom, WXVContainer parent, <span class="keyword">boolean</span> isLazy)</span> </span>&#123;</div><div class="line">    <span class="keyword">super</span>(instance, dom, parent, isLazy);</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="meta">@Override</span></div><div class="line">  <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">initView</span><span class="params">()</span> </span>&#123;</div><div class="line">    mHost=<span class="keyword">new</span> TextView(mContext);</div><div class="line">    ((TextView)mHost).setMovementMethod(LinkMovementMethod.getInstance());</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="meta">@WXComponentProp</span>(name = <span class="string">"tel"</span>)</div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setTelLink</span><span class="params">(String tel)</span></span>&#123;</div><div class="line">    SpannableString spannable=<span class="keyword">new</span> SpannableString(tel);</div><div class="line">    spannable.setSpan(<span class="keyword">new</span> URLSpan(<span class="string">"tel:"</span>+tel),<span class="number">0</span>,tel.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);</div><div class="line">    ((TextView)mHost).setText(spannable);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>JS 调用如下：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">&lt;template&gt;</div><div class="line">  &lt;div&gt;</div><div class="line">    &lt;richText tel=&quot;12305&quot; style=&quot;width:200;height:100&quot;&gt;12305&lt;/text&gt;</div><div class="line">  &lt;/div&gt;</div><div class="line">&lt;/template&gt;</div></pre></td></tr></table></figure>
-<h2 id="Adapter扩展"><a href="#Adapter扩展" class="headerlink" title="Adapter扩展"></a>Adapter扩展</h2><p>图片下载：<br>需要时集成接口IWXImgLoaderAdapter，实现setImage 方法。<br>示例如下：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">public class ImageAdapter implements IWXImgLoaderAdapter &#123;</div><div class="line"></div><div class="line">  public ImageAdapter() &#123;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  @Override</div><div class="line">  public void setImage(final String url, final ImageView view,</div><div class="line">                       WXImageQuality quality, WXImageStrategy strategy) &#123;</div><div class="line"></div><div class="line">    WXSDKManager.getInstance().postOnUiThread(new Runnable() &#123;</div><div class="line"></div><div class="line">      @Override</div><div class="line">      public void run() &#123;</div><div class="line">        if(view==null||view.getLayoutParams()==null)&#123;</div><div class="line">          return;</div><div class="line">        &#125;</div><div class="line">        if (TextUtils.isEmpty(url)) &#123;</div><div class="line">          view.setImageBitmap(null);</div><div class="line">          return;</div><div class="line">        &#125;</div><div class="line">        String temp = url;</div><div class="line">        if (url.startsWith(&quot;//&quot;)) &#123;</div><div class="line">          temp = &quot;http:&quot; + url;</div><div class="line">        &#125;</div><div class="line">        if (view.getLayoutParams().width &lt;= 0 || view.getLayoutParams().height &lt;= 0) &#123;</div><div class="line">          return;</div><div class="line">        &#125;</div><div class="line">        Picasso.with(WXEnvironment.getApplication())</div><div class="line">            .load(temp)</div><div class="line">            .into(view);</div><div class="line">      &#125;</div><div class="line">    &#125;,0);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">richText</span> <span class="attr">tel</span>=<span class="string">"12305"</span> <span class="attr">style</span>=<span class="string">"width:200;height:100"</span>&gt;</span>12305<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="Adapter扩展"><a href="#Adapter扩展" class="headerlink" title="Adapter扩展"></a>Adapter扩展</h2><p>图片下载：</p>
+<p>需要时集成接口 IWXImgLoaderAdapter，实现 setImage 方法。</p>
+<p>示例如下：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ImageAdapter</span> <span class="keyword">implements</span> <span class="title">IWXImgLoaderAdapter</span> </span>&#123;</div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="title">ImageAdapter</span><span class="params">()</span> </span>&#123;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="meta">@Override</span></div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setImage</span><span class="params">(<span class="keyword">final</span> String url, <span class="keyword">final</span> ImageView view,</span></span></div><div class="line">                       WXImageQuality quality, WXImageStrategy strategy) &#123;</div><div class="line"></div><div class="line">    WXSDKManager.getInstance().postOnUiThread(<span class="keyword">new</span> Runnable() &#123;</div><div class="line"></div><div class="line">      <span class="meta">@Override</span></div><div class="line">      <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span>(view==<span class="keyword">null</span>||view.getLayoutParams()==<span class="keyword">null</span>)&#123;</div><div class="line">          <span class="keyword">return</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span> (TextUtils.isEmpty(url)) &#123;</div><div class="line">          view.setImageBitmap(<span class="keyword">null</span>);</div><div class="line">          <span class="keyword">return</span>;</div><div class="line">        &#125;</div><div class="line">        String temp = url;</div><div class="line">        <span class="keyword">if</span> (url.startsWith(<span class="string">"//"</span>)) &#123;</div><div class="line">          temp = <span class="string">"http:"</span> + url;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span> (view.getLayoutParams().width &lt;= <span class="number">0</span> || view.getLayoutParams().height &lt;= <span class="number">0</span>) &#123;</div><div class="line">          <span class="keyword">return</span>;</div><div class="line">        &#125;</div><div class="line">        Picasso.with(WXEnvironment.getApplication())</div><div class="line">            .load(temp)</div><div class="line">            .into(view);</div><div class="line">      &#125;</div><div class="line">    &#125;,<span class="number">0</span>);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>注:工程要添加依赖 <code>compile &#39;com.squareup.picasso:picasso:2.5.2&#39;</code></p>
 
   </div>

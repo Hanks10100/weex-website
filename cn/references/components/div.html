@@ -17,7 +17,7 @@
 &amp;lt;div&amp;g">
 <meta property="og:image" content="http://alibaba.github.io/../images/div_1.jpg">
 <meta property="og:image" content="http://alibaba.github.io/../images/div_4.jpg">
-<meta property="og:updated_time" content="2016-12-22T11:48:15.000Z">
+<meta property="og:updated_time" content="2017-01-01T02:24:36.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="<div>">
 <meta name="twitter:description" content="&amp;lt;div&amp;gt;&amp;lt;div&amp;gt; 组件是用于包装其它组件的最基本容器。支持所有的通用样式、特性、flexbox 布局。其类似于 HTML 的 &amp;lt;div&amp;gt; 容器，但不能直接在里面添加文本（字符串），如果要展示文本，应该使用 &amp;lt;text&amp;gt; 组件。历史版本中，&amp;lt;div&amp;gt; 别名是 &amp;lt;container&amp;gt;，目前已经弃用。
@@ -55,16 +55,22 @@
             <a href="javascript:;">资源</a>
             <ul class="dropdown-menu subnav">
               <li>
-                <a href="/weex-website/cn/playground.html">Playground</a>
-              </li>
-              <li>
                 <a href="/weex-website/cn/tools">工具和服务</a>
               </li>
               <li>
                 <a href="/weex-website/cn/advanced">高阶知识</a>
               </li>
               <li>
+                <a href="/weex-website/cn/playground.html">Playground</a>
+              </li>
+              <li>
                 <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
+              </li>
+              <li>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Dot we</a>
               </li>
             </ul>
         </li>
@@ -74,13 +80,13 @@
       </ul>
       <ul class="tools">
         <li>
-          <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-  <label class="search-label">
-    <input type="text" id="search-input" name="q" results="0" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off"/>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
-  </label>
-</form>
-<div class="results-panel">
+  </form>
+  <div class="results-panel">
+  </div>
 </div>
         </li>
         <!--<li></li>-->
@@ -439,11 +445,11 @@
               </li>
             
               <li>
-                <a href="/weex-website/cn/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
+                <a href="/weex-website/cn/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
               </li>
             
               <li>
-                <a href="/weex-website/cn/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
+                <a href="/weex-website/cn/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
               </li>
             
               <li>
@@ -908,11 +914,11 @@
               </li>
             
               <li>
-                <a href="/weex-website/cn/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
+                <a href="/weex-website/cn/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
               </li>
             
               <li>
-                <a href="/weex-website/cn/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
+                <a href="/weex-website/cn/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
               </li>
             
               <li>
@@ -1032,7 +1038,7 @@
   </div>
   
 
-<article id="page-undefined" class="article article-type-references">
+<article class="article article-type-references">
   <div class="article-entry" itemprop="articleBody">
     <header class="article-header">
   
@@ -1042,7 +1048,7 @@
       </h1>
     
   
-  <time class="article-date" datetime="2016-12-22T11:48:15.000Z">Updated time: 22/12/2016</time>
+  <time class="article-date" datetime="2017-01-01T02:24:36.000Z">Updated time: 01/01/2017</time>
 </header>
     <h1 id="lt-div-gt"><a href="#lt-div-gt" class="headerlink" title="&lt;div&gt;"></a>&lt;div&gt;</h1><p><code>&lt;div&gt;</code> 组件是用于包装其它组件的最基本容器。支持所有的通用样式、特性、<code>flexbox</code> 布局。其类似于 HTML 的 <code>&lt;div&gt;</code> 容器，但<strong>不能</strong>直接在里面添加文本（字符串），如果要展示文本，应该使用 <code>&lt;text&gt;</code> 组件。历史版本中，<code>&lt;div&gt;</code> 别名是 <code>&lt;container&gt;</code>，目前<strong>已经弃用</strong>。</p>
 <p><strong>注意：</strong></p>
@@ -1060,7 +1066,7 @@
 <li><code>opacity</code></li>
 <li><code>background-color</code></li>
 </ul>
-<p>查看 <a href="https://alibaba.github.io/weex/cn/doc/references/common-style.html">组件通用样式</a></p>
+<p>查看 <a href="../common-style.html">组件通用样式</a></p>
 <h2 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h2><p><code>&lt;div&gt;</code> 支持所有通用事件：</p>
 <ul>
 <li><code>click</code></li>
@@ -1068,7 +1074,7 @@
 <li><code>appear</code></li>
 <li><code>disappear</code></li>
 </ul>
-<p>查看 <a href="https://alibaba.github.io/weex/cn/doc/references/common-event.html">通用事件</a></p>
+<p>查看 <a href="../common-event.html">通用事件</a></p>
 <h2 id="约束"><a href="#约束" class="headerlink" title="约束"></a>约束</h2><ol>
 <li><p><strong>不能</strong>直接在 <code>&lt;div&gt;</code> 中添加文本。</p>
 <p>错误示例，“Hello World!” 无法被正常渲染。</p>

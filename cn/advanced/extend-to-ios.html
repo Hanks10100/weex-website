@@ -23,7 +23,7 @@ Weex SDK 只提供渲染，而不是其他的能力，如果你需要 像网络�
 
 自定义的module类 必须实现 WXModuleProtocol
 必须添加宏WX_EXPORT_METHO">
-<meta property="og:updated_time" content="2016-12-22T12:03:52.000Z">
+<meta property="og:updated_time" content="2016-12-30T09:17:04.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS 扩展">
 <meta name="twitter:description" content="iOS 扩展Module 扩展swift 扩展 module 
@@ -64,16 +64,22 @@ Weex SDK 只提供渲染，而不是其他的能力，如果你需要 像网络�
             <a href="javascript:;">资源</a>
             <ul class="dropdown-menu subnav">
               <li>
-                <a href="/weex-website/cn/playground.html">Playground</a>
-              </li>
-              <li>
                 <a href="/weex-website/cn/tools">工具和服务</a>
               </li>
               <li>
                 <a href="/weex-website/cn/advanced">高阶知识</a>
               </li>
               <li>
+                <a href="/weex-website/cn/playground.html">Playground</a>
+              </li>
+              <li>
                 <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
+              </li>
+              <li>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Dot we</a>
               </li>
             </ul>
         </li>
@@ -83,13 +89,13 @@ Weex SDK 只提供渲染，而不是其他的能力，如果你需要 像网络�
       </ul>
       <ul class="tools">
         <li>
-          <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-  <label class="search-label">
-    <input type="text" id="search-input" name="q" results="0" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off"/>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
-  </label>
-</form>
-<div class="results-panel">
+  </form>
+  <div class="results-panel">
+  </div>
 </div>
         </li>
         <!--<li></li>-->
@@ -107,6 +113,16 @@ Weex SDK 只提供渲染，而不是其他的能力，如果你需要 像网络�
   <div class="sidebar-menu">
     
       <ul class="main-nav">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-sidebar" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
         <li>
           <a class="" href="/weex-website/cn/guide">
             教程
@@ -126,16 +142,22 @@ Weex SDK 只提供渲染，而不是其他的能力，如果你需要 像网络�
             <p>资源</p>
             <ul class="subnav">
               <li>
-                <a href="./playground.html">Playground</a>
-              </li>
-              <li>
                 <a href="/weex-website/cn/tools">工具和服务</a>
               </li>
               <li>
                 <a href="/weex-website/cn/advanced">高阶知识</a>
               </li>
               <li>
+                <a href="/weex-website/cn/playground.html">Playground</a>
+              </li>
+              <li>
                 <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
+              </li>
+              <li>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Dot we</a>
               </li>
             </ul>
         </li>
@@ -298,7 +320,7 @@ Weex SDK 只提供渲染，而不是其他的能力，如果你需要 像网络�
   </div>
   
 
-<article id="page-undefined" class="article article-type-advanced">
+<article class="article article-type-advanced">
   <div class="article-entry" itemprop="articleBody">
     <header class="article-header">
   
@@ -308,7 +330,7 @@ Weex SDK 只提供渲染，而不是其他的能力，如果你需要 像网络�
       </h1>
     
   
-  <time class="article-date" datetime="2016-12-22T12:03:52.000Z">Updated time: 22/12/2016</time>
+  <time class="article-date" datetime="2016-12-30T09:17:04.000Z">Updated time: 30/12/2016</time>
 </header>
     <h2 id="iOS-扩展"><a href="#iOS-扩展" class="headerlink" title="iOS 扩展"></a>iOS 扩展</h2><h3 id="Module-扩展"><a href="#Module-扩展" class="headerlink" title="Module 扩展"></a>Module 扩展</h3><p><a href="https://github.com/weexteam/article/issues/55" target="_blank" rel="external">swift</a> 扩展 module </p>
 <p>Weex SDK 只提供渲染，而不是其他的能力，如果你需要 像网络，图片，URL跳转这些特性，需要自己动手实现他们<br>例如，如果你想实现一个url地址跳转函数，你可以按照如下步骤实现一个 Module</p>
@@ -329,17 +351,21 @@ Weex SDK 只提供渲染，而不是其他的能力，如果你需要 像网络�
 <figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">WXSDKEngine.h</div><div class="line">/**</div><div class="line">*  @abstract Registers a module for a given name</div><div class="line">*  @param name The module name to register</div><div class="line">*  @param clazz  The module class to register</div><div class="line">**/</div><div class="line">+ (void)registerModule:(NSString *)name withClass:(Class)clazz;</div><div class="line">[WXSDKEngine registerModule:@&quot;event&quot; withClass:[WXEventModule class]];</div></pre></td></tr></table></figure>
 </li>
 <li><p><strong>使用自己的module</strong><br> 这里的  require 里面的event 就是在 上一步调用<code>registerModule:</code> 注册module 时候的name</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">var eventModule = require(&apos;@weex-module/event&apos;); </div><div class="line">eventModule.openURL(&apos;url&apos;,function(ret) &#123;   </div><div class="line">    nativeLog(ret);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<h3 id="handler-扩展"><a href="#handler-扩展" class="headerlink" title="handler 扩展"></a>handler 扩展</h3><p>Weex SDK没有 图片下载，navigation 操作的能力，请大家自己实现这些 protocol</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> eventModule = <span class="built_in">require</span>(<span class="string">'@weex-module/event'</span>); </div><div class="line">eventModule.openURL(<span class="string">'url'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">ret</span>) </span>&#123;   </div><div class="line">    nativeLog(ret);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 </li>
-<li><p><strong>WXImgLoaderProtocol</strong><br>weexSDK 没有图片下载的能力，需要实现 WXImgLoaderProtocol,参考下面的例子</p>
+</ol>
+<p>   Weex SDK没有 图片下载，navigation 操作的能力，请大家自己实现这些 protocol</p>
+<ol>
+<li><p><strong>WXImgLoaderProtocol</strong>  </p>
+<p>weexSDK 没有图片下载的能力，需要实现 WXImgLoaderProtocol,参考下面的例子</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">WXImageLoaderProtocol.h</div><div class="line">@protocol WXImgLoaderProtocol &lt;WXModuleProtocol&gt;</div><div class="line">/**</div><div class="line"> * @abstract Creates a image download handler with a given URL</div><div class="line"> * @param imageUrl The URL of the image to download</div><div class="line"> * @param imageFrame  The frame of the image you want to set</div><div class="line"> * @param options : The options to be used for this download</div><div class="line"> * @param completedBlock : A block called once the download is completed.</div><div class="line">   image : the image which has been download to local.</div><div class="line">   error : the error which has happened in download.</div><div class="line">   finished : a Boolean value indicating whether download action has finished.</div><div class="line">*/</div><div class="line">-(id&lt;WXImageOperationProtocol&gt;)downloadImageWithURL:(NSString *)url imageFrame:(CGRect)imageFrame userInfo:(NSDictionary *)options completed:(void(^)(UIImage *image,  NSError *error, BOOL finished))completedBlock;</div><div class="line">@end</div></pre></td></tr></table></figure>
 </li>
 </ol>
 <p>   实现上述协议  </p>
    <figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">@implementation WXImgLoaderDefaultImpl</div><div class="line">#pragma mark -</div><div class="line">#pragma mark WXImgLoaderProtocol</div><div class="line"></div><div class="line">- (id&lt;WXImageOperationProtocol&gt;)downloadImageWithURL:(NSString *)url imageFrame:(CGRect)imageFrame userInfo:(NSDictionary *)userInfo completed:(void(^)(UIImage *image,  NSError *error, BOOL finished))completedBlock</div><div class="line">&#123;</div><div class="line">    if ([url hasPrefix:@&quot;//&quot;]) &#123;</div><div class="line">        url = [@&quot;http:&quot; stringByAppendingString:url];</div><div class="line">    &#125;</div><div class="line">    return (id&lt;WXImageOperationProtocol&gt;)[[SDWebImageManager sharedManager] downloadImageWithURL:[NSURL URLWithString:url] options:0 progress:^(NSInteger receivedSize, NSInteger expectedSize) &#123;     </div><div class="line">    &#125; completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) &#123;</div><div class="line">    if (completedBlock) &#123;</div><div class="line">        completedBlock(image, error, finished);</div><div class="line">    &#125;</div><div class="line">    &#125;];</div><div class="line">&#125;</div><div class="line">@end</div></pre></td></tr></table></figure>
 <ol>
-<li><p><strong>handler注册</strong><br>你可以通过WXSDKEngine 中的 <code>registerHandler:withProtocol</code>注册handler</p>
+<li><p><strong>handler注册</strong> </p>
+<p>你可以通过WXSDKEngine 中的 <code>registerHandler:withProtocol</code>注册handler</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">WXSDKEngine.h</div><div class="line">/**</div><div class="line">* @abstract Registers a handler for a given handler instance and specific protocol</div><div class="line">* @param handler The handler instance to register</div><div class="line">* @param protocol The protocol to confirm</div><div class="line">*/</div><div class="line">+ (void)registerHandler:(id)handler withProtocol:(Protocol *)protocol;</div><div class="line"></div><div class="line">[WXSDKEngine registerHandler:[WXImgLoaderDefaultImpl new] withProtocol:@protocol(WXImgLoaderProtocol)]</div></pre></td></tr></table></figure>
 </li>
 </ol>

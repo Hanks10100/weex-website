@@ -52,16 +52,22 @@ var dom = require(&apos;@weex-module/dom&apos;);dom.scrollToElement(this.$el(&ap
             <a href="javascript:;">Resources</a>
             <ul class="dropdown-menu subnav">
               <li>
-                <a href="/weex-website/playground.html">Playground</a>
-              </li>
-              <li>
-                <a href="/weex-website/tools">Tools</a>
+                <a href="/weex-website/tools">Service &amp; Tools</a>
               </li>
               <li>
                 <a href="/weex-website/advanced">Advanced</a>
               </li>
               <li>
+                <a href="/weex-website/playground.html">Playground</a>
+              </li>
+              <li>
                 <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
+              </li>
+              <li>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Dot we</a>
               </li>
             </ul>
         </li>
@@ -71,13 +77,13 @@ var dom = require(&apos;@weex-module/dom&apos;);dom.scrollToElement(this.$el(&ap
       </ul>
       <ul class="tools">
         <li>
-          <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-  <label class="search-label">
-    <input type="text" id="search-input" name="q" results="0" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off"/>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
-  </label>
-</form>
-<div class="results-panel">
+  </form>
+  <div class="results-panel">
+  </div>
 </div>
         </li>
         <!--<li></li>-->
@@ -332,11 +338,11 @@ var dom = require(&apos;@weex-module/dom&apos;);dom.scrollToElement(this.$el(&ap
           <ul class="chapter">
             
               <li>
-                <a href="/weex-website/references/bootstrap.html" class="sidebar-link  ">Bootstrap</a>
+                <a href="/weex-website/references/special-element.html" class="sidebar-link  ">Special Element</a>
               </li>
             
               <li>
-                <a href="/weex-website/references/special-element.html" class="sidebar-link  ">Special Element</a>
+                <a href="/weex-website/references/bootstrap.html" class="sidebar-link  ">Bootstrap</a>
               </li>
             
               <li>
@@ -433,7 +439,7 @@ var dom = require(&apos;@weex-module/dom&apos;);dom.scrollToElement(this.$el(&ap
               </li>
             
               <li>
-                <a href="/weex-website/references/components/cell.html" class="sidebar-link  ">&lt;list&gt;</a>
+                <a href="/weex-website/references/components/cell.html" class="sidebar-link  ">&lt;cell&gt;</a>
               </li>
             
               <li>
@@ -768,11 +774,11 @@ var dom = require(&apos;@weex-module/dom&apos;);dom.scrollToElement(this.$el(&ap
           <ul class="chapter">
             
               <li>
-                <a href="/weex-website/references/bootstrap.html" class="sidebar-link  ">Bootstrap</a>
+                <a href="/weex-website/references/special-element.html" class="sidebar-link  ">Special Element</a>
               </li>
             
               <li>
-                <a href="/weex-website/references/special-element.html" class="sidebar-link  ">Special Element</a>
+                <a href="/weex-website/references/bootstrap.html" class="sidebar-link  ">Bootstrap</a>
               </li>
             
               <li>
@@ -869,7 +875,7 @@ var dom = require(&apos;@weex-module/dom&apos;);dom.scrollToElement(this.$el(&ap
               </li>
             
               <li>
-                <a href="/weex-website/references/components/cell.html" class="sidebar-link  ">&lt;list&gt;</a>
+                <a href="/weex-website/references/components/cell.html" class="sidebar-link  ">&lt;cell&gt;</a>
               </li>
             
               <li>
@@ -963,7 +969,7 @@ var dom = require(&apos;@weex-module/dom&apos;);dom.scrollToElement(this.$el(&ap
   </div>
   
 
-<article id="page-undefined" class="article article-type-references">
+<article class="article article-type-references">
   <div class="article-entry" itemprop="articleBody">
     <header class="article-header">
   

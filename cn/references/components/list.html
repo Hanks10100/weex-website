@@ -17,7 +17,7 @@
 &amp;lt;template&amp;gt;  &amp;lt;list class=&quot;list&quot;&amp;gt;    &amp;lt;cel">
 <meta property="og:image" content="http://alibaba.github.io/../images/list_2.jpg">
 <meta property="og:image" content="http://alibaba.github.io/../images/list_4.jpg">
-<meta property="og:updated_time" content="2016-12-22T11:48:51.000Z">
+<meta property="og:updated_time" content="2017-01-01T02:26:53.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="<list>">
 <meta name="twitter:description" content="&amp;lt;list&amp;gt;&amp;lt;list&amp;gt; 组件是提供垂直列表功能的核心组件，拥有平滑的滚动和高效的内存管理，非常适合用于长列表的展示。最简单的使用方法是在 &amp;lt;list&amp;gt; 标签内使用一组由简单数组 repeat 生成的 &amp;lt;cell&amp;gt; 标签填充。
@@ -55,16 +55,22 @@
             <a href="javascript:;">资源</a>
             <ul class="dropdown-menu subnav">
               <li>
-                <a href="/weex-website/cn/playground.html">Playground</a>
-              </li>
-              <li>
                 <a href="/weex-website/cn/tools">工具和服务</a>
               </li>
               <li>
                 <a href="/weex-website/cn/advanced">高阶知识</a>
               </li>
               <li>
+                <a href="/weex-website/cn/playground.html">Playground</a>
+              </li>
+              <li>
                 <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
+              </li>
+              <li>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Dot we</a>
               </li>
             </ul>
         </li>
@@ -74,13 +80,13 @@
       </ul>
       <ul class="tools">
         <li>
-          <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-  <label class="search-label">
-    <input type="text" id="search-input" name="q" results="0" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off"/>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
-  </label>
-</form>
-<div class="results-panel">
+  </form>
+  <div class="results-panel">
+  </div>
 </div>
         </li>
         <!--<li></li>-->
@@ -439,11 +445,11 @@
               </li>
             
               <li>
-                <a href="/weex-website/cn/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
+                <a href="/weex-website/cn/references/components/list.html" class="sidebar-link current ">&lt;list&gt;</a>
               </li>
             
               <li>
-                <a href="/weex-website/cn/references/components/list.html" class="sidebar-link current ">&lt;list&gt;</a>
+                <a href="/weex-website/cn/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
               </li>
             
               <li>
@@ -908,11 +914,11 @@
               </li>
             
               <li>
-                <a href="/weex-website/cn/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
+                <a href="/weex-website/cn/references/components/list.html" class="sidebar-link current ">&lt;list&gt;</a>
               </li>
             
               <li>
-                <a href="/weex-website/cn/references/components/list.html" class="sidebar-link current ">&lt;list&gt;</a>
+                <a href="/weex-website/cn/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
               </li>
             
               <li>
@@ -1032,7 +1038,7 @@
   </div>
   
 
-<article id="page-undefined" class="article article-type-references">
+<article class="article article-type-references">
   <div class="article-entry" itemprop="articleBody">
     <header class="article-header">
   
@@ -1042,7 +1048,7 @@
       </h1>
     
   
-  <time class="article-date" datetime="2016-12-22T11:48:51.000Z">Updated time: 22/12/2016</time>
+  <time class="article-date" datetime="2017-01-01T02:26:53.000Z">Updated time: 01/01/2017</time>
 </header>
     <h1 id="lt-list-gt"><a href="#lt-list-gt" class="headerlink" title="&lt;list&gt;"></a>&lt;list&gt;</h1><p><code>&lt;list&gt;</code> 组件是提供垂直列表功能的核心组件，拥有平滑的滚动和高效的内存管理，非常适合用于长列表的展示。最简单的使用方法是在 <code>&lt;list&gt;</code> 标签内使用一组由简单数组 <code>repeat</code> 生成的 <code>&lt;cell&gt;</code> 标签填充。</p>
 <p>一个最简例子：</p>
@@ -1053,18 +1059,18 @@
 <ul>
 <li><p><code>&lt;cell&gt;</code></p>
 <p>用于定义列表中的子列表项，类似于 HTML 中的 <code>ul</code> 之于 <code>li</code>。Weex 会对 <code>&lt;cell&gt;</code> 进行高效的内存回收以达到更好的性能。</p>
-<p>使用文档请查看 <a href="http://alibaba.github.io/weex/cn/doc/components/cell.html"><code>&lt;cell&gt;</code></a>。</p>
+<p>使用文档请查看 <a href="./cell.html"><code>&lt;cell&gt;</code></a>。</p>
 </li>
 <li><p><code>header</code> <sup class="wx-v">0.6.1+</sup></p>
 <p>当 <code>&lt;header&gt;</code> 到达屏幕顶部时，吸附在屏幕顶部。</p>
 </li>
 <li><p><code>&lt;refresh&gt;</code></p>
 <p>用于给列表添加下拉刷新的功能。</p>
-<p>使用文档请查看 <a href="https://alibaba.github.io/weex/cn/doc/components/refresh.html"><code>&lt;refresh&gt;</code></a></p>
+<p>使用文档请查看 <a href="./refresh.html"><code>&lt;refresh&gt;</code></a></p>
 </li>
 <li><p><code>&lt;loading&gt;</code></p>
 <p><code>&lt;loading&gt;</code> 用法与特性和 <code>&lt;refresh&gt;</code> 类似，用于给列表添加上拉加载更多的功能。</p>
-<p>使用文档请查看 <a href="https://alibaba.github.io/weex/cn/doc/components/loading.html"><code>&lt;loading&gt;</code></a></p>
+<p>使用文档请查看 <a href="./loading.html"><code>&lt;loading&gt;</code></a></p>
 </li>
 </ul>
 <p><strong>注意：</strong></p>
@@ -1085,7 +1091,7 @@
 <li><code>opacity</code></li>
 <li><code>background-color</code></li>
 </ul>
-<p>查看 <a href="https://alibaba.github.io/weex/cn/doc/references/common-style.html">组件通用样式</a></p>
+<p>查看 <a href="../common-style.html">组件通用样式</a></p>
 </li>
 </ul>
 <h2 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h2><ul>
@@ -1100,10 +1106,10 @@
 <li><code>appear</code></li>
 <li><code>disappear</code></li>
 </ul>
-<p>查看 <a href="https://alibaba.github.io/weex/cn/doc/references/common-event.html">通用事件</a></p>
+<p>查看 <a href="../common-event.html">通用事件</a></p>
 </li>
 </ul>
-<h2 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h2><h3 id="scrollToElement-node-options"><a href="#scrollToElement-node-options" class="headerlink" title="scrollToElement(node, options)"></a>scrollToElement(node, options)</h3><p>滚动到列表某个指定项是常见需求，<code>&lt;list&gt;</code> 拓展了该功能支持滚动到指定 <code>&lt;cell&gt;</code>。通过 <code>dom</code> module 访问，更多信息可参考 <a href="http://alibaba.github.io/weex/cn/doc/modules/dom.html">dom module</a> 。</p>
+<h2 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h2><h3 id="scrollToElement-node-options"><a href="#scrollToElement-node-options" class="headerlink" title="scrollToElement(node, options)"></a>scrollToElement(node, options)</h3><p>滚动到列表某个指定项是常见需求，<code>&lt;list&gt;</code> 拓展了该功能支持滚动到指定 <code>&lt;cell&gt;</code>。通过 <code>dom</code> module 访问，更多信息可参考 <a href="../modules/dom.html">dom module</a> 。</p>
 <h4 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h4><ul>
 <li><code>node {node}</code>：指定目标节点。</li>
 <li><code>options {Object}</code>：<ul>

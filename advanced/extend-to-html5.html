@@ -13,7 +13,7 @@ IntroWeex is a extendable cross-platform solution for dynamic programming and pu
 <meta property="og:site_name" content="Weex">
 <meta property="og:description" content="Extend Weex HTML50.4
 IntroWeex is a extendable cross-platform solution for dynamic programming and publishing projects. You can build your own components on web platform or native platform by extendin">
-<meta property="og:updated_time" content="2016-12-22T12:27:15.000Z">
+<meta property="og:updated_time" content="2016-12-30T08:18:09.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Extend to web">
 <meta name="twitter:description" content="Extend Weex HTML50.4
@@ -49,16 +49,22 @@ IntroWeex is a extendable cross-platform solution for dynamic programming and pu
             <a href="javascript:;">Resources</a>
             <ul class="dropdown-menu subnav">
               <li>
-                <a href="/weex-website/playground.html">Playground</a>
-              </li>
-              <li>
-                <a href="/weex-website/tools">Tools</a>
+                <a href="/weex-website/tools">Service &amp; Tools</a>
               </li>
               <li>
                 <a href="/weex-website/advanced">Advanced</a>
               </li>
               <li>
+                <a href="/weex-website/playground.html">Playground</a>
+              </li>
+              <li>
                 <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
+              </li>
+              <li>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Dot we</a>
               </li>
             </ul>
         </li>
@@ -68,13 +74,13 @@ IntroWeex is a extendable cross-platform solution for dynamic programming and pu
       </ul>
       <ul class="tools">
         <li>
-          <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-  <label class="search-label">
-    <input type="text" id="search-input" name="q" results="0" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off"/>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
-  </label>
-</form>
-<div class="results-panel">
+  </form>
+  <div class="results-panel">
+  </div>
 </div>
         </li>
         <!--<li></li>-->
@@ -92,6 +98,16 @@ IntroWeex is a extendable cross-platform solution for dynamic programming and pu
   <div class="sidebar-menu">
     
       <ul class="main-nav">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-sidebar" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
         <li>
           <a class="" href="/weex-website/guide">
             Guide
@@ -111,16 +127,22 @@ IntroWeex is a extendable cross-platform solution for dynamic programming and pu
             <p>Resources</p>
             <ul class="subnav">
               <li>
-                <a href="./playground.html">Playground</a>
-              </li>
-              <li>
-                <a href="/weex-website/tools">Tools</a>
+                <a href="/weex-website/tools">Service &amp; Tools</a>
               </li>
               <li>
                 <a href="/weex-website/advanced">Advanced</a>
               </li>
               <li>
+                <a href="/weex-website/playground.html">Playground</a>
+              </li>
+              <li>
                 <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
+              </li>
+              <li>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Dot we</a>
               </li>
             </ul>
         </li>
@@ -233,7 +255,7 @@ IntroWeex is a extendable cross-platform solution for dynamic programming and pu
   </div>
   
 
-<article id="page-undefined" class="article article-type-advanced">
+<article class="article article-type-advanced">
   <div class="article-entry" itemprop="articleBody">
     <header class="article-header">
   
@@ -243,7 +265,7 @@ IntroWeex is a extendable cross-platform solution for dynamic programming and pu
       </h1>
     
   
-  <time class="article-date" datetime="2016-12-22T12:27:15.000Z">Updated time: 22/12/2016</time>
+  <time class="article-date" datetime="2016-12-30T08:18:09.000Z">Updated time: 30/12/2016</time>
 </header>
     <h1 id="Extend-Weex-HTML5"><a href="#Extend-Weex-HTML5" class="headerlink" title="Extend Weex HTML5"></a>Extend Weex HTML5</h1><p><span class="weex-version">0.4</span></p>
 <h3 id="Intro"><a href="#Intro" class="headerlink" title="Intro"></a>Intro</h3><p>Weex is a extendable cross-platform solution for dynamic programming and publishing projects. You can build your own components on web platform or native platform by extending the components system. Also you can extend weex by adding new methods for one module, new moudles or new bundle loaders. Follow the steps bellow you can dive into the journy of creating multiple builtin components, APIs and loaders.</p>

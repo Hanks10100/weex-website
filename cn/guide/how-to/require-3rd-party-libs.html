@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="Weex">
 <meta property="og:description" content="如何引入第三方库0.4
 在 Get started 中，我们学习了知道可以在 &amp;lt;script&amp;gt; 标签中编写 JavaScript 代码。但是在项目中常用的功能或模块，例如解析url参数，将属性从一些对象扩展到另一个对象等等，在每个组件中复制和粘贴这些代码是一个糟糕的做法，因此迫切需要通过 require 的方式对可复用的代码进行管理。Weex 为开发人员提供了 CommonJS 风格的">
-<meta property="og:updated_time" content="2016-12-22T12:13:37.000Z">
+<meta property="og:updated_time" content="2016-12-30T10:29:31.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="如何引入第三方库">
 <meta name="twitter:description" content="如何引入第三方库0.4
@@ -49,16 +49,22 @@
             <a href="javascript:;">资源</a>
             <ul class="dropdown-menu subnav">
               <li>
-                <a href="/weex-website/cn/playground.html">Playground</a>
-              </li>
-              <li>
                 <a href="/weex-website/cn/tools">工具和服务</a>
               </li>
               <li>
                 <a href="/weex-website/cn/advanced">高阶知识</a>
               </li>
               <li>
+                <a href="/weex-website/cn/playground.html">Playground</a>
+              </li>
+              <li>
                 <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
+              </li>
+              <li>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Dot we</a>
               </li>
             </ul>
         </li>
@@ -68,13 +74,13 @@
       </ul>
       <ul class="tools">
         <li>
-          <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-  <label class="search-label">
-    <input type="text" id="search-input" name="q" results="0" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off"/>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
-  </label>
-</form>
-<div class="results-panel">
+  </form>
+  <div class="results-panel">
+  </div>
 </div>
         </li>
         <!--<li></li>-->
@@ -458,7 +464,7 @@
   </div>
   
 
-<article id="page-undefined" class="article article-type-guide">
+<article class="article article-type-guide">
   <div class="article-entry" itemprop="articleBody">
     <header class="article-header">
   
@@ -468,10 +474,10 @@
       </h1>
     
   
-  <time class="article-date" datetime="2016-12-22T12:13:37.000Z">Updated time: 22/12/2016</time>
+  <time class="article-date" datetime="2016-12-30T10:29:31.000Z">Updated time: 30/12/2016</time>
 </header>
     <h1 id="如何引入第三方库"><a href="#如何引入第三方库" class="headerlink" title="如何引入第三方库"></a>如何引入第三方库</h1><p><span class="weex-version">0.4</span></p>
-<p>在 <a href="../get-started.html">Get started</a> 中，我们学习了知道可以在 <code>&lt;script&gt;</code> 标签中编写 JavaScript 代码。但是在项目中常用的功能或模块，例如解析url参数，将属性从一些对象扩展到另一个对象等等，在每个组件中复制和粘贴这些代码是一个糟糕的做法，因此迫切需要通过 <code>require</code> 的方式对可复用的代码进行管理。Weex 为开发人员提供了 CommonJS 风格的 require 语法。</p>
+<p>在 <a href="../index.html">Get started</a> 中，我们学习了知道可以在 <code>&lt;script&gt;</code> 标签中编写 JavaScript 代码。但是在项目中常用的功能或模块，例如解析url参数，将属性从一些对象扩展到另一个对象等等，在每个组件中复制和粘贴这些代码是一个糟糕的做法，因此迫切需要通过 <code>require</code> 的方式对可复用的代码进行管理。Weex 为开发人员提供了 CommonJS 风格的 require 语法。</p>
 <p>我们以 <code>extend</code> 作为例子。</p>
 <h2 id="引入本地-JS-Modules"><a href="#引入本地-JS-Modules" class="headerlink" title="引入本地 JS Modules"></a>引入本地 JS Modules</h2><p>下面是 <code>extend</code> 最简单的实现，并将其放在 <code>./common/utils.js</code> 路径中。</p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">extend</span>(<span class="params">dest, src</span>) </span>&#123;</div><div class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> key <span class="keyword">in</span> src) &#123;</div><div class="line">    dest[key] = src[key]</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">exports.extend = extend</div></pre></td></tr></table></figure>

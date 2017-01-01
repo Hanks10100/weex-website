@@ -5,19 +5,16 @@
   
   <title>集成到 web | Weex</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="项目中引入 html5 版 Weex简介Weex是一个跨平台可扩展的动态化移动框架，能够真正帮助开发者实现’一次开发，到处运行’。由Weex提供的相关工具进行打包好的bundle文件可以运行在android, ios以及web（这里我们也称之为html5）平台的渲染器上。Weex HTML5是一个专用于在移动端webview以及各种现代浏览器上渲染weex文件的渲染器。
-获取 Weex HTML5">
+  <meta name="description" content="项目中引入 html5 版 Weex简介Weex 是一个跨平台可扩展的动态化移动框架，能够真正帮助开发者实现’一次开发，到处运行’。由 Weex 提供的相关工具进行打包好的 bundle 文件可以运行在 android, ios 以及 web（这里我们也称之为html5）平台的渲染器上。Weex HTML5 是一个专用于在移动端 webview 以及各种现代浏览器上渲染 weex 文件的渲染器。">
 <meta property="og:type" content="website">
 <meta property="og:title" content="集成到 web">
 <meta property="og:url" content="http://alibaba.github.io/cn/advanced/integrate-to-html5.html">
 <meta property="og:site_name" content="Weex">
-<meta property="og:description" content="项目中引入 html5 版 Weex简介Weex是一个跨平台可扩展的动态化移动框架，能够真正帮助开发者实现’一次开发，到处运行’。由Weex提供的相关工具进行打包好的bundle文件可以运行在android, ios以及web（这里我们也称之为html5）平台的渲染器上。Weex HTML5是一个专用于在移动端webview以及各种现代浏览器上渲染weex文件的渲染器。
-获取 Weex HTML5">
-<meta property="og:updated_time" content="2016-12-22T12:02:54.000Z">
+<meta property="og:description" content="项目中引入 html5 版 Weex简介Weex 是一个跨平台可扩展的动态化移动框架，能够真正帮助开发者实现’一次开发，到处运行’。由 Weex 提供的相关工具进行打包好的 bundle 文件可以运行在 android, ios 以及 web（这里我们也称之为html5）平台的渲染器上。Weex HTML5 是一个专用于在移动端 webview 以及各种现代浏览器上渲染 weex 文件的渲染器。">
+<meta property="og:updated_time" content="2016-12-30T09:26:01.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="集成到 web">
-<meta name="twitter:description" content="项目中引入 html5 版 Weex简介Weex是一个跨平台可扩展的动态化移动框架，能够真正帮助开发者实现’一次开发，到处运行’。由Weex提供的相关工具进行打包好的bundle文件可以运行在android, ios以及web（这里我们也称之为html5）平台的渲染器上。Weex HTML5是一个专用于在移动端webview以及各种现代浏览器上渲染weex文件的渲染器。
-获取 Weex HTML5">
+<meta name="twitter:description" content="项目中引入 html5 版 Weex简介Weex 是一个跨平台可扩展的动态化移动框架，能够真正帮助开发者实现’一次开发，到处运行’。由 Weex 提供的相关工具进行打包好的 bundle 文件可以运行在 android, ios 以及 web（这里我们也称之为html5）平台的渲染器上。Weex HTML5 是一个专用于在移动端 webview 以及各种现代浏览器上渲染 weex 文件的渲染器。">
   
     <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
   
@@ -49,16 +46,22 @@
             <a href="javascript:;">资源</a>
             <ul class="dropdown-menu subnav">
               <li>
-                <a href="/weex-website/cn/playground.html">Playground</a>
-              </li>
-              <li>
                 <a href="/weex-website/cn/tools">工具和服务</a>
               </li>
               <li>
                 <a href="/weex-website/cn/advanced">高阶知识</a>
               </li>
               <li>
+                <a href="/weex-website/cn/playground.html">Playground</a>
+              </li>
+              <li>
                 <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
+              </li>
+              <li>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Dot we</a>
               </li>
             </ul>
         </li>
@@ -68,13 +71,13 @@
       </ul>
       <ul class="tools">
         <li>
-          <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-  <label class="search-label">
-    <input type="text" id="search-input" name="q" results="0" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off"/>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
-  </label>
-</form>
-<div class="results-panel">
+  </form>
+  <div class="results-panel">
+  </div>
 </div>
         </li>
         <!--<li></li>-->
@@ -92,6 +95,16 @@
   <div class="sidebar-menu">
     
       <ul class="main-nav">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-sidebar" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
         <li>
           <a class="" href="/weex-website/cn/guide">
             教程
@@ -111,16 +124,22 @@
             <p>资源</p>
             <ul class="subnav">
               <li>
-                <a href="./playground.html">Playground</a>
-              </li>
-              <li>
                 <a href="/weex-website/cn/tools">工具和服务</a>
               </li>
               <li>
                 <a href="/weex-website/cn/advanced">高阶知识</a>
               </li>
               <li>
+                <a href="/weex-website/cn/playground.html">Playground</a>
+              </li>
+              <li>
                 <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
+              </li>
+              <li>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Dot we</a>
               </li>
             </ul>
         </li>
@@ -283,7 +302,7 @@
   </div>
   
 
-<article id="page-undefined" class="article article-type-advanced">
+<article class="article article-type-advanced">
   <div class="article-entry" itemprop="articleBody">
     <header class="article-header">
   
@@ -293,28 +312,28 @@
       </h1>
     
   
-  <time class="article-date" datetime="2016-12-22T12:02:54.000Z">Updated time: 22/12/2016</time>
+  <time class="article-date" datetime="2016-12-30T09:26:01.000Z">Updated time: 30/12/2016</time>
 </header>
-    <h2 id="项目中引入-html5-版-Weex"><a href="#项目中引入-html5-版-Weex" class="headerlink" title="项目中引入 html5 版 Weex"></a>项目中引入 html5 版 Weex</h2><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>Weex是一个跨平台可扩展的动态化移动框架，能够真正帮助开发者实现’一次开发，到处运行’。由Weex提供的相关工具进行打包好的bundle文件可以运行在android, ios以及web（这里我们也称之为html5）平台的渲染器上。Weex HTML5是一个专用于在移动端webview以及各种现代浏览器上渲染weex文件的渲染器。</p>
-<h3 id="获取-Weex-HTML5"><a href="#获取-Weex-HTML5" class="headerlink" title="获取 Weex HTML5"></a>获取 Weex HTML5</h3><p>使用npm安装最新版本的Weex HTML5，并在你的项目中require进来。</p>
-<h4 id="从-npm-安装"><a href="#从-npm-安装" class="headerlink" title="从 npm 安装"></a>从 npm 安装</h4><p>请确保通过<code>npm install</code>或者<code>npm update</code>获取Weex HTML5的最新版本npm包。更多关于npm的信息情查阅<a href="https://docs.npmjs.com/" target="_blank" rel="external">npm官方网站</a>。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">npm install weex-html5</div></pre></td></tr></table></figure>
-<p>通过require引入weex-html5:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">var weex = require(&apos;weex-html5&apos;)</div></pre></td></tr></table></figure>
-<p><strong>注意:</strong> 介于Weex目前仍处于开源内测阶段，还没有完全开放源代码，因此<code>weex-jsframework</code>可能还没有在npm上发布。当前版本的<code>weex-html5</code>包含了<code>weex-jsframework</code>，你只需要require <code>weex-html5</code>即可暂时在web平台上运行weex代码。建议关注Weex的后续版本发布并做必要的引用方式调整。</p>
-<h3 id="初始化-Weex"><a href="#初始化-Weex" class="headerlink" title="初始化 Weex"></a>初始化 Weex</h3><p>你可以通过Weex暴露的API <code>init</code>来初始化一个Weex实例。这个方法需要传递一些配置信息已确定一些环境变量等信息，这些配置信息介绍如下：</p>
+    <h2 id="项目中引入-html5-版-Weex"><a href="#项目中引入-html5-版-Weex" class="headerlink" title="项目中引入 html5 版 Weex"></a>项目中引入 html5 版 Weex</h2><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>Weex 是一个跨平台可扩展的动态化移动框架，能够真正帮助开发者实现’一次开发，到处运行’。由 Weex 提供的相关工具进行打包好的 bundle 文件可以运行在 android, ios 以及 web（这里我们也称之为html5）平台的渲染器上。Weex HTML5 是一个专用于在移动端 webview 以及各种现代浏览器上渲染 weex 文件的渲染器。</p>
+<h3 id="获取-Weex-HTML5"><a href="#获取-Weex-HTML5" class="headerlink" title="获取 Weex HTML5"></a>获取 Weex HTML5</h3><p>使用 npm 安装最新版本的 Weex HTML5，并在你的项目中 require 进来。</p>
+<h4 id="从-npm-安装"><a href="#从-npm-安装" class="headerlink" title="从 npm 安装"></a>从 npm 安装</h4><p>请确保通过 <code>npm install</code> 或者 <code>npm update</code> 获取 Weex HTML5 的最新版本 npm 包。更多关于 npm 的信息情查阅 <a href="https://docs.npmjs.com/" target="_blank" rel="external">npm 官方网站</a>。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">npm install weex-html5</div></pre></td></tr></table></figure>
+<p>通过 require 引入 weex-html5:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">var weex = require(<span class="string">'weex-html5'</span>)</div></pre></td></tr></table></figure>
+<p><strong>注意:</strong> 介于 Weex 目前仍处于开源内测阶段，还没有完全开放源代码，因此 <code>weex-jsframework</code> 可能还没有在 npm 上发布。当前版本的 <code>weex-html5</code> 包含了 <code>weex-jsframework</code>，你只需要 require <code>weex-html5</code> 即可暂时在 web 平台上运行 weex 代码。建议关注 Weex 的后续版本发布并做必要的引用方式调整。</p>
+<h3 id="初始化-Weex"><a href="#初始化-Weex" class="headerlink" title="初始化 Weex"></a>初始化 Weex</h3><p>你可以通过 Weex 暴露的 API <code>init</code> 来初始化一个 Weex 实例。这个方法需要传递一些配置信息已确定一些环境变量等信息，这些配置信息介绍如下：</p>
 <ul>
-<li><code>appId</code>: Weex实例的id，可以是任意字符串或者数字，并注意不要重复.</li>
-<li><code>source</code>: 请求的Weex bundle文件地址，或者Weex bundle文件代码本身，取决于下面的loader配置.</li>
-<li><code>loader</code>: 加载器类型，用于加载weex bundle，值可以是’xhr’, ‘jsonp’或者’source’.<ul>
-<li><code>xhr</code>: 通过XMLHttpRequest加载source(即weex bundle的url地址).</li>
-<li><code>jsonp</code>: 通过JSONP加载weex bundle.</li>
-<li><code>source</code>: 直接接受weex bundle的代码作为参数.</li>
+<li><code>appId</code>: Weex 实例的 id，可以是任意字符串或者数字，并注意不要重复.</li>
+<li><code>source</code>: 请求的 Weex bundle 文件地址，或者 Weex bundle 文件代码本身，取决于下面的 loader 配置.</li>
+<li><code>loader</code>: 加载器类型，用于加载 weex bundle，值可以是 ‘xhr’, ‘jsonp’ 或者 ‘source’.<ul>
+<li><code>xhr</code>: 通过 XMLHttpRequest 加载 source(即 weex bundle 的 url 地址).</li>
+<li><code>jsonp</code>: 通过 JSONP 加载 weex bundle.</li>
+<li><code>source</code>: 直接接受 weex bundle 的代码作为参数.</li>
 </ul>
 </li>
-<li><code>rootId</code>: root容器的id，默认容器id是’weex’.</li>
+<li><code>rootId</code>: root 容器的 id，默认容器 id 是 ‘weex’.</li>
 </ul>
-<p>以下是一个Weex初始化的示例:</p>
+<p>以下是一个 Weex 初始化的示例:</p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">weexInit</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="function"><span class="keyword">function</span> <span class="title">getUrlParam</span> (<span class="params">key</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> reg = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">'[?|&amp;]'</span> + key + <span class="string">'=([^&amp;]+)'</span>)</div><div class="line">    <span class="keyword">var</span> match = location.search.match(reg)</div><div class="line">    <span class="keyword">return</span> match &amp;&amp; match[<span class="number">1</span>]</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="keyword">var</span> loader = getUrlParam(<span class="string">'loader'</span>) || <span class="string">'xhr'</span></div><div class="line">  <span class="keyword">var</span> page = getUrlParam(<span class="string">'page'</span>)</div><div class="line"></div><div class="line">  <span class="comment">// 需要指定一个jsonp回调函数名称，如果没有则用默认值'weexJsonpCallback'</span></div><div class="line">  <span class="keyword">var</span> JSONP_CALLBACK_NAME = <span class="string">'weexJsonpCallback'</span></div><div class="line"></div><div class="line">  <span class="built_in">window</span>.weex.init(&#123;</div><div class="line">    <span class="attr">jsonpCallback</span>: JSONP_CALLBACK_NAME,</div><div class="line">    <span class="attr">appId</span>: location.href,</div><div class="line">    <span class="attr">source</span>: page,</div><div class="line">    <span class="attr">loader</span>: loader,</div><div class="line">    <span class="attr">rootId</span>: <span class="string">'weex'</span></div><div class="line">  &#125;)</div><div class="line">&#125;</div><div class="line"></div><div class="line">weexInit()</div></pre></td></tr></table></figure>
 
   </div>

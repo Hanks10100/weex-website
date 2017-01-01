@@ -16,7 +16,7 @@ Android 应用接入添加依赖可以通过 Gradle 或者 Maven 添加对 devto
 <meta property="og:image" content="https://img.alicdn.com/tps/TB1aKy4NXXXXXacXVXXXXXXXXXX-1019-756.png">
 <meta property="og:image" content="https://img.alicdn.com/tps/TB13fwSKFXXXXXDaXXXXXXXXXXX-887-828.png">
 <meta property="og:image" content="https://img.alicdn.com/tps/TB1igLoMVXXXXawapXXXXXXXXXX-786-1610.jpg">
-<meta property="og:updated_time" content="2016-12-22T12:04:22.000Z">
+<meta property="og:updated_time" content="2016-12-30T09:21:15.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="集成 Devtools 到 Android">
 <meta name="twitter:description" content="集成 Devtools 到 AndroidWeex Devtools 能够方便调试 Weex 页面，但此功能离不开 Native 的支持。如何让你的 App 也集成 Devtools，在本章将会详细说明 Android 端如何接入 Weex Devtools。
@@ -53,16 +53,22 @@ Android 应用接入添加依赖可以通过 Gradle 或者 Maven 添加对 devto
             <a href="javascript:;">资源</a>
             <ul class="dropdown-menu subnav">
               <li>
-                <a href="/weex-website/cn/playground.html">Playground</a>
-              </li>
-              <li>
                 <a href="/weex-website/cn/tools">工具和服务</a>
               </li>
               <li>
                 <a href="/weex-website/cn/advanced">高阶知识</a>
               </li>
               <li>
+                <a href="/weex-website/cn/playground.html">Playground</a>
+              </li>
+              <li>
                 <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
+              </li>
+              <li>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Dot we</a>
               </li>
             </ul>
         </li>
@@ -72,13 +78,13 @@ Android 应用接入添加依赖可以通过 Gradle 或者 Maven 添加对 devto
       </ul>
       <ul class="tools">
         <li>
-          <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-  <label class="search-label">
-    <input type="text" id="search-input" name="q" results="0" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off"/>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
-  </label>
-</form>
-<div class="results-panel">
+  </form>
+  <div class="results-panel">
+  </div>
 </div>
         </li>
         <!--<li></li>-->
@@ -96,6 +102,16 @@ Android 应用接入添加依赖可以通过 Gradle 或者 Maven 添加对 devto
   <div class="sidebar-menu">
     
       <ul class="main-nav">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-sidebar" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
         <li>
           <a class="" href="/weex-website/cn/guide">
             教程
@@ -115,16 +131,22 @@ Android 应用接入添加依赖可以通过 Gradle 或者 Maven 添加对 devto
             <p>资源</p>
             <ul class="subnav">
               <li>
-                <a href="./playground.html">Playground</a>
-              </li>
-              <li>
                 <a href="/weex-website/cn/tools">工具和服务</a>
               </li>
               <li>
                 <a href="/weex-website/cn/advanced">高阶知识</a>
               </li>
               <li>
+                <a href="/weex-website/cn/playground.html">Playground</a>
+              </li>
+              <li>
                 <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
+              </li>
+              <li>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Dot we</a>
               </li>
             </ul>
         </li>
@@ -287,7 +309,7 @@ Android 应用接入添加依赖可以通过 Gradle 或者 Maven 添加对 devto
   </div>
   
 
-<article id="page-undefined" class="article article-type-advanced">
+<article class="article article-type-advanced">
   <div class="article-entry" itemprop="articleBody">
     <header class="article-header">
   
@@ -297,36 +319,36 @@ Android 应用接入添加依赖可以通过 Gradle 或者 Maven 添加对 devto
       </h1>
     
   
-  <time class="article-date" datetime="2016-12-22T12:04:22.000Z">Updated time: 22/12/2016</time>
+  <time class="article-date" datetime="2016-12-30T09:21:15.000Z">Updated time: 30/12/2016</time>
 </header>
     <h1 id="集成-Devtools-到-Android"><a href="#集成-Devtools-到-Android" class="headerlink" title="集成 Devtools 到 Android"></a>集成 Devtools 到 Android</h1><p>Weex Devtools 能够方便调试 Weex 页面，但此功能离不开 Native 的支持。如何让你的 App 也集成 Devtools，在本章将会详细说明 Android 端如何接入 Weex Devtools。</p>
 <h2 id="Android-应用接入"><a href="#Android-应用接入" class="headerlink" title="Android 应用接入"></a>Android 应用接入</h2><h3 id="添加依赖"><a href="#添加依赖" class="headerlink" title="添加依赖"></a>添加依赖</h3><p>可以通过 Gradle 或者 Maven 添加对 devtools aar 的依赖，也可以直接对源码依赖。强烈建议使用最新版本，因为 Weex SDK 和 devtools 都在快速的迭代开发中，新版本会有更多惊喜，同时也修复老版本中一些问题。最新的 release 版本可在<a href="https://github.com/weexteam/weex_devtools_android/releases" target="_blank" rel="external">这里</a>查看。所有的 release 版本都会发布到 <a href="https://bintray.com/alibabaweex/maven/weex_inspector" target="_blank" rel="external">jcenter repo</a>。</p>
 <ul>
-<li><p><em>Gradle依赖</em></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">dependencies &#123;</div><div class="line">  compile &apos;com.taobao.android:weex_inspector:0.8.0.0&apos;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<li><p><em>Gradle 依赖</em></p>
+<figure class="highlight gradle"><table><tr><td class="code"><pre><div class="line"><span class="keyword">dependencies</span> &#123;</div><div class="line">  <span class="keyword">compile</span> <span class="string">'com.taobao.android:weex_inspector:0.8.0.0'</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 <li><p><em>Maven依赖</em></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">&lt;dependency&gt;</div><div class="line">  &lt;groupId&gt;com.taobao.android&lt;/groupId&gt;</div><div class="line">  &lt;artifactId&gt;weex_inspector&lt;/artifactId&gt;</div><div class="line">  &lt;version&gt;0.8.0.0&lt;/version&gt;</div><div class="line">  &lt;type&gt;pom&lt;/type&gt;</div><div class="line">&lt;/dependency&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.taobao.android<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>weex_inspector<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>0.8.0.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">type</span>&gt;</span>pom<span class="tag">&lt;/<span class="name">type</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div></pre></td></tr></table></figure>
 </li>
 <li><p><em>源码依赖</em></p>
 <p>需要复制 <a href="https://github.com/weexteam/weex_devtools_android/tree/master/inspector" target="_blank" rel="external">inspector</a> 目录到你的 App 的同级目录，然后在工程的 <code>settings.gradle</code> 文件下添加 <code>include &quot;:inspector&quot;</code>，此过程可以参考 playground 源码的工程配置及其配置，然后在 App 的 <code>build.gralde</code> 中添加依赖。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">dependencies &#123;</div><div class="line">  compile project(&apos;:inspector&apos;)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight gradle"><table><tr><td class="code"><pre><div class="line"><span class="keyword">dependencies</span> &#123;</div><div class="line">  <span class="keyword">compile</span> <span class="keyword">project</span>(<span class="string">':inspector'</span>)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>另外 weex_inspector 中有一部分包是以 provided 的方式引入，接入方需要自行解决依赖和版本冲突。</p>
 <ul>
 <li><p><strong>provided方式引用的包</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">dependencies &#123;</div><div class="line">  provided &apos;com.google.code.findbugs:jsr305:2.0.1&apos;</div><div class="line">  provided &apos;com.android.support:appcompat-v7:23.1.1&apos;</div><div class="line">  provided &apos;com.taobao.android:weex_sdk:0.8.0&apos;</div><div class="line">  provided &apos;com.alibaba:fastjson:1.1.45+&apos;</div><div class="line">  ...</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight gradle"><table><tr><td class="code"><pre><div class="line"><span class="keyword">dependencies</span> &#123;</div><div class="line">  provided <span class="string">'com.google.code.findbugs:jsr305:2.0.1'</span></div><div class="line">  provided <span class="string">'com.android.support:appcompat-v7:23.1.1'</span></div><div class="line">  provided <span class="string">'com.taobao.android:weex_sdk:0.8.0'</span></div><div class="line">  provided <span class="string">'com.alibaba:fastjson:1.1.45+'</span></div><div class="line">  ...</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
 </ul>
 <ul>
 <li><p><strong>反射引用的包(0.8.0.0以上版本)</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">dependencies &#123;</div><div class="line">  compile &apos;com.squareup.okhttp:okhttp:2.3.0&apos;</div><div class="line">  compile &apos;com.squareup.okhttp:okhttp-ws:2.3.0&apos;</div><div class="line">  ...</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight gradle"><table><tr><td class="code"><pre><div class="line"><span class="keyword">dependencies</span> &#123;</div><div class="line">  <span class="keyword">compile</span> <span class="string">'com.squareup.okhttp:okhttp:2.3.0'</span></div><div class="line">  <span class="keyword">compile</span> <span class="string">'com.squareup.okhttp:okhttp-ws:2.3.0'</span></div><div class="line">  ...</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <pre><code>或者
 
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">dependencies &#123;</div><div class="line">  compile &apos;com.squareup.okhttp:okhttp:3.4.1&apos;</div><div class="line">  compile &apos;com.squareup.okhttp:okhttp-ws:3.4.1&apos;</div><div class="line">    ...</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight gradle"><table><tr><td class="code"><pre><div class="line"><span class="keyword">dependencies</span> &#123;</div><div class="line">  <span class="keyword">compile</span> <span class="string">'com.squareup.okhttp:okhttp:3.4.1'</span></div><div class="line">  <span class="keyword">compile</span> <span class="string">'com.squareup.okhttp:okhttp-ws:3.4.1'</span></div><div class="line">    ...</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </code></pre><h4 id="版本兼容"><a href="#版本兼容" class="headerlink" title="版本兼容"></a>版本兼容</h4><table>
 <thead>
 <tr>
@@ -356,9 +378,9 @@ Android 应用接入添加依赖可以通过 Gradle 或者 Maven 添加对 devto
 <h3 id="添加-Debug-模式开关"><a href="#添加-Debug-模式开关" class="headerlink" title="添加 Debug 模式开关"></a>添加 Debug 模式开关</h3><p>控制调试模式的打开和关闭的关键点可以概括为三条规则。</p>
 <p><strong>规则一：通过 <code>sRemoteDebugMode</code> 和 <code>sRemoteDebugProxyUrl</code> 和来设置开关和 Debugger Server 地址。</strong></p>
 <p>Weex SDK 的 <code>WXEnvironment</code> 类里有一对静态变量标记了 Weex 当前的调试模式是否开启分别是：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">public static boolean sRemoteDebugMode; // 是否开启 debug 模式，默认关闭</div><div class="line">public static String sRemoteDebugProxyUrl; // DebugServer的websocket地址</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> sRemoteDebugMode; <span class="comment">// 是否开启 debug 模式，默认关闭</span></div><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> String sRemoteDebugProxyUrl; <span class="comment">// DebugServer的websocket地址</span></div></pre></td></tr></table></figure>
 <p>无论在 App 中无论以何种方式设置 Debug 模式，都必须在恰当的时机调用类似如下的方法来设置 <code>WXEnvironment.sRemoteDebugMode</code> 和 <code>WXEnvironment.sRemoteDebugProxyUrl</code>。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">private void initDebugEnvironment(boolean enable, String host) &#123;</div><div class="line">  WXEnvironment.sRemoteDebugMode = enable;</div><div class="line">  WXEnvironment.sRemoteDebugProxyUrl = &quot;ws://&quot; + host + &quot;:8088/debugProxy/native&quot;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">initDebugEnvironment</span><span class="params">(<span class="keyword">boolean</span> enable, String host)</span> </span>&#123;</div><div class="line">  WXEnvironment.sRemoteDebugMode = enable;</div><div class="line">  WXEnvironment.sRemoteDebugProxyUrl = <span class="string">"ws://"</span> + host + <span class="string">":8088/debugProxy/native"</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p><strong>规则二：修改 <code>sRemoteDebugMode</code> 后一定要调用<code>`WXSDKEngine.reload()</code>。</strong></p>
 <p>一般來說，在修改了 <code>WXEnvironment.sRemoteDebugMode</code> 以后调用了 <code>WXSDKEngine.reload()</code> 方法才能够使 Debug模式生效。<code>WXSDKEngine.reload()</code> 用来重置 Weex 的运行环境上下文，在切换调试模式时需要调用此方法来创建新的 Weex 运行时和 DebugBridge 并将所有的 JS 调用桥接到调试服务器执行。在 reload 过程中会调用 launchInspector，这就是 SDK 控制 Debug 模式最核心一个方法，其传入参数即为 <code>sRemoteDebugMode</code>，若为 <code>true</code> 则该方法中尝试以反射的方式获取 DebugBridge 用来在远端执行 JS，否则在本地运行。</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">launchInspector</span><span class="params">(<span class="keyword">boolean</span> remoteDebug)</span> </span>&#123;</div><div class="line">  <span class="keyword">if</span> (WXEnvironment.isApkDebugable()) &#123;</div><div class="line">    <span class="keyword">try</span> &#123;</div><div class="line">      <span class="keyword">if</span> (mWxDebugProxy != <span class="keyword">null</span>) &#123;</div><div class="line">        mWxDebugProxy.stop();</div><div class="line">      &#125;</div><div class="line">      HackedClass&lt;Object&gt; debugProxyClass = WXHack.into(<span class="string">"com.taobao.weex.devtools.debug.DebugServerProxy"</span>);</div><div class="line">      mWxDebugProxy = (IWXDebugProxy) debugProxyClass.constructor(Context.class, WXBridgeManager.class)</div><div class="line">              .getInstance(WXEnvironment.getApplication(), WXBridgeManager.<span class="keyword">this</span>);</div><div class="line">      <span class="keyword">if</span> (mWxDebugProxy != <span class="keyword">null</span>) &#123;</div><div class="line">        mWxDebugProxy.start();</div><div class="line">        <span class="keyword">if</span> (remoteDebug) &#123;</div><div class="line">          mWXBridge = mWxDebugProxy.getWXBridge();</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">          <span class="keyword">if</span> (mWXBridge != <span class="keyword">null</span> &amp;&amp; !(mWXBridge <span class="keyword">instanceof</span> WXBridge)) &#123;</div><div class="line">            mWXBridge = <span class="keyword">null</span>;</div><div class="line">          &#125;</div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">    &#125; <span class="keyword">catch</span> (HackAssertionException e) &#123;</div><div class="line">      WXLogUtils.e(<span class="string">"launchInspector HackAssertionException "</span>, e);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>

@@ -7,20 +7,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="接口你可以在组件的方法中通过 this （Vm）上下文访问这些 API。
 例子：
-&amp;lt;script&amp;gt;module.exports = &amp;#123;    methods: &amp;#123;        somemethod: function() &amp;#123;            this.$vm(&apos;someId&apos;);        &amp;#125;    &amp;#125;&amp;#125;&amp;lt;/">
+&amp;lt;script&amp;gt;module.exports = &amp;#123;  methods: &amp;#123;    somemethod: function() &amp;#123;      this.$vm(&apos;someId&apos;);    &amp;#125;  &amp;#125;&amp;#125;&amp;lt;/script&amp;gt;
+$(id)不建">
 <meta property="og:type" content="website">
 <meta property="og:title" content="ViewModel APIs">
 <meta property="og:url" content="http://alibaba.github.io/cn/references/api.html">
 <meta property="og:site_name" content="Weex">
 <meta property="og:description" content="接口你可以在组件的方法中通过 this （Vm）上下文访问这些 API。
 例子：
-&amp;lt;script&amp;gt;module.exports = &amp;#123;    methods: &amp;#123;        somemethod: function() &amp;#123;            this.$vm(&apos;someId&apos;);        &amp;#125;    &amp;#125;&amp;#125;&amp;lt;/">
-<meta property="og:updated_time" content="2016-12-22T11:42:46.000Z">
+&amp;lt;script&amp;gt;module.exports = &amp;#123;  methods: &amp;#123;    somemethod: function() &amp;#123;      this.$vm(&apos;someId&apos;);    &amp;#125;  &amp;#125;&amp;#125;&amp;lt;/script&amp;gt;
+$(id)不建">
+<meta property="og:updated_time" content="2017-01-01T02:34:11.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ViewModel APIs">
 <meta name="twitter:description" content="接口你可以在组件的方法中通过 this （Vm）上下文访问这些 API。
 例子：
-&amp;lt;script&amp;gt;module.exports = &amp;#123;    methods: &amp;#123;        somemethod: function() &amp;#123;            this.$vm(&apos;someId&apos;);        &amp;#125;    &amp;#125;&amp;#125;&amp;lt;/">
+&amp;lt;script&amp;gt;module.exports = &amp;#123;  methods: &amp;#123;    somemethod: function() &amp;#123;      this.$vm(&apos;someId&apos;);    &amp;#125;  &amp;#125;&amp;#125;&amp;lt;/script&amp;gt;
+$(id)不建">
   
     <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
   
@@ -52,16 +55,22 @@
             <a href="javascript:;">资源</a>
             <ul class="dropdown-menu subnav">
               <li>
-                <a href="/weex-website/cn/playground.html">Playground</a>
-              </li>
-              <li>
                 <a href="/weex-website/cn/tools">工具和服务</a>
               </li>
               <li>
                 <a href="/weex-website/cn/advanced">高阶知识</a>
               </li>
               <li>
+                <a href="/weex-website/cn/playground.html">Playground</a>
+              </li>
+              <li>
                 <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
+              </li>
+              <li>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Dot we</a>
               </li>
             </ul>
         </li>
@@ -71,13 +80,13 @@
       </ul>
       <ul class="tools">
         <li>
-          <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-  <label class="search-label">
-    <input type="text" id="search-input" name="q" results="0" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off"/>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
-  </label>
-</form>
-<div class="results-panel">
+  </form>
+  <div class="results-panel">
+  </div>
 </div>
         </li>
         <!--<li></li>-->
@@ -436,11 +445,11 @@
               </li>
             
               <li>
-                <a href="/weex-website/cn/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
+                <a href="/weex-website/cn/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
               </li>
             
               <li>
-                <a href="/weex-website/cn/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
+                <a href="/weex-website/cn/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
               </li>
             
               <li>
@@ -905,11 +914,11 @@
               </li>
             
               <li>
-                <a href="/weex-website/cn/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
+                <a href="/weex-website/cn/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
               </li>
             
               <li>
-                <a href="/weex-website/cn/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
+                <a href="/weex-website/cn/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
               </li>
             
               <li>
@@ -1029,7 +1038,7 @@
   </div>
   
 
-<article id="page-undefined" class="article article-type-references">
+<article class="article article-type-references">
   <div class="article-entry" itemprop="articleBody">
     <header class="article-header">
   
@@ -1039,25 +1048,25 @@
       </h1>
     
   
-  <time class="article-date" datetime="2016-12-22T11:42:46.000Z">Updated time: 22/12/2016</time>
+  <time class="article-date" datetime="2017-01-01T02:34:11.000Z">Updated time: 01/01/2017</time>
 </header>
     <h1 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h1><p>你可以在组件的方法中通过 <code>this</code> （Vm）上下文访问这些 API。</p>
 <p>例子：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">    <span class="attr">methods</span>: &#123;</div><div class="line">        <span class="attr">somemethod</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">            <span class="keyword">this</span>.$vm(<span class="string">'someId'</span>);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">  <span class="attr">methods</span>: &#123;</div><div class="line">    <span class="attr">somemethod</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">      <span class="keyword">this</span>.$vm(<span class="string">'someId'</span>);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
 <h2 id="id"><a href="#id" class="headerlink" title="$(id)"></a>$(id)</h2><p><strong>不建议使用</strong>，请使用 <code>$vm</code> 代替。</p>
 <h2 id="el-id"><a href="#el-id" class="headerlink" title="$el(id)"></a>$el(id)</h2><p>返回对应 id 的元素对象的引用。</p>
 <h3 id="Arguments"><a href="#Arguments" class="headerlink" title="Arguments"></a>Arguments</h3><ul>
 <li><code>id</code> <em>(string)</em>: 唯一标识符。<h3 id="Returns"><a href="#Returns" class="headerlink" title="Returns"></a>Returns</h3></li>
 <li><em>(Element)</em>: 一个元素对象的引用。<h3 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h3></li>
 <li>id 只能保证是当前（页面）组件中是唯一的，如果你需要寻找父组件或子组件，你可以利用组件间的通信模式实现。</li>
-<li>延伸阅读： <a href="../syntax/id.md">id</a>，<a href="../syntax/comm.md">Communicate Between Components</a><h2 id="vm-id"><a href="#vm-id" class="headerlink" title="$vm(id)"></a>$vm(id)</h2></li>
+<li>延伸阅读： <a href="../guide/syntax/id.md">id</a>，<a href="../guide/syntax/comm.md">Communicate Between Components</a><h2 id="vm-id"><a href="#vm-id" class="headerlink" title="$vm(id)"></a>$vm(id)</h2></li>
 </ul>
 <p>返回对应 id 的 vm 对象引用。</p>
 <h3 id="Arguments-1"><a href="#Arguments-1" class="headerlink" title="Arguments"></a>Arguments</h3><ul>
 <li><code>id</code> <em>(String)</em>: 唯一标识符。<h3 id="Returns-1"><a href="#Returns-1" class="headerlink" title="Returns"></a>Returns</h3></li>
 <li><code>vm</code> <em>(Vm)</em>: 一个 Vm 对象引用。<h3 id="Tips-1"><a href="#Tips-1" class="headerlink" title="Tips"></a>Tips</h3></li>
 <li>id 只能保证是当前（页面）组件中是唯一的，如果你需要寻找父组件或子组件，你可以利用组件间的通信模式实现。</li>
-<li>延伸阅读： <a href="../syntax/id.md">id</a>，<a href="../syntax/comm.md">Communicate Between Components</a><h2 id="getConfig"><a href="#getConfig" class="headerlink" title="$getConfig()"></a>$getConfig()</h2></li>
+<li>延伸阅读： <a href="../guide/syntax/id.md">id</a>，<a href="../guide/syntax/comm.md">Communicate Between Components</a><h2 id="getConfig"><a href="#getConfig" class="headerlink" title="$getConfig()"></a>$getConfig()</h2></li>
 </ul>
 <p>获取当前全局环境变量和配置信息。</p>
 <h3 id="Returns-2"><a href="#Returns-2" class="headerlink" title="Returns"></a>Returns</h3><ul>
@@ -1076,7 +1085,7 @@
 </ul>
 </li>
 </ul>
-<p><strong>不建议使用</strong>，请使用 <code>require(&#39;@weex-module/module&#39;)[method](...args)</code> 代替。查看更多信息：<a href="../modules/main">modules</a>。</p>
+<p><strong>不建议使用</strong>，请使用 <code>require(&#39;@weex-module/module&#39;)[method](...args)</code> 代替。查看更多信息：<a href="./modules/main">modules</a>。</p>
 
   </div>
   

@@ -5,22 +5,16 @@
   
   <title>&lt;text&gt; | Weex</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="&amp;lt;text&amp;gt;0.4
-SummaryRender text with specified style rule, &amp;lt;text&amp;gt; tag can contain text value only. You can use variable interpolation in the text content with the mark {{}}.
-Child ComponentsT">
+  <meta name="description" content="&amp;lt;text&amp;gt;The weex builtin component ‘text’ is used to render text with specified style rule.  tag can contain text value only. You can use variable interpolation in the text content with the mark {">
 <meta property="og:type" content="website">
 <meta property="og:title" content="<text>">
 <meta property="og:url" content="http://alibaba.github.io/references/components/text.html">
 <meta property="og:site_name" content="Weex">
-<meta property="og:description" content="&amp;lt;text&amp;gt;0.4
-SummaryRender text with specified style rule, &amp;lt;text&amp;gt; tag can contain text value only. You can use variable interpolation in the text content with the mark {{}}.
-Child ComponentsT">
-<meta property="og:updated_time" content="2016-12-21T03:01:06.000Z">
+<meta property="og:description" content="&amp;lt;text&amp;gt;The weex builtin component ‘text’ is used to render text with specified style rule.  tag can contain text value only. You can use variable interpolation in the text content with the mark {">
+<meta property="og:updated_time" content="2016-12-30T06:22:47.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="<text>">
-<meta name="twitter:description" content="&amp;lt;text&amp;gt;0.4
-SummaryRender text with specified style rule, &amp;lt;text&amp;gt; tag can contain text value only. You can use variable interpolation in the text content with the mark {{}}.
-Child ComponentsT">
+<meta name="twitter:description" content="&amp;lt;text&amp;gt;The weex builtin component ‘text’ is used to render text with specified style rule.  tag can contain text value only. You can use variable interpolation in the text content with the mark {">
   
     <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
   
@@ -52,16 +46,22 @@ Child ComponentsT">
             <a href="javascript:;">Resources</a>
             <ul class="dropdown-menu subnav">
               <li>
-                <a href="/weex-website/playground.html">Playground</a>
-              </li>
-              <li>
-                <a href="/weex-website/tools">Tools</a>
+                <a href="/weex-website/tools">Service &amp; Tools</a>
               </li>
               <li>
                 <a href="/weex-website/advanced">Advanced</a>
               </li>
               <li>
+                <a href="/weex-website/playground.html">Playground</a>
+              </li>
+              <li>
                 <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
+              </li>
+              <li>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Dot we</a>
               </li>
             </ul>
         </li>
@@ -71,13 +71,13 @@ Child ComponentsT">
       </ul>
       <ul class="tools">
         <li>
-          <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-  <label class="search-label">
-    <input type="text" id="search-input" name="q" results="0" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off"/>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
-  </label>
-</form>
-<div class="results-panel">
+  </form>
+  <div class="results-panel">
+  </div>
 </div>
         </li>
         <!--<li></li>-->
@@ -332,11 +332,11 @@ Child ComponentsT">
           <ul class="chapter">
             
               <li>
-                <a href="/weex-website/references/bootstrap.html" class="sidebar-link  ">Bootstrap</a>
+                <a href="/weex-website/references/special-element.html" class="sidebar-link  ">Special Element</a>
               </li>
             
               <li>
-                <a href="/weex-website/references/special-element.html" class="sidebar-link  ">Special Element</a>
+                <a href="/weex-website/references/bootstrap.html" class="sidebar-link  ">Bootstrap</a>
               </li>
             
               <li>
@@ -433,7 +433,7 @@ Child ComponentsT">
               </li>
             
               <li>
-                <a href="/weex-website/references/components/cell.html" class="sidebar-link  ">&lt;list&gt;</a>
+                <a href="/weex-website/references/components/cell.html" class="sidebar-link  ">&lt;cell&gt;</a>
               </li>
             
               <li>
@@ -768,11 +768,11 @@ Child ComponentsT">
           <ul class="chapter">
             
               <li>
-                <a href="/weex-website/references/bootstrap.html" class="sidebar-link  ">Bootstrap</a>
+                <a href="/weex-website/references/special-element.html" class="sidebar-link  ">Special Element</a>
               </li>
             
               <li>
-                <a href="/weex-website/references/special-element.html" class="sidebar-link  ">Special Element</a>
+                <a href="/weex-website/references/bootstrap.html" class="sidebar-link  ">Bootstrap</a>
               </li>
             
               <li>
@@ -869,7 +869,7 @@ Child ComponentsT">
               </li>
             
               <li>
-                <a href="/weex-website/references/components/cell.html" class="sidebar-link  ">&lt;list&gt;</a>
+                <a href="/weex-website/references/components/cell.html" class="sidebar-link  ">&lt;cell&gt;</a>
               </li>
             
               <li>
@@ -963,7 +963,7 @@ Child ComponentsT">
   </div>
   
 
-<article id="page-undefined" class="article article-type-references">
+<article class="article article-type-references">
   <div class="article-entry" itemprop="articleBody">
     <header class="article-header">
   
@@ -973,50 +973,44 @@ Child ComponentsT">
       </h1>
     
   
-  <time class="article-date" datetime="2016-12-21T03:01:06.000Z">Updated time: 21/12/2016</time>
+  <time class="article-date" datetime="2016-12-30T06:22:47.000Z">Updated time: 30/12/2016</time>
 </header>
-    <h1 id="lt-text-gt"><a href="#lt-text-gt" class="headerlink" title="&lt;text&gt;"></a>&lt;text&gt;</h1><p><span class="weex-version">0.4</span></p>
-<h3 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h3><p>Render text with specified style rule, <code>&lt;text&gt;</code> tag can contain text value only. You can use variable interpolation in the text content with the mark <code>{{}}</code>.</p>
-<h3 id="Child-Components"><a href="#Child-Components" class="headerlink" title="Child Components"></a>Child Components</h3><p>This component supports no child components but a text content.</p>
-<h3 id="Attributes"><a href="#Attributes" class="headerlink" title="Attributes"></a>Attributes</h3><ul>
-<li><code>value</code>: &lt;string&gt; text value of this component. This is equal to the content of <code>&lt;text&gt;</code>.</li>
+    <h1 id="lt-text-gt"><a href="#lt-text-gt" class="headerlink" title="&lt;text&gt;"></a>&lt;text&gt;</h1><p>The weex builtin component ‘text’ is used to render text with specified style rule. <text> tag can contain text value only. You can use variable interpolation in the text content with the mark <code>{{}}</code>.</text></p>
+<h2 id="Child-Components"><a href="#Child-Components" class="headerlink" title="Child Components"></a>Child Components</h2><p>This component supports no child components.</p>
+<h2 id="Attributes"><a href="#Attributes" class="headerlink" title="Attributes"></a>Attributes</h2><ul>
+<li>value(string): text value of this component. This is equal to the content of ‘text’. </li>
 </ul>
-<p>Other attributes please check out the <a href="../references/common-attrs.html">common attributes</a>.</p>
-<h3 id="Styles"><a href="#Styles" class="headerlink" title="Styles"></a>Styles</h3><ul>
-<li><code>lines</code>: specify the text lines. Default value is <code>0</code> for unlimited.</li>
-</ul>
-<p><strong>text styles</strong>: checkout <a href="../references/text-style.html">text styles</a></p>
+<h3 id="example"><a href="#example" class="headerlink" title="example"></a>example</h3><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">var textComponent = this.$el(&quot;textid&quot;);</div><div class="line">this.text = textComponent.attr.value;</div></pre></td></tr></table></figure>
+<h2 id="Styles"><a href="#Styles" class="headerlink" title="Styles"></a>Styles</h2><ul>
+<li>lines: specify the text lines. Default value is <code>0</code> for unlimited.</li>
+<li><p>text styles: check out <a href="../text-style.html">text styles</a></p>
 <ul>
-<li>support <code>color</code> style.</li>
-<li>support <code>font-size</code> style.<ul>
-<li>iOS: default vlaue <code>32</code><ul>
-<li>Android: platform specify</li>
-<li>HTML5: default value <code>32</code></li>
+<li>support ‘color’ style.</li>
+<li>support ‘font-size’ style. iOS: default vlaue <code>32</code>. Android: platform specify. HTML5: default value <code>32</code>.</li>
+<li>support ‘font-style’ style.</li>
+<li>support ‘font-weight’ style.</li>
+<li>support ‘text-align’ style.</li>
+<li>support ‘text-decoration’ style.</li>
+<li>support ‘text-overflow’ style.</li>
+<li>support ‘line-height’(available from v0.6.1) style. line-height in iOS is different from h5 and Android, text value will be placed at bottom of line box.</li>
+<li>not support ‘flex-direction, ‘justify-content’, ‘align-items’ which is active for child nodes, and text has no child nodes.</li>
 </ul>
 </li>
 </ul>
-</li>
-<li>support <code>font-style</code> style.</li>
-<li>support <code>font-weight</code> style.</li>
-<li>support <code>text-decoration</code> style.</li>
-<li>support <code>text-align</code> style.</li>
-<li>support <code>text-overflow</code> style.</li>
-<li>support <code>line-height</code><sup class="wx-v">0.6.1</sup> style. line-height in iOS is different from h5 and Android, text value will be placed at bottom of line box.</li>
-<li>not support <code>flex-direction</code>, <code>justify-content</code>, <code>align-items</code> which is active for child nodes, and text has no child nodes.</li>
-</ul>
-<p><strong>common styles</strong>: check out <a href="../references/common-style.html">common styles for components</a></p>
+<h3 id="common-styles"><a href="#common-styles" class="headerlink" title="common styles"></a>common styles</h3><p>check out <a href="../common-style.html">common styles for components</a></p>
 <ul>
-<li>support flexbox related styles</li>
-<li>support box model related styles</li>
-<li>support <code>position</code> related styles</li>
-<li>support <code>opacity</code>, <code>background-color</code> etc.</li>
+<li>support flexbox related styles.</li>
+<li>support box model related styles.</li>
+<li>support ‘position’ related styles.</li>
+<li>support ‘opacity’, ‘background-color’ etc.</li>
 </ul>
-<h3 id="Events"><a href="#Events" class="headerlink" title="Events"></a>Events</h3><p><strong>common events</strong>: check out the <a href="../references/common-event.html">common events</a></p>
+<h2 id="Events"><a href="#Events" class="headerlink" title="Events"></a>Events</h2><h3 id="common-events"><a href="#common-events" class="headerlink" title="common events"></a>common events</h3><p>check out <a href="../common-event.html">common events</a></p>
 <ul>
-<li>support <code>click</code> event. Check out <a href="../references/common-event.html">common events</a></li>
-<li>support <code>appear</code> / <code>disappear</code> event. Check out <a href="../references/common-event.html">common events</a></li>
+<li>support ‘click’ event.</li>
+<li>support ‘appear’ / ‘disappear’ event. </li>
 </ul>
-<h3 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h3><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">&lt;div&gt;</div><div class="line">  &lt;text&gt;...&lt;/text&gt;</div><div class="line">  &lt;text value=&quot;...&quot;&gt;&lt;/text&gt;</div><div class="line">  &lt;text style=&quot;font-size: 24; text-decoration: underline;&quot;&gt;&#123;&#123;price&#125;&#125;&lt;/text&gt;</div><div class="line">  &lt;text value=&quot;&#123;&#123;...&#125;&#125;&quot;&gt;&lt;/text&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">text</span>&gt;</span>this is text content<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">text</span> <span class="attr">value</span>=<span class="string">"this is text value"</span>&gt;</span><span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">text</span> <span class="attr">style</span>=<span class="string">"text"</span>&gt;</span>&#123;&#123;price1&#125;&#125;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">text</span> <span class="attr">id</span>=<span class="string">"textid"</span> <span class="attr">onclick</span>=<span class="string">&#123;&#123;showtext&#125;&#125;</span>&gt;</span>this is gettext content<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">text</span> <span class="attr">value</span>=<span class="string">"&#123;&#123;text&#125;&#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></div><div class="line">  <span class="selector-class">.text</span> &#123;</div><div class="line">    <span class="attribute">font-size</span>: <span class="number">24</span>; </div><div class="line">    <span class="attribute">text-decoration</span>: underline;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="built_in">module</span>.exports = &#123;</div><div class="line">    <span class="attr">data</span>: &#123;</div><div class="line">      <span class="attr">price1</span>: <span class="string">'99.99'</span>,</div><div class="line">      <span class="attr">price2</span>: <span class="string">'88.88'</span>,</div><div class="line">      <span class="attr">text</span>:<span class="string">''</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">methods</span>: &#123;</div><div class="line">      <span class="attr">showtext</span>: <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> textComponent = <span class="keyword">this</span>.$el(<span class="string">"textid"</span>);</div><div class="line">        <span class="keyword">this</span>.text = textComponent.attr.value;</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><a href="http://dotwe.org/48f4d7c50245145c72c33161e2bb4325" target="_blank" rel="external">Try it</a></p>
 
   </div>
   

@@ -13,7 +13,7 @@ Android步骤：1.自定义组件必须继承自">
 <meta property="og:site_name" content="Weex">
 <meta property="og:description" content="如何自定义 native 组件？Weex 已经包含了最关键的平台组件，例如 ScrollView, ListView, Text, Imageview 等等。当然，这些组件并不能完全满足你的需求。另外，那些在你的工程中常用的大量原生 UI 组件，可能需要被简单地集合到 Weex 中。幸运的是，通过任意已存在的组件来创建你的自定义组件是一件很方便的事。
 Android步骤：1.自定义组件必须继承自">
-<meta property="og:updated_time" content="2016-12-22T12:03:15.000Z">
+<meta property="og:updated_time" content="2016-12-30T09:00:23.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="自定义 native 组件">
 <meta name="twitter:description" content="如何自定义 native 组件？Weex 已经包含了最关键的平台组件，例如 ScrollView, ListView, Text, Imageview 等等。当然，这些组件并不能完全满足你的需求。另外，那些在你的工程中常用的大量原生 UI 组件，可能需要被简单地集合到 Weex 中。幸运的是，通过任意已存在的组件来创建你的自定义组件是一件很方便的事。
@@ -49,16 +49,22 @@ Android步骤：1.自定义组件必须继承自">
             <a href="javascript:;">资源</a>
             <ul class="dropdown-menu subnav">
               <li>
-                <a href="/weex-website/cn/playground.html">Playground</a>
-              </li>
-              <li>
                 <a href="/weex-website/cn/tools">工具和服务</a>
               </li>
               <li>
                 <a href="/weex-website/cn/advanced">高阶知识</a>
               </li>
               <li>
+                <a href="/weex-website/cn/playground.html">Playground</a>
+              </li>
+              <li>
                 <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
+              </li>
+              <li>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Dot we</a>
               </li>
             </ul>
         </li>
@@ -68,13 +74,13 @@ Android步骤：1.自定义组件必须继承自">
       </ul>
       <ul class="tools">
         <li>
-          <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-  <label class="search-label">
-    <input type="text" id="search-input" name="q" results="0" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off"/>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
-  </label>
-</form>
-<div class="results-panel">
+  </form>
+  <div class="results-panel">
+  </div>
 </div>
         </li>
         <!--<li></li>-->
@@ -92,6 +98,16 @@ Android步骤：1.自定义组件必须继承自">
   <div class="sidebar-menu">
     
       <ul class="main-nav">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-sidebar" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
         <li>
           <a class="" href="/weex-website/cn/guide">
             教程
@@ -111,16 +127,22 @@ Android步骤：1.自定义组件必须继承自">
             <p>资源</p>
             <ul class="subnav">
               <li>
-                <a href="./playground.html">Playground</a>
-              </li>
-              <li>
                 <a href="/weex-website/cn/tools">工具和服务</a>
               </li>
               <li>
                 <a href="/weex-website/cn/advanced">高阶知识</a>
               </li>
               <li>
+                <a href="/weex-website/cn/playground.html">Playground</a>
+              </li>
+              <li>
                 <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
+              </li>
+              <li>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Dot we</a>
               </li>
             </ul>
         </li>
@@ -283,7 +305,7 @@ Android步骤：1.自定义组件必须继承自">
   </div>
   
 
-<article id="page-undefined" class="article article-type-advanced">
+<article class="article article-type-advanced">
   <div class="article-entry" itemprop="articleBody">
     <header class="article-header">
   
@@ -293,7 +315,7 @@ Android步骤：1.自定义组件必须继承自">
       </h1>
     
   
-  <time class="article-date" datetime="2016-12-22T12:03:15.000Z">Updated time: 22/12/2016</time>
+  <time class="article-date" datetime="2016-12-30T09:00:23.000Z">Updated time: 30/12/2016</time>
 </header>
     <h1 id="如何自定义-native-组件？"><a href="#如何自定义-native-组件？" class="headerlink" title="如何自定义 native 组件？"></a>如何自定义 native 组件？</h1><p>Weex 已经包含了最关键的平台组件，例如 <code>ScrollView, ListView, Text, Imageview</code> 等等。当然，这些组件并不能完全满足你的需求。另外，那些在你的工程中常用的大量原生 UI 组件，可能需要被简单地集合到 Weex 中。幸运的是，通过任意已存在的组件来创建你的自定义组件是一件很方便的事。</p>
 <h2 id="Android"><a href="#Android" class="headerlink" title="Android"></a>Android</h2><h3 id="步骤："><a href="#步骤：" class="headerlink" title="步骤："></a>步骤：</h3><p>1.自定义组件必须继承自 <code>WXComponent</code> 或者 <code>WXContainer</code> ；<br>2.weex SDK 可以识别 @WXComponentProp (name = value(value 是 attr 或者 dsl style))；<br>3.方法必须是 <code>public</code> 的；<br>4.组件类不能是一个内部类；<br>5.自定义组件不能被 ProGuard 之类的工具混淆；<br>6.组件方法在 UI 线程被调用，因此不要在里面进行耗时的操作；<br>7.Weex 的参数类型可以是 int, double, float, String, Map, List 和实现了 WXObject 接口的自定义类；</p>

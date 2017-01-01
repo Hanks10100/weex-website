@@ -15,7 +15,7 @@
 <meta property="og:description" content="&amp;lt;wxc-tabbar&amp;gt;&amp;lt;wxc-tabbar&amp;gt; 是一个名为 weex-components 依赖库的自定义组件。&amp;lt;wxc-tabbar&amp;gt; 能在窗口的底部显示 tab 页面，我们可以在不同的 tab 页面之间切换。
 用法：在 script 标签中通过一个 require 语句引入，即：require(&amp;#39;weex-components&amp;#39;);
 示例">
-<meta property="og:updated_time" content="2016-12-22T11:53:38.000Z">
+<meta property="og:updated_time" content="2017-01-01T02:33:14.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="<wxc-tabbar>">
 <meta name="twitter:description" content="&amp;lt;wxc-tabbar&amp;gt;&amp;lt;wxc-tabbar&amp;gt; 是一个名为 weex-components 依赖库的自定义组件。&amp;lt;wxc-tabbar&amp;gt; 能在窗口的底部显示 tab 页面，我们可以在不同的 tab 页面之间切换。
@@ -52,16 +52,22 @@
             <a href="javascript:;">资源</a>
             <ul class="dropdown-menu subnav">
               <li>
-                <a href="/weex-website/cn/playground.html">Playground</a>
-              </li>
-              <li>
                 <a href="/weex-website/cn/tools">工具和服务</a>
               </li>
               <li>
                 <a href="/weex-website/cn/advanced">高阶知识</a>
               </li>
               <li>
+                <a href="/weex-website/cn/playground.html">Playground</a>
+              </li>
+              <li>
                 <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
+              </li>
+              <li>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Dot we</a>
               </li>
             </ul>
         </li>
@@ -71,13 +77,13 @@
       </ul>
       <ul class="tools">
         <li>
-          <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-  <label class="search-label">
-    <input type="text" id="search-input" name="q" results="0" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off"/>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
-  </label>
-</form>
-<div class="results-panel">
+  </form>
+  <div class="results-panel">
+  </div>
 </div>
         </li>
         <!--<li></li>-->
@@ -436,11 +442,11 @@
               </li>
             
               <li>
-                <a href="/weex-website/cn/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
+                <a href="/weex-website/cn/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
               </li>
             
               <li>
-                <a href="/weex-website/cn/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
+                <a href="/weex-website/cn/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
               </li>
             
               <li>
@@ -905,11 +911,11 @@
               </li>
             
               <li>
-                <a href="/weex-website/cn/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
+                <a href="/weex-website/cn/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
               </li>
             
               <li>
-                <a href="/weex-website/cn/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
+                <a href="/weex-website/cn/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
               </li>
             
               <li>
@@ -1029,7 +1035,7 @@
   </div>
   
 
-<article id="page-undefined" class="article article-type-references">
+<article class="article article-type-references">
   <div class="article-entry" itemprop="articleBody">
     <header class="article-header">
   
@@ -1039,7 +1045,7 @@
       </h1>
     
   
-  <time class="article-date" datetime="2016-12-22T11:53:38.000Z">Updated time: 22/12/2016</time>
+  <time class="article-date" datetime="2017-01-01T02:33:14.000Z">Updated time: 01/01/2017</time>
 </header>
     <h1 id="lt-wxc-tabbar-gt"><a href="#lt-wxc-tabbar-gt" class="headerlink" title="&lt;wxc-tabbar&gt;"></a>&lt;wxc-tabbar&gt;</h1><p><code>&lt;wxc-tabbar&gt;</code> 是一个名为 <code>weex-components</code> 依赖库的自定义组件。<code>&lt;wxc-tabbar&gt;</code> 能在窗口的底部显示 tab 页面，我们可以在不同的 tab 页面之间切换。</p>
 <p>用法：在 <code>script</code> 标签中通过一个 <code>require</code> 语句引入，即：<code>require(&#39;weex-components&#39;);</code></p>
@@ -1073,7 +1079,7 @@
 <li><code>opacity</code></li>
 <li><code>background-color</code></li>
 </ul>
-<p>查看 <a href="https://alibaba.github.io/weex/cn/doc/references/common-style.html">组件通用样式</a></p>
+<p>查看 <a href="../common-style.html">组件通用样式</a></p>
 </li>
 </ul>
 <h2 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h2><ul>
@@ -1088,7 +1094,7 @@
 <li><code>appear</code></li>
 <li><code>disappear</code></li>
 </ul>
-<p>查看 <a href="https://alibaba.github.io/weex/cn/doc/references/common-event.html">通用事件</a></p>
+<p>查看 <a href="../common-event.html">通用事件</a></p>
 </li>
 </ul>
 <h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><p><strong>注意：</strong></p>

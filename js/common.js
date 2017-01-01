@@ -1,3 +1,34 @@
+;(function() {
+  // http://paulirish.com/2011/requestanimationframe-for-smart-animating/
+  // http://my.opera.com/emoller/blog/2011/12/20/requestanimationframe-for-smart-er-animating
+
+  // requestAnimationFrame polyfill by Erik Möller. fixes from Paul Irish and Tino Zijdel
+
+  // MIT license
+  var lastTime = 0;
+  var vendors = ['ms', 'moz', 'webkit', 'o']
+  for(var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
+    window.requestAnimationFrame = window[vendors[x]+'RequestAnimationFrame']
+    window.cancelAnimationFrame = window[vendors[x]+'CancelAnimationFrame'] 
+                                || window[vendors[x]+'CancelRequestAnimationFrame']
+  }
+
+  if (!window.requestAnimationFrame)
+    window.requestAnimationFrame = function(callback, element) {
+      var currTime = new Date().getTime();
+      var timeToCall = Math.max(0, 16 - (currTime - lastTime))
+      var id = window.setTimeout(function() { callback(currTime + timeToCall) }, 
+        timeToCall)
+      lastTime = currTime + timeToCall
+      return id
+    }
+
+  if (!window.cancelAnimationFrame)
+    window.cancelAnimationFrame = function(id) {
+      clearTimeout(id)
+    }
+}());
+
 ;(function () {
   var BODY = document.body
   /**
@@ -21,7 +52,7 @@
       var target = e.target
 
       if (sidebarEl.classList.contains('open')) {
-        if (target === closeBtn || !sidebarMenu.contains(target)) {
+        if (target === closeBtn || !sidebarEl.contains(target)) {
           sidebarEl.classList.remove('open')
         }
       }
@@ -30,12 +61,160 @@
 
   initSidebar()
 
+  /**
+   *  Search
+   */
+  function initSearch() {
+    var form = document.querySelector('.search-form')
+    var inputElements = document.querySelectorAll('.search-input')
+
+    BODY.addEventListener('click', function (e) {
+      var target = e.target,
+          resultsPanel = document.querySelectorAll('.results-panel.show')
+
+      Array.prototype.forEach.call(resultsPanel, function (item, index) {
+        if (!item.contains(target)) {
+          item.classList.remove('show')
+        }
+      })
+    })
+
+    reqwest({
+      url: '/weex-website/content.json', 
+      type: 'json'
+    })
+    .then(function (resp) {
+      var root = resp.meta.root || '/weex-website/'
+
+      Array.prototype.forEach.call(inputElements, function (input, index) {
+        input.addEventListener('input', function (e) {
+          var target = e.target,
+              panel = target.parentElement && target.parentElement.nextElementSibling,
+              keywords = target.value.trim().split(/[\s\-\，\\/]+/)
+
+          if (target.value.trim() !== '') {
+            var matchingPosts = searchFromJSON(resp.pages, keywords)
+            var html = ''
+
+            matchingPosts.forEach(function (post, index) {
+              var url = root + post.url
+              var htmlSnippet = '<div class=\"matching-post\">' +
+                                  '<h2>' +
+                                    '<a href=\"' + url + '\">' + post.title + '</a>' +
+                                  '</h2>' +
+                                  '<p>' + post.content + '</p>' +
+                                '</div>'
+              
+              html += htmlSnippet
+            })
+            if (panel.classList.contains('results-panel')) {
+              panel.classList.add('show')
+              panel.innerHTML = html ? html : '<p>No Results!</p>'
+            }
+          } else {
+            if (panel.classList.contains('results-panel')) {
+              panel.classList.remove('show')
+              panel.innerHTML = ''
+            }
+          }
+        })
+      })
+    })
+  }
+
+  function searchFromJSON (data, keywords) {
+    var matchingResults = []
+
+    for (var i = 0; i < data.length; i++) {
+
+      var post = data[i]
+      var isMatch = false
+      var postTitle = post.title && post.title.trim(),
+          postContent = post.text && post.text.trim(),
+          postUrl = post.path || '',
+          postType = post.type
+      var matchingNum = 0
+      var resultStr = ''
+
+      if(postTitle !== '' && postContent !== '') {
+        keywords.forEach(function(keyword, i) {
+          var regEx = new RegExp(keyword, "gi")
+          var indexTitle = -1,
+              indexContent = -1,
+              indexTitle = postTitle.search(regEx),
+              indexContent = postContent.search(regEx)
+
+          if(indexTitle < 0 && indexContent < 0){
+            isMatch = false;
+          } else {
+            isMatch = true
+            matchingNum++
+            if (indexContent < 0) {
+              indexContent = 0;
+            }
+            
+            var start = 0,
+                end = 0
+            
+            start = indexContent < 11 ? 0 : indexContent - 10
+            end = start === 0 ? 70 : indexContent + keyword.length + 60
+            if (end > postContent.length) {
+              end = postContent.length
+            }
+
+            var matchContent = '...' + 
+              postContent
+                .substring(start, end)
+                .replace(regEx, "<em class=\"search-keyword\">" + keyword + "</em>") + 
+                '...'
+
+            resultStr += matchContent
+          }
+        })
+
+        if (isMatch) {
+          var matchingPost = {
+            title: escapeHtml(postTitle),
+            content: resultStr,
+            url: postUrl,
+            type: postType,
+            matchingNum: matchingNum
+          }
+
+          matchingResults.push(matchingPost)
+        }
+      }
+    }
+    // matchingResults.sort(function (a, b) {
+    //   return a.matchingNum > b.matchingNum
+    // })
+
+    return matchingResults
+  }
+
+  function escapeHtml(string) {
+    var entityMap = {
+      "&": "&amp;",
+      "<": "&lt;",
+      ">": "&gt;",
+      '"': '&quot;',
+      "'": '&#39;',
+      "/": '&#x2F;'
+    }
+
+    return String(string).replace(/[&<>"'\/]/g, function (s) {
+      return entityMap[s];
+    })
+  }
+
+  initSearch()
   /*
    * LANDINGPAGE 
    */
   if (PAGE_TYPE === 'index') {
+
     /**
-     * Index page animation
+     * Index page animation helper: AppearController 
      */
     function AppearController(el, opts) {
       
@@ -44,7 +223,8 @@
       this.el = el
       this.offsetTop = el.offsetTop
       this.offsetHeight = el.offsetHeight
-      this._optsCBK = opts.callback || {}
+      this._optsAppear = opts.appear || null
+      this._optsDisappear = opts.disappear || null
       this._optsThreshold = opts.threshold || -10
       this._handler = this._requestScroll.bind(this)
       this._create()
@@ -61,7 +241,10 @@
 
     AppearController.prototype._create = function() {
       if (this._inViewport()) {
-        this.update(this)
+        this._ticking = true
+        this.appear()
+        window.addEventListener('scroll', this._handler, false)
+        window.addEventListener('resize', this._handler, false)
       } else {
         window.addEventListener('scroll', this._handler, false)
         window.addEventListener('resize', this._handler, false)
@@ -75,10 +258,12 @@
 
     AppearController.prototype._requestTick = function() {
 
-      if(!this._ticking) {
-        requestAnimationFrame(this.update.bind(this))
-
+      if(!this._ticking && this._inViewport()) {
         this._ticking = true
+        requestAnimationFrame(this.appear.bind(this))
+      } else if (this._ticking && !this._inViewport()) {
+        this._ticking = false
+        requestAnimationFrame(this.disappear.bind(this))
       }
     }
 
@@ -92,29 +277,151 @@
       return this.offsetTop <= bottomEdge && this.offsetTop >= topEdge
     }
 
+    AppearController.prototype.appear = function() {
+      this._optsAppear && this._optsAppear(this.el, this.offsetTop)
+    }
 
-    AppearController.prototype.update = function() {
+    AppearController.prototype.disappear = function() {
+      this._optsDisappear && this._optsDisappear(this.el, this.offsetTop)
+    }
 
-      if(this._inViewport()) {
-        this._ticking = false
 
-        this._optsCBK && this._optsCBK(this.el, this.offsetTop)
-        this._destroy()
-      } else {
-        this._ticking = false
+    /**
+     * Index page animation helper: Galaxy anim controller 
+     */
+    function Galaxy(canvas, orbitColor) {
+      var ctx = canvas.getContext("2d")
+
+      this.ctx = ctx
+      this.offset = Math.random() * 360
+      this.width = canvas.width
+      this.height = canvas.height
+      this.orbitColor = orbitColor
+      this.radius = this.width / 2
+      this.x = this.width / 2
+      this.y = this.height / 2
+      this.orbits = []
+
+      this.bigBang()
+    }
+
+    Galaxy.prototype.bigBang = function () {
+      var ctx = this.ctx,
+          that = this
+
+      for (var i = 1; i <= 8; i++) {
+        var color = 'rgba(' + hexToRgb(this.orbitColor) + ',' + i/10 + ')',
+            orbit = new Orbit(that.x, that.y, that.radius - i*23, color)
+
+        that.orbits.push(orbit)
+        
+        if (i < 5) {
+          for (var j = 0; j < 4; j++) {
+            var size = j === 1 
+                      ? Math.floor(Math.random() * 8 + 10) 
+                      : Math.floor(Math.random() * 6 + 3),
+                velocity = (0.01 - 0.00025*size) 
+                          * ((0.5 - Math.random()) >= 0 ? 1: -1),
+                planet = new Planet(size, '#fff', velocity)
+
+            orbit.addPlanet(planet)
+          }
+        }
       }
     }
 
+    Galaxy.prototype.spin = function () {
+      var that = this,
+          ctx = this.ctx
+
+      ctx.save()
+      ctx.clearRect(0, 0, this.width, this.height)
+
+      this.orbits.forEach(function (orbit, index) {
+        orbit.draw(ctx)
+        orbit.planets.forEach(function (planet) {
+          planet.draw.call(planet, ctx)
+        })
+      })
+      ctx.restore()
+
+      that.spinAnim = window.requestAnimationFrame(that.spin.bind(that))
+    }
+
+    Galaxy.prototype.pause = function () {
+      var that = this,
+          ctx = this.ctx
+      
+      window.cancelAnimationFrame(that.spinAnim)
+      ctx.clearRect(0, 0, this.width, this.height)
+    }
+
+    function Orbit (x, y, radius, color) {
+      this.planets = []
+      this.radius = radius
+      this.color = color
+      this.x = x
+      this.y = y
+    }
+
+    Orbit.prototype.draw = function (ctx) {
+      ctx.beginPath()
+      ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, true)
+      ctx.closePath()
+      ctx.lineWidth = '2'
+      ctx.strokeStyle = this.color
+      ctx.stroke()
+    }
+
+    Orbit.prototype.addPlanet = function (planet) {
+      this.planets.push(planet)
+      planet.orbit = this
+    }
+
+    function Planet (size, color, velocity) {
+      this.size = size
+      this.color = color
+      this.velocity = velocity
+      this.offset = Math.random() * 360
+    }
+
+    Planet.prototype.draw = function (ctx) {
+      this.x = this.orbit.x + this.orbit.radius * Math.cos(this.offset)
+      this.y = this.orbit.y + this.orbit.radius * Math.sin(this.offset)
+
+      ctx.beginPath()
+      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, true)
+      ctx.closePath()
+      ctx.fillStyle = this.color
+      ctx.fill()
+      ctx.strokeStyle = this.color
+      ctx.stroke()
+
+      this.offset += this.velocity
+    }
+
+    function hexToRgb(hex) {
+      var bigint = parseInt(hex, 16);
+      var r = (bigint >> 16) & 255;
+      var g = (bigint >> 8) & 255;
+      var b = bigint & 255;
+
+      return [r, g, b].join(',')
+    }
+
+
+    /**
+     * Index page animation:  screenshot layer
+     */
     function initLayerAnim () {
-      var featureEl = document.querySelector('.feature')
-      var img_level_2 = featureEl.querySelector('.level2')
-      var img_level_3 = featureEl.querySelector('.level3')
-      var img_level_4 = featureEl.querySelector('.level4')
+      var featureScene = document.querySelector('.feature')
+      var img_level_2 = featureScene.querySelector('.level2')
+      var img_level_3 = featureScene.querySelector('.level3')
+      var img_level_4 = featureScene.querySelector('.level4')
 
-      var scroll = new AppearController(featureEl, {
+      var featureScroll = new AppearController(featureScene, {
         threshold: -30,
-        callback: function (el, offset) {
-
+        appear: function (el, offset) {
           var layerSequence = [
             { e: img_level_4, p: { translateX: '5px', translateY: '-95px' }, o: { easing: 'ease-out', duration: 900 } },
             { e: img_level_3, p: { translateX: '5px', translateY: '-65px' }, o: { easing: 'ease-out', duration: 700, sequenceQueue: false } },
@@ -122,150 +429,48 @@
           ]
 
           Velocity.RunSequence(layerSequence)
+          this._destroy()
         }
       })
 
-      var featureEl = document.querySelector('.supporting-vue')
-      var scroll = new AppearController(featureEl, {
-        threshold: -30,
-        callback: function (el, offset) {
-        }
-      })
+      // var vueEl = document.querySelector('.supporting-vue')
+      // var vueScroll = new AppearController(vueEl, {
+      //   threshold: -30,
+      //   callback: function (el, offset) {
+      //   }
+      // })
     }
 
     initLayerAnim()
-  } else {}
 
-function initSearch() {
-  var form = document.getElementById('search-form')
-  var input = form.querySelector('#search-input')
-  var panel = document.querySelector('.results-panel')
 
-  BODY.addEventListener('click', function (e) {
-    var target = e.target
+    /**
+     * Index page animation:  Galaxy
+     */
+    function initGalaxy() {
+      var leftCanvas = document.getElementById('left-canvas'),
+          rightCanvas = document.getElementById('right-canvas'),
+          firstScene = BODY.querySelector('.header'),
+          bodyWidth = BODY.clientWidth
 
-      if (!panel.contains(target)) {
-        panel.classList.remove('show')
-      }
-  })
+      if (bodyWidth > 900) {
+        var leftGalaxy = new Galaxy(leftCanvas, 'FEEE8E'),
+            rightGalaxy = new Galaxy(rightCanvas, '2DFFFE')
 
-  reqwest({
-    url: '/weex-website/content.json', 
-    type: 'json'
-  })
-  .then(function (resp) {
-    var root = resp.meta.root || '/weex-website/'
-
-    input.addEventListener('input', function (e) {
-      var target = e.target,
-          keywords = target.value.trim().split(/[\s\-\，\\/]+/)
-
-      if (target.value.trim() !== '') {
-        var matchingPosts = searchFromJSON(resp.pages, keywords)
-        var html = ''
-
-        matchingPosts.forEach(function (post, index) {
-          var url = root + post.url
-          var htmlSnippet = '<div class=\"matching-post\">' +
-                              '<h2>' +
-                                '<a href=\"' + url + '\">' + post.title + '</a>' +
-                              '</h2>' +
-                              '<p>' + post.content + '</p>' +
-                            '</div>'
-          
-          html += htmlSnippet
+        new AppearController(firstScene, {
+          appear: function () {
+            leftGalaxy.spin()
+            rightGalaxy.spin()
+          },
+          disappear: function () {
+            leftGalaxy.pause()
+            rightGalaxy.pause()
+          }
         })
-        
-        panel.classList.add('show')
-        panel.innerHTML = html ? html : '<p>No Results!</p>'
-      } else {
-        panel.classList.remove('show')
-        panel.innerHTML = ''
-      }
-    })
-  })
-}
 
-function searchFromJSON (data, keywords) {
-  var matchingResults = []
-
-  for (var i = 0; i < data.length; i++) {
-    // if (i > 7) break; 
-
-    var post = data[i]
-    var isMatch = false
-    var postTitle = post.title && post.title.trim(),
-        postContent = post.text && post.text.trim(),
-        postUrl = post.path || '',
-        postType = post.type
-    var matchingNum = 0
-    var resultStr = ''
-
-    if(postTitle !== '' && postContent !== '') {
-      keywords.forEach(function(keyword, i) {
-        var regEx = new RegExp(keyword, "gi")
-        var indexTitle = -1,
-            indexContent = -1,
-            indexTitle = postTitle.search(regEx),
-            indexContent = postContent.search(regEx)
-
-        if(indexTitle < 0 && indexContent < 0){
-          isMatch = false;
-        } else {
-          isMatch = true
-          matchingNum++
-          if (indexContent < 0) {
-            indexContent = 0;
-          }
-          
-          var start = 0,
-              end = 0
-          
-          start = indexContent < 11 ? 0 : indexContent - 10
-          end = start === 0 ? 70 : indexContent + keyword.length + 60
-          if (end > postContent.length) {
-            end = postContent.length
-          }
-
-          var matchContent = '...' + postContent.substring(start, end).replace(regEx, "<em class=\"search-keyword\">"+keyword+"</em>") + '...'
-          resultStr += matchContent
-        }
-      })
-
-      if (isMatch) {
-        var matchingPost = {
-          title: escapeHtml(postTitle),
-          content: resultStr,
-          url: postUrl,
-          type: postType,
-          matchingNum: matchingNum
-        }
-
-        matchingResults.push(matchingPost)
-      }
+      }  
     }
-  }
-  // matchingResults.sort(function (a, b) {
-  //   return a.matchingNum > b.matchingNum
-  // })
 
-  return matchingResults
-}
-
-function escapeHtml(string) {
-  var entityMap = {
-    "&": "&amp;",
-    "<": "&lt;",
-    ">": "&gt;",
-    '"': '&quot;',
-    "'": '&#39;',
-    "/": '&#x2F;'
-  }
-
-  return String(string).replace(/[&<>"'\/]/g, function (s) {
-      return entityMap[s];
-  })
-}
-
-initSearch()
+    initGalaxy()
+  } else {}
 })();

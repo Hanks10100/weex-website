@@ -15,7 +15,7 @@ Weex 遵循 HTML attribute 命名规范, 所以请 不要在特性">
 <meta property="og:description" content="通用特性特性（attribute）与 HTML 中元素特性类似，提供了与 Weex 元素有关的其他附加信息。所有的元素都可以拥有特性, 特性总是在 Weex 元素的起始标签中定义，并总是以键值对的形式出现，例如：name=&amp;quot;value&amp;quot;。可以使用 Mustache 对特性值进行数据绑定。
 Notes!
 Weex 遵循 HTML attribute 命名规范, 所以请 不要在特性">
-<meta property="og:updated_time" content="2016-12-22T12:08:12.000Z">
+<meta property="og:updated_time" content="2017-01-01T02:34:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="通用特性">
 <meta name="twitter:description" content="通用特性特性（attribute）与 HTML 中元素特性类似，提供了与 Weex 元素有关的其他附加信息。所有的元素都可以拥有特性, 特性总是在 Weex 元素的起始标签中定义，并总是以键值对的形式出现，例如：name=&amp;quot;value&amp;quot;。可以使用 Mustache 对特性值进行数据绑定。
@@ -52,16 +52,22 @@ Weex 遵循 HTML attribute 命名规范, 所以请 不要在特性">
             <a href="javascript:;">资源</a>
             <ul class="dropdown-menu subnav">
               <li>
-                <a href="/weex-website/cn/playground.html">Playground</a>
-              </li>
-              <li>
                 <a href="/weex-website/cn/tools">工具和服务</a>
               </li>
               <li>
                 <a href="/weex-website/cn/advanced">高阶知识</a>
               </li>
               <li>
+                <a href="/weex-website/cn/playground.html">Playground</a>
+              </li>
+              <li>
                 <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
+              </li>
+              <li>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Dot we</a>
               </li>
             </ul>
         </li>
@@ -71,13 +77,13 @@ Weex 遵循 HTML attribute 命名规范, 所以请 不要在特性">
       </ul>
       <ul class="tools">
         <li>
-          <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-  <label class="search-label">
-    <input type="text" id="search-input" name="q" results="0" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off"/>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
-  </label>
-</form>
-<div class="results-panel">
+  </form>
+  <div class="results-panel">
+  </div>
 </div>
         </li>
         <!--<li></li>-->
@@ -436,11 +442,11 @@ Weex 遵循 HTML attribute 命名规范, 所以请 不要在特性">
               </li>
             
               <li>
-                <a href="/weex-website/cn/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
+                <a href="/weex-website/cn/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
               </li>
             
               <li>
-                <a href="/weex-website/cn/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
+                <a href="/weex-website/cn/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
               </li>
             
               <li>
@@ -905,11 +911,11 @@ Weex 遵循 HTML attribute 命名规范, 所以请 不要在特性">
               </li>
             
               <li>
-                <a href="/weex-website/cn/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
+                <a href="/weex-website/cn/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
               </li>
             
               <li>
-                <a href="/weex-website/cn/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
+                <a href="/weex-website/cn/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
               </li>
             
               <li>
@@ -1029,7 +1035,7 @@ Weex 遵循 HTML attribute 命名规范, 所以请 不要在特性">
   </div>
   
 
-<article id="page-undefined" class="article article-type-references">
+<article class="article article-type-references">
   <div class="article-entry" itemprop="articleBody">
     <header class="article-header">
   
@@ -1039,13 +1045,13 @@ Weex 遵循 HTML attribute 命名规范, 所以请 不要在特性">
       </h1>
     
   
-  <time class="article-date" datetime="2016-12-22T12:08:12.000Z">Updated time: 22/12/2016</time>
+  <time class="article-date" datetime="2017-01-01T02:34:42.000Z">Updated time: 01/01/2017</time>
 </header>
     <h1 id="通用特性"><a href="#通用特性" class="headerlink" title="通用特性"></a>通用特性</h1><p>特性（attribute）与 HTML 中元素特性类似，提供了与 Weex 元素有关的其他附加信息。所有的元素都可以拥有特性, 特性总是在 Weex 元素的起始标签中定义，并总是以键值对的形式出现，例如：<code>name=&quot;value&quot;</code>。可以使用 <a href="https://mustache.github.io/" target="_blank" rel="external">Mustache</a> 对特性值进行数据绑定。</p>
 <p><strong>Notes!</strong></p>
 <p>Weex 遵循 <a href="https://en.wikipedia.org/wiki/HTML_attribute" target="_blank" rel="external">HTML attribute</a> 命名规范, 所以请 <strong>不要在特性中使用驼峰风格（CamelCase）</strong> , 使用<code>-</code>连接符的<strong>羊肉串风格（kebab-case）</strong> 才是更好的命名方式。</p>
 <p>所有 Weex 元素都拥有以下特性： </p>
-<h2 id="id"><a href="#id" class="headerlink" title="id"></a>id</h2><p>为 <code>&lt;template&gt;</code> 内定义的元素指定一个唯一的 id，通过 <code>this.$el(id)</code> 可以容易地获取一个 Weex 元素的引用。更多信息可参考 <a href="http://alibaba.github.io/weex/cn/doc/references/api.html">Instance APIs</a> </p>
+<h2 id="id"><a href="#id" class="headerlink" title="id"></a>id</h2><p>为 <code>&lt;template&gt;</code> 内定义的元素指定一个唯一的 id，通过 <code>this.$el(id)</code> 可以容易地获取一个 Weex 元素的引用。更多信息可参考 <a href="./api.html">Instance APIs</a> </p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"wrapper"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">list</span> <span class="attr">class</span>=<span class="string">"list"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">cell</span> <span class="attr">class</span>=<span class="string">"row"</span> <span class="attr">repeat</span>=<span class="string">"item in rows"</span> <span class="attr">id</span>=<span class="string">"item-&#123;&#123;$index&#125;&#125;"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"item-title"</span>&gt;</span>row &#123;&#123;item.id&#125;&#125;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">      <span class="tag">&lt;/<span class="name">cell</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">list</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">  <span class="attr">data</span>: &#123;</div><div class="line">    <span class="attr">rows</span>:[</div><div class="line">      &#123;<span class="attr">id</span>: <span class="number">1</span>&#125;,</div><div class="line">      &#123;<span class="attr">id</span>: <span class="number">2</span>&#125;,</div><div class="line">      &#123;<span class="attr">id</span>: <span class="number">3</span>&#125;,</div><div class="line">      &#123;<span class="attr">id</span>: <span class="number">4</span>&#125;,</div><div class="line">      &#123;<span class="attr">id</span>: <span class="number">5</span>&#125;</div><div class="line">    ]</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
 <p><a href="http://dotwe.org/b5032fa96e3e657711916148b1978ad3" target="_blank" rel="external">体验一下</a></p>
 <h2 id="style"><a href="#style" class="headerlink" title="style"></a>style</h2><p>为元素定义行内样式。</p>
@@ -1065,7 +1071,7 @@ Weex 遵循 HTML attribute 命名规范, 所以请 不要在特性">
 <p>通过 <code>node</code> 和 <code>tree</code> 可以精细化地控制页面展示的逻辑和颗粒度，一般比较好的实践为首屏以内按 <code>tree</code> 解析，首屏以外按 <code>node</code> 解析。</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">append</span>=<span class="string">"tree"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">append</span>=<span class="string">"node"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
 <h2 id="事件处理-on…"><a href="#事件处理-on…" class="headerlink" title="事件处理 (on…)"></a>事件处理 (on…)</h2><p>在 Weex 标签上注册事件处理器。以 <code>on</code> 加 事件名为 <code>key</code>，事件处理函数为 <code>value</code>。</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"btn"</span> <span class="attr">onClick</span>=<span class="string">"alertMsg"</span>&gt;</span><span class="tag">&lt;<span class="name">text</span>&gt;</span>Click me<span class="tag">&lt;/<span class="name">text</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></div><div class="line">.btn &#123;</div><div class="line">  justify-content: center;</div><div class="line">  align-items: center;</div><div class="line">  width: 200;</div><div class="line">  height: 100;</div><div class="line">  background-color: #ff0000;</div><div class="line">  border-radius: 5;</div><div class="line">  color: #ffffff;</div><div class="line">&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line"><span class="keyword">var</span> modal = <span class="built_in">require</span>(<span class="string">'@weex-module/modal'</span>)</div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">  <span class="attr">data</span>: &#123;&#125;,</div><div class="line">  <span class="attr">methods</span>: &#123;</div><div class="line">    <span class="attr">alertMsg</span>: <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</div><div class="line">      modal.alert(&#123;</div><div class="line">        <span class="attr">message</span>: <span class="string">'click'</span>,</div><div class="line">        <span class="attr">okTitle</span>: <span class="string">'alert'</span></div><div class="line">      &#125;, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">      &#125;)</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"btn"</span> <span class="attr">onClick</span>=<span class="string">"alertMsg"</span>&gt;</span><span class="tag">&lt;<span class="name">text</span>&gt;</span>Click me<span class="tag">&lt;/<span class="name">text</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></div><div class="line"><span class="selector-class">.btn</span> &#123;</div><div class="line">  <span class="attribute">justify-content</span>: center;</div><div class="line">  <span class="attribute">align-items</span>: center;</div><div class="line">  <span class="attribute">width</span>: <span class="number">200</span>;</div><div class="line">  <span class="attribute">height</span>: <span class="number">100</span>;</div><div class="line">  <span class="attribute">background-color</span>: <span class="number">#ff0000</span>;</div><div class="line">  <span class="attribute">border-radius</span>: <span class="number">5</span>;</div><div class="line">  <span class="attribute">color</span>: <span class="number">#ffffff</span>;</div><div class="line">&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line"><span class="keyword">var</span> modal = <span class="built_in">require</span>(<span class="string">'@weex-module/modal'</span>)</div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">  <span class="attr">data</span>: &#123;&#125;,</div><div class="line">  <span class="attr">methods</span>: &#123;</div><div class="line">    <span class="attr">alertMsg</span>: <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</div><div class="line">      modal.alert(&#123;</div><div class="line">        <span class="attr">message</span>: <span class="string">'click'</span>,</div><div class="line">        <span class="attr">okTitle</span>: <span class="string">'alert'</span></div><div class="line">      &#125;, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">      &#125;)</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
 <p><a href="http://dotwe.org/97de59d24d7667aa91187d59123d24a6" target="_blank" rel="external">体验一下</a></p>
 
   </div>

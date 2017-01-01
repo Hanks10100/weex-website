@@ -3,24 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>&lt;list&gt; | Weex</title>
+  <title>&lt;cell&gt; | Weex</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="&amp;lt;cell&amp;gt;0.4+
-SummaryThis component must be used as a subcomponent of a list component, which is for the performance optimizing during scrolling.
-Child ComponentsThis type of component supports all">
+  <meta name="description" content="&amp;lt;cell&amp;gt;SummaryThis component must be used as a subcomponent of a list component, which is for the performance optimizing during scrolling.
+Child ComponentsThis type of component supports all kind">
 <meta property="og:type" content="website">
-<meta property="og:title" content="<list>">
+<meta property="og:title" content="<cell>">
 <meta property="og:url" content="http://alibaba.github.io/references/components/cell.html">
 <meta property="og:site_name" content="Weex">
-<meta property="og:description" content="&amp;lt;cell&amp;gt;0.4+
-SummaryThis component must be used as a subcomponent of a list component, which is for the performance optimizing during scrolling.
-Child ComponentsThis type of component supports all">
-<meta property="og:updated_time" content="2016-12-22T12:18:14.000Z">
+<meta property="og:description" content="&amp;lt;cell&amp;gt;SummaryThis component must be used as a subcomponent of a list component, which is for the performance optimizing during scrolling.
+Child ComponentsThis type of component supports all kind">
+<meta property="og:updated_time" content="2016-12-30T03:10:11.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="<list>">
-<meta name="twitter:description" content="&amp;lt;cell&amp;gt;0.4+
-SummaryThis component must be used as a subcomponent of a list component, which is for the performance optimizing during scrolling.
-Child ComponentsThis type of component supports all">
+<meta name="twitter:title" content="<cell>">
+<meta name="twitter:description" content="&amp;lt;cell&amp;gt;SummaryThis component must be used as a subcomponent of a list component, which is for the performance optimizing during scrolling.
+Child ComponentsThis type of component supports all kind">
   
     <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
   
@@ -52,16 +49,22 @@ Child ComponentsThis type of component supports all">
             <a href="javascript:;">Resources</a>
             <ul class="dropdown-menu subnav">
               <li>
-                <a href="/weex-website/playground.html">Playground</a>
-              </li>
-              <li>
-                <a href="/weex-website/tools">Tools</a>
+                <a href="/weex-website/tools">Service &amp; Tools</a>
               </li>
               <li>
                 <a href="/weex-website/advanced">Advanced</a>
               </li>
               <li>
+                <a href="/weex-website/playground.html">Playground</a>
+              </li>
+              <li>
                 <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
+              </li>
+              <li>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Dot we</a>
               </li>
             </ul>
         </li>
@@ -71,13 +74,13 @@ Child ComponentsThis type of component supports all">
       </ul>
       <ul class="tools">
         <li>
-          <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-  <label class="search-label">
-    <input type="text" id="search-input" name="q" results="0" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off"/>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
-  </label>
-</form>
-<div class="results-panel">
+  </form>
+  <div class="results-panel">
+  </div>
 </div>
         </li>
         <!--<li></li>-->
@@ -332,11 +335,11 @@ Child ComponentsThis type of component supports all">
           <ul class="chapter">
             
               <li>
-                <a href="/weex-website/references/bootstrap.html" class="sidebar-link  ">Bootstrap</a>
+                <a href="/weex-website/references/special-element.html" class="sidebar-link  ">Special Element</a>
               </li>
             
               <li>
-                <a href="/weex-website/references/special-element.html" class="sidebar-link  ">Special Element</a>
+                <a href="/weex-website/references/bootstrap.html" class="sidebar-link  ">Bootstrap</a>
               </li>
             
               <li>
@@ -433,7 +436,7 @@ Child ComponentsThis type of component supports all">
               </li>
             
               <li>
-                <a href="/weex-website/references/components/cell.html" class="sidebar-link current ">&lt;list&gt;</a>
+                <a href="/weex-website/references/components/cell.html" class="sidebar-link current ">&lt;cell&gt;</a>
               </li>
             
               <li>
@@ -768,11 +771,11 @@ Child ComponentsThis type of component supports all">
           <ul class="chapter">
             
               <li>
-                <a href="/weex-website/references/bootstrap.html" class="sidebar-link  ">Bootstrap</a>
+                <a href="/weex-website/references/special-element.html" class="sidebar-link  ">Special Element</a>
               </li>
             
               <li>
-                <a href="/weex-website/references/special-element.html" class="sidebar-link  ">Special Element</a>
+                <a href="/weex-website/references/bootstrap.html" class="sidebar-link  ">Bootstrap</a>
               </li>
             
               <li>
@@ -869,7 +872,7 @@ Child ComponentsThis type of component supports all">
               </li>
             
               <li>
-                <a href="/weex-website/references/components/cell.html" class="sidebar-link current ">&lt;list&gt;</a>
+                <a href="/weex-website/references/components/cell.html" class="sidebar-link current ">&lt;cell&gt;</a>
               </li>
             
               <li>
@@ -963,36 +966,35 @@ Child ComponentsThis type of component supports all">
   </div>
   
 
-<article id="page-undefined" class="article article-type-references">
+<article class="article article-type-references">
   <div class="article-entry" itemprop="articleBody">
     <header class="article-header">
   
     
       <h1 class="article-title" itemprop="name">
-        &lt;list&gt;
+        &lt;cell&gt;
       </h1>
     
   
-  <time class="article-date" datetime="2016-12-22T12:18:14.000Z">Updated time: 22/12/2016</time>
+  <time class="article-date" datetime="2016-12-30T03:10:11.000Z">Updated time: 30/12/2016</time>
 </header>
-    <h1 id="lt-cell-gt"><a href="#lt-cell-gt" class="headerlink" title="&lt;cell&gt;"></a>&lt;cell&gt;</h1><p><span class="weex-version">0.4+</span></p>
-<h3 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h3><p>This component must be used as a subcomponent of a <a href="list.html"><code>list</code></a> component, which is for the performance optimizing during scrolling.</p>
+    <h1 id="lt-cell-gt"><a href="#lt-cell-gt" class="headerlink" title="&lt;cell&gt;"></a>&lt;cell&gt;</h1><h3 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h3><p>This component must be used as a subcomponent of a <a href="./list.html"><code>list</code></a> component, which is for the performance optimizing during scrolling.</p>
 <h3 id="Child-Components"><a href="#Child-Components" class="headerlink" title="Child Components"></a>Child Components</h3><p>This type of component supports all kinds of weex component as its child components.</p>
-<h3 id="Attributes"><a href="#Attributes" class="headerlink" title="Attributes"></a>Attributes</h3><p>There is no specific attribute for this component other than the <a href="../references/common-attrs.html">common attributes</a>.</p>
+<h3 id="Attributes"><a href="#Attributes" class="headerlink" title="Attributes"></a>Attributes</h3><p>There is no specific attribute for this component other than the <a href="../common-attrs.html">common attributes</a>.</p>
 <p><strong>Notes:</strong> you can’t give <code>&lt;cell&gt;</code> a <code>flex</code> value. Width of <code>&lt;cell&gt;</code> is equal to the width of its parent component <code>&lt;list&gt;</code>, and you don’t need to specify its height.</p>
-<h3 id="Styles"><a href="#Styles" class="headerlink" title="Styles"></a>Styles</h3><p><strong>common styles</strong>: check out the <a href="../references/common-attrs.html">common styles</a></p>
+<h3 id="Styles"><a href="#Styles" class="headerlink" title="Styles"></a>Styles</h3><p><strong>common styles</strong>: check out the <a href="../common-attrs.html">common styles</a></p>
 <ul>
 <li>support flexbox related styles</li>
 <li>support box model related styles</li>
 <li>support <code>position</code> related styles</li>
 <li>support <code>opacity</code>, <code>background-color</code> etc.</li>
 </ul>
-<h3 id="Events"><a href="#Events" class="headerlink" title="Events"></a>Events</h3><p><strong>common events</strong>: check out the <a href="../references/common-event.html">common events</a></p>
+<h3 id="Events"><a href="#Events" class="headerlink" title="Events"></a>Events</h3><p><strong>common events</strong>: check out the <a href="../common-event.html">common events</a></p>
 <ul>
-<li>support <code>click</code> event. Check out <a href="../references/common-event.html">common events</a></li>
-<li>support <code>appear</code> / <code>disappear</code> event. Check out <a href="../references/common-event.html">common events</a></li>
+<li>support <code>click</code> event. Check out <a href="../common-event.html">common events</a></li>
+<li>support <code>appear</code> / <code>disappear</code> event. Check out <a href="../common-event.html">common events</a></li>
 </ul>
-<h3 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h3><p>please refer to <a href="list.html">List</a></p>
+<h3 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h3><p>please refer to <a href="./list.html">List</a></p>
 
   </div>
   

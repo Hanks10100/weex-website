@@ -42,16 +42,22 @@
             <a href="javascript:;">Resources</a>
             <ul class="dropdown-menu subnav">
               <li>
-                <a href="/weex-website/playground.html">Playground</a>
-              </li>
-              <li>
-                <a href="/weex-website/tools">Tools</a>
+                <a href="/weex-website/tools">Service &amp; Tools</a>
               </li>
               <li>
                 <a href="/weex-website/advanced">Advanced</a>
               </li>
               <li>
+                <a href="/weex-website/playground.html">Playground</a>
+              </li>
+              <li>
                 <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
+              </li>
+              <li>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Dot we</a>
               </li>
             </ul>
         </li>
@@ -61,13 +67,13 @@
       </ul>
       <ul class="tools">
         <li>
-          <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-  <label class="search-label">
-    <input type="text" id="search-input" name="q" results="0" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off"/>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
-  </label>
-</form>
-<div class="results-panel">
+  </form>
+  <div class="results-panel">
+  </div>
 </div>
         </li>
         <!--<li></li>-->
@@ -85,6 +91,16 @@
   <div class="sidebar-menu">
     
       <ul class="main-nav">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-sidebar" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
         <li>
           <a class="" href="/weex-website/guide">
             Guide
@@ -104,16 +120,22 @@
             <p>Resources</p>
             <ul class="subnav">
               <li>
-                <a href="./playground.html">Playground</a>
-              </li>
-              <li>
-                <a href="/weex-website/tools">Tools</a>
+                <a href="/weex-website/tools">Service &amp; Tools</a>
               </li>
               <li>
                 <a href="/weex-website/advanced">Advanced</a>
               </li>
               <li>
+                <a href="/weex-website/playground.html">Playground</a>
+              </li>
+              <li>
                 <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
+              </li>
+              <li>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Dot we</a>
               </li>
             </ul>
         </li>
@@ -137,7 +159,7 @@
   
     
       <h1 itemprop="name">
-        <a class="article-title" href="/weex-website/2016/12/20/co/">Child-Parent Communication</a>
+        <a class="article-title" href="/weex-website/en/co/">Child-Parent Communication</a>
       </h1>
     
   
@@ -150,7 +172,7 @@
 <p>eg:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">we-element</span> <span class="attr">name</span>=<span class="string">"foo"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">image</span> <span class="attr">src</span>=<span class="string">"&#123;&#123;imageUrl&#125;&#125;"</span> <span class="attr">onclick</span>=<span class="string">"test"</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">text</span>&gt;</span>&#123;&#123;title&#125;&#125;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></div><div class="line">    module.exports = &#123;</div><div class="line">      data: &#123;</div><div class="line">        title: '',</div><div class="line">        imageUrl: ''</div><div class="line">      &#125;,</div><div class="line">      methods: &#123;</div><div class="line">        test: function () &#123;</div><div class="line">          this.$dispatch('notify', &#123;a: 1&#125;)</div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">we-element</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">foo</span> <span class="attr">title</span>=<span class="string">"..."</span> <span class="attr">image-url</span>=<span class="string">"..."</span>&gt;</span><span class="tag">&lt;/<span class="name">foo</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="xml"></div><div class="line">  module.exports = &#123;</div><div class="line">    created: function () &#123;</div><div class="line">      this.$on('notify', function(e) &#123;</div><div class="line">        //  when <span class="tag">&lt;<span class="name">foo</span>&gt;</span> image tag  be clicked ,the function will be executing.</div><div class="line">        // e.detail is  `&#123;a: 1&#125;`</div><div class="line">      &#125;)</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
       </div>
-      <a href="/weex-website/2016/12/20/co/" class="more-link">Read more...</a>
+      <a href="/weex-website/en/co/" class="more-link">Read more...</a>
     
   </div>
 </article>
@@ -161,7 +183,7 @@
   
     
       <h1 itemprop="name">
-        <a class="article-title" href="/weex-website/2016/12/19/hello_world/">Hello World</a>
+        <a class="article-title" href="/weex-website/en/hello-world/">Hello World</a>
       </h1>
     
   
@@ -174,7 +196,7 @@
 <p>eg:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">we-element</span> <span class="attr">name</span>=<span class="string">"foo"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">image</span> <span class="attr">src</span>=<span class="string">"&#123;&#123;imageUrl&#125;&#125;"</span> <span class="attr">onclick</span>=<span class="string">"test"</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">text</span>&gt;</span>&#123;&#123;title&#125;&#125;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></div><div class="line">    module.exports = &#123;</div><div class="line">      data: &#123;</div><div class="line">        title: '',</div><div class="line">        imageUrl: ''</div><div class="line">      &#125;,</div><div class="line">      methods: &#123;</div><div class="line">        test: function () &#123;</div><div class="line">          this.$dispatch('notify', &#123;a: 1&#125;)</div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">we-element</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">foo</span> <span class="attr">title</span>=<span class="string">"..."</span> <span class="attr">image-url</span>=<span class="string">"..."</span>&gt;</span><span class="tag">&lt;/<span class="name">foo</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="xml"></div><div class="line">  module.exports = &#123;</div><div class="line">    created: function () &#123;</div><div class="line">      this.$on('notify', function(e) &#123;</div><div class="line">        //  when <span class="tag">&lt;<span class="name">foo</span>&gt;</span> image tag  be clicked ,the function will be executing.</div><div class="line">        // e.detail is  `&#123;a: 1&#125;`</div><div class="line">      &#125;)</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
       </div>
-      <a href="/weex-website/2016/12/19/hello_world/" class="more-link">Read more...</a>
+      <a href="/weex-website/en/hello-world/" class="more-link">Read more...</a>
     
   </div>
 </article>

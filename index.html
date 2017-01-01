@@ -42,16 +42,22 @@
             <a href="javascript:;">Resources</a>
             <ul class="dropdown-menu subnav">
               <li>
-                <a href="/weex-website/playground.html">Playground</a>
-              </li>
-              <li>
-                <a href="/weex-website/tools">Tools</a>
+                <a href="/weex-website/tools">Service &amp; Tools</a>
               </li>
               <li>
                 <a href="/weex-website/advanced">Advanced</a>
               </li>
               <li>
+                <a href="/weex-website/playground.html">Playground</a>
+              </li>
+              <li>
                 <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
+              </li>
+              <li>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Dot we</a>
               </li>
             </ul>
         </li>
@@ -61,13 +67,13 @@
       </ul>
       <ul class="tools">
         <li>
-          <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-  <label class="search-label">
-    <input type="text" id="search-input" name="q" results="0" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off"/>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
-  </label>
-</form>
-<div class="results-panel">
+  </form>
+  <div class="results-panel">
+  </div>
 </div>
         </li>
         <!--<li></li>-->
@@ -85,6 +91,16 @@
   <div class="sidebar-menu">
     
       <ul class="main-nav">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-sidebar" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
         <li>
           <a class="" href="/weex-website/guide">
             Guide
@@ -104,16 +120,22 @@
             <p>Resources</p>
             <ul class="subnav">
               <li>
-                <a href="./playground.html">Playground</a>
-              </li>
-              <li>
-                <a href="/weex-website/tools">Tools</a>
+                <a href="/weex-website/tools">Service &amp; Tools</a>
               </li>
               <li>
                 <a href="/weex-website/advanced">Advanced</a>
               </li>
               <li>
+                <a href="/weex-website/playground.html">Playground</a>
+              </li>
+              <li>
                 <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
+              </li>
+              <li>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Dot we</a>
               </li>
             </ul>
         </li>
@@ -129,6 +151,12 @@
 </div>
   <div class="scene header" style="background: #00BDFF;">
   <div class="scene-container">
+    <div class="galaxy left">
+      <canvas width="560" height="560" id="left-canvas"></canvas>
+    </div>
+    <div class="galaxy right">
+      <canvas width="560" height="560" id="right-canvas"></canvas>
+    </div>
     <div id="slider">
   <div class="swiper-container swiper-container-horizontal">
     <div class="swiper-wrapper">
@@ -153,17 +181,17 @@
       <div class="inner-box">
         <img src="/weex-website//images/lightweight.svg" alt="Lightweight">
         <h3>Lightweight</h3>
-        <p>Low footprint，simple syntax，and easy to use.</p>
+        <p>low footprint，simple syntax，and easy to use</p>
       </div>
       <div class="inner-box">
         <img src="/weex-website//images/extendable.svg" alt="Extendable">
         <h3>Extendable</h3>
-        <p>Abundant build-in components，extendable apis，various events.</p>
+        <p>abundant build-in components，extendable apis，various events</p>
       </div>
       <div class="inner-box">
         <img src="/weex-website//images/performance.svg" alt="High Performance">
         <h3>High Performance</h3>
-        <p>Load fast，render fast，better Experience.</p>
+        <p>load fast，render fast，better Experience</p>
       </div>
     </div>
   </div>
@@ -174,7 +202,7 @@
     <div class="feature-content">
       <div class="left-text">
         <h2>Help you build real Native App</h2>
-        <p>Different from "web app" , "HTML5 app" and "hybrid app", you can use Weex to build a real mobile app. More intimate is that you write the code is relatively simple, just use HTML, CSS, Javascript can build native applications.But in fact, the bottom of the application is Objective-C or Java. At the same time, Weex will provide a lot of native components or modules for developers to use.</p>
+        <p>Different from &quot;web app&quot; , &quot;HTML5 app&quot; and &quot;hybrid app&quot;, you can use Weex to build a real mobile app. More intimate is that you write the code is relatively simple, just use HTML, CSS, Javascript can build native applications.But in fact, the bottom of the application is Objective-C or Java. At the same time, Weex will provide a lot of native components or modules for developers to use.</p>
       </div>
       <div class="right-box">
         <div class="imgbox phone-layer level1">
@@ -210,8 +238,8 @@
 <div class="scene supporting-vue horizon">
   <div class="scene-container">
     <div class="textbox">
-      <h2>Supporing Vue Syntax</h2>
-      <p>Weex follows the web standard, while supporting the "vue.js" syntax. So, you can use the "vue.js" syntax to develop applications.</p>
+      <h2>Supporting Vue syntax</h2>
+      <p>Weex follows the web standard, while supporting the &quot;vue.js&quot; syntax. So, you can use the &quot;vue.js&quot; syntax to develop applications.</p>
     </div>
     <div class="sketch-content imgbox">
     </div>
@@ -232,7 +260,7 @@
 <div class="scene users horizon overlength">
   <div class="scene-container">
     <div class="textbox">
-      <h2>Who use weex</h2>
+      <h2>Who use it</h2>
     </div>
     <div class="sketch-content">
       <div class="user-logo tmall-logo">
@@ -242,59 +270,59 @@
           <p>Tmall.com is an open business-to-consumer (B2C) platform enabling businesses world-wide to reach China’s vast and growing consumer market. Tmall.com has established itself as the destination for quality, brand-name goods catering to increasingly sophisticated Chinese consumers and is the most visited B2C online retail website in China.</p>
         </div>
       </div>
-      <div class="user-logo tmall-logo">
-        <h3>Tmall</h3>
+      <div class="user-logo aliyun-logo">
+        <h3>Alibaba Cloud</h3>
         <div class="user-info">
-          <h4>Tmall</h4>
-          <p>Tmall.com is an open business-to-consumer (B2C) platform enabling businesses world-wide to reach China’s vast and growing consumer market. Tmall.com has established itself as the destination for quality, brand-name goods catering to increasingly sophisticated Chinese consumers and is the most visited B2C online retail website in China.</p>
+          <h4>Alibaba Cloud</h4>
+          <p>As the cloud computing arm and business unit of Alibaba Group (NYSE: BABA), Alibaba Cloud provides a comprehensive suite of global cloud computing services to power both our international customers’ online businesses and Alibaba Group’s own e-commerce ecosystem.</p>
         </div>
       </div>
-      <div class="user-logo tmall-logo">
-        <h3>Tmall</h3>
+      <div class="user-logo taobao-logo">
+        <h3>Taobao</h3>
         <div class="user-info">
-          <h4>Tmall</h4>
-          <p>Tmall.com is an open business-to-consumer (B2C) platform enabling businesses world-wide to reach China’s vast and growing consumer market. Tmall.com has established itself as the destination for quality, brand-name goods catering to increasingly sophisticated Chinese consumers and is the most visited B2C online retail website in China.</p>
+          <h4>Taobao</h4>
+          <p>Taobao is China's largest consumer-to-consumer online shopping platform.</p>
         </div>
       </div>
-      <div class="user-logo tmall-logo">
-        <h3>Tmall</h3>
+      <div class="user-logo ding-logo">
+        <h3>DingTalk</h3>
         <div class="user-info">
-          <h4>Tmall</h4>
-          <p>Tmall.com is an open business-to-consumer (B2C) platform enabling businesses world-wide to reach China’s vast and growing consumer market. Tmall.com has established itself as the destination for quality, brand-name goods catering to increasingly sophisticated Chinese consumers and is the most visited B2C online retail website in China.</p>
+          <h4>DingTalk</h4>
+          <p>DingTalk, an App by Alibaba. Free communication and collaboration platform used by millions of enterprises or orgnization.</p>
         </div>
       </div>
-      <div class="user-logo tmall-logo">
-        <h3>Tmall</h3>
+      <div class="user-logo alibaba-logo">
+        <h3>1688</h3>
         <div class="user-info">
-          <h4>Tmall</h4>
-          <p>Tmall.com is an open business-to-consumer (B2C) platform enabling businesses world-wide to reach China’s vast and growing consumer market. Tmall.com has established itself as the destination for quality, brand-name goods catering to increasingly sophisticated Chinese consumers and is the most visited B2C online retail website in China.</p>
+          <h4>1688</h4>
+          <p>Launched in 1999, 1688.com is the leading platform for global wholesale trade. We serve millions of buyers and suppliers around the world.</p>
         </div>
       </div>
-      <div class="user-logo tmall-logo">
-        <h3>Tmall</h3>
+      <div class="user-logo cainiao-logo">
+        <h3>Cainiao</h3>
         <div class="user-info">
-          <h4>Tmall</h4>
-          <p>Tmall.com is an open business-to-consumer (B2C) platform enabling businesses world-wide to reach China’s vast and growing consumer market. Tmall.com has established itself as the destination for quality, brand-name goods catering to increasingly sophisticated Chinese consumers and is the most visited B2C online retail website in China.</p>
+          <h4>Cainiao</h4>
+          <p>Cainiao is committed to provide you the best tracking service for all kinds of your cross-border packages.</p>
         </div>
       </div>
-      <div class="user-logo tmall-logo">
-        <h3>Tmall</h3>
+      <div class="user-logo xiami-logo">
+        <h3>Xiami</h3>
         <div class="user-info">
-          <h4>Tmall</h4>
-          <p>Tmall.com is an open business-to-consumer (B2C) platform enabling businesses world-wide to reach China’s vast and growing consumer market. Tmall.com has established itself as the destination for quality, brand-name goods catering to increasingly sophisticated Chinese consumers and is the most visited B2C online retail website in China.</p>
+          <h4>Xiami</h4>
+          <p>Xiami is a music and audio platform. That is operated by Alibaba Group.</p>
         </div>
       </div>
-      <div class="user-logo tmall-logo">
-        <h3>Tmall</h3>
+      <div class="user-logo youku-logo">
+        <h3>Youku</h3>
         <div class="user-info">
-          <h4>Tmall</h4>
-          <p>Tmall.com is an open business-to-consumer (B2C) platform enabling businesses world-wide to reach China’s vast and growing consumer market. Tmall.com has established itself as the destination for quality, brand-name goods catering to increasingly sophisticated Chinese consumers and is the most visited B2C online retail website in China.</p>
+          <h4>Youku</h4>
+          <p>Youku is one of China's top online video and streaming service platforms.</p>
         </div>
       </div>
     </div>
-    <div class="more">
+    <!--<div class="more">
       <a class="more" href="">More</a>
-    </div>
+    </div>-->
   </div>
 </div>
 
@@ -305,28 +333,16 @@
     </div>
     <div class="sketch-content">
       <div class="user-feedback">
-        <img class="avatar" src="/weex-website//images/avatar.png" alt="avatar">
-        <p>"A framework for building Mobile cross-platform UI.""A framework for building Mobile cross-platform UI."</p>
+        <img class="avatar" src="http://img.alicdn.com/tps/TB1837aOVXXXXcJXXXXXXXXXXXX-640-640.jpg" alt="avatar">
+        <p>“ Weex 不仅应用灵活、性能强大，而且能让前端开发者最大程度复用现有技术积累，帮助我们用最少成本设计全新的跨平台架构体系，并尽快进入实施阶段。”</p>
       </div>
       <div class="user-feedback">
-        <img class="avatar" src="/weex-website//images/avatar.png" alt="avatar">
-        <p>"A framework for building Mobile cross-platform UI.""A framework for building Mobile cross-platform UI."</p>
+        <img class="avatar" src="http://img.alicdn.com/tps/TB1.dHzOVXXXXcvapXXXXXXXXXX-337-337.jpg" alt="avatar">
+        <p>“ Weex 提供了媲美 HTML5 开发效率和 Native 的性能，对于类似我们这种迭代速度要求比较高的团队，几乎是目前最好的方案。”</p>
       </div>
       <div class="user-feedback">
-        <img class="avatar" src="/weex-website//images/avatar.png" alt="avatar">
-        <p>"A framework for building Mobile cross-platform UI."</p>
-      </div>
-      <div class="user-feedback">
-        <img class="avatar" src="/weex-website//images/avatar.png" alt="avatar">
-        <p>"A framework for building Mobile cross-platform UI."</p>
-      </div>
-      <div class="user-feedback">
-        <img class="avatar" src="/weex-website//images/avatar.png" alt="avatar">
-        <p>"A framework for building Mobile cross-platform UI."</p>
-      </div>
-      <div class="user-feedback">
-        <img class="avatar" src="/weex-website//images/avatar.png" alt="avatar">
-        <p>"A framework for building Mobile cross-platform UI."</p>
+        <img class="avatar" src="http://img.alicdn.com/tps/TB1zapVOVXXXXaCXpXXXXXXXXXX-640-640.jpg" alt="avatar">
+        <p>“ Weex 作为轻量渲染引擎又提供了很方便的插件机制，让各个端可以把自己的能力发挥出来，充分发挥在天猫的业务上，并良好的支持双11。”</p>
       </div>
     </div>
     <div class="go-2-doc">

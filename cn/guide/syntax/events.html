@@ -15,7 +15,7 @@
 <meta property="og:description" content="事件处理Weex 允许对 &amp;lt;template&amp;gt; 中的元素绑定事件处理函数。
 基本语法以 on... 开头的就是用于绑定事件的特性，特性名中 on 之后的部分就是事件的类型，特性的值就是处理该事件的函数名。函数名外不需要添加 mustache 语法中的大括号。例如：
 &amp;lt;template&amp;gt;  &amp;lt;div&amp;gt;    &amp;lt;text onclick=&quot;toggle&quot;&amp;gt">
-<meta property="og:updated_time" content="2016-12-22T12:13:37.000Z">
+<meta property="og:updated_time" content="2016-12-30T10:34:53.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="事件处理">
 <meta name="twitter:description" content="事件处理Weex 允许对 &amp;lt;template&amp;gt; 中的元素绑定事件处理函数。
@@ -52,16 +52,22 @@
             <a href="javascript:;">资源</a>
             <ul class="dropdown-menu subnav">
               <li>
-                <a href="/weex-website/cn/playground.html">Playground</a>
-              </li>
-              <li>
                 <a href="/weex-website/cn/tools">工具和服务</a>
               </li>
               <li>
                 <a href="/weex-website/cn/advanced">高阶知识</a>
               </li>
               <li>
+                <a href="/weex-website/cn/playground.html">Playground</a>
+              </li>
+              <li>
                 <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
+              </li>
+              <li>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Dot we</a>
               </li>
             </ul>
         </li>
@@ -71,13 +77,13 @@
       </ul>
       <ul class="tools">
         <li>
-          <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-  <label class="search-label">
-    <input type="text" id="search-input" name="q" results="0" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off"/>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
-  </label>
-</form>
-<div class="results-panel">
+  </form>
+  <div class="results-panel">
+  </div>
 </div>
         </li>
         <!--<li></li>-->
@@ -461,7 +467,7 @@
   </div>
   
 
-<article id="page-undefined" class="article article-type-guide">
+<article class="article article-type-guide">
   <div class="article-entry" itemprop="articleBody">
     <header class="article-header">
   
@@ -471,7 +477,7 @@
       </h1>
     
   
-  <time class="article-date" datetime="2016-12-22T12:13:37.000Z">Updated time: 22/12/2016</time>
+  <time class="article-date" datetime="2016-12-30T10:34:53.000Z">Updated time: 30/12/2016</time>
 </header>
     <h1 id="事件处理"><a href="#事件处理" class="headerlink" title="事件处理"></a>事件处理</h1><p>Weex 允许对 <code>&lt;template&gt;</code> 中的元素绑定事件处理函数。</p>
 <h2 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h2><p>以 <code>on...</code> 开头的就是用于绑定事件的特性，特性名中 <code>on</code> 之后的部分就是事件的类型，特性的值就是处理该事件的函数名。<em>函数名外不需要添加 mustache 语法中的大括号</em>。例如：</p>

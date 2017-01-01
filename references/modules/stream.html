@@ -5,28 +5,28 @@
   
   <title>stream | Weex</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="stream0.4
-SummaryA series of stream api. It provides a network request.
-APIfetch(options, callback,progressCallback)Arguments
-options(object): the request options.
-method(string): the HTTP method GET">
+  <meta name="description" content="streamA series of stream api. It provides a network request.
+APIfetch(options, callback,progressCallback)Start a network request, use two callbacks to receive server’s response data.
+Arguments
+
+option">
 <meta property="og:type" content="website">
 <meta property="og:title" content="stream">
 <meta property="og:url" content="http://alibaba.github.io/references/modules/stream.html">
 <meta property="og:site_name" content="Weex">
-<meta property="og:description" content="stream0.4
-SummaryA series of stream api. It provides a network request.
-APIfetch(options, callback,progressCallback)Arguments
-options(object): the request options.
-method(string): the HTTP method GET">
-<meta property="og:updated_time" content="2016-12-21T02:21:39.000Z">
+<meta property="og:description" content="streamA series of stream api. It provides a network request.
+APIfetch(options, callback,progressCallback)Start a network request, use two callbacks to receive server’s response data.
+Arguments
+
+option">
+<meta property="og:updated_time" content="2016-12-30T07:05:31.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="stream">
-<meta name="twitter:description" content="stream0.4
-SummaryA series of stream api. It provides a network request.
-APIfetch(options, callback,progressCallback)Arguments
-options(object): the request options.
-method(string): the HTTP method GET">
+<meta name="twitter:description" content="streamA series of stream api. It provides a network request.
+APIfetch(options, callback,progressCallback)Start a network request, use two callbacks to receive server’s response data.
+Arguments
+
+option">
   
     <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
   
@@ -58,16 +58,22 @@ method(string): the HTTP method GET">
             <a href="javascript:;">Resources</a>
             <ul class="dropdown-menu subnav">
               <li>
-                <a href="/weex-website/playground.html">Playground</a>
-              </li>
-              <li>
-                <a href="/weex-website/tools">Tools</a>
+                <a href="/weex-website/tools">Service &amp; Tools</a>
               </li>
               <li>
                 <a href="/weex-website/advanced">Advanced</a>
               </li>
               <li>
+                <a href="/weex-website/playground.html">Playground</a>
+              </li>
+              <li>
                 <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
+              </li>
+              <li>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Dot we</a>
               </li>
             </ul>
         </li>
@@ -77,13 +83,13 @@ method(string): the HTTP method GET">
       </ul>
       <ul class="tools">
         <li>
-          <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-  <label class="search-label">
-    <input type="text" id="search-input" name="q" results="0" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off"/>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
-  </label>
-</form>
-<div class="results-panel">
+  </form>
+  <div class="results-panel">
+  </div>
 </div>
         </li>
         <!--<li></li>-->
@@ -338,11 +344,11 @@ method(string): the HTTP method GET">
           <ul class="chapter">
             
               <li>
-                <a href="/weex-website/references/bootstrap.html" class="sidebar-link  ">Bootstrap</a>
+                <a href="/weex-website/references/special-element.html" class="sidebar-link  ">Special Element</a>
               </li>
             
               <li>
-                <a href="/weex-website/references/special-element.html" class="sidebar-link  ">Special Element</a>
+                <a href="/weex-website/references/bootstrap.html" class="sidebar-link  ">Bootstrap</a>
               </li>
             
               <li>
@@ -439,7 +445,7 @@ method(string): the HTTP method GET">
               </li>
             
               <li>
-                <a href="/weex-website/references/components/cell.html" class="sidebar-link  ">&lt;list&gt;</a>
+                <a href="/weex-website/references/components/cell.html" class="sidebar-link  ">&lt;cell&gt;</a>
               </li>
             
               <li>
@@ -774,11 +780,11 @@ method(string): the HTTP method GET">
           <ul class="chapter">
             
               <li>
-                <a href="/weex-website/references/bootstrap.html" class="sidebar-link  ">Bootstrap</a>
+                <a href="/weex-website/references/special-element.html" class="sidebar-link  ">Special Element</a>
               </li>
             
               <li>
-                <a href="/weex-website/references/special-element.html" class="sidebar-link  ">Special Element</a>
+                <a href="/weex-website/references/bootstrap.html" class="sidebar-link  ">Bootstrap</a>
               </li>
             
               <li>
@@ -875,7 +881,7 @@ method(string): the HTTP method GET">
               </li>
             
               <li>
-                <a href="/weex-website/references/components/cell.html" class="sidebar-link  ">&lt;list&gt;</a>
+                <a href="/weex-website/references/components/cell.html" class="sidebar-link  ">&lt;cell&gt;</a>
               </li>
             
               <li>
@@ -969,7 +975,7 @@ method(string): the HTTP method GET">
   </div>
   
 
-<article id="page-undefined" class="article article-type-references">
+<article class="article article-type-references">
   <div class="article-entry" itemprop="articleBody">
     <header class="article-header">
   
@@ -979,37 +985,57 @@ method(string): the HTTP method GET">
       </h1>
     
   
-  <time class="article-date" datetime="2016-12-21T02:21:39.000Z">Updated time: 21/12/2016</time>
+  <time class="article-date" datetime="2016-12-30T07:05:31.000Z">Updated time: 30/12/2016</time>
 </header>
-    <h1 id="stream"><a href="#stream" class="headerlink" title="stream"></a>stream</h1><p><span class="weex-version">0.4</span></p>
-<h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p>A series of stream api. It provides a network request.</p>
-<h2 id="API"><a href="#API" class="headerlink" title="API"></a>API</h2><h3 id="fetch-options-callback-progressCallback"><a href="#fetch-options-callback-progressCallback" class="headerlink" title="fetch(options, callback,progressCallback)"></a>fetch(options, callback,progressCallback)</h3><h3 id="Arguments"><a href="#Arguments" class="headerlink" title="Arguments"></a>Arguments</h3><ul>
-<li><code>options</code><em>(object)</em>: the request options.<ul>
-<li><code>method</code><em>(string)</em>: the HTTP method <code>GET</code> or <code>POST</code>.</li>
-<li><code>url</code><em>(string)</em>: the request url.</li>
-<li><code>headers</code><em>(object)</em>: the HTTP request headers.</li>
-<li><code>type</code><em>(string)</em>: request type, ‘json’,’text’ or ‘jsonp’(same as ‘json’ in native implementation)</li>
-<li><code>body</code><em>(string)</em>: the HTTP body.</li>
-</ul>
+    <h1 id="stream"><a href="#stream" class="headerlink" title="stream"></a>stream</h1><p>A series of stream api. It provides a network request.</p>
+<h2 id="API"><a href="#API" class="headerlink" title="API"></a>API</h2><h3 id="fetch-options-callback-progressCallback"><a href="#fetch-options-callback-progressCallback" class="headerlink" title="fetch(options, callback,progressCallback)"></a>fetch(options, callback,progressCallback)</h3><p>Start a network request, use two callbacks to receive server’s response data.</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><p>options(object): the request options, key value style dictionary.</p>
+<ul>
+<li><p>method(string): the HTTP method <code>GET</code> or <code>POST</code>.</p>
 </li>
-<li><code>callback</code><em>(function)</em>: A callback function whose argument is the response object of the request. Callback function will receive a <code>response</code> object:   <ul>
-<li><code>status</code><em>(number)</em>：response status code.</li>
-<li><code>ok</code><em>(boolean)</em>: true if status code is bewteen 200～299.</li>
-<li><code>statusText</code><em>(string)</em>：status text </li>
-<li><code>data</code>: response data. It’s a object if request option is <code>json</code>/<code>jsonp</code>, or <em>(string)</em> in other type value.</li>
-<li><code>headers</code><em>(object)</em>: response headers</li>
-</ul>
+<li><p>url(string): the request url.</p>
 </li>
-<li><code>progressCallback</code><em>(function)</em>: A progress callback. This callback will be invoked before request finished:   <ul>
-<li><code>readyState</code><em>(number)</em>: Current request state.’1’:request connection opened;’2’:response headers received.;’3’:response data is loading;</li>
-<li><code>status</code><em>(number)</em>：response status code.</li>
-<li><code>length</code><em>(number)</em>: bytes of data have received. You can read full length of response from ‘headers’.</li>
-<li><code>statusText</code><em>(string)</em>：status text </li>
-<li><code>headers</code><em>(object)</em>: response headers</li>
-</ul>
+<li><p>headers(string): the HTTP request headers.</p>
+</li>
+<li><p>type(string): request type, ‘json’,’text’ or ‘jsonp’(same as ‘json’ in native implementation)</p>
+</li>
+<li><p>body(string): the HTTP body.</p>
 </li>
 </ul>
-<h3 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line">stream.fetch(&#123;</div><div class="line">  <span class="attr">method</span>: <span class="string">'GET'</span>,</div><div class="line">  <span class="attr">url</span>: <span class="string">"http://httpbin.org/get"</span>,</div><div class="line">  <span class="attr">type</span>:<span class="string">'json'</span></div><div class="line">&#125;, <span class="function"><span class="keyword">function</span>(<span class="params">response</span>) </span>&#123;</div><div class="line">  <span class="comment">//process response</span></div><div class="line">&#125;,<span class="function"><span class="keyword">function</span>(<span class="params">response</span>)</span>&#123;</div><div class="line">  <span class="comment">//progress response</span></div><div class="line">  <span class="built_in">console</span>.log(<span class="string">"current bytes received:"</span>+response.length);</div><div class="line">  </div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+</li>
+<li><p>callback(function): A callback function whose argument is the response object of the request. Callback function will receive a <code>response</code> object.</p>
+<ul>
+<li><p>status(number): response status code.</p>
+</li>
+<li><p>ok(boolean): true if status code is bewteen 200～299.</p>
+</li>
+<li><p>statusText(string): status text</p>
+</li>
+<li><p>data(string): response data. It’s a object if request option is <code>json</code>/<code>jsonp</code>, or <em>(string)</em> in other type value.</p>
+</li>
+<li><p>headers(object): response headers</p>
+</li>
+</ul>
+</li>
+<li><p>progressCallback(function):  A progress callback. This callback will be invoked before request finished.</p>
+<ul>
+<li><p>readyState(number): Current request state.’1’:request connection opened;’2’:response headers received.;’3’:response data is loading;</p>
+</li>
+<li><p>status(number): response status code.</p>
+</li>
+<li><p>length(number): bytes of data have received. You can read full length of response from ‘headers’.</p>
+</li>
+<li><p>statusText(string): status text.</p>
+</li>
+<li><p>headers(object): response headers.</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h3><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">text</span> <span class="attr">onclick</span>=<span class="string">"startStream"</span>&gt;</span>click here to start stream<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="built_in">module</span>.exports = &#123;</div><div class="line">    <span class="attr">methods</span>: &#123;</div><div class="line">      <span class="attr">startStream</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> stream_module = <span class="built_in">require</span>(<span class="string">'@weex-module/stream'</span>);</div><div class="line">        stream_module.fetch(&#123;</div><div class="line">          <span class="attr">method</span>: <span class="string">'GET'</span>,</div><div class="line">          <span class="attr">url</span>: <span class="string">"http://httpbin.org/get"</span>,</div><div class="line">          <span class="attr">type</span>:<span class="string">'json'</span></div><div class="line">        &#125;, <span class="function"><span class="keyword">function</span>(<span class="params">response</span>) </span>&#123;</div><div class="line">          <span class="comment">//finished response</span></div><div class="line">          <span class="built_in">console</span>.log(<span class="string">"all received:"</span>,response);</div><div class="line">        &#125;,<span class="function"><span class="keyword">function</span>(<span class="params">response</span>)</span>&#123;</div><div class="line">          <span class="comment">//progress response</span></div><div class="line">          <span class="built_in">console</span>.log(<span class="string">"current bytes received:"</span>,response.length);</div><div class="line">        &#125;);</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><a href="http://dotwe.org/6e4ede64fdfe070b9696cc4cc3bdd086" target="_blank" rel="external">Try it</a></p>
 
   </div>
   

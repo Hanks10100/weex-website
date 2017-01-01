@@ -26,6 +26,8 @@
   /***********************************************
    * Index
    **********************************************/
+  .header .galaxy {
+    display: none; }
   .edge .scene-container .sketch-content {
     flex-direction: column;
     align-items: center; }
@@ -73,5 +75,7 @@
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical; }
+  .users .sketch-content .user-logo h3 {
+    margin-top: 110px; }
   .feedback .user-feedback {
-    flex: 1 0 140px; } }
+    /*flex: 1 0 140px;*/ } }

@@ -5,22 +5,25 @@
   
   <title>&lt;refresh&gt; &amp; &lt;loading&gt; | Weex</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="&amp;lt;refresh-loading&amp;gt;Summary
-refresh component can be used inside list/scroller to add pull to refresh functionality, the style of headerview can be set by specifying the style of refresh.
-loading c">
+  <meta name="description" content="refresh &amp;amp; loadingv0.6.1+
+Loading ComponentsTo be rendered properly, the refresh/loading Components must appear inside the Scroller Component or the List Component.
+example
+&amp;lt;template&amp;gt;  &amp;lt;li">
 <meta property="og:type" content="website">
 <meta property="og:title" content="<refresh> & <loading>">
 <meta property="og:url" content="http://alibaba.github.io/references/components/refresh-loading.html">
 <meta property="og:site_name" content="Weex">
-<meta property="og:description" content="&amp;lt;refresh-loading&amp;gt;Summary
-refresh component can be used inside list/scroller to add pull to refresh functionality, the style of headerview can be set by specifying the style of refresh.
-loading c">
-<meta property="og:updated_time" content="2016-12-21T03:01:09.000Z">
+<meta property="og:description" content="refresh &amp;amp; loadingv0.6.1+
+Loading ComponentsTo be rendered properly, the refresh/loading Components must appear inside the Scroller Component or the List Component.
+example
+&amp;lt;template&amp;gt;  &amp;lt;li">
+<meta property="og:updated_time" content="2016-12-30T03:46:49.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="<refresh> & <loading>">
-<meta name="twitter:description" content="&amp;lt;refresh-loading&amp;gt;Summary
-refresh component can be used inside list/scroller to add pull to refresh functionality, the style of headerview can be set by specifying the style of refresh.
-loading c">
+<meta name="twitter:description" content="refresh &amp;amp; loadingv0.6.1+
+Loading ComponentsTo be rendered properly, the refresh/loading Components must appear inside the Scroller Component or the List Component.
+example
+&amp;lt;template&amp;gt;  &amp;lt;li">
   
     <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
   
@@ -52,16 +55,22 @@ loading c">
             <a href="javascript:;">Resources</a>
             <ul class="dropdown-menu subnav">
               <li>
-                <a href="/weex-website/playground.html">Playground</a>
-              </li>
-              <li>
-                <a href="/weex-website/tools">Tools</a>
+                <a href="/weex-website/tools">Service &amp; Tools</a>
               </li>
               <li>
                 <a href="/weex-website/advanced">Advanced</a>
               </li>
               <li>
+                <a href="/weex-website/playground.html">Playground</a>
+              </li>
+              <li>
                 <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
+              </li>
+              <li>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Dot we</a>
               </li>
             </ul>
         </li>
@@ -71,13 +80,13 @@ loading c">
       </ul>
       <ul class="tools">
         <li>
-          <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-  <label class="search-label">
-    <input type="text" id="search-input" name="q" results="0" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off"/>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
-  </label>
-</form>
-<div class="results-panel">
+  </form>
+  <div class="results-panel">
+  </div>
 </div>
         </li>
         <!--<li></li>-->
@@ -332,11 +341,11 @@ loading c">
           <ul class="chapter">
             
               <li>
-                <a href="/weex-website/references/bootstrap.html" class="sidebar-link  ">Bootstrap</a>
+                <a href="/weex-website/references/special-element.html" class="sidebar-link  ">Special Element</a>
               </li>
             
               <li>
-                <a href="/weex-website/references/special-element.html" class="sidebar-link  ">Special Element</a>
+                <a href="/weex-website/references/bootstrap.html" class="sidebar-link  ">Bootstrap</a>
               </li>
             
               <li>
@@ -433,7 +442,7 @@ loading c">
               </li>
             
               <li>
-                <a href="/weex-website/references/components/cell.html" class="sidebar-link  ">&lt;list&gt;</a>
+                <a href="/weex-website/references/components/cell.html" class="sidebar-link  ">&lt;cell&gt;</a>
               </li>
             
               <li>
@@ -768,11 +777,11 @@ loading c">
           <ul class="chapter">
             
               <li>
-                <a href="/weex-website/references/bootstrap.html" class="sidebar-link  ">Bootstrap</a>
+                <a href="/weex-website/references/special-element.html" class="sidebar-link  ">Special Element</a>
               </li>
             
               <li>
-                <a href="/weex-website/references/special-element.html" class="sidebar-link  ">Special Element</a>
+                <a href="/weex-website/references/bootstrap.html" class="sidebar-link  ">Bootstrap</a>
               </li>
             
               <li>
@@ -869,7 +878,7 @@ loading c">
               </li>
             
               <li>
-                <a href="/weex-website/references/components/cell.html" class="sidebar-link  ">&lt;list&gt;</a>
+                <a href="/weex-website/references/components/cell.html" class="sidebar-link  ">&lt;cell&gt;</a>
               </li>
             
               <li>
@@ -963,7 +972,7 @@ loading c">
   </div>
   
 
-<article id="page-undefined" class="article article-type-references">
+<article class="article article-type-references">
   <div class="article-entry" itemprop="articleBody">
     <header class="article-header">
   
@@ -973,25 +982,54 @@ loading c">
       </h1>
     
   
-  <time class="article-date" datetime="2016-12-21T03:01:09.000Z">Updated time: 21/12/2016</time>
+  <time class="article-date" datetime="2016-12-30T03:46:49.000Z">Updated time: 30/12/2016</time>
 </header>
-    <h1 id="lt-refresh-loading-gt"><a href="#lt-refresh-loading-gt" class="headerlink" title="&lt;refresh-loading&gt;"></a>&lt;refresh-loading&gt;</h1><h3 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h3><ul>
-<li><code>refresh</code> component can be used inside list/scroller to add pull to refresh functionality, the style of headerview can be set by specifying the style of refresh.</li>
-<li><code>loading</code> component can be used inside list/scroller to add loading view at the bottom of container, the style of footerview can be set by specifying the style of loading.</li>
-</ul>
-<h3 id="Child-Components"><a href="#Child-Components" class="headerlink" title="Child Components"></a>Child Components</h3><p><strong>Notes:</strong> <code>refresh</code> and <code>loading</code> is able to contain any type of sub-components you want, default loading animation can be achieved by using <code>loading-indicator</code> component from weex.</p>
+    <h1 id="refresh-amp-loading"><a href="#refresh-amp-loading" class="headerlink" title="refresh &amp; loading"></a>refresh &amp; loading</h1><p><span class="weex-version">v0.6.1+</span></p>
+<h2 id="Loading-Components"><a href="#Loading-Components" class="headerlink" title="Loading Components"></a>Loading Components</h2><p>To be rendered properly, the refresh/loading Components must appear inside the Scroller Component or the List Component.</p>
+<p><strong>example</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">list</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">header</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"center"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">text</span> <span class="attr">style</span>=<span class="string">"text-align:center"</span>&gt;</span>I am the header<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">header</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">loading</span> <span class="attr">onloading</span>=<span class="string">"onloading"</span> <span class="attr">display</span>=<span class="string">"&#123;&#123;loadingDisplay&#125;&#125;"</span> <span class="attr">style</span>=<span class="string">"width:750;flex-direction: row;justify-content: center;"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">loading-indicator</span> <span class="attr">style</span>=<span class="string">"height:160;width:160;color:#3192e1"</span>&gt;</span><span class="tag">&lt;/<span class="name">loading-indicator</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">loading</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">cell</span> <span class="attr">onappear</span>=<span class="string">"onappear"</span> <span class="attr">ondisappear</span>=<span class="string">"ondisappear"</span> <span class="attr">class</span>=<span class="string">"row"</span> <span class="attr">repeat</span>=<span class="string">"&#123;&#123;staffs&#125;&#125;"</span> <span class="attr">index</span>=<span class="string">"&#123;&#123;$index&#125;&#125;"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"item"</span>&gt;</span></div><div class="line">          <span class="tag">&lt;<span class="name">text</span>&gt;</span>&#123;&#123;name&#125;&#125;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">cell</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">list</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></div><div class="line">  <span class="selector-class">.row</span> &#123;</div><div class="line">    <span class="attribute">width</span>: <span class="number">750</span>;</div><div class="line">  &#125;</div><div class="line">  <span class="selector-class">.item</span> &#123;</div><div class="line">    <span class="attribute">justify-content</span>: center;</div><div class="line">    <span class="attribute">border-bottom-width</span>: <span class="number">2</span>;</div><div class="line">    <span class="attribute">border-bottom-color</span>: <span class="number">#c0c0c0</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">100</span>;</div><div class="line">    <span class="attribute">padding</span>:<span class="number">20</span>;</div><div class="line">  &#125;</div><div class="line">  <span class="selector-class">.center</span> &#123;</div><div class="line">    <span class="attribute">border-bottom-width</span>: <span class="number">2</span>;</div><div class="line">    <span class="attribute">border-bottom-color</span>: <span class="number">#cccccc</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">100</span>;</div><div class="line">    <span class="attribute">padding</span>:<span class="number">20</span>;</div><div class="line">    <span class="attribute">background-color</span>:<span class="number">#FFFFFF</span>;</div><div class="line">    <span class="attribute">justify-content</span>: center;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="built_in">module</span>.exports = &#123;</div><div class="line">    <span class="attr">data</span>: &#123;</div><div class="line">      <span class="attr">staffs</span>:[],</div><div class="line">      <span class="attr">loadingDisplay</span>: <span class="string">'show'</span>,</div><div class="line">      <span class="attr">loadingText</span>: <span class="string">'pull up to load more'</span>,</div><div class="line">      <span class="attr">refreshText</span>: <span class="string">'pull down to refresh'</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">created</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">      <span class="keyword">this</span>.refreshDisplay=<span class="string">'show'</span></div><div class="line">      <span class="keyword">this</span>.staffs=[&#123;<span class="attr">name</span>:<span class="string">'inns'</span>&#125;,&#123;<span class="attr">name</span>:<span class="string">'connon'</span>&#125;,&#123;<span class="attr">name</span>:<span class="string">'baos'</span>&#125;,&#123;<span class="attr">name</span>:<span class="string">'anna'</span>&#125;,&#123;<span class="attr">name</span>:<span class="string">'dolley'</span>&#125;,&#123;<span class="attr">name</span>:<span class="string">'lucy'</span>&#125;,&#123;<span class="attr">name</span>:<span class="string">'john'</span>&#125;, &#123;<span class="attr">name</span>:<span class="string">'lily'</span>&#125;,&#123;<span class="attr">name</span>:<span class="string">'locke'</span>&#125;,&#123;<span class="attr">name</span>:<span class="string">'jack'</span>&#125;,&#123;<span class="attr">name</span>:<span class="string">'danny'</span>&#125;,&#123;<span class="attr">name</span>:<span class="string">'rose'</span>&#125;,&#123;<span class="attr">name</span>:<span class="string">'harris'</span>&#125;,&#123;<span class="attr">name</span>:<span class="string">'lotus'</span>&#125;,&#123;<span class="attr">name</span>:<span class="string">'louis'</span>&#125;];</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">methods</span>:&#123;</div><div class="line">      <span class="attr">onappear</span>: <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> index = e.target.attr.index</div><div class="line">        <span class="comment">// nativeLog('+++++', index);</span></div><div class="line">        <span class="comment">// console.log(this.staffs[index].name + ' is appearing...');</span></div><div class="line">      &#125;,</div><div class="line">      <span class="attr">ondisappear</span>:<span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</div><div class="line">        <span class="comment">// nativeLog('+++++', e.target.attr.index);</span></div><div class="line">      &#125;,</div><div class="line">      <span class="attr">onloading</span>:<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'onloading...'</span>);</div><div class="line">        <span class="keyword">this</span>.staffs.push(&#123;<span class="attr">name</span>:<span class="string">'onloading'</span>&#125;)</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><a href="http://weex.alibaba-inc.com/raw/html5/a34523fee395aa68018d65f0fb622310.js" target="_blank" rel="external">try it</a></p>
+<h3 id="Child-Components"><a href="#Child-Components" class="headerlink" title="Child Components"></a>Child Components</h3><p>Any other components, like the text and img components, can be put inside the refresh component. And there is a special component named loading-indicator used only inside the refresh or the loading components.</p>
 <ul>
-<li><code>loading-indicator</code> default loading animation can be achieved by using this component in refresh and loading component，supports <code>color</code> property; Default <code>width</code> and <code>height</code> of <code>loading-indicator</code> is 0, so it must specify its <code>width</code> and <code>height</code>.</li>
+<li>loading-indicator is a child component implemented with default animation effect for the refresh component.<br><a href="http://weex.alibaba-inc.com/playground/a34523fee395aa68018d65f0fb622310" target="_blank" rel="external">example</a></li>
 </ul>
 <h3 id="Attributes"><a href="#Attributes" class="headerlink" title="Attributes"></a>Attributes</h3><ul>
-<li><code>display</code> is a switch which toggles the visibility of refresh and loading component. <code>display</code> should be set to <code>show</code> in callback of <code>onrefresh</code> and <code>onloading</code>, and set to <code>hide</code> after refresh and loading is done.</li>
+<li>display has value of show or hide.</li>
 </ul>
-<p>Other attributes please check out the <a href="../references/common-attrs.html">common attributes</a>.</p>
+<p>Other attributes please check out the <a href="../common-attrs.html">common attributes</a>.</p>
+<h3 id="Styles"><a href="#Styles" class="headerlink" title="Styles"></a>Styles</h3><p>common styles: check out <a href="../common-style.html">common styles for components</a></p>
 <h3 id="Events"><a href="#Events" class="headerlink" title="Events"></a>Events</h3><ul>
-<li>support <code>onrefresh</code> event  <sup class="wx-v">0.5</sup>.  If a <code>refresh</code> component is inside <code>scroller</code> / <code>list</code>, this event will be triggered when it is pull down refresh.</li>
-<li>support <code>onloading</code> event .  If a <code>loading</code> component is inside <code>scroller</code> / <code>list</code>, this event will be triggered when it is pull up loadmore.</li>
+<li>onloading triggered when loading</li>
 </ul>
-<h3 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h3><p>see <a href="https://github.com/alibaba/weex/blob/dev/examples/component/list/list-basic.we" target="_blank" rel="external">list-basic demo</a> and <a href="https://github.com/alibaba/weex/blob/dev/examples/component/scroller-demo.we" target="_blank" rel="external">scroller demo</a></p>
+<h4 id="Restrictions"><a href="#Restrictions" class="headerlink" title="Restrictions"></a>Restrictions</h4><ul>
+<li>refresh/loading does not support remove action,  Weex 0.9 will fix it.</li>
+<li>refresh/loading despite setting with display=’hide’, the refresh/loading view will still appear when scrolling due to known issues. it can be fixed with a another display=’hide’ when the refresh/loading should be hidden.</li>
+<li>refresh/loading can only be hidden or displayed with an attribute display with value of show or hide. And there should be a statement of display=’hide’ when display=’show’ shows up in an event function, or your scroller may not response to user inputs.</li>
+</ul>
+<h2 id="Refresh-Components"><a href="#Refresh-Components" class="headerlink" title="Refresh Components"></a>Refresh Components</h2><p>To be rendered properly, the refresh/loading Components must appear inside the Scroller Component or the List Component.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">scroller</span> <span class="attr">onloadmore</span>=<span class="string">"onloadmore"</span> <span class="attr">loadmoreoffset</span>=<span class="string">"1000"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">refresh</span> <span class="attr">onrefresh</span>=<span class="string">"onrefresh"</span> <span class="attr">display</span>=<span class="string">"&#123;&#123;refreshDisplay&#125;&#125;"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">id</span>=<span class="string">"refreshText"</span>&gt;</span>&#123;&#123;refreshText&#125;&#125;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">refresh</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">repeat</span>=<span class="string">"&#123;&#123;v in items&#125;&#125;"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">style</span>=<span class="string">"font-size: 40; color: #000000"</span>&gt;</span>&#123;&#123;v.item&#125;&#125;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">loading</span> <span class="attr">onloading</span>=<span class="string">"onloading"</span> <span class="attr">display</span>=<span class="string">"&#123;&#123;loadingDisplay&#125;&#125;"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">id</span>=<span class="string">"loadingText"</span>&gt;</span>&#123;&#123;loadingText&#125;&#125;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">loading</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">scroller</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="built_in">module</span>.exports = &#123;</div><div class="line">    <span class="attr">data</span>: &#123;</div><div class="line">      <span class="attr">refreshDisplay</span>: <span class="string">'show'</span>,</div><div class="line">      <span class="attr">loadingDisplay</span>: <span class="string">'show'</span>,</div><div class="line">      <span class="attr">loadingText</span>: <span class="string">'pull up to load more'</span>,</div><div class="line">      <span class="attr">refreshText</span>: <span class="string">'pull down to refresh'</span>,</div><div class="line">      <span class="attr">items</span>: []</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">created</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">      <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">30</span>; i++) &#123;</div><div class="line">        <span class="keyword">this</span>.items.push(&#123;<span class="string">'item'</span>: <span class="string">'test data'</span> + i&#125;);</div><div class="line">      &#125;</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">methods</span>: &#123;</div><div class="line">      <span class="attr">onrefresh</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> vm = <span class="keyword">this</span>;</div><div class="line">        vm.refreshDisplay = <span class="string">'show'</span></div><div class="line">        <span class="keyword">if</span> (vm.items.length &gt; <span class="number">50</span>) &#123;</div><div class="line">          vm.refreshText = <span class="string">"no more data!"</span></div><div class="line">          vm.refreshDisplay = <span class="string">'hide'</span></div><div class="line">          <span class="keyword">return</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">var</span> len = vm.items.length;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> i = len; i &lt; (len + <span class="number">20</span>); i++) &#123;</div><div class="line">          vm.items.unshift(&#123;<span class="string">'item'</span>: <span class="string">'test data '</span> + i&#125;);</div><div class="line">        &#125;</div><div class="line">        vm.refreshDisplay = <span class="string">'hide'</span></div><div class="line">      &#125;,</div><div class="line">      <span class="attr">onloading</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> vm = <span class="keyword">this</span>;</div><div class="line">        vm.loadingDisplay = <span class="string">'show'</span></div><div class="line">        <span class="keyword">if</span> (vm.items.length &gt; <span class="number">30</span>) &#123;</div><div class="line">          vm.loadingText = <span class="string">"no more data!"</span></div><div class="line">          vm.loadingDisplay = <span class="string">'hide'</span></div><div class="line">          <span class="keyword">return</span>;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="keyword">var</span> len = vm.items.length;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> i = len; i &lt; (len + <span class="number">20</span>); i++) &#123;</div><div class="line">          vm.items.push(&#123;<span class="string">'item'</span>: <span class="string">'test data '</span> + i&#125;);</div><div class="line">        &#125;</div><div class="line">        vm.loadingDisplay = <span class="string">'hide'</span></div><div class="line">      &#125;,</div><div class="line">      <span class="attr">onloadmore</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">"into--[onloadmore]"</span>)</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><a href="http://dotwe.org/242add915e41d307f2fa6f423278425a" target="_blank" rel="external">try it</a></p>
+<h3 id="Child-Components-1"><a href="#Child-Components-1" class="headerlink" title="Child Components"></a>Child Components</h3><p>Any other components, like the text and img components, can be put inside the refresh component. And there is a special component named loading-indicator used only inside the refresh or the loading components.</p>
+<ul>
+<li>loading-indicator is a child component implemented with default animation effect for the refresh component.<br><a href="http://dotwe.org/e65a2cb0abfcdbbabda6778064837a92" target="_blank" rel="external">example</a></li>
+</ul>
+<h3 id="Attributes-1"><a href="#Attributes-1" class="headerlink" title="Attributes"></a>Attributes</h3><ul>
+<li>display has value of show or hide, default value is show.</li>
+</ul>
+<p>Other attributes please check out the <a href="../common-attrs.html">common attributes</a>.</p>
+<h3 id="Styles-1"><a href="#Styles-1" class="headerlink" title="Styles"></a>Styles</h3><p>common styles: check out <a href="../common-style.html">common styles for components</a></p>
+<h3 id="Events-1"><a href="#Events-1" class="headerlink" title="Events"></a>Events</h3><ul>
+<li>onrefresh triggered when the scroller has been pulled down</li>
+<li>onpullingdown available on Android. triggered when the scroller has been pulled down. you can get dy, headerHeight, maxHeight from onpullingdowns event object. <a href="http://dotwe.org/10ee6bd59ebe173f0f578a4eb8bac6f1" target="_blank" rel="external">example</a></li>
+</ul>
+<p><strong>example</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">list</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">header</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"center"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">text</span> <span class="attr">style</span>=<span class="string">"text-align:center"</span>&gt;</span>I am the header<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">header</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">refresh</span> <span class="attr">onpullingdown</span>=<span class="string">'onpullingdown'</span> <span class="attr">onrefresh</span>=<span class="string">"onrefresh"</span> <span class="attr">display</span>=<span class="string">"&#123;&#123;refreshDisplay&#125;&#125;"</span> <span class="attr">style</span>=<span class="string">"width:750;flex-direction: row;justify-content: center;"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">loading-indicator</span> <span class="attr">style</span>=<span class="string">"height:160;width:160;color:#3192e1"</span>&gt;</span><span class="tag">&lt;/<span class="name">loading-indicator</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">refresh</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">cell</span> <span class="attr">onappear</span>=<span class="string">"onappear"</span> <span class="attr">ondisappear</span>=<span class="string">"ondisappear"</span> <span class="attr">class</span>=<span class="string">"row"</span> <span class="attr">repeat</span>=<span class="string">"&#123;&#123;staffs&#125;&#125;"</span> <span class="attr">index</span>=<span class="string">"&#123;&#123;$index&#125;&#125;"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"item"</span>&gt;</span></div><div class="line">          <span class="tag">&lt;<span class="name">text</span>&gt;</span>&#123;&#123;name&#125;&#125;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">cell</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">list</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></div><div class="line">  <span class="selector-class">.row</span> &#123;</div><div class="line">    <span class="attribute">width</span>: <span class="number">750</span>;</div><div class="line">  &#125;</div><div class="line">  <span class="selector-class">.item</span> &#123;</div><div class="line">    <span class="attribute">justify-content</span>: center;</div><div class="line">    <span class="attribute">border-bottom-width</span>: <span class="number">2</span>;</div><div class="line">    <span class="attribute">border-bottom-color</span>: <span class="number">#c0c0c0</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">100</span>;</div><div class="line">    <span class="attribute">padding</span>:<span class="number">20</span>;</div><div class="line">  &#125;</div><div class="line">  <span class="selector-class">.center</span> &#123;</div><div class="line">    <span class="attribute">border-bottom-width</span>: <span class="number">2</span>;</div><div class="line">    <span class="attribute">border-bottom-color</span>: <span class="number">#cccccc</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">100</span>;</div><div class="line">    <span class="attribute">padding</span>:<span class="number">20</span>;</div><div class="line">    <span class="attribute">background-color</span>:<span class="number">#FFFFFF</span>;</div><div class="line">    <span class="attribute">justify-content</span>: center;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="built_in">module</span>.exports = &#123;</div><div class="line">    <span class="attr">data</span>: &#123;</div><div class="line">      <span class="attr">staffs</span>:[],</div><div class="line">      <span class="attr">refreshDisplay</span>: <span class="string">'show'</span>,</div><div class="line">      <span class="attr">loadingDisplay</span>: <span class="string">'show'</span>,</div><div class="line">      <span class="attr">loadingText</span>: <span class="string">'pull up to load more'</span>,</div><div class="line">      <span class="attr">refreshText</span>: <span class="string">'pull down to refresh'</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">created</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">      <span class="keyword">this</span>.refreshDisplay=<span class="string">'show'</span></div><div class="line">      <span class="keyword">this</span>.staffs=[&#123;<span class="attr">name</span>:<span class="string">'inns'</span>&#125;,&#123;<span class="attr">name</span>:<span class="string">'connon'</span>&#125;,&#123;<span class="attr">name</span>:<span class="string">'baos'</span>&#125;,&#123;<span class="attr">name</span>:<span class="string">'anna'</span>&#125;,&#123;<span class="attr">name</span>:<span class="string">'dolley'</span>&#125;,&#123;<span class="attr">name</span>:<span class="string">'lucy'</span>&#125;,&#123;<span class="attr">name</span>:<span class="string">'john'</span>&#125;, &#123;<span class="attr">name</span>:<span class="string">'lily'</span>&#125;,&#123;<span class="attr">name</span>:<span class="string">'locke'</span>&#125;,&#123;<span class="attr">name</span>:<span class="string">'jack'</span>&#125;,&#123;<span class="attr">name</span>:<span class="string">'danny'</span>&#125;,&#123;<span class="attr">name</span>:<span class="string">'rose'</span>&#125;,&#123;<span class="attr">name</span>:<span class="string">'harris'</span>&#125;,&#123;<span class="attr">name</span>:<span class="string">'lotus'</span>&#125;,&#123;<span class="attr">name</span>:<span class="string">'louis'</span>&#125;];</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">methods</span>:&#123;</div><div class="line">      <span class="attr">onappear</span>: <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> index = e.target.attr.index</div><div class="line">        <span class="comment">// console.log(this.staffs[index].name + ' is appearing...');</span></div><div class="line">      &#125;,</div><div class="line">      <span class="attr">ondisappear</span>:<span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</div><div class="line">      &#125;,</div><div class="line">      <span class="attr">onrefresh</span>:<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</div><div class="line">        <span class="keyword">this</span>.refreshDisplay=<span class="string">'show'</span>;</div><div class="line">        <span class="comment">// this.staffs=[&#123;name:'inns'&#125;,&#123;name:'connon'&#125;,&#123;name:'baos'&#125;,&#123;name:'anna'&#125;];</span></div><div class="line">        <span class="keyword">this</span>.refreshDisplay=<span class="string">'hide'</span></div><div class="line">        <span class="comment">// console.log(this.refreshDisplay);</span></div><div class="line">      &#125;,</div><div class="line">      <span class="attr">onpullingdown</span>:<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'onpullingdown triggered.'</span>);</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'dy:'</span>+e.dy);</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'headerHeight:'</span>+e.headerHeight);</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'maxHeight:'</span>+e.maxHeight);</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><a href="http://dotwe.org/10ee6bd59ebe173f0f578a4eb8bac6f1" target="_blank" rel="external">try it </a></p>
+<h3 id="Restrictions-1"><a href="#Restrictions-1" class="headerlink" title="Restrictions"></a>Restrictions</h3><ul>
+<li>refresh/loading does not support remove action, may support in Weex 0.9.</li>
+<li>refresh/loading despite setting with display=’hide’, the refresh/loading view will still appear when scrolling due to known issues. it can be fixed with a another display=’hide’ when the refresh/loading should be hidden.</li>
+<li>refresh/loading can only be hidden or displayed with an attribute display with value of show or hide. And there should be a statement of display=’hide’ when display=’show’ shows up in an event function, or your scroller may not response to user inputs.</li>
+</ul>
 
   </div>
   

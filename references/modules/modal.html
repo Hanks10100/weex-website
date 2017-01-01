@@ -5,31 +5,19 @@
   
   <title>modal | Weex</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="modal0.4
-SummaryA series of modal dialog api like toast, alert, confirm and prompt.
-APItoast(options)Arguments
-options(object): some options.
-message(string): the message that the toast shows.
-duratio">
+  <meta name="description" content="modalWeex provides a series of message boxes: toast, alert, confirm and prompt.    
+APItoast(options)A toast provides simple feedback about an operation in a small popup. For example, navigating away">
 <meta property="og:type" content="website">
 <meta property="og:title" content="modal">
 <meta property="og:url" content="http://alibaba.github.io/references/modules/modal.html">
 <meta property="og:site_name" content="Weex">
-<meta property="og:description" content="modal0.4
-SummaryA series of modal dialog api like toast, alert, confirm and prompt.
-APItoast(options)Arguments
-options(object): some options.
-message(string): the message that the toast shows.
-duratio">
-<meta property="og:updated_time" content="2016-12-21T02:21:09.000Z">
+<meta property="og:description" content="modalWeex provides a series of message boxes: toast, alert, confirm and prompt.    
+APItoast(options)A toast provides simple feedback about an operation in a small popup. For example, navigating away">
+<meta property="og:updated_time" content="2016-12-30T07:00:33.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="modal">
-<meta name="twitter:description" content="modal0.4
-SummaryA series of modal dialog api like toast, alert, confirm and prompt.
-APItoast(options)Arguments
-options(object): some options.
-message(string): the message that the toast shows.
-duratio">
+<meta name="twitter:description" content="modalWeex provides a series of message boxes: toast, alert, confirm and prompt.    
+APItoast(options)A toast provides simple feedback about an operation in a small popup. For example, navigating away">
   
     <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
   
@@ -61,16 +49,22 @@ duratio">
             <a href="javascript:;">Resources</a>
             <ul class="dropdown-menu subnav">
               <li>
-                <a href="/weex-website/playground.html">Playground</a>
-              </li>
-              <li>
-                <a href="/weex-website/tools">Tools</a>
+                <a href="/weex-website/tools">Service &amp; Tools</a>
               </li>
               <li>
                 <a href="/weex-website/advanced">Advanced</a>
               </li>
               <li>
+                <a href="/weex-website/playground.html">Playground</a>
+              </li>
+              <li>
                 <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
+              </li>
+              <li>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Dot we</a>
               </li>
             </ul>
         </li>
@@ -80,13 +74,13 @@ duratio">
       </ul>
       <ul class="tools">
         <li>
-          <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-  <label class="search-label">
-    <input type="text" id="search-input" name="q" results="0" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off"/>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
-  </label>
-</form>
-<div class="results-panel">
+  </form>
+  <div class="results-panel">
+  </div>
 </div>
         </li>
         <!--<li></li>-->
@@ -341,11 +335,11 @@ duratio">
           <ul class="chapter">
             
               <li>
-                <a href="/weex-website/references/bootstrap.html" class="sidebar-link  ">Bootstrap</a>
+                <a href="/weex-website/references/special-element.html" class="sidebar-link  ">Special Element</a>
               </li>
             
               <li>
-                <a href="/weex-website/references/special-element.html" class="sidebar-link  ">Special Element</a>
+                <a href="/weex-website/references/bootstrap.html" class="sidebar-link  ">Bootstrap</a>
               </li>
             
               <li>
@@ -442,7 +436,7 @@ duratio">
               </li>
             
               <li>
-                <a href="/weex-website/references/components/cell.html" class="sidebar-link  ">&lt;list&gt;</a>
+                <a href="/weex-website/references/components/cell.html" class="sidebar-link  ">&lt;cell&gt;</a>
               </li>
             
               <li>
@@ -777,11 +771,11 @@ duratio">
           <ul class="chapter">
             
               <li>
-                <a href="/weex-website/references/bootstrap.html" class="sidebar-link  ">Bootstrap</a>
+                <a href="/weex-website/references/special-element.html" class="sidebar-link  ">Special Element</a>
               </li>
             
               <li>
-                <a href="/weex-website/references/special-element.html" class="sidebar-link  ">Special Element</a>
+                <a href="/weex-website/references/bootstrap.html" class="sidebar-link  ">Bootstrap</a>
               </li>
             
               <li>
@@ -878,7 +872,7 @@ duratio">
               </li>
             
               <li>
-                <a href="/weex-website/references/components/cell.html" class="sidebar-link  ">&lt;list&gt;</a>
+                <a href="/weex-website/references/components/cell.html" class="sidebar-link  ">&lt;cell&gt;</a>
               </li>
             
               <li>
@@ -972,7 +966,7 @@ duratio">
   </div>
   
 
-<article id="page-undefined" class="article article-type-references">
+<article class="article article-type-references">
   <div class="article-entry" itemprop="articleBody">
     <header class="article-header">
   
@@ -982,60 +976,35 @@ duratio">
       </h1>
     
   
-  <time class="article-date" datetime="2016-12-21T02:21:09.000Z">Updated time: 21/12/2016</time>
+  <time class="article-date" datetime="2016-12-30T07:00:34.000Z">Updated time: 30/12/2016</time>
 </header>
-    <h1 id="modal"><a href="#modal" class="headerlink" title="modal"></a>modal</h1><p><span class="weex-version">0.4</span></p>
-<h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p>A series of modal dialog api like <code>toast</code>, <code>alert</code>, <code>confirm</code> and <code>prompt</code>.</p>
-<h2 id="API"><a href="#API" class="headerlink" title="API"></a>API</h2><h3 id="toast-options"><a href="#toast-options" class="headerlink" title="toast(options)"></a>toast(options)</h3><h4 id="Arguments"><a href="#Arguments" class="headerlink" title="Arguments"></a>Arguments</h4><ul>
-<li><code>options</code><em>(object)</em>: some options.<ul>
-<li><code>message</code><em>(string)</em>: the message that the toast shows.</li>
-<li><code>duration</code><em>(number)</em>: the duration(seconds) that the toast shows.</li>
+    <h1 id="modal"><a href="#modal" class="headerlink" title="modal"></a>modal</h1><p>Weex provides a series of message boxes: <code>toast</code>, <code>alert</code>, <code>confirm</code> and <code>prompt</code>.    </p>
+<h2 id="API"><a href="#API" class="headerlink" title="API"></a>API</h2><h3 id="toast-options"><a href="#toast-options" class="headerlink" title="toast(options)"></a>toast(options)</h3><p>A toast provides simple feedback about an operation in a small popup. For example, navigating away from an email before you send it triggers a “Draft saved” toast to let you know that you can continue editing later. Toasts automatically disappear after a timeout.    </p>
+<h4 id="Arguments"><a href="#Arguments" class="headerlink" title="Arguments"></a>Arguments</h4><ul>
+<li><code>options</code> (object): toast options.<ul>
+<li><code>message</code> (string): the text message that the toast shows.</li>
+<li><code>duration</code> (number): the duration(seconds) that the toast shows.   </li>
 </ul>
 </li>
 </ul>
-<h5 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h5><figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> modal = <span class="built_in">require</span>(<span class="string">'@weex-module/modal'</span>);</div><div class="line">modal.toast(&#123;<span class="string">'message'</span>: <span class="string">'I am toast!'</span>, <span class="string">'duration'</span>: <span class="number">1</span>&#125;);</div></pre></td></tr></table></figure>
-<h3 id="alert-options-callback"><a href="#alert-options-callback" class="headerlink" title="alert(options, callback)"></a>alert(options, callback)</h3><h4 id="Arguments-1"><a href="#Arguments-1" class="headerlink" title="Arguments"></a>Arguments</h4><ul>
-<li><code>options</code><em>(object)</em>: some options.<ul>
-<li><code>message</code><em>(string)</em>: the message that the alert shows.</li>
-<li><code>okTitle</code><em>(string)</em>: the title of alert button, default is OK.</li>
+<p><strong>Example:</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"height: 200px; width: 400px; background-color: #00bfff;</span></span></div><div class="line">    justify-content: center; align-items: center" <span class="attr">onclick</span>=<span class="string">"&#123;&#123;perform&#125;&#125;"</span>&gt;</div><div class="line">    <span class="tag">&lt;<span class="name">text</span> <span class="attr">style</span>=<span class="string">"font-size: 60px; color: #ffffff"</span>&gt;</span>Toast<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="built_in">module</span>.exports = &#123;</div><div class="line">    <span class="attr">methods</span>: &#123;</div><div class="line">      <span class="attr">perform</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> modal = <span class="built_in">require</span>(<span class="string">'@weex-module/modal'</span>);</div><div class="line">        modal.toast(&#123;</div><div class="line">          <span class="string">'message'</span>: <span class="string">'I am a toast'</span>,</div><div class="line">          <span class="string">'duration'</span>: <span class="number">3</span></div><div class="line">        &#125;);</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">```    </div><div class="line">### alert(options, callback)    </div><div class="line"></div><div class="line">An alert box is often used if you want to make sure information comes through to the user.    </div><div class="line">When an alert box pops up, the user will have to click "OK" to proceed.    </div><div class="line"></div><div class="line">#### Arguments  </div><div class="line"></div><div class="line">- `options` (object): alert box options.</div><div class="line"> - `message` (string): the text message that the alert shows.</div><div class="line"> - `okTitle` (string): the text of positive button, default is 'OK'.</div><div class="line"> - `callback` (function): callback when complete.    </div><div class="line">  This method has a callback function whose arguments will be:    </div><div class="line">- `result` (string): the title text of the confirm button that clicked by user.</div><div class="line"></div><div class="line">**Example:**</div><div class="line"></div><div class="line">```html</div><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"height: 200px; width: 400px; background-color: #00bfff;</span></span></div><div class="line">  justify-content: center; align-items: center" <span class="attr">onclick</span>=<span class="string">"&#123;&#123;perform&#125;&#125;"</span>&gt;</div><div class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">style</span>=<span class="string">"font-size: 60px; color: #ffffff"</span>&gt;</span>Alert<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">text</span>&gt;</span>&#123;&#123;params&#125;&#125;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="built_in">module</span>.exports = &#123;</div><div class="line">    <span class="attr">data</span>: &#123;</div><div class="line">      <span class="attr">params</span>: <span class="string">''</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">methods</span>: &#123;</div><div class="line">      <span class="attr">perform</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> modal = <span class="built_in">require</span>(<span class="string">'@weex-module/modal'</span>);</div><div class="line">        <span class="keyword">var</span> self = <span class="keyword">this</span>;</div><div class="line">        modal.alert(&#123;</div><div class="line">          <span class="string">'message'</span>: <span class="string">'I am alert message'</span>,</div><div class="line">          <span class="string">'okTitle'</span> : <span class="string">'YES'</span></div><div class="line">        &#125;, <span class="function"><span class="keyword">function</span> (<span class="params">result</span>) </span>&#123;</div><div class="line">          self.params = <span class="built_in">String</span>(result)</div><div class="line">        &#125;);</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="confirm-options-callback"><a href="#confirm-options-callback" class="headerlink" title="confirm(options, callback)"></a>confirm(options, callback)</h3><p>A confirm box is often used if you want the user to verify or accept something.    </p>
+<p>When a confirm box pops up, the user will have to click either confirm or cancel button to proceed.    </p>
+<h4 id="Arguments-1"><a href="#Arguments-1" class="headerlink" title="Arguments"></a>Arguments</h4><ul>
+<li><code>options</code> (object): confirm box options.<ul>
+<li><code>message</code> (string): the message that the confirm shows.</li>
+<li><code>okTitle</code> (string): the title of confirm button, default is ‘OK’.</li>
+<li><code>cancelTitle</code> (string): the title of cancel button, default is ‘Cancel’.</li>
 </ul>
 </li>
-<li><code>callback</code><em>(function)</em>: callback when complete.</li>
+<li><code>callback</code> (function): callback when complete.</li>
 </ul>
-<h4 id="Example-1"><a href="#Example-1" class="headerlink" title="Example"></a>Example</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> arg1 = <span class="string">'I am alert!'</span>;</div><div class="line"><span class="keyword">var</span> arg2 = <span class="string">'I am ok'</span>;</div><div class="line"><span class="keyword">var</span> modal = <span class="built_in">require</span>(<span class="string">'@weex-module/modal'</span>);</div><div class="line">modal.alert(&#123;</div><div class="line">  <span class="attr">message</span>: arg1,</div><div class="line">  <span class="attr">okTitle</span>: arg2</div><div class="line">&#125;, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="comment">// TODO after the alert is complete.</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<h3 id="confirm-options-callback"><a href="#confirm-options-callback" class="headerlink" title="confirm(options, callback)"></a>confirm(options, callback)</h3><h4 id="Arguments-2"><a href="#Arguments-2" class="headerlink" title="Arguments"></a>Arguments</h4><ul>
-<li><code>options</code><em>(object)</em>: some options.<ul>
-<li><code>message</code><em>(string)</em>: the message that the confirm shows.</li>
-<li><code>okTitle</code><em>(string)</em>: the title of confirm button, default is ‘OK’.</li>
-<li><code>cancelTitle</code><em>(string)</em>: the title of cancel button, default is ‘Cancel’.</li>
-</ul>
-</li>
-<li><code>callback</code><em>(function)</em>: callback when complete.</li>
-</ul>
-<p>This method has a callback function whose arguments will be:</p>
+<p>This method has a callback function whose arguments will be:    </p>
 <ul>
-<li><code>result</code><em>(string)</em>: the title of the button that clicked by user.</li>
+<li><code>result</code>(string): the title text of the button that clicked by user.<br><strong>Example:</strong></li>
 </ul>
-<h4 id="Example-2"><a href="#Example-2" class="headerlink" title="Example"></a>Example</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> arg1 = <span class="string">'I am alert!'</span></div><div class="line"><span class="keyword">var</span> arg2 = <span class="string">'I am ok'</span></div><div class="line"><span class="keyword">var</span> arg3 = <span class="string">'I am cancel'</span></div><div class="line"><span class="keyword">var</span> modal = <span class="built_in">require</span>(<span class="string">'@weex-module/modal'</span>);</div><div class="line">modal.confirm(&#123;</div><div class="line">  <span class="attr">message</span>: arg1,</div><div class="line">  <span class="attr">okTitle</span>: arg2,</div><div class="line">  <span class="attr">cancelTitle</span>: arg3</div><div class="line">&#125;, <span class="function"><span class="keyword">function</span>(<span class="params">result</span>) </span>&#123;</div><div class="line">  nativeLog(result)</div><div class="line">  <span class="comment">// TODO after the confirm is complete.</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<h3 id="prompt-options-callback"><a href="#prompt-options-callback" class="headerlink" title="prompt(options, callback)"></a>prompt(options, callback)</h3><h4 id="Arguments-3"><a href="#Arguments-3" class="headerlink" title="Arguments"></a>Arguments</h4><ul>
-<li><code>options</code><em>(object)</em>: some options.<ul>
-<li><code>message</code><em>(string)</em>: the message that the prompt shows.</li>
-<li><code>okTitle</code><em>(string)</em>: the title of confirm button, default is ‘OK’.</li>
-<li><code>cancelTitle</code><em>(string)</em>: the title of cancel button, default is ‘Cancel’.</li>
-</ul>
-</li>
-<li><code>callback</code><em>(function)</em>: callback when complete.</li>
-</ul>
-<p>This method has a callback function whose arguments will be:</p>
-<ul>
-<li><code>res</code><em>(object)</em>: the argument will be a object, which has attributes <code>result</code> and <code>data</code>, like <code>{ result: &#39;OK&#39;, data: &#39;hello world&#39; }</code><ul>
-<li><code>result</code><em>(string)</em>: the title of the button that clicked by user.</li>
-<li><code>data</code><em>(string)</em>: the value of the text that entered by user.</li>
-</ul>
-</li>
-</ul>
-<h4 id="Example-3"><a href="#Example-3" class="headerlink" title="Example"></a>Example</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> arg1 = <span class="string">'I am prompt!'</span></div><div class="line"><span class="keyword">var</span> arg2 = <span class="string">'I am ok'</span></div><div class="line"><span class="keyword">var</span> arg3 = <span class="string">'I am cancel'</span></div><div class="line"><span class="keyword">var</span> modal = <span class="built_in">require</span>(<span class="string">'@weex-module/modal'</span>);</div><div class="line">modal.prompt(&#123;</div><div class="line">  <span class="attr">message</span>: arg1,</div><div class="line">  <span class="attr">okTitle</span>: arg2,</div><div class="line">  <span class="attr">cancelTitle</span>: arg3</div><div class="line">&#125;, <span class="function"><span class="keyword">function</span>(<span class="params">res</span>) </span>&#123;</div><div class="line">  nativeLog(res.result + <span class="string">', '</span> + res.data);</div><div class="line">  <span class="comment">// TODO after the prompt is complete.</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"height: 200px; width: 400px; background-color: #00bfff;</span></span></div><div class="line">  justify-content: center; align-items: center" <span class="attr">onclick</span>=<span class="string">"&#123;&#123;perform&#125;&#125;"</span>&gt;</div><div class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">style</span>=<span class="string">"font-size: 60px; color: #ffffff"</span>&gt;</span>Confirm<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">text</span>&gt;</span>&#123;&#123;params&#125;&#125;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="built_in">module</span>.exports = &#123;</div><div class="line">    <span class="attr">data</span>: &#123;</div><div class="line">      <span class="attr">params</span>: <span class="string">''</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">methods</span>: &#123;</div><div class="line">      <span class="attr">perform</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> modal = <span class="built_in">require</span>(<span class="string">'@weex-module/modal'</span>);</div><div class="line">        <span class="keyword">var</span> self = <span class="keyword">this</span>;</div><div class="line">        modal.confirm(&#123;</div><div class="line">          <span class="string">'message'</span>: <span class="string">'I have read and accept the terms.'</span>,</div><div class="line">          <span class="string">'okTitle'</span> : <span class="string">'YES'</span>,</div><div class="line">          <span class="string">'cancelTitle'</span> : <span class="string">'NO'</span></div><div class="line">        &#125;, <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</div><div class="line">          self.params = <span class="built_in">String</span>(e)</div><div class="line">        &#125;);</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">```    </div><div class="line"></div><div class="line">### prompt(options, callback)    </div><div class="line"></div><div class="line">A prompt box is often used if you want the user to input a value before entering a page.    </div><div class="line">When a prompt box pops up, the user will have to click either confirm or cancel button to proceed after entering an input value.    </div><div class="line"></div><div class="line">#### Arguments    </div><div class="line">- `options` (object): some options.</div><div class="line">  - `message` (string): the message that the prompt shows.</div><div class="line">  - `okTitle` (string): the title text of confirm button, default is 'OK'.</div><div class="line">  - `cancelTitle` (string): the title text of cancel button, default is 'Cancel'.</div><div class="line">- `callback` (function): callback when complete.     </div><div class="line">  This method has a callback function whose arguments will be:    </div><div class="line">- `ret` (object): the argument will be a object, which has attributes `result` and `data`,  like `&#123; result: 'OK', data: 'hello world' &#125;`</div><div class="line">  - `result` (string): the title of the button that clicked by user.</div><div class="line">  - `data` (string): the value of the text that entered by user.     </div><div class="line"></div><div class="line">**Example:**    </div><div class="line"></div><div class="line">```html</div><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"height: 200px; width: 400px; background-color: #00bfff;</span></span></div><div class="line">  justify-content: center; align-items: center" <span class="attr">onclick</span>=<span class="string">"&#123;&#123;perform&#125;&#125;"</span>&gt;</div><div class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">style</span>=<span class="string">"font-size: 60px; color: #ffffff"</span>&gt;</span>Prompt<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">text</span>&gt;</span>&#123;&#123;params&#125;&#125;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="built_in">module</span>.exports = &#123;</div><div class="line">    <span class="attr">data</span>: &#123;</div><div class="line">      <span class="attr">params</span>: <span class="string">''</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">methods</span>: &#123;</div><div class="line">      <span class="attr">perform</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> modal = <span class="built_in">require</span>(<span class="string">'@weex-module/modal'</span>);</div><div class="line">        <span class="keyword">var</span> self = <span class="keyword">this</span>;</div><div class="line">        modal.prompt(&#123;</div><div class="line">          <span class="string">'message'</span>: <span class="string">'I am a prompt'</span>,</div><div class="line">          <span class="string">'okTitle'</span> : <span class="string">'YES'</span>,</div><div class="line">          <span class="string">'cancelTitle'</span> : <span class="string">'NO'</span></div><div class="line">        &#125;, <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</div><div class="line">          self.params = <span class="built_in">JSON</span>.stringify(e)</div><div class="line">        &#125;);</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
   </div>
   
 </article>

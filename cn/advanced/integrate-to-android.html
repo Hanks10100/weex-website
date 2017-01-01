@@ -25,7 +25,7 @@ SDK依赖：WEEX 会在jcenter 定期发布稳定版本。jcenter注:国内可�
 前期准备
 已经安装了JDK version&amp;gt;=1.7 并配置了环境变量
 已经安">
-<meta property="og:updated_time" content="2016-12-22T12:29:24.000Z">
+<meta property="og:updated_time" content="2016-12-30T09:23:19.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="集成到 Android">
 <meta name="twitter:description" content="WEEX SDK 集成到 Android 工程注：以下文档都是假设您已经具备一定的Android开发经验。
@@ -67,16 +67,22 @@ SDK依赖：WEEX 会在jcenter 定期发布稳定版本。jcenter注:国内可�
             <a href="javascript:;">资源</a>
             <ul class="dropdown-menu subnav">
               <li>
-                <a href="/weex-website/cn/playground.html">Playground</a>
-              </li>
-              <li>
                 <a href="/weex-website/cn/tools">工具和服务</a>
               </li>
               <li>
                 <a href="/weex-website/cn/advanced">高阶知识</a>
               </li>
               <li>
+                <a href="/weex-website/cn/playground.html">Playground</a>
+              </li>
+              <li>
                 <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
+              </li>
+              <li>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Dot we</a>
               </li>
             </ul>
         </li>
@@ -86,13 +92,13 @@ SDK依赖：WEEX 会在jcenter 定期发布稳定版本。jcenter注:国内可�
       </ul>
       <ul class="tools">
         <li>
-          <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-  <label class="search-label">
-    <input type="text" id="search-input" name="q" results="0" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off"/>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
-  </label>
-</form>
-<div class="results-panel">
+  </form>
+  <div class="results-panel">
+  </div>
 </div>
         </li>
         <!--<li></li>-->
@@ -110,6 +116,16 @@ SDK依赖：WEEX 会在jcenter 定期发布稳定版本。jcenter注:国内可�
   <div class="sidebar-menu">
     
       <ul class="main-nav">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-sidebar" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
         <li>
           <a class="" href="/weex-website/cn/guide">
             教程
@@ -129,16 +145,22 @@ SDK依赖：WEEX 会在jcenter 定期发布稳定版本。jcenter注:国内可�
             <p>资源</p>
             <ul class="subnav">
               <li>
-                <a href="./playground.html">Playground</a>
-              </li>
-              <li>
                 <a href="/weex-website/cn/tools">工具和服务</a>
               </li>
               <li>
                 <a href="/weex-website/cn/advanced">高阶知识</a>
               </li>
               <li>
+                <a href="/weex-website/cn/playground.html">Playground</a>
+              </li>
+              <li>
                 <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
+              </li>
+              <li>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Dot we</a>
               </li>
             </ul>
         </li>
@@ -301,7 +323,7 @@ SDK依赖：WEEX 会在jcenter 定期发布稳定版本。jcenter注:国内可�
   </div>
   
 
-<article id="page-undefined" class="article article-type-advanced">
+<article class="article article-type-advanced">
   <div class="article-entry" itemprop="articleBody">
     <header class="article-header">
   
@@ -311,7 +333,7 @@ SDK依赖：WEEX 会在jcenter 定期发布稳定版本。jcenter注:国内可�
       </h1>
     
   
-  <time class="article-date" datetime="2016-12-22T12:29:24.000Z">Updated time: 22/12/2016</time>
+  <time class="article-date" datetime="2016-12-30T09:23:19.000Z">Updated time: 30/12/2016</time>
 </header>
     <h1 id="WEEX-SDK-集成到-Android-工程"><a href="#WEEX-SDK-集成到-Android-工程" class="headerlink" title="WEEX SDK 集成到 Android 工程"></a>WEEX SDK 集成到 Android 工程</h1><p>注：以下文档都是假设您已经具备一定的Android开发经验。</p>
 <h3 id="Android-集成有两种方式"><a href="#Android-集成有两种方式" class="headerlink" title="Android 集成有两种方式"></a>Android 集成有两种方式</h3><ol>
@@ -329,7 +351,7 @@ SDK依赖：WEEX 会在jcenter 定期发布稳定版本。jcenter注:国内可�
 <ol>
 <li>创建Android工程，没有什么要特别说明的，按照你的习惯来。</li>
 <li><p>修改build.gradle 加入如下基础依赖  </p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">compile &apos;com.android.support:recyclerview-v7:23.1.1&apos;</div><div class="line">compile &apos;com.android.support:support-v4:23.1.1&apos;</div><div class="line">compile &apos;com.android.support:appcompat-v7:23.1.1&apos;</div><div class="line">compile &apos;com.alibaba:fastjson:1.1.46.android&apos;</div><div class="line">compile &apos;com.taobao.android:weex_sdk:0.5.1@aar&apos;</div></pre></td></tr></table></figure>
+<figure class="highlight gradle"><table><tr><td class="code"><pre><div class="line"><span class="keyword">compile</span> <span class="string">'com.android.support:recyclerview-v7:23.1.1'</span></div><div class="line"><span class="keyword">compile</span> <span class="string">'com.android.support:support-v4:23.1.1'</span></div><div class="line"><span class="keyword">compile</span> <span class="string">'com.android.support:appcompat-v7:23.1.1'</span></div><div class="line"><span class="keyword">compile</span> <span class="string">'com.alibaba:fastjson:1.1.46.android'</span></div><div class="line"><span class="keyword">compile</span> <span class="string">'com.taobao.android:weex_sdk:0.5.1@aar'</span></div></pre></td></tr></table></figure>
 </li>
 </ol>
 <p>   注:版本可以高不可以低。  </p>
@@ -337,20 +359,20 @@ SDK依赖：WEEX 会在jcenter 定期发布稳定版本。jcenter注:国内可�
 <ul>
 <li>实现图片下载接口，初始化时设置。</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">package com.weex.sample;</div><div class="line"></div><div class="line">import android.widget.ImageView;</div><div class="line"></div><div class="line">import com.taobao.weex.adapter.IWXImgLoaderAdapter;</div><div class="line">import com.taobao.weex.common.WXImageStrategy;</div><div class="line">import com.taobao.weex.dom.WXImageQuality;</div><div class="line"></div><div class="line">/**</div><div class="line"> * Created by lixinke on 16/6/1.</div><div class="line"> */</div><div class="line">public class ImageAdapter implements IWXImgLoaderAdapter &#123;</div><div class="line"></div><div class="line"></div><div class="line">  @Override</div><div class="line">  public void setImage(String url, ImageView view, WXImageQuality quality, WXImageStrategy strategy) &#123;</div><div class="line">    //实现你自己的图片下载，否则图片无法显示。</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">package</span> com.weex.sample;</div><div class="line"></div><div class="line"><span class="keyword">import</span> android.widget.ImageView;</div><div class="line"></div><div class="line"><span class="keyword">import</span> com.taobao.weex.adapter.IWXImgLoaderAdapter;</div><div class="line"><span class="keyword">import</span> com.taobao.weex.common.WXImageStrategy;</div><div class="line"><span class="keyword">import</span> com.taobao.weex.dom.WXImageQuality;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * Created by lixinke on 16/6/1.</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ImageAdapter</span> <span class="keyword">implements</span> <span class="title">IWXImgLoaderAdapter</span> </span>&#123;</div><div class="line"></div><div class="line"></div><div class="line">  <span class="meta">@Override</span></div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setImage</span><span class="params">(String url, ImageView view, WXImageQuality quality, WXImageStrategy strategy)</span> </span>&#123;</div><div class="line">    <span class="comment">//实现你自己的图片下载，否则图片无法显示。</span></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <ul>
 <li>初始化</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">package com.weex.sample;</div><div class="line"></div><div class="line">import android.app.Application;</div><div class="line"></div><div class="line">import com.taobao.weex.InitConfig;</div><div class="line">import com.taobao.weex.WXSDKEngine;</div><div class="line"></div><div class="line">/**</div><div class="line"> * 注意要在Manifest中设置android:name=&quot;.WXApplication&quot;</div><div class="line"> * 要实现ImageAdapter 否则图片不能下载</div><div class="line"> * gradle 中一定要添加一些依赖，否则初始化会失败。</div><div class="line"> * compile &apos;com.android.support:recyclerview-v7:23.1.1&apos;</div><div class="line"> * compile &apos;com.android.support:support-v4:23.1.1&apos;</div><div class="line"> * compile &apos;com.android.support:appcompat-v7:23.1.1&apos;</div><div class="line"> * compile &apos;com.alibaba:fastjson:1.1.45&apos;</div><div class="line"> */</div><div class="line">public class WXApplication extends Application &#123;</div><div class="line"></div><div class="line">  @Override</div><div class="line">  public void onCreate() &#123;</div><div class="line">    super.onCreate();</div><div class="line">    InitConfig config=new InitConfig.Builder().setImgAdapter(new ImageAdapter()).build();</div><div class="line">    WXSDKEngine.initialize(this,config);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">package</span> com.weex.sample;</div><div class="line"></div><div class="line"><span class="keyword">import</span> android.app.Application;</div><div class="line"></div><div class="line"><span class="keyword">import</span> com.taobao.weex.InitConfig;</div><div class="line"><span class="keyword">import</span> com.taobao.weex.WXSDKEngine;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * 注意要在Manifest中设置android:name=".WXApplication"</div><div class="line"> * 要实现ImageAdapter 否则图片不能下载</div><div class="line"> * gradle 中一定要添加一些依赖，否则初始化会失败。</div><div class="line"> * compile 'com.android.support:recyclerview-v7:23.1.1'</div><div class="line"> * compile 'com.android.support:support-v4:23.1.1'</div><div class="line"> * compile 'com.android.support:appcompat-v7:23.1.1'</div><div class="line"> * compile 'com.alibaba:fastjson:1.1.45'</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">WXApplication</span> <span class="keyword">extends</span> <span class="title">Application</span> </span>&#123;</div><div class="line"></div><div class="line">  <span class="meta">@Override</span></div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="keyword">super</span>.onCreate();</div><div class="line">    InitConfig config=<span class="keyword">new</span> InitConfig.Builder().setImgAdapter(<span class="keyword">new</span> ImageAdapter()).build();</div><div class="line">    WXSDKEngine.initialize(<span class="keyword">this</span>,config);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <ul>
 <li>开始渲染</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">package com.weex.sample;</div><div class="line"></div><div class="line">import android.os.Bundle;</div><div class="line">import android.support.v7.app.AppCompatActivity;</div><div class="line">import android.view.View;</div><div class="line"></div><div class="line">import com.taobao.weex.IWXRenderListener;</div><div class="line">import com.taobao.weex.WXSDKInstance;</div><div class="line">import com.taobao.weex.common.WXRenderStrategy;</div><div class="line">import com.taobao.weex.utils.WXFileUtils;</div><div class="line"></div><div class="line">public class MainActivity extends AppCompatActivity implements IWXRenderListener &#123;</div><div class="line"></div><div class="line">  WXSDKInstance mWXSDKInstance;</div><div class="line"></div><div class="line">  @Override</div><div class="line">  protected void onCreate(Bundle savedInstanceState) &#123;</div><div class="line">    super.onCreate(savedInstanceState);</div><div class="line">    setContentView(R.layout.activity_main);</div><div class="line"></div><div class="line">    mWXSDKInstance = new WXSDKInstance(this);</div><div class="line">    mWXSDKInstance.registerRenderListener(this);</div><div class="line">    /**</div><div class="line">     * WXSample 可以替换成自定义的字符串，针对埋点有效。</div><div class="line">     * template 是.we transform 后的 js文件。</div><div class="line">     * option 可以为空，或者通过option传入 js需要的参数。例如bundle js的地址等。</div><div class="line">     * jsonInitData 可以为空。</div><div class="line">     * width 为-1 默认全屏，可以自己定制。</div><div class="line">     * height =-1 默认全屏，可以自己定制。</div><div class="line">     */</div><div class="line">    mWXSDKInstance.render(&quot;WXSample&quot;, WXFileUtils.loadFileContent(&quot;hello.js&quot;, this), null, null, -1, -1, WXRenderStrategy.APPEND_ASYNC);</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  @Override</div><div class="line">  public void onViewCreated(WXSDKInstance instance, View view) &#123;</div><div class="line">    setContentView(view);</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  @Override</div><div class="line">  public void onRenderSuccess(WXSDKInstance instance, int width, int height) &#123;</div><div class="line"></div><div class="line">  &#125;</div><div class="line"></div><div class="line">  @Override</div><div class="line">  public void onRefreshSuccess(WXSDKInstance instance, int width, int height) &#123;</div><div class="line"></div><div class="line">  &#125;</div><div class="line"></div><div class="line">  @Override</div><div class="line">  public void onException(WXSDKInstance instance, String errCode, String msg) &#123;</div><div class="line"></div><div class="line">  &#125;</div><div class="line"></div><div class="line"></div><div class="line">  @Override</div><div class="line">  protected void onResume() &#123;</div><div class="line">    super.onResume();</div><div class="line">    if(mWXSDKInstance!=null)&#123;</div><div class="line">      mWXSDKInstance.onActivityResume();</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  @Override</div><div class="line">  protected void onPause() &#123;</div><div class="line">    super.onPause();</div><div class="line">    if(mWXSDKInstance!=null)&#123;</div><div class="line">      mWXSDKInstance.onActivityPause();</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  @Override</div><div class="line">  protected void onStop() &#123;</div><div class="line">    super.onStop();</div><div class="line">    if(mWXSDKInstance!=null)&#123;</div><div class="line">      mWXSDKInstance.onActivityStop();</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  @Override</div><div class="line">  protected void onDestroy() &#123;</div><div class="line">    super.onDestroy();</div><div class="line">    if(mWXSDKInstance!=null)&#123;</div><div class="line">      mWXSDKInstance.onActivityDestroy();</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">package</span> com.weex.sample;</div><div class="line"></div><div class="line"><span class="keyword">import</span> android.os.Bundle;</div><div class="line"><span class="keyword">import</span> android.support.v7.app.AppCompatActivity;</div><div class="line"><span class="keyword">import</span> android.view.View;</div><div class="line"></div><div class="line"><span class="keyword">import</span> com.taobao.weex.IWXRenderListener;</div><div class="line"><span class="keyword">import</span> com.taobao.weex.WXSDKInstance;</div><div class="line"><span class="keyword">import</span> com.taobao.weex.common.WXRenderStrategy;</div><div class="line"><span class="keyword">import</span> com.taobao.weex.utils.WXFileUtils;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> <span class="keyword">implements</span> <span class="title">IWXRenderListener</span> </span>&#123;</div><div class="line"></div><div class="line">  WXSDKInstance mWXSDKInstance;</div><div class="line"></div><div class="line">  <span class="meta">@Override</span></div><div class="line">  <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">    <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">    setContentView(R.layout.activity_main);</div><div class="line"></div><div class="line">    mWXSDKInstance = <span class="keyword">new</span> WXSDKInstance(<span class="keyword">this</span>);</div><div class="line">    mWXSDKInstance.registerRenderListener(<span class="keyword">this</span>);</div><div class="line">    <span class="comment">/**</span></div><div class="line">     * WXSample 可以替换成自定义的字符串，针对埋点有效。</div><div class="line">     * template 是.we transform 后的 js文件。</div><div class="line">     * option 可以为空，或者通过option传入 js需要的参数。例如bundle js的地址等。</div><div class="line">     * jsonInitData 可以为空。</div><div class="line">     * width 为-1 默认全屏，可以自己定制。</div><div class="line">     * height =-1 默认全屏，可以自己定制。</div><div class="line">     */</div><div class="line">    mWXSDKInstance.render(<span class="string">"WXSample"</span>, WXFileUtils.loadFileContent(<span class="string">"hello.js"</span>, <span class="keyword">this</span>), <span class="keyword">null</span>, <span class="keyword">null</span>, -<span class="number">1</span>, -<span class="number">1</span>, WXRenderStrategy.APPEND_ASYNC);</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="meta">@Override</span></div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onViewCreated</span><span class="params">(WXSDKInstance instance, View view)</span> </span>&#123;</div><div class="line">    setContentView(view);</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="meta">@Override</span></div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onRenderSuccess</span><span class="params">(WXSDKInstance instance, <span class="keyword">int</span> width, <span class="keyword">int</span> height)</span> </span>&#123;</div><div class="line"></div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="meta">@Override</span></div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onRefreshSuccess</span><span class="params">(WXSDKInstance instance, <span class="keyword">int</span> width, <span class="keyword">int</span> height)</span> </span>&#123;</div><div class="line"></div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="meta">@Override</span></div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onException</span><span class="params">(WXSDKInstance instance, String errCode, String msg)</span> </span>&#123;</div><div class="line"></div><div class="line">  &#125;</div><div class="line"></div><div class="line"></div><div class="line">  <span class="meta">@Override</span></div><div class="line">  <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onResume</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="keyword">super</span>.onResume();</div><div class="line">    <span class="keyword">if</span>(mWXSDKInstance!=<span class="keyword">null</span>)&#123;</div><div class="line">      mWXSDKInstance.onActivityResume();</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="meta">@Override</span></div><div class="line">  <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onPause</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="keyword">super</span>.onPause();</div><div class="line">    <span class="keyword">if</span>(mWXSDKInstance!=<span class="keyword">null</span>)&#123;</div><div class="line">      mWXSDKInstance.onActivityPause();</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="meta">@Override</span></div><div class="line">  <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onStop</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="keyword">super</span>.onStop();</div><div class="line">    <span class="keyword">if</span>(mWXSDKInstance!=<span class="keyword">null</span>)&#123;</div><div class="line">      mWXSDKInstance.onActivityStop();</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="meta">@Override</span></div><div class="line">  <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onDestroy</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="keyword">super</span>.onDestroy();</div><div class="line">    <span class="keyword">if</span>(mWXSDKInstance!=<span class="keyword">null</span>)&#123;</div><div class="line">      mWXSDKInstance.onActivityDestroy();</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h2 id="源码依赖-IDE-Android-Studio"><a href="#源码依赖-IDE-Android-Studio" class="headerlink" title="源码依赖(IDE Android Studio)"></a>源码依赖(IDE Android Studio)</h2><ol>
 <li>下载源码 <code>git clone https://github.com/alibaba/weex</code></li>
-<li>创建Android 工程。</li>
-<li>通过以下路径引入SDK Module<br>File-&gt;New-Import Module-&gt;选择WEEX SDK Module(weex/android/sdk)-&gt;Finish  </li>
-<li>app 的build.gradle 中添加如下依赖:<code>compile project(&#39;:weex_sdk&#39;)</code></li>
+<li>创建 Android 工程。</li>
+<li>通过以下路径引入 SDK Module<br>File-&gt;New-Import Module-&gt; 选择 WEEX SDK Module(weex/android/sdk) -&gt; Finish  </li>
+<li>app 的 build.gradle 中添加如下依赖:<code>compile project(&#39;:weex_sdk&#39;)</code></li>
 <li>其他设置请参考上面快速接入</li>
 </ol>
 <h3 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h3><p>WXSample地址<br><code>https://github.com/xkli/WXSample.git</code></p>

@@ -23,7 +23,7 @@ auto-play {boolean}：可选">
 
 特性
 auto-play {boolean}：可选">
-<meta property="og:updated_time" content="2016-12-22T11:50:28.000Z">
+<meta property="og:updated_time" content="2017-01-01T02:28:13.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="<slider>">
 <meta name="twitter:description" content="&amp;lt;slider&amp;gt;&amp;lt;slider&amp;gt; 组件用于在一个页面中展示多个图片，在前端，这种效果被称为 轮播图。
@@ -64,16 +64,22 @@ auto-play {boolean}：可选">
             <a href="javascript:;">资源</a>
             <ul class="dropdown-menu subnav">
               <li>
-                <a href="/weex-website/cn/playground.html">Playground</a>
-              </li>
-              <li>
                 <a href="/weex-website/cn/tools">工具和服务</a>
               </li>
               <li>
                 <a href="/weex-website/cn/advanced">高阶知识</a>
               </li>
               <li>
+                <a href="/weex-website/cn/playground.html">Playground</a>
+              </li>
+              <li>
                 <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
+              </li>
+              <li>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Dot we</a>
               </li>
             </ul>
         </li>
@@ -83,13 +89,13 @@ auto-play {boolean}：可选">
       </ul>
       <ul class="tools">
         <li>
-          <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-  <label class="search-label">
-    <input type="text" id="search-input" name="q" results="0" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off"/>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
-  </label>
-</form>
-<div class="results-panel">
+  </form>
+  <div class="results-panel">
+  </div>
 </div>
         </li>
         <!--<li></li>-->
@@ -448,11 +454,11 @@ auto-play {boolean}：可选">
               </li>
             
               <li>
-                <a href="/weex-website/cn/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
+                <a href="/weex-website/cn/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
               </li>
             
               <li>
-                <a href="/weex-website/cn/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
+                <a href="/weex-website/cn/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
               </li>
             
               <li>
@@ -917,11 +923,11 @@ auto-play {boolean}：可选">
               </li>
             
               <li>
-                <a href="/weex-website/cn/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
+                <a href="/weex-website/cn/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
               </li>
             
               <li>
-                <a href="/weex-website/cn/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
+                <a href="/weex-website/cn/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
               </li>
             
               <li>
@@ -1041,7 +1047,7 @@ auto-play {boolean}：可选">
   </div>
   
 
-<article id="page-undefined" class="article article-type-references">
+<article class="article article-type-references">
   <div class="article-entry" itemprop="articleBody">
     <header class="article-header">
   
@@ -1051,12 +1057,12 @@ auto-play {boolean}：可选">
       </h1>
     
   
-  <time class="article-date" datetime="2016-12-22T11:50:28.000Z">Updated time: 22/12/2016</time>
+  <time class="article-date" datetime="2017-01-01T02:28:13.000Z">Updated time: 01/01/2017</time>
 </header>
     <h1 id="lt-slider-gt"><a href="#lt-slider-gt" class="headerlink" title="&lt;slider&gt;"></a>&lt;slider&gt;</h1><p><code>&lt;slider&gt;</code> 组件用于在一个页面中展示多个图片，在前端，这种效果被称为 <code>轮播图</code>。</p>
 <h2 id="子组件"><a href="#子组件" class="headerlink" title="子组件"></a>子组件</h2><p>支持任意类型的 Weex 组件作为其子组件。 其中，还支持以下组件作为子组件展示特殊效果：</p>
 <ul>
-<li><code>&lt;indicator&gt;</code>：用于显示轮播图指示器效果，必须充当 <a href="https://alibaba.github.io/weex/cn/doc/components/slider.html"><code>&lt;slider&gt;</code></a> 组件的子组件使用。</li>
+<li><code>&lt;indicator&gt;</code>：用于显示轮播图指示器效果，必须充当 <a href="./slider.html"><code>&lt;slider&gt;</code></a> 组件的子组件使用。</li>
 </ul>
 <h2 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h2><ul>
 <li><p><code>auto-play {boolean}</code>：可选值为 <code>true</code>/<code>false</code>，默认的是 <code>false</code>。</p>
@@ -1074,7 +1080,7 @@ auto-play {boolean}：可选">
 <li><code>opacity</code></li>
 <li><code>background-color</code></li>
 </ul>
-<p>查看 <a href="https://alibaba.github.io/weex/cn/doc/references/common-style.html">组件通用样式</a></p>
+<p>查看 <a href="../common-style.html">组件通用样式</a></p>
 </li>
 </ul>
 <h2 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h2><ul>
@@ -1092,7 +1098,7 @@ auto-play {boolean}：可选">
 <li><code>appear</code></li>
 <li><code>disappear</code></li>
 </ul>
-<p>查看 <a href="https://alibaba.github.io/weex/cn/doc/references/common-event.html">通用事件</a></p>
+<p>查看 <a href="../common-event.html">通用事件</a></p>
 </li>
 </ul>
 <h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">slider</span> <span class="attr">class</span>=<span class="string">"slider"</span> <span class="attr">interval</span>=<span class="string">"3000"</span> <span class="attr">auto-play</span>=<span class="string">"true"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"slider-pages"</span> <span class="attr">repeat</span>=<span class="string">"item in itemList"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">image</span> <span class="attr">class</span>=<span class="string">"img"</span> <span class="attr">src</span>=<span class="string">"&#123;&#123;item.pictureUrl&#125;&#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"title"</span>&gt;</span>&#123;&#123;item.title&#125;&#125;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">indicator</span> <span class="attr">class</span>=<span class="string">"indicator"</span>&gt;</span><span class="tag">&lt;/<span class="name">indicator</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">slider</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></div><div class="line">  <span class="selector-class">.img</span> &#123;</div><div class="line">    <span class="attribute">width</span>: <span class="number">714</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">150</span>;</div><div class="line">  &#125;</div><div class="line">  <span class="selector-class">.title</span> &#123;</div><div class="line">    <span class="attribute">position</span>: absolute;</div><div class="line">    <span class="attribute">top</span>: <span class="number">20</span>;</div><div class="line">    <span class="attribute">left</span>: <span class="number">20</span>;</div><div class="line">    <span class="attribute">color</span>: <span class="number">#ff0000</span>;</div><div class="line">    <span class="attribute">font-size</span>: <span class="number">48</span>;</div><div class="line">    <span class="attribute">font-weight</span>: bold;</div><div class="line">    <span class="attribute">background-color</span>: <span class="number">#eeeeee</span>;</div><div class="line">  &#125;</div><div class="line">  <span class="selector-class">.slider</span> &#123;</div><div class="line">    <span class="attribute">flex-direction</span>: row;</div><div class="line">    <span class="attribute">margin</span>: <span class="number">18</span>;</div><div class="line">    <span class="attribute">width</span>: <span class="number">714</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">230</span>;</div><div class="line">  &#125;</div><div class="line">  <span class="selector-class">.slider-pages</span> &#123;</div><div class="line">    <span class="attribute">flex-direction</span>: row;</div><div class="line">    <span class="attribute">width</span>: <span class="number">714</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">200</span>;</div><div class="line">  &#125;</div><div class="line">  <span class="selector-class">.indicator</span> &#123;</div><div class="line">    <span class="attribute">width</span>:<span class="number">714</span>;</div><div class="line">    <span class="attribute">height</span>:<span class="number">200</span>;</div><div class="line">    <span class="attribute">position</span>:absolute;</div><div class="line">    <span class="attribute">top</span>:<span class="number">1</span>;</div><div class="line">    <span class="attribute">left</span>:<span class="number">1</span>;</div><div class="line">    <span class="attribute">item-color</span>: red;</div><div class="line">    <span class="attribute">item-selectedColor</span>: blue;</div><div class="line">    <span class="attribute">item-size</span>: <span class="number">20</span>;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="built_in">module</span>.exports = &#123;</div><div class="line">    <span class="attr">data</span>: &#123;</div><div class="line">      <span class="attr">itemList</span>: [</div><div class="line">        &#123;<span class="attr">itemId</span>: <span class="string">'520421163634'</span>, <span class="attr">title</span>: <span class="string">'item1'</span>, <span class="attr">pictureUrl</span>: <span class="string">'https://gd2.alicdn.com/bao/uploaded/i2/T14H1LFwBcXXXXXXXX_!!0-item_pic.jpg'</span>&#125;,</div><div class="line">        &#123;<span class="attr">itemId</span>: <span class="string">'522076777462'</span>, <span class="attr">title</span>: <span class="string">'item2'</span>, <span class="attr">pictureUrl</span>: <span class="string">'https://gd1.alicdn.com/bao/uploaded/i1/TB1PXJCJFXXXXciXFXXXXXXXXXX_!!0-item_pic.jpg'</span>&#125;,</div><div class="line">        &#123;<span class="attr">itemId</span>: <span class="string">'522076777462'</span>, <span class="attr">title</span>: <span class="string">'iten3'</span>, <span class="attr">pictureUrl</span>: <span class="string">'https://gd3.alicdn.com/bao/uploaded/i3/TB1x6hYLXXXXXazXVXXXXXXXXXX_!!0-item_pic.jpg'</span>&#125;</div><div class="line">      ]</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>

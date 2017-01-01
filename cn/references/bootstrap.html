@@ -21,7 +21,7 @@ type=&amp;quot;data&amp;quot;: 配置初始化数据，这里定义的数据会�
 type=&amp;quot;config&amp;quot;: 定义配置项。
 
 &amp;lt;script type=&quot;data&quot;&amp;gt;  /* (可选) 定义初">
-<meta property="og:updated_time" content="2016-12-22T11:41:42.000Z">
+<meta property="og:updated_time" content="2017-01-01T02:34:24.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Bootstrap">
 <meta name="twitter:description" content="Bootstrap除了其默认的意义，&amp;lt;script&amp;gt;标签支持在页面的顶级组件中通过 type 属性定义两种配置。
@@ -61,16 +61,22 @@ type=&amp;quot;config&amp;quot;: 定义配置项。
             <a href="javascript:;">资源</a>
             <ul class="dropdown-menu subnav">
               <li>
-                <a href="/weex-website/cn/playground.html">Playground</a>
-              </li>
-              <li>
                 <a href="/weex-website/cn/tools">工具和服务</a>
               </li>
               <li>
                 <a href="/weex-website/cn/advanced">高阶知识</a>
               </li>
               <li>
+                <a href="/weex-website/cn/playground.html">Playground</a>
+              </li>
+              <li>
                 <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
+              </li>
+              <li>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Dot we</a>
               </li>
             </ul>
         </li>
@@ -80,13 +86,13 @@ type=&amp;quot;config&amp;quot;: 定义配置项。
       </ul>
       <ul class="tools">
         <li>
-          <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-  <label class="search-label">
-    <input type="text" id="search-input" name="q" results="0" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off"/>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
-  </label>
-</form>
-<div class="results-panel">
+  </form>
+  <div class="results-panel">
+  </div>
 </div>
         </li>
         <!--<li></li>-->
@@ -445,11 +451,11 @@ type=&amp;quot;config&amp;quot;: 定义配置项。
               </li>
             
               <li>
-                <a href="/weex-website/cn/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
+                <a href="/weex-website/cn/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
               </li>
             
               <li>
-                <a href="/weex-website/cn/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
+                <a href="/weex-website/cn/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
               </li>
             
               <li>
@@ -914,11 +920,11 @@ type=&amp;quot;config&amp;quot;: 定义配置项。
               </li>
             
               <li>
-                <a href="/weex-website/cn/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
+                <a href="/weex-website/cn/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
               </li>
             
               <li>
-                <a href="/weex-website/cn/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
+                <a href="/weex-website/cn/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
               </li>
             
               <li>
@@ -1038,7 +1044,7 @@ type=&amp;quot;config&amp;quot;: 定义配置项。
   </div>
   
 
-<article id="page-undefined" class="article article-type-references">
+<article class="article article-type-references">
   <div class="article-entry" itemprop="articleBody">
     <header class="article-header">
   
@@ -1048,17 +1054,17 @@ type=&amp;quot;config&amp;quot;: 定义配置项。
       </h1>
     
   
-  <time class="article-date" datetime="2016-12-22T11:41:42.000Z">Updated time: 22/12/2016</time>
+  <time class="article-date" datetime="2017-01-01T02:34:24.000Z">Updated time: 01/01/2017</time>
 </header>
     <h1 id="Bootstrap"><a href="#Bootstrap" class="headerlink" title="Bootstrap"></a>Bootstrap</h1><p>除了其默认的意义，<code>&lt;script&gt;</code>标签支持在页面的顶级组件中通过 <code>type</code> 属性定义两种配置。</p>
 <ul>
 <li><code>type=&quot;data&quot;</code>: 配置初始化数据，这里定义的数据会覆盖定义在<code>&lt;script&gt;</code>中的数据；</li>
 <li><code>type=&quot;config&quot;</code>: 定义配置项。</li>
 </ul>
-<figure class="highlight"><table><tr><td class="code"><pre><div class="line">&lt;script type="data"&gt;</div><div class="line">  /* (可选) 定义初始化数据 */</div><div class="line">&lt;/script&gt;</div><div class="line"></div><div class="line">&lt;script type="config"&gt;</div><div class="line">  /* (可选) 定义配置项 */</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"data"</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="comment">/* (可选) 定义初始化数据 */</span></div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"config"</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="comment">/* (可选) 定义配置项 */</span></div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
 <h2 id="定义初始化数据"><a href="#定义初始化数据" class="headerlink" title="定义初始化数据"></a>定义初始化数据</h2><p>有时，很难在默认的<code>&lt;script&gt;</code>标签中维护巨大的数据结构。所以 Weex 允许我们通过 <code>&lt;script type=&quot;data&quot;&gt;</code> 标签定义初始化数据。在这里定义的数据将完全取代默认的 <code>&lt;script&gt;</code> 标签中定义的数据。</p>
 <p>例如：</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line">&lt;script type=<span class="string">"data"</span>&gt;</div><div class="line">  <span class="built_in">module</span>.exports = &#123;</div><div class="line">      <span class="attr">title</span>: <span class="string">'Alibaba'</span>,</div><div class="line">      <span class="attr">date</span>: <span class="keyword">new</span> <span class="built_in">Date</span>().toLocaleString()</div><div class="line">  &#125;</div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"data"</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="built_in">module</span>.exports = &#123;</div><div class="line">      <span class="attr">title</span>: <span class="string">'Alibaba'</span>,</div><div class="line">      <span class="attr">date</span>: <span class="keyword">new</span> <span class="built_in">Date</span>().toLocaleString()</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
 <h2 id="配置项"><a href="#配置项" class="headerlink" title="配置项"></a>配置项</h2><p>Weex 也允许我们通过 <code>&lt;script type=&quot;config&quot;&gt;</code> 定义一些配置项，目前，仅只支持配置 <code>downgrade</code>。</p>
 <ul>
 <li><code>downgrade.osVersion</code></li>

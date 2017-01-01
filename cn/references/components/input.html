@@ -17,7 +17,7 @@
 注意： 
 此组件不支持 click 事件。请监听 &amp;lt;input&amp;gt; 或 change 来代替 click 事件。
 子组件">
-<meta property="og:updated_time" content="2016-12-22T11:48:40.000Z">
+<meta property="og:updated_time" content="2017-01-01T02:25:27.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="<input>">
 <meta name="twitter:description" content="&amp;lt;input&amp;gt;Weex 内置的 &amp;lt;input&amp;gt; 组件用来创建接收用户输入字符的输入组件。 &amp;lt;input&amp;gt; 组件的工作方式因 type 属性的值而异，比如 &amp;lt;text&amp;gt;， password，url，email，tel 等。
@@ -55,16 +55,22 @@
             <a href="javascript:;">资源</a>
             <ul class="dropdown-menu subnav">
               <li>
-                <a href="/weex-website/cn/playground.html">Playground</a>
-              </li>
-              <li>
                 <a href="/weex-website/cn/tools">工具和服务</a>
               </li>
               <li>
                 <a href="/weex-website/cn/advanced">高阶知识</a>
               </li>
               <li>
+                <a href="/weex-website/cn/playground.html">Playground</a>
+              </li>
+              <li>
                 <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
+              </li>
+              <li>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Dot we</a>
               </li>
             </ul>
         </li>
@@ -74,13 +80,13 @@
       </ul>
       <ul class="tools">
         <li>
-          <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-  <label class="search-label">
-    <input type="text" id="search-input" name="q" results="0" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off"/>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
-  </label>
-</form>
-<div class="results-panel">
+  </form>
+  <div class="results-panel">
+  </div>
 </div>
         </li>
         <!--<li></li>-->
@@ -439,11 +445,11 @@
               </li>
             
               <li>
-                <a href="/weex-website/cn/references/components/input.html" class="sidebar-link current ">&lt;input&gt;</a>
+                <a href="/weex-website/cn/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
               </li>
             
               <li>
-                <a href="/weex-website/cn/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
+                <a href="/weex-website/cn/references/components/input.html" class="sidebar-link current ">&lt;input&gt;</a>
               </li>
             
               <li>
@@ -908,11 +914,11 @@
               </li>
             
               <li>
-                <a href="/weex-website/cn/references/components/input.html" class="sidebar-link current ">&lt;input&gt;</a>
+                <a href="/weex-website/cn/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
               </li>
             
               <li>
-                <a href="/weex-website/cn/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
+                <a href="/weex-website/cn/references/components/input.html" class="sidebar-link current ">&lt;input&gt;</a>
               </li>
             
               <li>
@@ -1032,7 +1038,7 @@
   </div>
   
 
-<article id="page-undefined" class="article article-type-references">
+<article class="article article-type-references">
   <div class="article-entry" itemprop="articleBody">
     <header class="article-header">
   
@@ -1042,7 +1048,7 @@
       </h1>
     
   
-  <time class="article-date" datetime="2016-12-22T11:48:40.000Z">Updated time: 22/12/2016</time>
+  <time class="article-date" datetime="2017-01-01T02:25:27.000Z">Updated time: 01/01/2017</time>
 </header>
     <h1 id="lt-input-gt"><a href="#lt-input-gt" class="headerlink" title="&lt;input&gt;"></a>&lt;input&gt;</h1><p>Weex 内置的 <code>&lt;input&gt;</code> 组件用来创建接收用户输入字符的输入组件。 <code>&lt;input&gt;</code> 组件的工作方式因 <code>type</code> 属性的值而异，比如 <code>&lt;text&gt;</code>， <code>password</code>，<code>url</code>，<code>email</code>，<code>tel</code> 等。</p>
 <p><strong>注意：</strong> </p>
@@ -1066,7 +1072,7 @@
 <li>支持 <code>font-weight</code></li>
 <li>支持 <code>text-align</code></li>
 </ul>
-<p>查看 <a href="https://alibaba.github.io/weex/cn/doc/references/text-style.html">文本样式</a></p>
+<p>查看 <a href="../text-style.html">文本样式</a></p>
 </li>
 <li><p>通用样式：支持所有通用样式</p>
 <ul>
@@ -1076,7 +1082,7 @@
 <li><code>opacity</code></li>
 <li><code>background-color</code></li>
 </ul>
-<p>查看 <a href="https://alibaba.github.io/weex/cn/doc/references/common-style.html">组件通用样式</a></p>
+<p>查看 <a href="../common-style.html">组件通用样式</a></p>
 </li>
 </ul>
 <h2 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h2><ul>
@@ -1116,7 +1122,7 @@
 <li><code>appear</code></li>
 <li><code>disappear</code></li>
 </ul>
-<p>查看 <a href="https://alibaba.github.io/weex/cn/doc/references/common-event.html">通用事件</a></p>
+<p>查看 <a href="../common-event.html">通用事件</a></p>
 </li>
 </ul>
 <h1 id="约束"><a href="#约束" class="headerlink" title="约束"></a>约束</h1><p>目前不支持 <code>this.$el(id).value = &#39;&#39;</code> 这种方式改写 input value。只支持在 <code>&lt;input&gt;</code> 组件的 <code>input</code>、<code>change</code> 事件中改写。</p>

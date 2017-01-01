@@ -5,19 +5,16 @@
   
   <title>Require 3rd Party Libs | Weex</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="How to require 3rd Party Libs ?0.4
-In the paragraph Maintain Your Component Code, we learn that JavaScript code can be written in &amp;lt;script&amp;gt; tag in one component. But there must be some common fun">
+  <meta name="description" content="How to require 3rd Party Libs ?In the paragraph Maintain Your Component Code, we learn that JavaScript code can be written in &amp;lt;script&amp;gt; tag in one component. But there must be some common functio">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Require 3rd Party Libs">
 <meta property="og:url" content="http://alibaba.github.io/guide/how-to/require-3rd-party-libs.html">
 <meta property="og:site_name" content="Weex">
-<meta property="og:description" content="How to require 3rd Party Libs ?0.4
-In the paragraph Maintain Your Component Code, we learn that JavaScript code can be written in &amp;lt;script&amp;gt; tag in one component. But there must be some common fun">
-<meta property="og:updated_time" content="2016-12-21T03:01:27.000Z">
+<meta property="og:description" content="How to require 3rd Party Libs ?In the paragraph Maintain Your Component Code, we learn that JavaScript code can be written in &amp;lt;script&amp;gt; tag in one component. But there must be some common functio">
+<meta property="og:updated_time" content="2016-12-30T08:27:19.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Require 3rd Party Libs">
-<meta name="twitter:description" content="How to require 3rd Party Libs ?0.4
-In the paragraph Maintain Your Component Code, we learn that JavaScript code can be written in &amp;lt;script&amp;gt; tag in one component. But there must be some common fun">
+<meta name="twitter:description" content="How to require 3rd Party Libs ?In the paragraph Maintain Your Component Code, we learn that JavaScript code can be written in &amp;lt;script&amp;gt; tag in one component. But there must be some common functio">
   
     <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
   
@@ -49,16 +46,22 @@ In the paragraph Maintain Your Component Code, we learn that JavaScript code can
             <a href="javascript:;">Resources</a>
             <ul class="dropdown-menu subnav">
               <li>
-                <a href="/weex-website/playground.html">Playground</a>
-              </li>
-              <li>
-                <a href="/weex-website/tools">Tools</a>
+                <a href="/weex-website/tools">Service &amp; Tools</a>
               </li>
               <li>
                 <a href="/weex-website/advanced">Advanced</a>
               </li>
               <li>
+                <a href="/weex-website/playground.html">Playground</a>
+              </li>
+              <li>
                 <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
+              </li>
+              <li>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Dot we</a>
               </li>
             </ul>
         </li>
@@ -68,13 +71,13 @@ In the paragraph Maintain Your Component Code, we learn that JavaScript code can
       </ul>
       <ul class="tools">
         <li>
-          <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-  <label class="search-label">
-    <input type="text" id="search-input" name="q" results="0" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off"/>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
-  </label>
-</form>
-<div class="results-panel">
+  </form>
+  <div class="results-panel">
+  </div>
 </div>
         </li>
         <!--<li></li>-->
@@ -492,7 +495,7 @@ In the paragraph Maintain Your Component Code, we learn that JavaScript code can
   </div>
   
 
-<article id="page-undefined" class="article article-type-guide">
+<article class="article article-type-guide">
   <div class="article-entry" itemprop="articleBody">
     <header class="article-header">
   
@@ -502,19 +505,18 @@ In the paragraph Maintain Your Component Code, we learn that JavaScript code can
       </h1>
     
   
-  <time class="article-date" datetime="2016-12-21T03:01:27.000Z">Updated time: 21/12/2016</time>
+  <time class="article-date" datetime="2016-12-30T08:27:19.000Z">Updated time: 30/12/2016</time>
 </header>
-    <h1 id="How-to-require-3rd-Party-Libs"><a href="#How-to-require-3rd-Party-Libs" class="headerlink" title="How to require 3rd Party Libs ?"></a>How to require 3rd Party Libs ?</h1><p><span class="weex-version">0.4</span></p>
-<p>In the paragraph <a href="./maintain-your-component-code.html">Maintain Your Component Code</a>, we learn that JavaScript code can be written in <code>&lt;script&gt;</code> tag in one component. But there must be some common functions or modules in your project, such as parsing url params, extending properties from some objects to another object and so on. It’s a bad practice to copy and paste them in each component, therefore there’s a urgent need of <code>require</code>. Weex provides CommonJS <code>require</code> syntax for developers.</p>
+    <h1 id="How-to-require-3rd-Party-Libs"><a href="#How-to-require-3rd-Party-Libs" class="headerlink" title="How to require 3rd Party Libs ?"></a>How to require 3rd Party Libs ?</h1><p>In the paragraph Maintain Your Component Code, we learn that JavaScript code can be written in <code>&lt;script&gt;</code> tag in one component. But there must be some common functions or modules in your project, such as parsing url params, extending properties from some objects to another object and so on. It’s a bad practice to copy and paste them in each component, therefore there’s a urgent need of <code>require</code>. Weex provides CommonJS <code>require</code> syntax for developers.</p>
 <p>Let take <code>extend</code> for example.</p>
 <h2 id="Require-Local-Js-Modules"><a href="#Require-Local-Js-Modules" class="headerlink" title="Require Local Js Modules"></a>Require Local Js Modules</h2><p>A basic implementation of <code>extend</code> is as follows, and it’s placed in directory path <code>./common/utils.js</code>.</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">function extend(dest, src) &#123;</div><div class="line">  for (var key in src) &#123;</div><div class="line">    dest[key] = src[key]</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">exports.extend = extend</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">extend</span>(<span class="params">dest, src</span>) </span>&#123;</div><div class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> key <span class="keyword">in</span> src) &#123;</div><div class="line">    dest[key] = src[key]</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">exports.extend = extend</div></pre></td></tr></table></figure>
 <p>In a <code>.we</code> file, <code>extend</code> can be used with the help of <code>require</code>:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">  var utils = require(&apos;./common/utils&apos;)</div><div class="line">  var obj1 = &#123;a: 1&#125;</div><div class="line">  var obj2 = &#123;b: 2&#125;</div><div class="line">  utils.extend(obj1, obj2) // obj1 =&gt; &#123;a: 1, b: 2&#125;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="keyword">var</span> utils = <span class="built_in">require</span>(<span class="string">'./common/utils'</span>)</div><div class="line">  <span class="keyword">var</span> obj1 = &#123;<span class="attr">a</span>: <span class="number">1</span>&#125;</div><div class="line">  <span class="keyword">var</span> obj2 = &#123;<span class="attr">b</span>: <span class="number">2</span>&#125;</div><div class="line">  utils.extend(obj1, obj2) <span class="comment">// obj1 =&gt; &#123;a: 1, b: 2&#125;</span></div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
 <h2 id="Require-Installed-Node-Modules"><a href="#Require-Installed-Node-Modules" class="headerlink" title="Require Installed Node Modules"></a>Require Installed Node Modules</h2><p>Besides, <a href="http://underscorejs.org" target="_blank" rel="external">underscore</a> is a JavaScript library that provides a whole mess of useful functional programming helpers without extending any built-in objects. It implements a more robust version of <a href="http://underscorejs.org/#extend" target="_blank" rel="external">extend</a>.</p>
 <p>We can use underscore’s extend instead of the version implemented by ourselves. After installing <code>underscore</code> to the <code>node_modules</code> directory, we can <code>require</code> and use it.</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">npm install underscore</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">  var _ = require(&apos;underscore&apos;)</div><div class="line">  var obj1 = &#123;a: 1&#125;</div><div class="line">  var obj2 = &#123;b: 2&#125;</div><div class="line">  var obj3 = &#123;c: 3&#125;</div><div class="line">  var ret = _.extend(obj1, obj2, obj3) // ret =&gt; &#123;a: 1, b: 2, c: 3&#125;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ npm install underscore</div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="keyword">var</span> _ = <span class="built_in">require</span>(<span class="string">'underscore'</span>)</div><div class="line">  <span class="keyword">var</span> obj1 = &#123;<span class="attr">a</span>: <span class="number">1</span>&#125;</div><div class="line">  <span class="keyword">var</span> obj2 = &#123;<span class="attr">b</span>: <span class="number">2</span>&#125;</div><div class="line">  <span class="keyword">var</span> obj3 = &#123;<span class="attr">c</span>: <span class="number">3</span>&#125;</div><div class="line">  <span class="keyword">var</span> ret = _.extend(obj1, obj2, obj3) <span class="comment">// ret =&gt; &#123;a: 1, b: 2, c: 3&#125;</span></div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
 
   </div>
   

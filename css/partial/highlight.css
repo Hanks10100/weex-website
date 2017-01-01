@@ -1,7 +1,7 @@
 code, pre {
   font-family: Source Code Pro,Monaco,Menlo,Consolas,monospace;
   color: #abb2bf;
-  font-size: .95em; }
+  font-size: 14px; }
 
 code {
   color: #e06c75;
@@ -15,12 +15,13 @@ pre {
 
 pre code {
   border: none;
+  background: #353639;
   display: block;
   padding: 0;
   -moz-tab-size: 2;
   tab-size: 2; }
 
-.highlight {
+.highlight, pre {
   background: #353639;
   padding: 10px 15px;
   color: #abb2bf;
@@ -32,7 +33,9 @@ pre code {
   margin: 0 !important;
   border: 0; }
 
-.highlight table td, .highlight table th {
+.highlight table td, .highlight table th, .highlight tr {
+  background: #353639;
+  border: 0;
   padding: 0; }
 
 .highlight figcaption {
@@ -53,7 +56,8 @@ pre code {
 .highlight pre {
   padding: 0;
   border: none;
-  background: none; }
+  background: none;
+  margin: 0; }
 
 .highlight .line {
   height: 22px; }
@@ -74,7 +78,10 @@ pre .css .hexcolor {
   color: #3e999f; }
 
 pre .coffeescript .title, pre .function, pre .javascript .title, pre .perl .sub, pre .python .decorator, pre .python .title, pre .ruby .function .title, pre .ruby .title .keyword {
-  color: #8e908c; }
+  color: #c678dd; }
 
 pre .javascript .function, pre .keyword {
-  color: #8e908c; }
+  color: #c678dd; }
+
+pre .attr {
+  color: #61afef; }

@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="Weex">
 <meta property="og:description" content="如何自定义 native API？Weex 的 SDK 只提供了页面渲染的能力，但是一些其它操作，比如网络请求、图片加载、重定向等功能需要你自己去实现，这个例子讲述了如何用原生代码去扩展 Weex 的功能。
 关于 URLHelper 的例子新建一个 WXModulepublic class URLHelperModule extends WXModule&amp;#123;    private stat">
-<meta property="og:updated_time" content="2016-12-05T03:10:42.000Z">
+<meta property="og:updated_time" content="2016-12-30T09:30:57.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Weex">
 <meta name="twitter:description" content="如何自定义 native API？Weex 的 SDK 只提供了页面渲染的能力，但是一些其它操作，比如网络请求、图片加载、重定向等功能需要你自己去实现，这个例子讲述了如何用原生代码去扩展 Weex 的功能。
@@ -49,16 +49,22 @@
             <a href="javascript:;">资源</a>
             <ul class="dropdown-menu subnav">
               <li>
-                <a href="/weex-website/cn/playground.html">Playground</a>
-              </li>
-              <li>
                 <a href="/weex-website/cn/tools">工具和服务</a>
               </li>
               <li>
                 <a href="/weex-website/cn/advanced">高阶知识</a>
               </li>
               <li>
+                <a href="/weex-website/cn/playground.html">Playground</a>
+              </li>
+              <li>
                 <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
+              </li>
+              <li>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Dot we</a>
               </li>
             </ul>
         </li>
@@ -68,13 +74,13 @@
       </ul>
       <ul class="tools">
         <li>
-          <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-  <label class="search-label">
-    <input type="text" id="search-input" name="q" results="0" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off"/>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
-  </label>
-</form>
-<div class="results-panel">
+  </form>
+  <div class="results-panel">
+  </div>
 </div>
         </li>
         <!--<li></li>-->
@@ -92,6 +98,16 @@
   <div class="sidebar-menu">
     
       <ul class="main-nav">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-sidebar" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
         <li>
           <a class="" href="/weex-website/cn/guide">
             教程
@@ -111,16 +127,22 @@
             <p>资源</p>
             <ul class="subnav">
               <li>
-                <a href="./playground.html">Playground</a>
-              </li>
-              <li>
                 <a href="/weex-website/cn/tools">工具和服务</a>
               </li>
               <li>
                 <a href="/weex-website/cn/advanced">高阶知识</a>
               </li>
               <li>
+                <a href="/weex-website/cn/playground.html">Playground</a>
+              </li>
+              <li>
                 <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
+              </li>
+              <li>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Dot we</a>
               </li>
             </ul>
         </li>
@@ -151,24 +173,24 @@
   </div>
   
 
-<article id="page-undefined" class="article article-type-cn/guide/how-to/cuszomize-native-apis">
+<article class="article article-type-cn/guide/how-to/cuszomize-native-apis">
   <div class="article-entry" itemprop="articleBody">
     <header class="article-header">
   
-  <time class="article-date" datetime="2016-12-05T03:10:42.000Z">Updated time: 05/12/2016</time>
+  <time class="article-date" datetime="2016-12-30T09:30:57.000Z">Updated time: 30/12/2016</time>
 </header>
     <h1 id="如何自定义-native-API？"><a href="#如何自定义-native-API？" class="headerlink" title="如何自定义 native API？"></a>如何自定义 native API？</h1><p>Weex 的 SDK 只提供了页面渲染的能力，但是一些其它操作，比如网络请求、图片加载、重定向等功能需要你自己去实现，这个例子讲述了如何用原生代码去扩展 Weex 的功能。</p>
 <h2 id="关于-URLHelper-的例子"><a href="#关于-URLHelper-的例子" class="headerlink" title="关于 URLHelper 的例子"></a>关于 URLHelper 的例子</h2><h3 id="新建一个-WXModule"><a href="#新建一个-WXModule" class="headerlink" title="新建一个 WXModule"></a>新建一个 WXModule</h3><figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">URLHelperModule</span> <span class="keyword">extends</span> <span class="title">WXModule</span></span>&#123;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String WEEX_CATEGORY=<span class="string">"com.taobao.android.intent.category.WEEX"</span>;</div><div class="line">    <span class="meta">@WXModuleAnno</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">openURL</span><span class="params">(String url)</span></span>&#123;</div><div class="line">        <span class="keyword">if</span> (TextUtils.isEmpty(url)) &#123;</div><div class="line">            <span class="keyword">return</span>;</div><div class="line">        &#125;</div><div class="line">        StringBuilder builder=<span class="keyword">new</span> StringBuilder(<span class="string">"http:"</span>);</div><div class="line">        builder.append(url);</div><div class="line">        Uri uri = Uri.parse(builder.toString());</div><div class="line">        Intent intent = <span class="keyword">new</span> Intent(Intent.ACTION_VIEW, uri);</div><div class="line">        intent.addCategory(WEEX_CATEGORY);</div><div class="line">        mWXSDKInstance.getContext().startActivity(intent);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>这里要注意   <code>@WXModuleAnno</code> 这个注解，它表示了你把这个方法暴露给 JavaScript。</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">URLHelperModule</span> <span class="keyword">extends</span> <span class="title">WXModule</span></span>&#123;</div><div class="line"></div><div class="line">    <span class="meta">@WXModuleAnno</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">openURL</span><span class="params">(String url,String callbackId)</span></span>&#123;</div><div class="line">        <span class="comment">//...</span></div><div class="line">        <span class="comment">//callback to javascript </span></div><div class="line">        Map&lt;String, Object&gt; result = <span class="keyword">new</span> HashMap&lt;String, Object&gt;();</div><div class="line">        result.put(<span class="string">"ts"</span>, System.currentTimeMillis());</div><div class="line">        WXBridgeManager.getInstance().callback(mWXSDKInstance.getInstanceId(), callbackId, result);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="把module注册到WXSDKEngine："><a href="#把module注册到WXSDKEngine：" class="headerlink" title="把module注册到WXSDKEngine："></a>把module注册到WXSDKEngine：</h3><figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">try</span> &#123;</div><div class="line">     WXSDKEngine.registerModule(<span class="string">"myURL"</span>, URLHelperModule.class);</div><div class="line">     <span class="comment">//'myURL' is the name you'll use in javascript</span></div><div class="line">    &#125; <span class="keyword">catch</span> (WXException e) &#123;</div><div class="line">       WXLogUtils.e(e.getMessage());</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
-<h3 id="在-JavaScript-中使用-eventModule："><a href="#在-JavaScript-中使用-eventModule：" class="headerlink" title="在 JavaScript 中使用 eventModule："></a>在 JavaScript 中使用 <code>eventModule</code>：</h3><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">let URLHelper = require(&apos;@weex-module/myURL&apos;);//same as you registered</div><div class="line">URLHelper.openURL(&quot;http://www.taobao.com&quot;,function(ts)&#123;</div><div class="line">    console.log(&quot;url is open at &quot;+ts);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h3 id="把-module-注册到-WXSDKEngine："><a href="#把-module-注册到-WXSDKEngine：" class="headerlink" title="把 module 注册到 WXSDKEngine："></a>把 module 注册到 WXSDKEngine：</h3><figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">try</span> &#123;</div><div class="line">     WXSDKEngine.registerModule(<span class="string">"myURL"</span>, URLHelperModule.class);</div><div class="line">     <span class="comment">//'myURL' is the name you'll use in javascript</span></div><div class="line">    &#125; <span class="keyword">catch</span> (WXException e) &#123;</div><div class="line">       WXLogUtils.e(e.getMessage());</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<h3 id="在-JavaScript-中使用-eventModule："><a href="#在-JavaScript-中使用-eventModule：" class="headerlink" title="在 JavaScript 中使用 eventModule："></a>在 JavaScript 中使用 <code>eventModule</code>：</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">let</span> URLHelper = <span class="built_in">require</span>(<span class="string">'@weex-module/myURL'</span>);<span class="comment">//same as you registered</span></div><div class="line">URLHelper.openURL(<span class="string">"http://www.taobao.com"</span>,<span class="function"><span class="keyword">function</span>(<span class="params">ts</span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"url is open at "</span>+ts);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 <h2 id="一些注意事项："><a href="#一些注意事项：" class="headerlink" title="一些注意事项："></a>一些注意事项：</h2><ol>
 <li><p>定义一个 components 需要继承 <code>WXModule</code></p>
 </li>
 <li><p>不要忘记添加 <code>@WXModuleAnno</code> 注解，不然 Weex 没法识别这个方法</p>
 </li>
-<li><p>定义的方法必须是 `public 的</p>
+<li><p>定义的方法必须是 <code>public</code> 的</p>
 </li>
 <li><p>module 类一定不能是内部类</p>
 </li>

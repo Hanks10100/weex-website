@@ -6,23 +6,26 @@
 ***********************/
 .article {
   max-width: 900px;
-  margin: 0 0 90px 300px;
+  margin: 0 0 0 300px;
   position: relative;
-  line-height: 1.8; }
+  line-height: 1.6;
+  overflow-y: auto; }
   .article.article-type-article {
     margin-left: 0; }
+  .article .article-entry {
+    margin-bottom: 90px; }
   .article h2 {
     font-size: 1.75em;
     margin: 1.7em 0 .5em; }
   .article h3 {
     font-size: 1.5em;
-    margin: 1.7em 0 .5em; }
+    margin: 1.5em 0 .5em; }
   .article h4 {
     font-size: 1.25em;
-    margin: 1.7em 0 .5em; }
+    margin: 1.2em 0 .5em; }
   .article h5 {
     font-size: 1.1em;
-    margin: 1.7em 0 .5em; }
+    margin: 1.1em 0 .5em; }
   .article img[alt="mobile_preview"] {
     width: 200px; }
   .article a {

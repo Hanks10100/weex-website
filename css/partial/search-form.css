@@ -4,24 +4,33 @@
 /***********************
 * Mixin
 ***********************/
-.search-form .search {
-  font-size: 1em;
-  padding: 6px 35px 6px 10px;
-  border: 1px solid #ddd;
-  border-radius: 20px; }
-  .search-form .search:focus {
-    border: 1px solid #00BDFF;
-    outline: none; }
-
-.search-form .search-label {
+.search {
   position: relative;
-  display: block; }
-
-.search-form .icon-search {
-  position: absolute;
-  top: 0px;
-  right: 10px;
-  color: #999; }
+  /*.search-label {
+    display: block;
+  }*/ }
+  .search .search-form {
+    width: 100%;
+    position: relative; }
+  .search .search-input {
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    font-size: 1em;
+    padding: 6px 35px 6px 10px;
+    border: 1px solid #ddd;
+    border-radius: 20px; }
+    .search .search-input:focus {
+      border: 1px solid #00BDFF;
+      outline: none; }
+  .search .icon-search {
+    position: absolute;
+    font-size: 20px;
+    line-height: 30px;
+    top: 50%;
+    margin-top: -14px;
+    right: 10px;
+    color: #999; }
 
 .results-panel {
   display: none;
@@ -39,9 +48,10 @@
   .results-panel .matching-post {
     border-bottom: 1px solid #ddd; }
     .results-panel .matching-post h2 {
-      font-size: 1.2em;
+      font-size: 17px;
       margin: 10px 0; }
     .results-panel .matching-post p {
+      font-size: 14px;
       overflow: hidden;
       text-overflow: ellipsis;
       display: -webkit-box;

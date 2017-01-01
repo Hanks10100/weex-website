@@ -13,7 +13,7 @@
 <meta property="og:description" content="Weex 工作原理概述总览Weex是跨平台，可扩展的动态化技术. 你能通过在Weex源码中写&amp;lt;template&amp;gt;, &amp;lt;style&amp;gt; 和  &amp;lt;script&amp;gt;标签，然后把这些标签转换为JS Bundle用于部署, 在服务端以这些JS Bundle响应请求. 当客户端接收到JS Bundle时，它能用被客户端中的JS引擎用于管理Native渲染;API调用和用户交互.">
 <meta property="og:image" content="http://gtms02.alicdn.com/tps/i2/TB1ootBMpXXXXXrXXXXwi60UVXX-596-397.png">
 <meta property="og:image" content="http://gtms03.alicdn.com/tps/i3/TB1_SA4MXXXXXXGaXXXpZ8UVXXX-519-337.png">
-<meta property="og:updated_time" content="2016-12-22T12:01:28.000Z">
+<meta property="og:updated_time" content="2016-12-30T11:08:12.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Weex 工作原理">
 <meta name="twitter:description" content="Weex 工作原理概述总览Weex是跨平台，可扩展的动态化技术. 你能通过在Weex源码中写&amp;lt;template&amp;gt;, &amp;lt;style&amp;gt; 和  &amp;lt;script&amp;gt;标签，然后把这些标签转换为JS Bundle用于部署, 在服务端以这些JS Bundle响应请求. 当客户端接收到JS Bundle时，它能用被客户端中的JS引擎用于管理Native渲染;API调用和用户交互.">
@@ -49,16 +49,22 @@
             <a href="javascript:;">资源</a>
             <ul class="dropdown-menu subnav">
               <li>
-                <a href="/weex-website/cn/playground.html">Playground</a>
-              </li>
-              <li>
                 <a href="/weex-website/cn/tools">工具和服务</a>
               </li>
               <li>
                 <a href="/weex-website/cn/advanced">高阶知识</a>
               </li>
               <li>
+                <a href="/weex-website/cn/playground.html">Playground</a>
+              </li>
+              <li>
                 <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
+              </li>
+              <li>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Dot we</a>
               </li>
             </ul>
         </li>
@@ -68,13 +74,13 @@
       </ul>
       <ul class="tools">
         <li>
-          <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-  <label class="search-label">
-    <input type="text" id="search-input" name="q" results="0" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off"/>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
-  </label>
-</form>
-<div class="results-panel">
+  </form>
+  <div class="results-panel">
+  </div>
 </div>
         </li>
         <!--<li></li>-->
@@ -92,6 +98,16 @@
   <div class="sidebar-menu">
     
       <ul class="main-nav">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-sidebar" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
         <li>
           <a class="" href="/weex-website/cn/guide">
             教程
@@ -111,16 +127,22 @@
             <p>资源</p>
             <ul class="subnav">
               <li>
-                <a href="./playground.html">Playground</a>
-              </li>
-              <li>
                 <a href="/weex-website/cn/tools">工具和服务</a>
               </li>
               <li>
                 <a href="/weex-website/cn/advanced">高阶知识</a>
               </li>
               <li>
+                <a href="/weex-website/cn/playground.html">Playground</a>
+              </li>
+              <li>
                 <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
+              </li>
+              <li>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Dot we</a>
               </li>
             </ul>
         </li>
@@ -283,7 +305,7 @@
   </div>
   
 
-<article id="page-undefined" class="article article-type-advanced">
+<article class="article article-type-advanced">
   <div class="article-entry" itemprop="articleBody">
     <header class="article-header">
   
@@ -293,7 +315,7 @@
       </h1>
     
   
-  <time class="article-date" datetime="2016-12-22T12:01:28.000Z">Updated time: 22/12/2016</time>
+  <time class="article-date" datetime="2016-12-30T11:08:12.000Z">Updated time: 30/12/2016</time>
 </header>
     <h1 id="Weex-工作原理概述"><a href="#Weex-工作原理概述" class="headerlink" title="Weex 工作原理概述"></a>Weex 工作原理概述</h1><h2 id="总览"><a href="#总览" class="headerlink" title="总览"></a>总览</h2><p>Weex是跨平台，可扩展的动态化技术. 你能通过在Weex源码中写<code>&lt;template&gt;</code>, <code>&lt;style&gt;</code> 和  <code>&lt;script&gt;</code>标签，然后把这些标签转换为JS Bundle用于部署, 在服务端以这些JS Bundle响应请求. 当客户端接收到JS Bundle时，它能用被客户端中的JS引擎用于管理Native渲染;API调用和用户交互.</p>
 <h3 id="工作流"><a href="#工作流" class="headerlink" title="工作流"></a>工作流</h3><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">Weex we 文件 --------------前端(we源码)</div><div class="line">↓ (转换) ------------------前端(构建过程)</div><div class="line">JS Bundle -----------------前端(JS Bundle代码)</div><div class="line">↓ (部署) ------------------服务器</div><div class="line">在服务器上的JS bundle  ----服务器</div><div class="line">↓ (编译) ------------------ 客户端(JS引擎)</div><div class="line">虚拟 DOM 树 --------------- 客户端(Weex JS Framework)</div><div class="line">↓ (渲染) ------------------ 客户端(渲染引擎)</div><div class="line">Native视图 ---------------  客户端(渲染引擎)</div></pre></td></tr></table></figure>
@@ -301,21 +323,21 @@
 <ul>
 <li>Transformer（转换器):  一个Node JS工具， 转换Weex源码为JS Bundle  </li>
 <li>Weex JS Framework(JS框架): 运行于客户端的的JS框架，管理着Weex实例的运行。Weex实例由JS Bundle创建并构建起虚拟DOM树. 另外，它发送/接受 Native 渲染层产生的系统调用，从而间接的响应用户交互。</li>
-<li>Native引擎:  在不同的端上，有着不同的实现: iOS/Android/HTML5. 他们有着共同的组件设计, 模块API 和渲染效果. 所以他们能配合同样的 JS Framework 和  JS Bundle工作。<h2 id="转换器"><a href="#转换器" class="headerlink" title="转换器"></a>转换器</h2></li>
+<li>Native引擎:  在不同的端上，有着不同的实现: iOS/Android/HTML5. 他们有着共同的组件设计, 模块API 和渲染效果. 所以他们能配合同样的 JS Framework 和  JS Bundle工作。</li>
 </ul>
-<p>转换器转换Weex源码为JS Bundle. 整体工作可以分为三个部分:</p>
+<h2 id="转换器"><a href="#转换器" class="headerlink" title="转换器"></a>转换器</h2><p>转换器转换Weex源码为JS Bundle. 整体工作可以分为三个部分:</p>
 <ul>
 <li>转换 <code>&lt;template&gt;</code> 为类JSON的树状数据结构, 转换数据绑定为返回数据的函数原型.例如. For example: <code>&lt;foo a=&quot;{{x}}&quot; b=&quot;1&quot; /&gt;</code> 将转换为 <code>{type: &quot;foo&quot;, attr: {a: function () {return this.x}, b: 1}}</code>.</li>
 <li>转换 <code>&lt;style&gt;</code> 为类JSON的树状数据结构. 例如: <code>.classname {name: value;}</code> 将转换为 <code>{classname: {name: value}}</code>.</li>
 <li>把上面两部分的内容和 <code>&lt;script&gt;</code> 中的内容结合. 上面的三个部分将结合成一个JavaScript AMD 模块.</li>
 </ul>
 <p>一个完整的例子:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">&lt;template&gt;</div><div class="line">  &lt;foo a=&quot;&#123;&#123;x&#125;&#125;&quot; b=&quot;1&quot; class=&quot;bar&quot;&gt;&lt;/foo&gt;</div><div class="line">&lt;/template&gt;</div><div class="line">&lt;style&gt;</div><div class="line">  .bar &#123;width: 200; height: 200&#125;</div><div class="line">&lt;/style&gt;</div><div class="line">&lt;script&gt;</div><div class="line">  module.exports = &#123;</div><div class="line">    data: function () &#123;</div><div class="line">      return &#123;x: 100&#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">foo</span> <span class="attr">a</span>=<span class="string">"&#123;&#123;x&#125;&#125;"</span> <span class="attr">b</span>=<span class="string">"1"</span> <span class="attr">class</span>=<span class="string">"bar"</span>&gt;</span><span class="tag">&lt;/<span class="name">foo</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></div><div class="line">  <span class="selector-class">.bar</span> &#123;<span class="attribute">width</span>: <span class="number">200</span>; <span class="attribute">height</span>: <span class="number">200</span>&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="built_in">module</span>.exports = &#123;</div><div class="line">    <span class="attr">data</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">      <span class="keyword">return</span> &#123;<span class="attr">x</span>: <span class="number">100</span>&#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>将转换为:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">define(&apos;@weex-component/main&apos;, function () &#123;</div><div class="line">  module.exports = &#123;</div><div class="line">    data: function () &#123;</div><div class="line">      return &#123;x: 100&#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  module.template = &#123;</div><div class="line">    type: &quot;foo&quot;,</div><div class="line">    attr: &#123;</div><div class="line">      a: function () &#123;return this.x&#125;,</div><div class="line">      b: 1,</div><div class="line">      classname: [&apos;bar&apos;]</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  module.style = &#123;</div><div class="line">    bar: &#123;width: 200, height: 200&#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">bootstrap(&apos;@weex-component/main&apos;)</div></pre></td></tr></table></figure>
-<p>除此之外,转换器还会做一些额外的事情: 合并Bundle ,添加引导函数，配置外部数据等等，更详细的，请参阅<a href="../specs/js-bundle-format.md">Synatax</a>章节.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line">define(<span class="string">'@weex-component/main'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="built_in">module</span>.exports = &#123;</div><div class="line">    <span class="attr">data</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">      <span class="keyword">return</span> &#123;<span class="attr">x</span>: <span class="number">100</span>&#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  <span class="built_in">module</span>.template = &#123;</div><div class="line">    <span class="attr">type</span>: <span class="string">"foo"</span>,</div><div class="line">    <span class="attr">attr</span>: &#123;</div><div class="line">      <span class="attr">a</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;<span class="keyword">return</span> <span class="keyword">this</span>.x&#125;,</div><div class="line">      <span class="attr">b</span>: <span class="number">1</span>,</div><div class="line">      <span class="attr">classname</span>: [<span class="string">'bar'</span>]</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  <span class="built_in">module</span>.style = &#123;</div><div class="line">    <span class="attr">bar</span>: &#123;<span class="attr">width</span>: <span class="number">200</span>, <span class="attr">height</span>: <span class="number">200</span>&#125;</div><div class="line">  &#125;</div><div class="line">&#125;)</div><div class="line">bootstrap(<span class="string">'@weex-component/main'</span>)</div></pre></td></tr></table></figure>
+<p>除此之外,转换器还会做一些额外的事情: 合并Bundle ,添加引导函数，配置外部数据等等，更详细的，请参阅<a href="../references/specs/js-bundle-format.html">Synatax</a>章节.</p>
 <h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p>当前大部分Weex工具最终输出的JS Bundle格式都经过了<a href="https://webpack.github.io/" target="_blank" rel="external">Webpack</a>的二次处理，所以你实际使用工具输出的JS Bundle会和上面的有所区别.</p>
-<h2 id="JS-Framework"><a href="#JS-Framework" class="headerlink" title="JS Framework"></a>JS Framework</h2><p>JS Framework在初始化阶段被原生JavaScript引擎运行. 它提供被每个JS Bundle调用的 <code>define()</code> 和 <code>bootstrap()</code> 函数.  一旦JS Bundle从服务器下载后，这些函数就会执行. <code>define()</code> 函数以注册模块;<code>bootstrap()</code>会编译主要的模块为虚拟DOM，并发送渲染指令给Native .</p>
+<h2 id="JS-Framework"><a href="#JS-Framework" class="headerlink" title="JS Framework"></a>JS Framework</h2><p>JS Framework 在初始化阶段被原生 JavaScript 引擎运行. 它提供被每个JS Bundle调用的 <code>define()</code> 和 <code>bootstrap()</code> 函数.  一旦JS Bundle从服务器下载后，这些函数就会执行. <code>define()</code> 函数以注册模块;<code>bootstrap()</code>会编译主要的模块为虚拟DOM，并发送渲染指令给Native .</p>
 <p>JS 和 Native 的沟通主要通过两个关键方法进行:</p>
 <ul>
 <li><code>callNative</code> 是一个由native代码实现的函数, 它被JS代码调用并向native发送指令,例如 <code>rendering</code>, <code>networking</code>, <code>authorizing</code>和其他客户端侧的 <code>toast</code> 等API.</li>
@@ -329,7 +351,8 @@
 <p>Weex架构图</p>
 <h3 id="从Javascript中调用Native"><a href="#从Javascript中调用Native" class="headerlink" title="从Javascript中调用Native"></a>从Javascript中调用Native</h3><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">[JS Framework]</div><div class="line">↓ callNative</div><div class="line">模块 APIs</div><div class="line">  渲染 -&gt; 模块显示</div><div class="line">  其他功能</div><div class="line">[Native 渲染引擎]</div></pre></td></tr></table></figure>
 <h3 id="从Native中调用Javascript"><a href="#从Native中调用Javascript" class="headerlink" title="从Native中调用Javascript"></a>从Native中调用Javascript</h3><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">[Native 渲染引擎]</div><div class="line">模块 APIs 回调</div><div class="line">用户交互</div><div class="line">↓ callJS</div><div class="line">[JS Framework]</div></pre></td></tr></table></figure>
-<h3 id="渲染流程"><a href="#渲染流程" class="headerlink" title="渲染流程"></a>渲染流程</h3><p><img src="http://gtms03.alicdn.com/tps/i3/TB1_SA4MXXXXXXGaXXXpZ8UVXXX-519-337.png" alt="render flow"><br>Weex 渲染流程</p>
+<h3 id="渲染流程"><a href="#渲染流程" class="headerlink" title="渲染流程"></a>渲染流程</h3><p><img src="http://gtms03.alicdn.com/tps/i3/TB1_SA4MXXXXXXGaXXXpZ8UVXXX-519-337.png" alt="render flow">  </p>
+<p>Weex 渲染流程</p>
 <ol>
 <li>虚拟DOM.</li>
 <li><strong>构造树结构</strong>. 分析虚拟DOM JSON数据以构造渲染树(RT).</li>

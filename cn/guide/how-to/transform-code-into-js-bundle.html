@@ -15,7 +15,7 @@
 <meta property="og:description" content="将 .we 源代码转换成 JS Bundle0.4
 在前面的章节中你已经了解到如何编写及组织 Weex 代码，如果你还有疑问，可参考 语法 及 手册。 但是，Weex 语法的代码必须转换为 JSBundle，以便 Weex JSFramework 可以在 iOS，Android 和浏览器端解析和执行。了解更多信息，可参考 Weex 工作原理 和 JS Bundle 格式
 现在，回到将 .we 源代">
-<meta property="og:updated_time" content="2016-12-22T12:13:37.000Z">
+<meta property="og:updated_time" content="2016-12-30T10:30:47.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="将 `.we` 源代码转换成 JS Bundle">
 <meta name="twitter:description" content="将 .we 源代码转换成 JS Bundle0.4
@@ -52,16 +52,22 @@
             <a href="javascript:;">资源</a>
             <ul class="dropdown-menu subnav">
               <li>
-                <a href="/weex-website/cn/playground.html">Playground</a>
-              </li>
-              <li>
                 <a href="/weex-website/cn/tools">工具和服务</a>
               </li>
               <li>
                 <a href="/weex-website/cn/advanced">高阶知识</a>
               </li>
               <li>
+                <a href="/weex-website/cn/playground.html">Playground</a>
+              </li>
+              <li>
                 <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
+              </li>
+              <li>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Dot we</a>
               </li>
             </ul>
         </li>
@@ -71,13 +77,13 @@
       </ul>
       <ul class="tools">
         <li>
-          <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-  <label class="search-label">
-    <input type="text" id="search-input" name="q" results="0" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off"/>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
-  </label>
-</form>
-<div class="results-panel">
+  </form>
+  <div class="results-panel">
+  </div>
 </div>
         </li>
         <!--<li></li>-->
@@ -461,7 +467,7 @@
   </div>
   
 
-<article id="page-undefined" class="article article-type-guide">
+<article class="article article-type-guide">
   <div class="article-entry" itemprop="articleBody">
     <header class="article-header">
   
@@ -471,12 +477,12 @@
       </h1>
     
   
-  <time class="article-date" datetime="2016-12-22T12:13:37.000Z">Updated time: 22/12/2016</time>
+  <time class="article-date" datetime="2016-12-30T10:30:47.000Z">Updated time: 30/12/2016</time>
 </header>
     <h1 id="将-we-源代码转换成-JS-Bundle"><a href="#将-we-源代码转换成-JS-Bundle" class="headerlink" title="将 .we 源代码转换成 JS Bundle"></a>将 <code>.we</code> 源代码转换成 JS Bundle</h1><p><span class="weex-version">0.4</span></p>
-<p>在前面的章节中你已经了解到如何编写及组织 Weex 代码，如果你还有疑问，可参考 <a href="../syntax/main.html">语法</a> 及 <a href="../references/main.html">手册</a>。 但是，Weex 语法的代码必须转换为 JSBundle，以便 Weex JSFramework 可以在 iOS，Android 和浏览器端解析和执行。了解更多信息，可参考 <a href="/advanced/how-it-works.html">Weex 工作原理</a> 和 <a href="../specs/js-bundle-format.html">JS Bundle 格式</a></p>
+<p>在前面的章节中你已经了解到如何编写及组织 Weex 代码，如果你还有疑问，可参考 <a href="../syntax/main.html">语法</a> 及 <a href="../../references/main.html">手册</a>。 但是，Weex 语法的代码必须转换为 JSBundle，以便 Weex JSFramework 可以在 iOS，Android 和浏览器端解析和执行。了解更多信息，可参考 <a href="../../advanced/how-it-works.html">Weex 工作原理</a> 和 <a href="../../references/specs/js-bundle-format.html">JS Bundle 格式</a></p>
 <p>现在，回到将 <code>.we</code> 源代码转换成 JS Bundle 的主题。有几种方法来实现这一目标。</p>
-<h2 id="使用-weex-toolkit"><a href="#使用-weex-toolkit" class="headerlink" title="使用 weex-toolkit"></a>使用 weex-toolkit</h2><p>如果你已经有了 node.js 开发环境，可以直接使用以下命令。关于 node.js 及其他依赖安装可参考<a href="/develop-on-your-local-machine.md#第一步：安装依赖">安装依赖</a><br><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line"><span class="variable">$npm</span> install -g weex-toolkit</div></pre></td></tr></table></figure></p>
+<h2 id="使用-weex-toolkit"><a href="#使用-weex-toolkit" class="headerlink" title="使用 weex-toolkit"></a>使用 weex-toolkit</h2><p>如果你已经有了 node.js 开发环境，可以直接使用以下命令。关于 node.js 及其他依赖安装可参考<a href="../develop-on-your-local-machine.html#第一步：安装依赖">安装依赖</a><br><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line"><span class="variable">$npm</span> install -g weex-toolkit</div></pre></td></tr></table></figure></p>
 <h3 id="将-we-文件转换为-JS-Bundle"><a href="#将-we-文件转换为-JS-Bundle" class="headerlink" title="将 .we 文件转换为 JS Bundle"></a>将 <code>.we</code> 文件转换为 JS Bundle</h3><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ weex your_best_weex.we  -o .</div></pre></td></tr></table></figure>
 <p><code>your_best_weex.we</code> 将会被转换为 <code>your_best_weex.js</code> 并保存在当前目录。</p>
 <h3 id="将-we-文件转换为-JS-Bundle-并开启-watch-功能，实时自动转换"><a href="#将-we-文件转换为-JS-Bundle-并开启-watch-功能，实时自动转换" class="headerlink" title="将 .we 文件转换为 JS Bundle 并开启 watch 功能，实时自动转换"></a>将 <code>.we</code> 文件转换为 JS Bundle 并开启 watch 功能，实时自动转换</h3><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line"></div><div class="line">$ weex your_best_weex.we  -o . --watch</div></pre></td></tr></table></figure>

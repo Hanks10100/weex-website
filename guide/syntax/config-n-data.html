@@ -5,25 +5,22 @@
   
   <title>Page Config &amp; Data | Weex</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Page Config &amp;amp; Data0.4
-You can write some instance config and data in some additional &amp;lt;script&amp;gt; at the top-level Weex component.
+  <meta name="description" content="Page Config &amp;amp; DataYou can write some instance config and data in some additional &amp;lt;script&amp;gt; at the top-level Weex component.
 
-the instance config could declare some meta informations like">
+the instance config could declare some meta informations like whic">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Page Config & Data">
 <meta property="og:url" content="http://alibaba.github.io/guide/syntax/config-n-data.html">
 <meta property="og:site_name" content="Weex">
-<meta property="og:description" content="Page Config &amp;amp; Data0.4
-You can write some instance config and data in some additional &amp;lt;script&amp;gt; at the top-level Weex component.
+<meta property="og:description" content="Page Config &amp;amp; DataYou can write some instance config and data in some additional &amp;lt;script&amp;gt; at the top-level Weex component.
 
-the instance config could declare some meta informations like">
-<meta property="og:updated_time" content="2016-12-21T03:01:22.000Z">
+the instance config could declare some meta informations like whic">
+<meta property="og:updated_time" content="2016-12-30T08:28:59.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Page Config & Data">
-<meta name="twitter:description" content="Page Config &amp;amp; Data0.4
-You can write some instance config and data in some additional &amp;lt;script&amp;gt; at the top-level Weex component.
+<meta name="twitter:description" content="Page Config &amp;amp; DataYou can write some instance config and data in some additional &amp;lt;script&amp;gt; at the top-level Weex component.
 
-the instance config could declare some meta informations like">
+the instance config could declare some meta informations like whic">
   
     <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
   
@@ -55,16 +52,22 @@ the instance config could declare some meta informations like">
             <a href="javascript:;">Resources</a>
             <ul class="dropdown-menu subnav">
               <li>
-                <a href="/weex-website/playground.html">Playground</a>
-              </li>
-              <li>
-                <a href="/weex-website/tools">Tools</a>
+                <a href="/weex-website/tools">Service &amp; Tools</a>
               </li>
               <li>
                 <a href="/weex-website/advanced">Advanced</a>
               </li>
               <li>
+                <a href="/weex-website/playground.html">Playground</a>
+              </li>
+              <li>
                 <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
+              </li>
+              <li>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Dot we</a>
               </li>
             </ul>
         </li>
@@ -74,13 +77,13 @@ the instance config could declare some meta informations like">
       </ul>
       <ul class="tools">
         <li>
-          <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-  <label class="search-label">
-    <input type="text" id="search-input" name="q" results="0" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off"/>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
-  </label>
-</form>
-<div class="results-panel">
+  </form>
+  <div class="results-panel">
+  </div>
 </div>
         </li>
         <!--<li></li>-->
@@ -498,7 +501,7 @@ the instance config could declare some meta informations like">
   </div>
   
 
-<article id="page-undefined" class="article article-type-guide">
+<article class="article article-type-guide">
   <div class="article-entry" itemprop="articleBody">
     <header class="article-header">
   
@@ -508,21 +511,20 @@ the instance config could declare some meta informations like">
       </h1>
     
   
-  <time class="article-date" datetime="2016-12-21T03:01:22.000Z">Updated time: 21/12/2016</time>
+  <time class="article-date" datetime="2016-12-30T08:28:59.000Z">Updated time: 30/12/2016</time>
 </header>
-    <h1 id="Page-Config-amp-Data"><a href="#Page-Config-amp-Data" class="headerlink" title="Page Config &amp; Data"></a>Page Config &amp; Data</h1><p><span class="weex-version">0.4</span></p>
-<p>You can write some instance config and data in some additional <code>&lt;script&gt;</code> at the <strong>top-level</strong> Weex component.</p>
+    <h1 id="Page-Config-amp-Data"><a href="#Page-Config-amp-Data" class="headerlink" title="Page Config &amp; Data"></a>Page Config &amp; Data</h1><p>You can write some instance config and data in some additional <code>&lt;script&gt;</code> at the <strong>top-level</strong> Weex component.</p>
 <ul>
 <li>the instance config could declare some meta informations like which sdk/client version it supports or “downgrade” to HTML5 renderer. This part would be extended more in the future.</li>
 <li>the instance data could set an external data which would be processed instead of the default top-level component data.</li>
 </ul>
 <p>They all make Weex files more extendable and configurable and works easy with other tools &amp; services like CMS system.</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- definition of sub components --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">element</span> <span class="attr">name</span>=<span class="string">"sub-component-a"</span>&gt;</span>...<span class="tag">&lt;/<span class="name">element</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">element</span> <span class="attr">name</span>=<span class="string">"sub-component-b"</span>&gt;</span>...<span class="tag">&lt;/<span class="name">element</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">element</span> <span class="attr">name</span>=<span class="string">"sub-component-c"</span>&gt;</span>...<span class="tag">&lt;/<span class="name">element</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- definition of top-level component --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span>...<span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined">...</span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="built_in">module</span>.exports = &#123;</div><div class="line">    <span class="attr">data</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;<span class="keyword">return</span> &#123;<span class="attr">x</span>: <span class="number">1</span>, <span class="attr">y</span>: <span class="number">2</span>&#125;&#125;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- instance config and data --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"config"</span>&gt;</span><span class="javascript"></span></div><div class="line">  &#123;</div><div class="line">    <span class="attr">downgrade</span>: &#123;</div><div class="line">      <span class="attr">ios</span>: &#123;</div><div class="line">        <span class="attr">os</span>: <span class="string">'9'</span>, <span class="comment">// all of 9.x.x</span></div><div class="line">        app: <span class="string">'~5.3.2'</span>,</div><div class="line">        <span class="attr">framework</span>: <span class="string">'^1.3'</span>, <span class="comment">// all of 1.3.x</span></div><div class="line">        deviceModel: [<span class="string">'AAAA'</span>, <span class="string">'BBBB'</span>]</div><div class="line">      &#125;,</div><div class="line">      <span class="attr">android</span>: &#123;</div><div class="line">        <span class="attr">os</span>: <span class="string">'*'</span>, <span class="comment">// all of version</span></div><div class="line">        app: <span class="string">'^5'</span>,</div><div class="line">        <span class="attr">framework</span>: <span class="string">''</span>,</div><div class="line">        <span class="attr">deviceModel</span>: <span class="string">''</span></div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"data"</span>&gt;</span><span class="undefined"></span></div><div class="line">  &#123;y: 200&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- definition of sub components --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">element</span> <span class="attr">name</span>=<span class="string">"sub-component-a"</span>&gt;</span>...<span class="tag">&lt;/<span class="name">element</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">element</span> <span class="attr">name</span>=<span class="string">"sub-component-b"</span>&gt;</span>...<span class="tag">&lt;/<span class="name">element</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">element</span> <span class="attr">name</span>=<span class="string">"sub-component-c"</span>&gt;</span>...<span class="tag">&lt;/<span class="name">element</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- definition of top-level component --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span>...<span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="built_in">module</span>.exports = &#123;</div><div class="line">    <span class="attr">data</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;<span class="keyword">return</span> &#123;<span class="attr">x</span>: <span class="number">1</span>, <span class="attr">y</span>: <span class="number">2</span>&#125;&#125;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- instance config and data --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"config"</span>&gt;</span><span class="javascript"></span></div><div class="line">  &#123;</div><div class="line">    <span class="attr">downgrade</span>: &#123;</div><div class="line">      <span class="attr">ios</span>: &#123;</div><div class="line">        <span class="attr">os</span>: <span class="string">'9'</span>, <span class="comment">// all of 9.x.x</span></div><div class="line">        app: <span class="string">'~5.3.2'</span>,</div><div class="line">        <span class="attr">framework</span>: <span class="string">'^1.3'</span>, <span class="comment">// all of 1.3.x</span></div><div class="line">        deviceModel: [<span class="string">'AAAA'</span>, <span class="string">'BBBB'</span>]</div><div class="line">      &#125;,</div><div class="line">      <span class="attr">android</span>: &#123;</div><div class="line">        <span class="attr">os</span>: <span class="string">'*'</span>, <span class="comment">// all of version</span></div><div class="line">        app: <span class="string">'^5'</span>,</div><div class="line">        <span class="attr">framework</span>: <span class="string">''</span>,</div><div class="line">        <span class="attr">deviceModel</span>: <span class="string">''</span></div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"data"</span>&gt;</span><span class="undefined"></span></div><div class="line">  &#123;y: 200&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>Notice that these two additional <code>&lt;script&gt;</code> are both optinal and have <code>type=&quot;config|data&quot;</code> attribute and only works when it’s the top-level component of a Weex instance.</p>
 <p>So that’s all about Weex syntax. For more reading, please check out:</p>
 <ul>
-<li><a href="../how-to/main.html">how-tos</a> articles and</li>
-<li><a href="../advanced/main.html">advanced</a> topics.</li>
+<li><a href="../how-to/index.html">how-tos</a> articles and</li>
+<li><a href="../../advanced/index.html">advanced</a> topics.</li>
 </ul>
 
   </div>

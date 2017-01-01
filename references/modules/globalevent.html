@@ -5,19 +5,19 @@
   
   <title>globalEvent | Weex</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="globalEvent0.8 (developing)
-SummaryglobalEvent are used to listen for persistent events, such as changes in positioning information, gyroscopes, and so on. A global event is a secondary API that requi">
+  <meta name="description" content="globalEventv0.8+ (developing)
+SummaryglobalEvent are used to listen for persistent events, such as changes in positioning information, gyroscopes, and so on. A global event is a secondary API that req">
 <meta property="og:type" content="website">
 <meta property="og:title" content="globalEvent">
 <meta property="og:url" content="http://alibaba.github.io/references/modules/globalevent.html">
 <meta property="og:site_name" content="Weex">
-<meta property="og:description" content="globalEvent0.8 (developing)
-SummaryglobalEvent are used to listen for persistent events, such as changes in positioning information, gyroscopes, and so on. A global event is a secondary API that requi">
-<meta property="og:updated_time" content="2016-12-21T02:22:16.000Z">
+<meta property="og:description" content="globalEventv0.8+ (developing)
+SummaryglobalEvent are used to listen for persistent events, such as changes in positioning information, gyroscopes, and so on. A global event is a secondary API that req">
+<meta property="og:updated_time" content="2016-12-30T06:57:57.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="globalEvent">
-<meta name="twitter:description" content="globalEvent0.8 (developing)
-SummaryglobalEvent are used to listen for persistent events, such as changes in positioning information, gyroscopes, and so on. A global event is a secondary API that requi">
+<meta name="twitter:description" content="globalEventv0.8+ (developing)
+SummaryglobalEvent are used to listen for persistent events, such as changes in positioning information, gyroscopes, and so on. A global event is a secondary API that req">
   
     <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
   
@@ -49,16 +49,22 @@ SummaryglobalEvent are used to listen for persistent events, such as changes in 
             <a href="javascript:;">Resources</a>
             <ul class="dropdown-menu subnav">
               <li>
-                <a href="/weex-website/playground.html">Playground</a>
-              </li>
-              <li>
-                <a href="/weex-website/tools">Tools</a>
+                <a href="/weex-website/tools">Service &amp; Tools</a>
               </li>
               <li>
                 <a href="/weex-website/advanced">Advanced</a>
               </li>
               <li>
+                <a href="/weex-website/playground.html">Playground</a>
+              </li>
+              <li>
                 <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
+              </li>
+              <li>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Dot we</a>
               </li>
             </ul>
         </li>
@@ -68,13 +74,13 @@ SummaryglobalEvent are used to listen for persistent events, such as changes in 
       </ul>
       <ul class="tools">
         <li>
-          <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-  <label class="search-label">
-    <input type="text" id="search-input" name="q" results="0" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off"/>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
-  </label>
-</form>
-<div class="results-panel">
+  </form>
+  <div class="results-panel">
+  </div>
 </div>
         </li>
         <!--<li></li>-->
@@ -329,11 +335,11 @@ SummaryglobalEvent are used to listen for persistent events, such as changes in 
           <ul class="chapter">
             
               <li>
-                <a href="/weex-website/references/bootstrap.html" class="sidebar-link  ">Bootstrap</a>
+                <a href="/weex-website/references/special-element.html" class="sidebar-link  ">Special Element</a>
               </li>
             
               <li>
-                <a href="/weex-website/references/special-element.html" class="sidebar-link  ">Special Element</a>
+                <a href="/weex-website/references/bootstrap.html" class="sidebar-link  ">Bootstrap</a>
               </li>
             
               <li>
@@ -430,7 +436,7 @@ SummaryglobalEvent are used to listen for persistent events, such as changes in 
               </li>
             
               <li>
-                <a href="/weex-website/references/components/cell.html" class="sidebar-link  ">&lt;list&gt;</a>
+                <a href="/weex-website/references/components/cell.html" class="sidebar-link  ">&lt;cell&gt;</a>
               </li>
             
               <li>
@@ -765,11 +771,11 @@ SummaryglobalEvent are used to listen for persistent events, such as changes in 
           <ul class="chapter">
             
               <li>
-                <a href="/weex-website/references/bootstrap.html" class="sidebar-link  ">Bootstrap</a>
+                <a href="/weex-website/references/special-element.html" class="sidebar-link  ">Special Element</a>
               </li>
             
               <li>
-                <a href="/weex-website/references/special-element.html" class="sidebar-link  ">Special Element</a>
+                <a href="/weex-website/references/bootstrap.html" class="sidebar-link  ">Bootstrap</a>
               </li>
             
               <li>
@@ -866,7 +872,7 @@ SummaryglobalEvent are used to listen for persistent events, such as changes in 
               </li>
             
               <li>
-                <a href="/weex-website/references/components/cell.html" class="sidebar-link  ">&lt;list&gt;</a>
+                <a href="/weex-website/references/components/cell.html" class="sidebar-link  ">&lt;cell&gt;</a>
               </li>
             
               <li>
@@ -960,7 +966,7 @@ SummaryglobalEvent are used to listen for persistent events, such as changes in 
   </div>
   
 
-<article id="page-undefined" class="article article-type-references">
+<article class="article article-type-references">
   <div class="article-entry" itemprop="articleBody">
     <header class="article-header">
   
@@ -970,16 +976,19 @@ SummaryglobalEvent are used to listen for persistent events, such as changes in 
       </h1>
     
   
-  <time class="article-date" datetime="2016-12-21T02:22:16.000Z">Updated time: 21/12/2016</time>
+  <time class="article-date" datetime="2016-12-30T06:57:57.000Z">Updated time: 30/12/2016</time>
 </header>
-    <h1 id="globalEvent"><a href="#globalEvent" class="headerlink" title="globalEvent"></a>globalEvent</h1><p><span class="weex-version">0.8 (developing)</span></p>
-<h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p><code>globalEvent</code> are used to listen for persistent events, such as changes in positioning information, gyroscopes, and so on. A global event is a secondary API that requires additional APIs to work with.<br><br>You can register events via <code>addEventListener</code>, which can be removed by <code>removingEventListener</code> when you do not need to listen for <code>globalEvent</code>.</p>
+    <h1 id="globalEvent"><a href="#globalEvent" class="headerlink" title="globalEvent"></a>globalEvent</h1><p><span class="weex-version">v0.8+ (developing)</span></p>
+<h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p><code>globalEvent</code> are used to listen for persistent events, such as changes in positioning information, gyroscopes, and so on. A global event is a secondary API that requires additional APIs to work with.</p>
+<p>You can register events via <code>addEventListener</code>, which can be removed by <code>removingEventListener</code> when you do not need to listen for <code>globalEvent</code>.</p>
 <p><em>AUCTION</em> </p>
 <ul>
 <li>Only instance level is not application level . </li>
 </ul>
-<h2 id="How-to-make-your-Module-support-global-events"><a href="#How-to-make-your-Module-support-global-events" class="headerlink" title="How to make your Module support global events"></a>How to make your Module support global events</h2><p>API development is complete, when the event needs to be sent, the need through the following methods:<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">/**</div><div class="line">  * </div><div class="line">  * @param eventName eventName</div><div class="line">  * @param params event params</div><div class="line">  */</div><div class="line">instance.fireGlobalEventCallback(eventName,params);</div></pre></td></tr></table></figure></p>
-<p>How to dispatch a global event in a weex-html5 component or module ? Just dispatch the event on the document element:<br><figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> evt = <span class="keyword">new</span> Event(<span class="string">'some-type'</span>)</div><div class="line">evt.data = &#123; <span class="attr">foo</span>: <span class="string">'bar'</span> &#125;</div><div class="line"><span class="built_in">document</span>.dispatchEvent(evt)</div></pre></td></tr></table></figure></p>
+<h2 id="How-to-make-your-Module-support-global-events"><a href="#How-to-make-your-Module-support-global-events" class="headerlink" title="How to make your Module support global events"></a>How to make your Module support global events</h2><p>API development is complete, when the event needs to be sent, the need through the following methods:</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line">  * </div><div class="line">  * @param eventName eventName</div><div class="line">  * @param params event params</div><div class="line">  */</div><div class="line">instance.fireGlobalEventCallback(eventName,params);</div></pre></td></tr></table></figure>
+<p>How to dispatch a global event in a weex-html5 component or module ? Just dispatch the event on the document element:</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> evt = <span class="keyword">new</span> Event(<span class="string">'some-type'</span>)</div><div class="line">evt.data = &#123; <span class="attr">foo</span>: <span class="string">'bar'</span> &#125;</div><div class="line"><span class="built_in">document</span>.dispatchEvent(evt)</div></pre></td></tr></table></figure>
 <h3 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h3><h4 id="Android"><a href="#Android" class="headerlink" title="Android"></a>Android</h4><figure class="highlight java"><table><tr><td class="code"><pre><div class="line">Map&lt;String,Object&gt; params=<span class="keyword">new</span> HashMap&lt;&gt;();</div><div class="line">params.put(<span class="string">"key"</span>,<span class="string">"value"</span>);</div><div class="line">mWXSDKInstance.fireGlobalEventCallback(<span class="string">"geolocation"</span>,params);</div></pre></td></tr></table></figure>
 <h4 id="iOS"><a href="#iOS" class="headerlink" title="iOS"></a>iOS</h4><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">[weexInstance fireGlobalEvent:@&quot;geolocation&quot; params:@&#123;@&quot;key&quot;:@&quot;value&quot;&#125;];</div></pre></td></tr></table></figure>
 <h2 id="API"><a href="#API" class="headerlink" title="API"></a>API</h2><h3 id="addEventListener-String-eventName-String-callback"><a href="#addEventListener-String-eventName-String-callback" class="headerlink" title="addEventListener(String eventName, String callback)"></a>addEventListener(String eventName, String callback)</h3><p>register global event.</p>

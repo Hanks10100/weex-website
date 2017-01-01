@@ -16,7 +16,7 @@
 <meta property="og:image" content="https://img.alicdn.com/tps/TB1jLx4OFXXXXaoXFXXXXXXXXXX-212-33.png">
 <meta property="og:image" content="https://gw.alicdn.com/tps/TB1VulhOFXXXXcPXFXXXXXXXXXX-828-686.png">
 <meta property="og:image" content="https://img.alicdn.com/tps/TB1CBdgOFXXXXXnXVXXXXXXXXXX-661-392.jpg">
-<meta property="og:updated_time" content="2016-12-22T12:02:04.000Z">
+<meta property="og:updated_time" content="2016-12-30T08:58:14.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="如何创建一个 Weex 项目">
 <meta name="twitter:description" content="如何创建一个 Weex 项目对于前端开发者来说开发一个 app 是不容易的，既然 Weex 能以 web 的开发体验构建高性能、可扩展的 native 应用，那我们怎么利用 Weex 简单高效的开发一个 native 应用呢？Weex 替你考虑了这件事。在本章中，我们将学习如何使用 Weexpack 工具快速生成一个全新的 Weex 项目。
@@ -53,16 +53,22 @@
             <a href="javascript:;">资源</a>
             <ul class="dropdown-menu subnav">
               <li>
-                <a href="/weex-website/cn/playground.html">Playground</a>
-              </li>
-              <li>
                 <a href="/weex-website/cn/tools">工具和服务</a>
               </li>
               <li>
                 <a href="/weex-website/cn/advanced">高阶知识</a>
               </li>
               <li>
+                <a href="/weex-website/cn/playground.html">Playground</a>
+              </li>
+              <li>
                 <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
+              </li>
+              <li>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Dot we</a>
               </li>
             </ul>
         </li>
@@ -72,13 +78,13 @@
       </ul>
       <ul class="tools">
         <li>
-          <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-  <label class="search-label">
-    <input type="text" id="search-input" name="q" results="0" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off"/>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
-  </label>
-</form>
-<div class="results-panel">
+  </form>
+  <div class="results-panel">
+  </div>
 </div>
         </li>
         <!--<li></li>-->
@@ -96,6 +102,16 @@
   <div class="sidebar-menu">
     
       <ul class="main-nav">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-sidebar" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
         <li>
           <a class="" href="/weex-website/cn/guide">
             教程
@@ -115,16 +131,22 @@
             <p>资源</p>
             <ul class="subnav">
               <li>
-                <a href="./playground.html">Playground</a>
-              </li>
-              <li>
                 <a href="/weex-website/cn/tools">工具和服务</a>
               </li>
               <li>
                 <a href="/weex-website/cn/advanced">高阶知识</a>
               </li>
               <li>
+                <a href="/weex-website/cn/playground.html">Playground</a>
+              </li>
+              <li>
                 <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
+              </li>
+              <li>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Dot we</a>
               </li>
             </ul>
         </li>
@@ -287,7 +309,7 @@
   </div>
   
 
-<article id="page-undefined" class="article article-type-advanced">
+<article class="article article-type-advanced">
   <div class="article-entry" itemprop="articleBody">
     <header class="article-header">
   
@@ -297,11 +319,11 @@
       </h1>
     
   
-  <time class="article-date" datetime="2016-12-22T12:02:04.000Z">Updated time: 22/12/2016</time>
+  <time class="article-date" datetime="2016-12-30T08:58:14.000Z">Updated time: 30/12/2016</time>
 </header>
     <h1 id="如何创建一个-Weex-项目"><a href="#如何创建一个-Weex-项目" class="headerlink" title="如何创建一个 Weex 项目"></a>如何创建一个 Weex 项目</h1><p>对于前端开发者来说开发一个 app 是不容易的，既然 Weex 能以 web 的开发体验构建高性能、可扩展的 native 应用，那我们怎么利用 Weex 简单高效的开发一个 native 应用呢？Weex 替你考虑了这件事。在本章中，我们将学习如何使用 Weexpack 工具快速生成一个全新的 Weex 项目。</p>
-<p>根据你的操作系统的不同，步骤也略有差异，如果你从未接触过 native 开发，请慢慢来，遇到问题随时查阅 <a href="/faq.md">FAQ</a>。</p>
-<p>首先，不论任何平台，我们都需要 node.js 和 Weexpack。在本节中，默认你已经安装好了 node.js 和 npm，如有疑问，可参考上一章 <a href="/develop-on-your-local-machine.html">如何在本地开发 Weex 页面</a>。</p>
+<p>根据你的操作系统的不同，步骤也略有差异，如果你从未接触过 native 开发，请慢慢来，遇到问题随时查阅 <a href="../faq.md">FAQ</a>。</p>
+<p>首先，不论任何平台，我们都需要 node.js 和 Weexpack。在本节中，默认你已经安装好了 node.js 和 npm，如有疑问，可参考上一章 <a href="../guide/develop-on-your-local-machine.html">如何在本地开发 Weex 页面</a>。</p>
 <p>Weexpack 是 Weex 新一代的工程开发套件，它允许开发者通过简单的命令，创建 weex 工程项目，将项目运行在不同的开发平台上。未来，我们考虑会将其集成在 weex-toolkits 上，但目前仍需要单独安装。好在安装 Weexpack 非常简单，可以直接使用 npm 安装：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">npm install weexpack -g</div></pre></td></tr></table></figure>
 <p>或者用 cnpm：</p>

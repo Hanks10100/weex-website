@@ -5,26 +5,23 @@
   
   <title>Tutorial | Weex</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Tutorial0.4+
-We will make a simple but realistic list, in which the technologies Weex uses will be shown. This form of list also works for a lot of e-commercial apps and mobile sites.
-Getting StartedL">
+  <meta name="description" content="TutorialWe will make a simple but realistic list, in which the technologies Weex uses will be shown. This form of list also works for a lot of e-commercial apps and mobile sites.
+Getting StartedLet’s">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Tutorial">
 <meta property="og:url" content="http://alibaba.github.io/guide/index.html">
 <meta property="og:site_name" content="Weex">
-<meta property="og:description" content="Tutorial0.4+
-We will make a simple but realistic list, in which the technologies Weex uses will be shown. This form of list also works for a lot of e-commercial apps and mobile sites.
-Getting StartedL">
+<meta property="og:description" content="TutorialWe will make a simple but realistic list, in which the technologies Weex uses will be shown. This form of list also works for a lot of e-commercial apps and mobile sites.
+Getting StartedLet’s">
 <meta property="og:image" content="https://gtms02.alicdn.com/tps/i2/TB1y151LVXXXXXXaXXXoRYgWVXX-495-584.jpg">
 <meta property="og:image" content="http://alibaba.github.io/images/tut-cli-qrcode.png">
 <meta property="og:image" content="http://alibaba.github.io/images/tut-second.png">
 <meta property="og:image" content="http://alibaba.github.io/images/tut4.gif">
-<meta property="og:updated_time" content="2016-12-21T03:01:25.000Z">
+<meta property="og:updated_time" content="2016-12-30T08:36:33.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Tutorial">
-<meta name="twitter:description" content="Tutorial0.4+
-We will make a simple but realistic list, in which the technologies Weex uses will be shown. This form of list also works for a lot of e-commercial apps and mobile sites.
-Getting StartedL">
+<meta name="twitter:description" content="TutorialWe will make a simple but realistic list, in which the technologies Weex uses will be shown. This form of list also works for a lot of e-commercial apps and mobile sites.
+Getting StartedLet’s">
 <meta name="twitter:image" content="https://gtms02.alicdn.com/tps/i2/TB1y151LVXXXXXXaXXXoRYgWVXX-495-584.jpg">
   
     <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
@@ -57,16 +54,22 @@ Getting StartedL">
             <a href="javascript:;">Resources</a>
             <ul class="dropdown-menu subnav">
               <li>
-                <a href="/weex-website/playground.html">Playground</a>
-              </li>
-              <li>
-                <a href="/weex-website/tools">Tools</a>
+                <a href="/weex-website/tools">Service &amp; Tools</a>
               </li>
               <li>
                 <a href="/weex-website/advanced">Advanced</a>
               </li>
               <li>
+                <a href="/weex-website/playground.html">Playground</a>
+              </li>
+              <li>
                 <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
+              </li>
+              <li>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Dot we</a>
               </li>
             </ul>
         </li>
@@ -76,13 +79,13 @@ Getting StartedL">
       </ul>
       <ul class="tools">
         <li>
-          <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-  <label class="search-label">
-    <input type="text" id="search-input" name="q" results="0" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off"/>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
-  </label>
-</form>
-<div class="results-panel">
+  </form>
+  <div class="results-panel">
+  </div>
 </div>
         </li>
         <!--<li></li>-->
@@ -500,7 +503,7 @@ Getting StartedL">
   </div>
   
 
-<article id="page-undefined" class="article article-type-guide">
+<article class="article article-type-guide">
   <div class="article-entry" itemprop="articleBody">
     <header class="article-header">
   
@@ -510,20 +513,19 @@ Getting StartedL">
       </h1>
     
   
-  <time class="article-date" datetime="2016-12-21T03:01:25.000Z">Updated time: 21/12/2016</time>
+  <time class="article-date" datetime="2016-12-30T08:36:33.000Z">Updated time: 30/12/2016</time>
 </header>
-    <h1 id="Tutorial"><a href="#Tutorial" class="headerlink" title="Tutorial"></a>Tutorial</h1><p><span class="weex-version">0.4+</span></p>
-<p>We will make a simple but realistic list, in which the technologies Weex uses will be shown. This form of list also works for a lot of e-commercial apps and mobile sites.</p>
+    <h1 id="Tutorial"><a href="#Tutorial" class="headerlink" title="Tutorial"></a>Tutorial</h1><p>We will make a simple but realistic list, in which the technologies Weex uses will be shown. This form of list also works for a lot of e-commercial apps and mobile sites.</p>
 <h2 id="Getting-Started"><a href="#Getting-Started" class="headerlink" title="Getting Started"></a>Getting Started</h2><p>Let’s get started with the list item, which contains one <code>image</code> element and one <code>text</code> right behind.</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"cell"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">image</span> <span class="attr">class</span>=<span class="string">"thumb"</span> <span class="attr">src</span>=<span class="string">"http://t.cn/RGE3AJt"</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"title"</span>&gt;</span>JavaScript<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></div><div class="line">  .cell &#123; margin-top: 10; margin-left: 10; flex-direction: row; &#125;</div><div class="line">  .thumb &#123; width: 200; height: 200; &#125;</div><div class="line">  .title &#123; text-align: center; flex: 1; color: grey; font-size: 50; &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>You can directly copy and paste the above code into a Weex file named <code>tech_list.we</code> (<code>.we</code> is our recommended filename extension).</p>
 <h2 id="Preview"><a href="#Preview" class="headerlink" title="Preview"></a>Preview</h2><p>Once created, we want to see the running result of the <code>.we</code> file. But before that, we must make sure the dependencies are installed.</p>
 <p>We should install <a href="https://nodejs.org/en/download/" target="_blank" rel="external">Node</a> first, which our Weex CLI program <a href="https://www.npmjs.com/package/weex-toolkit" target="_blank" rel="external">Weex Toolkit</a> depends on. Then install <code>weex-toolkit</code> by running the command:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">npm install -g weex-toolkit</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ npm install -g weex-toolkit</div></pre></td></tr></table></figure>
 <p>When installation completed, you can check if Weex CLI is installed properly by running <code>weex</code> command in the command line. The following text is expected:</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">Usage: weex foo/bar/your_next_best_weex_script_file.we  [options]</div><div class="line"></div><div class="line">Options:</div><div class="line">  --qr     display QR code for native runtime, </div><div class="line">  -o,--output  transform weex we file to JS Bundle, output path (single JS bundle file or dir)</div><div class="line">  -s,--server  start a http file server, weex .we file will be transforme to JS bundle on the server , specify local root path using the option  </div><div class="line">  ......</div><div class="line">  --help  Show help         </div><div class="line">  -h, --host [default: &quot;127.0.0.1&quot;]</div></pre></td></tr></table></figure>
 <p>If all work well, navigate to the directory where you saved <code>tech_list.we</code>, then type:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">weex tech_list.we</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ weex tech_list.we</div></pre></td></tr></table></figure>
 <p>A browser window will be opened automatically to display the running result like below     (weex-toolkit version should be greater than 0.1.0, use <code>weex --version</code> to check it):</p>
 <p><img src="https://gtms02.alicdn.com/tps/i2/TB1y151LVXXXXXXaXXXoRYgWVXX-495-584.jpg" alt="mobile_preview"></p>
 <h2 id="Introduce-to-Weex-Syntax"><a href="#Introduce-to-Weex-Syntax" class="headerlink" title="Introduce to Weex Syntax"></a>Introduce to Weex Syntax</h2><p>So it’s time for introducing the syntax. </p>
@@ -531,11 +533,11 @@ Getting StartedL">
 <p>Template is the skeleton that gives Weex structure. It is composed of tags which surround content and apply meaning to it. Tags have <em>attributes</em>, different attribute means different feature, for example, <code>class</code> attribute makes it possible to define the same styles for multiple tags, <code>onclick</code> attribute makes the tag respond to click event.</p>
 <p>Style describes how Weex tags are to be displayed. We prefer CSS very much. So we try to keep consistent with CSS standard as possible. Weex Style supports a lot of CSS features, like margin, padding, fixed and so on. Better yet, flexbox layout (flex) is well supported in Weex Style.</p>
 <p>Script adds <em>data</em> &amp; <em>logic</em> to Weex tags, helping you easily access local or remote data and update tags. You can also define some methods for your tag to respond to different events. Weex Script organization learns a lot from CommonJS module style.</p>
-<p>More information about Weex syntax can be found in our <a href="syntax/main.html">Syntax chapter</a>.</p>
+<p>More information about Weex syntax can be found in our <a href="./syntax/index.html">Syntax chapter</a>.</p>
 <h2 id="Add-More-Items"><a href="#Add-More-Items" class="headerlink" title="Add More Items"></a>Add More Items</h2><p>We can’t call one item an list, so we need to add more items to our tech list. Open <code>tech_list.we</code> in your favorite editor and update it’s content like below:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"cell"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">image</span> <span class="attr">class</span>=<span class="string">"thumb"</span> <span class="attr">src</span>=<span class="string">"http://t.cn/RGE3AJt"</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"title"</span>&gt;</span>JavaScript<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"cell"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">image</span> <span class="attr">class</span>=<span class="string">"thumb"</span> <span class="attr">src</span>=<span class="string">"http://t.cn/RGE3uo9"</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"title"</span>&gt;</span>Java<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"cell"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">image</span> <span class="attr">class</span>=<span class="string">"thumb"</span> <span class="attr">src</span>=<span class="string">"http://t.cn/RGE31hq"</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"title"</span>&gt;</span>Objective C<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></div><div class="line">  .cell&#123; margin-top:10 ; margin-left:10 ; flex-direction: row; &#125;</div><div class="line">  .thumb &#123; width: 200; height: 200; &#125;</div><div class="line">  .title &#123; text-align: center ; flex: 1; color: grey; font-size: 50; &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>Now we will try to  render our  <code>tech_list.we</code>  with Weex native renderer.  Open your terminal and  navigate to the directory where you save the <code>tech_list.we</code> again, then type:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">weex tech_list.we --qr -h &#123;ip or hostname&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ weex tech_list.we --qr -h &#123;ip or hostname&#125;</div></pre></td></tr></table></figure>
 <p>It’s <strong><em>RECOMMENDED</em></strong> to use <code>-h</code> option to specify your local ip address or hostname.</p>
 <p>An QR code will be displayed in the terminal window like below:</p>
 <p><img src="images/tut-cli-qrcode.png" alt="Weex CLI"></p>
@@ -546,11 +548,11 @@ Getting StartedL">
 <h2 id="Add-Built-in-Components"><a href="#Add-Built-in-Components" class="headerlink" title="Add Built-in Components"></a>Add Built-in Components</h2><p>Instead of writing basic tags by yourself, Weex provides a lot of built-in components. For example, Slider is common to many apps and mobile websites, so Weex includes a built-in Slider so that you can easily use it in your script. Let’s open <code>tech_list.we</code> and update it’s content like below.</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"flex-direction: column;"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">slider</span> <span class="attr">class</span>=<span class="string">"slider"</span> <span class="attr">interval</span>=<span class="string">"&#123;&#123;intervalValue&#125;&#125;"</span> <span class="attr">auto-play</span>=<span class="string">"&#123;&#123;isAutoPlay&#125;&#125;"</span> &gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"slider-pages"</span> <span class="attr">repeat</span>=<span class="string">"&#123;&#123;itemList&#125;&#125;"</span> <span class="attr">onclick</span>=<span class="string">"goWeexSite"</span> &gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">image</span> <span class="attr">class</span>=<span class="string">"thumb"</span> <span class="attr">src</span>=<span class="string">"&#123;&#123;pictureUrl&#125;&#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"title"</span>&gt;</span>&#123;&#123;title&#125;&#125;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">slider</span>&gt;</span></div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container"</span> <span class="attr">onclick</span>=<span class="string">"goWeexSite"</span> &gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"cell"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">image</span> <span class="attr">class</span>=<span class="string">"thumb"</span> <span class="attr">src</span>=<span class="string">"http://t.cn/RGE3AJt"</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"title"</span>&gt;</span>JavaScript<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"cell"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">image</span> <span class="attr">class</span>=<span class="string">"thumb"</span> <span class="attr">src</span>=<span class="string">"http://t.cn/RGE3uo9"</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"title"</span>&gt;</span>Java<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"cell"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">image</span> <span class="attr">class</span>=<span class="string">"thumb"</span> <span class="attr">src</span>=<span class="string">"http://t.cn/RGE31hq"</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"title"</span>&gt;</span>Objective C<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></div><div class="line">  .cell &#123; margin-top:10 ; margin-left:10 ; flex-direction: row; &#125;</div><div class="line">  .thumb &#123; width: 200; height: 200; &#125;</div><div class="line">  .title &#123; text-align: center ; flex: 1; color: grey; font-size: 50; &#125;</div><div class="line">  .slider &#123;</div><div class="line">    margin: 18;</div><div class="line">    width: 714;</div><div class="line">    height: 230;</div><div class="line">  &#125;</div><div class="line">  .slider-pages &#123;</div><div class="line">    flex-direction: row;</div><div class="line">    width: 714;</div><div class="line">    height: 200;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">  <span class="attr">data</span>: &#123;</div><div class="line">    <span class="attr">intervalValue</span>:<span class="string">"1000"</span>,</div><div class="line">    <span class="attr">isShowIndicators</span>:<span class="string">"true"</span>,</div><div class="line">    <span class="attr">isAutoPlay</span>:<span class="string">"true"</span>,</div><div class="line">    <span class="attr">itemList</span>: [</div><div class="line">      &#123;<span class="attr">title</span>: <span class="string">'Java'</span>, <span class="attr">pictureUrl</span>: <span class="string">'http://t.cn/RGE3uo9'</span>&#125;,</div><div class="line">      &#123;<span class="attr">title</span>: <span class="string">'Objective C'</span>, <span class="attr">pictureUrl</span>: <span class="string">'http://t.cn/RGE31hq'</span>&#125;,</div><div class="line">      &#123;<span class="attr">title</span>: <span class="string">'JavaScript'</span>, <span class="attr">pictureUrl</span>: <span class="string">'http://t.cn/RGE3AJt'</span>&#125;</div><div class="line">    ]</div><div class="line">  &#125;,</div><div class="line">  <span class="attr">methods</span>: &#123;</div><div class="line">    <span class="attr">goWeexSite</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">      <span class="keyword">this</span>.$openURL(<span class="string">'http://alibaba.github.io/weex/'</span>)</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>Open terminal and run the command again:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">weex tech_list.we</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ weex tech_list.we</div></pre></td></tr></table></figure>
 <p>You should see a slider prepend to our list.</p>
 <p><img src="images/tut4.gif" alt="Third Example"></p>
-<p>More information about Slider component can be found <a href="components/slider.html">here</a>.</p>
-<p>Just as the previous example, the slider can be rendered in native, easily in Weex playground, or in your App. Please refer <a href="advanced/integrate-to-android.html">the document</a> for integrating Weex into your App.</p>
+<p>More information about Slider component can be found <a href="../references/components/slider.html">here</a>.</p>
+<p>Just as the previous example, the slider can be rendered in native, easily in Weex playground, or in your App. Please refer <a href="./advanced/integrate-to-android.html">the document</a> for integrating Weex into your App.</p>
 
   </div>
   

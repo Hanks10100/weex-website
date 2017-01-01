@@ -17,7 +17,7 @@
 这部分API是通过把 virtual-dom 的消息发送到 native 渲染器来做到的。
 开发者在日常开发中，唯一可在 .we 文件中使用的是 scrollToElement。你也可以调用 $scrollTo 方法来使用它
 这个页面提及的其他的 API，只在 callNative 进程中的 native 渲染器用。（关于 callNativ">
-<meta property="og:updated_time" content="2016-12-22T12:13:37.000Z">
+<meta property="og:updated_time" content="2017-01-01T02:29:39.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="dom">
 <meta name="twitter:description" content="dom包含如下可以更新 dom 树的 dom API。
@@ -55,16 +55,22 @@
             <a href="javascript:;">资源</a>
             <ul class="dropdown-menu subnav">
               <li>
-                <a href="/weex-website/cn/playground.html">Playground</a>
-              </li>
-              <li>
                 <a href="/weex-website/cn/tools">工具和服务</a>
               </li>
               <li>
                 <a href="/weex-website/cn/advanced">高阶知识</a>
               </li>
               <li>
+                <a href="/weex-website/cn/playground.html">Playground</a>
+              </li>
+              <li>
                 <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
+              </li>
+              <li>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Dot we</a>
               </li>
             </ul>
         </li>
@@ -74,13 +80,13 @@
       </ul>
       <ul class="tools">
         <li>
-          <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-  <label class="search-label">
-    <input type="text" id="search-input" name="q" results="0" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off"/>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
-  </label>
-</form>
-<div class="results-panel">
+  </form>
+  <div class="results-panel">
+  </div>
 </div>
         </li>
         <!--<li></li>-->
@@ -439,11 +445,11 @@
               </li>
             
               <li>
-                <a href="/weex-website/cn/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
+                <a href="/weex-website/cn/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
               </li>
             
               <li>
-                <a href="/weex-website/cn/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
+                <a href="/weex-website/cn/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
               </li>
             
               <li>
@@ -908,11 +914,11 @@
               </li>
             
               <li>
-                <a href="/weex-website/cn/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
+                <a href="/weex-website/cn/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
               </li>
             
               <li>
-                <a href="/weex-website/cn/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
+                <a href="/weex-website/cn/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
               </li>
             
               <li>
@@ -1032,7 +1038,7 @@
   </div>
   
 
-<article id="page-undefined" class="article article-type-references">
+<article class="article article-type-references">
   <div class="article-entry" itemprop="articleBody">
     <header class="article-header">
   
@@ -1042,12 +1048,12 @@
       </h1>
     
   
-  <time class="article-date" datetime="2016-12-22T12:13:37.000Z">Updated time: 22/12/2016</time>
+  <time class="article-date" datetime="2017-01-01T02:29:39.000Z">Updated time: 01/01/2017</time>
 </header>
     <h1 id="dom"><a href="#dom" class="headerlink" title="dom"></a>dom</h1><p>包含如下可以更新 dom 树的 dom API。</p>
 <p>这部分API是通过把 virtual-dom 的消息发送到 native 渲染器来做到的。</p>
 <p>开发者在日常开发中，唯一可在 <code>.we</code> 文件中使用的是 <code>scrollToElement</code>。<br><del>你也可以调用 <code>$scrollTo</code> 方法来使用它</del></p>
-<p>这个页面提及的其他的 API，只在 <code>callNative</code> 进程中的 native 渲染器用。<br>（关于 <code>callNative</code> 进程的进一步介绍，可以在 <a href="../advanced/how-it-works.html">How it works</a>中的 JS Framework 部分看到 ）</p>
+<p>这个页面提及的其他的 API，只在 <code>callNative</code> 进程中的 native 渲染器用。<br>（关于 <code>callNative</code> 进程的进一步介绍，可以在 <a href="../../advanced/how-it-works.html">How it works</a>中的 JS Framework 部分看到 ）</p>
 <h2 id="API"><a href="#API" class="headerlink" title="API"></a>API</h2><h3 id="scrollToElement-node-options"><a href="#scrollToElement-node-options" class="headerlink" title="scrollToElement(node, options)"></a>scrollToElement(node, options)</h3><p>让页面滚动到那个对应的节点，这个API只能在 <code>&lt;scroller&gt;</code> 和 <code>&lt;list&gt;</code> 组件中用。</p>
 <p><del>这个API也能通过调用VM的方法 <code>$scrollTo</code> 来使用（已弃用）</del></p>
 <p>要在你的 <code>.we</code> 文件中使用这个 API，可以使用 <code>require(&#39;@weex-module/dom&#39;).scrollToElement</code>。</p>

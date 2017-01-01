@@ -8,11 +8,11 @@
   <meta name="description" content="Weex Playground AppWeex 的最棒的一个部分是 Native Runtime。你的 .we 文件可以使用 weex-toolkit CLI 在浏览器中预览 Web 效果，也可以通过 Weex Playground App 这样一个单独的应用来预览原生效果。不仅如此，Weex playground App 还内置了大量的 Demo 和展示案例，这样你就可以更加容易地体验到 Wee">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Playground">
-<meta property="og:url" content="http://alibaba.github.io/cn/tools/playground-app.html">
+<meta property="og:url" content="http://alibaba.github.io/cn/tools/playground.html">
 <meta property="og:site_name" content="Weex">
 <meta property="og:description" content="Weex Playground AppWeex 的最棒的一个部分是 Native Runtime。你的 .we 文件可以使用 weex-toolkit CLI 在浏览器中预览 Web 效果，也可以通过 Weex Playground App 这样一个单独的应用来预览原生效果。不仅如此，Weex playground App 还内置了大量的 Demo 和展示案例，这样你就可以更加容易地体验到 Wee">
 <meta property="og:image" content="http://gtms01.alicdn.com/tps/i1/TB1bC5LMpXXXXb7XXXXA0gJJXXX-720-1280.png">
-<meta property="og:updated_time" content="2016-12-22T11:39:56.000Z">
+<meta property="og:updated_time" content="2016-12-27T09:44:35.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Playground">
 <meta name="twitter:description" content="Weex Playground AppWeex 的最棒的一个部分是 Native Runtime。你的 .we 文件可以使用 weex-toolkit CLI 在浏览器中预览 Web 效果，也可以通过 Weex Playground App 这样一个单独的应用来预览原生效果。不仅如此，Weex playground App 还内置了大量的 Demo 和展示案例，这样你就可以更加容易地体验到 Wee">
@@ -48,16 +48,22 @@
             <a href="javascript:;">资源</a>
             <ul class="dropdown-menu subnav">
               <li>
-                <a href="/weex-website/cn/playground.html">Playground</a>
-              </li>
-              <li>
                 <a href="/weex-website/cn/tools">工具和服务</a>
               </li>
               <li>
                 <a href="/weex-website/cn/advanced">高阶知识</a>
               </li>
               <li>
+                <a href="/weex-website/cn/playground.html">Playground</a>
+              </li>
+              <li>
                 <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
+              </li>
+              <li>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Dot we</a>
               </li>
             </ul>
         </li>
@@ -67,13 +73,13 @@
       </ul>
       <ul class="tools">
         <li>
-          <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-  <label class="search-label">
-    <input type="text" id="search-input" name="q" results="0" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off"/>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
-  </label>
-</form>
-<div class="results-panel">
+  </form>
+  <div class="results-panel">
+  </div>
 </div>
         </li>
         <!--<li></li>-->
@@ -91,6 +97,16 @@
   <div class="sidebar-menu">
     
       <ul class="main-nav">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-sidebar" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
         <li>
           <a class="" href="/weex-website/cn/guide">
             教程
@@ -110,16 +126,22 @@
             <p>资源</p>
             <ul class="subnav">
               <li>
-                <a href="./playground.html">Playground</a>
-              </li>
-              <li>
                 <a href="/weex-website/cn/tools">工具和服务</a>
               </li>
               <li>
                 <a href="/weex-website/cn/advanced">高阶知识</a>
               </li>
               <li>
+                <a href="/weex-website/cn/playground.html">Playground</a>
+              </li>
+              <li>
                 <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
+              </li>
+              <li>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Dot we</a>
               </li>
             </ul>
         </li>
@@ -205,7 +227,7 @@
       </li>
     
       <li>
-        <h3 class="chapter-title"><a href="/weex-website/cn/tools/playground-app.html" class="sidebar-link current ">Playground</a></h3>
+        <h3 class="chapter-title"><a href="/weex-website/cn/tools/playground.html" class="sidebar-link current ">Playground</a></h3>
         
       </li>
     
@@ -214,7 +236,7 @@
   </div>
   
 
-<article id="page-undefined" class="article article-type-tools">
+<article class="article article-type-tools">
   <div class="article-entry" itemprop="articleBody">
     <header class="article-header">
   
@@ -224,7 +246,7 @@
       </h1>
     
   
-  <time class="article-date" datetime="2016-12-22T11:39:56.000Z">Updated time: 22/12/2016</time>
+  <time class="article-date" datetime="2016-12-27T09:44:35.000Z">Updated time: 27/12/2016</time>
 </header>
     <h1 id="Weex-Playground-App"><a href="#Weex-Playground-App" class="headerlink" title="Weex Playground App"></a>Weex Playground App</h1><p>Weex 的最棒的一个部分是 Native Runtime。你的 <code>.we</code> 文件可以使用 weex-toolkit CLI 在浏览器中预览 Web 效果，也可以通过 Weex Playground App 这样一个单独的应用来预览原生效果。不仅如此，Weex playground App 还内置了大量的 Demo 和展示案例，这样你就可以更加容易地体验到 Weex 在 Native 层面的效果了。</p>
 <p>Playground App 的下载地址在 <a href="http://alibaba.github.io/weex/download.html">这里</a>。</p>
@@ -250,10 +272,10 @@
       </a>
       <ul class="dropdown-menu">
         <li>
-          <a href="/weex-website/tools/playground-app.html">English</a>
+          <a href="/weex-website/tools/playground.html">English</a>
         </li>
         <li>
-          <a href="/weex-website/cn/tools/playground-app.html">中文</a>
+          <a href="/weex-website/cn/tools/playground.html">中文</a>
         </li>
       </ul>
     </div>

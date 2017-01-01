@@ -5,19 +5,16 @@
   
   <title>Render Logic Control | Weex</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Render Logic Control0.4
-appendAttribute append do not have data-binding. It won’t change the final rendering effect. But it determines whether this component should be rendered as a whole tree or a si">
+  <meta name="description" content="Render Logic ControlappendAttribute append do not have data-binding. It won’t change the final rendering effect. But it determines whether this component should be rendered as a whole tree or a single">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Render Logic Control">
 <meta property="og:url" content="http://alibaba.github.io/guide/syntax/render-logic.html">
 <meta property="og:site_name" content="Weex">
-<meta property="og:description" content="Render Logic Control0.4
-appendAttribute append do not have data-binding. It won’t change the final rendering effect. But it determines whether this component should be rendered as a whole tree or a si">
-<meta property="og:updated_time" content="2016-12-21T03:01:17.000Z">
+<meta property="og:description" content="Render Logic ControlappendAttribute append do not have data-binding. It won’t change the final rendering effect. But it determines whether this component should be rendered as a whole tree or a single">
+<meta property="og:updated_time" content="2016-12-30T08:33:19.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Render Logic Control">
-<meta name="twitter:description" content="Render Logic Control0.4
-appendAttribute append do not have data-binding. It won’t change the final rendering effect. But it determines whether this component should be rendered as a whole tree or a si">
+<meta name="twitter:description" content="Render Logic ControlappendAttribute append do not have data-binding. It won’t change the final rendering effect. But it determines whether this component should be rendered as a whole tree or a single">
   
     <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
   
@@ -49,16 +46,22 @@ appendAttribute append do not have data-binding. It won’t change the final ren
             <a href="javascript:;">Resources</a>
             <ul class="dropdown-menu subnav">
               <li>
-                <a href="/weex-website/playground.html">Playground</a>
-              </li>
-              <li>
-                <a href="/weex-website/tools">Tools</a>
+                <a href="/weex-website/tools">Service &amp; Tools</a>
               </li>
               <li>
                 <a href="/weex-website/advanced">Advanced</a>
               </li>
               <li>
+                <a href="/weex-website/playground.html">Playground</a>
+              </li>
+              <li>
                 <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
+              </li>
+              <li>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Dot we</a>
               </li>
             </ul>
         </li>
@@ -68,13 +71,13 @@ appendAttribute append do not have data-binding. It won’t change the final ren
       </ul>
       <ul class="tools">
         <li>
-          <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-  <label class="search-label">
-    <input type="text" id="search-input" name="q" results="0" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off"/>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
-  </label>
-</form>
-<div class="results-panel">
+  </form>
+  <div class="results-panel">
+  </div>
 </div>
         </li>
         <!--<li></li>-->
@@ -492,7 +495,7 @@ appendAttribute append do not have data-binding. It won’t change the final ren
   </div>
   
 
-<article id="page-undefined" class="article article-type-guide">
+<article class="article article-type-guide">
   <div class="article-entry" itemprop="articleBody">
     <header class="article-header">
   
@@ -502,10 +505,9 @@ appendAttribute append do not have data-binding. It won’t change the final ren
       </h1>
     
   
-  <time class="article-date" datetime="2016-12-21T03:01:17.000Z">Updated time: 21/12/2016</time>
+  <time class="article-date" datetime="2016-12-30T08:33:19.000Z">Updated time: 30/12/2016</time>
 </header>
-    <h1 id="Render-Logic-Control"><a href="#Render-Logic-Control" class="headerlink" title="Render Logic Control"></a>Render Logic Control</h1><p><span class="weex-version">0.4</span></p>
-<h2 id="append"><a href="#append" class="headerlink" title="append"></a><code>append</code></h2><p>Attribute <code>append</code> do not have data-binding. It won’t change the final rendering effect. But it determines whether this component should be rendered as a whole tree or a single node with child nodes appended after.</p>
+    <h1 id="Render-Logic-Control"><a href="#Render-Logic-Control" class="headerlink" title="Render Logic Control"></a>Render Logic Control</h1><h2 id="append"><a href="#append" class="headerlink" title="append"></a><code>append</code></h2><p>Attribute <code>append</code> do not have data-binding. It won’t change the final rendering effect. But it determines whether this component should be rendered as a whole tree or a single node with child nodes appended after.</p>
 <p><code>append</code> has two key attributes, <code>tree</code> and <code>node</code>, the usage is:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">container</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">container</span> <span class="attr">id</span>=<span class="string">"world"</span> <span class="attr">append</span>=<span class="string">"tree"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">text</span>&gt;</span>Hello World!<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">container</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">container</span> <span class="attr">id</span>=<span class="string">"weex"</span> <span class="attr">append</span>=<span class="string">"node"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">text</span>&gt;</span>Hello Weex!<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">container</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">container</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>In the code snippet above, the element with id ‘world’ will wait for all its children to be rendered then it will be rendered entirely, while the element with id ‘weex’ will only render itself to the page, then its child elements will be rendered to page one by one.</p>

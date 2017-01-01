@@ -12,7 +12,7 @@
 <meta property="og:site_name" content="Weex">
 <meta property="og:description" content="How to preview weex code in browser ?weex-toolkitWe strongly suggest you use weex-toolkit to preview weex code in your browser. This tool is Node.JS based, so you need to install Node at first. Please">
 <meta property="og:image" content="https://gtms02.alicdn.com/tps/i2/TB1y151LVXXXXXXaXXXoRYgWVXX-495-584.jpg">
-<meta property="og:updated_time" content="2016-12-20T15:19:45.000Z">
+<meta property="og:updated_time" content="2016-12-30T08:24:26.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Preview in browser">
 <meta name="twitter:description" content="How to preview weex code in browser ?weex-toolkitWe strongly suggest you use weex-toolkit to preview weex code in your browser. This tool is Node.JS based, so you need to install Node at first. Please">
@@ -48,16 +48,22 @@
             <a href="javascript:;">Resources</a>
             <ul class="dropdown-menu subnav">
               <li>
-                <a href="/weex-website/playground.html">Playground</a>
-              </li>
-              <li>
-                <a href="/weex-website/tools">Tools</a>
+                <a href="/weex-website/tools">Service &amp; Tools</a>
               </li>
               <li>
                 <a href="/weex-website/advanced">Advanced</a>
               </li>
               <li>
+                <a href="/weex-website/playground.html">Playground</a>
+              </li>
+              <li>
                 <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
+              </li>
+              <li>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Dot we</a>
               </li>
             </ul>
         </li>
@@ -67,13 +73,13 @@
       </ul>
       <ul class="tools">
         <li>
-          <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-  <label class="search-label">
-    <input type="text" id="search-input" name="q" results="0" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off"/>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
-  </label>
-</form>
-<div class="results-panel">
+  </form>
+  <div class="results-panel">
+  </div>
 </div>
         </li>
         <!--<li></li>-->
@@ -491,7 +497,7 @@
   </div>
   
 
-<article id="page-undefined" class="article article-type-guide">
+<article class="article article-type-guide">
   <div class="article-entry" itemprop="articleBody">
     <header class="article-header">
   
@@ -501,13 +507,14 @@
       </h1>
     
   
-  <time class="article-date" datetime="2016-12-20T15:19:45.000Z">Updated time: 20/12/2016</time>
+  <time class="article-date" datetime="2016-12-30T08:24:26.000Z">Updated time: 30/12/2016</time>
 </header>
     <h1 id="How-to-preview-weex-code-in-browser"><a href="#How-to-preview-weex-code-in-browser" class="headerlink" title="How to preview weex code in browser ?"></a>How to preview weex code in browser ?</h1><h2 id="weex-toolkit"><a href="#weex-toolkit" class="headerlink" title="weex-toolkit"></a>weex-toolkit</h2><p>We strongly suggest you use weex-toolkit to preview weex code in your browser. This tool is Node.JS based, so you need to install Node at first. Please download and install latest stable version of Node from <a href="https://nodejs.org/en/download/stable/" target="_blank" rel="external">https://nodejs.org/en/download/stable/</a>. Then you can install weex-toolkit using npm install:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">npm install -g weex-toolkit</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ npm install -g weex-toolkit</div></pre></td></tr></table></figure>
 <p>Check that the toolkit does work by typing <code>weex</code> in the command line. Normally you should see the following help text:</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">Options:</div><div class="line">  --qr     display QR code for native runtime, </div><div class="line">  -o,--output  transform weex we file to JS Bundle, output path (single JS bundle file or dir)</div><div class="line">  -s,--server  start a http file server, weex .we file will be transforme to JS bundle on the server , specify local root path using the option  </div><div class="line">  ......</div><div class="line">  --help  Show help</div></pre></td></tr></table></figure>
-<p>If all work well, navigate to the path the xxx.we file you want to preview in, and type the command:<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">weex xxx.we</div></pre></td></tr></table></figure></p>
+<p>If all work well, navigate to the path the xxx.we file you want to preview in, and type the command:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">weex xxx.we</div></pre></td></tr></table></figure>
 <p>A browser window will be opened automatically to display the page you want to preview:</p>
 <p><img src="https://gtms02.alicdn.com/tps/i2/TB1y151LVXXXXXXaXXXoRYgWVXX-495-584.jpg" alt="preview page"></p>
 

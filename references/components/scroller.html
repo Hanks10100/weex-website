@@ -5,19 +5,19 @@
   
   <title>&lt;scroller&gt; | Weex</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="&amp;lt;scroller&amp;gt;0.4
-SummaryA vertical scroller which can have multiple child components arranged in one column. If total height of its child components is higher then the height of itself, the whole c">
+  <meta name="description" content="&amp;lt;scroller&amp;gt;v0.6.1+
+A scroller is a component in vertical direction which can have multiple child components in one column. If total height of its child components exceed the height of the scrolle">
 <meta property="og:type" content="website">
 <meta property="og:title" content="<scroller>">
 <meta property="og:url" content="http://alibaba.github.io/references/components/scroller.html">
 <meta property="og:site_name" content="Weex">
-<meta property="og:description" content="&amp;lt;scroller&amp;gt;0.4
-SummaryA vertical scroller which can have multiple child components arranged in one column. If total height of its child components is higher then the height of itself, the whole c">
-<meta property="og:updated_time" content="2016-12-21T03:01:08.000Z">
+<meta property="og:description" content="&amp;lt;scroller&amp;gt;v0.6.1+
+A scroller is a component in vertical direction which can have multiple child components in one column. If total height of its child components exceed the height of the scrolle">
+<meta property="og:updated_time" content="2016-12-30T05:56:57.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="<scroller>">
-<meta name="twitter:description" content="&amp;lt;scroller&amp;gt;0.4
-SummaryA vertical scroller which can have multiple child components arranged in one column. If total height of its child components is higher then the height of itself, the whole c">
+<meta name="twitter:description" content="&amp;lt;scroller&amp;gt;v0.6.1+
+A scroller is a component in vertical direction which can have multiple child components in one column. If total height of its child components exceed the height of the scrolle">
   
     <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
   
@@ -49,16 +49,22 @@ SummaryA vertical scroller which can have multiple child components arranged in 
             <a href="javascript:;">Resources</a>
             <ul class="dropdown-menu subnav">
               <li>
-                <a href="/weex-website/playground.html">Playground</a>
-              </li>
-              <li>
-                <a href="/weex-website/tools">Tools</a>
+                <a href="/weex-website/tools">Service &amp; Tools</a>
               </li>
               <li>
                 <a href="/weex-website/advanced">Advanced</a>
               </li>
               <li>
+                <a href="/weex-website/playground.html">Playground</a>
+              </li>
+              <li>
                 <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
+              </li>
+              <li>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Dot we</a>
               </li>
             </ul>
         </li>
@@ -68,13 +74,13 @@ SummaryA vertical scroller which can have multiple child components arranged in 
       </ul>
       <ul class="tools">
         <li>
-          <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-  <label class="search-label">
-    <input type="text" id="search-input" name="q" results="0" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off"/>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
-  </label>
-</form>
-<div class="results-panel">
+  </form>
+  <div class="results-panel">
+  </div>
 </div>
         </li>
         <!--<li></li>-->
@@ -329,11 +335,11 @@ SummaryA vertical scroller which can have multiple child components arranged in 
           <ul class="chapter">
             
               <li>
-                <a href="/weex-website/references/bootstrap.html" class="sidebar-link  ">Bootstrap</a>
+                <a href="/weex-website/references/special-element.html" class="sidebar-link  ">Special Element</a>
               </li>
             
               <li>
-                <a href="/weex-website/references/special-element.html" class="sidebar-link  ">Special Element</a>
+                <a href="/weex-website/references/bootstrap.html" class="sidebar-link  ">Bootstrap</a>
               </li>
             
               <li>
@@ -430,7 +436,7 @@ SummaryA vertical scroller which can have multiple child components arranged in 
               </li>
             
               <li>
-                <a href="/weex-website/references/components/cell.html" class="sidebar-link  ">&lt;list&gt;</a>
+                <a href="/weex-website/references/components/cell.html" class="sidebar-link  ">&lt;cell&gt;</a>
               </li>
             
               <li>
@@ -765,11 +771,11 @@ SummaryA vertical scroller which can have multiple child components arranged in 
           <ul class="chapter">
             
               <li>
-                <a href="/weex-website/references/bootstrap.html" class="sidebar-link  ">Bootstrap</a>
+                <a href="/weex-website/references/special-element.html" class="sidebar-link  ">Special Element</a>
               </li>
             
               <li>
-                <a href="/weex-website/references/special-element.html" class="sidebar-link  ">Special Element</a>
+                <a href="/weex-website/references/bootstrap.html" class="sidebar-link  ">Bootstrap</a>
               </li>
             
               <li>
@@ -866,7 +872,7 @@ SummaryA vertical scroller which can have multiple child components arranged in 
               </li>
             
               <li>
-                <a href="/weex-website/references/components/cell.html" class="sidebar-link  ">&lt;list&gt;</a>
+                <a href="/weex-website/references/components/cell.html" class="sidebar-link  ">&lt;cell&gt;</a>
               </li>
             
               <li>
@@ -960,7 +966,7 @@ SummaryA vertical scroller which can have multiple child components arranged in 
   </div>
   
 
-<article id="page-undefined" class="article article-type-references">
+<article class="article article-type-references">
   <div class="article-entry" itemprop="articleBody">
     <header class="article-header">
   
@@ -970,39 +976,44 @@ SummaryA vertical scroller which can have multiple child components arranged in 
       </h1>
     
   
-  <time class="article-date" datetime="2016-12-21T03:01:08.000Z">Updated time: 21/12/2016</time>
+  <time class="article-date" datetime="2016-12-30T05:56:57.000Z">Updated time: 30/12/2016</time>
 </header>
-    <h1 id="lt-scroller-gt"><a href="#lt-scroller-gt" class="headerlink" title="&lt;scroller&gt;"></a>&lt;scroller&gt;</h1><p><span class="weex-version">0.4</span></p>
-<h3 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h3><p>A vertical scroller which can have multiple child components arranged in one column. If total height of its child components is higher then the height of itself, the whole child components are scrollable.</p>
-<p><strong>Notes:</strong> A <code>&lt;scroller&gt;</code> can be used as a root element or a embed element. The scroll direction of this component is column, and it can’t be changed.</p>
-<h3 id="Child-Components"><a href="#Child-Components" class="headerlink" title="Child Components"></a>Child Components</h3><p>It supports all kinds of weex components as its child components.</p>
+    <h1 id="lt-scroller-gt"><a href="#lt-scroller-gt" class="headerlink" title="&lt;scroller&gt;"></a>&lt;scroller&gt;</h1><p><span class="weex-version">v0.6.1+</span></p>
+<p>A scroller is a component in vertical direction which can have multiple child components in one column. If total height of its child components exceed the height of the scroller, the whole child components will be scrollable.</p>
+<p>Notes: A <scroller> can be used as a root element or a embed element. The scroll direction of this component is column, and it can’t be changed.</scroller></p>
+<p><strong>example</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">scroller</span> <span class="attr">onloadmore</span>=<span class="string">"onloadmore"</span> <span class="attr">loadmoreoffset</span>=<span class="string">"100"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">repeat</span>=<span class="string">"&#123;&#123;v in items&#125;&#125;"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">style</span>=<span class="string">"font-size: 40; color: #000000"</span>&gt;</span>&#123;&#123;v.item&#125;&#125;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">scroller</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="built_in">module</span>.exports = &#123;</div><div class="line">    <span class="attr">data</span>: &#123;</div><div class="line">      <span class="attr">items</span>: [],</div><div class="line">      <span class="attr">triggered</span>:<span class="literal">false</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">created</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">      <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">50</span>; i++) &#123;</div><div class="line">        <span class="keyword">this</span>.items.push(&#123;<span class="string">'item'</span>: <span class="string">'test data'</span> + i&#125;);</div><div class="line">      &#125;</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">methods</span>: &#123;</div><div class="line">      <span class="attr">onloadmore</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="keyword">if</span>(!<span class="keyword">this</span>.triggered)&#123;</div><div class="line">          <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">100</span>; i &gt;= <span class="number">50</span>; i--) &#123;</div><div class="line">            <span class="keyword">this</span>.items.push(&#123;<span class="string">'item'</span>:<span class="string">'onloadmore triggered'</span> + i&#125;);</div><div class="line">          &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">this</span>.triggered=<span class="literal">true</span>;</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><a href="http://dotwe.org/acf155122b9457211165680b01fae1c2" target="_blank" rel="external">try it</a></p>
+<h2 id="Child-Components"><a href="#Child-Components" class="headerlink" title="Child Components"></a>Child Components</h2><p>Scroller supports all kinds of components, such as div, text, etc.<br>And there are two special components that can only be used inside scroller component.</p>
 <ul>
-<li><code>refresh</code> component can be used inside scroller to add pull down to refresh functionality.</li>
-<li><p><code>loading</code> component can be used inside scroller to add pull up to loadmore functionality.</p>
-</li>
-<li><p><code>refresh</code> and <code>loading</code> please check out the <a href="refresh-loading.html">refresh-loading</a>.</p>
-</li>
+<li>refresh 0.6.1 used inside list to add pull-down-to-refresh functionality. </li>
+<li>loading 0.6.1 used inside list to add pull-up-to-load-more functionality. </li>
 </ul>
-<h3 id="Attributes"><a href="#Attributes" class="headerlink" title="Attributes"></a>Attributes</h3><ul>
-<li><code>show-scrollbar</code>: &lt;boolean&gt; <code>true</code> | <code>false</code>. This value determines whether the scrollbar show. The default value is <code>true</code>.</li>
-<li><code>scroll-direction</code>: &lt;string&gt; define scroll direction of component, <code>horizontal</code> or <code>vertical</code>.</li>
+<h2 id="Attributes"><a href="#Attributes" class="headerlink" title="Attributes"></a>Attributes</h2><ul>
+<li>show-scrollbar: true/false whether show the scroll bar or not, default value is true</li>
+<li>scroll-direction: <string> define scroll direction of component, horizontal or vertical</string></li>
+<li>loadmoreoffset : <number> default value is 0. The loadmore event will be triggered when the list is loadmoreoffset left to reach the bottom of the list view. e.g. a list has total content length of 1000, and the loadmoreoffset is set to 400, the loadmore event will be triggered when 600 has beed scrolled and there is less than 400 left.</number></li>
+<li>loadmoreretry : <number> default value 0，whether to reset loadmore related UI when loadmore failed, will be deprecated in further release.</number></li>
 </ul>
-<p>Other attributes please check out the <a href="../references/common-attrs.html">common attributes</a>.</p>
-<h3 id="Styles"><a href="#Styles" class="headerlink" title="Styles"></a>Styles</h3><p><strong>common styles</strong>: check out <a href="../references/common-style.html">common styles for components</a></p>
+<p><strong>example</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">scroller</span> <span class="attr">onloadmore</span>=<span class="string">"onloadmore"</span> <span class="attr">loadmoreoffset</span>=<span class="string">"100"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">repeat</span>=<span class="string">"&#123;&#123;v in items&#125;&#125;"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">text</span> <span class="attr">style</span>=<span class="string">"font-size: 40; color: #000000"</span>&gt;</span>&#123;&#123;v.item&#125;&#125;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">scroller</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">  <span class="attr">data</span>: &#123;</div><div class="line">    <span class="attr">items</span>: [],</div><div class="line">    <span class="attr">triggered</span>:<span class="literal">false</span></div><div class="line">  &#125;,</div><div class="line">  <span class="attr">created</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">50</span>; i++) &#123;</div><div class="line">      <span class="keyword">this</span>.items.push(&#123;<span class="string">'item'</span>: <span class="string">'test data'</span> + i&#125;);</div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">  <span class="attr">methods</span>: &#123;</div><div class="line">    <span class="attr">onloadmore</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">      <span class="keyword">if</span>(!<span class="keyword">this</span>.triggered)&#123;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">100</span>; i &gt;= <span class="number">50</span>; i--) &#123;</div><div class="line">        <span class="keyword">this</span>.items.push(&#123;<span class="string">'item'</span>:<span class="string">'onloadmore triggered'</span> + i&#125;);</div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">      <span class="keyword">this</span>.triggered=<span class="literal">true</span>;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><a href="http://dotwe.org/acf155122b9457211165680b01fae1c2" target="_blank" rel="external">try it</a></p>
+<p>Please checkout <a href="">Scroller Component Attributes</a> to have a look at the inherited attributes from direct parent.</p>
+<p>Other attributes please check out the <a href="../common-attrs.html">common     attributes</a>.</p>
+<h2 id="Styles"><a href="#Styles" class="headerlink" title="Styles"></a>Styles</h2><p>common styles: check out <a href="../common-style.html">common styles for components</a></p>
 <ul>
 <li>support flexbox related styles</li>
 <li>support box model related styles</li>
-<li>support <code>position</code> related styles</li>
-<li>support <code>opacity</code>, <code>background-color</code> etc.</li>
+<li>support position related styles</li>
+<li>support opacity, background-color etc.</li>
 </ul>
-<h3 id="Events"><a href="#Events" class="headerlink" title="Events"></a>Events</h3><p><strong>common events</strong>: check out the <a href="../references/common-event.html">common events</a></p>
+<h2 id="Events"><a href="#Events" class="headerlink" title="Events"></a>Events</h2><p>onloadmore  used with loadmoreoffset attribute. if the view has less than loadmoreoffset to scroll down, the onloadmore event will be triggered.</p>
+<p>common events: check out the <a href="../common-event.html">common events</a></p>
 <ul>
-<li>support <code>click</code> event. Check out <a href="../references/common-event.html">common events</a></li>
-<li>support <code>appear</code> / <code>disappear</code> event. Check out <a href="../references/common-event.html">common events</a></li>
+<li>support onclick event. Check out <a href="../common-event.html">common events</a></li>
+<li>support onappear / ondisappear event. Check out <a href="../common-event.html">common events</a></li>
 </ul>
-<h3 id="Restriction"><a href="#Restriction" class="headerlink" title="Restriction"></a>Restriction</h3><p>Nested lists or scrollers within the same direction are <strong>not</strong> supported. In other words. nested lists/scroller must have different directions.</p>
-<p>For example, a vertical scroller nested in a vertical list or scroller is <strong> not </strong> allowed. However, a vertical scroller nested in a horizontal list or scroller is legal.</p>
-<h3 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h3><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">&lt;template&gt;</div><div class="line">  &lt;scroller&gt;</div><div class="line">    &lt;div repeat=&quot;&#123;&#123;list&#125;&#125;&quot;&gt;</div><div class="line">      &lt;text&gt;&#123;&#123;name&#125;&#125;: $&#123;&#123;price&#125;&#125;&lt;/text&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">  &lt;/scroller&gt;</div><div class="line">&lt;/template&gt;</div><div class="line"></div><div class="line">&lt;script&gt;</div><div class="line">  module.exports = &#123;</div><div class="line">    data: &#123;</div><div class="line">      list: [</div><div class="line">        &#123;name: &apos;...&apos;, price: 100&#125;,</div><div class="line">        &#123;name: &apos;...&apos;, price: 500&#125;,</div><div class="line">        &#123;name: &apos;...&apos;, price: 1.5&#125;,</div><div class="line">        ...</div><div class="line">      ]</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<h2 id="Restrictions"><a href="#Restrictions" class="headerlink" title="Restrictions"></a>Restrictions</h2><p>Nested lists or scrollers within the same direction are not supported. In other words. nested lists/scroller must have different directions.<br>For example, a vertical list nested in a vertical list or scroller is not allowed. However, a vertical list nested in a horizontal list or scroller is legal.</p>
 
   </div>
   

@@ -5,22 +5,19 @@
   
   <title>Find an Element | Weex</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Find an Element0.4
-In Weex, we may set the id property for a particular element, just as unique identification of a particular element.
-id can be used by this.$el(id) to find an element with a certain">
+  <meta name="description" content="Find an ElementIn Weex, we may set the id property for a particular element, just as unique identification of a particular element.
+id can be used by this.$el(id) to find an element with a certain id.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Find an Element">
 <meta property="og:url" content="http://alibaba.github.io/guide/syntax/id.html">
 <meta property="og:site_name" content="Weex">
-<meta property="og:description" content="Find an Element0.4
-In Weex, we may set the id property for a particular element, just as unique identification of a particular element.
-id can be used by this.$el(id) to find an element with a certain">
-<meta property="og:updated_time" content="2016-12-21T03:01:19.000Z">
+<meta property="og:description" content="Find an ElementIn Weex, we may set the id property for a particular element, just as unique identification of a particular element.
+id can be used by this.$el(id) to find an element with a certain id.">
+<meta property="og:updated_time" content="2016-12-30T08:32:08.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Find an Element">
-<meta name="twitter:description" content="Find an Element0.4
-In Weex, we may set the id property for a particular element, just as unique identification of a particular element.
-id can be used by this.$el(id) to find an element with a certain">
+<meta name="twitter:description" content="Find an ElementIn Weex, we may set the id property for a particular element, just as unique identification of a particular element.
+id can be used by this.$el(id) to find an element with a certain id.">
   
     <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
   
@@ -52,16 +49,22 @@ id can be used by this.$el(id) to find an element with a certain">
             <a href="javascript:;">Resources</a>
             <ul class="dropdown-menu subnav">
               <li>
-                <a href="/weex-website/playground.html">Playground</a>
-              </li>
-              <li>
-                <a href="/weex-website/tools">Tools</a>
+                <a href="/weex-website/tools">Service &amp; Tools</a>
               </li>
               <li>
                 <a href="/weex-website/advanced">Advanced</a>
               </li>
               <li>
+                <a href="/weex-website/playground.html">Playground</a>
+              </li>
+              <li>
                 <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
+              </li>
+              <li>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Dot we</a>
               </li>
             </ul>
         </li>
@@ -71,13 +74,13 @@ id can be used by this.$el(id) to find an element with a certain">
       </ul>
       <ul class="tools">
         <li>
-          <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-  <label class="search-label">
-    <input type="text" id="search-input" name="q" results="0" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off"/>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
-  </label>
-</form>
-<div class="results-panel">
+  </form>
+  <div class="results-panel">
+  </div>
 </div>
         </li>
         <!--<li></li>-->
@@ -495,7 +498,7 @@ id can be used by this.$el(id) to find an element with a certain">
   </div>
   
 
-<article id="page-undefined" class="article article-type-guide">
+<article class="article article-type-guide">
   <div class="article-entry" itemprop="articleBody">
     <header class="article-header">
   
@@ -505,14 +508,13 @@ id can be used by this.$el(id) to find an element with a certain">
       </h1>
     
   
-  <time class="article-date" datetime="2016-12-21T03:01:19.000Z">Updated time: 21/12/2016</time>
+  <time class="article-date" datetime="2016-12-30T08:32:08.000Z">Updated time: 30/12/2016</time>
 </header>
-    <h1 id="Find-an-Element"><a href="#Find-an-Element" class="headerlink" title="Find an Element"></a>Find an Element</h1><p><span class="weex-version">0.4</span></p>
-<p>In Weex, we may set the <code>id</code> property for a particular element, just as unique identification of a particular element.</p>
-<p><code>id</code> can be used by <code>this.$el(id)</code> to find an element with a certain id. Take the API <a href="../modules/dom.html#scrolltoelementnode-options"><code>scrollToElement()</code></a> For example:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">&lt;template&gt;</div><div class="line">  &lt;container&gt;</div><div class="line">    &lt;text id=&quot;top&quot;&gt;Top&lt;/text&gt;</div><div class="line">    &lt;container style=&quot;height: 10000; background-color: #999999;&quot;&gt;</div><div class="line">    &lt;/container&gt;</div><div class="line">    &lt;text onclick=&quot;back2Top&quot;&gt;Back to Top&lt;/text&gt;</div><div class="line">  &lt;/container&gt;</div><div class="line">&lt;/template&gt;</div><div class="line">&lt;script&gt;</div><div class="line">  var dom = require(&apos;@weex-module/dom&apos;)</div><div class="line">  module.exports = &#123;</div><div class="line">    methods: &#123;</div><div class="line">      back2Top: function () &#123;</div><div class="line">        var top = this.$el(&apos;top&apos;)</div><div class="line">        dom.scrollToElement(top)</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  &lt;/script&gt;</div></pre></td></tr></table></figure>
+    <h1 id="Find-an-Element"><a href="#Find-an-Element" class="headerlink" title="Find an Element"></a>Find an Element</h1><p>In Weex, we may set the <code>id</code> property for a particular element, just as unique identification of a particular element.</p>
+<p><code>id</code> can be used by <code>this.$el(id)</code> to find an element with a certain id. Take the API <a href="../../references/modules/dom.html#scrolltoelementnode-options"><code>scrollToElement()</code></a> For example:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">container</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">text</span> <span class="attr">id</span>=<span class="string">"top"</span>&gt;</span>Top<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">container</span> <span class="attr">style</span>=<span class="string">"height: 10000; background-color: #999999;"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">container</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">text</span> <span class="attr">onclick</span>=<span class="string">"back2Top"</span>&gt;</span>Back to Top<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">container</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="keyword">var</span> dom = <span class="built_in">require</span>(<span class="string">'@weex-module/dom'</span>)</div><div class="line">  <span class="built_in">module</span>.exports = &#123;</div><div class="line">    <span class="attr">methods</span>: &#123;</div><div class="line">      <span class="attr">back2Top</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> top = <span class="keyword">this</span>.$el(<span class="string">'top'</span>)</div><div class="line">        dom.scrollToElement(top)</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
 <p><code>id</code> can also work with <code>repeat</code> attribute <a href="./display-logic.html">See more about display logical control</a>, and ensure repetitive elements with different <code>id</code>:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">&lt;template&gt;</div><div class="line">  &lt;container&gt;</div><div class="line">    &lt;image id=&quot;&#123;&#123;imgId&#125;&#125;&quot; src=&quot;&#123;&#123;imgUrl&#125;&#125;&quot; onclick=&quot;getImageId&quot; repeat=&quot;&#123;&#123;images&#125;&#125;&quot;&gt;&lt;/image&gt;</div><div class="line">  &lt;/container&gt;</div><div class="line">&lt;/template&gt;</div><div class="line">&lt;script&gt;</div><div class="line">module.exports = &#123;</div><div class="line">  data: &#123;</div><div class="line">    images: [</div><div class="line">      &#123;imgId: 1, imgUrl: &apos;...&apos;&#125;,</div><div class="line">      &#123;imgId: 2, imgUrl: &apos;...&apos;&#125;,</div><div class="line">      &#123;imgId: 3, imgUrl: &apos;...&apos;&#125;,</div><div class="line">      ...</div><div class="line">    ]</div><div class="line">  &#125;,</div><div class="line">  methods: &#123;</div><div class="line">    getImageId: function(e) &#123;</div><div class="line">      // get e.target.id</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">container</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">image</span> <span class="attr">id</span>=<span class="string">"&#123;&#123;imgId&#125;&#125;"</span> <span class="attr">src</span>=<span class="string">"&#123;&#123;imgUrl&#125;&#125;"</span> <span class="attr">onclick</span>=<span class="string">"getImageId"</span> <span class="attr">repeat</span>=<span class="string">"&#123;&#123;images&#125;&#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">container</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="built_in">module</span>.exports = &#123;</div><div class="line">    <span class="attr">data</span>: &#123;</div><div class="line">      <span class="attr">images</span>: [</div><div class="line">        &#123;<span class="attr">imgId</span>: <span class="number">1</span>, <span class="attr">imgUrl</span>: <span class="string">'...'</span>&#125;,</div><div class="line">        &#123;<span class="attr">imgId</span>: <span class="number">2</span>, <span class="attr">imgUrl</span>: <span class="string">'...'</span>&#125;,</div><div class="line">        &#123;<span class="attr">imgId</span>: <span class="number">3</span>, <span class="attr">imgUrl</span>: <span class="string">'...'</span>&#125;,</div><div class="line">        ...</div><div class="line">      ]</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">methods</span>: &#123;</div><div class="line">      <span class="attr">getImageId</span>: <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">        <span class="comment">// get e.target.id</span></div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>Additionally, in the <a href="./composed-component.html">composed components</a>, we can get the corresponding sub component through <code>this.$vm(id)</code> APIs.</p>
 <p>Next is how to <a href="./comm.html">send messages between composed components</a>.</p>
 

@@ -5,19 +5,16 @@
   
   <title>&lt;input&gt; | Weex</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="&amp;lt;input&amp;gt;0.4
-SummaryThe weex builtin component input is used to create interactive controls to accept data from users. How a input component works varies considerably depending on the value of its">
+  <meta name="description" content="inputThe weex builtin component input is used to create input controls to receive the user’s input characters. How a input component works varies considerably depending on the value of its type attrib">
 <meta property="og:type" content="website">
 <meta property="og:title" content="<input>">
 <meta property="og:url" content="http://alibaba.github.io/references/components/input.html">
 <meta property="og:site_name" content="Weex">
-<meta property="og:description" content="&amp;lt;input&amp;gt;0.4
-SummaryThe weex builtin component input is used to create interactive controls to accept data from users. How a input component works varies considerably depending on the value of its">
-<meta property="og:updated_time" content="2016-12-21T03:01:10.000Z">
+<meta property="og:description" content="inputThe weex builtin component input is used to create input controls to receive the user’s input characters. How a input component works varies considerably depending on the value of its type attrib">
+<meta property="og:updated_time" content="2016-12-30T03:35:17.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="<input>">
-<meta name="twitter:description" content="&amp;lt;input&amp;gt;0.4
-SummaryThe weex builtin component input is used to create interactive controls to accept data from users. How a input component works varies considerably depending on the value of its">
+<meta name="twitter:description" content="inputThe weex builtin component input is used to create input controls to receive the user’s input characters. How a input component works varies considerably depending on the value of its type attrib">
   
     <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
   
@@ -49,16 +46,22 @@ SummaryThe weex builtin component input is used to create interactive controls t
             <a href="javascript:;">Resources</a>
             <ul class="dropdown-menu subnav">
               <li>
-                <a href="/weex-website/playground.html">Playground</a>
-              </li>
-              <li>
-                <a href="/weex-website/tools">Tools</a>
+                <a href="/weex-website/tools">Service &amp; Tools</a>
               </li>
               <li>
                 <a href="/weex-website/advanced">Advanced</a>
               </li>
               <li>
+                <a href="/weex-website/playground.html">Playground</a>
+              </li>
+              <li>
                 <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
+              </li>
+              <li>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Dot we</a>
               </li>
             </ul>
         </li>
@@ -68,13 +71,13 @@ SummaryThe weex builtin component input is used to create interactive controls t
       </ul>
       <ul class="tools">
         <li>
-          <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-  <label class="search-label">
-    <input type="text" id="search-input" name="q" results="0" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off"/>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
-  </label>
-</form>
-<div class="results-panel">
+  </form>
+  <div class="results-panel">
+  </div>
 </div>
         </li>
         <!--<li></li>-->
@@ -329,11 +332,11 @@ SummaryThe weex builtin component input is used to create interactive controls t
           <ul class="chapter">
             
               <li>
-                <a href="/weex-website/references/bootstrap.html" class="sidebar-link  ">Bootstrap</a>
+                <a href="/weex-website/references/special-element.html" class="sidebar-link  ">Special Element</a>
               </li>
             
               <li>
-                <a href="/weex-website/references/special-element.html" class="sidebar-link  ">Special Element</a>
+                <a href="/weex-website/references/bootstrap.html" class="sidebar-link  ">Bootstrap</a>
               </li>
             
               <li>
@@ -430,7 +433,7 @@ SummaryThe weex builtin component input is used to create interactive controls t
               </li>
             
               <li>
-                <a href="/weex-website/references/components/cell.html" class="sidebar-link  ">&lt;list&gt;</a>
+                <a href="/weex-website/references/components/cell.html" class="sidebar-link  ">&lt;cell&gt;</a>
               </li>
             
               <li>
@@ -765,11 +768,11 @@ SummaryThe weex builtin component input is used to create interactive controls t
           <ul class="chapter">
             
               <li>
-                <a href="/weex-website/references/bootstrap.html" class="sidebar-link  ">Bootstrap</a>
+                <a href="/weex-website/references/special-element.html" class="sidebar-link  ">Special Element</a>
               </li>
             
               <li>
-                <a href="/weex-website/references/special-element.html" class="sidebar-link  ">Special Element</a>
+                <a href="/weex-website/references/bootstrap.html" class="sidebar-link  ">Bootstrap</a>
               </li>
             
               <li>
@@ -866,7 +869,7 @@ SummaryThe weex builtin component input is used to create interactive controls t
               </li>
             
               <li>
-                <a href="/weex-website/references/components/cell.html" class="sidebar-link  ">&lt;list&gt;</a>
+                <a href="/weex-website/references/components/cell.html" class="sidebar-link  ">&lt;cell&gt;</a>
               </li>
             
               <li>
@@ -960,7 +963,7 @@ SummaryThe weex builtin component input is used to create interactive controls t
   </div>
   
 
-<article id="page-undefined" class="article article-type-references">
+<article class="article article-type-references">
   <div class="article-entry" itemprop="articleBody">
     <header class="article-header">
   
@@ -970,62 +973,64 @@ SummaryThe weex builtin component input is used to create interactive controls t
       </h1>
     
   
-  <time class="article-date" datetime="2016-12-21T03:01:10.000Z">Updated time: 21/12/2016</time>
+  <time class="article-date" datetime="2016-12-30T03:35:17.000Z">Updated time: 30/12/2016</time>
 </header>
-    <h1 id="lt-input-gt"><a href="#lt-input-gt" class="headerlink" title="&lt;input&gt;"></a>&lt;input&gt;</h1><p><span class="weex-version">0.4</span></p>
-<h3 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h3><p>The weex builtin component <code>input</code> is used to create interactive controls to accept data from users. How a <code>input</code> component works varies considerably depending on the value of its <code>type</code> attribute, such as <code>text</code>, <code>password</code>, <code>url</code>, <code>email</code>, <code>tel</code> etc.</p>
-<p><strong>Notes:</strong> <code>&lt;input&gt;</code> does not support the common-event <code>click</code>. Please listen to the <code>input</code> or <code>change</code> event instead.</p>
-<h3 id="Child-Components"><a href="#Child-Components" class="headerlink" title="Child Components"></a>Child Components</h3><p>This component supports no child components.</p>
-<h3 id="Attributes"><a href="#Attributes" class="headerlink" title="Attributes"></a>Attributes</h3><ul>
-<li><code>type</code>: &lt;string&gt; the type of controls to display. The default value is <code>text</code>, if this attribute is not specified. Possible values are <code>text</code>, <code>password</code>, <code>tel</code>, <code>email</code>, <code>url</code> etc, each of which has the same meaning with w3c standard.</li>
-<li><code>value</code>: &lt;string&gt; the value of the control.</li>
-<li><code>placeholder</code>: &lt;string&gt; a hint to the user of which can be entered to the control. The placeholder text must have no carriage returns or line-feeds.</li>
-<li><code>disabled</code>: &lt;boolean&gt; a boolean attribute indicates that the form control is not available for interaction. In particular, the click event will not be dispatched on disabled controls.</li>
-<li><code>autofocus</code>: &lt;boolean&gt; a boolean attribute lets you specify that a form control should have input focus when the page loads.</li>
-<li><code>maxlength</code><sup class="wx-v">0.7</sup> :&lt;length&gt; a number value to specify maxlength of input</li>
+    <h1 id="input"><a href="#input" class="headerlink" title="input"></a>input</h1><p>The weex builtin component <code>input</code> is used to create input controls to receive the user’s input characters. How a <code>input</code> component works varies considerably depending on the value of its <code>type</code> attribute, such as <code>text</code>, <code>password</code>, <code>url</code>, <code>email</code>, <code>tel</code> etc.</p>
+<p><strong>Notes:</strong> does not support the common-event <code>click</code>. Please listen to the <code>input</code> or <code>change</code> event instead.</p>
+<h2 id="Child-Components"><a href="#Child-Components" class="headerlink" title="Child Components"></a>Child Components</h2><p>This component supports no child components.</p>
+<h2 id="Attributes"><a href="#Attributes" class="headerlink" title="Attributes"></a>Attributes</h2><ul>
+<li><p><code>type</code>: the type of controls to display. The default value is <code>text</code>, if this attribute is not specified. Possible values are <code>text</code>, <code>password</code>, <code>tel</code>, <code>email</code>, <code>url</code> etc. each of which has the same meaning with W3C standard.</p>
+</li>
+<li><p><code>value</code>: the value(text) of the control.</p>
+</li>
+<li><p><code>placeholder</code>: a hint to the user of which can be entered to the control. The placeholder text must have no carriage returns or line-feeds.</p>
+</li>
+<li><p><code>disabled</code>: a boolean attribute indicates that the form control is not available for interaction. In particular, the click event will not be dispatched on disabled controls.</p>
+</li>
+<li><p><code>autofocus</code>: a boolean attribute lets you specify that a form control should have input focus when the page loads.</p>
+</li>
+<li><p><code>maxlength</code>: <span class="api-version">v0.7+</span> a number value to specify maxlength of input.</p>
+</li>
 </ul>
-<p>Other attributes please check out the <a href="../references/common-attrs.html">common attributes</a>.</p>
-<h3 id="Styles"><a href="#Styles" class="headerlink" title="Styles"></a>Styles</h3><ul>
-<li><code>placeholder-color</code>: the color of placeholder. Default value is <code>#999999</code>.</li>
-</ul>
-<p><strong>text styles</strong>: checkout <a href="../references/text-style.html">text styles</a></p>
+<p>Other attributes please check out the <a href="../common-attrs.html">common attributes</a>.</p>
+<h2 id="Styles"><a href="#Styles" class="headerlink" title="Styles"></a>Styles</h2><ul>
+<li><p>placeholder-color: the color of placeholder. Default value is ‘#999999’.</p>
+</li>
+<li><p>text styles: checkout <a href="../text-style.html">text styles</a></p>
 <ul>
-<li>support <code>color</code> style.</li>
-<li>support <code>font-size</code> style.</li>
-<li>support <code>font-style</code> style.</li>
-<li>support <code>font-weight</code> style.</li>
-<li>support <code>text-align</code> style.</li>
+<li>support ‘color’ style.</li>
+<li>support ‘font-size’ style.</li>
+<li>support ‘font-style’ style.</li>
+<li>support ‘font-weight’ style.</li>
+<li>support ‘text-align’ style.</li>
 </ul>
-<p><strong>common styles</strong>: check out <a href="../references/common-style.html">common styles for components</a></p>
+</li>
+</ul>
+<h3 id="common-styles"><a href="#common-styles" class="headerlink" title="common styles"></a>common styles</h3><p>check out <a href="../common-style.html">common styles for components</a></p>
 <ul>
-<li>support flexbox related styles</li>
-<li>support box model related styles</li>
-<li>support <code>position</code> related styles</li>
-<li>support <code>opacity</code>, <code>background-color</code> etc.</li>
+<li>support flexbox related styles.</li>
+<li>support box model related styles.</li>
+<li>support ‘position’ related styles.</li>
+<li>support ‘opacity’, ‘background-color’ etc.</li>
 </ul>
-<h3 id="Events"><a href="#Events" class="headerlink" title="Events"></a>Events</h3><ul>
-<li><code>input</code>: the value of an element changes.</li>
-<li><code>change</code>: the change event is fired when a change to the component’s value is commited by the user. It always come after a <code>blur</code> event.</li>
-<li><code>focus</code>: a component has received focus.</li>
-<li><code>blur</code>: a component has lost focus.</li>
+<h2 id="Events"><a href="#Events" class="headerlink" title="Events"></a>Events</h2><ul>
+<li>input: the value of an input character changes.</li>
+<li>change: the change event is fired when a change to the component’s value is commited by the user. It always come after a ‘blur’ event.</li>
+<li>focus: a component has received focus.</li>
+<li>blur: a component has lost focus.</li>
 </ul>
-<p><strong>common events</strong>: check out the <a href="../references/common-event.html">common events</a></p>
+<h3 id="common-events"><a href="#common-events" class="headerlink" title="common events"></a>common events</h3><p>check out <a href="../common-event.html">common events</a></p>
 <ul>
-<li>support <code>appear</code> / <code>disappear</code> event. Check out <a href="../references/common-event.html">common events</a></li>
+<li>support ‘appear’ / ‘disappear’ event. </li>
 </ul>
-<p><strong>Notes:</strong> <code>&lt;input&gt;</code> does not support the common-event <code>click</code>. Please listen to the <code>input</code> or <code>change</code> event instead.</p>
+<h3 id="Notes"><a href="#Notes" class="headerlink" title="Notes"></a>Notes</h3><p>does not support the common-event ‘click’. Please listen to the ‘input’ or ‘change’ event instead.</p>
 <h3 id="Parameters-of-events’-object"><a href="#Parameters-of-events’-object" class="headerlink" title="Parameters of events’ object"></a>Parameters of events’ object</h3><ul>
-<li>for <code>input</code> and <code>change</code> events:<ul>
-<li><code>value</code>: the value of the component who dispatched this event.</li>
-<li><code>timestamp</code>: the time stamp of the event.</li>
+<li>for ‘input’ and ‘change’ events:’value’: the value of the component who dispatched this event.’timestamp’: the time stamp of the event.</li>
+<li>for ‘focus’ and ‘blur’ events:’timestamp’: the time stamp of the event.</li>
 </ul>
-</li>
-<li>for <code>focus</code> and <code>blur</code> events:<ul>
-<li><code>timestamp</code>: the time stamp of the event.</li>
-</ul>
-</li>
-</ul>
-<h3 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h3><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">&lt;div&gt;</div><div class="line">  &lt;input</div><div class="line">    type=&quot;url&quot;</div><div class="line">    autofocus=&quot;true&quot;</div><div class="line">    placeholder=&quot;...&quot;</div><div class="line">    value=&quot;http://alibaba.github.io/weex/&quot;</div><div class="line">    style=&quot;placeholder-color: #666666;&quot;&gt;</div><div class="line">  &lt;/input&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">input</span></span></div><div class="line">        <span class="attr">type</span>=<span class="string">"text"</span></div><div class="line">        <span class="attr">placeholder</span>=<span class="string">"Input Something"</span></div><div class="line">        <span class="attr">class</span>=<span class="string">"input"</span></div><div class="line">        <span class="attr">autofocus</span>=<span class="string">"true"</span></div><div class="line">        <span class="attr">value</span>=<span class="string">""</span></div><div class="line">        <span class="attr">onchange</span>=<span class="string">"onchange"</span></div><div class="line">        <span class="attr">oninput</span>=<span class="string">"oninput"</span></div><div class="line">      /&gt;</div><div class="line">      <span class="tag">&lt;<span class="name">text</span>&gt;</span>oninput: &#123;&#123;txtInput&#125;&#125;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">text</span>&gt;</span>onchange: &#123;&#123;txtChange&#125;&#125;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></div><div class="line">  <span class="selector-class">.input</span> &#123;</div><div class="line">    <span class="attribute">font-size</span>: <span class="number">60</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">80</span>;</div><div class="line">    <span class="attribute">width</span>: <span class="number">400</span>;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="built_in">require</span>(<span class="string">'weex-components'</span>);</div><div class="line">  <span class="built_in">module</span>.exports = &#123;</div><div class="line">    <span class="attr">data</span>: &#123;</div><div class="line">      <span class="attr">txtInput</span>: <span class="string">''</span>,</div><div class="line">      <span class="attr">txtChange</span>: <span class="string">''</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">methods</span>: &#123;</div><div class="line">      <span class="attr">onchange</span>: <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</div><div class="line">        <span class="keyword">this</span>.txtChange = event.value;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'onchange'</span>, event.value);</div><div class="line">      &#125;,</div><div class="line">      <span class="attr">oninput</span>: <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</div><div class="line">        <span class="keyword">this</span>.txtInput = event.value;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'oninput'</span>, event.value);</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><a href="http://dotwe.org/e1b18eb89facb4e2a5467ee4bebd9be6" target="_blank" rel="external">Try it</a></p>
+<p>Use <a href="https://alibaba.github.io/weex/download.html">Weex Playground</a> App to Scan the QR image and view the example for  ‘input’. </p>
 
   </div>
   

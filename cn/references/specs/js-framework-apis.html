@@ -13,7 +13,7 @@ Considering the limitation of mobile phone resource, Weex runs only one JS runti
 <meta property="og:site_name" content="Weex">
 <meta property="og:description" content="JS Framework APIsIntro about JS RuntimeThese APIs are designed for JS Framework and Native Engine working together.
 Considering the limitation of mobile phone resource, Weex runs only one JS runtime t">
-<meta property="og:updated_time" content="2016-12-22T12:13:37.000Z">
+<meta property="og:updated_time" content="2017-01-01T02:32:26.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS Framework APIs (英)">
 <meta name="twitter:description" content="JS Framework APIsIntro about JS RuntimeThese APIs are designed for JS Framework and Native Engine working together.
@@ -49,16 +49,22 @@ Considering the limitation of mobile phone resource, Weex runs only one JS runti
             <a href="javascript:;">资源</a>
             <ul class="dropdown-menu subnav">
               <li>
-                <a href="/weex-website/cn/playground.html">Playground</a>
-              </li>
-              <li>
                 <a href="/weex-website/cn/tools">工具和服务</a>
               </li>
               <li>
                 <a href="/weex-website/cn/advanced">高阶知识</a>
               </li>
               <li>
+                <a href="/weex-website/cn/playground.html">Playground</a>
+              </li>
+              <li>
                 <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
+              </li>
+              <li>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Dot we</a>
               </li>
             </ul>
         </li>
@@ -68,13 +74,13 @@ Considering the limitation of mobile phone resource, Weex runs only one JS runti
       </ul>
       <ul class="tools">
         <li>
-          <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-  <label class="search-label">
-    <input type="text" id="search-input" name="q" results="0" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off"/>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
-  </label>
-</form>
-<div class="results-panel">
+  </form>
+  <div class="results-panel">
+  </div>
 </div>
         </li>
         <!--<li></li>-->
@@ -433,11 +439,11 @@ Considering the limitation of mobile phone resource, Weex runs only one JS runti
               </li>
             
               <li>
-                <a href="/weex-website/cn/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
+                <a href="/weex-website/cn/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
               </li>
             
               <li>
-                <a href="/weex-website/cn/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
+                <a href="/weex-website/cn/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
               </li>
             
               <li>
@@ -902,11 +908,11 @@ Considering the limitation of mobile phone resource, Weex runs only one JS runti
               </li>
             
               <li>
-                <a href="/weex-website/cn/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
+                <a href="/weex-website/cn/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
               </li>
             
               <li>
-                <a href="/weex-website/cn/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
+                <a href="/weex-website/cn/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
               </li>
             
               <li>
@@ -1026,7 +1032,7 @@ Considering the limitation of mobile phone resource, Weex runs only one JS runti
   </div>
   
 
-<article id="page-undefined" class="article article-type-references">
+<article class="article article-type-references">
   <div class="article-entry" itemprop="articleBody">
     <header class="article-header">
   
@@ -1036,7 +1042,7 @@ Considering the limitation of mobile phone resource, Weex runs only one JS runti
       </h1>
     
   
-  <time class="article-date" datetime="2016-12-22T12:13:37.000Z">Updated time: 22/12/2016</time>
+  <time class="article-date" datetime="2017-01-01T02:32:26.000Z">Updated time: 01/01/2017</time>
 </header>
     <h1 id="JS-Framework-APIs"><a href="#JS-Framework-APIs" class="headerlink" title="JS Framework APIs"></a>JS Framework APIs</h1><h2 id="Intro-about-JS-Runtime"><a href="#Intro-about-JS-Runtime" class="headerlink" title="Intro about JS Runtime"></a>Intro about JS Runtime</h2><p>These APIs are designed for JS Framework and Native Engine working together.</p>
 <p>Considering the limitation of mobile phone resource, <em>Weex runs only one JS runtime</em> to handle all Weex instances. So it need a multi-instance management layer in JavaScript. These JS Framework APIs are just designed to do the management job.</p>
@@ -1050,7 +1056,7 @@ Considering the limitation of mobile phone resource, Weex runs only one JS runti
 <h2 id="Called-by-native-and-supplied-from-JS-Framework"><a href="#Called-by-native-and-supplied-from-JS-Framework" class="headerlink" title="Called by native and supplied from JS Framework"></a>Called by native and supplied from JS Framework</h2><h3 id="createInstance-instanceId-code-options-data"><a href="#createInstance-instanceId-code-options-data" class="headerlink" title="createInstance(instanceId, code, options, data)"></a><code>createInstance(instanceId, code, options, data)</code></h3><p>Create a Weex instance from Native Engine</p>
 <ul>
 <li><code>instanceId</code>: The unique id for a Weex instance, generated by Native Engine.</li>
-<li><code>code</code>: The JS bundle code send from Native Engine. It will be executed by <code>new Function(code)</code> in JS Framework. The code format depends on <a href="js-bundle-format.html">JS Bundle Foramt</a></li>
+<li><code>code</code>: The JS bundle code send from Native Engine. It will be executed by <code>new Function(code)</code> in JS Framework. The code format depends on <a href="./js-bundle-format.html">JS Bundle Foramt</a></li>
 <li><code>options</code>: <em>Optional</em>. An options object. <em>Currently it supports <code>debug</code> flag which enable printing log and <code>bundleUrl</code> flag which the url of bundle.</em></li>
 <li><code>data</code>: <em>Optional</em>. It’s an chance to supply external data instead of the original data in JS bundle.</li>
 </ul>
@@ -1094,10 +1100,10 @@ Considering the limitation of mobile phone resource, Weex runs only one JS runti
 <figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line">sendTasks(<span class="string">'x'</span>, [</div><div class="line">  &#123;<span class="attr">module</span>: <span class="string">'dom'</span>, <span class="attr">method</span>: <span class="string">'addElement'</span>, <span class="attr">args</span>: [<span class="string">'_root'</span>, &#123;<span class="attr">ref</span>: <span class="string">'1'</span>, <span class="attr">type</span>: <span class="string">'container'</span>&#125;, <span class="number">-1</span>]&#125;,</div><div class="line">  &#123;<span class="attr">module</span>: <span class="string">'dom'</span>, <span class="attr">method</span>: <span class="string">'addElement'</span>, <span class="attr">args</span>: [<span class="string">'1'</span>, &#123;<span class="attr">ref</span>: <span class="string">'2'</span>, <span class="attr">type</span>: <span class="string">'text'</span>, ...&#125;, <span class="number">-1</span>]&#125;,</div><div class="line">  &#123;<span class="attr">module</span>: <span class="string">'dom'</span>, <span class="attr">method</span>: <span class="string">'addElement'</span>, <span class="attr">args</span>: [<span class="string">'1'</span>, &#123;<span class="attr">ref</span>: <span class="string">'3'</span>, <span class="attr">type</span>: <span class="string">'image'</span>, ...&#125;, <span class="number">-1</span>]&#125;,</div><div class="line">  ...</div><div class="line">])</div></pre></td></tr></table></figure>
 <h2 id="Supporting-other-JS-Framework-experimental"><a href="#Supporting-other-JS-Framework-experimental" class="headerlink" title="Supporting other JS Framework (experimental)"></a>Supporting other JS Framework <sup>(experimental)</sup></h2><h3 id="Register-a-new-JS-Framework"><a href="#Register-a-new-JS-Framework" class="headerlink" title="Register a new JS Framework"></a>Register a new JS Framework</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="comment">// lib/frameworks/index.js</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'...'</span></div><div class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'...'</span></div><div class="line"><span class="keyword">import</span> Angular <span class="keyword">from</span> <span class="string">'...'</span></div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">const</span> frameworks = &#123;</div><div class="line">  Vue,</div><div class="line">  React,</div><div class="line">  Angular</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="Expose-JS-Framework-APIs"><a href="#Expose-JS-Framework-APIs" class="headerlink" title="Expose JS Framework APIs"></a>Expose JS Framework APIs</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="comment">// 3rd-party-framework.js</span></div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">createInstance</span> (<span class="params">id, code, config, data</span>) </span>&#123; ... &#125;</div><div class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">destroyInstance</span> (<span class="params">id</span>) </span>&#123; ... &#125;</div><div class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">refreshInstance</span> (<span class="params">id, data</span>) </span>&#123; ... &#125;</div><div class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">registerComponents</span> (<span class="params">components</span>) </span>&#123; ... &#125;</div><div class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">registerModules</span> (<span class="params">modules</span>) </span>&#123; ... &#125;</div><div class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">recieveTasks</span> (<span class="params">id, tasks</span>) </span>&#123; ... &#125;</div><div class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">getRoot</span> (<span class="params">id</span>) </span>&#123; ... &#125;</div></pre></td></tr></table></figure>
-<p>The virtual-DOM tasks should follow <a href="virtual-dom-apis.html">virtual-DOM spec</a>.</p>
+<p>The virtual-DOM tasks should follow <a href="./virtual-dom-apis.html">virtual-DOM spec</a>.</p>
 <h3 id="Framework-Helper"><a href="#Framework-Helper" class="headerlink" title="Framework Helper"></a>Framework Helper</h3><p>You can import <code>lib/runtime/helper.js</code> to get two important things:</p>
 <ul>
-<li><code>Document</code> class, see <a href="virtual-dom-apis.html">virtual-DOM spec</a> for more.</li>
+<li><code>Document</code> class, see <a href="./virtual-dom-apis.html">virtual-DOM spec</a> for more.</li>
 <li><code>sendTasks</code> method.</li>
 </ul>
 <h3 id="JS-Bundle-format"><a href="#JS-Bundle-format" class="headerlink" title="JS Bundle format"></a>JS Bundle format</h3><p>You must ensure the JS Bundle has its first line of code like this:</p>

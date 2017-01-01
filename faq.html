@@ -13,7 +13,7 @@ Gradle errors in Android StudioDownloading license-gradle-plugin.jar may trigger
 <meta property="og:site_name" content="Weex">
 <meta property="og:description" content="FAQCommand errors in WindowsPlease install Git for Windows first, see For Windows for more information.
 Gradle errors in Android StudioDownloading license-gradle-plugin.jar may trigger errors, like Co">
-<meta property="og:updated_time" content="2016-12-21T13:37:12.000Z">
+<meta property="og:updated_time" content="2016-12-29T09:18:04.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="FAQ">
 <meta name="twitter:description" content="FAQCommand errors in WindowsPlease install Git for Windows first, see For Windows for more information.
@@ -49,16 +49,22 @@ Gradle errors in Android StudioDownloading license-gradle-plugin.jar may trigger
             <a href="javascript:;">Resources</a>
             <ul class="dropdown-menu subnav">
               <li>
-                <a href="/weex-website/playground.html">Playground</a>
-              </li>
-              <li>
-                <a href="/weex-website/tools">Tools</a>
+                <a href="/weex-website/tools">Service &amp; Tools</a>
               </li>
               <li>
                 <a href="/weex-website/advanced">Advanced</a>
               </li>
               <li>
+                <a href="/weex-website/playground.html">Playground</a>
+              </li>
+              <li>
                 <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
+              </li>
+              <li>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Dot we</a>
               </li>
             </ul>
         </li>
@@ -68,13 +74,13 @@ Gradle errors in Android StudioDownloading license-gradle-plugin.jar may trigger
       </ul>
       <ul class="tools">
         <li>
-          <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-  <label class="search-label">
-    <input type="text" id="search-input" name="q" results="0" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off"/>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
-  </label>
-</form>
-<div class="results-panel">
+  </form>
+  <div class="results-panel">
+  </div>
 </div>
         </li>
         <!--<li></li>-->
@@ -92,6 +98,16 @@ Gradle errors in Android StudioDownloading license-gradle-plugin.jar may trigger
   <div class="sidebar-menu">
     
       <ul class="main-nav">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-sidebar" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
         <li>
           <a class="" href="/weex-website/guide">
             Guide
@@ -111,16 +127,22 @@ Gradle errors in Android StudioDownloading license-gradle-plugin.jar may trigger
             <p>Resources</p>
             <ul class="subnav">
               <li>
-                <a href="./playground.html">Playground</a>
-              </li>
-              <li>
-                <a href="/weex-website/tools">Tools</a>
+                <a href="/weex-website/tools">Service &amp; Tools</a>
               </li>
               <li>
                 <a href="/weex-website/advanced">Advanced</a>
               </li>
               <li>
+                <a href="/weex-website/playground.html">Playground</a>
+              </li>
+              <li>
                 <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
+              </li>
+              <li>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Dot we</a>
               </li>
             </ul>
         </li>
@@ -137,7 +159,7 @@ Gradle errors in Android StudioDownloading license-gradle-plugin.jar may trigger
   <div class="article-wrapper post-layout">
   
 
-<article id="post-undefined" class="article article-type-faq">
+<article class="article article-type-faq">
   <div class="article-entry" itemprop="articleBody">
     <header class="article-header">
   
@@ -147,13 +169,13 @@ Gradle errors in Android StudioDownloading license-gradle-plugin.jar may trigger
       </h1>
     
   
-  <time class="article-date" datetime="2016-12-21T13:37:12.000Z">Updated time: 21/12/2016</time>
+  <time class="article-date" datetime="2016-12-29T09:18:04.000Z">Updated time: 29/12/2016</time>
 </header>
     <h1 id="FAQ"><a href="#FAQ" class="headerlink" title="FAQ"></a>FAQ</h1><h2 id="Command-errors-in-Windows"><a href="#Command-errors-in-Windows" class="headerlink" title="Command errors in Windows"></a>Command errors in Windows</h2><p>Please install <a href="https://git-scm.com/download/win" target="_blank" rel="external">Git for Windows</a> first, see <a href="https://github.com/alibaba/weex/tree/dev#for-windows" target="_blank" rel="external">For Windows</a> for more information.</p>
 <h2 id="Gradle-errors-in-Android-Studio"><a href="#Gradle-errors-in-Android-Studio" class="headerlink" title="Gradle errors in Android Studio"></a>Gradle errors in Android Studio</h2><p>Downloading <code>license-gradle-plugin.jar</code> may trigger errors, like <code>Connection reset</code> or <code>peer not authenticated</code>.<br>Maybe a network problem, try a proxy or VPN.</p>
 <h2 id="Use-local-image"><a href="#Use-local-image" class="headerlink" title="Use local image"></a>Use local image</h2><p>Weex’s native runtime support load image file from device’s disk, all you have to do set the file url like <code>file:///sdcard/image_new0.png</code>. As to load image file in your project, Weex is not support yet.   </p>
 <h2 id="Error（The-header-content-contains-invalid-characters-in-windows"><a href="#Error（The-header-content-contains-invalid-characters-in-windows" class="headerlink" title="Error（The header content contains invalid characters) in windows"></a>Error（<code>The header content contains invalid characters</code>) in windows</h2><p>This’s is caused by weex-toolkit’s dependency ‘http-server’, whose old version is not working well in chinese windows environment. We have fixed that, you should upgrade weex-toolkit before use that.</p>
-<h2 id="Playground-app-display-nothing-white-screen-after-scan"><a href="#Playground-app-display-nothing-white-screen-after-scan" class="headerlink" title="Playground app display nothing (white screen) after scan"></a>Playground app display nothing (white screen) after scan</h2><p>Best way to find out what’s happening is read debug log, you can follow <a href="/tools/how-to-debug.html">this document</a> to firgure out how to do that.</p>
+<h2 id="Playground-app-display-nothing-white-screen-after-scan"><a href="#Playground-app-display-nothing-white-screen-after-scan" class="headerlink" title="Playground app display nothing (white screen) after scan"></a>Playground app display nothing (white screen) after scan</h2><p>Best way to find out what’s happening is read debug log, you can follow <a href="./tools/devtools.html">this document</a> to firgure out how to do that.</p>
 <h2 id="About-ECMAScript-Version"><a href="#About-ECMAScript-Version" class="headerlink" title="About ECMAScript Version"></a>About ECMAScript Version</h2><p>Weex uses JSCore in iOS and uses v8 in Android. So they both support ECMAScript 5 spec. Additionally, we do some polyfills in native environment:</p>
 <ul>
 <li><code>Promise</code> in iOS/Android</li>
@@ -181,12 +203,16 @@ Gradle errors in Android StudioDownloading license-gradle-plugin.jar may trigger
 <figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">var height = 88 * 750 / env.deviceWidth</div></pre></td></tr></table></figure>
 <h2 id="How-to-detect-an-native-module-component-supported-in-JavaScript"><a href="#How-to-detect-an-native-module-component-supported-in-JavaScript" class="headerlink" title="How to detect an native module/component supported in JavaScript?"></a>How to detect an native module/component supported in JavaScript?</h2><h3 id="Detect-native-module"><a href="#Detect-native-module" class="headerlink" title="Detect native module"></a>Detect native module</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> xxx = <span class="built_in">require</span>(<span class="string">'@weex-module/xxx'</span>)</div><div class="line"><span class="keyword">if</span> (xxx) &#123;</div><div class="line">  <span class="comment">// todo: use this module</span></div><div class="line">&#125;</div><div class="line"><span class="keyword">else</span> &#123;</div><div class="line">  <span class="comment">// todo: handle the exception</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="Detect-native-component"><a href="#Detect-native-component" class="headerlink" title="Detect native component"></a>Detect native component</h3><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">component</span> <span class="attr">is</span>=<span class="string">"&#123;&#123;type&#125;&#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">component</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="keyword">var</span> type = <span class="string">'xxx'</span></div><div class="line">  <span class="keyword">var</span> xxx = <span class="built_in">require</span>(<span class="string">'@weex-component/xxx'</span>)</div><div class="line">  <span class="keyword">if</span> (!xxx) &#123;</div><div class="line">    type = <span class="string">'div'</span> <span class="comment">// downgrade to &lt;div&gt;</span></div><div class="line">  &#125;</div><div class="line">  <span class="built_in">module</span>.exports = &#123;</div><div class="line">    <span class="attr">data</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">      <span class="keyword">return</span> &#123;</div><div class="line">        <span class="attr">type</span>: type</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
-<h2 id="Transfer-data-between-pages"><a href="#Transfer-data-between-pages" class="headerlink" title="Transfer data between pages"></a>Transfer data between pages</h2><p>If you have 2 pages, A and B.</p>
+<h2 id="How-to-transfer-data-between-pages"><a href="#How-to-transfer-data-between-pages" class="headerlink" title="How to transfer data between pages"></a>How to transfer data between pages</h2><p>If you have 2 pages, A and B.</p>
 <ol>
-<li>A -&gt; B, use <a href="http://alibaba.github.io/weex/doc/references/api.html#getconfig">getConfig api</a> or <a href="http://alibaba.github.io/weex/doc/modules/storage.html">storage module</a> to transfer data</li>
-<li>B -&gt; A, use <a href="http://alibaba.github.io/weex/doc/modules/storage.html">storage module</a> to transfer data</li>
+<li>A -&gt; B, use <a href="./references/api.html#getconfig">getConfig api</a> or <a href="./references/modules/storage.html">storage module</a> to transfer data</li>
+<li>B -&gt; A, use <a href="./references/modules/storage.html">storage module</a> to transfer data</li>
 </ol>
-
+<h2 id="How-to-use-repeat-in-Parent-Child-components"><a href="#How-to-use-repeat-in-Parent-Child-components" class="headerlink" title="How to use repeat in Parent-Child components"></a>How to use <code>repeat</code> in Parent-Child components</h2><p>If you want, You can make a <code>repeat</code> operation between Parent-Child components. But you must be strictly in accordance with the document syntax to write code. If there is no child component defined data, or there is no specify <code>props</code> that need to be passed down. It will lead to the page does not render properly.</p>
+<p>A correct example:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">element</span> <span class="attr">name</span>=<span class="string">"child"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">style</span>=<span class="string">"font-size:100"</span>&gt;</span>&#123;&#123;title&#125;&#125;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line">  </div><div class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">    <span class="built_in">module</span>.exports = &#123;</div><div class="line">      <span class="attr">data</span>: &#123;</div><div class="line">        <span class="attr">title</span>: <span class="literal">null</span></div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  <span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">element</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">child</span> <span class="attr">repeat</span>=<span class="string">"item in lists"</span> <span class="attr">title</span>=<span class="string">"&#123;&#123; item.title &#125;&#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">child</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="built_in">module</span>.exports = &#123;</div><div class="line">    <span class="attr">data</span>: &#123;</div><div class="line">      <span class="attr">lists</span>: [</div><div class="line">        &#123; <span class="attr">title</span>: <span class="string">'A'</span> &#125;,</div><div class="line">        &#123; <span class="attr">title</span>: <span class="string">'B'</span> &#125;,</div><div class="line">        &#123; <span class="attr">title</span>: <span class="string">'C'</span> &#125;</div><div class="line">      ]</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">ready</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">      <span class="keyword">this</span>.lists.splice(<span class="number">0</span>, <span class="number">1</span>)</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>A wrong example：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">element</span> <span class="attr">name</span>=<span class="string">"child"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">style</span>=<span class="string">"font-size:100"</span>&gt;</span>&#123;&#123;title&#125;&#125;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">element</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">child</span> <span class="attr">repeat</span>=<span class="string">"item in lists"</span>&gt;</span><span class="tag">&lt;/<span class="name">child</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="built_in">module</span>.exports = &#123;</div><div class="line">    <span class="attr">data</span>: &#123;</div><div class="line">      <span class="attr">lists</span>: [</div><div class="line">        &#123; <span class="attr">title</span>: <span class="string">'A'</span> &#125;,</div><div class="line">        &#123; <span class="attr">title</span>: <span class="string">'B'</span> &#125;,</div><div class="line">        &#123; <span class="attr">title</span>: <span class="string">'C'</span> &#125;</div><div class="line">      ]</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">ready</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">      <span class="keyword">this</span>.lists.splice(<span class="number">0</span>, <span class="number">1</span>)</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
   </div>
   
 </article>
