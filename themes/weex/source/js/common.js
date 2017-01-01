@@ -320,7 +320,8 @@
             var size = j === 1 
                       ? Math.floor(Math.random() * 8 + 10) 
                       : Math.floor(Math.random() * 6 + 3),
-                velocity = 0.01-0.00025*size,
+                velocity = (0.01 - 0.00025*size) 
+                          * ((0.5 - Math.random()) >= 0 ? 1: -1),
                 planet = new Planet(size, '#fff', velocity)
 
             orbit.addPlanet(planet)

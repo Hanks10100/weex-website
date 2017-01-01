@@ -35,7 +35,7 @@ Weex 内置的 `<input>` 组件用来创建接收用户输入字符的输入组�
   - 支持 `font-weight`
   - 支持 `text-align`
 
-  查看 [文本样式](https://alibaba.github.io/weex/cn/doc/references/text-style.html)
+  查看 [文本样式](../text-style.html)
 
 - 通用样式：支持所有通用样式
   - 盒模型
@@ -44,7 +44,7 @@ Weex 内置的 `<input>` 组件用来创建接收用户输入字符的输入组�
   - `opacity`
   - `background-color`
 
-  查看 [组件通用样式](https://alibaba.github.io/weex/cn/doc/references/common-style.html)
+  查看 [组件通用样式](../common-style.html)
 
 ## 事件
 
@@ -86,7 +86,7 @@ Weex 内置的 `<input>` 组件用来创建接收用户输入字符的输入组�
   - `appear`
   - `disappear`
 
-  查看 [通用事件](https://alibaba.github.io/weex/cn/doc/references/common-event.html)
+  查看 [通用事件](../common-event.html)
 
 # 约束
 

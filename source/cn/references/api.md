@@ -13,11 +13,11 @@ order: 1.3
 ```html
 <script>
 module.exports = {
-    methods: {
-        somemethod: function() {
-            this.$vm('someId');
-        }
+  methods: {
+    somemethod: function() {
+      this.$vm('someId');
     }
+  }
 }
 </script>
 ```
@@ -34,7 +34,7 @@ module.exports = {
 - _(Element)_: 一个元素对象的引用。
 ### Tips
 - id 只能保证是当前（页面）组件中是唯一的，如果你需要寻找父组件或子组件，你可以利用组件间的通信模式实现。
-- 延伸阅读： [id](../syntax/id.md)，[Communicate Between Components](../syntax/comm.md)
+- 延伸阅读： [id](../guide/syntax/id.md)，[Communicate Between Components](../guide/syntax/comm.md)
 ## $vm(id)
 
 返回对应 id 的 vm 对象引用。
@@ -44,7 +44,7 @@ module.exports = {
 - `vm` _(Vm)_: 一个 Vm 对象引用。
 ### Tips
 - id 只能保证是当前（页面）组件中是唯一的，如果你需要寻找父组件或子组件，你可以利用组件间的通信模式实现。
-- 延伸阅读： [id](../syntax/id.md)，[Communicate Between Components](../syntax/comm.md)
+- 延伸阅读： [id](../guide/syntax/id.md)，[Communicate Between Components](../guide/syntax/comm.md)
 ## $getConfig()
 
 获取当前全局环境变量和配置信息。
@@ -63,4 +63,4 @@ module.exports = {
   - `deviceHeight` _(number)_: 设备高度。
 ## $call(module, method, ...args)
 
-**不建议使用**，请使用 `require('@weex-module/module')[method](...args)` 代替。查看更多信息：[modules](../modules/main)。
+**不建议使用**，请使用 `require('@weex-module/module')[method](...args)` 代替。查看更多信息：[modules](./modules/main)。

@@ -35,7 +35,7 @@ order: 1.9
 
 * `rgb(a,b,c)` 或 `rgba(a,b,c,d)` 的性能比其他颜色格式差很多，请选择合适的颜色格式。
 
-颜色名称可查看 [颜色名称列表](../color-names.md).
+颜色名称可查看 [颜色名称列表](./color-names.md).
 
 ## CSS `length` 单位
 
@@ -52,7 +52,7 @@ order: 1.9
 
 ## CSS `number` 单位
 
-仅仅一个数字。用于 [`opacity`](../common-style.md#其他基本样式)，[`lines`](../text-style.md)等。
+仅仅一个数字。用于 [`opacity`](./common-style.md#其他基本样式)，[`lines`](./text-style.md)等。
 
 有时值必须是整数，例如：`lines`。
 

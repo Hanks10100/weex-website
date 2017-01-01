@@ -61,13 +61,13 @@ order: 2.8
 
   用于给列表添加下拉刷新的功能。
 
-  使用文档请查看 [`<refresh>`](https://alibaba.github.io/weex/cn/doc/components/refresh.html)
+  使用文档请查看 [`<refresh>`](./refresh.html)
 
 - `<loading>`
 
   `<loading>` 用法与特性和 `<refresh>` 类似，用于给列表添加上拉加载更多的功能。
 
-  使用文档请查看 [`<loading>`](https://alibaba.github.io/weex/cn/doc/components/loading.html)
+  使用文档请查看 [`<loading>`](./loading.html)
 
 ## 特性
 
@@ -89,7 +89,7 @@ order: 2.8
   - `opacity`
   - `background-color`
 
-  查看 [组件通用样式](https://alibaba.github.io/weex/cn/doc/references/common-style.html)
+  查看 [组件通用样式](../common-style.html)
 
 ## 事件
 
@@ -103,13 +103,13 @@ order: 2.8
   - `appear`
   - `disappear`
 
-  查看 [通用事件](https://alibaba.github.io/weex/cn/doc/references/common-event.html)
+  查看 [通用事件](../common-event.html)
 
 ## 扩展
 
 ### scrollToElement(node, options)
 
-滚动到列表某个指定项是常见需求，`<list>` 拓展了该功能支持滚动到指定 `<cell>`。通过 `dom` module 访问，更多信息可参考 [dom module](http://alibaba.github.io/weex/cn/doc/modules/dom.html) 。
+滚动到列表某个指定项是常见需求，`<list>` 拓展了该功能支持滚动到指定 `<cell>`。通过 `dom` module 访问，更多信息可参考 [dom module](../modules/dom.html) 。
 
 #### 参数
 

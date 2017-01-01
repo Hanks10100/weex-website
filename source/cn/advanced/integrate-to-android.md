@@ -28,7 +28,7 @@ order: 4
 1. 创建Android工程，没有什么要特别说明的，按照你的习惯来。
 2. 修改build.gradle 加入如下基础依赖  
    
-   ```
+   ```gradle
    compile 'com.android.support:recyclerview-v7:23.1.1'
    compile 'com.android.support:support-v4:23.1.1'
    compile 'com.android.support:appcompat-v7:23.1.1'
@@ -42,7 +42,7 @@ order: 4
 注:附录中有完整代码地址
 - 实现图片下载接口，初始化时设置。
 
-```
+```java
 package com.weex.sample;
 
 import android.widget.ImageView;
@@ -65,7 +65,7 @@ public class ImageAdapter implements IWXImgLoaderAdapter {
 ```
 - 初始化
 
-```
+```java
 package com.weex.sample;
 
 import android.app.Application;
@@ -95,7 +95,7 @@ public class WXApplication extends Application {
 ```
 - 开始渲染
 
-```
+```java
 package com.weex.sample;
 
 import android.os.Bundle;
@@ -187,10 +187,10 @@ public class MainActivity extends AppCompatActivity implements IWXRenderListener
 ## 源码依赖(IDE Android Studio)
 
 1. 下载源码 `git clone https://github.com/alibaba/weex`
-2. 创建Android 工程。
-3. 通过以下路径引入SDK Module  
-   File->New-Import Module->选择WEEX SDK Module(weex/android/sdk)->Finish  
-4. app 的build.gradle 中添加如下依赖:`compile project(':weex_sdk')`
+2. 创建 Android 工程。
+3. 通过以下路径引入 SDK Module  
+   File->New-Import Module-> 选择 WEEX SDK Module(weex/android/sdk) -> Finish  
+4. app 的 build.gradle 中添加如下依赖:`compile project(':weex_sdk')`
 5. 其他设置请参考上面快速接入
 
 ### 附录

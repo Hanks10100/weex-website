@@ -7,7 +7,7 @@ order: 4.3
 # 如何引入第三方库 
 <span class="weex-version">0.4</span>
 
-在 [Get started](../get-started.html) 中，我们学习了知道可以在 `<script>` 标签中编写 JavaScript 代码。但是在项目中常用的功能或模块，例如解析url参数，将属性从一些对象扩展到另一个对象等等，在每个组件中复制和粘贴这些代码是一个糟糕的做法，因此迫切需要通过 `require` 的方式对可复用的代码进行管理。Weex 为开发人员提供了 CommonJS 风格的 require 语法。
+在 [Get started](../index.html) 中，我们学习了知道可以在 `<script>` 标签中编写 JavaScript 代码。但是在项目中常用的功能或模块，例如解析url参数，将属性从一些对象扩展到另一个对象等等，在每个组件中复制和粘贴这些代码是一个糟糕的做法，因此迫切需要通过 `require` 的方式对可复用的代码进行管理。Weex 为开发人员提供了 CommonJS 风格的 require 语法。
 
 我们以 `extend` 作为例子。
 
@@ -15,7 +15,7 @@ order: 4.3
 
 下面是 `extend` 最简单的实现，并将其放在 `./common/utils.js` 路径中。
 
-```JavaScript
+```javascript
 function extend(dest, src) {
   for (var key in src) {
     dest[key] = src[key]
@@ -41,7 +41,7 @@ exports.extend = extend
 
 我们可以使用 underscore 的 `extend`，而不是我们自己实现的版本。首先，在项目中安装 underscore，然后我们便可以将 underscore  `reuqire` 进来并使用它。
 
-``` bash
+```bash
 npm install underscore
 ```
 

@@ -6,7 +6,7 @@ order: 2.5
 
 # &lt;cell&gt;
 
-用于定义列表中的子列表项，类似于 HTML 中的 `ul` 之于 `li`。Weex 会对 `<cell>` 进行高效的内存回收以达到更好的性能，该组件必须作为[`<list>`](http://alibaba.github.io/weex/cn/doc/components/list.html) 组件的子组件, 这是为了优化滚动时的性能。
+用于定义列表中的子列表项，类似于 HTML 中的 `ul` 之于 `li`。Weex 会对 `<cell>` 进行高效的内存回收以达到更好的性能，该组件必须作为[`<list>`](./list.html) 组件的子组件, 这是为了优化滚动时的性能。
 
 ## 子组件
 
@@ -26,7 +26,7 @@ order: 2.5
   - `opacity`
   - `background-color`
 
-  查看 [组件通用样式](https://alibaba.github.io/weex/cn/doc/references/common-style.html)
+  查看 [组件通用样式](../common-style.html)
 
 ## 事件
 
@@ -39,7 +39,7 @@ order: 2.5
   - `appear`
   - `disappear`
 
-  查看 [通用事件](https://alibaba.github.io/weex/cn/doc/references/common-event.html)
+  查看 [通用事件](../common-event.html)
 
 ## 示例
 

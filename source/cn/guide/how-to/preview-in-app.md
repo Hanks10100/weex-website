@@ -66,4 +66,4 @@ $ weex demo.we --qr
 
 ## 构建一个全新的 App 并预览
 
-这里可参考[《如何创建一个 Weex 项目》](https://alibaba.github.io/weex/cn/doc/how-to/create-a-weex-project.html)。
+这里可参考[《如何创建一个 Weex 项目》](./create-a-weex-project.html)。

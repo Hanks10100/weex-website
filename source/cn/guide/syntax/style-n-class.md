@@ -10,8 +10,11 @@ order: 3.2
 
 CSS 样式可以理解为一系列的键值对，其中的每一对描述了一个特定的样式，例如组件的宽或者高。
 
-```
-width: 400; height: 50; ...
+```css
+.div {
+  width: 400; 
+  height: 50;
+}
 ```
 
 键值对的形式是 `prop-name: prop-value;`。键名是 `prop-name`，键值是 `prop-value`。 一般情况下，键名按照连接符的方式进行命名，键和值之间由冒号 `:` 进行分隔，每对键值之间由分号 `;` 进行分隔。
@@ -25,7 +28,7 @@ width: 400; height: 50; ...
 
 在 `style` 特性中编写样式，例如：
 
-```
+```html
 <template>
   <div style="width: 400; height: 50;">
     ...
@@ -39,7 +42,7 @@ width: 400; height: 50; ...
 
 例如:
 
-```
+```html
 <style>
   .wrapper { width: 600; }
   .title { width: 400; height: 50; }
@@ -49,7 +52,7 @@ width: 400; height: 50; ...
 
 样式表包含了多个样式规则，每条规则有一个对应的类，以及由 `{...}` 包括的若干条样式。例如：
 
-```
+```css
 .title { width: 400; height: 50; }
 ```
 

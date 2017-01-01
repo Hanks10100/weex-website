@@ -4,7 +4,8 @@ type: references
 order: 4.6
 ---
 
-# `storage` 本地存储 <sup>(WeexSDK 0.7+)</sup>
+# `storage` 本地存储 
+<span class="weex-version">v0.7+</span>
 
 **备注**：0.7及以上版本可用
 

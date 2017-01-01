@@ -10,11 +10,11 @@ order: 1
 
 快速导航：
 
-- [bootstrap](/references/bootstrap.md)
-- [ViewModel](/references/component-defs.md)
-- [ViewModel API](/references/api.md)
-- [手势](/references/gesture.md)
-- [内建组件](/components/div.md)
-- [内建模块](/modules/dom.md)
-- [底层规范](/specs/js-bundle-format.md)
-- [Weex 备忘录](/references/cheatsheet.md)
+- [bootstrap](./bootstrap.md)
+- [ViewModel](./component-defs.md)
+- [ViewModel API](./api.md)
+- [手势](./gesture.md)
+- [内建组件](./components/div.md)
+- [内建模块](./modules/dom.md)
+- [底层规范](./specs/js-bundle-format.md)
+- [Weex 备忘录](./cheatsheet.md)

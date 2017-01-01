@@ -12,7 +12,7 @@ order: 2.9
 
 支持任意类型的 Weex 组件作为其子组件。 其中，还支持以下组件作为子组件展示特殊效果：
 
- - `<indicator>`：用于显示轮播图指示器效果，必须充当 [`<slider>`](https://alibaba.github.io/weex/cn/doc/components/slider.html) 组件的子组件使用。
+ - `<indicator>`：用于显示轮播图指示器效果，必须充当 [`<slider>`](./slider.html) 组件的子组件使用。
 
 ## 特性
 
@@ -32,7 +32,7 @@ order: 2.9
   - `opacity`
   - `background-color`
 
-  查看 [组件通用样式](https://alibaba.github.io/weex/cn/doc/references/common-style.html)
+  查看 [组件通用样式](../common-style.html)
 
 ## 事件
 
@@ -50,7 +50,7 @@ order: 2.9
   - `appear`
   - `disappear`
 
-  查看 [通用事件](https://alibaba.github.io/weex/cn/doc/references/common-event.html)
+  查看 [通用事件](../common-event.html)
 
 ## 示例
 

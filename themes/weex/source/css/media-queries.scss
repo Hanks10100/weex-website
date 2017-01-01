@@ -110,8 +110,13 @@
       height: 140px;
       background-size: 45px;
     }
+
     .user-info p {
       @include lines(3);
+    }
+
+    .user-logo h3 {
+      margin-top: 110px;
     }
   }
 

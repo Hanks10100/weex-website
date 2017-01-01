@@ -6,7 +6,7 @@ order: 3.1
 
 # &lt;wxc-navpage&gt; <sup>(v0.5+)</sup>
 
-`<wxc-navpage>` 组件是一个包含 navbar 的容器组件，可以根据业务场景定制 navbar 组件。同时，可以使用 `navigator` 模块控制页面的跳转，具体参考 [`navigator module`](https://alibaba.github.io/weex/cn/doc/modules/navigator.html)。一般情况，都是配合 navbar 组件使用。如果不了解 navigator 相关知识，建议先了解下 iOS 或者 Android 的相关组件。在 H5 上，其实是相当于导航栏。
+`<wxc-navpage>` 组件是一个包含 navbar 的容器组件，可以根据业务场景定制 navbar 组件。同时，可以使用 `navigator` 模块控制页面的跳转，具体参考 [`navigator module`](../modules/navigator.html)。一般情况，都是配合 navbar 组件使用。如果不了解 navigator 相关知识，建议先了解下 iOS 或者 Android 的相关组件。在 H5 上，其实是相当于导航栏。
 
 用法：在 `script` 标签中通过一个 `require` 语句引入，即：`require('weex-components');`
 
@@ -71,7 +71,7 @@ npm install weex-components
   - `opacity`
   - `background-color`
 
-  查看 [组件通用样式](https://alibaba.github.io/weex/cn/doc/references/common-style.html)
+  查看 [组件通用样式](../common-style.html)
 
 ## 事件
 
@@ -113,7 +113,7 @@ npm install weex-components
   - `appear`
   - `disappear`
 
-  查看 [通用事件](https://alibaba.github.io/weex/cn/doc/references/common-event.html)
+  查看 [通用事件](../common-event.html)
 
 ## 示例
 

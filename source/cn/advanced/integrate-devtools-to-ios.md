@@ -183,7 +183,7 @@ pod  'WXDevtool',   '0.7.0', :configurations => ['Debug']，
 
 ## 使用
 
-如果未安装 Debugger Server，在命令行执行 `npm install -g weex-toolkit` 既可以安装调试服务器，运行命令 `weex debug` 就会启动 DebugServer 并打开一个调试页面（详情请查看 [本地开发](/develop-on-your-local-machine.md)）。页面下方会展示一个二维码，这个二维码用于向 App 传递 Server 端的地址建立连接。
+如果未安装 Debugger Server，在命令行执行 `npm install -g weex-toolkit` 既可以安装调试服务器，运行命令 `weex debug` 就会启动 DebugServer 并打开一个调试页面（详情请查看 [本地开发](../guide/develop-on-your-local-machine.html)）。页面下方会展示一个二维码，这个二维码用于向 App 传递 Server 端的地址建立连接。
 
 
 1. 日志级别控制

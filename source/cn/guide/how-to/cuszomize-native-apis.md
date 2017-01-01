@@ -40,7 +40,7 @@ public class URLHelperModule extends WXModule{
 }
 ```
 
-### 把module注册到WXSDKEngine：
+### 把 module 注册到 WXSDKEngine：
 
 ```java
 try {
@@ -53,7 +53,7 @@ try {
 
 ### 在 JavaScript 中使用 `eventModule`：
 
-```
+```javascript
 let URLHelper = require('@weex-module/myURL');//same as you registered
 URLHelper.openURL("http://www.taobao.com",function(ts){
     console.log("url is open at "+ts);
@@ -66,7 +66,7 @@ URLHelper.openURL("http://www.taobao.com",function(ts){
 
 2. 不要忘记添加 `@WXModuleAnno` 注解，不然 Weex 没法识别这个方法
 
-3. 定义的方法必须是 `public 的
+3. 定义的方法必须是 `public` 的
 
 4. module 类一定不能是内部类
 

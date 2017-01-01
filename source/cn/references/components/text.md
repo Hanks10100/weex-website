@@ -19,7 +19,7 @@ order: 2.12
 ## 样式
 
 - `lines {number}`: 指定文本行数。默认值是 `0` 代表不限制行数。
-- text styles: 查看 [文本样式](https://alibaba.github.io/weex/cn/doc/references/text-style.html)
+- text styles: 查看 [文本样式](../text-style.html)
 
   - 支持 `color` 样式.
   - 支持 `font-size` 样式. iOS默认值：`32`，Android：不同设备不同，H5 默认值：`32`.
@@ -39,7 +39,7 @@ order: 2.12
   - `opacity`
   - `background-color`
 
-  查看 [组件通用样式](https://alibaba.github.io/weex/cn/doc/references/common-style.html)
+  查看 [组件通用样式](../common-style.html)
 
 ## 事件
 
@@ -51,7 +51,7 @@ order: 2.12
   - `appear`
   - `disappear`
 
-  查看 [通用事件](https://alibaba.github.io/weex/cn/doc/references/common-event.html)
+  查看 [通用事件](../common-event.html)
 
 ## 约束
 

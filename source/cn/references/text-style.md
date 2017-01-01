@@ -8,7 +8,7 @@ order: 1.7
 
 <span class="weex-version">v0.5+</span>
 
-文本类组件共享一些通用样式, 这类组件目前包括 [`<text>`](http://alibaba.github.io/weex/doc/components/text.html) 和 [`<input>`](http://alibaba.github.io/weex/doc/components/input.html)。
+文本类组件共享一些通用样式, 这类组件目前包括 [`<text>`](./components/text.html) 和 [`<input>`](./components/input.html)。
 
 ## 属性
 
@@ -36,4 +36,4 @@ order: 1.7
 
 ## 其它参考
 
-- [颜色关键字列表](http://alibaba.github.io/weex/doc/references/color-names.html)。
+- [颜色关键字列表](./references/color-names.html)。

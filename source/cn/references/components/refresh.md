@@ -86,8 +86,8 @@ order: 2.7
 
 ## 子组件
 
-- [`<text>`](https://alibaba.github.io/weex/cn/doc/components/text.html)
-- [`<image>`](https://alibaba.github.io/weex/cn/doc/components/image.html)
+- [`<text>`](./text.html)
+- [`<image>`](./image.html)
 - `<loading-indicator>`: `<refresh>` 和 `<loading>` 组件的子组件，拥有默认的动画效果的实现。
 
 ## 特性
@@ -104,7 +104,7 @@ order: 2.7
 - `opacity`
 - `background-color`
 
-查看 [组件通用样式](https://alibaba.github.io/weex/cn/doc/references/common-style.html)
+查看 [组件通用样式](../common-style.html)
 
 ## 事件
 
@@ -200,4 +200,4 @@ order: 2.7
 
 [体验一下](http://dotwe.org/80c027d6bfb337195c25cc0ba9317ea5)
 
-更多示例可查看 [`<list>`](https://alibaba.github.io/weex/cn/doc/components/list.html)
+更多示例可查看 [`<list>`](./list.html)

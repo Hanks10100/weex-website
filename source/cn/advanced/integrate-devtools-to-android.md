@@ -14,9 +14,9 @@ Weex Devtools 能够方便调试 Weex 页面，但此功能离不开 Native 的�
 
 可以通过 Gradle 或者 Maven 添加对 devtools aar 的依赖，也可以直接对源码依赖。强烈建议使用最新版本，因为 Weex SDK 和 devtools 都在快速的迭代开发中，新版本会有更多惊喜，同时也修复老版本中一些问题。最新的 release 版本可在[这里](https://github.com/weexteam/weex_devtools_android/releases)查看。所有的 release 版本都会发布到 [jcenter repo](https://bintray.com/alibabaweex/maven/weex_inspector)。
 
-- *Gradle依赖*
+- *Gradle 依赖*
 
-  ```
+  ```gradle
   dependencies {
     compile 'com.taobao.android:weex_inspector:0.8.0.0'
   }
@@ -24,7 +24,7 @@ Weex Devtools 能够方便调试 Weex 页面，但此功能离不开 Native 的�
 
 - *Maven依赖*
 
-  ```
+  ```xml
   <dependency>
     <groupId>com.taobao.android</groupId>
     <artifactId>weex_inspector</artifactId>
@@ -37,7 +37,7 @@ Weex Devtools 能够方便调试 Weex 页面，但此功能离不开 Native 的�
   
   需要复制 [inspector](https://github.com/weexteam/weex_devtools_android/tree/master/inspector) 目录到你的 App 的同级目录，然后在工程的 `settings.gradle` 文件下添加 `include ":inspector"`，此过程可以参考 playground 源码的工程配置及其配置，然后在 App 的 `build.gralde` 中添加依赖。
 
-  ```
+  ```gradle
   dependencies {
     compile project(':inspector')
   }
@@ -47,7 +47,7 @@ Weex Devtools 能够方便调试 Weex 页面，但此功能离不开 Native 的�
  
   - **provided方式引用的包**
 
-    ```
+    ```gradle
       dependencies {
         provided 'com.google.code.findbugs:jsr305:2.0.1'
         provided 'com.android.support:appcompat-v7:23.1.1'
@@ -59,7 +59,7 @@ Weex Devtools 能够方便调试 Weex 页面，但此功能离不开 Native 的�
  
   - **反射引用的包(0.8.0.0以上版本)**
 
-    ```
+    ```gradle
       dependencies {
         compile 'com.squareup.okhttp:okhttp:2.3.0'
         compile 'com.squareup.okhttp:okhttp-ws:2.3.0'
@@ -69,7 +69,7 @@ Weex Devtools 能够方便调试 Weex 页面，但此功能离不开 Native 的�
  
     或者
  
-    ```
+    ```gradle
     dependencies {
       compile 'com.squareup.okhttp:okhttp:3.4.1'
       compile 'com.squareup.okhttp:okhttp-ws:3.4.1'
@@ -94,14 +94,14 @@ Weex Devtools 能够方便调试 Weex 页面，但此功能离不开 Native 的�
 
 Weex SDK 的 `WXEnvironment` 类里有一对静态变量标记了 Weex 当前的调试模式是否开启分别是：
 
-```
+```java
 public static boolean sRemoteDebugMode; // 是否开启 debug 模式，默认关闭
 public static String sRemoteDebugProxyUrl; // DebugServer的websocket地址
 ```
 
 无论在 App 中无论以何种方式设置 Debug 模式，都必须在恰当的时机调用类似如下的方法来设置 `WXEnvironment.sRemoteDebugMode` 和 `WXEnvironment.sRemoteDebugProxyUrl`。
 
-```
+```java
 private void initDebugEnvironment(boolean enable, String host) {
   WXEnvironment.sRemoteDebugMode = enable;
   WXEnvironment.sRemoteDebugProxyUrl = "ws://" + host + ":8088/debugProxy/native";

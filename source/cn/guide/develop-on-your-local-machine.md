@@ -75,7 +75,7 @@ $ sudo cnpm install -g weex-toolkit
 </script>      
 ```	
 
-我们在 [Get started](/get-started.md) 里已经介绍过 Weex 基本的代码结构：`<template>`、`<style>`、`<script>` 分别对应于 Web 中的 HTML，CSS（`<style>` 标签），JavaScript（`<script>` 标签）。
+我们在 [Get started](./index.md) 里已经介绍过 Weex 基本的代码结构：`<template>`、`<style>`、`<script>` 分别对应于 Web 中的 HTML，CSS（`<style>` 标签），JavaScript（`<script>` 标签）。
 
 其实，上面的代码就是最简单的 Weex 程序。但是 `.we` 文件是不能直接运行的，这时候需要使用刚才安装好的 weex-toolkit。weex-toolkit 会编译 `.we` 文件，并且创建静态服务器。
 
@@ -135,7 +135,7 @@ $ weex hello.we
 这时候，浏览器已经重新载入了页面。其实，是weex-toolkit开启了热加载。可以看到红色的 “Hello world”。
 
 **注意：**
-Weex 支持通过 `style` 标签来设定样式，也支持内联样式风格。 对于数值，无需添加任何单位（包括 px、em、rem 等），这是建议的写法。如需了解有哪些通用的样式，可以参考 [通用样式](/references/common-style.md)。
+Weex 支持通过 `style` 标签来设定样式，也支持内联样式风格。 对于数值，无需添加任何单位（包括 px、em、rem 等），这是建议的写法。如需了解有哪些通用的样式，可以参考 [通用样式](../references/common-style.md)。
 
 ## 第5步：预览
 
@@ -168,6 +168,6 @@ $ weex debug hello.we
 
 ## 接下来做什么？
 
-到目前为止，你已经可以在 [dotWe](http://dotwe.org) 或者本地开发 Weex 页面。接下来你可以去学习 Weex [语法](/syntax/main.md) 和 [开发手册](/references/main.md) 了解 Weex 更多特性。这些语法和特性，你完全可以用 [Playground](https://alibaba.github.io/weex/download.html) 运行起来。
+到目前为止，你已经可以在 [dotWe](http://dotwe.org) 或者本地开发 Weex 页面。接下来你可以去学习 Weex [语法](./syntax/main.md) 和 [开发手册](../references/main.md) 了解 Weex 更多特性。这些语法和特性，你完全可以用 [Playground](https://alibaba.github.io/weex/download.html) 运行起来。
 
-如果你已经熟悉 Weex 开发，你应该考虑如何让你的 App 也支持 Weex 页面，或者，怎样用 Weex 开发一个全新的 App 呢？带着这些问题，你可以阅读 [开发进阶](/how-to/main.md)。
+如果你已经熟悉 Weex 开发，你应该考虑如何让你的 App 也支持 Weex 页面，或者，怎样用 Weex 开发一个全新的 App 呢？带着这些问题，你可以阅读 [开发进阶](./how-to/main.md)。

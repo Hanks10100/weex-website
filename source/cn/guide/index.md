@@ -21,7 +21,7 @@ Weex 是一套简单易用的跨平台开发方案，能以 web 的开发体验�
 
 就如示例代码所示：
 
-```javascript
+```html
 <template>
   <div>
     <text class="text">{{text}}</text>

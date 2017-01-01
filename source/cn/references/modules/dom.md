@@ -14,7 +14,7 @@ order: 4.3
 ~~你也可以调用 `$scrollTo` 方法来使用它~~
 
 这个页面提及的其他的 API，只在 `callNative` 进程中的 native 渲染器用。
-（关于 `callNative` 进程的进一步介绍，可以在 [How it works](../advanced/how-it-works.html)中的 JS Framework 部分看到 ）
+（关于 `callNative` 进程的进一步介绍，可以在 [How it works](../../advanced/how-it-works.html)中的 JS Framework 部分看到 ）
 
 ## API
 ### scrollToElement(node, options)

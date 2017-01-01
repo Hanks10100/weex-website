@@ -67,5 +67,5 @@ _注意事项：这些配置会代表页面整体，所以写在自定义子组�
 
 接下来我们推荐您阅读：
 
-* [最佳实践](../how-to/main.html)
-* [Weex 手册](../references/main.html)
+* [最佳实践](../how-to/index.html)
+* [Weex 手册](../../references/index.html)

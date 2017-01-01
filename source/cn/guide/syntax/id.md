@@ -37,7 +37,7 @@ order: 3.7
 
 ### `id` 和 `repeat` 特性配合使用
 
-`id` 也可以和 `repeat` 语法配合使用，关于 `repeat` 更多详见 [展示逻辑控制](../syntax/display-logic.html)，但是要确保循环的节点需要用不同的 `id`，比如：
+`id` 也可以和 `repeat` 语法配合使用，关于 `repeat` 更多详见 [展示逻辑控制](./display-logic.html)，但是要确保循环的节点需要用不同的 `id`，比如：
 
 ```html
 <template>
@@ -70,7 +70,7 @@ module.exports = {
 
 ### 获取自定义子组件的上下文
 
-另外，我们还可以通过`this.$vm(id)` 方法可以访问自定义子组件的上下文：
+另外，我们还可以通过 `this.$vm(id)` 方法可以访问自定义子组件的上下文：
 
 ```html
 <element name="foo">
@@ -120,4 +120,4 @@ module.exports = {
 
 _注意事项：在未来的版本中 `this._parent` 将改为 `this.$parent`。_
 
-下一篇： [组件间通信](../syntax/comm.html)
+下一篇： [组件间通信](./comm.html)

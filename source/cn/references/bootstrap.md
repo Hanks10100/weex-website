@@ -10,7 +10,7 @@ order: 1.1
 - `type="data"`: 配置初始化数据，这里定义的数据会覆盖定义在`<script>`中的数据；
 - `type="config"`: 定义配置项。
 
-``` javascript
+``` html
 <script type="data">
   /* (可选) 定义初始化数据 */
 </script>
@@ -26,7 +26,7 @@ order: 1.1
 
 例如：
 
-``` javascript
+```html
 <script type="data">
   module.exports = {
       title: 'Alibaba',

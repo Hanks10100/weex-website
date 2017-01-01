@@ -53,7 +53,7 @@ order: 4.1
 
 #### 参数
 
-* `el {Element}`：将要执行动画的元素，通常可以通过调用 [`this.$el(id)`](../references/api.html) 来获取元素的引用。
+* `el {Element}`：将要执行动画的元素，通常可以通过调用 [`this.$el(id)`](../api.html) 来获取元素的引用。
 * `options {Object}`：描述动画过程的对象。
   * `options.duration {number}`：指定动画的持续时间 (单位是毫秒)，默认值是 `0`，表示没有动画效果。
   * `options.delay {number}`：指定请求动画操作到执行动画之间的时间间隔 (单位是毫秒)，默认值是 `0`，表示没有延迟，在请求后立即执行动画。

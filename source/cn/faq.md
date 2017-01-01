@@ -25,7 +25,7 @@ Weex 的原生运行机制支持从设备中加载图片，你只需要设置文
 
 ## Playground 应用在扫面后什么都没有显示（白屏）
 
-最好的方法是查看 debug 日志来查找原因，你可以按照 [这篇文档](/how-to/debug-with-devtools.md) 中的说明来查明导致这一问题的原因。
+最好的方法是查看 debug 日志来查找原因，你可以按照 [这篇文档](./guide/how-to/debug-with-devtools.html) 中的说明来查明导致这一问题的原因。
 
 ## 关于 ECMAScript 版本问题
 
@@ -46,6 +46,7 @@ Weex 在 iOS 中使用 JSCore ，在 Android 中使用 v8，因此他们都支�
 ## 前端依赖
 
 在 Weex 中你有很多方法来 import/require 一个组件或者一个 JS 模块。以 ES5 为例：
+
 -   `require('xxx.js')` : 依赖一个 JS 文件
 -  `require('npm-module-name')` : 依赖一个 NPM 模块
 -   `require('xxx.we')` : 包含一个 `.we` 文件来注册一个 Weex 自定义组件

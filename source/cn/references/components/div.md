@@ -49,7 +49,7 @@ order: 2.2
 - `opacity`
 - `background-color`
 
-查看 [组件通用样式](https://alibaba.github.io/weex/cn/doc/references/common-style.html)
+查看 [组件通用样式](../common-style.html)
 
 ## 事件
 
@@ -60,7 +60,7 @@ order: 2.2
 - `appear`
 - `disappear`
 
-查看 [通用事件](https://alibaba.github.io/weex/cn/doc/references/common-event.html)
+查看 [通用事件](../common-event.html)
 
 ## 约束
 

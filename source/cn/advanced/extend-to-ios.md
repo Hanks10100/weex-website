@@ -20,7 +20,7 @@ Weex SDK 只提供渲染，而不是其他的能力，如果你需要 像网络�
    5. Weex 的参数可以是 String 或者Map
    6. Module 支持返回值给 JavaScript中的回调，回调的类型是`WXModuleCallback`,回调的参数可以是String或者Map
       
-      ```
+      ```object-c
       @implementation WXEventModule
       @synthesize weexInstance;
          WX_EXPORT_METHOD(@selector(openURL:callback))
@@ -45,7 +45,7 @@ Weex SDK 只提供渲染，而不是其他的能力，如果你需要 像网络�
 2. **Register the module**
    通过调用 WXSDKEngine 中的 `registerModule:withClass`方法来注册自己的module
    
-   ```
+   ```object-c
    WXSDKEngine.h
    /**
    *  @abstract Registers a module for a given name
@@ -58,19 +58,20 @@ Weex SDK 只提供渲染，而不是其他的能力，如果你需要 像网络�
 3. **使用自己的module**
     这里的  require 里面的event 就是在 上一步调用`registerModule:` 注册module 时候的name
    
+   ```javascript
+    var eventModule = require('@weex-module/event'); 
+    eventModule.openURL('url',function(ret) {   
+        nativeLog(ret);
+    });
    ```
-     var eventModule = require('@weex-module/event'); 
-     eventModule.openURL('url',function(ret) {   
-         nativeLog(ret);
-     });
-   ```
-   ### handler 扩展
    
    Weex SDK没有 图片下载，navigation 操作的能力，请大家自己实现这些 protocol
+
 4. **WXImgLoaderProtocol**  
+
    weexSDK 没有图片下载的能力，需要实现 WXImgLoaderProtocol,参考下面的例子
    
-   ```
+   ```object-c
    WXImageLoaderProtocol.h
    @protocol WXImgLoaderProtocol <WXModuleProtocol>
    /**
@@ -89,7 +90,7 @@ Weex SDK 只提供渲染，而不是其他的能力，如果你需要 像网络�
    
    实现上述协议  
    
-   ```
+   ```object-c
    @implementation WXImgLoaderDefaultImpl
    #pragma mark -
    #pragma mark WXImgLoaderProtocol
@@ -108,10 +109,12 @@ Weex SDK 只提供渲染，而不是其他的能力，如果你需要 像网络�
    }
    @end
    ```
-5. **handler注册**  
+
+5. **handler注册** 
+ 
    你可以通过WXSDKEngine 中的 `registerHandler:withProtocol`注册handler
    
-   ```
+   ```object-c
    WXSDKEngine.h
    /**
    * @abstract Registers a handler for a given handler instance and specific protocol

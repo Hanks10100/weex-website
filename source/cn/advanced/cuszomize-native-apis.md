@@ -59,10 +59,10 @@ try {
 
 ### 在 JavaScript 中使用 `eventModule`：
 
-```
+```javascript
 let URLHelper = require('@weex-module/myURL');//same as you registered
-URLHelper.openURL("http://www.taobao.com",function(ts){
-    console.log("url is open at "+ts);
+URLHelper.openURL("http://www.taobao.com",function(ts){  
+  console.log("url is open at "+ts);
 });
 ```
 

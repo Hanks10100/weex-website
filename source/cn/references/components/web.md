@@ -8,7 +8,7 @@ order: 2.15
 
 <span class="weex-version">v0.5+</span>
 
-使用 `<web>` 组件在 Weex 页面中嵌入一张网页内容。`src` 属性用来指定资源地址。你也可以使用 `webview module` 来控制 `web` 的行为，比如前进、后退和重载。可以在这里查看 [`webview` module](https://alibaba.github.io/weex/cn/doc/modules/webview.html)。
+使用 `<web>` 组件在 Weex 页面中嵌入一张网页内容。`src` 属性用来指定资源地址。你也可以使用 `webview module` 来控制 `web` 的行为，比如前进、后退和重载。可以在这里查看 [`webview` module](../modules/webview.html)。
 
 ## 子组件
 
@@ -35,7 +35,7 @@ order: 2.15
   - `opacity`
   - `background-color`
 
-  查看 [组件通用样式](https://alibaba.github.io/weex/cn/doc/references/common-style.html)
+  查看 [组件通用样式](../common-style.html)
 
 ## 事件
 
@@ -49,7 +49,7 @@ order: 2.15
   - `appear`
   - `disappear`
 
-  查看 [通用事件](https://alibaba.github.io/weex/cn/doc/references/common-event.html)
+  查看 [通用事件](../common-event.html)
 
 **注意：**
 
@@ -57,7 +57,7 @@ order: 2.15
 
 ## 示例
 
-我们用一个简易浏览器示例，来展示如何使用 `<web>` 组件和 `webview` module。 查看 [webview module](https://alibaba.github.io/weex/cn/doc/modules/webview.html)。
+我们用一个简易浏览器示例，来展示如何使用 `<web>` 组件和 `webview` module。 查看 [webview module](../modules/webview.html)。
 
 ```html
 <template>

@@ -4,7 +4,7 @@ type: references
 order: 4.8
 ---
 
-# `webview` <sup>(WeexSDK 0.5+)</sup>
+# `webview`
 
 一系列的 `<web>` 组件操作接口。 比如 `goBack`、`goForward`、和 `reload`。`webview` module 与 `<web>` 组件共用。
 

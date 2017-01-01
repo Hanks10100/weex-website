@@ -8,9 +8,9 @@ order: 3
 
 对于前端开发者来说开发一个 app 是不容易的，既然 Weex 能以 web 的开发体验构建高性能、可扩展的 native 应用，那我们怎么利用 Weex 简单高效的开发一个 native 应用呢？Weex 替你考虑了这件事。在本章中，我们将学习如何使用 Weexpack 工具快速生成一个全新的 Weex 项目。
 
-根据你的操作系统的不同，步骤也略有差异，如果你从未接触过 native 开发，请慢慢来，遇到问题随时查阅 [FAQ](/faq.md)。
+根据你的操作系统的不同，步骤也略有差异，如果你从未接触过 native 开发，请慢慢来，遇到问题随时查阅 [FAQ](../faq.md)。
 
-首先，不论任何平台，我们都需要 node.js 和 Weexpack。在本节中，默认你已经安装好了 node.js 和 npm，如有疑问，可参考上一章 [如何在本地开发 Weex 页面](/develop-on-your-local-machine.html)。
+首先，不论任何平台，我们都需要 node.js 和 Weexpack。在本节中，默认你已经安装好了 node.js 和 npm，如有疑问，可参考上一章 [如何在本地开发 Weex 页面](../guide/develop-on-your-local-machine.html)。
 
 Weexpack 是 Weex 新一代的工程开发套件，它允许开发者通过简单的命令，创建 weex 工程项目，将项目运行在不同的开发平台上。未来，我们考虑会将其集成在 weex-toolkits 上，但目前仍需要单独安装。好在安装 Weexpack 非常简单，可以直接使用 npm 安装：
 

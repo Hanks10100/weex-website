@@ -12,7 +12,7 @@ Weex 代码由 `<template>`、`<style>`、`<script>` 三个部分构成。
 - `<style>`：_可选的_，使用 CSS 语法描述页面的具体展现形式。
 - `<script>`：_可选的_，使用 JavaScript 描述页面中的数据和页面的行为，Weex 中的数据定义也在 `<script>` 中进行。
 
-``` html
+```html
 <template>
   <!-- (required) the structure of page -->
 </template>
@@ -47,7 +47,7 @@ Weex 代码由 `<template>`、`<style>`、`<script>` 三个部分构成。
 
 和 HTML 类似，不同标签代表的组件有各自的特性 (attribute)，部分组件可以拥有自己的子组件。
 
-延伸阅读：[内置组件列表](../components/main.html)
+延伸阅读：[内置组件列表](../../references/components/index.html)
 
 根节点：每个 Weex 页面最顶层的节点，我们称为根节点。下面是目前我们支持的三种根节点：
 
@@ -121,12 +121,12 @@ _注意事项：`<template>` 只支持一个根节点，多个根节点将无法
 
 上面 `<script>` 标签中定义了被赋值给 `module.exports` 的对象，这个对象其实就是一个 ViewModel 选项，让三个 `<text>` 标签显示当前时间、“Alibaba”字样和“Weex Team”字样。
 
-选项中的 `data` 用于存储数据，这些数据可以通过[数据绑定](../syntax/data-binding.html)机制和 `<template>` 标签中的内容绑定起来。当这些数据变更时，被绑定的模板内容也会自动更新。这些数据在 `<script>` 中的各个方法中可以通过类似 `this.x` 的方式进行读写操作。
+选项中的 `data` 用于存储数据，这些数据可以通过[数据绑定](./data-binding.html)机制和 `<template>` 标签中的内容绑定起来。当这些数据变更时，被绑定的模板内容也会自动更新。这些数据在 `<script>` 中的各个方法中可以通过类似 `this.x` 的方式进行读写操作。
 
 而选项中的 `methods` 里则列出了当前上下文可执行的各种函数，比如 `getTitle()`。
 
 选项中最后的 `created` 是生命周期函数，会在数据初始化之后、界面被绑定数据并渲染之前执行。类似的生命周期函数还有 `init`、`ready` 等，在这个例子中，`datetime` 会在界面渲染之前被更新为当前的时间。
 
-延伸阅读：[ViewModel 选项](../references/component-defs.html)
+延伸阅读：[ViewModel 选项](../../references/component-defs.html)
 
-接下来，我们来详细介绍[数据绑定](../syntax/data-binding.html)的相关知识。
+接下来，我们来详细介绍[数据绑定](./data-binding.html)的相关知识。

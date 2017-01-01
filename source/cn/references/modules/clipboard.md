@@ -4,7 +4,8 @@ type: references
 order: 4.2
 ---
 
-# `clipboard` 剪切板 <sup>(WeexSDK 0.8+)</sup>
+# `clipboard` 剪切板
+<span class="weex-version">v0.8+</span>
 
 我们可以通过 `clipboard` 模块的 `getString()`、`setString()` 接口从系统的粘贴板获取内容或者设置内容。
 

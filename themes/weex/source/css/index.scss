@@ -366,6 +366,41 @@
       background: $bg-light-blue url("../images/tmall.png") 50% 50% / 64px 64px no-repeat;
       background-origin: content-box;
     }
+
+    .aliyun-logo {
+      background: $bg-light-blue url("../images/aliyun.png") 50% 50% / 64px 64px no-repeat;
+      background-origin: content-box;
+    }
+
+    .taobao-logo {
+      background: $bg-light-blue url("../images/taobao.jpg") 50% 50% / 64px 64px no-repeat;
+      background-origin: content-box;
+    }
+
+    .alibaba-logo {
+      background: $bg-light-blue url("../images/alibaba.jpg") 50% 50% / 64px 64px no-repeat;
+      background-origin: content-box;
+    }
+
+    .cainiao-logo {
+      background: $bg-light-blue url("../images/cainiao.jpg") 50% 50% / 64px 64px no-repeat;
+      background-origin: content-box;
+    }
+
+    .xiami-logo {
+      background: $bg-light-blue url("../images/xiami.jpg") 50% 50% / 64px 64px no-repeat;
+      background-origin: content-box;
+    }
+
+    .youku-logo {
+      background: $bg-light-blue url("../images/youku.jpg") 50% 50% / 64px 64px no-repeat;
+      background-origin: content-box;
+    }
+
+    .ding-logo {
+      background: $bg-light-blue url("../images/ding.png") 50% 50% / 64px 64px no-repeat;
+      background-origin: content-box;
+    }
   }
 
   .user-info {
@@ -420,13 +455,15 @@
     margin: 0;
     text-align: center;
     color: $text-light-black;
+    padding: 10px;
 
     .avatar {
       width: 66px;
       height: 66px;
+      border-radius: 100%;
     } 
 
-    .user-feedback p {
+    p {
       margin: 1em;
     } 
   }

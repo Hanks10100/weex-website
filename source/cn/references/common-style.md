@@ -303,7 +303,7 @@ Weex 支持 `position` 定位，用法与 CSS position 类似。为元素设置 
 - `opacity {number}`：取值范围为 [0, 1] 区间。默认值是 1，即完全不透明；0 是完全透明；0.5 是 50% 的透明度。
 - `background-color {color}`：设定元素的背景色，可选值为色值，支持RGB（ `rgb(255, 0, 0)` ）；RGBA（ `rgba(255, 0, 0, 0.5)` ）；十六进制（ `#ff0000` ）；精简写法的十六进制（ `#f00` ）；色值关键字（`red`），默认值是 `transparent` 。
 
-**注意：** [色值的关键字列表](https://github.com/alibaba/weex/blob/doc/doc/references/color-names.md)。
+**注意：** [色值的关键字列表](./color-names.md)。
 
 ## 上手样式
 

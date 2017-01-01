@@ -16,7 +16,7 @@ Weex 遵循 [HTML attribute](https://en.wikipedia.org/wiki/HTML_attribute) 命�
 
 ## id
 
-为 `<template>` 内定义的元素指定一个唯一的 id，通过 `this.$el(id)` 可以容易地获取一个 Weex 元素的引用。更多信息可参考 [Instance APIs](http://alibaba.github.io/weex/cn/doc/references/api.html) 
+为 `<template>` 内定义的元素指定一个唯一的 id，通过 `this.$el(id)` 可以容易地获取一个 Weex 元素的引用。更多信息可参考 [Instance APIs](./api.html) 
 
 ```html
 <template>
