@@ -558,18 +558,32 @@ pre .attr {
     left: 0; }
   .header .swiper-button-next, .header .swiper-button-prev {
     background: transparent !important;
-    color: #fff; }
+    color: #fff;
+    line-height: 44px; }
   .header .swiper-button-next {
     transform: rotate(180deg); }
   .header .slide-content {
     max-width: 940px;
     margin: auto;
     height: 100%; }
-  .header .slide-content .button {
-    position: absolute;
-    bottom: 35%;
-    left: 50%;
-    margin-left: -6.3em; }
+    .header .slide-content .page-title {
+      font-size: 2.3em;
+      font-family: "Gill Sans";
+      width: 320px;
+      text-align: center;
+      position: absolute;
+      top: 70px;
+      left: 50%;
+      margin-left: -160px; }
+    .header .slide-content .btn-group {
+      position: absolute;
+      bottom: 30%;
+      left: 50%;
+      margin-left: -14.222em; }
+      .header .slide-content .btn-group > .button:nth-child(2) {
+        background: #f4d03f;
+        border-color: #f4d03f;
+        margin-left: 20px; }
   .header .galaxy {
     height: 560px;
     width: 560px;
@@ -606,6 +620,12 @@ pre .attr {
     margin: .4em;
     font-size: 1.5em;
     color: #363539; }
+  .edge .inner-box .underline {
+    display: inline-block;
+    background: #00BDFF;
+    width: 120px;
+    height: 5px;
+    margin: 20px 0; }
   .edge .inner-box p {
     font-size: 1em;
     color: #363539; }
@@ -649,48 +669,21 @@ pre .attr {
   .feature .right-box .level2 {
     width: 660px;
     height: 405px;
-    /*transform: translate3d(48px, -4px, 0);*/
     background: url("../images/level2.png") 50% 50%/contain no-repeat;
     background-origin: content-box;
     z-index: 99; }
-    .feature .right-box .level2 .imgbox {
-      width: 250px;
-      height: 170px;
-      position: absolute;
-      bottom: -65px;
-      left: 90px;
-      background: url("../images/level2-t.png") 0 0/contain no-repeat;
-      background-origin: content-box; }
   .feature .right-box .level3 {
     width: 660px;
     height: 405px;
-    /*transform: translate3d(48px, -4px, 0);*/
-    background: url("../images/level2.png") 50% 50%/contain no-repeat;
+    background: url("../images/level3.png") 50% 50%/contain no-repeat;
     background-origin: content-box;
     z-index: 99; }
-    .feature .right-box .level3 .imgbox {
-      width: 250px;
-      height: 170px;
-      position: absolute;
-      bottom: -50px;
-      left: 65px;
-      background: url("../images/level3-t.png") 0 0/contain no-repeat;
-      background-origin: content-box; }
   .feature .right-box .level4 {
     width: 660px;
     height: 405px;
-    /*transform: translate3d(55px, -14px, 0);*/
     background: url("../images/level4.png") 50% 50%/contain no-repeat;
     background-origin: content-box;
     z-index: 999; }
-    .feature .right-box .level4 .imgbox {
-      width: 250px;
-      height: 170px;
-      position: absolute;
-      bottom: -40px;
-      left: 40px;
-      background: url(../images/level4-t.png) 0 0/contain no-repeat;
-      background-origin: content-box; }
 
 .feature .right-img {
   width: 70%;
@@ -707,7 +700,7 @@ pre .attr {
     background: url("../images/android.png") 50% 50%/contain no-repeat;
     background-origin: content-box; }
   .cross-platform .imgbox.h5 {
-    background: url("../images/h5.png") 50% 50%/contain no-repeat;
+    background: url("../images/web.png") 50% 50%/contain no-repeat;
     background-origin: content-box; }
 
 .cross-platform .textbox p {
@@ -828,6 +821,9 @@ pre .attr {
     border-radius: 100%; }
   .feedback .user-feedback p {
     margin: 1em; }
+  .feedback .user-feedback .user-info {
+    font-size: .9em;
+    font-style: italic; }
 
 .feedback .scene-container .go-2-doc {
   flex: 1;
@@ -1119,6 +1115,8 @@ pre .attr {
    **********************************************/
   .header .galaxy {
     display: none; }
+  .edge .scene-container .textbox {
+    flex: 1; }
   .edge .scene-container .sketch-content {
     flex-direction: column;
     align-items: center; }
@@ -1156,6 +1154,16 @@ pre .attr {
     padding: 0 1em; }
   .horizon .textbox p {
     width: 100%; }
+  .header .slide-content .btn-group {
+    bottom: 10%; }
+  .feature .right-box {
+    width: 500px;
+    height: 245.45px;
+    top: 50%;
+    right: -65px; }
+    .feature .right-box .level1, .feature .right-box .level2, .feature .right-box .level3, .feature .right-box .level4 {
+      width: 500px;
+      height: 245.45px; }
   .users .sketch-content .user-logo {
     width: 140px;
     height: 140px;
