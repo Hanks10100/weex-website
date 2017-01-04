@@ -98,9 +98,11 @@
     bottom: 0;
     left: 0;
   }
+
   .swiper-button-next, .swiper-button-prev {
     background: transparent !important;
     color: $text-white;
+    line-height: 44px;
   }
 
   .swiper-button-next {
@@ -111,13 +113,30 @@
     max-width: $content-max-width;
     margin: auto;
     height: 100%;
-  }
+    
+    .page-title {
+      font-size: 2.3em;
+      font-family: "Gill Sans";
+      width: 320px;
+      text-align: center;
+      position: absolute;
+      top: 70px;
+      left: 50%;
+      margin-left: -160px;
+    }
 
-  .slide-content .button {
-    position: absolute;
-    bottom: 35%;
-    left: 50%;
-    margin-left: -6.3em;
+    .btn-group {
+      position: absolute;
+      bottom: 30%;
+      left: 50%;
+      margin-left: -14.222em;
+
+      & > .button:nth-child(2) {
+        background: #f4d03f;
+        border-color: #f4d03f;
+        margin-left: 20px;
+      }
+    }
   }
 
   .galaxy {
@@ -173,6 +192,14 @@
       color: $text-light-black;
     }
 
+    .underline {
+      display: inline-block;
+      background: $bg-blue;
+      width: 120px;
+      height: 5px;
+      margin: 20px 0;
+    }
+
     p {
       font-size: 1em;
       color: $text-light-black;
@@ -226,54 +253,23 @@
     .level2 {
       width: 660px;
       height: 405px;
-      /*transform: translate3d(48px, -4px, 0);*/
       background: url("../images/level2.png")  50% 50% / contain no-repeat;
       background-origin: content-box;
       z-index: 99;
-      .imgbox {
-        width: 250px;
-        height: 170px;
-        position: absolute;
-        bottom: -65px;
-        left: 90px;
-        background: url("../images/level2-t.png")  0 0 / contain no-repeat;
-        background-origin: content-box;
-      }
     }
     .level3 {
       width: 660px;
       height: 405px;
-      /*transform: translate3d(48px, -4px, 0);*/
-      background: url("../images/level2.png")  50% 50% / contain no-repeat;
+      background: url("../images/level3.png")  50% 50% / contain no-repeat;
       background-origin: content-box;
       z-index: 99;
-      .imgbox {
-        width: 250px;
-        height: 170px;
-        position: absolute;
-        bottom: -50px;
-        left: 65px;
-        background: url("../images/level3-t.png")  0 0 / contain no-repeat;
-        background-origin: content-box;
-      }
-
     }
     .level4 {
       width: 660px;
       height: 405px;
-      /*transform: translate3d(55px, -14px, 0);*/
       background: url("../images/level4.png")  50% 50% / contain no-repeat;
       background-origin: content-box;
       z-index: 999;
-      .imgbox {
-        width: 250px;
-        height: 170px;
-        position: absolute;
-        bottom: -40px;
-        left: 40px;
-        background: url(../images/level4-t.png) 0 0 / contain no-repeat;
-        background-origin: content-box;
-      }
     }
   }
   .right-img {
@@ -298,7 +294,7 @@
     }
 
     &.h5 {
-      background: url("../images/h5.png")  50% 50% / contain no-repeat;
+      background: url("../images/web.png")  50% 50% / contain no-repeat;
       background-origin: content-box;
     }
   }
@@ -465,7 +461,12 @@
 
     p {
       margin: 1em;
-    } 
+    }
+
+    .user-info {
+      font-size: .9em;
+      font-style: italic;
+    }
   }
 
   .scene-container .go-2-doc {

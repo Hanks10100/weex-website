@@ -40,9 +40,14 @@
     display: none;
   }
 
-  .edge .scene-container .sketch-content {
-    flex-direction: column; 
-    align-items: center;
+  .edge .scene-container {
+    .textbox {
+      flex: 1;
+    }
+    .sketch-content {
+      flex-direction: column; 
+      align-items: center;
+    }
   }
 
   .horizon .sketch-content {
@@ -102,6 +107,28 @@
 
   .horizon .textbox p {
     width: 100%;
+  }
+
+  .header {
+
+    .slide-content .btn-group {
+      bottom: 10%;
+    }
+  }
+
+  .feature {
+
+    .right-box {
+      width: 500px;
+      height: 245.45px;
+      top: 50%;
+      right: -65px;
+      
+      .level1, .level2, .level3, .level4 {
+        width: 500px;
+        height: 245.45px;
+      }
+    }
   }
 
   .users .sketch-content {

@@ -3,7 +3,11 @@
     <div class="swiper-wrapper">
       <div class="swiper-slide" style="background:url('<%= config.root %>images/slide1.png') 50% 50% / contain no-repeat">
         <div class="slide-content">
-            <a href="<%= url_for_lang('guide/index.html') %>" class="button get-started"><%= _p('index.get_started') %> →</a>
+          <h1 class="page-title"><%= _p('index.page_title') %></h1>
+          <div class="btn-group">
+            <a href="<%= url_for_lang('guide/index.html') %>" class="button get-started"><%= _p('index.get_started') %></a>
+            <a href="https://github.com/alibaba/weex/" class="button get-started">Github</a>
+          </div>
         </div>
       </div>
     </div>
