@@ -37,8 +37,6 @@ Weex box model based on the CSS box model, all of weex elements can be considere
   
   <link rel="stylesheet" href="/weex-website/css/style.css">
   <link rel="stylesheet" href="/weex-website/css/swiper.min.css">
-  
-
 </head>
 
 <body id="references" class="lang-en">
@@ -105,6 +103,14 @@ Weex box model based on the CSS box model, all of weex elements can be considere
   <div id="sidebar" class="">
   <div class="sidebar-menu">
     
+      <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-sidebar" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
       <div class="summary">
   <h2 class="part-title">
     
@@ -1137,13 +1143,11 @@ Weex box model based on the CSS box model, all of weex elements can be considere
   <div class="row clearfix">
     <div class="cell"><span>Copyright(c) 2016 </span><a href="https://www.alibaba.com">Alibaba</a></div>
     <div class="cell"><span>GroupMade by </span><a href="">阿里云UED AX</a></div>
-    <div class="cell"><span>Proudly Produced by </span><a href="https://baichuan.taobao.com/">Alibaichuan</a> <span class="iconfont icon-baichuan"></span></div>
   </div>
 </footer>
-  
-
-<!--<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>-->
-
+  <div style="display: none;">
+  <script src="//s95.cnzz.com/z_stat.php?id=1261102667&amp;web_id=1261102667" language="JavaScript"></script>
+</div>
 
   <script src="/weex-website/js/reqwest.js"></script>
   <script src="/weex-website/js/velocity.js"></script>

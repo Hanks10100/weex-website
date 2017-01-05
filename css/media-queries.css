@@ -9,18 +9,27 @@
    * Global
    **********************************************/
   body {
-    user-select: none;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
     font-size: 13px; }
   #header .navbar {
     display: none !important; }
   #header #mobile-nav {
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex; }
   #sidebar {
     display: block !important;
-    transform: translateX(-320px);
+    -webkit-transform: translateX(-320px);
+        -ms-transform: translateX(-320px);
+            transform: translateX(-320px);
     transition: all .3s ease; }
     #sidebar.open {
-      transform: translateX(0); }
+      -webkit-transform: translateX(0);
+          -ms-transform: translateX(0);
+              transform: translateX(0); }
   #footer {
     padding: 0 20px; }
   /***********************************************
@@ -29,20 +38,32 @@
   .header .galaxy {
     display: none; }
   .edge .scene-container .textbox {
-    flex: 1; }
+    -webkit-flex: 1;
+        -ms-flex: 1;
+            flex: 1; }
   .edge .scene-container .sketch-content {
-    flex-direction: column;
-    align-items: center; }
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center; }
   .horizon .sketch-content {
     padding: 0 5em; }
   .horizon .sketch-content .inner-box {
     padding: 0 2em; }
   .users .scene-container .textbox {
-    flex: 1; }
+    -webkit-flex: 1;
+        -ms-flex: 1;
+            flex: 1; }
   .feedback .sketch-content {
-    align-content: center; }
+    -webkit-align-content: center;
+        -ms-flex-line-pack: center;
+            align-content: center; }
   .feedback .scene-container .textbox {
-    flex: 1; }
+    -webkit-flex: 1;
+        -ms-flex: 1;
+            flex: 1; }
   /***********************************************
    * Post
    **********************************************/
@@ -52,6 +73,8 @@
     margin-left: 0; } }
 
 @media screen and (max-width: 700px) {
+  .button {
+    width: 10em; }
   /***********************************************
    * Index
    **********************************************/
@@ -60,7 +83,9 @@
     min-height: 100%;
     min-height: calc(100% - 72px); }
   .horizon .textbox {
-    flex: 4; }
+    -webkit-flex: 4;
+        -ms-flex: 4;
+            flex: 4; }
   .horizon .sketch-content {
     padding: 0 1em; }
   .horizon .sketch-content .inner-box {
@@ -77,6 +102,8 @@
     .feature .right-box .level1, .feature .right-box .level2, .feature .right-box .level3, .feature .right-box .level4 {
       width: 500px;
       height: 245.45px; }
+  .cross-platform .sketch-content {
+    height: 200px; }
   .users .sketch-content .user-logo {
     width: 140px;
     height: 140px;

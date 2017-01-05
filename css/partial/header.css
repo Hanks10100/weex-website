@@ -26,13 +26,21 @@
       height: 44px; }
   #header .navbar {
     height: 72px;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
-    align-items: center; }
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center; }
   #header #mobile-nav {
     display: none;
     height: 72px;
-    align-items: center; }
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center; }
     #header #mobile-nav #logo {
       margin: 0 auto; }
     #header #mobile-nav .btn-menu {
@@ -40,11 +48,19 @@
       left: 20px;
       top: 25px; }
   #header .main-nav {
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between; }
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between; }
     #header .main-nav > ul {
+      display: -webkit-flex;
+      display: -ms-flexbox;
       display: flex;
-      justify-content: space-between;
+      -webkit-justify-content: space-between;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
       height: 72px;
       line-height: 72px; }
     #header .main-nav li > a {

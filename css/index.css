@@ -13,6 +13,7 @@
 
 .scene {
   position: relative;
+  height: 100%;
   height: calc(100% - 72px); }
   .scene:nth-child(even) {
     background: #FAFAFA;
@@ -34,15 +35,29 @@
 .horizon .scene-container, .edge .scene-container {
   max-width: 940px;
   padding-bottom: 2em;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-content: space-around; }
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-align-content: space-around;
+      -ms-flex-line-pack: distribute;
+          align-content: space-around; }
 
 .horizon .textbox {
-  flex: 2;
+  -webkit-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   padding: 0 1em; }
 
 .horizon .textbox p {
@@ -52,12 +67,20 @@
 
 .horizon .sketch-content {
   padding: 0 7em;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  flex: 3;
-  align-items: stretch; }
+  -webkit-flex: 3;
+      -ms-flex: 3;
+          flex: 3;
+  -webkit-align-items: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch; }
 
 .horizon .inner-box {
-  flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   padding: 0 2em; }
 
 .header {
@@ -84,7 +107,9 @@
     color: #fff;
     line-height: 44px; }
   .header .swiper-button-next {
-    transform: rotate(180deg); }
+    -webkit-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+            transform: rotate(180deg); }
   .header .slide-content {
     max-width: 940px;
     margin: auto;
@@ -102,7 +127,7 @@
       position: absolute;
       bottom: 30%;
       left: 50%;
-      margin-left: -14.222em; }
+      margin-left: -11.222em; }
       .header .slide-content .btn-group > .button:nth-child(2) {
         background: #f4d03f;
         border-color: #f4d03f;
@@ -119,21 +144,41 @@
     right: -40px; }
 
 .edge .scene-container .textbox {
-  flex: 3;
+  -webkit-flex: 3;
+      -ms-flex: 3;
+          flex: 3;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center; }
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
 
 .edge .scene-container .sketch-content {
   padding: 0 7em;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  flex: 5;
-  flex-direction: row;
-  align-items: center; }
+  -webkit-flex: 5;
+      -ms-flex: 5;
+          flex: 5;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center; }
 
 .edge .inner-box {
-  flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   text-align: center; }
   .edge .inner-box img {
     width: 78px;
@@ -243,10 +288,18 @@
   background-origin: content-box; }
 
 .users .sketch-content {
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  align-content: flex-start; }
+  -webkit-flex-flow: row wrap;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-align-content: flex-start;
+      -ms-flex-line-pack: start;
+          align-content: flex-start; }
   .users .sketch-content .user-logo {
     width: 162px;
     height: 162px;
@@ -316,10 +369,18 @@
     font-size: .9em; }
 
 .users .more {
-  flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center; }
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center; }
   .users .more a {
     margin-top: 1em;
     color: #fff;
@@ -327,13 +388,23 @@
     font-weight: lighter; }
 
 .feedback .sketch-content {
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  align-content: space-around; }
+  -webkit-flex-flow: row wrap;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-align-content: space-around;
+      -ms-flex-line-pack: distribute;
+          align-content: space-around; }
 
 .feedback .user-feedback {
-  flex: 1 0 200px;
+  -webkit-flex: 1 0 200px;
+      -ms-flex: 1 0 200px;
+          flex: 1 0 200px;
   margin: 0;
   text-align: center;
   color: #363539;
@@ -349,7 +420,15 @@
     font-style: italic; }
 
 .feedback .scene-container .go-2-doc {
-  flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center; }
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center; }

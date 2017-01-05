@@ -194,20 +194,3 @@
     box-shadow: 0 0 20px orange; }
   100% {
     box-shadow: none; } }
-
-@-moz-keyframes orbit {
-  0% {
-    -moz-transform: rotate(0deg); }
-  50% {
-    -moz-transform: rotate(-180deg); }
-  100% {
-    -moz-transform: rotate(-360deg); } }
-
-@-moz-keyframes glow {
-  0% {
-    box-shadow: none; }
-  50% {
-    background: #FFEB00;
-    box-shadow: 0 0 20px orange; }
-  100% {
-    box-shadow: none; } }

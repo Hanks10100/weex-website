@@ -19,7 +19,9 @@
     font-size: 1em;
     padding: 6px 35px 6px 10px;
     border: 1px solid #ddd;
-    border-radius: 20px; }
+    border-radius: 20px;
+    margin: 20px 0;
+    -webkit-appearance: none; }
     .search .search-input:focus {
       border: 1px solid #00BDFF;
       outline: none; }
