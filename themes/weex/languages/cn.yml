@@ -2,7 +2,7 @@ index:
   page_title: 一套构建高性能、可扩展的原生应用跨平台开发方案
   get_started: 上手教程
   edge:
-    title: 竞争优势
+    title: 优势
     edge1: 
       title: 轻量
       content: 体积小、语法简单、易于掌握
@@ -76,7 +76,8 @@ menu:
   advanced: 高阶知识
   baichuan: 阿里百川
   github: Github
-
+playground:
+  content: Weex Native 运行时实例 & Weex 文件预览工具并支持 hot reload 功能。
 categories: Categories
 search: Search
 tags: Tags

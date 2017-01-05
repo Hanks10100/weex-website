@@ -77,7 +77,8 @@ menu:
   advanced: Advanced
   baichuan: AliBaichuan
   github: Github
-
+playground:
+  content: Weex Native Runtime showcase & Weex we file preview with hot reload supported.
 categories: Categories
 search: Search
 tags: Tags
