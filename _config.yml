@@ -106,3 +106,9 @@ deploy:
 
 # alias:
 #   api/index.html v2/api/index.html
+
+# css autoprefixer
+autoprefixer:
+  exclude:
+  browsers:
+    - 'last 5 versions'

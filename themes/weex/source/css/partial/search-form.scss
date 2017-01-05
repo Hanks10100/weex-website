@@ -17,6 +17,7 @@
     border: 1px solid $border-light;
     border-radius: 20px;
     margin: 20px 0;
+    -webkit-appearance: none;
 
     &:focus {
       border: 1px solid $border-blue;

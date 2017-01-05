@@ -30,7 +30,7 @@ Best way to find out what's happening is read debug log, you can follow [this do
 Weex uses JSCore in iOS and uses v8 in Android. So they both support ECMAScript 5 spec. Additionally, we do some polyfills in native environment:
 
 * `Promise` in iOS/Android
-* Timer APIs (`setTimeout`/`clearTimeout`/`setInterval`/`clearInterval`) in iOS/Android
+* Timer APIs (`setTimeout` / `clearTimeout` / `setInterval` / `clearInterval`) in iOS/Android
 * `console` in iOS/Android
 
 In Browser we contains a polyfill of `Promise` temporarily. In the future developers can choose whether to import a polyfill by configurations.
