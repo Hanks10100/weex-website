@@ -2,6 +2,7 @@
 title: Integrate to web
 type: advanced
 order: 5
+has_chapter_content: true
 ---
 
 # Integrate Weex HTML5 to your project

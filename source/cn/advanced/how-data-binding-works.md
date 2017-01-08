@@ -2,6 +2,7 @@
 title: 数据绑定原理
 type: advanced
 order: 2
+has_chapter_content: true
 ---
 
 # 数据绑定实现原理

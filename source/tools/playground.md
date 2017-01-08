@@ -2,6 +2,7 @@
 title: Playground
 type: tools
 order: 4
+has_chapter_content: true
 ---
 
 # Weex Playground App

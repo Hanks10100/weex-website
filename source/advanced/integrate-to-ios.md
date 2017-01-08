@@ -2,6 +2,7 @@
 title: Integrate to iOS
 type: advanced
 order: 4
+has_chapter_content: true
 ---
 
 # import Weex iOS to your project

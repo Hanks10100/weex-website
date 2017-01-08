@@ -2,6 +2,7 @@
 title: 语法介绍
 type: guide
 order: 3
+has_chapter_content: true
 ---
 
 # 语法综述

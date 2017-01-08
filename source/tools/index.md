@@ -2,6 +2,7 @@
 title: CLI
 type: tools
 order: 1
+has_chapter_content: true
 ---
 
 # Weex-Toolkit

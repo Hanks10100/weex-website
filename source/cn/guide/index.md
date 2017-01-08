@@ -2,6 +2,7 @@
 title: 上手教程
 type: guide
 order: 1
+has_chapter_content: true
 ---
 
 # 起步教程

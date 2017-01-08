@@ -2,6 +2,7 @@
 title: Extend to iOS
 type: advanced
 order: 7
+has_chapter_content: true
 ---
 
 # Extend to iOS

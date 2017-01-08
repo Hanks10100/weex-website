@@ -2,6 +2,7 @@
 title: 集成 Devtools 到 iOS
 type: advanced
 order: 13
+has_chapter_content: true
 ---
 
 # 集成 Devtools 到 iOS

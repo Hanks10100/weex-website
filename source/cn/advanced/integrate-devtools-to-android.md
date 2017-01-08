@@ -2,6 +2,7 @@
 title: 集成 Devtools 到 Android
 type: advanced
 order: 12
+has_chapter_content: true
 ---
 
 # 集成 Devtools 到 Android

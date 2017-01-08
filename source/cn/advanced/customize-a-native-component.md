@@ -2,6 +2,7 @@
 title: 自定义 native 组件
 type: advanced
 order: 7
+has_chapter_content: true
 ---
 
 # 如何自定义 native 组件？

@@ -2,6 +2,7 @@
 title: Transformer
 type: tools
 order: 3
+has_chapter_content: true
 ---
 
 # gulp-weex

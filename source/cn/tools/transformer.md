@@ -2,6 +2,7 @@
 title: Transormer (英)
 type: tools
 order: 3
+has_chapter_content: true
 ---
 
 # gulp-weex

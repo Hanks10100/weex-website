@@ -2,6 +2,7 @@
 title: 如何在本地开发 Weex 页面
 type: guide
 order: 2
+has_chapter_content: true
 ---
 
 # 如何在本地开发 Weex 页面

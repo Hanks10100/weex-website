@@ -2,6 +2,7 @@
 title: Integrate to Android
 type: advanced
 order: 3
+has_chapter_content: true
 ---
 
 # Integrate to Android

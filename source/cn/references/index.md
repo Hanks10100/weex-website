@@ -1,20 +1,45 @@
 ---
-title: 通用选项
+title: Bootstrap
 type: references
 order: 1
+has_chapter_content: false
+chapter_title: 通用选项
 ---
 
-# 开发手册
+# Bootstrap
 
-这部分汇总了 Weex APIs、Components 及 Moduls 的所有信息，以备开发过程中随时查阅。
+除了其默认的意义，`<script>`标签支持在页面的顶级组件中通过 `type` 属性定义两种配置。
+- `type="data"`: 配置初始化数据，这里定义的数据会覆盖定义在`<script>`中的数据；
+- `type="config"`: 定义配置项。
 
-快速导航：
+``` html
+<script type="data">
+  /* (可选) 定义初始化数据 */
+</script>
 
-- [bootstrap](./bootstrap.md)
-- [ViewModel](./component-defs.md)
-- [ViewModel API](./api.md)
-- [手势](./gesture.md)
-- [内建组件](./components/div.md)
-- [内建模块](./modules/dom.md)
-- [底层规范](./specs/js-bundle-format.md)
-- [Weex 备忘录](./cheatsheet.md)
+<script type="config">
+  /* (可选) 定义配置项 */
+</script>
+
+```
+## 定义初始化数据
+
+有时，很难在默认的`<script>`标签中维护巨大的数据结构。所以 Weex 允许我们通过 `<script type="data">` 标签定义初始化数据。在这里定义的数据将完全取代默认的 `<script>` 标签中定义的数据。
+
+例如：
+
+```html
+<script type="data">
+  module.exports = {
+      title: 'Alibaba',
+      date: new Date().toLocaleString()
+  }
+</script>
+```
+## 配置项
+
+Weex 也允许我们通过 `<script type="config">` 定义一些配置项，目前，仅只支持配置 `downgrade`。
+- `downgrade.osVersion`
+- `downgrade.appVersion`
+- `downgrade.weexVersion`
+- `downgrade.deviceModel`

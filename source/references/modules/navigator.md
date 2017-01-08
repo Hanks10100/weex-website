@@ -74,8 +74,8 @@ push a weex page onto the navigator stack, you can specify whether apply animati
 
 ```javascript
 var params = {
-    'url': 'navigator-demo.js',
-    'animated' : 'true',
+  'url': 'navigator-demo.js',
+  'animated' : 'true',
 }
 var navigator = require('@weex-module/navigator');
 navigator.push(params, function(e) {
@@ -96,7 +96,7 @@ pop a weex page onto the navigator stack, you can specify whether apply animatio
 
 ```javascript
 var params = {
-    'animated' : 'true',
+  'animated' : 'true',
 }
 var navigator = require('@weex-module/navigator');
 navigator.pop(params, function(e) {

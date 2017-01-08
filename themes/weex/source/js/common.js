@@ -1,3 +1,14 @@
+;(function () {
+  if (window.ActiveXObject) {
+    var ua = navigator.userAgent.toLowerCase()
+    var ieVersion = ua.match(/msie ([\d.]+)/)[1]
+
+    if (ieVersion <= 9) {
+      alert('Please use Chrome / Safari / Firefox / Edge to access this site.')
+    }
+  }
+})();
+
 ;(function() {
   // http://paulirish.com/2011/requestanimationframe-for-smart-animating/
   // http://my.opera.com/emoller/blog/2011/12/20/requestanimationframe-for-smart-er-animating

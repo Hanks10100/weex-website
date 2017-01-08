@@ -2,6 +2,7 @@
 title: 内建模块
 type: references
 order: 4
+has_chapter_content: true
 ---
 
 # 内建模块

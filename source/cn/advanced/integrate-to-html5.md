@@ -2,6 +2,7 @@
 title: 集成到 web
 type: advanced
 order: 6
+has_chapter_content: true
 ---
 
 ## 项目中引入 html5 版 Weex

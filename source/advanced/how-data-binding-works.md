@@ -2,6 +2,7 @@
 title: How data-binding works
 type: advanced
 order: 2
+has_chapter_content: true
 ---
 
 # How data-binding works

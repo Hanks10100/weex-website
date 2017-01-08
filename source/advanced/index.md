@@ -2,6 +2,7 @@
 title: How it works
 type: advanced
 order: 1
+has_chapter_content: true
 ---
 
 # How it works

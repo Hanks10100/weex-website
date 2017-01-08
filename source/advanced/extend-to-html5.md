@@ -2,10 +2,10 @@
 title: Extend to web
 type: advanced
 order: 8
+has_chapter_content: true
 ---
 
 # Extend Weex HTML5
-<span class="weex-version">0.4</span>
 
 ### Intro
 

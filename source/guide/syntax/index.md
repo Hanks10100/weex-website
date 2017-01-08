@@ -2,6 +2,7 @@
 title: Syntax
 type: guide
 order: 2
+has_chapter_content: true
 ---
 
 # Syntax

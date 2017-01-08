@@ -2,6 +2,7 @@
 title: 集成到 iOS
 type: advanced
 order: 5
+has_chapter_content: true
 ---
 
 # Weex SDK 集成到 iOS

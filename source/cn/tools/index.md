@@ -2,6 +2,7 @@
 title: CLI (英)
 type: tools
 order: 1
+has_chapter_content: true
 ---
 
 # CLI

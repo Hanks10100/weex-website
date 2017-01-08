@@ -2,6 +2,7 @@
 title: iOS 扩展
 type: advanced
 order: 10
+has_chapter_content: true
 ---
 
 ## iOS 扩展

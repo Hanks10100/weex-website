@@ -2,6 +2,7 @@
 title: 集成到 Android
 type: advanced
 order: 4
+has_chapter_content: true
 ---
 
 # WEEX SDK 集成到 Android 工程

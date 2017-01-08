@@ -2,6 +2,7 @@
 title: 官方扩展组件
 type: references
 order: 3
+has_chapter_content: true
 ---
 
 # 官方扩展组件

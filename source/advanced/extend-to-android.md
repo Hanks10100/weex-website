@@ -2,10 +2,10 @@
 title: Extend to Android
 type: advanced
 order: 6
+has_chapter_content: true
 ---
 
 # Extend to Android
-<span class="weex-version">0.4</span>
  
 ### Module extend
 weex sdk support Module extend,

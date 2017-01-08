@@ -2,6 +2,7 @@
 title: Android 扩展
 type: advanced
 order: 9
+has_chapter_content: true
 ---
 
 # Android 扩展

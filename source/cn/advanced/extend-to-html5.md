@@ -2,6 +2,7 @@
 title: weex-html5 扩展
 type: advanced
 order: 11
+has_chapter_content: true
 ---
 
 # 扩展 weex-html5
