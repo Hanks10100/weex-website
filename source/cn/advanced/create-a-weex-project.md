@@ -3,6 +3,7 @@ title: 如何创建一个 Weex 项目
 type: advanced
 order: 3
 has_chapter_content: true
+version: 1.0
 ---
 
 # 如何创建一个 Weex 项目

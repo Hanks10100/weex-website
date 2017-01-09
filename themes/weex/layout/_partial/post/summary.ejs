@@ -1,3 +1,7 @@
+<% var version = 1.0 %>
+<% result = page.path.match(/(v-)(\d+(\.\d+))/) %>
+<% version = result ? +result[2] : 1.0 %>
+
 <div class="summary">
   <h2 class="part-title">
     <% if (type) { %>
@@ -5,7 +9,7 @@
     <% } %>
   </h2>
   <ul class="doc-summary">
-    <% var pagesArr = site.pages.find({type: type, lang: page.lang}).sort('order') %>
+    <% var pagesArr = site.pages.find({type: type, lang: page.lang, version: version}).sort('order') %>
     <% var pages = [] %>
     <% pagesArr.each(function (item) { %>
       <% var i = Math.floor(item.order) - 1 %>

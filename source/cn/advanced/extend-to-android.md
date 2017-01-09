@@ -3,6 +3,7 @@ title: Android 扩展
 type: advanced
 order: 9
 has_chapter_content: true
+version: 1.0
 ---
 
 # Android 扩展

@@ -3,6 +3,7 @@ title: iOS 扩展
 type: advanced
 order: 10
 has_chapter_content: true
+version: 1.0
 ---
 
 ## iOS 扩展

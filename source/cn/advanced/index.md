@@ -3,6 +3,7 @@ title: Weex 工作原理
 type: advanced
 order: 1
 has_chapter_content: true
+version: 1.0
 ---
 
 # Weex 工作原理概述

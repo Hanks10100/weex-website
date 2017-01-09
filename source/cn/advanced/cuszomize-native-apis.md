@@ -3,6 +3,7 @@ title: 自定义 native API
 type: advanced
 order: 8
 has_chapter_content: true
+version: 1.0
 ---
 
 # 如何自定义 native API？
