@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Transform Code into Js Bundle | Weex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Transform Code into Js BundleParagraphs Maintain Your Component Code and Require 3rd Party Libs show us how to write and organize weex code. However, Weex DSL code must be transformed to js bundle so">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Transform Code into Js Bundle">
+<meta property="og:url" content="http://alibaba.github.io/v-0.10/guide/how-to/transform-code-into-js-bundle.html">
+<meta property="og:site_name" content="Weex">
+<meta property="og:description" content="Transform Code into Js BundleParagraphs Maintain Your Component Code and Require 3rd Party Libs show us how to write and organize weex code. However, Weex DSL code must be transformed to js bundle so">
+<meta property="og:updated_time" content="2017-01-09T12:39:35.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Transform Code into Js Bundle">
+<meta name="twitter:description" content="Transform Code into Js BundleParagraphs Maintain Your Component Code and Require 3rd Party Libs show us how to write and organize weex code. However, Weex DSL code must be transformed to js bundle so">
+  
+    <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/weex-website/css/style.css">
+  <link rel="stylesheet" href="/weex-website/css/swiper.min.css">
+</head>
+
+<body id="guide" class="lang-en">
+  
+  <header id="header">
+  <div class="navbar">
+    <a id="logo" href="/weex-website/">
+      <img src="/weex-website/images/logo.png" />
+    </a>
+    <div class="main-nav">
+      <ul class="links">
+        <li><a href="/weex-website/guide">Guide</a></li>
+        <li><a href="/weex-website/references">References</a></li>
+        <li><a href="/weex-website/faq.html">FAQ</a></li>
+        <li class="dropdown">
+            <a href="javascript:;">Tools</a>
+            <ul class="dropdown-menu subnav">
+              <li>
+                <a href="/weex-website/playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
+              </li>
+              <li>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Snippets</a>
+              </li>
+            </ul>
+        </li>
+      </ul>
+      <ul class="info">
+        <li><a href="https://github.com/alibaba/weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+      </ul>
+      <ul class="tools">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <!--<li></li>-->
+      </ul>
+    </div>
+  </div>
+  <div id="mobile-nav">
+    <a id="logo" href="/weex-website/">
+      <img src="/weex-website/images/logo.png" />
+    </a>
+    <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
+  </div>
+</header>
+  <div id="sidebar" class="">
+  <div class="sidebar-menu">
+    
+      <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-sidebar" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+      
+
+
+<div class="summary">
+  <h2 class="part-title">
+    
+      Guide
+    
+  </h2>
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+   
+    
+      <li>
+        
+          <h3 class="chapter-title"></h3>
+          
+        
+      </li>
+    
+      <li>
+        
+          <h3 class="chapter-title"><a href="/weex-website/v-0.10/guide/syntax/index.html" class="sidebar-link  ">Syntax</a></h3>
+          
+            <ul class="chapter">
+              
+                <li>
+                  <a href="/weex-website/v-0.10/guide/syntax/data-binding.html" class="sidebar-link  ">Data-Binding</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/guide/syntax/style-n-class.html" class="sidebar-link  ">Style &amp; Class</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/guide/syntax/events.html" class="sidebar-link  ">Events</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/guide/syntax/display-logic.html" class="sidebar-link  ">Display Logic Control</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/guide/syntax/render-logic.html" class="sidebar-link  ">Render Logic Control</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/guide/syntax/composed-component.html" class="sidebar-link  ">Composed Component</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/guide/syntax/id.html" class="sidebar-link  ">Find an Element</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/guide/syntax/comm.html" class="sidebar-link  ">Communications</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/guide/syntax/config-n-data.html" class="sidebar-link  ">Page Config &amp; Data</a>
+                </li>
+              
+            </ul>
+          
+        
+      </li>
+    
+      <li>
+        
+          <h3 class="chapter-title">How-tos</h3>
+          
+            <ul class="chapter">
+              
+                <li>
+                  <a href="/weex-website/v-0.10/guide/how-to/index.html" class="sidebar-link  ">Preview in browser</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/guide/how-to/preview-in-playground-app.html" class="sidebar-link  ">Preview in native</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/guide/how-to/customize-a-native-component.html" class="sidebar-link  ">Customize a native Component</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/guide/how-to/cuszomize-native-apis.html" class="sidebar-link  ">Customize native APIs</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/guide/how-to/debug-with-html5.html" class="sidebar-link  ">Debug in html5 renderer</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/guide/how-to/require-3rd-party-libs.html" class="sidebar-link  ">Require 3rd Party Libs</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/guide/how-to/transform-code-into-js-bundle.html" class="sidebar-link current ">Transform Code into Js Bundle</a>
+                </li>
+              
+            </ul>
+          
+        
+      </li>
+    
+  </ul>
+</div>
+    
+    <a class="btn-close-sidebar iconfont  icon-close"></a>
+  </div>
+</div>
+  <div class="article-wrapper page-layout">
+  <div class="doc-nav">
+    
+
+
+<div class="summary">
+  <h2 class="part-title">
+    
+      Guide
+    
+  </h2>
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+   
+    
+      <li>
+        
+          <h3 class="chapter-title"></h3>
+          
+        
+      </li>
+    
+      <li>
+        
+          <h3 class="chapter-title"><a href="/weex-website/v-0.10/guide/syntax/index.html" class="sidebar-link  ">Syntax</a></h3>
+          
+            <ul class="chapter">
+              
+                <li>
+                  <a href="/weex-website/v-0.10/guide/syntax/data-binding.html" class="sidebar-link  ">Data-Binding</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/guide/syntax/style-n-class.html" class="sidebar-link  ">Style &amp; Class</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/guide/syntax/events.html" class="sidebar-link  ">Events</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/guide/syntax/display-logic.html" class="sidebar-link  ">Display Logic Control</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/guide/syntax/render-logic.html" class="sidebar-link  ">Render Logic Control</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/guide/syntax/composed-component.html" class="sidebar-link  ">Composed Component</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/guide/syntax/id.html" class="sidebar-link  ">Find an Element</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/guide/syntax/comm.html" class="sidebar-link  ">Communications</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/guide/syntax/config-n-data.html" class="sidebar-link  ">Page Config &amp; Data</a>
+                </li>
+              
+            </ul>
+          
+        
+      </li>
+    
+      <li>
+        
+          <h3 class="chapter-title">How-tos</h3>
+          
+            <ul class="chapter">
+              
+                <li>
+                  <a href="/weex-website/v-0.10/guide/how-to/index.html" class="sidebar-link  ">Preview in browser</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/guide/how-to/preview-in-playground-app.html" class="sidebar-link  ">Preview in native</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/guide/how-to/customize-a-native-component.html" class="sidebar-link  ">Customize a native Component</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/guide/how-to/cuszomize-native-apis.html" class="sidebar-link  ">Customize native APIs</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/guide/how-to/debug-with-html5.html" class="sidebar-link  ">Debug in html5 renderer</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/guide/how-to/require-3rd-party-libs.html" class="sidebar-link  ">Require 3rd Party Libs</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/guide/how-to/transform-code-into-js-bundle.html" class="sidebar-link current ">Transform Code into Js Bundle</a>
+                </li>
+              
+            </ul>
+          
+        
+      </li>
+    
+  </ul>
+</div>
+  </div>
+  
+
+<article class="article article-type-guide">
+  <div class="article-entry" itemprop="articleBody">
+    <header class="article-header">
+  
+    
+      <h1 class="article-title" itemprop="name">
+        Transform Code into Js Bundle
+      </h1>
+    
+  
+  <time class="article-date" datetime="2017-01-09T12:39:35.000Z">Updated time: 09/01/2017</time>
+</header>
+    <h1 id="Transform-Code-into-Js-Bundle"><a href="#Transform-Code-into-Js-Bundle" class="headerlink" title="Transform Code into Js Bundle"></a>Transform Code into Js Bundle</h1><p>Paragraphs Maintain Your Component Code and <a href="./require-3rd-party-libs.html">Require 3rd Party Libs</a> show us how to write and organize weex code. However, Weex DSL code must be transformed to <code>js bundle</code> so that <code>js framework</code> can parse and execute it for iOS, Android and HTML5 portal. For more information, please refer to <a href="../../advanced/how-it-works.html">How It Works
+</a> and <a href="../../references/specs/js-bundle-format.html">JS Bundle Format</a>.</p>
+<p>Now come back to the topic <code>transform code into js bundle</code>. There are several ways to achieve the goal.</p>
+<h2 id="weex-toolkit"><a href="#weex-toolkit" class="headerlink" title="weex-toolkit"></a>weex-toolkit</h2><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ npm install -g weex-toolkit</div></pre></td></tr></table></figure>
+<h3 id="transform-a-we-file-to-JS-Bundle"><a href="#transform-a-we-file-to-JS-Bundle" class="headerlink" title="transform a we file to JS Bundle"></a>transform a <code>we file</code> to JS Bundle</h3><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ weex your_best_weex.we  -o .</div></pre></td></tr></table></figure>
+<p><code>your_best_weex.we</code> will be transform to JS Bundle file <code>your_best_weex.js</code> , saved in your current directory</p>
+<h3 id="transform-a-we-file-to-JS-Bundle-watch-this-file-，auto-run-transformer-if-change-happen"><a href="#transform-a-we-file-to-JS-Bundle-watch-this-file-，auto-run-transformer-if-change-happen" class="headerlink" title="transform a we file to JS Bundle , watch this file ，auto run transformer if change happen."></a>transform a <code>we file</code> to JS Bundle , watch this file ，auto run transformer if change happen.</h3><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ weex your_best_weex.we  -o . --watch</div></pre></td></tr></table></figure>
+<h3 id="transform-every-we-file-in-a-directory"><a href="#transform-every-we-file-in-a-directory" class="headerlink" title="transform every we file in a directory"></a>transform every we file in a directory</h3><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ weex we/file/storage/path  -o outputpath</div></pre></td></tr></table></figure>
+<p>every <code>we file</code> in <code>we/file/storage/path</code> will be transformed to JS Bundle  , saved in <code>outputpath</code> path</p>
+<p>please access <a href="https://www.npmjs.com/package/weex-toolkit" target="_blank" rel="external">npmjs.com</a> for more information about weex-toolkit.</p>
+<h2 id="transformer"><a href="#transformer" class="headerlink" title="transformer"></a>transformer</h2><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">npm install weex-transformer</div></pre></td></tr></table></figure>
+<h3 id="CLI-Tool"><a href="#CLI-Tool" class="headerlink" title="CLI Tool"></a>CLI Tool</h3><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">Usage: transformer [options] &lt;file...&gt;</div><div class="line"></div><div class="line">Options:</div><div class="line"></div><div class="line">  -h, --help               output usage information</div><div class="line">  -V, --version            output the version number</div><div class="line">  <span class="_">-l</span>, --oldFormat [value]  whether to transform to old format (default: <span class="literal">false</span>)</div><div class="line">  <span class="_">-e</span>, --isEntry [value]    whether is an entry module <span class="built_in">which</span> has `bootstrap` (default: <span class="literal">true</span>)</div><div class="line">  -o, --output [path]      the output file dirname</div></pre></td></tr></table></figure>
+<h3 id="API"><a href="#API" class="headerlink" title="API"></a>API</h3><p><strong> transform(name, code, path, elements, config) </strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> transformer = <span class="built_in">require</span>(<span class="string">'weex-transformer'</span>)</div><div class="line"><span class="keyword">var</span> output = transformer.transform(<span class="string">'foo'</span>, <span class="string">'/* code here */'</span>, <span class="string">'.'</span>, &#123;&#125;)</div></pre></td></tr></table></figure>
+<p>params:</p>
+<ul>
+<li><code>name</code>: string, current bundle name</li>
+<li><code>code</code>: string, source code</li>
+<li><code>path</code>: string <em>optional</em>, useful when find custom component in a certain path</li>
+<li><code>elements</code>: object <em>optional</em>, existed custom component map</li>
+<li><code>config</code>: object <em>optional</em><ul>
+<li><code>oldFormat</code>: whether to transform to old format (default: false)</li>
+<li><code>isEntry</code>: whether is an entry module which has <code>bootstrap</code> (default: true)</li>
+</ul>
+</li>
+</ul>
+<p>returns:</p>
+<ul>
+<li>an object with keys<ul>
+<li><code>result</code>: string, all custom components <code>define()</code> and final <code>bootstrap()</code></li>
+<li><code>logs</code>: array, corresponding warning &amp; error logs</li>
+</ul>
+</li>
+</ul>
+<h2 id="gulp-weex"><a href="#gulp-weex" class="headerlink" title="gulp weex"></a>gulp weex</h2><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ npm install gulp-weex</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> gulp = <span class="built_in">require</span>(<span class="string">'gulp'</span>)</div><div class="line"><span class="keyword">var</span> weex = <span class="built_in">require</span>(<span class="string">'gulp-weex'</span>)</div><div class="line"></div><div class="line">gulp.task(<span class="string">'default'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> gulp.src(<span class="string">'src/*.html'</span>)</div><div class="line">    .pipe(weex(&#123;&#125;))</div><div class="line">    .pipe(gulp.dest(<span class="string">'./dest'</span>))</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>Options:</p>
+<ul>
+<li><code>oldFormat</code>: whether to transform to old format (default: false)</li>
+<li><code>isEntry</code>: whether is an entry module which has <code>bootstrap</code> (default: true)</li>
+</ul>
+
+  </div>
+  
+</article>
+</div>
+  <script>window.PAGE_TYPE = "guide"</script>
+  <footer id="footer">
+  <div class="row clearfix">
+    <div class="ali-logo">
+      <img src="/weex-website/images/ali-open-source.png" alt="Alibaba">
+    </div>
+    <div class="dropdown select-lang">
+      <a href="javascript:;" class="dropdown-toggle">
+        Language
+        <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu">
+        <li>
+          <a href="/weex-website/v-0.10/guide/how-to/transform-code-into-js-bundle.html">English</a>
+        </li>
+        <li>
+          <a href="/weex-website/cn/v-0.10/guide/how-to/transform-code-into-js-bundle.html">中文</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <p><span>Released under </span><a href="">Apache License 2.0</a></p>
+  </div>
+  <div class="row clearfix">
+    <div class="cell"><span>Copyright(c) 2016 </span><a href="https://www.alibaba.com">Alibaba</a></div>
+    <div class="cell"><span>GroupMade by </span><a href="">阿里云UED AX</a></div>
+  </div>
+</footer>
+  <div style="display: none;">
+  <script src="//s95.cnzz.com/z_stat.php?id=1261102667&amp;web_id=1261102667" language="JavaScript"></script>
+</div>
+
+  <script src="/weex-website/js/reqwest.js"></script>
+  <script src="/weex-website/js/velocity.js"></script>
+  <script src="/weex-website/js/common.js"></script>
+</body>
+</html>

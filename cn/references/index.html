@@ -3,33 +3,33 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Bootstrap | Weex</title>
+  <title>Weex 实例变量 | Weex</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Bootstrap除了其默认的意义，&amp;lt;script&amp;gt;标签支持在页面的顶级组件中通过 type 属性定义两种配置。
+  <meta name="description" content="Weex 实例变量每个 Weex 页面的 JS 上下文中都有一个相互独立的 weex 变量，用来持有当前 Weex 页面相关的单例内容或方法。
+weex.config该变量包含了当前 Weex 页面的所有环境信息，包括不仅限于：
 
-type=&amp;quot;data&amp;quot;: 配置初始化数据，这里定义的数据会覆盖定义在&amp;lt;script&amp;gt;中的数据；
-type=&amp;quot;config&amp;quot;: 定义配置项。
-
-&amp;lt;script type=&quot;data&quot;&amp;gt;  /* (可选) 定义初">
+bundleUrl: string: JS bundle 的 URL。
+env: Object: 环境对象。
+weexVersion: string: Weex sdk">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Bootstrap">
+<meta property="og:title" content="Weex 实例变量">
 <meta property="og:url" content="http://alibaba.github.io/cn/references/index.html">
 <meta property="og:site_name" content="Weex">
-<meta property="og:description" content="Bootstrap除了其默认的意义，&amp;lt;script&amp;gt;标签支持在页面的顶级组件中通过 type 属性定义两种配置。
+<meta property="og:description" content="Weex 实例变量每个 Weex 页面的 JS 上下文中都有一个相互独立的 weex 变量，用来持有当前 Weex 页面相关的单例内容或方法。
+weex.config该变量包含了当前 Weex 页面的所有环境信息，包括不仅限于：
 
-type=&amp;quot;data&amp;quot;: 配置初始化数据，这里定义的数据会覆盖定义在&amp;lt;script&amp;gt;中的数据；
-type=&amp;quot;config&amp;quot;: 定义配置项。
-
-&amp;lt;script type=&quot;data&quot;&amp;gt;  /* (可选) 定义初">
-<meta property="og:updated_time" content="2017-01-08T06:39:01.000Z">
+bundleUrl: string: JS bundle 的 URL。
+env: Object: 环境对象。
+weexVersion: string: Weex sdk">
+<meta property="og:updated_time" content="2017-01-10T07:00:59.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Bootstrap">
-<meta name="twitter:description" content="Bootstrap除了其默认的意义，&amp;lt;script&amp;gt;标签支持在页面的顶级组件中通过 type 属性定义两种配置。
+<meta name="twitter:title" content="Weex 实例变量">
+<meta name="twitter:description" content="Weex 实例变量每个 Weex 页面的 JS 上下文中都有一个相互独立的 weex 变量，用来持有当前 Weex 页面相关的单例内容或方法。
+weex.config该变量包含了当前 Weex 页面的所有环境信息，包括不仅限于：
 
-type=&amp;quot;data&amp;quot;: 配置初始化数据，这里定义的数据会覆盖定义在&amp;lt;script&amp;gt;中的数据；
-type=&amp;quot;config&amp;quot;: 定义配置项。
-
-&amp;lt;script type=&quot;data&quot;&amp;gt;  /* (可选) 定义初">
+bundleUrl: string: JS bundle 的 URL。
+env: Object: 环境对象。
+weexVersion: string: Weex sdk">
   
     <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
   
@@ -56,14 +56,8 @@ type=&amp;quot;config&amp;quot;: 定义配置项。
         <li><a href="/weex-website/cn/references">手册</a></li>
         <li><a href="/weex-website/cn/faq.html">FAQ</a></li>
         <li class="dropdown">
-            <a href="javascript:;">资源</a>
+            <a href="javascript:;">工具</a>
             <ul class="dropdown-menu subnav">
-              <li>
-                <a href="/weex-website/cn/tools">工具和服务</a>
-              </li>
-              <li>
-                <a href="/weex-website/cn/advanced">高阶知识</a>
-              </li>
               <li>
                 <a href="/weex-website/cn/playground.html">Playground</a>
               </li>
@@ -115,7 +109,10 @@ type=&amp;quot;config&amp;quot;: 定义配置项。
   <div class="results-panel">
   </div>
 </div>
-      <div class="summary">
+      
+
+
+<div class="summary">
   <h2 class="part-title">
     
       手册
@@ -345,16 +342,35 @@ type=&amp;quot;config&amp;quot;: 定义配置项。
         
       
     
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
    
     
       <li>
         
-          <h3 class="chapter-title">通用选项</h3>
+          <h3 class="chapter-title">通用特性</h3>
           
             <ul class="chapter">
               
                 <li>
-                  <a href="/weex-website/cn/references/index.html" class="sidebar-link current ">Bootstrap</a>
+                  <a href="/weex-website/cn/references/index.html" class="sidebar-link current ">Weex 实例变量</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/unit.html" class="sidebar-link  ">CSS 单位</a>
                 </li>
               
                 <li>
@@ -362,31 +378,7 @@ type=&amp;quot;config&amp;quot;: 定义配置项。
                 </li>
               
                 <li>
-                  <a href="/weex-website/cn/references/special-element.html" class="sidebar-link  ">特殊元素</a>
-                </li>
-              
-                <li>
-                  <a href="/weex-website/cn/references/component-defs.html" class="sidebar-link  ">ViewModel 选项</a>
-                </li>
-              
-                <li>
-                  <a href="/weex-website/cn/references/api.html" class="sidebar-link  ">ViewModel APIs</a>
-                </li>
-              
-                <li>
-                  <a href="/weex-website/cn/references/gesture.html" class="sidebar-link  ">手势</a>
-                </li>
-              
-                <li>
-                  <a href="/weex-website/cn/references/common-attrs.html" class="sidebar-link  ">通用特性</a>
-                </li>
-              
-                <li>
                   <a href="/weex-website/cn/references/common-style.html" class="sidebar-link  ">通用样式</a>
-                </li>
-              
-                <li>
-                  <a href="/weex-website/cn/references/text-style.html" class="sidebar-link  ">文本样式</a>
                 </li>
               
                 <li>
@@ -394,7 +386,23 @@ type=&amp;quot;config&amp;quot;: 定义配置项。
                 </li>
               
                 <li>
-                  <a href="/weex-website/cn/references/units.html" class="sidebar-link  ">CSS 单位</a>
+                  <a href="/weex-website/cn/references/gesture.html" class="sidebar-link  ">手势</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/text-style.html" class="sidebar-link  ">文本样式</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/android-apis.html" class="sidebar-link  ">Android APIs</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/native-dom-api.html" class="sidebar-link  ">Native DOM APIs</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/web-standards.html" class="sidebar-link  ">Web 标准</a>
                 </li>
               
             </ul>
@@ -445,11 +453,11 @@ type=&amp;quot;config&amp;quot;: 定义配置项。
                 </li>
               
                 <li>
-                  <a href="/weex-website/cn/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
+                  <a href="/weex-website/cn/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
                 </li>
               
                 <li>
-                  <a href="/weex-website/cn/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
+                  <a href="/weex-website/cn/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
                 </li>
               
                 <li>
@@ -470,25 +478,6 @@ type=&amp;quot;config&amp;quot;: 定义配置项。
               
                 <li>
                   <a href="/weex-website/cn/references/components/slider.html" class="sidebar-link  ">&lt;slider&gt;</a>
-                </li>
-              
-            </ul>
-          
-        
-      </li>
-    
-      <li>
-        
-          <h3 class="chapter-title"><a href="/weex-website/cn/references/wxc/index.html" class="sidebar-link  ">官方扩展组件</a></h3>
-          
-            <ul class="chapter">
-              
-                <li>
-                  <a href="/weex-website/cn/references/wxc/wxc-navpage.html" class="sidebar-link  ">&lt;wxc-navpage&gt;</a>
-                </li>
-              
-                <li>
-                  <a href="/weex-website/cn/references/wxc/wxc-tabbar.html" class="sidebar-link  ">&lt;wxc-tabbar&gt;</a>
                 </li>
               
             </ul>
@@ -545,20 +534,16 @@ type=&amp;quot;config&amp;quot;: 定义配置项。
     
       <li>
         
-          <h3 class="chapter-title">底层规范</h3>
+          <h3 class="chapter-title">Vue</h3>
           
             <ul class="chapter">
               
                 <li>
-                  <a href="/weex-website/cn/references/specs/index.html" class="sidebar-link  ">JS Bundle format (英)</a>
+                  <a href="/weex-website/cn/references/vue/index.html" class="sidebar-link  ">Vue 2.x 在 Weex 和 Web 中的差异</a>
                 </li>
               
                 <li>
-                  <a href="/weex-website/cn/references/specs/js-framework-apis.html" class="sidebar-link  ">JS Framework APIs (英)</a>
-                </li>
-              
-                <li>
-                  <a href="/weex-website/cn/references/specs/virtual-dom-apis.html" class="sidebar-link  ">Virtual DOM APIs</a>
+                  <a href="/weex-website/cn/references/vue/difference-of-vuex.html" class="sidebar-link  ">在 Weex 项目中使用 Vuex 和 vue-router</a>
                 </li>
               
             </ul>
@@ -568,7 +553,58 @@ type=&amp;quot;config&amp;quot;: 定义配置项。
     
       <li>
         
-          <h3 class="chapter-title"></h3>
+          <h3 class="chapter-title">Advanced</h3>
+          
+            <ul class="chapter">
+              
+                <li>
+                  <a href="/weex-website/cn/references/advanced/index.html" class="sidebar-link  ">拓展 iOS</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/advanced/extend-to-android.html" class="sidebar-link  ">Android 扩展</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/advanced/extend-to-html5.html" class="sidebar-link  ">拓展 HTML5</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/advanced/extend-jsfm.html" class="sidebar-link  ">拓展 JS framework</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/advanced/extend-js-service.html" class="sidebar-link  ">拓展 JS Service (later)</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/advanced/integrate-devtool-to-android.html" class="sidebar-link  ">集成 Devtools 到 Android</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/advanced/integrate-devtool-to-ios.html" class="sidebar-link  ">集成 Devtools 到 iOS</a>
+                </li>
+              
+            </ul>
+          
+        
+      </li>
+    
+      <li>
+        
+          <h3 class="chapter-title">Migration</h3>
+          
+            <ul class="chapter">
+              
+                <li>
+                  <a href="/weex-website/cn/references/migration/index.html" class="sidebar-link  ">如何将原有 Weex 项目改造成 Vue 版本</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/migration/difference.html" class="sidebar-link  ">Weex 和 Vue 2.x 的语法差异</a>
+                </li>
+              
+            </ul>
           
         
       </li>
@@ -581,7 +617,10 @@ type=&amp;quot;config&amp;quot;: 定义配置项。
 </div>
   <div class="article-wrapper page-layout">
   <div class="doc-nav">
-    <div class="summary">
+    
+
+
+<div class="summary">
   <h2 class="part-title">
     
       手册
@@ -811,16 +850,35 @@ type=&amp;quot;config&amp;quot;: 定义配置项。
         
       
     
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
    
     
       <li>
         
-          <h3 class="chapter-title">通用选项</h3>
+          <h3 class="chapter-title">通用特性</h3>
           
             <ul class="chapter">
               
                 <li>
-                  <a href="/weex-website/cn/references/index.html" class="sidebar-link current ">Bootstrap</a>
+                  <a href="/weex-website/cn/references/index.html" class="sidebar-link current ">Weex 实例变量</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/unit.html" class="sidebar-link  ">CSS 单位</a>
                 </li>
               
                 <li>
@@ -828,31 +886,7 @@ type=&amp;quot;config&amp;quot;: 定义配置项。
                 </li>
               
                 <li>
-                  <a href="/weex-website/cn/references/special-element.html" class="sidebar-link  ">特殊元素</a>
-                </li>
-              
-                <li>
-                  <a href="/weex-website/cn/references/component-defs.html" class="sidebar-link  ">ViewModel 选项</a>
-                </li>
-              
-                <li>
-                  <a href="/weex-website/cn/references/api.html" class="sidebar-link  ">ViewModel APIs</a>
-                </li>
-              
-                <li>
-                  <a href="/weex-website/cn/references/gesture.html" class="sidebar-link  ">手势</a>
-                </li>
-              
-                <li>
-                  <a href="/weex-website/cn/references/common-attrs.html" class="sidebar-link  ">通用特性</a>
-                </li>
-              
-                <li>
                   <a href="/weex-website/cn/references/common-style.html" class="sidebar-link  ">通用样式</a>
-                </li>
-              
-                <li>
-                  <a href="/weex-website/cn/references/text-style.html" class="sidebar-link  ">文本样式</a>
                 </li>
               
                 <li>
@@ -860,7 +894,23 @@ type=&amp;quot;config&amp;quot;: 定义配置项。
                 </li>
               
                 <li>
-                  <a href="/weex-website/cn/references/units.html" class="sidebar-link  ">CSS 单位</a>
+                  <a href="/weex-website/cn/references/gesture.html" class="sidebar-link  ">手势</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/text-style.html" class="sidebar-link  ">文本样式</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/android-apis.html" class="sidebar-link  ">Android APIs</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/native-dom-api.html" class="sidebar-link  ">Native DOM APIs</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/web-standards.html" class="sidebar-link  ">Web 标准</a>
                 </li>
               
             </ul>
@@ -911,11 +961,11 @@ type=&amp;quot;config&amp;quot;: 定义配置项。
                 </li>
               
                 <li>
-                  <a href="/weex-website/cn/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
+                  <a href="/weex-website/cn/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
                 </li>
               
                 <li>
-                  <a href="/weex-website/cn/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
+                  <a href="/weex-website/cn/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
                 </li>
               
                 <li>
@@ -936,25 +986,6 @@ type=&amp;quot;config&amp;quot;: 定义配置项。
               
                 <li>
                   <a href="/weex-website/cn/references/components/slider.html" class="sidebar-link  ">&lt;slider&gt;</a>
-                </li>
-              
-            </ul>
-          
-        
-      </li>
-    
-      <li>
-        
-          <h3 class="chapter-title"><a href="/weex-website/cn/references/wxc/index.html" class="sidebar-link  ">官方扩展组件</a></h3>
-          
-            <ul class="chapter">
-              
-                <li>
-                  <a href="/weex-website/cn/references/wxc/wxc-navpage.html" class="sidebar-link  ">&lt;wxc-navpage&gt;</a>
-                </li>
-              
-                <li>
-                  <a href="/weex-website/cn/references/wxc/wxc-tabbar.html" class="sidebar-link  ">&lt;wxc-tabbar&gt;</a>
                 </li>
               
             </ul>
@@ -1011,20 +1042,16 @@ type=&amp;quot;config&amp;quot;: 定义配置项。
     
       <li>
         
-          <h3 class="chapter-title">底层规范</h3>
+          <h3 class="chapter-title">Vue</h3>
           
             <ul class="chapter">
               
                 <li>
-                  <a href="/weex-website/cn/references/specs/index.html" class="sidebar-link  ">JS Bundle format (英)</a>
+                  <a href="/weex-website/cn/references/vue/index.html" class="sidebar-link  ">Vue 2.x 在 Weex 和 Web 中的差异</a>
                 </li>
               
                 <li>
-                  <a href="/weex-website/cn/references/specs/js-framework-apis.html" class="sidebar-link  ">JS Framework APIs (英)</a>
-                </li>
-              
-                <li>
-                  <a href="/weex-website/cn/references/specs/virtual-dom-apis.html" class="sidebar-link  ">Virtual DOM APIs</a>
+                  <a href="/weex-website/cn/references/vue/difference-of-vuex.html" class="sidebar-link  ">在 Weex 项目中使用 Vuex 和 vue-router</a>
                 </li>
               
             </ul>
@@ -1034,7 +1061,58 @@ type=&amp;quot;config&amp;quot;: 定义配置项。
     
       <li>
         
-          <h3 class="chapter-title"></h3>
+          <h3 class="chapter-title">Advanced</h3>
+          
+            <ul class="chapter">
+              
+                <li>
+                  <a href="/weex-website/cn/references/advanced/index.html" class="sidebar-link  ">拓展 iOS</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/advanced/extend-to-android.html" class="sidebar-link  ">Android 扩展</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/advanced/extend-to-html5.html" class="sidebar-link  ">拓展 HTML5</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/advanced/extend-jsfm.html" class="sidebar-link  ">拓展 JS framework</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/advanced/extend-js-service.html" class="sidebar-link  ">拓展 JS Service (later)</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/advanced/integrate-devtool-to-android.html" class="sidebar-link  ">集成 Devtools 到 Android</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/advanced/integrate-devtool-to-ios.html" class="sidebar-link  ">集成 Devtools 到 iOS</a>
+                </li>
+              
+            </ul>
+          
+        
+      </li>
+    
+      <li>
+        
+          <h3 class="chapter-title">Migration</h3>
+          
+            <ul class="chapter">
+              
+                <li>
+                  <a href="/weex-website/cn/references/migration/index.html" class="sidebar-link  ">如何将原有 Weex 项目改造成 Vue 版本</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/migration/difference.html" class="sidebar-link  ">Weex 和 Vue 2.x 的语法差异</a>
+                </li>
+              
+            </ul>
           
         
       </li>
@@ -1050,28 +1128,31 @@ type=&amp;quot;config&amp;quot;: 定义配置项。
   
     
       <h1 class="article-title" itemprop="name">
-        Bootstrap
+        Weex 实例变量
       </h1>
     
   
-  <time class="article-date" datetime="2017-01-08T06:39:01.000Z">Updated time: 08/01/2017</time>
+  <time class="article-date" datetime="2017-01-10T07:00:59.000Z">Updated time: 10/01/2017</time>
 </header>
-    <h1 id="Bootstrap"><a href="#Bootstrap" class="headerlink" title="Bootstrap"></a>Bootstrap</h1><p>除了其默认的意义，<code>&lt;script&gt;</code>标签支持在页面的顶级组件中通过 <code>type</code> 属性定义两种配置。</p>
+    <h1 id="Weex-实例变量"><a href="#Weex-实例变量" class="headerlink" title="Weex 实例变量"></a>Weex 实例变量</h1><p>每个 Weex 页面的 JS 上下文中都有一个相互独立的 <code>weex</code> 变量，用来持有当前 Weex 页面相关的单例内容或方法。</p>
+<h2 id="weex-config"><a href="#weex-config" class="headerlink" title="weex.config"></a><code>weex.config</code></h2><p>该变量包含了当前 Weex 页面的所有环境信息，包括不仅限于：</p>
 <ul>
-<li><code>type=&quot;data&quot;</code>: 配置初始化数据，这里定义的数据会覆盖定义在<code>&lt;script&gt;</code>中的数据；</li>
-<li><code>type=&quot;config&quot;</code>: 定义配置项。</li>
+<li><code>bundleUrl: string</code>: JS bundle 的 URL。</li>
+<li><code>env: Object</code>: 环境对象。<ul>
+<li><code>weexVersion: string</code>: Weex sdk 版本。</li>
+<li><code>appName: string</code>: 应用名字。</li>
+<li><code>appVersion: string</code>: 应用版本。</li>
+<li><code>platform: string</code>: 平台信息，是 iOS、Android 还是 Web。</li>
+<li><code>osVersion: string</code>: 系统版本。</li>
+<li><code>deviceModel: string</code>: 设备型号 (仅原生应用)。</li>
+<li><code>deviceWidth: number</code>: 设备宽度，默认为 750。</li>
+<li><code>deviceHeight: number</code>: 设备高度。</li>
 </ul>
-<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"data"</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="comment">/* (可选) 定义初始化数据 */</span></div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"config"</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="comment">/* (可选) 定义配置项 */</span></div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
-<h2 id="定义初始化数据"><a href="#定义初始化数据" class="headerlink" title="定义初始化数据"></a>定义初始化数据</h2><p>有时，很难在默认的<code>&lt;script&gt;</code>标签中维护巨大的数据结构。所以 Weex 允许我们通过 <code>&lt;script type=&quot;data&quot;&gt;</code> 标签定义初始化数据。在这里定义的数据将完全取代默认的 <code>&lt;script&gt;</code> 标签中定义的数据。</p>
-<p>例如：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"data"</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="built_in">module</span>.exports = &#123;</div><div class="line">      <span class="attr">title</span>: <span class="string">'Alibaba'</span>,</div><div class="line">      <span class="attr">date</span>: <span class="keyword">new</span> <span class="built_in">Date</span>().toLocaleString()</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
-<h2 id="配置项"><a href="#配置项" class="headerlink" title="配置项"></a>配置项</h2><p>Weex 也允许我们通过 <code>&lt;script type=&quot;config&quot;&gt;</code> 定义一些配置项，目前，仅只支持配置 <code>downgrade</code>。</p>
-<ul>
-<li><code>downgrade.osVersion</code></li>
-<li><code>downgrade.appVersion</code></li>
-<li><code>downgrade.weexVersion</code></li>
-<li><code>downgrade.deviceModel</code></li>
+</li>
 </ul>
+<h2 id="weex-require-module-string-Object"><a href="#weex-require-module-string-Object" class="headerlink" title="weex.require(module: string): Object"></a><code>weex.require(module: string): Object</code></h2><p>获取某个 native module 的所有方法，比如：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;<span class="name">text</span>&gt;</span>Hello World<span class="tag">&lt;/<span class="name">text</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="keyword">var</span> modal = weex.require(<span class="string">'modal'</span>)</div><div class="line">  modal.toast(&#123;</div><div class="line">    <span class="attr">message</span>: <span class="string">'I am a toast.'</span>,</div><div class="line">    <span class="attr">duration</span>: <span class="number">3</span></div><div class="line">  &#125;)</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="weex-document-Document"><a href="#weex-document-Document" class="headerlink" title="weex.document: Document"></a><code>weex.document: Document</code></h2><p>返回当前 Weex 页面的文档对象。</p>
 
   </div>
   

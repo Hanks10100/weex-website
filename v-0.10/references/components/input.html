@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>&lt;input&gt; | Weex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="inputThe weex builtin component input is used to create input controls to receive the user’s input characters. How a input component works varies considerably depending on the value of its type attrib">
+<meta property="og:type" content="website">
+<meta property="og:title" content="<input>">
+<meta property="og:url" content="http://alibaba.github.io/v-0.10/references/components/input.html">
+<meta property="og:site_name" content="Weex">
+<meta property="og:description" content="inputThe weex builtin component input is used to create input controls to receive the user’s input characters. How a input component works varies considerably depending on the value of its type attrib">
+<meta property="og:updated_time" content="2017-01-09T12:40:28.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="<input>">
+<meta name="twitter:description" content="inputThe weex builtin component input is used to create input controls to receive the user’s input characters. How a input component works varies considerably depending on the value of its type attrib">
+  
+    <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/weex-website/css/style.css">
+  <link rel="stylesheet" href="/weex-website/css/swiper.min.css">
+</head>
+
+<body id="references" class="lang-en">
+  
+  <header id="header">
+  <div class="navbar">
+    <a id="logo" href="/weex-website/">
+      <img src="/weex-website/images/logo.png" />
+    </a>
+    <div class="main-nav">
+      <ul class="links">
+        <li><a href="/weex-website/guide">Guide</a></li>
+        <li><a href="/weex-website/references">References</a></li>
+        <li><a href="/weex-website/faq.html">FAQ</a></li>
+        <li class="dropdown">
+            <a href="javascript:;">Tools</a>
+            <ul class="dropdown-menu subnav">
+              <li>
+                <a href="/weex-website/playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
+              </li>
+              <li>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Snippets</a>
+              </li>
+            </ul>
+        </li>
+      </ul>
+      <ul class="info">
+        <li><a href="https://github.com/alibaba/weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+      </ul>
+      <ul class="tools">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <!--<li></li>-->
+      </ul>
+    </div>
+  </div>
+  <div id="mobile-nav">
+    <a id="logo" href="/weex-website/">
+      <img src="/weex-website/images/logo.png" />
+    </a>
+    <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
+  </div>
+</header>
+  <div id="sidebar" class="">
+  <div class="sidebar-menu">
+    
+      <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-sidebar" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+      
+
+
+<div class="summary">
+  <h2 class="part-title">
+    
+      References
+    
+  </h2>
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+   
+    
+      <li>
+        
+          <h3 class="chapter-title">Common Options</h3>
+          
+            <ul class="chapter">
+              
+                <li>
+                  <a href="/weex-website/v-0.10/references/index.html" class="sidebar-link  ">Bootstrap</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/references/special-element.html" class="sidebar-link  ">Special Element</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/references/component-defs.html" class="sidebar-link  ">Component Definition</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/references/api.html" class="sidebar-link  ">Component APIs</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/references/gesture.html" class="sidebar-link  ">Gesture</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/references/common-attrs.html" class="sidebar-link  ">Common Attribute</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/references/common-style.html" class="sidebar-link  ">Common Style</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/references/color-names.html" class="sidebar-link  ">List of the names of colors</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/references/text-style.html" class="sidebar-link  ">Text Style</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/references/common-event.html" class="sidebar-link  ">Common Events</a>
+                </li>
+              
+            </ul>
+          
+        
+      </li>
+    
+      <li>
+        
+          <h3 class="chapter-title">Build-in Components</h3>
+          
+            <ul class="chapter">
+              
+                <li>
+                  <a href="/weex-website/v-0.10/references/components/index.html" class="sidebar-link  ">&lt;a&gt;</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/references/components/switch.html" class="sidebar-link  ">&lt;switch&gt;</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/references/components/text.html" class="sidebar-link  ">&lt;text&gt;</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/references/components/textarea.html" class="sidebar-link  ">&lt;textarea&gt;</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/references/components/video.html" class="sidebar-link  ">&lt;video&gt;</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/references/components/web.html" class="sidebar-link  ">&lt;web&gt;</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/references/components/wxc-navpage.html" class="sidebar-link  ">&lt;wxc-navpage&gt;</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/references/components/wxc-tabbar.html" class="sidebar-link  ">&lt;wxc-tabbar&gt;</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/references/components/div.html" class="sidebar-link  ">&lt;div&gt;</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/references/components/image.html" class="sidebar-link  ">&lt;image&gt;</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/references/components/input.html" class="sidebar-link current ">&lt;input&gt;</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/references/components/cell.html" class="sidebar-link  ">&lt;cell&gt;</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/references/components/refresh-loading.html" class="sidebar-link  ">&lt;refresh&gt; &amp; &lt;loading&gt;</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/references/components/scroller.html" class="sidebar-link  ">&lt;scroller&gt;</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/references/components/slider.html" class="sidebar-link  ">&lt;slider&gt;</a>
+                </li>
+              
+            </ul>
+          
+        
+      </li>
+    
+      <li>
+        
+          <h3 class="chapter-title"><a href="/weex-website/v-0.10/references/modules/index.html" class="sidebar-link  ">Built-in Modules</a></h3>
+          
+            <ul class="chapter">
+              
+                <li>
+                  <a href="/weex-website/v-0.10/references/modules/animation.html" class="sidebar-link  ">animation</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/references/modules/globalevent.html" class="sidebar-link  ">globalEvent</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/references/modules/clipboard.html" class="sidebar-link  ">clipboard</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/references/modules/dom.html" class="sidebar-link  ">dom</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/references/modules/modal.html" class="sidebar-link  ">modal</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/references/modules/navigator.html" class="sidebar-link  ">navigator</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/references/modules/storage.html" class="sidebar-link  ">storage</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/references/modules/stream.html" class="sidebar-link  ">stream</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/references/modules/timer.html" class="sidebar-link  ">Timer</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/references/modules/webview.html" class="sidebar-link  ">webview</a>
+                </li>
+              
+            </ul>
+          
+        
+      </li>
+    
+      <li>
+        
+          <h3 class="chapter-title">Low-level Specs</h3>
+          
+            <ul class="chapter">
+              
+                <li>
+                  <a href="/weex-website/v-0.10/references/specs/index.html" class="sidebar-link  ">JS Bundle format</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/references/specs/js-bundle-format.html" class="sidebar-link  ">JS Bundle format</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/references/specs/js-framework-apis.html" class="sidebar-link  ">JS Framework APIs</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/references/specs/virtual-dom-apis.html" class="sidebar-link  ">Virtual DOM APIs</a>
+                </li>
+              
+            </ul>
+          
+        
+      </li>
+    
+  </ul>
+</div>
+    
+    <a class="btn-close-sidebar iconfont  icon-close"></a>
+  </div>
+</div>
+  <div class="article-wrapper page-layout">
+  <div class="doc-nav">
+    
+
+
+<div class="summary">
+  <h2 class="part-title">
+    
+      References
+    
+  </h2>
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+   
+    
+      <li>
+        
+          <h3 class="chapter-title">Common Options</h3>
+          
+            <ul class="chapter">
+              
+                <li>
+                  <a href="/weex-website/v-0.10/references/index.html" class="sidebar-link  ">Bootstrap</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/references/special-element.html" class="sidebar-link  ">Special Element</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/references/component-defs.html" class="sidebar-link  ">Component Definition</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/references/api.html" class="sidebar-link  ">Component APIs</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/references/gesture.html" class="sidebar-link  ">Gesture</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/references/common-attrs.html" class="sidebar-link  ">Common Attribute</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/references/common-style.html" class="sidebar-link  ">Common Style</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/references/color-names.html" class="sidebar-link  ">List of the names of colors</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/references/text-style.html" class="sidebar-link  ">Text Style</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/references/common-event.html" class="sidebar-link  ">Common Events</a>
+                </li>
+              
+            </ul>
+          
+        
+      </li>
+    
+      <li>
+        
+          <h3 class="chapter-title">Build-in Components</h3>
+          
+            <ul class="chapter">
+              
+                <li>
+                  <a href="/weex-website/v-0.10/references/components/index.html" class="sidebar-link  ">&lt;a&gt;</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/references/components/switch.html" class="sidebar-link  ">&lt;switch&gt;</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/references/components/text.html" class="sidebar-link  ">&lt;text&gt;</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/references/components/textarea.html" class="sidebar-link  ">&lt;textarea&gt;</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/references/components/video.html" class="sidebar-link  ">&lt;video&gt;</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/references/components/web.html" class="sidebar-link  ">&lt;web&gt;</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/references/components/wxc-navpage.html" class="sidebar-link  ">&lt;wxc-navpage&gt;</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/references/components/wxc-tabbar.html" class="sidebar-link  ">&lt;wxc-tabbar&gt;</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/references/components/div.html" class="sidebar-link  ">&lt;div&gt;</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/references/components/image.html" class="sidebar-link  ">&lt;image&gt;</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/references/components/input.html" class="sidebar-link current ">&lt;input&gt;</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/references/components/cell.html" class="sidebar-link  ">&lt;cell&gt;</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/references/components/refresh-loading.html" class="sidebar-link  ">&lt;refresh&gt; &amp; &lt;loading&gt;</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/references/components/scroller.html" class="sidebar-link  ">&lt;scroller&gt;</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/references/components/slider.html" class="sidebar-link  ">&lt;slider&gt;</a>
+                </li>
+              
+            </ul>
+          
+        
+      </li>
+    
+      <li>
+        
+          <h3 class="chapter-title"><a href="/weex-website/v-0.10/references/modules/index.html" class="sidebar-link  ">Built-in Modules</a></h3>
+          
+            <ul class="chapter">
+              
+                <li>
+                  <a href="/weex-website/v-0.10/references/modules/animation.html" class="sidebar-link  ">animation</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/references/modules/globalevent.html" class="sidebar-link  ">globalEvent</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/references/modules/clipboard.html" class="sidebar-link  ">clipboard</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/references/modules/dom.html" class="sidebar-link  ">dom</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/references/modules/modal.html" class="sidebar-link  ">modal</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/references/modules/navigator.html" class="sidebar-link  ">navigator</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/references/modules/storage.html" class="sidebar-link  ">storage</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/references/modules/stream.html" class="sidebar-link  ">stream</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/references/modules/timer.html" class="sidebar-link  ">Timer</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/references/modules/webview.html" class="sidebar-link  ">webview</a>
+                </li>
+              
+            </ul>
+          
+        
+      </li>
+    
+      <li>
+        
+          <h3 class="chapter-title">Low-level Specs</h3>
+          
+            <ul class="chapter">
+              
+                <li>
+                  <a href="/weex-website/v-0.10/references/specs/index.html" class="sidebar-link  ">JS Bundle format</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/references/specs/js-bundle-format.html" class="sidebar-link  ">JS Bundle format</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/references/specs/js-framework-apis.html" class="sidebar-link  ">JS Framework APIs</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/references/specs/virtual-dom-apis.html" class="sidebar-link  ">Virtual DOM APIs</a>
+                </li>
+              
+            </ul>
+          
+        
+      </li>
+    
+  </ul>
+</div>
+  </div>
+  
+
+<article class="article article-type-references">
+  <div class="article-entry" itemprop="articleBody">
+    <header class="article-header">
+  
+    
+      <h1 class="article-title" itemprop="name">
+        &lt;input&gt;
+      </h1>
+    
+  
+  <time class="article-date" datetime="2017-01-09T12:40:28.000Z">Updated time: 09/01/2017</time>
+</header>
+    <h1 id="input"><a href="#input" class="headerlink" title="input"></a>input</h1><p>The weex builtin component <code>input</code> is used to create input controls to receive the user’s input characters. How a <code>input</code> component works varies considerably depending on the value of its <code>type</code> attribute, such as <code>text</code>, <code>password</code>, <code>url</code>, <code>email</code>, <code>tel</code> etc.</p>
+<p><strong>Notes:</strong> does not support the common-event <code>click</code>. Please listen to the <code>input</code> or <code>change</code> event instead.</p>
+<h2 id="Child-Components"><a href="#Child-Components" class="headerlink" title="Child Components"></a>Child Components</h2><p>This component supports no child components.</p>
+<h2 id="Attributes"><a href="#Attributes" class="headerlink" title="Attributes"></a>Attributes</h2><ul>
+<li><p><code>type</code>: the type of controls to display. The default value is <code>text</code>, if this attribute is not specified. Possible values are <code>text</code>, <code>password</code>, <code>tel</code>, <code>email</code>, <code>url</code> etc. each of which has the same meaning with W3C standard.</p>
+</li>
+<li><p><code>value</code>: the value(text) of the control.</p>
+</li>
+<li><p><code>placeholder</code>: a hint to the user of which can be entered to the control. The placeholder text must have no carriage returns or line-feeds.</p>
+</li>
+<li><p><code>disabled</code>: a boolean attribute indicates that the form control is not available for interaction. In particular, the click event will not be dispatched on disabled controls.</p>
+</li>
+<li><p><code>autofocus</code>: a boolean attribute lets you specify that a form control should have input focus when the page loads.</p>
+</li>
+<li><p><code>maxlength</code>: <span class="api-version">v0.7+</span> a number value to specify maxlength of input.</p>
+</li>
+</ul>
+<p>Other attributes please check out the <a href="../common-attrs.html">common attributes</a>.</p>
+<h2 id="Styles"><a href="#Styles" class="headerlink" title="Styles"></a>Styles</h2><ul>
+<li><p>placeholder-color: the color of placeholder. Default value is ‘#999999’.</p>
+</li>
+<li><p>text styles: checkout <a href="../text-style.html">text styles</a></p>
+<ul>
+<li>support ‘color’ style.</li>
+<li>support ‘font-size’ style.</li>
+<li>support ‘font-style’ style.</li>
+<li>support ‘font-weight’ style.</li>
+<li>support ‘text-align’ style.</li>
+</ul>
+</li>
+</ul>
+<h3 id="common-styles"><a href="#common-styles" class="headerlink" title="common styles"></a>common styles</h3><p>check out <a href="../common-style.html">common styles for components</a></p>
+<ul>
+<li>support flexbox related styles.</li>
+<li>support box model related styles.</li>
+<li>support ‘position’ related styles.</li>
+<li>support ‘opacity’, ‘background-color’ etc.</li>
+</ul>
+<h2 id="Events"><a href="#Events" class="headerlink" title="Events"></a>Events</h2><ul>
+<li>input: the value of an input character changes.</li>
+<li>change: the change event is fired when a change to the component’s value is commited by the user. It always come after a ‘blur’ event.</li>
+<li>focus: a component has received focus.</li>
+<li>blur: a component has lost focus.</li>
+</ul>
+<h3 id="common-events"><a href="#common-events" class="headerlink" title="common events"></a>common events</h3><p>check out <a href="../common-event.html">common events</a></p>
+<ul>
+<li>support ‘appear’ / ‘disappear’ event. </li>
+</ul>
+<h3 id="Notes"><a href="#Notes" class="headerlink" title="Notes"></a>Notes</h3><p>does not support the common-event ‘click’. Please listen to the ‘input’ or ‘change’ event instead.</p>
+<h3 id="Parameters-of-events’-object"><a href="#Parameters-of-events’-object" class="headerlink" title="Parameters of events’ object"></a>Parameters of events’ object</h3><ul>
+<li>for ‘input’ and ‘change’ events:’value’: the value of the component who dispatched this event.’timestamp’: the time stamp of the event.</li>
+<li>for ‘focus’ and ‘blur’ events:’timestamp’: the time stamp of the event.</li>
+</ul>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">input</span></span></div><div class="line">        <span class="attr">type</span>=<span class="string">"text"</span></div><div class="line">        <span class="attr">placeholder</span>=<span class="string">"Input Something"</span></div><div class="line">        <span class="attr">class</span>=<span class="string">"input"</span></div><div class="line">        <span class="attr">autofocus</span>=<span class="string">"true"</span></div><div class="line">        <span class="attr">value</span>=<span class="string">""</span></div><div class="line">        <span class="attr">onchange</span>=<span class="string">"onchange"</span></div><div class="line">        <span class="attr">oninput</span>=<span class="string">"oninput"</span></div><div class="line">      /&gt;</div><div class="line">      <span class="tag">&lt;<span class="name">text</span>&gt;</span>oninput: &#123;&#123;txtInput&#125;&#125;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">text</span>&gt;</span>onchange: &#123;&#123;txtChange&#125;&#125;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></div><div class="line">  <span class="selector-class">.input</span> &#123;</div><div class="line">    <span class="attribute">font-size</span>: <span class="number">60</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">80</span>;</div><div class="line">    <span class="attribute">width</span>: <span class="number">400</span>;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="built_in">require</span>(<span class="string">'weex-components'</span>);</div><div class="line">  <span class="built_in">module</span>.exports = &#123;</div><div class="line">    <span class="attr">data</span>: &#123;</div><div class="line">      <span class="attr">txtInput</span>: <span class="string">''</span>,</div><div class="line">      <span class="attr">txtChange</span>: <span class="string">''</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">methods</span>: &#123;</div><div class="line">      <span class="attr">onchange</span>: <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</div><div class="line">        <span class="keyword">this</span>.txtChange = event.value;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'onchange'</span>, event.value);</div><div class="line">      &#125;,</div><div class="line">      <span class="attr">oninput</span>: <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</div><div class="line">        <span class="keyword">this</span>.txtInput = event.value;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'oninput'</span>, event.value);</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><a href="http://dotwe.org/e1b18eb89facb4e2a5467ee4bebd9be6" target="_blank" rel="external">Try it</a></p>
+<p>Use <a href="https://alibaba.github.io/weex/download.html">Weex Playground</a> App to Scan the QR image and view the example for  ‘input’. </p>
+
+  </div>
+  
+</article>
+</div>
+  <script>window.PAGE_TYPE = "references"</script>
+  <footer id="footer">
+  <div class="row clearfix">
+    <div class="ali-logo">
+      <img src="/weex-website/images/ali-open-source.png" alt="Alibaba">
+    </div>
+    <div class="dropdown select-lang">
+      <a href="javascript:;" class="dropdown-toggle">
+        Language
+        <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu">
+        <li>
+          <a href="/weex-website/v-0.10/references/components/input.html">English</a>
+        </li>
+        <li>
+          <a href="/weex-website/cn/v-0.10/references/components/input.html">中文</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <p><span>Released under </span><a href="">Apache License 2.0</a></p>
+  </div>
+  <div class="row clearfix">
+    <div class="cell"><span>Copyright(c) 2016 </span><a href="https://www.alibaba.com">Alibaba</a></div>
+    <div class="cell"><span>GroupMade by </span><a href="">阿里云UED AX</a></div>
+  </div>
+</footer>
+  <div style="display: none;">
+  <script src="//s95.cnzz.com/z_stat.php?id=1261102667&amp;web_id=1261102667" language="JavaScript"></script>
+</div>
+
+  <script src="/weex-website/js/reqwest.js"></script>
+  <script src="/weex-website/js/velocity.js"></script>
+  <script src="/weex-website/js/common.js"></script>
+</body>
+</html>

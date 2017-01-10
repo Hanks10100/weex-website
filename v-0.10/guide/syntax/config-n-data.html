@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Page Config &amp; Data | Weex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Page Config &amp;amp; DataYou can write some instance config and data in some additional &amp;lt;script&amp;gt; at the top-level Weex component.
+
+the instance config could declare some meta informations like whic">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Page Config & Data">
+<meta property="og:url" content="http://alibaba.github.io/v-0.10/guide/syntax/config-n-data.html">
+<meta property="og:site_name" content="Weex">
+<meta property="og:description" content="Page Config &amp;amp; DataYou can write some instance config and data in some additional &amp;lt;script&amp;gt; at the top-level Weex component.
+
+the instance config could declare some meta informations like whic">
+<meta property="og:updated_time" content="2017-01-09T12:39:43.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Page Config & Data">
+<meta name="twitter:description" content="Page Config &amp;amp; DataYou can write some instance config and data in some additional &amp;lt;script&amp;gt; at the top-level Weex component.
+
+the instance config could declare some meta informations like whic">
+  
+    <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/weex-website/css/style.css">
+  <link rel="stylesheet" href="/weex-website/css/swiper.min.css">
+</head>
+
+<body id="guide" class="lang-en">
+  
+  <header id="header">
+  <div class="navbar">
+    <a id="logo" href="/weex-website/">
+      <img src="/weex-website/images/logo.png" />
+    </a>
+    <div class="main-nav">
+      <ul class="links">
+        <li><a href="/weex-website/guide">Guide</a></li>
+        <li><a href="/weex-website/references">References</a></li>
+        <li><a href="/weex-website/faq.html">FAQ</a></li>
+        <li class="dropdown">
+            <a href="javascript:;">Tools</a>
+            <ul class="dropdown-menu subnav">
+              <li>
+                <a href="/weex-website/playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
+              </li>
+              <li>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Snippets</a>
+              </li>
+            </ul>
+        </li>
+      </ul>
+      <ul class="info">
+        <li><a href="https://github.com/alibaba/weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+      </ul>
+      <ul class="tools">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <!--<li></li>-->
+      </ul>
+    </div>
+  </div>
+  <div id="mobile-nav">
+    <a id="logo" href="/weex-website/">
+      <img src="/weex-website/images/logo.png" />
+    </a>
+    <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
+  </div>
+</header>
+  <div id="sidebar" class="">
+  <div class="sidebar-menu">
+    
+      <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-sidebar" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+      
+
+
+<div class="summary">
+  <h2 class="part-title">
+    
+      Guide
+    
+  </h2>
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+   
+    
+      <li>
+        
+          <h3 class="chapter-title"></h3>
+          
+        
+      </li>
+    
+      <li>
+        
+          <h3 class="chapter-title"><a href="/weex-website/v-0.10/guide/syntax/index.html" class="sidebar-link  ">Syntax</a></h3>
+          
+            <ul class="chapter">
+              
+                <li>
+                  <a href="/weex-website/v-0.10/guide/syntax/data-binding.html" class="sidebar-link  ">Data-Binding</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/guide/syntax/style-n-class.html" class="sidebar-link  ">Style &amp; Class</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/guide/syntax/events.html" class="sidebar-link  ">Events</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/guide/syntax/display-logic.html" class="sidebar-link  ">Display Logic Control</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/guide/syntax/render-logic.html" class="sidebar-link  ">Render Logic Control</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/guide/syntax/composed-component.html" class="sidebar-link  ">Composed Component</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/guide/syntax/id.html" class="sidebar-link  ">Find an Element</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/guide/syntax/comm.html" class="sidebar-link  ">Communications</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/guide/syntax/config-n-data.html" class="sidebar-link current ">Page Config &amp; Data</a>
+                </li>
+              
+            </ul>
+          
+        
+      </li>
+    
+      <li>
+        
+          <h3 class="chapter-title">How-tos</h3>
+          
+            <ul class="chapter">
+              
+                <li>
+                  <a href="/weex-website/v-0.10/guide/how-to/index.html" class="sidebar-link  ">Preview in browser</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/guide/how-to/preview-in-playground-app.html" class="sidebar-link  ">Preview in native</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/guide/how-to/customize-a-native-component.html" class="sidebar-link  ">Customize a native Component</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/guide/how-to/cuszomize-native-apis.html" class="sidebar-link  ">Customize native APIs</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/guide/how-to/debug-with-html5.html" class="sidebar-link  ">Debug in html5 renderer</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/guide/how-to/require-3rd-party-libs.html" class="sidebar-link  ">Require 3rd Party Libs</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/guide/how-to/transform-code-into-js-bundle.html" class="sidebar-link  ">Transform Code into Js Bundle</a>
+                </li>
+              
+            </ul>
+          
+        
+      </li>
+    
+  </ul>
+</div>
+    
+    <a class="btn-close-sidebar iconfont  icon-close"></a>
+  </div>
+</div>
+  <div class="article-wrapper page-layout">
+  <div class="doc-nav">
+    
+
+
+<div class="summary">
+  <h2 class="part-title">
+    
+      Guide
+    
+  </h2>
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+   
+    
+      <li>
+        
+          <h3 class="chapter-title"></h3>
+          
+        
+      </li>
+    
+      <li>
+        
+          <h3 class="chapter-title"><a href="/weex-website/v-0.10/guide/syntax/index.html" class="sidebar-link  ">Syntax</a></h3>
+          
+            <ul class="chapter">
+              
+                <li>
+                  <a href="/weex-website/v-0.10/guide/syntax/data-binding.html" class="sidebar-link  ">Data-Binding</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/guide/syntax/style-n-class.html" class="sidebar-link  ">Style &amp; Class</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/guide/syntax/events.html" class="sidebar-link  ">Events</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/guide/syntax/display-logic.html" class="sidebar-link  ">Display Logic Control</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/guide/syntax/render-logic.html" class="sidebar-link  ">Render Logic Control</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/guide/syntax/composed-component.html" class="sidebar-link  ">Composed Component</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/guide/syntax/id.html" class="sidebar-link  ">Find an Element</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/guide/syntax/comm.html" class="sidebar-link  ">Communications</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/guide/syntax/config-n-data.html" class="sidebar-link current ">Page Config &amp; Data</a>
+                </li>
+              
+            </ul>
+          
+        
+      </li>
+    
+      <li>
+        
+          <h3 class="chapter-title">How-tos</h3>
+          
+            <ul class="chapter">
+              
+                <li>
+                  <a href="/weex-website/v-0.10/guide/how-to/index.html" class="sidebar-link  ">Preview in browser</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/guide/how-to/preview-in-playground-app.html" class="sidebar-link  ">Preview in native</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/guide/how-to/customize-a-native-component.html" class="sidebar-link  ">Customize a native Component</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/guide/how-to/cuszomize-native-apis.html" class="sidebar-link  ">Customize native APIs</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/guide/how-to/debug-with-html5.html" class="sidebar-link  ">Debug in html5 renderer</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/guide/how-to/require-3rd-party-libs.html" class="sidebar-link  ">Require 3rd Party Libs</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/v-0.10/guide/how-to/transform-code-into-js-bundle.html" class="sidebar-link  ">Transform Code into Js Bundle</a>
+                </li>
+              
+            </ul>
+          
+        
+      </li>
+    
+  </ul>
+</div>
+  </div>
+  
+
+<article class="article article-type-guide">
+  <div class="article-entry" itemprop="articleBody">
+    <header class="article-header">
+  
+    
+      <h1 class="article-title" itemprop="name">
+        Page Config &amp; Data
+      </h1>
+    
+  
+  <time class="article-date" datetime="2017-01-09T12:39:43.000Z">Updated time: 09/01/2017</time>
+</header>
+    <h1 id="Page-Config-amp-Data"><a href="#Page-Config-amp-Data" class="headerlink" title="Page Config &amp; Data"></a>Page Config &amp; Data</h1><p>You can write some instance config and data in some additional <code>&lt;script&gt;</code> at the <strong>top-level</strong> Weex component.</p>
+<ul>
+<li>the instance config could declare some meta informations like which sdk/client version it supports or “downgrade” to HTML5 renderer. This part would be extended more in the future.</li>
+<li>the instance data could set an external data which would be processed instead of the default top-level component data.</li>
+</ul>
+<p>They all make Weex files more extendable and configurable and works easy with other tools &amp; services like CMS system.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- definition of sub components --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">element</span> <span class="attr">name</span>=<span class="string">"sub-component-a"</span>&gt;</span>...<span class="tag">&lt;/<span class="name">element</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">element</span> <span class="attr">name</span>=<span class="string">"sub-component-b"</span>&gt;</span>...<span class="tag">&lt;/<span class="name">element</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">element</span> <span class="attr">name</span>=<span class="string">"sub-component-c"</span>&gt;</span>...<span class="tag">&lt;/<span class="name">element</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- definition of top-level component --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span>...<span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="built_in">module</span>.exports = &#123;</div><div class="line">    <span class="attr">data</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;<span class="keyword">return</span> &#123;<span class="attr">x</span>: <span class="number">1</span>, <span class="attr">y</span>: <span class="number">2</span>&#125;&#125;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- instance config and data --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"config"</span>&gt;</span><span class="javascript"></span></div><div class="line">  &#123;</div><div class="line">    <span class="attr">downgrade</span>: &#123;</div><div class="line">      <span class="attr">ios</span>: &#123;</div><div class="line">        <span class="attr">os</span>: <span class="string">'9'</span>, <span class="comment">// all of 9.x.x</span></div><div class="line">        app: <span class="string">'~5.3.2'</span>,</div><div class="line">        <span class="attr">framework</span>: <span class="string">'^1.3'</span>, <span class="comment">// all of 1.3.x</span></div><div class="line">        deviceModel: [<span class="string">'AAAA'</span>, <span class="string">'BBBB'</span>]</div><div class="line">      &#125;,</div><div class="line">      <span class="attr">android</span>: &#123;</div><div class="line">        <span class="attr">os</span>: <span class="string">'*'</span>, <span class="comment">// all of version</span></div><div class="line">        app: <span class="string">'^5'</span>,</div><div class="line">        <span class="attr">framework</span>: <span class="string">''</span>,</div><div class="line">        <span class="attr">deviceModel</span>: <span class="string">''</span></div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"data"</span>&gt;</span><span class="undefined"></span></div><div class="line">  &#123;y: 200&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>Notice that these two additional <code>&lt;script&gt;</code> are both optinal and have <code>type=&quot;config|data&quot;</code> attribute and only works when it’s the top-level component of a Weex instance.</p>
+<p>So that’s all about Weex syntax. For more reading, please check out:</p>
+<ul>
+<li><a href="../how-to/index.html">how-tos</a> articles and</li>
+<li><a href="../../advanced/index.html">advanced</a> topics.</li>
+</ul>
+
+  </div>
+  
+</article>
+</div>
+  <script>window.PAGE_TYPE = "guide"</script>
+  <footer id="footer">
+  <div class="row clearfix">
+    <div class="ali-logo">
+      <img src="/weex-website/images/ali-open-source.png" alt="Alibaba">
+    </div>
+    <div class="dropdown select-lang">
+      <a href="javascript:;" class="dropdown-toggle">
+        Language
+        <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu">
+        <li>
+          <a href="/weex-website/v-0.10/guide/syntax/config-n-data.html">English</a>
+        </li>
+        <li>
+          <a href="/weex-website/cn/v-0.10/guide/syntax/config-n-data.html">中文</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <p><span>Released under </span><a href="">Apache License 2.0</a></p>
+  </div>
+  <div class="row clearfix">
+    <div class="cell"><span>Copyright(c) 2016 </span><a href="https://www.alibaba.com">Alibaba</a></div>
+    <div class="cell"><span>GroupMade by </span><a href="">阿里云UED AX</a></div>
+  </div>
+</footer>
+  <div style="display: none;">
+  <script src="//s95.cnzz.com/z_stat.php?id=1261102667&amp;web_id=1261102667" language="JavaScript"></script>
+</div>
+
+  <script src="/weex-website/js/reqwest.js"></script>
+  <script src="/weex-website/js/velocity.js"></script>
+  <script src="/weex-website/js/common.js"></script>
+</body>
+</html>

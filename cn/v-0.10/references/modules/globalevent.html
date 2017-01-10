@@ -1,0 +1,1128 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>globalEvent | Weex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="全局事件0.8 (开发中)
+globalEvent 用于监听持久性事件，例如定位信息，陀螺仪等的变化。全局事件是需要额外 APIs 处理的次要 API。你能通过 addEventListener 注册事件监听，当你不再需要的时候，也可以通过 removingEventListener 取消事件监听。
+提醒
+
+这是一个实例级别的事件，而非应用级别。
+
+如何让你的模块支持全局事件API 开发完成后，当">
+<meta property="og:type" content="website">
+<meta property="og:title" content="globalEvent">
+<meta property="og:url" content="http://alibaba.github.io/cn/v-0.10/references/modules/globalevent.html">
+<meta property="og:site_name" content="Weex">
+<meta property="og:description" content="全局事件0.8 (开发中)
+globalEvent 用于监听持久性事件，例如定位信息，陀螺仪等的变化。全局事件是需要额外 APIs 处理的次要 API。你能通过 addEventListener 注册事件监听，当你不再需要的时候，也可以通过 removingEventListener 取消事件监听。
+提醒
+
+这是一个实例级别的事件，而非应用级别。
+
+如何让你的模块支持全局事件API 开发完成后，当">
+<meta property="og:updated_time" content="2017-01-09T12:49:33.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="globalEvent">
+<meta name="twitter:description" content="全局事件0.8 (开发中)
+globalEvent 用于监听持久性事件，例如定位信息，陀螺仪等的变化。全局事件是需要额外 APIs 处理的次要 API。你能通过 addEventListener 注册事件监听，当你不再需要的时候，也可以通过 removingEventListener 取消事件监听。
+提醒
+
+这是一个实例级别的事件，而非应用级别。
+
+如何让你的模块支持全局事件API 开发完成后，当">
+  
+    <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/weex-website/css/style.css">
+  <link rel="stylesheet" href="/weex-website/css/swiper.min.css">
+</head>
+
+<body id="references" class="lang-cn">
+  
+  <header id="header">
+  <div class="navbar">
+    <a id="logo" href="/weex-website/cn/">
+      <img src="/weex-website/images/logo.png" />
+    </a>
+    <div class="main-nav">
+      <ul class="links">
+        <li><a href="/weex-website/cn/guide">教程</a></li>
+        <li><a href="/weex-website/cn/references">手册</a></li>
+        <li><a href="/weex-website/cn/faq.html">FAQ</a></li>
+        <li class="dropdown">
+            <a href="javascript:;">工具</a>
+            <ul class="dropdown-menu subnav">
+              <li>
+                <a href="/weex-website/cn/playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
+              </li>
+              <li>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Snippets</a>
+              </li>
+            </ul>
+        </li>
+      </ul>
+      <ul class="info">
+        <li><a href="https://github.com/alibaba/weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+      </ul>
+      <ul class="tools">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <!--<li></li>-->
+      </ul>
+    </div>
+  </div>
+  <div id="mobile-nav">
+    <a id="logo" href="/weex-website/cn/">
+      <img src="/weex-website/images/logo.png" />
+    </a>
+    <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
+  </div>
+</header>
+  <div id="sidebar" class="">
+  <div class="sidebar-menu">
+    
+      <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-sidebar" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+      
+
+
+<div class="summary">
+  <h2 class="part-title">
+    
+      手册
+    
+  </h2>
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+   
+    
+      <li>
+        
+          <h3 class="chapter-title">通用选项</h3>
+          
+            <ul class="chapter">
+              
+                <li>
+                  <a href="/weex-website/cn/v-0.10/references/index.html" class="sidebar-link  ">Bootstrap</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/v-0.10/references/common-event.html" class="sidebar-link  ">通用事件</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/v-0.10/references/special-element.html" class="sidebar-link  ">特殊元素</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/v-0.10/references/component-defs.html" class="sidebar-link  ">ViewModel 选项</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/v-0.10/references/api.html" class="sidebar-link  ">ViewModel APIs</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/v-0.10/references/gesture.html" class="sidebar-link  ">手势</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/v-0.10/references/common-attrs.html" class="sidebar-link  ">通用特性</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/v-0.10/references/common-style.html" class="sidebar-link  ">通用样式</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/v-0.10/references/text-style.html" class="sidebar-link  ">文本样式</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/v-0.10/references/color-names.html" class="sidebar-link  ">颜色名称列表</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/v-0.10/references/units.html" class="sidebar-link  ">CSS 单位</a>
+                </li>
+              
+            </ul>
+          
+        
+      </li>
+    
+      <li>
+        
+          <h3 class="chapter-title">内建组件</h3>
+          
+            <ul class="chapter">
+              
+                <li>
+                  <a href="/weex-website/cn/v-0.10/references/components/index.html" class="sidebar-link  ">&lt;a&gt;</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/v-0.10/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/v-0.10/references/components/switch.html" class="sidebar-link  ">&lt;switch&gt;</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/v-0.10/references/components/text.html" class="sidebar-link  ">&lt;text&gt;</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/v-0.10/references/components/textarea.html" class="sidebar-link  ">&lt;textarea&gt;</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/v-0.10/references/components/video.html" class="sidebar-link  ">&lt;video&gt;</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/v-0.10/references/components/web.html" class="sidebar-link  ">&lt;web&gt;</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/v-0.10/references/components/div.html" class="sidebar-link  ">&lt;div&gt;</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/v-0.10/references/components/image.html" class="sidebar-link  ">&lt;image&gt;</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/v-0.10/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/v-0.10/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/v-0.10/references/components/cell.html" class="sidebar-link  ">&lt;cell&gt;</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/v-0.10/references/components/loading.html" class="sidebar-link  ">&lt;loading&gt;</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/v-0.10/references/components/refresh.html" class="sidebar-link  ">&lt;refresh&gt;</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/v-0.10/references/components/scroller.html" class="sidebar-link  ">&lt;scroller&gt;</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/v-0.10/references/components/slider.html" class="sidebar-link  ">&lt;slider&gt;</a>
+                </li>
+              
+            </ul>
+          
+        
+      </li>
+    
+      <li>
+        
+          <h3 class="chapter-title"><a href="/weex-website/cn/v-0.10/references/wxc/index.html" class="sidebar-link  ">官方扩展组件</a></h3>
+          
+            <ul class="chapter">
+              
+                <li>
+                  <a href="/weex-website/cn/v-0.10/references/wxc/wxc-navpage.html" class="sidebar-link  ">&lt;wxc-navpage&gt;</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/v-0.10/references/wxc/wxc-tabbar.html" class="sidebar-link  ">&lt;wxc-tabbar&gt;</a>
+                </li>
+              
+            </ul>
+          
+        
+      </li>
+    
+      <li>
+        
+          <h3 class="chapter-title"><a href="/weex-website/cn/v-0.10/references/modules/index.html" class="sidebar-link  ">内建模块</a></h3>
+          
+            <ul class="chapter">
+              
+                <li>
+                  <a href="/weex-website/cn/v-0.10/references/modules/animation.html" class="sidebar-link  ">animation</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/v-0.10/references/modules/clipboard.html" class="sidebar-link  ">clipboard</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/v-0.10/references/modules/dom.html" class="sidebar-link  ">dom</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/v-0.10/references/modules/modal.html" class="sidebar-link  ">modal</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/v-0.10/references/modules/navigator.html" class="sidebar-link  ">navigator</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/v-0.10/references/modules/storage.html" class="sidebar-link  ">storage</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/v-0.10/references/modules/stream.html" class="sidebar-link  ">stream</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/v-0.10/references/modules/webview.html" class="sidebar-link  ">webview</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/v-0.10/references/modules/globalevent.html" class="sidebar-link current ">globalEvent</a>
+                </li>
+              
+            </ul>
+          
+        
+      </li>
+    
+      <li>
+        
+          <h3 class="chapter-title">底层规范</h3>
+          
+            <ul class="chapter">
+              
+                <li>
+                  <a href="/weex-website/cn/v-0.10/references/specs/index.html" class="sidebar-link  ">JS Bundle format (英)</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/v-0.10/references/specs/js-framework-apis.html" class="sidebar-link  ">JS Framework APIs (英)</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/v-0.10/references/specs/virtual-dom-apis.html" class="sidebar-link  ">Virtual DOM APIs</a>
+                </li>
+              
+            </ul>
+          
+        
+      </li>
+    
+      <li>
+        
+          <h3 class="chapter-title"></h3>
+          
+        
+      </li>
+    
+  </ul>
+</div>
+    
+    <a class="btn-close-sidebar iconfont  icon-close"></a>
+  </div>
+</div>
+  <div class="article-wrapper page-layout">
+  <div class="doc-nav">
+    
+
+
+<div class="summary">
+  <h2 class="part-title">
+    
+      手册
+    
+  </h2>
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+   
+    
+      <li>
+        
+          <h3 class="chapter-title">通用选项</h3>
+          
+            <ul class="chapter">
+              
+                <li>
+                  <a href="/weex-website/cn/v-0.10/references/index.html" class="sidebar-link  ">Bootstrap</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/v-0.10/references/common-event.html" class="sidebar-link  ">通用事件</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/v-0.10/references/special-element.html" class="sidebar-link  ">特殊元素</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/v-0.10/references/component-defs.html" class="sidebar-link  ">ViewModel 选项</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/v-0.10/references/api.html" class="sidebar-link  ">ViewModel APIs</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/v-0.10/references/gesture.html" class="sidebar-link  ">手势</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/v-0.10/references/common-attrs.html" class="sidebar-link  ">通用特性</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/v-0.10/references/common-style.html" class="sidebar-link  ">通用样式</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/v-0.10/references/text-style.html" class="sidebar-link  ">文本样式</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/v-0.10/references/color-names.html" class="sidebar-link  ">颜色名称列表</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/v-0.10/references/units.html" class="sidebar-link  ">CSS 单位</a>
+                </li>
+              
+            </ul>
+          
+        
+      </li>
+    
+      <li>
+        
+          <h3 class="chapter-title">内建组件</h3>
+          
+            <ul class="chapter">
+              
+                <li>
+                  <a href="/weex-website/cn/v-0.10/references/components/index.html" class="sidebar-link  ">&lt;a&gt;</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/v-0.10/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/v-0.10/references/components/switch.html" class="sidebar-link  ">&lt;switch&gt;</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/v-0.10/references/components/text.html" class="sidebar-link  ">&lt;text&gt;</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/v-0.10/references/components/textarea.html" class="sidebar-link  ">&lt;textarea&gt;</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/v-0.10/references/components/video.html" class="sidebar-link  ">&lt;video&gt;</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/v-0.10/references/components/web.html" class="sidebar-link  ">&lt;web&gt;</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/v-0.10/references/components/div.html" class="sidebar-link  ">&lt;div&gt;</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/v-0.10/references/components/image.html" class="sidebar-link  ">&lt;image&gt;</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/v-0.10/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/v-0.10/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/v-0.10/references/components/cell.html" class="sidebar-link  ">&lt;cell&gt;</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/v-0.10/references/components/loading.html" class="sidebar-link  ">&lt;loading&gt;</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/v-0.10/references/components/refresh.html" class="sidebar-link  ">&lt;refresh&gt;</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/v-0.10/references/components/scroller.html" class="sidebar-link  ">&lt;scroller&gt;</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/v-0.10/references/components/slider.html" class="sidebar-link  ">&lt;slider&gt;</a>
+                </li>
+              
+            </ul>
+          
+        
+      </li>
+    
+      <li>
+        
+          <h3 class="chapter-title"><a href="/weex-website/cn/v-0.10/references/wxc/index.html" class="sidebar-link  ">官方扩展组件</a></h3>
+          
+            <ul class="chapter">
+              
+                <li>
+                  <a href="/weex-website/cn/v-0.10/references/wxc/wxc-navpage.html" class="sidebar-link  ">&lt;wxc-navpage&gt;</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/v-0.10/references/wxc/wxc-tabbar.html" class="sidebar-link  ">&lt;wxc-tabbar&gt;</a>
+                </li>
+              
+            </ul>
+          
+        
+      </li>
+    
+      <li>
+        
+          <h3 class="chapter-title"><a href="/weex-website/cn/v-0.10/references/modules/index.html" class="sidebar-link  ">内建模块</a></h3>
+          
+            <ul class="chapter">
+              
+                <li>
+                  <a href="/weex-website/cn/v-0.10/references/modules/animation.html" class="sidebar-link  ">animation</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/v-0.10/references/modules/clipboard.html" class="sidebar-link  ">clipboard</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/v-0.10/references/modules/dom.html" class="sidebar-link  ">dom</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/v-0.10/references/modules/modal.html" class="sidebar-link  ">modal</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/v-0.10/references/modules/navigator.html" class="sidebar-link  ">navigator</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/v-0.10/references/modules/storage.html" class="sidebar-link  ">storage</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/v-0.10/references/modules/stream.html" class="sidebar-link  ">stream</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/v-0.10/references/modules/webview.html" class="sidebar-link  ">webview</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/v-0.10/references/modules/globalevent.html" class="sidebar-link current ">globalEvent</a>
+                </li>
+              
+            </ul>
+          
+        
+      </li>
+    
+      <li>
+        
+          <h3 class="chapter-title">底层规范</h3>
+          
+            <ul class="chapter">
+              
+                <li>
+                  <a href="/weex-website/cn/v-0.10/references/specs/index.html" class="sidebar-link  ">JS Bundle format (英)</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/v-0.10/references/specs/js-framework-apis.html" class="sidebar-link  ">JS Framework APIs (英)</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/v-0.10/references/specs/virtual-dom-apis.html" class="sidebar-link  ">Virtual DOM APIs</a>
+                </li>
+              
+            </ul>
+          
+        
+      </li>
+    
+      <li>
+        
+          <h3 class="chapter-title"></h3>
+          
+        
+      </li>
+    
+  </ul>
+</div>
+  </div>
+  
+
+<article class="article article-type-references">
+  <div class="article-entry" itemprop="articleBody">
+    <header class="article-header">
+  
+    
+      <h1 class="article-title" itemprop="name">
+        globalEvent
+      </h1>
+    
+  
+  <time class="article-date" datetime="2017-01-09T14:25:41.000Z">Updated time: 09/01/2017</time>
+</header>
+    <h1 id="全局事件"><a href="#全局事件" class="headerlink" title="全局事件"></a>全局事件</h1><p><span class="weex-version">0.8 (开发中)</span></p>
+<p><code>globalEvent</code> 用于监听持久性事件，例如定位信息，陀螺仪等的变化。全局事件是需要额外 APIs 处理的次要 API。你能通过 <code>addEventListener</code> 注册事件监听，当你不再需要的时候，也可以通过 <code>removingEventListener</code> 取消事件监听。</p>
+<p><em>提醒</em></p>
+<ul>
+<li>这是一个实例级别的事件，而非应用级别。</li>
+</ul>
+<h2 id="如何让你的模块支持全局事件"><a href="#如何让你的模块支持全局事件" class="headerlink" title="如何让你的模块支持全局事件"></a>如何让你的模块支持全局事件</h2><p>API 开发完成后，当需要发送事件时，需要通过以下方法：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line">  * </div><div class="line">  * @param eventName eventName</div><div class="line">  * @param params event params</div><div class="line">  */</div><div class="line">instance.fireGlobalEventCallback(eventName,params);</div></pre></td></tr></table></figure>
+<p>如何在 weex-html5 组件或模块中分发全局事件？只需在文档元素上分派事件：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> evt = <span class="keyword">new</span> Event(<span class="string">'some-type'</span>)</div><div class="line">evt.data = &#123; <span class="attr">foo</span>: <span class="string">'bar'</span> &#125;</div><div class="line"><span class="built_in">document</span>.dispatchEvent(evt)</div></pre></td></tr></table></figure>
+<p><strong>示例</strong></p>
+<h3 id="Android"><a href="#Android" class="headerlink" title="Android"></a>Android</h3><figure class="highlight java"><table><tr><td class="code"><pre><div class="line">Map&lt;String,Object&gt; params=<span class="keyword">new</span> HashMap&lt;&gt;();</div><div class="line">params.put(<span class="string">"key"</span>,<span class="string">"value"</span>);</div><div class="line">mWXSDKInstance.fireGlobalEventCallback(<span class="string">"geolocation"</span>,params);</div></pre></td></tr></table></figure>
+<h3 id="iOS"><a href="#iOS" class="headerlink" title="iOS"></a>iOS</h3><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">[weexInstance fireGlobalEvent:@&quot;geolocation&quot; params:@&#123;@&quot;key&quot;:@&quot;value&quot;&#125;];</div></pre></td></tr></table></figure>
+<h2 id="API"><a href="#API" class="headerlink" title="API"></a>API</h2><h3 id="addEventListener-String-eventName-String-callback"><a href="#addEventListener-String-eventName-String-callback" class="headerlink" title="addEventListener(String eventName, String callback)"></a><code>addEventListener(String eventName, String callback)</code></h3><p>注册全局事件。</p>
+<h4 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h4><ul>
+<li><code>eventName {string}</code>：需要监听的事件名称。</li>
+<li><code>callback {Function}</code>：触发事件后的回调函数。</li>
+</ul>
+<h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> globalEvent = <span class="built_in">require</span>(<span class="string">'@weex-module/globalEvent'</span>);</div><div class="line">globalEvent.addEventListener(<span class="string">"geolocation"</span>, <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">"get geolocation"</span>)</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h3 id="removeEventListener-String-eventName"><a href="#removeEventListener-String-eventName" class="headerlink" title="removeEventListener(String eventName)"></a><code>removeEventListener(String eventName)</code></h3><p>取消事件监听。</p>
+<h4 id="参数-1"><a href="#参数-1" class="headerlink" title="参数"></a>参数</h4><ul>
+<li><code>eventName {string}</code>：需要取消的事件名称。</li>
+</ul>
+<h4 id="示例-1"><a href="#示例-1" class="headerlink" title="示例"></a>示例</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> globalEvent = <span class="built_in">require</span>(<span class="string">'@weex-module/globalEvent'</span>);</div><div class="line">globalEvent.removeEventListener(<span class="string">"geolocation"</span>);</div></pre></td></tr></table></figure>
+
+  </div>
+  
+</article>
+</div>
+  <script>window.PAGE_TYPE = "references"</script>
+  <footer id="footer">
+  <div class="row clearfix">
+    <div class="ali-logo">
+      <img src="/weex-website/images/ali-open-source.png" alt="Alibaba">
+    </div>
+    <div class="dropdown select-lang">
+      <a href="javascript:;" class="dropdown-toggle">
+        Language
+        <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu">
+        <li>
+          <a href="/weex-website/v-0.10/references/modules/globalevent.html">English</a>
+        </li>
+        <li>
+          <a href="/weex-website/cn/v-0.10/references/modules/globalevent.html">中文</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <p><span>Released under </span><a href="">Apache License 2.0</a></p>
+  </div>
+  <div class="row clearfix">
+    <div class="cell"><span>Copyright(c) 2016 </span><a href="https://www.alibaba.com">Alibaba</a></div>
+    <div class="cell"><span>GroupMade by </span><a href="">阿里云UED AX</a></div>
+  </div>
+</footer>
+  <div style="display: none;">
+  <script src="//s95.cnzz.com/z_stat.php?id=1261102667&amp;web_id=1261102667" language="JavaScript"></script>
+</div>
+
+  <script src="/weex-website/js/reqwest.js"></script>
+  <script src="/weex-website/js/velocity.js"></script>
+  <script src="/weex-website/js/common.js"></script>
+</body>
+</html>

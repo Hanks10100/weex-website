@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>可拓展 (later) | Weex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="later">
+<meta property="og:type" content="website">
+<meta property="og:title" content="可拓展 (later)">
+<meta property="og:url" content="http://alibaba.github.io/cn/guide/intro/extendable.html">
+<meta property="og:site_name" content="Weex">
+<meta property="og:description" content="later">
+<meta property="og:updated_time" content="2017-01-10T06:44:05.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="可拓展 (later)">
+<meta name="twitter:description" content="later">
+  
+    <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/weex-website/css/style.css">
+  <link rel="stylesheet" href="/weex-website/css/swiper.min.css">
+</head>
+
+<body id="guide" class="lang-cn">
+  
+  <header id="header">
+  <div class="navbar">
+    <a id="logo" href="/weex-website/cn/">
+      <img src="/weex-website/images/logo.png" />
+    </a>
+    <div class="main-nav">
+      <ul class="links">
+        <li><a href="/weex-website/cn/guide">教程</a></li>
+        <li><a href="/weex-website/cn/references">手册</a></li>
+        <li><a href="/weex-website/cn/faq.html">FAQ</a></li>
+        <li class="dropdown">
+            <a href="javascript:;">工具</a>
+            <ul class="dropdown-menu subnav">
+              <li>
+                <a href="/weex-website/cn/playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
+              </li>
+              <li>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Snippets</a>
+              </li>
+            </ul>
+        </li>
+      </ul>
+      <ul class="info">
+        <li><a href="https://github.com/alibaba/weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+      </ul>
+      <ul class="tools">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <!--<li></li>-->
+      </ul>
+    </div>
+  </div>
+  <div id="mobile-nav">
+    <a id="logo" href="/weex-website/cn/">
+      <img src="/weex-website/images/logo.png" />
+    </a>
+    <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
+  </div>
+</header>
+  <div id="sidebar" class="">
+  <div class="sidebar-menu">
+    
+      <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-sidebar" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+      
+
+
+<div class="summary">
+  <h2 class="part-title">
+    
+      教程
+    
+  </h2>
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+   
+    
+      <li>
+        
+          <h3 class="chapter-title"><a href="/weex-website/cn/guide/index.html" class="sidebar-link  ">Get Started (Chinses)</a></h3>
+          
+        
+      </li>
+    
+      <li>
+        
+          <h3 class="chapter-title"><a href="/weex-website/cn/guide/dev-with-weexpack.html" class="sidebar-link  ">构建全新应用</a></h3>
+          
+        
+      </li>
+    
+      <li>
+        
+          <h3 class="chapter-title"><a href="/weex-website/cn/guide/integrate-to-your-app.html" class="sidebar-link  ">集成 Weex 到已有应用</a></h3>
+          
+        
+      </li>
+    
+      <li>
+        
+          <h3 class="chapter-title">Intro</h3>
+          
+            <ul class="chapter">
+              
+                <li>
+                  <a href="/weex-website/cn/guide/intro/index.html" class="sidebar-link  ">工作原理</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/guide/intro/web-dev-experience.html" class="sidebar-link  ">Web 开发体验</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/guide/intro/using-vue.html" class="sidebar-link  ">使用 Vue 开发 Weex 页面</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/guide/intro/write-once.html" class="sidebar-link  ">一次撰写，多端运行</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/guide/intro/app-architecture.html" class="sidebar-link  ">用 Weex 构建移动应用</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/guide/intro/page-architecture.html" class="sidebar-link  ">Weex 页面结构</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/guide/intro/lightweight.html" class="sidebar-link  ">轻量化 (later)</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/guide/intro/high-perf.html" class="sidebar-link  ">高性能 (later)</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/guide/intro/extendable.html" class="sidebar-link current ">可拓展 (later)</a>
+                </li>
+              
+            </ul>
+          
+        
+      </li>
+    
+  </ul>
+</div>
+    
+    <a class="btn-close-sidebar iconfont  icon-close"></a>
+  </div>
+</div>
+  <div class="article-wrapper page-layout">
+  <div class="doc-nav">
+    
+
+
+<div class="summary">
+  <h2 class="part-title">
+    
+      教程
+    
+  </h2>
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+   
+    
+      <li>
+        
+          <h3 class="chapter-title"><a href="/weex-website/cn/guide/index.html" class="sidebar-link  ">Get Started (Chinses)</a></h3>
+          
+        
+      </li>
+    
+      <li>
+        
+          <h3 class="chapter-title"><a href="/weex-website/cn/guide/dev-with-weexpack.html" class="sidebar-link  ">构建全新应用</a></h3>
+          
+        
+      </li>
+    
+      <li>
+        
+          <h3 class="chapter-title"><a href="/weex-website/cn/guide/integrate-to-your-app.html" class="sidebar-link  ">集成 Weex 到已有应用</a></h3>
+          
+        
+      </li>
+    
+      <li>
+        
+          <h3 class="chapter-title">Intro</h3>
+          
+            <ul class="chapter">
+              
+                <li>
+                  <a href="/weex-website/cn/guide/intro/index.html" class="sidebar-link  ">工作原理</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/guide/intro/web-dev-experience.html" class="sidebar-link  ">Web 开发体验</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/guide/intro/using-vue.html" class="sidebar-link  ">使用 Vue 开发 Weex 页面</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/guide/intro/write-once.html" class="sidebar-link  ">一次撰写，多端运行</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/guide/intro/app-architecture.html" class="sidebar-link  ">用 Weex 构建移动应用</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/guide/intro/page-architecture.html" class="sidebar-link  ">Weex 页面结构</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/guide/intro/lightweight.html" class="sidebar-link  ">轻量化 (later)</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/guide/intro/high-perf.html" class="sidebar-link  ">高性能 (later)</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/guide/intro/extendable.html" class="sidebar-link current ">可拓展 (later)</a>
+                </li>
+              
+            </ul>
+          
+        
+      </li>
+    
+  </ul>
+</div>
+  </div>
+  
+
+<article class="article article-type-guide">
+  <div class="article-entry" itemprop="articleBody">
+    <header class="article-header">
+  
+    
+      <h1 class="article-title" itemprop="name">
+        可拓展 (later)
+      </h1>
+    
+  
+  <time class="article-date" datetime="2017-01-10T06:44:05.000Z">Updated time: 10/01/2017</time>
+</header>
+    <p>later</p>
+
+  </div>
+  
+</article>
+</div>
+  <script>window.PAGE_TYPE = "guide"</script>
+  <footer id="footer">
+  <div class="row clearfix">
+    <div class="ali-logo">
+      <img src="/weex-website/images/ali-open-source.png" alt="Alibaba">
+    </div>
+    <div class="dropdown select-lang">
+      <a href="javascript:;" class="dropdown-toggle">
+        Language
+        <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu">
+        <li>
+          <a href="/weex-website/guide/intro/extendable.html">English</a>
+        </li>
+        <li>
+          <a href="/weex-website/cn/guide/intro/extendable.html">中文</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <p><span>Released under </span><a href="">Apache License 2.0</a></p>
+  </div>
+  <div class="row clearfix">
+    <div class="cell"><span>Copyright(c) 2016 </span><a href="https://www.alibaba.com">Alibaba</a></div>
+    <div class="cell"><span>GroupMade by </span><a href="">阿里云UED AX</a></div>
+  </div>
+</footer>
+  <div style="display: none;">
+  <script src="//s95.cnzz.com/z_stat.php?id=1261102667&amp;web_id=1261102667" language="JavaScript"></script>
+</div>
+
+  <script src="/weex-website/js/reqwest.js"></script>
+  <script src="/weex-website/js/velocity.js"></script>
+  <script src="/weex-website/js/common.js"></script>
+</body>
+</html>

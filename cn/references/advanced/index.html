@@ -1,0 +1,1289 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>拓展 iOS | Weex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Module 扩展swift 扩展 module 
+Weex SDK 只提供渲染，而不是其他的能力，如果你需要 像网络，图片，URL跳转这些特性，需要自己动手实现他们例如，如果你想实现一个url地址跳转函数，你可以按照如下步骤实现一个 Module
+
+自定义module的步骤
+
+自定义的module类 必须实现 WXModuleProtocol
+必须添加宏WX_EXPORT_METHOD, 它可以">
+<meta property="og:type" content="website">
+<meta property="og:title" content="拓展 iOS">
+<meta property="og:url" content="http://alibaba.github.io/cn/references/advanced/index.html">
+<meta property="og:site_name" content="Weex">
+<meta property="og:description" content="Module 扩展swift 扩展 module 
+Weex SDK 只提供渲染，而不是其他的能力，如果你需要 像网络，图片，URL跳转这些特性，需要自己动手实现他们例如，如果你想实现一个url地址跳转函数，你可以按照如下步骤实现一个 Module
+
+自定义module的步骤
+
+自定义的module类 必须实现 WXModuleProtocol
+必须添加宏WX_EXPORT_METHOD, 它可以">
+<meta property="og:updated_time" content="2017-01-10T07:11:10.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="拓展 iOS">
+<meta name="twitter:description" content="Module 扩展swift 扩展 module 
+Weex SDK 只提供渲染，而不是其他的能力，如果你需要 像网络，图片，URL跳转这些特性，需要自己动手实现他们例如，如果你想实现一个url地址跳转函数，你可以按照如下步骤实现一个 Module
+
+自定义module的步骤
+
+自定义的module类 必须实现 WXModuleProtocol
+必须添加宏WX_EXPORT_METHOD, 它可以">
+  
+    <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/weex-website/css/style.css">
+  <link rel="stylesheet" href="/weex-website/css/swiper.min.css">
+</head>
+
+<body id="references" class="lang-cn">
+  
+  <header id="header">
+  <div class="navbar">
+    <a id="logo" href="/weex-website/cn/">
+      <img src="/weex-website/images/logo.png" />
+    </a>
+    <div class="main-nav">
+      <ul class="links">
+        <li><a href="/weex-website/cn/guide">教程</a></li>
+        <li><a href="/weex-website/cn/references">手册</a></li>
+        <li><a href="/weex-website/cn/faq.html">FAQ</a></li>
+        <li class="dropdown">
+            <a href="javascript:;">工具</a>
+            <ul class="dropdown-menu subnav">
+              <li>
+                <a href="/weex-website/cn/playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
+              </li>
+              <li>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Snippets</a>
+              </li>
+            </ul>
+        </li>
+      </ul>
+      <ul class="info">
+        <li><a href="https://github.com/alibaba/weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+      </ul>
+      <ul class="tools">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <!--<li></li>-->
+      </ul>
+    </div>
+  </div>
+  <div id="mobile-nav">
+    <a id="logo" href="/weex-website/cn/">
+      <img src="/weex-website/images/logo.png" />
+    </a>
+    <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
+  </div>
+</header>
+  <div id="sidebar" class="">
+  <div class="sidebar-menu">
+    
+      <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-sidebar" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+      
+
+
+<div class="summary">
+  <h2 class="part-title">
+    
+      手册
+    
+  </h2>
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+   
+    
+      <li>
+        
+          <h3 class="chapter-title">通用特性</h3>
+          
+            <ul class="chapter">
+              
+                <li>
+                  <a href="/weex-website/cn/references/index.html" class="sidebar-link  ">Weex 实例变量</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/unit.html" class="sidebar-link  ">CSS 单位</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/common-event.html" class="sidebar-link  ">通用事件</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/common-style.html" class="sidebar-link  ">通用样式</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/color-names.html" class="sidebar-link  ">颜色名称列表</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/gesture.html" class="sidebar-link  ">手势</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/text-style.html" class="sidebar-link  ">文本样式</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/android-apis.html" class="sidebar-link  ">Android APIs</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/native-dom-api.html" class="sidebar-link  ">Native DOM APIs</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/web-standards.html" class="sidebar-link  ">Web 标准</a>
+                </li>
+              
+            </ul>
+          
+        
+      </li>
+    
+      <li>
+        
+          <h3 class="chapter-title">内建组件</h3>
+          
+            <ul class="chapter">
+              
+                <li>
+                  <a href="/weex-website/cn/references/components/index.html" class="sidebar-link  ">&lt;a&gt;</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/components/switch.html" class="sidebar-link  ">&lt;switch&gt;</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/components/text.html" class="sidebar-link  ">&lt;text&gt;</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/components/textarea.html" class="sidebar-link  ">&lt;textarea&gt;</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/components/video.html" class="sidebar-link  ">&lt;video&gt;</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/components/web.html" class="sidebar-link  ">&lt;web&gt;</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/components/div.html" class="sidebar-link  ">&lt;div&gt;</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/components/image.html" class="sidebar-link  ">&lt;image&gt;</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/components/cell.html" class="sidebar-link  ">&lt;cell&gt;</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/components/loading.html" class="sidebar-link  ">&lt;loading&gt;</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/components/refresh.html" class="sidebar-link  ">&lt;refresh&gt;</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/components/scroller.html" class="sidebar-link  ">&lt;scroller&gt;</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/components/slider.html" class="sidebar-link  ">&lt;slider&gt;</a>
+                </li>
+              
+            </ul>
+          
+        
+      </li>
+    
+      <li>
+        
+          <h3 class="chapter-title"><a href="/weex-website/cn/references/modules/index.html" class="sidebar-link  ">内建模块</a></h3>
+          
+            <ul class="chapter">
+              
+                <li>
+                  <a href="/weex-website/cn/references/modules/animation.html" class="sidebar-link  ">animation</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/modules/clipboard.html" class="sidebar-link  ">clipboard</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/modules/dom.html" class="sidebar-link  ">dom</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/modules/modal.html" class="sidebar-link  ">modal</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/modules/navigator.html" class="sidebar-link  ">navigator</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/modules/storage.html" class="sidebar-link  ">storage</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/modules/stream.html" class="sidebar-link  ">stream</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/modules/webview.html" class="sidebar-link  ">webview</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/modules/globalevent.html" class="sidebar-link  ">globalEvent</a>
+                </li>
+              
+            </ul>
+          
+        
+      </li>
+    
+      <li>
+        
+          <h3 class="chapter-title">Vue</h3>
+          
+            <ul class="chapter">
+              
+                <li>
+                  <a href="/weex-website/cn/references/vue/index.html" class="sidebar-link  ">Vue 2.x 在 Weex 和 Web 中的差异</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/vue/difference-of-vuex.html" class="sidebar-link  ">在 Weex 项目中使用 Vuex 和 vue-router</a>
+                </li>
+              
+            </ul>
+          
+        
+      </li>
+    
+      <li>
+        
+          <h3 class="chapter-title">Advanced</h3>
+          
+            <ul class="chapter">
+              
+                <li>
+                  <a href="/weex-website/cn/references/advanced/index.html" class="sidebar-link current ">拓展 iOS</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/advanced/extend-to-android.html" class="sidebar-link  ">Android 扩展</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/advanced/extend-to-html5.html" class="sidebar-link  ">拓展 HTML5</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/advanced/extend-jsfm.html" class="sidebar-link  ">拓展 JS framework</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/advanced/extend-js-service.html" class="sidebar-link  ">拓展 JS Service (later)</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/advanced/integrate-devtool-to-android.html" class="sidebar-link  ">集成 Devtools 到 Android</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/advanced/integrate-devtool-to-ios.html" class="sidebar-link  ">集成 Devtools 到 iOS</a>
+                </li>
+              
+            </ul>
+          
+        
+      </li>
+    
+      <li>
+        
+          <h3 class="chapter-title">Migration</h3>
+          
+            <ul class="chapter">
+              
+                <li>
+                  <a href="/weex-website/cn/references/migration/index.html" class="sidebar-link  ">如何将原有 Weex 项目改造成 Vue 版本</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/migration/difference.html" class="sidebar-link  ">Weex 和 Vue 2.x 的语法差异</a>
+                </li>
+              
+            </ul>
+          
+        
+      </li>
+    
+  </ul>
+</div>
+    
+    <a class="btn-close-sidebar iconfont  icon-close"></a>
+  </div>
+</div>
+  <div class="article-wrapper page-layout">
+  <div class="doc-nav">
+    
+
+
+<div class="summary">
+  <h2 class="part-title">
+    
+      手册
+    
+  </h2>
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+   
+    
+      <li>
+        
+          <h3 class="chapter-title">通用特性</h3>
+          
+            <ul class="chapter">
+              
+                <li>
+                  <a href="/weex-website/cn/references/index.html" class="sidebar-link  ">Weex 实例变量</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/unit.html" class="sidebar-link  ">CSS 单位</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/common-event.html" class="sidebar-link  ">通用事件</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/common-style.html" class="sidebar-link  ">通用样式</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/color-names.html" class="sidebar-link  ">颜色名称列表</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/gesture.html" class="sidebar-link  ">手势</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/text-style.html" class="sidebar-link  ">文本样式</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/android-apis.html" class="sidebar-link  ">Android APIs</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/native-dom-api.html" class="sidebar-link  ">Native DOM APIs</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/web-standards.html" class="sidebar-link  ">Web 标准</a>
+                </li>
+              
+            </ul>
+          
+        
+      </li>
+    
+      <li>
+        
+          <h3 class="chapter-title">内建组件</h3>
+          
+            <ul class="chapter">
+              
+                <li>
+                  <a href="/weex-website/cn/references/components/index.html" class="sidebar-link  ">&lt;a&gt;</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/components/switch.html" class="sidebar-link  ">&lt;switch&gt;</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/components/text.html" class="sidebar-link  ">&lt;text&gt;</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/components/textarea.html" class="sidebar-link  ">&lt;textarea&gt;</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/components/video.html" class="sidebar-link  ">&lt;video&gt;</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/components/web.html" class="sidebar-link  ">&lt;web&gt;</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/components/div.html" class="sidebar-link  ">&lt;div&gt;</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/components/image.html" class="sidebar-link  ">&lt;image&gt;</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/components/cell.html" class="sidebar-link  ">&lt;cell&gt;</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/components/loading.html" class="sidebar-link  ">&lt;loading&gt;</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/components/refresh.html" class="sidebar-link  ">&lt;refresh&gt;</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/components/scroller.html" class="sidebar-link  ">&lt;scroller&gt;</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/components/slider.html" class="sidebar-link  ">&lt;slider&gt;</a>
+                </li>
+              
+            </ul>
+          
+        
+      </li>
+    
+      <li>
+        
+          <h3 class="chapter-title"><a href="/weex-website/cn/references/modules/index.html" class="sidebar-link  ">内建模块</a></h3>
+          
+            <ul class="chapter">
+              
+                <li>
+                  <a href="/weex-website/cn/references/modules/animation.html" class="sidebar-link  ">animation</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/modules/clipboard.html" class="sidebar-link  ">clipboard</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/modules/dom.html" class="sidebar-link  ">dom</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/modules/modal.html" class="sidebar-link  ">modal</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/modules/navigator.html" class="sidebar-link  ">navigator</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/modules/storage.html" class="sidebar-link  ">storage</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/modules/stream.html" class="sidebar-link  ">stream</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/modules/webview.html" class="sidebar-link  ">webview</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/modules/globalevent.html" class="sidebar-link  ">globalEvent</a>
+                </li>
+              
+            </ul>
+          
+        
+      </li>
+    
+      <li>
+        
+          <h3 class="chapter-title">Vue</h3>
+          
+            <ul class="chapter">
+              
+                <li>
+                  <a href="/weex-website/cn/references/vue/index.html" class="sidebar-link  ">Vue 2.x 在 Weex 和 Web 中的差异</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/vue/difference-of-vuex.html" class="sidebar-link  ">在 Weex 项目中使用 Vuex 和 vue-router</a>
+                </li>
+              
+            </ul>
+          
+        
+      </li>
+    
+      <li>
+        
+          <h3 class="chapter-title">Advanced</h3>
+          
+            <ul class="chapter">
+              
+                <li>
+                  <a href="/weex-website/cn/references/advanced/index.html" class="sidebar-link current ">拓展 iOS</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/advanced/extend-to-android.html" class="sidebar-link  ">Android 扩展</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/advanced/extend-to-html5.html" class="sidebar-link  ">拓展 HTML5</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/advanced/extend-jsfm.html" class="sidebar-link  ">拓展 JS framework</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/advanced/extend-js-service.html" class="sidebar-link  ">拓展 JS Service (later)</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/advanced/integrate-devtool-to-android.html" class="sidebar-link  ">集成 Devtools 到 Android</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/advanced/integrate-devtool-to-ios.html" class="sidebar-link  ">集成 Devtools 到 iOS</a>
+                </li>
+              
+            </ul>
+          
+        
+      </li>
+    
+      <li>
+        
+          <h3 class="chapter-title">Migration</h3>
+          
+            <ul class="chapter">
+              
+                <li>
+                  <a href="/weex-website/cn/references/migration/index.html" class="sidebar-link  ">如何将原有 Weex 项目改造成 Vue 版本</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/migration/difference.html" class="sidebar-link  ">Weex 和 Vue 2.x 的语法差异</a>
+                </li>
+              
+            </ul>
+          
+        
+      </li>
+    
+  </ul>
+</div>
+  </div>
+  
+
+<article class="article article-type-references">
+  <div class="article-entry" itemprop="articleBody">
+    <header class="article-header">
+  
+    
+      <h1 class="article-title" itemprop="name">
+        拓展 iOS
+      </h1>
+    
+  
+  <time class="article-date" datetime="2017-01-10T07:11:10.000Z">Updated time: 10/01/2017</time>
+</header>
+    <h2 id="Module-扩展"><a href="#Module-扩展" class="headerlink" title="Module 扩展"></a>Module 扩展</h2><p><a href="https://github.com/weexteam/article/issues/55" target="_blank" rel="external">swift</a> 扩展 module </p>
+<p>Weex SDK 只提供渲染，而不是其他的能力，如果你需要 像网络，图片，URL跳转这些特性，需要自己动手实现他们<br>例如，如果你想实现一个url地址跳转函数，你可以按照如下步骤实现一个 Module</p>
+<ol>
+<li><p><strong>自定义module的步骤</strong></p>
+<ol>
+<li>自定义的module类 必须实现 <code>WXModuleProtocol</code></li>
+<li>必须添加宏<code>WX_EXPORT_METHOD</code>, 它可以被weex识别，它的参数是 JavaScript调用 module指定方法的参数</li>
+<li>添加<code>@synthesized weexInstance</code>，每个moudle对象被绑定到一个指定的实例上</li>
+<li>Module 方法会在UI线程中被调用，所以不要做太多耗时的任务在这里，如果要在其他线程执行整个module 方法，需要实现<code>WXModuleProtocol</code>中<code>- (NSThread *)targetExecuteThread</code>的方法，这样，分发到这个module的任务会在指定的线程中运行</li>
+<li>Weex 的参数可以是 String 或者Map</li>
+<li><p>Module 支持返回值给 JavaScript中的回调，回调的类型是<code>WXModuleCallback</code>,回调的参数可以是String或者Map</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">@implementation WXEventModule</div><div class="line">@synthesize weexInstance;</div><div class="line">   WX_EXPORT_METHOD(@selector(openURL:callback))</div><div class="line">- (void)openURL:(NSString *)url callback:(WXModuleCallback)callback</div><div class="line">&#123;</div><div class="line">    NSString *newURL = url;</div><div class="line">    if ([url hasPrefix:@&quot;//&quot;]) &#123;</div><div class="line">        newURL = [NSString stringWithFormat:@&quot;http:%@&quot;, url];</div><div class="line">    &#125; else if (![url hasPrefix:@&quot;http&quot;]) &#123;</div><div class="line">       newURL = [NSURL URLWithString:url relativeToURL:weexInstance.scriptURL].absoluteString;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    UIViewController *controller = [[WXDemoViewController alloc] init];</div><div class="line">    ((WXDemoViewController *)controller).url = [NSURL URLWithString:newURL];</div><div class="line"></div><div class="line">    [[weexInstance.viewController navigationController] pushViewController:controller animated:YES];</div><div class="line">    callback(@&#123;@&quot;result&quot;:@&quot;success&quot;&#125;);</div><div class="line">&#125;</div><div class="line"></div><div class="line">@end</div></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+<li><p><strong>Register the module</strong><br>通过调用 WXSDKEngine 中的 <code>registerModule:withClass</code>方法来注册自己的module</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">WXSDKEngine.h</div><div class="line">/**</div><div class="line">*  @abstract Registers a module for a given name</div><div class="line">*  @param name The module name to register</div><div class="line">*  @param clazz  The module class to register</div><div class="line">**/</div><div class="line">+ (void)registerModule:(NSString *)name withClass:(Class)clazz;</div><div class="line">[WXSDKEngine registerModule:@&quot;event&quot; withClass:[WXEventModule class]];</div></pre></td></tr></table></figure>
+</li>
+<li><p><strong>使用自己的module</strong><br> 这里的  require 里面的event 就是在 上一步调用<code>registerModule:</code> 注册module 时候的name</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> eventModule = <span class="built_in">require</span>(<span class="string">'@weex-module/event'</span>); </div><div class="line">eventModule.openURL(<span class="string">'url'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">ret</span>) </span>&#123;   </div><div class="line">    nativeLog(ret);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>   Weex SDK没有 图片下载，navigation 操作的能力，请大家自己实现这些 protocol</p>
+<ol>
+<li><p><strong>WXImgLoaderProtocol</strong>  </p>
+<p>weexSDK 没有图片下载的能力，需要实现 WXImgLoaderProtocol,参考下面的例子</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">WXImageLoaderProtocol.h</div><div class="line">@protocol WXImgLoaderProtocol &lt;WXModuleProtocol&gt;</div><div class="line">/**</div><div class="line"> * @abstract Creates a image download handler with a given URL</div><div class="line"> * @param imageUrl The URL of the image to download</div><div class="line"> * @param imageFrame  The frame of the image you want to set</div><div class="line"> * @param options : The options to be used for this download</div><div class="line"> * @param completedBlock : A block called once the download is completed.</div><div class="line">   image : the image which has been download to local.</div><div class="line">   error : the error which has happened in download.</div><div class="line">   finished : a Boolean value indicating whether download action has finished.</div><div class="line">*/</div><div class="line">-(id&lt;WXImageOperationProtocol&gt;)downloadImageWithURL:(NSString *)url imageFrame:(CGRect)imageFrame userInfo:(NSDictionary *)options completed:(void(^)(UIImage *image,  NSError *error, BOOL finished))completedBlock;</div><div class="line">@end</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>   实现上述协议  </p>
+   <figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">@implementation WXImgLoaderDefaultImpl</div><div class="line">#pragma mark -</div><div class="line">#pragma mark WXImgLoaderProtocol</div><div class="line"></div><div class="line">- (id&lt;WXImageOperationProtocol&gt;)downloadImageWithURL:(NSString *)url imageFrame:(CGRect)imageFrame userInfo:(NSDictionary *)userInfo completed:(void(^)(UIImage *image,  NSError *error, BOOL finished))completedBlock</div><div class="line">&#123;</div><div class="line">    if ([url hasPrefix:@&quot;//&quot;]) &#123;</div><div class="line">        url = [@&quot;http:&quot; stringByAppendingString:url];</div><div class="line">    &#125;</div><div class="line">    return (id&lt;WXImageOperationProtocol&gt;)[[SDWebImageManager sharedManager] downloadImageWithURL:[NSURL URLWithString:url] options:0 progress:^(NSInteger receivedSize, NSInteger expectedSize) &#123;     </div><div class="line">    &#125; completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) &#123;</div><div class="line">    if (completedBlock) &#123;</div><div class="line">        completedBlock(image, error, finished);</div><div class="line">    &#125;</div><div class="line">    &#125;];</div><div class="line">&#125;</div><div class="line">@end</div></pre></td></tr></table></figure>
+<ol>
+<li><p><strong>handler注册</strong> </p>
+<p>你可以通过WXSDKEngine 中的 <code>registerHandler:withProtocol</code>注册handler</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">WXSDKEngine.h</div><div class="line">/**</div><div class="line">* @abstract Registers a handler for a given handler instance and specific protocol</div><div class="line">* @param handler The handler instance to register</div><div class="line">* @param protocol The protocol to confirm</div><div class="line">*/</div><div class="line">+ (void)registerHandler:(id)handler withProtocol:(Protocol *)protocol;</div><div class="line"></div><div class="line">[WXSDKEngine registerHandler:[WXImgLoaderDefaultImpl new] withProtocol:@protocol(WXImgLoaderProtocol)]</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="Components-扩展"><a href="#Components-扩展" class="headerlink" title="Components 扩展"></a>Components 扩展</h2><p>虽然 WeexSDK 中有很多的 native 的 Component，但这有可能并不能满足你的需求。在之前你可能已经写了一些很酷炫 native 的组件，想包装一下，导入到 Weex 中，因此我们提供了让开发者实现自己的 native Component。下面将以 WeexSDK 中已经存在的 Component：<code>image</code> 为例子，介绍一下如何构建一个 native Component。假设你已经了解 iOS 开发</p>
+<h3 id="注册-Component"><a href="#注册-Component" class="headerlink" title="注册 Component"></a>注册 Component</h3><p>注册一个 component 比较简单，调用 <code>WXSDKEngine</code> 中的 <code>registerComponent:withClass:</code> 方法，传入组件的标签名称，还有对应的 class  然后你可以创建一个 <code>WXImageComponent</code> 表示 <code>image</code> 组件的实现。在 <code>.we</code> 文件中，只需要写 <code>&lt;image&gt;&lt;/image&gt;</code></p>
+<h3 id="添加属性"><a href="#添加属性" class="headerlink" title="添加属性"></a>添加属性</h3><p>现在我们要做一些让 image component 更加强大的事情。既然作为一个图片的 component，那它应该要有源，给他加上一个  <code>src</code> 的属性，同时给它加上一个 <code>resize</code> 的属性（可以配置的有 <code>contain/cover/stretch</code>）</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">@interface WXImageComponent ()</div><div class="line"></div><div class="line">@property (nonatomic, strong) NSString *imageSrc;</div><div class="line">@property (nonatomic, assign) UIViewContentMode resizeMode;</div><div class="line"></div><div class="line">@end</div></pre></td></tr></table></figure>
+<p>component 中所有的 style，attribute，events 都会被传递到 Component 的初始化方法中，所以，你可以在初始化方法中存储你感兴趣的一些属性值</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">@implementation WXImageComponent</div><div class="line"></div><div class="line">- (instancetype)initWithRef:(NSString *)ref type:(NSString *)type styles:(NSDictionary *)styles attributes:(NSDictionary *)attributes events:(NSArray *)events weexInstance:(WXSDKInstance *)weexInstance</div><div class="line">&#123;</div><div class="line">    if (self = [super initWithRef:ref type:type styles:styles attributes:attributes events:events weexInstance:weexInstance]) &#123;</div><div class="line">        _imageSrc = [WXConvert NSString:attributes[@&quot;src&quot;]];</div><div class="line">        _resizeMode = [WXConvert UIViewContentMode:attributes[@&quot;resize&quot;]];</div><div class="line">&#125;</div><div class="line"></div><div class="line">    return self;</div><div class="line">&#125;</div><div class="line"></div><div class="line">@end</div></pre></td></tr></table></figure>
+<p>attribute 中拿到的值的类型都是 <code>id</code>，我们可以用转换方法把它转换到任何值。Weex SDK 提供了一些基础的转换方法，可以参考 <code>WXConvert</code> 类，或者你可以添加自己的转换函数。</p>
+<h3 id="Hooking-渲染生命周期"><a href="#Hooking-渲染生命周期" class="headerlink" title="Hooking 渲染生命周期"></a>Hooking 渲染生命周期</h3><p>native 的 component 是由 Weex 管理的，Weex 创建，布局，渲染，销毁。Weex 的 component 生命周期都是可以 hook 的，你可以在这些生命周期中去做自己的事情。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">方法</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">initWithRef:type:…</td>
+<td>用给定的属性初始化一个component.</td>
+</tr>
+<tr>
+<td style="text-align:center">layoutDidFinish</td>
+<td>在component完成布局时候会调用.</td>
+</tr>
+<tr>
+<td style="text-align:center">loadView</td>
+<td>创建component管理的view.</td>
+</tr>
+<tr>
+<td style="text-align:center">viewWillLoad</td>
+<td>在component的view加载之前会调用.</td>
+</tr>
+<tr>
+<td style="text-align:center">viewDidLoad</td>
+<td>在component的view加载完之后调用.</td>
+</tr>
+<tr>
+<td style="text-align:center">viewWillUnload</td>
+<td>在component的view被释放之前调用.</td>
+</tr>
+<tr>
+<td style="text-align:center">viewDidUnload</td>
+<td>在component的view被释放之后调用.</td>
+</tr>
+<tr>
+<td style="text-align:center">updateStyles:</td>
+<td>在component的style更新时候调用.</td>
+</tr>
+<tr>
+<td style="text-align:center">updateAttributes:</td>
+<td>在component的attribute更新时候调用.</td>
+</tr>
+<tr>
+<td style="text-align:center">addEvent:</td>
+<td>给component添加event的时候调用.</td>
+</tr>
+<tr>
+<td style="text-align:center">removeEvent:</td>
+<td>在event移除的时候调用.</td>
+</tr>
+</tbody>
+</table>
+<p>在 image component 的例子里面，如果我们需要我们自己的 image view 的话，可以复写 <code>loadView</code>这个方法.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">- (UIView *)loadView</div><div class="line">&#123;</div><div class="line">return [[WXImageView alloc] init];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>现在我们使用 <code>WXImageView</code> 渲染 <code>image</code> component。<br>作为一个 image component，我们需要拿到服务器图片，而且把它设置进 image view 里. 这个操作可以在 <code>viewDidLoad</code> 方法中做，这个方法是在 view 已经被创建而且加载了时候 Weex SDK 会调用到，而且 <code>viewDidLoad</code> 这个方法是你做额外初始化工作比如改变 content mode(也就是设置resize) 的最好时间.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">- (void)viewDidLoad</div><div class="line">&#123;</div><div class="line">    UIImageView *imageView = (UIImageView *)self.view;</div><div class="line">    imageView.contentMode = _resizeMode;</div><div class="line">    imageView.userInteractionEnabled = YES;</div><div class="line">    imageView.clipsToBounds = YES;</div><div class="line">    imageView.exclusiveTouch = YES;</div><div class="line"></div><div class="line">    // Do your image fetching and updating logic</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>如果可以改变 image 的 src，也可以 hook <code>updateAttributes:</code>  方法来做属性更新操作，当 <code>updateAttributes:</code> 或者  <code>updateStyles:</code> 被调用的时候， component 的 view 已经加载完成</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">- (void)updateAttributes:(NSDictionary *)attributes</div><div class="line">&#123;</div><div class="line">    if (attributes[@&quot;src&quot;]) &#123;</div><div class="line">        _imageSrc = [WXConvert NSString:attributes[@&quot;src&quot;]];</div><div class="line">        // Do your image updating logic</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    if (attributes[@&quot;resize&quot;]) &#123;</div><div class="line">        _resizeMode = [WXConvert UIViewContentMode:attributes[@&quot;resize&quot;]];</div><div class="line">        self.view.contentMode = _resizeMode;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>或许你需要考虑更多的生命周期方法去 Hook，当布局完成时候，像 <code>layoutDidFinish</code>，如果你想了解更多，可以参考一下<code>WXComponent.h</code> 声明的方法。</p>
+<p>现在你可以用在任何 <code>.we</code> 文件里面使用 <code>&lt;image&gt;</code>，而且可以加上 image 的属性。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">image</span> <span class="attr">style</span>=<span class="string">"your-custom-style"</span> <span class="attr">src</span>=<span class="string">"image-remote-source"</span> <span class="attr">resize</span>=<span class="string">"contain/cover/stretch"</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></div></pre></td></tr></table></figure>
+  </div>
+  
+</article>
+</div>
+  <script>window.PAGE_TYPE = "references"</script>
+  <footer id="footer">
+  <div class="row clearfix">
+    <div class="ali-logo">
+      <img src="/weex-website/images/ali-open-source.png" alt="Alibaba">
+    </div>
+    <div class="dropdown select-lang">
+      <a href="javascript:;" class="dropdown-toggle">
+        Language
+        <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu">
+        <li>
+          <a href="/weex-website/references/advanced/index.html">English</a>
+        </li>
+        <li>
+          <a href="/weex-website/cn/references/advanced/index.html">中文</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <p><span>Released under </span><a href="">Apache License 2.0</a></p>
+  </div>
+  <div class="row clearfix">
+    <div class="cell"><span>Copyright(c) 2016 </span><a href="https://www.alibaba.com">Alibaba</a></div>
+    <div class="cell"><span>GroupMade by </span><a href="">阿里云UED AX</a></div>
+  </div>
+</footer>
+  <div style="display: none;">
+  <script src="//s95.cnzz.com/z_stat.php?id=1261102667&amp;web_id=1261102667" language="JavaScript"></script>
+</div>
+
+  <script src="/weex-website/js/reqwest.js"></script>
+  <script src="/weex-website/js/velocity.js"></script>
+  <script src="/weex-website/js/common.js"></script>
+</body>
+</html>

@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>How data-binding works | Weex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="How data-binding worksWeex JS Framework is a MVVM framework. It observe data and use {{bindedKey}} syntax to bind in views. When data is changed in anyway, the view will automatically be updated due t">
+<meta property="og:type" content="website">
+<meta property="og:title" content="How data-binding works">
+<meta property="og:url" content="http://alibaba.github.io/v-0.10/advanced/how-data-binding-works.html">
+<meta property="og:site_name" content="Weex">
+<meta property="og:description" content="How data-binding worksWeex JS Framework is a MVVM framework. It observe data and use {{bindedKey}} syntax to bind in views. When data is changed in anyway, the view will automatically be updated due t">
+<meta property="og:updated_time" content="2017-01-09T12:39:05.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="How data-binding works">
+<meta name="twitter:description" content="How data-binding worksWeex JS Framework is a MVVM framework. It observe data and use {{bindedKey}} syntax to bind in views. When data is changed in anyway, the view will automatically be updated due t">
+  
+    <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/weex-website/css/style.css">
+  <link rel="stylesheet" href="/weex-website/css/swiper.min.css">
+</head>
+
+<body id="advanced" class="lang-en">
+  
+  <header id="header">
+  <div class="navbar">
+    <a id="logo" href="/weex-website/">
+      <img src="/weex-website/images/logo.png" />
+    </a>
+    <div class="main-nav">
+      <ul class="links">
+        <li><a href="/weex-website/guide">Guide</a></li>
+        <li><a href="/weex-website/references">References</a></li>
+        <li><a href="/weex-website/faq.html">FAQ</a></li>
+        <li class="dropdown">
+            <a href="javascript:;">Tools</a>
+            <ul class="dropdown-menu subnav">
+              <li>
+                <a href="/weex-website/playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
+              </li>
+              <li>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Snippets</a>
+              </li>
+            </ul>
+        </li>
+      </ul>
+      <ul class="info">
+        <li><a href="https://github.com/alibaba/weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+      </ul>
+      <ul class="tools">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <!--<li></li>-->
+      </ul>
+    </div>
+  </div>
+  <div id="mobile-nav">
+    <a id="logo" href="/weex-website/">
+      <img src="/weex-website/images/logo.png" />
+    </a>
+    <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
+  </div>
+</header>
+  <div id="sidebar" class="">
+  <div class="sidebar-menu">
+    
+      <ul class="main-nav">
+        <li>
+          <div class="search">
+  <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="search-input-sidebar" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <span class="iconfont icon-search"></span>
+  </form>
+  <div class="results-panel">
+  </div>
+</div>
+        </li>
+        <li>
+          <a class="" href="/weex-website/guide">
+            Guide
+          </a>
+        </li>
+        <li>
+          <a class="" href="/weex-website/references">
+            References
+          </a>
+        </li>
+        <li>
+          <a href="/weex-website/faq">
+            FAQ
+          </a>
+        </li>
+        <li>
+            <p>Tools</p>
+            <ul class="subnav">
+              <li>
+                <a href="/weex-website/playground.html">Playground</a>
+              </li>
+              <li>
+                <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
+              </li>
+              <li>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
+              </li>
+              <li>
+                <a href="http://dotwe.org" target="_blank">Snippets</a>
+              </li>
+            </ul>
+        </li>
+        <li>
+          <a href="https://github.com/alibaba/weex" target="_blank">
+            Github
+          </a>
+        </li>
+      </ul>
+    
+    <a class="btn-close-sidebar iconfont  icon-close"></a>
+  </div>
+</div>
+  <div class="article-wrapper page-layout">
+  <div class="doc-nav">
+    
+
+
+<div class="summary">
+  <h2 class="part-title">
+    
+      Advanced
+    
+  </h2>
+  <ul class="doc-summary">
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+   
+    
+      <li>
+        
+          <h3 class="chapter-title"><a href="/weex-website/v-0.10/advanced/index.html" class="sidebar-link  ">How it works</a></h3>
+          
+        
+      </li>
+    
+      <li>
+        
+          <h3 class="chapter-title"><a href="/weex-website/v-0.10/advanced/how-data-binding-works.html" class="sidebar-link current ">How data-binding works</a></h3>
+          
+        
+      </li>
+    
+      <li>
+        
+          <h3 class="chapter-title"><a href="/weex-website/v-0.10/advanced/integrate-to-android.html" class="sidebar-link  ">Integrate to Android</a></h3>
+          
+        
+      </li>
+    
+      <li>
+        
+          <h3 class="chapter-title"><a href="/weex-website/v-0.10/advanced/integrate-to-ios.html" class="sidebar-link  ">Integrate to iOS</a></h3>
+          
+        
+      </li>
+    
+      <li>
+        
+          <h3 class="chapter-title"><a href="/weex-website/v-0.10/advanced/integrate-to-html5.html" class="sidebar-link  ">Integrate to web</a></h3>
+          
+        
+      </li>
+    
+      <li>
+        
+          <h3 class="chapter-title"><a href="/weex-website/v-0.10/advanced/extend-to-android.html" class="sidebar-link  ">Extend to Android</a></h3>
+          
+        
+      </li>
+    
+      <li>
+        
+          <h3 class="chapter-title"><a href="/weex-website/v-0.10/advanced/extend-to-ios.html" class="sidebar-link  ">Extend to iOS</a></h3>
+          
+        
+      </li>
+    
+      <li>
+        
+          <h3 class="chapter-title"><a href="/weex-website/v-0.10/advanced/extend-to-html5.html" class="sidebar-link  ">Extend to web</a></h3>
+          
+        
+      </li>
+    
+  </ul>
+</div>
+  </div>
+  
+
+<article class="article article-type-advanced">
+  <div class="article-entry" itemprop="articleBody">
+    <header class="article-header">
+  
+    
+      <h1 class="article-title" itemprop="name">
+        How data-binding works
+      </h1>
+    
+  
+  <time class="article-date" datetime="2017-01-09T12:39:05.000Z">Updated time: 09/01/2017</time>
+</header>
+    <h1 id="How-data-binding-works"><a href="#How-data-binding-works" class="headerlink" title="How data-binding works"></a>How data-binding works</h1><p>Weex JS Framework is a MVVM framework. It observe data and use <code>{{bindedKey}}</code> syntax to bind in views. When data is changed in anyway, the view will automatically be updated due to data-binding.</p>
+<p>For example, The content of a <code>&lt;text&gt;</code> component is bound with the key <code>notes</code> in data:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">text</span>&gt;</span>&#123;&#123;notes&#125;&#125;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="built_in">module</span>.exports = &#123;</div><div class="line">    <span class="attr">data</span>: &#123;</div><div class="line">        <span class="attr">notes</span>: <span class="string">'Hello'</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>Weex JS Framework first observe the data object to make sure each data change in the future will be observed. And then it will compile the whole <code>&lt;template&gt;</code>. When it finds that the content of the <code>&lt;text&gt;</code> is bound with <code>notes</code>, JS Framework will watch the <code>data.notes</code> changes and set a handler which will update the <code>&lt;text&gt;</code> content with new <code>data.notes</code>. So developer only need to manage the data, the view display could automatically do corresponding changes.</p>
+<p>Some special data-binding syntax here:</p>
+<ul>
+<li><code><foo if="{{condition}}"></foo></code> will watch the condition value changes. When it changes to <code>true</code>, the <code>&lt;foo&gt;</code> element will be created and attached, otherwise it will be not created or removed.</li>
+<li><code><foo repeat="{{list}}"></foo></code> will watch the mutations of a list. At the beginning the <code>&lt;foo&gt;</code> element will be cloned and attached with each item in list. When some items are added, removed or moved, the <code>&lt;foo&gt;</code> element list will be re-generated new content in the right order with minimum alterations.</li>
+<li><code><foo if="{{condition}}" repeat="{{list}}"></foo></code> will process <code>repeat</code> first and <code>if</code> the second. In another way, it will walk through each item in list, if the item’s condition value is true, a <code>&lt;foo&gt;</code> element will be cloned and attached with this certain item value.</li>
+</ul>
+<p>Compared with virtual DOM diff algorithm, we just “diff” the data and only calculate/update the virtual DOM with minimum alterations for each user interaction or data-change operation. So it’s more lightweight and fast especially for small views in mobile devices.</p>
+
+  </div>
+  
+</article>
+</div>
+  <script>window.PAGE_TYPE = "advanced"</script>
+  <footer id="footer">
+  <div class="row clearfix">
+    <div class="ali-logo">
+      <img src="/weex-website/images/ali-open-source.png" alt="Alibaba">
+    </div>
+    <div class="dropdown select-lang">
+      <a href="javascript:;" class="dropdown-toggle">
+        Language
+        <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu">
+        <li>
+          <a href="/weex-website/v-0.10/advanced/how-data-binding-works.html">English</a>
+        </li>
+        <li>
+          <a href="/weex-website/cn/v-0.10/advanced/how-data-binding-works.html">中文</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <p><span>Released under </span><a href="">Apache License 2.0</a></p>
+  </div>
+  <div class="row clearfix">
+    <div class="cell"><span>Copyright(c) 2016 </span><a href="https://www.alibaba.com">Alibaba</a></div>
+    <div class="cell"><span>GroupMade by </span><a href="">阿里云UED AX</a></div>
+  </div>
+</footer>
+  <div style="display: none;">
+  <script src="//s95.cnzz.com/z_stat.php?id=1261102667&amp;web_id=1261102667" language="JavaScript"></script>
+</div>
+
+  <script src="/weex-website/js/reqwest.js"></script>
+  <script src="/weex-website/js/velocity.js"></script>
+  <script src="/weex-website/js/common.js"></script>
+</body>
+</html>

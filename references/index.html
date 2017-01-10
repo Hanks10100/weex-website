@@ -3,24 +3,33 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Bootstrap | Weex</title>
+  <title>Weex variable (Chinese) | Weex</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="BootstrapBesides its default meaning, &amp;lt;script&amp;gt; tag supports two more configuration with its type property in the top level component of a page.
+  <meta name="description" content="Weex 实例变量每个 Weex 页面的 JS 上下文中都有一个相互独立的 weex 变量，用来持有当前 Weex 页面相关的单例内容或方法。
+weex.config该变量包含了当前 Weex 页面的所有环境信息，包括不仅限于：
 
-type=&amp;quot;data&amp;quot;: For initial data configura">
+bundleUrl: string: JS bundle 的 URL。
+env: Object: 环境对象。
+weexVersion: string: Weex sdk">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Bootstrap">
+<meta property="og:title" content="Weex variable (Chinese)">
 <meta property="og:url" content="http://alibaba.github.io/references/index.html">
 <meta property="og:site_name" content="Weex">
-<meta property="og:description" content="BootstrapBesides its default meaning, &amp;lt;script&amp;gt; tag supports two more configuration with its type property in the top level component of a page.
+<meta property="og:description" content="Weex 实例变量每个 Weex 页面的 JS 上下文中都有一个相互独立的 weex 变量，用来持有当前 Weex 页面相关的单例内容或方法。
+weex.config该变量包含了当前 Weex 页面的所有环境信息，包括不仅限于：
 
-type=&amp;quot;data&amp;quot;: For initial data configura">
-<meta property="og:updated_time" content="2017-01-08T06:18:17.000Z">
+bundleUrl: string: JS bundle 的 URL。
+env: Object: 环境对象。
+weexVersion: string: Weex sdk">
+<meta property="og:updated_time" content="2017-01-10T05:43:26.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Bootstrap">
-<meta name="twitter:description" content="BootstrapBesides its default meaning, &amp;lt;script&amp;gt; tag supports two more configuration with its type property in the top level component of a page.
+<meta name="twitter:title" content="Weex variable (Chinese)">
+<meta name="twitter:description" content="Weex 实例变量每个 Weex 页面的 JS 上下文中都有一个相互独立的 weex 变量，用来持有当前 Weex 页面相关的单例内容或方法。
+weex.config该变量包含了当前 Weex 页面的所有环境信息，包括不仅限于：
 
-type=&amp;quot;data&amp;quot;: For initial data configura">
+bundleUrl: string: JS bundle 的 URL。
+env: Object: 环境对象。
+weexVersion: string: Weex sdk">
   
     <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
   
@@ -47,14 +56,8 @@ type=&amp;quot;data&amp;quot;: For initial data configura">
         <li><a href="/weex-website/references">References</a></li>
         <li><a href="/weex-website/faq.html">FAQ</a></li>
         <li class="dropdown">
-            <a href="javascript:;">Resources</a>
+            <a href="javascript:;">Tools</a>
             <ul class="dropdown-menu subnav">
-              <li>
-                <a href="/weex-website/tools">Service &amp; Tools</a>
-              </li>
-              <li>
-                <a href="/weex-website/advanced">Advanced</a>
-              </li>
               <li>
                 <a href="/weex-website/playground.html">Playground</a>
               </li>
@@ -106,7 +109,10 @@ type=&amp;quot;data&amp;quot;: For initial data configura">
   <div class="results-panel">
   </div>
 </div>
-      <div class="summary">
+      
+
+
+<div class="summary">
   <h2 class="part-title">
     
       References
@@ -115,6 +121,26 @@ type=&amp;quot;data&amp;quot;: For initial data configura">
   <ul class="doc-summary">
     
     
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
     
       
       
@@ -335,27 +361,15 @@ type=&amp;quot;data&amp;quot;: For initial data configura">
             <ul class="chapter">
               
                 <li>
-                  <a href="/weex-website/references/index.html" class="sidebar-link current ">Bootstrap</a>
+                  <a href="/weex-website/references/index.html" class="sidebar-link current ">Weex variable (Chinese)</a>
                 </li>
               
                 <li>
-                  <a href="/weex-website/references/special-element.html" class="sidebar-link  ">Special Element</a>
+                  <a href="/weex-website/references/unit.html" class="sidebar-link  ">CSS unit (Chinese)</a>
                 </li>
               
                 <li>
-                  <a href="/weex-website/references/component-defs.html" class="sidebar-link  ">Component Definition</a>
-                </li>
-              
-                <li>
-                  <a href="/weex-website/references/api.html" class="sidebar-link  ">Component APIs</a>
-                </li>
-              
-                <li>
-                  <a href="/weex-website/references/gesture.html" class="sidebar-link  ">Gesture</a>
-                </li>
-              
-                <li>
-                  <a href="/weex-website/references/common-attrs.html" class="sidebar-link  ">Common Attribute</a>
+                  <a href="/weex-website/references/common-event.html" class="sidebar-link  ">Common Events</a>
                 </li>
               
                 <li>
@@ -367,11 +381,23 @@ type=&amp;quot;data&amp;quot;: For initial data configura">
                 </li>
               
                 <li>
+                  <a href="/weex-website/references/gesture.html" class="sidebar-link  ">Gesture</a>
+                </li>
+              
+                <li>
                   <a href="/weex-website/references/text-style.html" class="sidebar-link  ">Text Style</a>
                 </li>
               
                 <li>
-                  <a href="/weex-website/references/common-event.html" class="sidebar-link  ">Common Events</a>
+                  <a href="/weex-website/references/android-apis.html" class="sidebar-link  ">Android APIs (Chinese)</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/references/web-standards.html" class="sidebar-link  ">Web standards (Chinese)</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/references/native-dom-api.html" class="sidebar-link  ">Native DOM APIs (Chinese)</a>
                 </li>
               
             </ul>
@@ -414,14 +440,6 @@ type=&amp;quot;data&amp;quot;: For initial data configura">
                 </li>
               
                 <li>
-                  <a href="/weex-website/references/components/wxc-navpage.html" class="sidebar-link  ">&lt;wxc-navpage&gt;</a>
-                </li>
-              
-                <li>
-                  <a href="/weex-website/references/components/wxc-tabbar.html" class="sidebar-link  ">&lt;wxc-tabbar&gt;</a>
-                </li>
-              
-                <li>
                   <a href="/weex-website/references/components/div.html" class="sidebar-link  ">&lt;div&gt;</a>
                 </li>
               
@@ -442,7 +460,7 @@ type=&amp;quot;data&amp;quot;: For initial data configura">
                 </li>
               
                 <li>
-                  <a href="/weex-website/references/components/refresh-loading.html" class="sidebar-link  ">&lt;refresh&gt; &amp; &lt;loading&gt;</a>
+                  <a href="/weex-website/references/components/refresh.html" class="sidebar-link  ">&lt;refresh&gt; &amp; &lt;loading&gt;</a>
                 </li>
               
                 <li>
@@ -497,10 +515,6 @@ type=&amp;quot;data&amp;quot;: For initial data configura">
                 </li>
               
                 <li>
-                  <a href="/weex-website/references/modules/timer.html" class="sidebar-link  ">Timer</a>
-                </li>
-              
-                <li>
                   <a href="/weex-website/references/modules/webview.html" class="sidebar-link  ">webview</a>
                 </li>
               
@@ -511,24 +525,74 @@ type=&amp;quot;data&amp;quot;: For initial data configura">
     
       <li>
         
-          <h3 class="chapter-title">Low-level Specs</h3>
+          <h3 class="chapter-title">Vue</h3>
           
             <ul class="chapter">
               
                 <li>
-                  <a href="/weex-website/references/specs/index.html" class="sidebar-link  ">JS Bundle format</a>
+                  <a href="/weex-website/references/vue/index.html" class="sidebar-link  ">Difference with Web (Chinese)</a>
                 </li>
               
                 <li>
-                  <a href="/weex-website/references/specs/js-bundle-format.html" class="sidebar-link  ">JS Bundle format</a>
+                  <a href="/weex-website/references/vue/difference-of-vuex.html" class="sidebar-link  ">Using Vuex &amp; vue-router (Chinese)</a>
+                </li>
+              
+            </ul>
+          
+        
+      </li>
+    
+      <li>
+        
+          <h3 class="chapter-title">Advanced</h3>
+          
+            <ul class="chapter">
+              
+                <li>
+                  <a href="/weex-website/references/advanced/index.html" class="sidebar-link  ">Extend to iOS</a>
                 </li>
               
                 <li>
-                  <a href="/weex-website/references/specs/js-framework-apis.html" class="sidebar-link  ">JS Framework APIs</a>
+                  <a href="/weex-website/references/advanced/extend-to-android.html" class="sidebar-link  ">Extend to Android</a>
                 </li>
               
                 <li>
-                  <a href="/weex-website/references/specs/virtual-dom-apis.html" class="sidebar-link  ">Virtual DOM APIs</a>
+                  <a href="/weex-website/references/advanced/extend-to-html5.html" class="sidebar-link  ">Extend to HTML5 (Chinese)</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/references/advanced/extend-jsfm.html" class="sidebar-link  ">Extend JS framework (Chinese)</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/references/advanced/extend-js-service.html" class="sidebar-link  ">Extend JS Service (later)</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/references/advanced/integrate-devtool-to-android.html" class="sidebar-link  ">Integrate Devtool to Android (Chinese)</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/references/advanced/integrate-devtool-to-ios.html" class="sidebar-link  ">Integrate Devtool to iOS (Chinese)</a>
+                </li>
+              
+            </ul>
+          
+        
+      </li>
+    
+      <li>
+        
+          <h3 class="chapter-title">Migration</h3>
+          
+            <ul class="chapter">
+              
+                <li>
+                  <a href="/weex-website/references/migration/index.html" class="sidebar-link  ">Migration from Weex (Chinese)</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/references/migration/difference.html" class="sidebar-link  ">The difference between Weex and Vue (Chinese)</a>
                 </li>
               
             </ul>
@@ -544,7 +608,10 @@ type=&amp;quot;data&amp;quot;: For initial data configura">
 </div>
   <div class="article-wrapper page-layout">
   <div class="doc-nav">
-    <div class="summary">
+    
+
+
+<div class="summary">
   <h2 class="part-title">
     
       References
@@ -553,6 +620,26 @@ type=&amp;quot;data&amp;quot;: For initial data configura">
   <ul class="doc-summary">
     
     
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
     
       
       
@@ -773,27 +860,15 @@ type=&amp;quot;data&amp;quot;: For initial data configura">
             <ul class="chapter">
               
                 <li>
-                  <a href="/weex-website/references/index.html" class="sidebar-link current ">Bootstrap</a>
+                  <a href="/weex-website/references/index.html" class="sidebar-link current ">Weex variable (Chinese)</a>
                 </li>
               
                 <li>
-                  <a href="/weex-website/references/special-element.html" class="sidebar-link  ">Special Element</a>
+                  <a href="/weex-website/references/unit.html" class="sidebar-link  ">CSS unit (Chinese)</a>
                 </li>
               
                 <li>
-                  <a href="/weex-website/references/component-defs.html" class="sidebar-link  ">Component Definition</a>
-                </li>
-              
-                <li>
-                  <a href="/weex-website/references/api.html" class="sidebar-link  ">Component APIs</a>
-                </li>
-              
-                <li>
-                  <a href="/weex-website/references/gesture.html" class="sidebar-link  ">Gesture</a>
-                </li>
-              
-                <li>
-                  <a href="/weex-website/references/common-attrs.html" class="sidebar-link  ">Common Attribute</a>
+                  <a href="/weex-website/references/common-event.html" class="sidebar-link  ">Common Events</a>
                 </li>
               
                 <li>
@@ -805,11 +880,23 @@ type=&amp;quot;data&amp;quot;: For initial data configura">
                 </li>
               
                 <li>
+                  <a href="/weex-website/references/gesture.html" class="sidebar-link  ">Gesture</a>
+                </li>
+              
+                <li>
                   <a href="/weex-website/references/text-style.html" class="sidebar-link  ">Text Style</a>
                 </li>
               
                 <li>
-                  <a href="/weex-website/references/common-event.html" class="sidebar-link  ">Common Events</a>
+                  <a href="/weex-website/references/android-apis.html" class="sidebar-link  ">Android APIs (Chinese)</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/references/web-standards.html" class="sidebar-link  ">Web standards (Chinese)</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/references/native-dom-api.html" class="sidebar-link  ">Native DOM APIs (Chinese)</a>
                 </li>
               
             </ul>
@@ -852,14 +939,6 @@ type=&amp;quot;data&amp;quot;: For initial data configura">
                 </li>
               
                 <li>
-                  <a href="/weex-website/references/components/wxc-navpage.html" class="sidebar-link  ">&lt;wxc-navpage&gt;</a>
-                </li>
-              
-                <li>
-                  <a href="/weex-website/references/components/wxc-tabbar.html" class="sidebar-link  ">&lt;wxc-tabbar&gt;</a>
-                </li>
-              
-                <li>
                   <a href="/weex-website/references/components/div.html" class="sidebar-link  ">&lt;div&gt;</a>
                 </li>
               
@@ -880,7 +959,7 @@ type=&amp;quot;data&amp;quot;: For initial data configura">
                 </li>
               
                 <li>
-                  <a href="/weex-website/references/components/refresh-loading.html" class="sidebar-link  ">&lt;refresh&gt; &amp; &lt;loading&gt;</a>
+                  <a href="/weex-website/references/components/refresh.html" class="sidebar-link  ">&lt;refresh&gt; &amp; &lt;loading&gt;</a>
                 </li>
               
                 <li>
@@ -935,10 +1014,6 @@ type=&amp;quot;data&amp;quot;: For initial data configura">
                 </li>
               
                 <li>
-                  <a href="/weex-website/references/modules/timer.html" class="sidebar-link  ">Timer</a>
-                </li>
-              
-                <li>
                   <a href="/weex-website/references/modules/webview.html" class="sidebar-link  ">webview</a>
                 </li>
               
@@ -949,24 +1024,74 @@ type=&amp;quot;data&amp;quot;: For initial data configura">
     
       <li>
         
-          <h3 class="chapter-title">Low-level Specs</h3>
+          <h3 class="chapter-title">Vue</h3>
           
             <ul class="chapter">
               
                 <li>
-                  <a href="/weex-website/references/specs/index.html" class="sidebar-link  ">JS Bundle format</a>
+                  <a href="/weex-website/references/vue/index.html" class="sidebar-link  ">Difference with Web (Chinese)</a>
                 </li>
               
                 <li>
-                  <a href="/weex-website/references/specs/js-bundle-format.html" class="sidebar-link  ">JS Bundle format</a>
+                  <a href="/weex-website/references/vue/difference-of-vuex.html" class="sidebar-link  ">Using Vuex &amp; vue-router (Chinese)</a>
+                </li>
+              
+            </ul>
+          
+        
+      </li>
+    
+      <li>
+        
+          <h3 class="chapter-title">Advanced</h3>
+          
+            <ul class="chapter">
+              
+                <li>
+                  <a href="/weex-website/references/advanced/index.html" class="sidebar-link  ">Extend to iOS</a>
                 </li>
               
                 <li>
-                  <a href="/weex-website/references/specs/js-framework-apis.html" class="sidebar-link  ">JS Framework APIs</a>
+                  <a href="/weex-website/references/advanced/extend-to-android.html" class="sidebar-link  ">Extend to Android</a>
                 </li>
               
                 <li>
-                  <a href="/weex-website/references/specs/virtual-dom-apis.html" class="sidebar-link  ">Virtual DOM APIs</a>
+                  <a href="/weex-website/references/advanced/extend-to-html5.html" class="sidebar-link  ">Extend to HTML5 (Chinese)</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/references/advanced/extend-jsfm.html" class="sidebar-link  ">Extend JS framework (Chinese)</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/references/advanced/extend-js-service.html" class="sidebar-link  ">Extend JS Service (later)</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/references/advanced/integrate-devtool-to-android.html" class="sidebar-link  ">Integrate Devtool to Android (Chinese)</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/references/advanced/integrate-devtool-to-ios.html" class="sidebar-link  ">Integrate Devtool to iOS (Chinese)</a>
+                </li>
+              
+            </ul>
+          
+        
+      </li>
+    
+      <li>
+        
+          <h3 class="chapter-title">Migration</h3>
+          
+            <ul class="chapter">
+              
+                <li>
+                  <a href="/weex-website/references/migration/index.html" class="sidebar-link  ">Migration from Weex (Chinese)</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/references/migration/difference.html" class="sidebar-link  ">The difference between Weex and Vue (Chinese)</a>
                 </li>
               
             </ul>
@@ -985,28 +1110,31 @@ type=&amp;quot;data&amp;quot;: For initial data configura">
   
     
       <h1 class="article-title" itemprop="name">
-        Bootstrap
+        Weex variable (Chinese)
       </h1>
     
   
-  <time class="article-date" datetime="2017-01-08T06:18:17.000Z">Updated time: 08/01/2017</time>
+  <time class="article-date" datetime="2017-01-10T05:43:26.000Z">Updated time: 10/01/2017</time>
 </header>
-    <h1 id="Bootstrap"><a href="#Bootstrap" class="headerlink" title="Bootstrap"></a>Bootstrap</h1><p>Besides its default meaning, <code>&lt;script&gt;</code> tag supports two more configuration with its <code>type</code> property <em>in the top level component of a page</em>.</p>
+    <h1 id="Weex-实例变量"><a href="#Weex-实例变量" class="headerlink" title="Weex 实例变量"></a>Weex 实例变量</h1><p>每个 Weex 页面的 JS 上下文中都有一个相互独立的 <code>weex</code> 变量，用来持有当前 Weex 页面相关的单例内容或方法。</p>
+<h2 id="weex-config"><a href="#weex-config" class="headerlink" title="weex.config"></a><code>weex.config</code></h2><p>该变量包含了当前 Weex 页面的所有环境信息，包括不仅限于：</p>
 <ul>
-<li><code>type=&quot;data&quot;</code>: For initial data configuration, the data defined here will overwrite the data definition in the <code>&lt;script&gt;</code>.</li>
-<li><code>type=&quot;config&quot;</code>: For configuration definition.</li>
+<li><code>bundleUrl: string</code>: JS bundle 的 URL。</li>
+<li><code>env: Object</code>: 环境对象。<ul>
+<li><code>weexVersion: string</code>: Weex sdk 版本。</li>
+<li><code>appName: string</code>: 应用名字。</li>
+<li><code>appVersion: string</code>: 应用版本。</li>
+<li><code>platform: string</code>: 平台信息，是 iOS、Android 还是 Web。</li>
+<li><code>osVersion: string</code>: 系统版本。</li>
+<li><code>deviceModel: string</code>: 设备型号 (仅原生应用)。</li>
+<li><code>deviceWidth: number</code>: 设备宽度，默认为 750。</li>
+<li><code>deviceHeight: number</code>: 设备高度。</li>
 </ul>
-<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"data"</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="comment">/* (optional) the definition of initial data */</span></div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"config"</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="comment">/* (optional) the definition of configuration */</span></div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
-<h2 id="Initial-data-definition"><a href="#Initial-data-definition" class="headerlink" title="Initial data definition"></a>Initial data definition</h2><p>Sometimes, it is hard to maintain huge data structure in the default <code>&lt;script&gt;</code> tag. So Weex allows us to have a <code>&lt;script type=&quot;data&quot;&gt;</code> tag to define initial data. The data defined in here will totally replace the data defined in the default <code>&lt;script&gt;</code> tag.</p>
-<p>here is an example:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"data"</span>&gt;</span><span class="javascript"></span></div><div class="line">&#123;</div><div class="line">  <span class="attr">title</span>: <span class="string">'Alibaba'</span>,</div><div class="line">  <span class="attr">date</span>: <span class="keyword">new</span> <span class="built_in">Date</span>().toLocaleString()</div><div class="line">&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
-<h2 id="script-configuration"><a href="#script-configuration" class="headerlink" title="script configuration"></a>script configuration</h2><p>Weex also allows us to do some configuration with a <code>&lt;script type=&quot;config&quot;&gt;</code>, So far, we only support the <code>downgrade</code> configs.</p>
-<ul>
-<li><code>downgrade.osVersion</code></li>
-<li><code>downgrade.appVersion</code></li>
-<li><code>downgrade.weexVersion</code></li>
-<li><code>downgrade.deviceModel</code></li>
+</li>
 </ul>
+<h2 id="weex-require-module-string-Object"><a href="#weex-require-module-string-Object" class="headerlink" title="weex.require(module: string): Object"></a><code>weex.require(module: string): Object</code></h2><p>获取某个 native module 的所有方法，比如：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;<span class="name">text</span>&gt;</span>Hello World<span class="tag">&lt;/<span class="name">text</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="keyword">var</span> modal = weex.require(<span class="string">'modal'</span>)</div><div class="line">  modal.toast(&#123;</div><div class="line">    <span class="attr">message</span>: <span class="string">'I am a toast.'</span>,</div><div class="line">    <span class="attr">duration</span>: <span class="number">3</span></div><div class="line">  &#125;)</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="weex-document-Document"><a href="#weex-document-Document" class="headerlink" title="weex.document: Document"></a><code>weex.document: Document</code></h2><p>返回当前 Weex 页面的文档对象。</p>
 
   </div>
   
