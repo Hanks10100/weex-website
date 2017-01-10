@@ -19,7 +19,7 @@ APIfetch(options, callback,progressCallback)Start a network request, use two cal
 Arguments
 
 option">
-<meta property="og:updated_time" content="2017-01-10T05:23:26.000Z">
+<meta property="og:updated_time" content="2017-01-10T11:16:45.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="stream">
 <meta name="twitter:description" content="streamA series of stream api. It provides a network request.
@@ -349,6 +349,16 @@ option">
         
       
     
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
    
     
       <li>
@@ -363,6 +373,10 @@ option">
               
                 <li>
                   <a href="/weex-website/references/unit.html" class="sidebar-link  ">CSS unit (Chinese)</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/references/path.html" class="sidebar-link  ">Path</a>
                 </li>
               
                 <li>
@@ -390,11 +404,11 @@ option">
                 </li>
               
                 <li>
-                  <a href="/weex-website/references/web-standards.html" class="sidebar-link  ">Web standards (Chinese)</a>
+                  <a href="/weex-website/references/native-dom-api.html" class="sidebar-link  ">Native DOM APIs (Chinese)</a>
                 </li>
               
                 <li>
-                  <a href="/weex-website/references/native-dom-api.html" class="sidebar-link  ">Native DOM APIs (Chinese)</a>
+                  <a href="/weex-website/references/web-standards.html" class="sidebar-link  ">Web standards (Chinese)</a>
                 </li>
               
             </ul>
@@ -485,6 +499,10 @@ option">
               
                 <li>
                   <a href="/weex-website/references/modules/globalevent.html" class="sidebar-link  ">globalEvent</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/references/modules/picker.html" class="sidebar-link  ">picker</a>
                 </li>
               
                 <li>
@@ -848,6 +866,16 @@ option">
         
       
     
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
    
     
       <li>
@@ -862,6 +890,10 @@ option">
               
                 <li>
                   <a href="/weex-website/references/unit.html" class="sidebar-link  ">CSS unit (Chinese)</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/references/path.html" class="sidebar-link  ">Path</a>
                 </li>
               
                 <li>
@@ -889,11 +921,11 @@ option">
                 </li>
               
                 <li>
-                  <a href="/weex-website/references/web-standards.html" class="sidebar-link  ">Web standards (Chinese)</a>
+                  <a href="/weex-website/references/native-dom-api.html" class="sidebar-link  ">Native DOM APIs (Chinese)</a>
                 </li>
               
                 <li>
-                  <a href="/weex-website/references/native-dom-api.html" class="sidebar-link  ">Native DOM APIs (Chinese)</a>
+                  <a href="/weex-website/references/web-standards.html" class="sidebar-link  ">Web standards (Chinese)</a>
                 </li>
               
             </ul>
@@ -984,6 +1016,10 @@ option">
               
                 <li>
                   <a href="/weex-website/references/modules/globalevent.html" class="sidebar-link  ">globalEvent</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/references/modules/picker.html" class="sidebar-link  ">picker</a>
                 </li>
               
                 <li>
@@ -1111,7 +1147,7 @@ option">
       </h1>
     
   
-  <time class="article-date" datetime="2017-01-10T05:23:26.000Z">Updated time: 10/01/2017</time>
+  <time class="article-date" datetime="2017-01-10T11:16:45.000Z">Updated time: 10/01/2017</time>
 </header>
     <h1 id="stream"><a href="#stream" class="headerlink" title="stream"></a>stream</h1><p>A series of stream api. It provides a network request.</p>
 <h2 id="API"><a href="#API" class="headerlink" title="API"></a>API</h2><h3 id="fetch-options-callback-progressCallback"><a href="#fetch-options-callback-progressCallback" class="headerlink" title="fetch(options, callback,progressCallback)"></a>fetch(options, callback,progressCallback)</h3><p>Start a network request, use two callbacks to receive server’s response data.</p>
@@ -1125,7 +1161,7 @@ option">
 </li>
 <li><p>headers(string): the HTTP request headers.</p>
 </li>
-<li><p>type(string): request type, ‘json’,’text’ or ‘jsonp’(same as ‘json’ in native implementation)</p>
+<li><p>type(string): response type, ‘json’,’text’ or ‘jsonp’(same as ‘json’ in native implementation)</p>
 </li>
 <li><p>body(string): the HTTP body.</p>
 </li>
@@ -1159,6 +1195,10 @@ option">
 </li>
 </ul>
 </li>
+</ul>
+<h3 id="Note"><a href="#Note" class="headerlink" title="Note"></a>Note</h3><ul>
+<li>Default Content-Type is ‘application/x-www-form-urlencoded’. (The type specified in fetch is the response type!)</li>
+<li>You need to set the Content-Type header to ‘application/json’ manually if you want to post the json body.</li>
 </ul>
 <h3 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h3><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">text</span> <span class="attr">onclick</span>=<span class="string">"startStream"</span>&gt;</span>click here to start stream<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="built_in">module</span>.exports = &#123;</div><div class="line">    <span class="attr">methods</span>: &#123;</div><div class="line">      <span class="attr">startStream</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> stream_module = <span class="built_in">require</span>(<span class="string">'@weex-module/stream'</span>);</div><div class="line">        stream_module.fetch(&#123;</div><div class="line">          <span class="attr">method</span>: <span class="string">'GET'</span>,</div><div class="line">          <span class="attr">url</span>: <span class="string">"http://httpbin.org/get"</span>,</div><div class="line">          <span class="attr">type</span>:<span class="string">'json'</span></div><div class="line">        &#125;, <span class="function"><span class="keyword">function</span>(<span class="params">response</span>) </span>&#123;</div><div class="line">          <span class="comment">//finished response</span></div><div class="line">          <span class="built_in">console</span>.log(<span class="string">"all received:"</span>,response);</div><div class="line">        &#125;,<span class="function"><span class="keyword">function</span>(<span class="params">response</span>)</span>&#123;</div><div class="line">          <span class="comment">//progress response</span></div><div class="line">          <span class="built_in">console</span>.log(<span class="string">"current bytes received:"</span>,response.length);</div><div class="line">        &#125;);</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
 <p><a href="http://dotwe.org/6e4ede64fdfe070b9696cc4cc3bdd086" target="_blank" rel="external">Try it</a></p>

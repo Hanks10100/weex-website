@@ -23,7 +23,7 @@ color {color}：文字颜色。
 可选值为色值，支持 RGB（ rgb(255, 0, 0) ）；RGBA（ rgba(255, 0, 0, 0.5) ）；十六进制（ #ff0000 ）；精简写法的十六进制（ #f00 ）；色值关键字（red）。
 
 lines">
-<meta property="og:updated_time" content="2017-01-10T07:15:30.000Z">
+<meta property="og:updated_time" content="2017-01-10T11:24:32.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="文本样式">
 <meta name="twitter:description" content="文本样式v0.5+
@@ -360,6 +360,11 @@ lines">
         
       
     
+      
+      
+        
+      
+    
    
     
       <li>
@@ -456,11 +461,11 @@ lines">
                 </li>
               
                 <li>
-                  <a href="/weex-website/cn/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
+                  <a href="/weex-website/cn/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
                 </li>
               
                 <li>
-                  <a href="/weex-website/cn/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
+                  <a href="/weex-website/cn/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
                 </li>
               
                 <li>
@@ -496,6 +501,10 @@ lines">
               
                 <li>
                   <a href="/weex-website/cn/references/modules/animation.html" class="sidebar-link  ">animation</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/modules/picker.html" class="sidebar-link  ">picker</a>
                 </li>
               
                 <li>
@@ -868,6 +877,11 @@ lines">
         
       
     
+      
+      
+        
+      
+    
    
     
       <li>
@@ -964,11 +978,11 @@ lines">
                 </li>
               
                 <li>
-                  <a href="/weex-website/cn/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
+                  <a href="/weex-website/cn/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
                 </li>
               
                 <li>
-                  <a href="/weex-website/cn/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
+                  <a href="/weex-website/cn/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
                 </li>
               
                 <li>
@@ -1004,6 +1018,10 @@ lines">
               
                 <li>
                   <a href="/weex-website/cn/references/modules/animation.html" class="sidebar-link  ">animation</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/modules/picker.html" class="sidebar-link  ">picker</a>
                 </li>
               
                 <li>
@@ -1135,7 +1153,7 @@ lines">
       </h1>
     
   
-  <time class="article-date" datetime="2017-01-10T07:15:30.000Z">Updated time: 10/01/2017</time>
+  <time class="article-date" datetime="2017-01-10T11:24:32.000Z">Updated time: 10/01/2017</time>
 </header>
     <h1 id="文本样式"><a href="#文本样式" class="headerlink" title="文本样式"></a>文本样式</h1><p><span class="weex-version">v0.5+</span></p>
 <p>文本类组件共享一些通用样式, 这类组件目前包括 <a href="./components/text.html"><code>&lt;text&gt;</code></a> 和 <a href="./components/input.html"><code>&lt;input&gt;</code></a>。</p>
@@ -1149,7 +1167,14 @@ lines">
 </li>
 <li><p><code>font-style {string}</code>：字体类别。可选值 <code>normal</code> | <code>italic</code>，默认为 <code>normal</code>。</p>
 </li>
-<li><p><code>font-weight {string}</code>：字体粗细程度。可选值 <code>normal</code> | <code>bold</code>，默认为 <code>normal</code>。</p>
+<li><p><code>font-weight {string}</code>：字体粗细程度</p>
+<ul>
+<li>可选值: <code>normal</code>, <code>bold</code>, <code>100</code>, <code>200</code>, <code>300</code>, <code>400</code>, <code>500</code>, <code>600</code>, <code>700</code>, <code>800</code>, <code>900</code></li>
+<li>normal 等同于 400, bold 等同于 700；</li>
+<li>默认值: <code>normal</code>；</li>
+<li>iOS 支持 9 种 font-weight值；Android 仅支持 400 和 700, 其他值会设为 400 或 700</li>
+<li>类似 <code>lighter</code>, <code>bolder</code> 这样的值暂时不支持</li>
+</ul>
 </li>
 <li><p><code>text-decoration {string}</code>：字体装饰，可选值 <code>none</code> | <code>underline</code> | <code>line-through</code>，默认值为 <code>none</code>。</p>
 </li>

@@ -1,28 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="79px" height="68px" viewBox="0 0 79 68" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="120px" height="121px" viewBox="0 0 120 121" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
     <title>Page 1</title>
     <desc>Created with Sketch.</desc>
     <defs></defs>
     <g id="Welcome" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
-        <g id="Desktop-blue" transform="translate(-270.000000, -966.000000)" stroke="#404040">
-            <g id="优势" transform="translate(0.000000, 654.761905)">
-                <g id="Page-1" transform="translate(271.071429, 312.160850)">
-                    <g id="Group-7" transform="translate(0.473711, 49.502799)" stroke-width="1.30952381">
-                        <path id="Stroke-1"></path>
-                        <path id="Stroke-3"></path>
+        <g id="Desktop-blue" transform="translate(-413.000000, -1475.000000)" stroke="#404040">
+            <g id="优势" transform="translate(0.000000, 1000.000000)">
+                <g id="Page-1" transform="translate(414.000000, 476.754752)">
+                    <g id="Group-7" transform="translate(0.723486, 75.604275)" stroke-width="2">
+                        <path d="M74.1573034,41.2386955 L74.1573034,16.6401754" id="Stroke-1"></path>
+                        <path d="M41.6004385,41.2386955 L41.6004385,0" id="Stroke-3"></path>
+                        <path d="M116.842971,41.9621814 L0.361742943,41.9621814" id="Stroke-5"></path>
                     </g>
-                    <polyline id="Stroke-8" stroke-width="0.654761905" points="10.9545668 22.1262354 21.7907059 32.9230564 21.7907059 11.1323505"></polyline>
-                    <polyline id="Stroke-9" stroke-width="0.654761905" points="43.8182672 22.2644169 21.5538504 22.2644169 32.7651685 11.0530987"></polyline>
-                    <polyline id="Stroke-10" stroke-width="0.654761905" points="11.1322084 33.1597698 32.9229143 33.1597698 22.0076655 44.0750186"></polyline>
-                    <polyline id="Stroke-11" stroke-width="0.654761905" points="33.1597698 44.2919782 33.1597698 22.0275614 44.2919782 33.1597698"></polyline>
-                    <polygon id="Stroke-12" stroke-width="1.30952381" points="21.5538504 44.2919782 21.5538504 55.4241867 44.2919782 33.3966253 54.9504757 33.3966253 32.4492033 11.1322084 32.4492033 0 21.6523823 10.9545668 10.1847864 22.5012724 0 22.5012724"></polygon>
-                    <polyline id="Stroke-14" stroke-width="0.654761905" points="38.8363908 38.6169679 43.5815539 43.3446036 43.5815539 33.8703837"></polyline>
-                    <path d="M48.7922327,27.2383823 L54.5558744,21.4747406" id="Stroke-15" stroke-width="0.654761905"></path>
-                    <path id="Stroke-16" stroke-width="0.654761905"></path>
-                    <polyline id="Stroke-17" stroke-width="0.654761905" points="32.9229143 43.5814117 54.7136202 43.5814117 43.7983714 54.4966605"></polyline>
-                    <polyline id="Stroke-18" stroke-width="0.654761905" points="54.9504757 54.7136202 54.9504757 32.4492033 66.0826841 43.5814117"></polyline>
-                    <polyline id="Stroke-19" stroke-width="1.30952381" points="32.8043918 44.0576334 43.3444615 54.7137623 43.3444615 65.8459707 66.0825894 43.8184093 76.7410868 43.8184093 54.2398144 21.5539925 54.2398144 10.4217841 43.4429934 21.3763509"></polyline>
+                    <polyline id="Stroke-8" points="16.7306111 33.7927958 33.2803508 50.2824862 33.2803508 17.0021354"></polyline>
+                    <polyline id="Stroke-9" points="66.9224445 34.0038367 32.9186078 34.0038367 50.0413483 16.8810962"></polyline>
+                    <polyline id="Stroke-10" points="17.0019183 50.6440121 50.2822691 50.6440121 33.6117073 67.3145739"></polyline>
+                    <polyline id="Stroke-11" points="50.6440121 67.6459304 50.6440121 33.6420937 67.6459304 50.6440121"></polyline>
+                    <polygon id="Stroke-12" stroke-width="2" points="32.9186078 67.6459304 32.9186078 84.6478487 67.6459304 51.005755 83.9243628 51.005755 49.5587832 17.0019183 49.5587832 0 33.0690929 16.7306111 15.5549466 34.3655796 0 34.3655796"></polygon>
+                    <polyline id="Stroke-14" points="59.3137605 58.9786418 66.5609186 66.199031 66.5609186 51.7293132"></polyline>
+                    <path d="M74.5190463,41.6004385 L83.3216991,32.7977857" id="Stroke-15"></path>
+                    <path d="M100.202795,49.9205262 L82.839134,49.9205262" id="Stroke-16"></path>
+                    <polyline id="Stroke-17" points="50.2822691 66.5607016 83.5626199 66.5607016 66.8920581 83.2312634"></polyline>
+                    <polyline id="Stroke-18" points="83.9243628 83.5626199 83.9243628 49.5587832 100.926281 66.5607016"></polyline>
+                    <polyline id="Stroke-19" stroke-width="2" points="50.1012529 67.2880219 66.1988139 83.5628369 66.1988139 100.564755 100.926136 66.9226616 117.204569 66.9226616 82.8389893 32.9188249 82.8389893 15.9169065 66.349299 32.6475177"></polyline>
                 </g>
             </g>
         </g>

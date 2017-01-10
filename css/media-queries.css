@@ -90,6 +90,9 @@
     padding: 0 1em; }
   .horizon .textbox p {
     width: 100%; }
+  .header .slide-content .page-title {
+    width: 320px;
+    margin-left: -160px; }
   .header .slide-content .btn-group {
     bottom: 10%; }
   .feature .right-box {
@@ -102,6 +105,8 @@
       height: 245.45px; }
   .cross-platform .sketch-content {
     height: 200px; }
+  .supporting-vue .sketch-content.imgbox .imgbox {
+    background-size: 80px; }
   .users .sketch-content .user-logo {
     width: 140px;
     height: 140px;
@@ -115,4 +120,6 @@
   .users .sketch-content .user-logo h3 {
     margin-top: 110px; }
   .feedback .user-feedback {
-    /*flex: 1 0 140px;*/ } }
+    /*flex: 1 0 140px;*/ }
+  .feedback .scene-container .go-2-doc {
+    margin-top: 0; } }

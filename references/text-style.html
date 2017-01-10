@@ -17,7 +17,7 @@ color: &amp;lt;colors&amp;gt; this property set the foreground color">
 Text alike components share some common style rules. The text alike components currently includes text and input.
 Properties
 color: &amp;lt;colors&amp;gt; this property set the foreground color">
-<meta property="og:updated_time" content="2017-01-10T04:01:45.000Z">
+<meta property="og:updated_time" content="2017-01-10T11:18:28.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Text Style">
 <meta name="twitter:description" content="Text Style0.5
@@ -346,6 +346,16 @@ color: &amp;lt;colors&amp;gt; this property set the foreground color">
         
       
     
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
    
     
       <li>
@@ -360,6 +370,10 @@ color: &amp;lt;colors&amp;gt; this property set the foreground color">
               
                 <li>
                   <a href="/weex-website/references/unit.html" class="sidebar-link  ">CSS unit (Chinese)</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/references/path.html" class="sidebar-link  ">Path</a>
                 </li>
               
                 <li>
@@ -387,11 +401,11 @@ color: &amp;lt;colors&amp;gt; this property set the foreground color">
                 </li>
               
                 <li>
-                  <a href="/weex-website/references/web-standards.html" class="sidebar-link  ">Web standards (Chinese)</a>
+                  <a href="/weex-website/references/native-dom-api.html" class="sidebar-link  ">Native DOM APIs (Chinese)</a>
                 </li>
               
                 <li>
-                  <a href="/weex-website/references/native-dom-api.html" class="sidebar-link  ">Native DOM APIs (Chinese)</a>
+                  <a href="/weex-website/references/web-standards.html" class="sidebar-link  ">Web standards (Chinese)</a>
                 </li>
               
             </ul>
@@ -482,6 +496,10 @@ color: &amp;lt;colors&amp;gt; this property set the foreground color">
               
                 <li>
                   <a href="/weex-website/references/modules/globalevent.html" class="sidebar-link  ">globalEvent</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/references/modules/picker.html" class="sidebar-link  ">picker</a>
                 </li>
               
                 <li>
@@ -845,6 +863,16 @@ color: &amp;lt;colors&amp;gt; this property set the foreground color">
         
       
     
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
    
     
       <li>
@@ -859,6 +887,10 @@ color: &amp;lt;colors&amp;gt; this property set the foreground color">
               
                 <li>
                   <a href="/weex-website/references/unit.html" class="sidebar-link  ">CSS unit (Chinese)</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/references/path.html" class="sidebar-link  ">Path</a>
                 </li>
               
                 <li>
@@ -886,11 +918,11 @@ color: &amp;lt;colors&amp;gt; this property set the foreground color">
                 </li>
               
                 <li>
-                  <a href="/weex-website/references/web-standards.html" class="sidebar-link  ">Web standards (Chinese)</a>
+                  <a href="/weex-website/references/native-dom-api.html" class="sidebar-link  ">Native DOM APIs (Chinese)</a>
                 </li>
               
                 <li>
-                  <a href="/weex-website/references/native-dom-api.html" class="sidebar-link  ">Native DOM APIs (Chinese)</a>
+                  <a href="/weex-website/references/web-standards.html" class="sidebar-link  ">Web standards (Chinese)</a>
                 </li>
               
             </ul>
@@ -981,6 +1013,10 @@ color: &amp;lt;colors&amp;gt; this property set the foreground color">
               
                 <li>
                   <a href="/weex-website/references/modules/globalevent.html" class="sidebar-link  ">globalEvent</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/references/modules/picker.html" class="sidebar-link  ">picker</a>
                 </li>
               
                 <li>
@@ -1108,7 +1144,7 @@ color: &amp;lt;colors&amp;gt; this property set the foreground color">
       </h1>
     
   
-  <time class="article-date" datetime="2017-01-10T04:01:45.000Z">Updated time: 10/01/2017</time>
+  <time class="article-date" datetime="2017-01-10T11:18:28.000Z">Updated time: 10/01/2017</time>
 </header>
     <h1 id="Text-Style"><a href="#Text-Style" class="headerlink" title="Text Style"></a>Text Style</h1><p><span class="weex-version">0.5</span></p>
 <p>Text alike components share some common style rules. The text alike components currently includes <a href="./components/text.html"><code>text</code></a> and <a href="./components/input.html"><code>input</code></a>.</p>
@@ -1116,7 +1152,17 @@ color: &amp;lt;colors&amp;gt; this property set the foreground color">
 <li><code>color</code>: &lt;colors&gt; this property set the foreground color of an component’s text content.</li>
 <li><code>font-size</code>: &lt;length&gt; this property specifies the size of the font.</li>
 <li><code>font-style</code>: &lt;enum&gt; <code>normal</code> | <code>italic</code>. This property lets you select italic or normal faces within a font-family. Default value is <code>normal</code>.</li>
-<li><code>font-weight</code>: &lt;enum&gt; <code>normal</code> | <code>bold</code>. This property specifies the boldness of the font. Default value is <code>normal</code>.</li>
+<li><code>font-weight</code>: <ul>
+<li>values: <code>normal</code>, <code>bold</code>, <code>100</code>, <code>200</code>, <code>300</code>, <code>400</code>, <code>500</code>, <code>600</code>, <code>700</code>, <code>800</code>, <code>900</code></li>
+<li>normal is equal to 400, bold equel to 700</li>
+<li>default value: <code>normal</code></li>
+<li>apply to: <code>&lt;text&gt;</code>, <code>&lt;input&gt;</code></li>
+<li>ios support showing 9 kind of font-weight. </li>
+<li>android support showing 2 kind of font-weight:400,700, other value will map to 400 or 700</li>
+<li>Some standard values like <code>lighter</code>, <code>bolder</code>, number unit are not supported.</li>
+<li>The effect not apply to all elements, just <code>&lt;text&gt;</code> and <code>&lt;input&gt;</code>. In another way, it’s not inherited.</li>
+</ul>
+</li>
 <li><code>text-decoration</code>: &lt;enum&gt; <code>none</code> | <code>underline</code> | <code>line-through</code>. This property is used to set the text formatting to underline or line-through. The default value is <code>none</code>.</li>
 <li><code>text-align</code>: &lt;enum&gt; <code>left</code> | <code>center</code> | <code>right</code>. This property describes how inline content like text is aligned in its parent component. The default value is <code>left</code>.</li>
 <li><code>font-family</code>:&lt;string&gt; this property set the font-family of the text. This property <strong>doesn’t guarantee</strong> the given font will always be set to the text. If the specified font cannot be found at the device, a typeface fallback will occur and the default typeface will be load. The fallback mechanism may vary in different devices.</li>

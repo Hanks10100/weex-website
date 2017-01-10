@@ -19,7 +19,7 @@ html, body {
   padding: 0; }
 
 body {
-  background: #FAFAFA;
+  background: #f5f5f5;
   font-family: "PingFang SC","Helvetica Neue",Arial,STHeiti,"Microsoft YaHei","Source Han Sans SC","Noto Sans CJK SC","Source Han Sans CN","Noto Sans SC","Noto Sans CJK TC",SimSun,sans-serif;
   font-size: 14px;
   line-height: 1.2;
@@ -112,7 +112,8 @@ blockquote {
   color: #fff;
   background: #ff3e33;
   border: #ff3e33 1px solid;
-  border-radius: 2em; }
+  border-radius: 2em;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.16); }
   .button:hover {
     background: #d63f36;
     border: #d63f36 1px solid; }
@@ -182,6 +183,9 @@ a.current {
 .show {
   display: block !important; }
 
+.hide {
+  display: none !important; }
+
 table {
   display: table;
   width: 100%;
@@ -220,7 +224,7 @@ table th {
   height: 72px;
   padding: 0 65px;
   position: fixed;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.95);
   box-shadow: 3px 2px 4px 0 rgba(0, 0, 0, 0.12);
   top: 0;
   left: 0;
@@ -366,8 +370,8 @@ table th {
   width: 100%;
   padding: 20px 65px;
   margin: 0;
-  background: #FAFAFA;
-  border-top: 2px solid #DDDDDD; }
+  background: #fff;
+  border-top: 1px solid #DDDDDD; }
   #footer .ali-logo {
     width: 83px;
     height: 41px;
@@ -514,7 +518,7 @@ pre .attr {
   height: 100%;
   height: calc(100% - 72px); }
   .scene:nth-child(even) {
-    background: #FAFAFA;
+    background: #f5f5f5;
     color: #00BDFF; }
   .scene:nth-child(odd) {
     background: #00BDFF;
@@ -615,31 +619,30 @@ pre .attr {
     .header .slide-content .page-title {
       font-size: 2.3em;
       font-family: "Gill Sans";
-      width: 320px;
+      width: 500px;
       text-align: center;
       position: absolute;
       top: 70px;
       left: 50%;
-      margin-left: -160px; }
+      margin-left: -250px; }
     .header .slide-content .btn-group {
       position: absolute;
       bottom: 30%;
       left: 50%;
       margin-left: -11.222em; }
       .header .slide-content .btn-group > .button:nth-child(2) {
-        background: #f4d03f;
-        border-color: #f4d03f;
         margin-left: 20px; }
   .header .galaxy {
     height: 560px;
     width: 560px;
     position: absolute;
-    top: 50%;
+    top: 45%;
     margin-top: -230px; }
   .header .left {
     left: -40px; }
   .header .right {
-    right: -40px; }
+    top: 55%;
+    right: -110px; }
 
 .edge .scene-container .textbox {
   -webkit-flex: 3;
@@ -651,9 +654,9 @@ pre .attr {
   -webkit-flex-direction: row;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-align-items: flex-end;
+      -ms-flex-align: end;
+          align-items: flex-end;
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center; }
@@ -677,7 +680,8 @@ pre .attr {
   -webkit-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  text-align: center; }
+  text-align: center;
+  padding: 0 1em; }
   .edge .inner-box img {
     width: 78px;
     height: 78px;
@@ -689,9 +693,9 @@ pre .attr {
   .edge .inner-box .underline {
     display: inline-block;
     background: #00BDFF;
-    width: 120px;
-    height: 5px;
-    margin: 20px 0; }
+    width: 80px;
+    height: 3px;
+    margin: 0 0 20px; }
   .edge .inner-box p {
     font-size: 1em;
     color: #363539; }
@@ -757,16 +761,27 @@ pre .attr {
   top: 40px;
   right: 0; }
 
+.cross-platform .sketch-content {
+  -webkit-flex: 5;
+      -ms-flex: 5;
+          flex: 5; }
+
 .cross-platform .imgbox {
   height: auto; }
   .cross-platform .imgbox.ios {
-    background: url("../images/ios.png") 50% 50%/contain no-repeat;
+    background: url("../images/ios.png") 50% 50% no-repeat;
+    background-size: 90%;
+    background-position: left 50% bottom 40px;
     background-origin: content-box; }
   .cross-platform .imgbox.android {
-    background: url("../images/android.png") 50% 50%/contain no-repeat;
+    background: url("../images/android.png") 50% 50% no-repeat;
+    background-size: 90%;
+    background-position: left 50% bottom 40px;
     background-origin: content-box; }
   .cross-platform .imgbox.h5 {
-    background: url("../images/web.png") 50% 50%/contain no-repeat;
+    background: url("../images/web.png") 50% 50% no-repeat;
+    background-position: left 50% bottom 40px;
+    background-size: contain;
     background-origin: content-box; }
 
 .cross-platform .textbox p {
@@ -776,7 +791,16 @@ pre .attr {
   color: #fff; }
   .supporting-vue .sketch-content.imgbox {
     background: url("../images/vue.png") 50% 50%/contain no-repeat;
-    background-origin: content-box; }
+    background-origin: content-box;
+    position: relative; }
+    .supporting-vue .sketch-content.imgbox .imgbox {
+      width: 100%;
+      height: 104px;
+      background: url("../images/vue-logo.png") 50% 50%/contain no-repeat;
+      position: absolute;
+      top: -50px;
+      left: 0;
+      right: 0; }
 
 .schematic .textbox p {
   color: #363539; }
@@ -864,7 +888,7 @@ pre .attr {
     display: -webkit-box;
     -webkit-line-clamp: 6;
     -webkit-box-orient: vertical;
-    font-size: .9em; }
+    font-size: .8em; }
 
 .users .more {
   -webkit-flex: 1;
@@ -911,11 +935,16 @@ pre .attr {
     width: 66px;
     height: 66px;
     border-radius: 100%; }
-  .feedback .user-feedback p {
-    margin: 1em; }
-  .feedback .user-feedback .user-info {
-    font-size: .9em;
-    font-style: italic; }
+  .feedback .user-feedback .user-name {
+    font-weight: bold;
+    font-size: 1em;
+    margin: 10px 0 0; }
+  .feedback .user-feedback .user-title {
+    font-size: .8em;
+    margin: 5px 0 10px;
+    color: #999; }
+  .feedback .user-feedback .user-say {
+    margin: 1em 0; }
 
 .feedback .scene-container .go-2-doc {
   -webkit-flex: 1;
@@ -927,9 +956,30 @@ pre .attr {
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center; }
+  -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin-top: -50px; }
+
+.back2top {
+  display: none;
+  width: 68px;
+  height: 68px;
+  border-radius: 100%;
+  background: #F3C3C1;
+  position: fixed;
+  bottom: 180px;
+  right: 10px;
+  text-align: center;
+  line-height: 68px;
+  -webkit-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+          transform: rotate(90deg);
+  color: #fff;
+  z-index: 99; }
+  .back2top:hover {
+    background: #FF3E33;
+    color: #fff; }
 
 /***********************
 * Variable
@@ -960,11 +1010,11 @@ pre .attr {
       outline: none; }
   .search .icon-search {
     position: absolute;
-    font-size: 20px;
+    font-size: 14px;
     line-height: 30px;
     top: 50%;
     margin-top: -14px;
-    right: 10px;
+    right: 15px;
     color: #999; }
 
 .results-panel {
@@ -1023,7 +1073,7 @@ pre .attr {
     top: 72px;
     left: 0;
     bottom: 0;
-    background: #FAFAFA;
+    background: #f5f5f5;
     width: 300px;
     z-index: 999;
     padding: 63px 15px 15px;
@@ -1491,6 +1541,9 @@ hue-6-2: #e6c07b
     padding: 0 1em; }
   .horizon .textbox p {
     width: 100%; }
+  .header .slide-content .page-title {
+    width: 320px;
+    margin-left: -160px; }
   .header .slide-content .btn-group {
     bottom: 10%; }
   .feature .right-box {
@@ -1503,6 +1556,8 @@ hue-6-2: #e6c07b
       height: 245.45px; }
   .cross-platform .sketch-content {
     height: 200px; }
+  .supporting-vue .sketch-content.imgbox .imgbox {
+    background-size: 80px; }
   .users .sketch-content .user-logo {
     width: 140px;
     height: 140px;
@@ -1516,4 +1571,6 @@ hue-6-2: #e6c07b
   .users .sketch-content .user-logo h3 {
     margin-top: 110px; }
   .feedback .user-feedback {
-    /*flex: 1 0 140px;*/ } }
+    /*flex: 1 0 140px;*/ }
+  .feedback .scene-container .go-2-doc {
+    margin-top: 0; } }

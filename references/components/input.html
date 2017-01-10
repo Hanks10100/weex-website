@@ -11,7 +11,7 @@
 <meta property="og:url" content="http://alibaba.github.io/references/components/input.html">
 <meta property="og:site_name" content="Weex">
 <meta property="og:description" content="inputThe weex builtin component input is used to create input controls to receive the user’s input characters. How a input component works varies considerably depending on the value of its type attrib">
-<meta property="og:updated_time" content="2017-01-10T05:22:12.000Z">
+<meta property="og:updated_time" content="2017-01-10T11:29:47.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="<input>">
 <meta name="twitter:description" content="inputThe weex builtin component input is used to create input controls to receive the user’s input characters. How a input component works varies considerably depending on the value of its type attrib">
@@ -337,6 +337,16 @@
         
       
     
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
    
     
       <li>
@@ -351,6 +361,10 @@
               
                 <li>
                   <a href="/weex-website/references/unit.html" class="sidebar-link  ">CSS unit (Chinese)</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/references/path.html" class="sidebar-link  ">Path</a>
                 </li>
               
                 <li>
@@ -378,11 +392,11 @@
                 </li>
               
                 <li>
-                  <a href="/weex-website/references/web-standards.html" class="sidebar-link  ">Web standards (Chinese)</a>
+                  <a href="/weex-website/references/native-dom-api.html" class="sidebar-link  ">Native DOM APIs (Chinese)</a>
                 </li>
               
                 <li>
-                  <a href="/weex-website/references/native-dom-api.html" class="sidebar-link  ">Native DOM APIs (Chinese)</a>
+                  <a href="/weex-website/references/web-standards.html" class="sidebar-link  ">Web standards (Chinese)</a>
                 </li>
               
             </ul>
@@ -473,6 +487,10 @@
               
                 <li>
                   <a href="/weex-website/references/modules/globalevent.html" class="sidebar-link  ">globalEvent</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/references/modules/picker.html" class="sidebar-link  ">picker</a>
                 </li>
               
                 <li>
@@ -836,6 +854,16 @@
         
       
     
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
    
     
       <li>
@@ -850,6 +878,10 @@
               
                 <li>
                   <a href="/weex-website/references/unit.html" class="sidebar-link  ">CSS unit (Chinese)</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/references/path.html" class="sidebar-link  ">Path</a>
                 </li>
               
                 <li>
@@ -877,11 +909,11 @@
                 </li>
               
                 <li>
-                  <a href="/weex-website/references/web-standards.html" class="sidebar-link  ">Web standards (Chinese)</a>
+                  <a href="/weex-website/references/native-dom-api.html" class="sidebar-link  ">Native DOM APIs (Chinese)</a>
                 </li>
               
                 <li>
-                  <a href="/weex-website/references/native-dom-api.html" class="sidebar-link  ">Native DOM APIs (Chinese)</a>
+                  <a href="/weex-website/references/web-standards.html" class="sidebar-link  ">Web standards (Chinese)</a>
                 </li>
               
             </ul>
@@ -972,6 +1004,10 @@
               
                 <li>
                   <a href="/weex-website/references/modules/globalevent.html" class="sidebar-link  ">globalEvent</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/references/modules/picker.html" class="sidebar-link  ">picker</a>
                 </li>
               
                 <li>
@@ -1099,7 +1135,7 @@
       </h1>
     
   
-  <time class="article-date" datetime="2017-01-10T05:22:12.000Z">Updated time: 10/01/2017</time>
+  <time class="article-date" datetime="2017-01-10T11:29:47.000Z">Updated time: 10/01/2017</time>
 </header>
     <h1 id="input"><a href="#input" class="headerlink" title="input"></a>input</h1><p>The weex builtin component <code>input</code> is used to create input controls to receive the user’s input characters. How a <code>input</code> component works varies considerably depending on the value of its <code>type</code> attribute, such as <code>text</code>, <code>password</code>, <code>url</code>, <code>email</code>, <code>tel</code> etc.</p>
 <p><strong>Notes:</strong> does not support the common-event <code>click</code>. Please listen to the <code>input</code> or <code>change</code> event instead.</p>
@@ -1149,12 +1185,20 @@
 <ul>
 <li>support ‘appear’ / ‘disappear’ event. </li>
 </ul>
+<h3 id="Methods"><a href="#Methods" class="headerlink" title="Methods"></a>Methods</h3><ul>
+<li><p><code>focus()</code></p>
+<p>The <code>focus()</code> method is used to give focus to an input component and tigger soft keybord(if it can be focused).</p>
+</li>
+<li><p><code>blur()</code></p>
+<p>The <code>blur()</code> method is used to remove focus from an input component and close soft keybord(if it has focus).</p>
+</li>
+</ul>
 <h3 id="Notes"><a href="#Notes" class="headerlink" title="Notes"></a>Notes</h3><p>does not support the common-event ‘click’. Please listen to the ‘input’ or ‘change’ event instead.</p>
 <h3 id="Parameters-of-events’-object"><a href="#Parameters-of-events’-object" class="headerlink" title="Parameters of events’ object"></a>Parameters of events’ object</h3><ul>
 <li>for ‘input’ and ‘change’ events:’value’: the value of the component who dispatched this event.’timestamp’: the time stamp of the event.</li>
 <li>for ‘focus’ and ‘blur’ events:’timestamp’: the time stamp of the event.</li>
 </ul>
-<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">input</span></span></div><div class="line">        <span class="attr">type</span>=<span class="string">"text"</span></div><div class="line">        <span class="attr">placeholder</span>=<span class="string">"Input Something"</span></div><div class="line">        <span class="attr">class</span>=<span class="string">"input"</span></div><div class="line">        <span class="attr">autofocus</span>=<span class="string">"true"</span></div><div class="line">        <span class="attr">value</span>=<span class="string">""</span></div><div class="line">        <span class="attr">onchange</span>=<span class="string">"onchange"</span></div><div class="line">        <span class="attr">oninput</span>=<span class="string">"oninput"</span></div><div class="line">      /&gt;</div><div class="line">      <span class="tag">&lt;<span class="name">text</span>&gt;</span>oninput: &#123;&#123;txtInput&#125;&#125;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">text</span>&gt;</span>onchange: &#123;&#123;txtChange&#125;&#125;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></div><div class="line">  <span class="selector-class">.input</span> &#123;</div><div class="line">    <span class="attribute">font-size</span>: <span class="number">60</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">80</span>;</div><div class="line">    <span class="attribute">width</span>: <span class="number">400</span>;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="built_in">require</span>(<span class="string">'weex-components'</span>);</div><div class="line">  <span class="built_in">module</span>.exports = &#123;</div><div class="line">    <span class="attr">data</span>: &#123;</div><div class="line">      <span class="attr">txtInput</span>: <span class="string">''</span>,</div><div class="line">      <span class="attr">txtChange</span>: <span class="string">''</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">methods</span>: &#123;</div><div class="line">      <span class="attr">onchange</span>: <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</div><div class="line">        <span class="keyword">this</span>.txtChange = event.value;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'onchange'</span>, event.value);</div><div class="line">      &#125;,</div><div class="line">      <span class="attr">oninput</span>: <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</div><div class="line">        <span class="keyword">this</span>.txtInput = event.value;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'oninput'</span>, event.value);</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">input</span></span></div><div class="line">        <span class="attr">id</span>=<span class="string">"input"</span></div><div class="line">        <span class="attr">type</span>=<span class="string">"text"</span></div><div class="line">        <span class="attr">placeholder</span>=<span class="string">"Input Something"</span></div><div class="line">        <span class="attr">class</span>=<span class="string">"input"</span></div><div class="line">        <span class="attr">autofocus</span>=<span class="string">"true"</span></div><div class="line">        <span class="attr">value</span>=<span class="string">""</span></div><div class="line">        <span class="attr">onchange</span>=<span class="string">"onchange"</span></div><div class="line">        <span class="attr">oninput</span>=<span class="string">"oninput"</span></div><div class="line">      /&gt;</div><div class="line">      <span class="tag">&lt;<span class="name">text</span>&gt;</span>oninput: &#123;&#123;txtInput&#125;&#125;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">text</span>&gt;</span>onchange: &#123;&#123;txtChange&#125;&#125;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></div><div class="line">  <span class="selector-class">.input</span> &#123;</div><div class="line">    <span class="attribute">font-size</span>: <span class="number">60</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">80</span>;</div><div class="line">    <span class="attribute">width</span>: <span class="number">400</span>;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="built_in">require</span>(<span class="string">'weex-components'</span>);</div><div class="line">  <span class="built_in">module</span>.exports = &#123;</div><div class="line">    <span class="attr">data</span>: &#123;</div><div class="line">      <span class="attr">txtInput</span>: <span class="string">''</span>,</div><div class="line">      <span class="attr">txtChange</span>: <span class="string">''</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">ready</span>: fucntion () &#123;</div><div class="line">      <span class="keyword">this</span>.$el(<span class="string">'input'</span>).blur();</div><div class="line">    &#125;</div><div class="line">    methods: &#123;</div><div class="line">      <span class="attr">onchange</span>: <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</div><div class="line">        <span class="keyword">this</span>.txtChange = event.value;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'onchange'</span>, event.value);</div><div class="line">      &#125;,</div><div class="line">      <span class="attr">oninput</span>: <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</div><div class="line">        <span class="keyword">this</span>.txtInput = event.value;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'oninput'</span>, event.value);</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
 <p><a href="http://dotwe.org/e1b18eb89facb4e2a5467ee4bebd9be6" target="_blank" rel="external">Try it</a></p>
 <p>Use <a href="https://alibaba.github.io/weex/download.html">Weex Playground</a> App to Scan the QR image and view the example for  ‘input’. </p>
 

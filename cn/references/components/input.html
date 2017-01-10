@@ -17,7 +17,7 @@
 注意： 
 此组件不支持 click 事件。请监听 &amp;lt;input&amp;gt; 或 change 来代替 click 事件。
 子组件">
-<meta property="og:updated_time" content="2017-01-10T06:54:27.000Z">
+<meta property="og:updated_time" content="2017-01-10T11:33:29.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="<input>">
 <meta name="twitter:description" content="&amp;lt;input&amp;gt;Weex 内置的 &amp;lt;input&amp;gt; 组件用来创建接收用户输入字符的输入组件。 &amp;lt;input&amp;gt; 组件的工作方式因 type 属性的值而异，比如 &amp;lt;text&amp;gt;， password，url，email，tel 等。
@@ -351,6 +351,11 @@
         
       
     
+      
+      
+        
+      
+    
    
     
       <li>
@@ -447,11 +452,11 @@
                 </li>
               
                 <li>
-                  <a href="/weex-website/cn/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
+                  <a href="/weex-website/cn/references/components/input.html" class="sidebar-link current ">&lt;input&gt;</a>
                 </li>
               
                 <li>
-                  <a href="/weex-website/cn/references/components/input.html" class="sidebar-link current ">&lt;input&gt;</a>
+                  <a href="/weex-website/cn/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
                 </li>
               
                 <li>
@@ -487,6 +492,10 @@
               
                 <li>
                   <a href="/weex-website/cn/references/modules/animation.html" class="sidebar-link  ">animation</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/modules/picker.html" class="sidebar-link  ">picker</a>
                 </li>
               
                 <li>
@@ -859,6 +868,11 @@
         
       
     
+      
+      
+        
+      
+    
    
     
       <li>
@@ -955,11 +969,11 @@
                 </li>
               
                 <li>
-                  <a href="/weex-website/cn/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
+                  <a href="/weex-website/cn/references/components/input.html" class="sidebar-link current ">&lt;input&gt;</a>
                 </li>
               
                 <li>
-                  <a href="/weex-website/cn/references/components/input.html" class="sidebar-link current ">&lt;input&gt;</a>
+                  <a href="/weex-website/cn/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
                 </li>
               
                 <li>
@@ -995,6 +1009,10 @@
               
                 <li>
                   <a href="/weex-website/cn/references/modules/animation.html" class="sidebar-link  ">animation</a>
+                </li>
+              
+                <li>
+                  <a href="/weex-website/cn/references/modules/picker.html" class="sidebar-link  ">picker</a>
                 </li>
               
                 <li>
@@ -1126,7 +1144,7 @@
       </h1>
     
   
-  <time class="article-date" datetime="2017-01-10T06:54:27.000Z">Updated time: 10/01/2017</time>
+  <time class="article-date" datetime="2017-01-10T11:33:29.000Z">Updated time: 10/01/2017</time>
 </header>
     <h1 id="lt-input-gt"><a href="#lt-input-gt" class="headerlink" title="&lt;input&gt;"></a>&lt;input&gt;</h1><p>Weex 内置的 <code>&lt;input&gt;</code> 组件用来创建接收用户输入字符的输入组件。 <code>&lt;input&gt;</code> 组件的工作方式因 <code>type</code> 属性的值而异，比如 <code>&lt;text&gt;</code>， <code>password</code>，<code>url</code>，<code>email</code>，<code>tel</code> 等。</p>
 <p><strong>注意：</strong> </p>
@@ -1203,8 +1221,16 @@
 <p>查看 <a href="../common-event.html">通用事件</a></p>
 </li>
 </ul>
-<h1 id="约束"><a href="#约束" class="headerlink" title="约束"></a>约束</h1><p>目前不支持 <code>this.$el(id).value = &#39;&#39;</code> 这种方式改写 input value。只支持在 <code>&lt;input&gt;</code> 组件的 <code>input</code>、<code>change</code> 事件中改写。</p>
-<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">input</span></span></div><div class="line">      <span class="attr">type</span>=<span class="string">"text"</span></div><div class="line">      <span class="attr">placeholder</span>=<span class="string">"Input Something"</span></div><div class="line">      <span class="attr">class</span>=<span class="string">"input"</span></div><div class="line">      <span class="attr">autofocus</span>=<span class="string">"true"</span></div><div class="line">      <span class="attr">value</span>=<span class="string">""</span></div><div class="line">      <span class="attr">onchange</span>=<span class="string">"onchange"</span></div><div class="line">      <span class="attr">oninput</span>=<span class="string">"oninput"</span> </div><div class="line">    /&gt;</div><div class="line">    <span class="tag">&lt;<span class="name">text</span>&gt;</span>oninput: &#123;&#123;txtInput&#125;&#125;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">text</span>&gt;</span>onchange: &#123;&#123;txtChange&#125;&#125;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></div><div class="line">  <span class="selector-class">.input</span> &#123;</div><div class="line">    <span class="attribute">font-size</span>: <span class="number">60</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">80</span>;</div><div class="line">    <span class="attribute">width</span>: <span class="number">400</span>;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="built_in">module</span>.exports = &#123;</div><div class="line">    <span class="attr">data</span>: &#123;</div><div class="line">      <span class="attr">txtInput</span>: <span class="string">''</span>,</div><div class="line">      <span class="attr">txtChange</span>: <span class="string">''</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">methods</span>: &#123;</div><div class="line">      <span class="attr">onchange</span>: <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</div><div class="line">        <span class="keyword">this</span>.txtChange = event.value;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'onchange'</span>, event.value);</div><div class="line">      &#125;,</div><div class="line">      <span class="attr">oninput</span>: <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</div><div class="line">        <span class="keyword">this</span>.txtInput = event.value;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'oninput'</span>, event.value);</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="Methods"><a href="#Methods" class="headerlink" title="Methods"></a>Methods</h2><ul>
+<li><p><code>focus()</code></p>
+<p><code>focus()</code> 方法用于将 <code>input</code> 组件聚焦。</p>
+</li>
+<li><p><code>blur()</code></p>
+<p><code>blur()</code> 方法用于从 <code>input</code> 组件中移除焦点并关闭软键盘（如果它具有焦点）。</p>
+</li>
+</ul>
+<h2 id="约束"><a href="#约束" class="headerlink" title="约束"></a>约束</h2><p>目前不支持 <code>this.$el(id).value = &#39;&#39;</code> 这种方式改写 input value。只支持在 <code>&lt;input&gt;</code> 组件的 <code>input</code>、<code>change</code> 事件中改写。</p>
+<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">input</span></span></div><div class="line">        <span class="attr">id</span>=<span class="string">"input"</span></div><div class="line">        <span class="attr">type</span>=<span class="string">"text"</span></div><div class="line">        <span class="attr">placeholder</span>=<span class="string">"Input Something"</span></div><div class="line">        <span class="attr">class</span>=<span class="string">"input"</span></div><div class="line">        <span class="attr">autofocus</span>=<span class="string">"true"</span></div><div class="line">        <span class="attr">value</span>=<span class="string">""</span></div><div class="line">        <span class="attr">onchange</span>=<span class="string">"onchange"</span></div><div class="line">        <span class="attr">oninput</span>=<span class="string">"oninput"</span></div><div class="line">      /&gt;</div><div class="line">      <span class="tag">&lt;<span class="name">text</span>&gt;</span>oninput: &#123;&#123;txtInput&#125;&#125;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">text</span>&gt;</span>onchange: &#123;&#123;txtChange&#125;&#125;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></div><div class="line">  <span class="selector-class">.input</span> &#123;</div><div class="line">    <span class="attribute">font-size</span>: <span class="number">60</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">80</span>;</div><div class="line">    <span class="attribute">width</span>: <span class="number">400</span>;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="built_in">require</span>(<span class="string">'weex-components'</span>);</div><div class="line">  <span class="built_in">module</span>.exports = &#123;</div><div class="line">    <span class="attr">data</span>: &#123;</div><div class="line">      <span class="attr">txtInput</span>: <span class="string">''</span>,</div><div class="line">      <span class="attr">txtChange</span>: <span class="string">''</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">ready</span>: fucntion () &#123;</div><div class="line">      <span class="keyword">this</span>.$el(<span class="string">'input'</span>).blur();</div><div class="line">    &#125;</div><div class="line">    methods: &#123;</div><div class="line">      <span class="attr">onchange</span>: <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</div><div class="line">        <span class="keyword">this</span>.txtChange = event.value;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'onchange'</span>, event.value);</div><div class="line">      &#125;,</div><div class="line">      <span class="attr">oninput</span>: <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</div><div class="line">        <span class="keyword">this</span>.txtInput = event.value;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'oninput'</span>, event.value);</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
 <p><a href="http://dotwe.org/ccf22bec1766abca6a81fd4b658c8827" target="_blank" rel="external">体验一下</a></p>
 
   </div>
