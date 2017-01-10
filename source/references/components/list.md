@@ -17,49 +17,46 @@ It can provide excellent experience and performance while still maintaining smoo
 
 ```html
 <template>
-  <list>
-    <cell onappear="onappear" ondisappear="ondisappear" class="row" repeat="{{staffs}}" index="{{$index}}">
-      <div class="item">
-        <text>{{name}}</text>
+  <list class="list">
+    <cell class="cell" v-for="num in lists">
+      <div class="panel">
+        <text class="text">{{num}}</text>
       </div>
     </cell>
   </list>
 </template>
 
-<style>
-  .row {
-    width: 750;
-  }
-  .item {
-    justify-content: center;
-    border-bottom-width: 2;
-    border-bottom-color: #c0c0c0;
-    height: 100;
-    padding:20;
-  }
-</style>
-
 <script>
-  module.exports = {
-    data: {
-      staffs:[{name:'inns'},{name:'connon'},{name:'baos'},{name:'anna'},{name:'dolley'},{name:'lucy'},{name:'john'}, {name:'lily'},{name:'locke'},{name:'jack'},{name:'danny'},{name:'rose'},{name:'harris'},{name:'lotus'},{name:'louis'}]
-    },
-    methods:{
-      onappear: function (e) {
-        var index = e.target.attr.index
-        nativeLog('+++++', index);
-        console.log(this.staffs[index].name + ' is appearing...');
-      },
-      ondisappear:function (e) {
-        nativeLog('+++++', e.target.attr.index);
+  export default {
+    data () {
+      return {
+        lists: ['A', 'B', 'C', 'D', 'E']
       }
     }
   }
 </script>
 
+<style scoped>
+  .panel {
+    width: 600px;
+    height: 300px;
+    margin-left: 75px;
+    margin-top: 35px;
+    margin-bottom: 35px;
+    flex-direction: column;
+    justify-content: center;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgb(162, 217, 192);
+    background-color: rgba(162, 217, 192, 0.2);
+  }
+  .text {
+    font-size: 88px;
+    text-align: center;
+    color: #41B883;
+  }
+</style>
 ```
-
-[try it](http://dotwe.org/15d58cfbca9b6a72c89c9a13ad1f6155)
 
 ### Child Components
 
@@ -123,171 +120,58 @@ For example, a vertical list nested in a vertical list or scroller is not allowe
 
 ```html
 <template>
-  <div class="wrapper">
-    <list class="list">
-      <header class="header">
-        <text class="title">Search Results</text>
-      </header>
-      <refresh style="width: 750; padding: 30;" onrefresh="refreshData" display="{{refreshDisplay}}">
-        <text class="text"> ↓ Pull to refresh </text>
-        <loading-indicator class="indicator"></loading-indicator>
-      </refresh>
-      <cell class="row" repeat="item in items" id="item-{{$index}}">
-        <div>
-          <text class="item">Repo name: {{item.full_name}}</text>
-        </div>
-        <div>
-          <text class="item">Repo star: {{item.stargazers_count}}</text>
-        </div>
-      </cell>
-      <loading onloading="loadingData" style="width: 750; padding: 30;" display="{{loadingDisplay}}">
-        <text class="text">{{loadingText}}</text>
-      </loading>
-    </list>
-    <div class="up" onclick="goToTop">
-      <img class="img" src="https://img.alicdn.com/tps/TB1ZVOEOpXXXXcQaXXXXXXXXXXX-200-200.png"></img>
-    </div>
-  </div>
+  <list class="list" @loadmore="fetch" loadmoreoffset="0">
+    <cell class="cell" v-for="num in lists">
+      <div class="panel">
+        <text class="text">{{num}}</text>
+      </div>
+    </cell>
+  </list>
 </template>
 
-<style>
-.wrapper {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
-.list{
-  background-color: #ffffff;
-  flex: 1;
-}
-.header {
-  height: 80;
-  align-items: center;
-  justify-content: center;
-  background-color: #efefef;
-  border-bottom-color: #eeeeee;
-  border-bottom-width: 2;
-  border-bottom-style: solid;
-}
-.title {
-  text-align: center;
-}
-.text {
-  text-align: center;
-}
-.row {
-  padding: 20;
-  border-bottom-color: #eeeeee;
-  border-bottom-width: 2;
-  border-bottom-style: solid;
-}
-.up {
-  width: 70;
-  height: 70;
-  position: fixed;
-  right: 20;
-  bottom: 20;
-}
-.img {
-  width: 70;
-  height: 70;
-}
-</style>
-
 <script>
-var dom = require('@weex-module/dom') || {}
-var stream = require('@weex-module/stream') || {}
-var modal = require('@weex-module/modal') || {}
+  const modal = weex.require('modal')
+  const LOADMORE_COUNT = 4
 
-var SEARCH_URL = 'https://api.github.com/search/repositories?q=language:javascript&sort=stars&order=desc'
-
-module.exports = {
-  data: {
-    isLoaded: true,
-    page: 1,
-    loadingDisplay: 'hide',
-    refreshDisplay: 'hide',
-    loadingText: 'Loading...',
-    items:[]
-  },
-  created: function () {
-    var url = SEARCH_URL + '&page=' + this.page
-
-    this.renderData(url)
-    
-    this.page++
-  },
-  methods: {
-    renderData: function (url) {
-      var self = this
-
-      stream.fetch({
-        method: 'GET',
-        url: url,
-        type:'json'
-      }, function(res) {
-        self.refreshDisplay = 'hide'
-        self.loadingDisplay = 'hide'
-
-        try {
-          var results = res.data.items || []
-          
-          if (Array.isArray(results)) {
-            for(var i = 0; i < results.length; i++) {
-              self.items.push(results[i])
-            }
-          }
-
-          self.isLoaded = true
-        } catch(e) {}
-      },function(res){
-          
-      })
-    },
-    loadingData: function (e) {
-      var url = SEARCH_URL + '&page=' + this.page
-      var self = this
-      
-      if (self.isLoaded === false) return 
-      
-      self.loadingDisplay = 'show'
-      
-      if (self.page <=10 ) {
-        self.renderData(url)
-        self.page++
-      } else {
-        self.loadingDisplay = 'hide'
-        self.loadingText = 'NO MORE!'
+  export default {
+    data () {
+      return {
+        lists: [1, 2, 3, 4, 5]
       }
     },
-    goToTop: function (e) {
-      dom.scrollToElement(this.$el('item-0'), {
-        offset: -100
-      })
-    },
-    refreshData: function (e) {
-      var url = SEARCH_URL + '&page=1'
+    methods: {
+      fetch (event) {
+        modal.toast({ message: 'loadmore', duration: 1 })
 
-      if (this.isLoaded === false) return 
-      
-      this.refreshDisplay = 'show'
-
-      modal.toast({
-        'message': 'Refreshing...', 
-        'duration': 1
-      })
-
-      this.items = []
-      this.page = 1
-      this.renderData(url)
-
-      this.refreshDisplay = 'hide'
+        setTimeout(() => {
+          const length = this.lists.length
+          for (let i = length; i < length + LOADMORE_COUNT; ++i) {
+            this.lists.push(i + 1)
+          }
+        }, 800)
+      }
     }
   }
-}
 </script>
-```
 
-[Try it](http://dotwe.org/ed524ade679b0fa96e980600c53ea5ce)
+<style scoped>
+  .panel {
+    width: 600px;
+    height: 250px;
+    margin-left: 75px;
+    margin-top: 35px;
+    margin-bottom: 35px;
+    flex-direction: column;
+    justify-content: center;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgb(162, 217, 192);
+    background-color: rgba(162, 217, 192, 0.2);
+  }
+  .text {
+    font-size: 50px;
+    text-align: center;
+    color: #41B883;
+  }
+</style>
+```

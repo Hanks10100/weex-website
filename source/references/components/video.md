@@ -15,33 +15,47 @@ The video component can be used to embed video content in a weex page.
 ```html
 <template>
   <div>
-    <text>Big Eater!</text>
-    <video onstart='onstart' onpause='onpause' onfinish='onfinish' onfail='onfail'
-           auto-play="false" play-status="pause" src="{{src}}" style="width:750;height:500;"></video>
-</div>
-
+    <video class="video" :src="src" autoplay controls
+      @start="onstart" @pause="onpause" @finish="onfinish" @fail="onfail"></video>
+    <text class="info">state: {{state}}</text>
   </div>
 </template>
 
+<style scoped>
+  .video {
+    width: 630px;
+    height: 350px;
+    margin-top: 60px;
+    margin-left: 60px;
+  }
+  .info {
+    margin-top: 40px;
+    font-size: 40px;
+    text-align: center;
+  }
+</style>
+
 <script>
-  module.exports ={
-    data: {
-      src:'http://flv2.bn.netease.com/videolib3/1611/01/XGqSL5981/SD/XGqSL5981-mobile.mp4'
+  export default {
+    data () {
+      return {
+        state: '----',
+        src:'http://flv2.bn.netease.com/videolib3/1611/01/XGqSL5981/SD/XGqSL5981-mobile.mp4'
+      }
     },
     methods:{
-      onstart:function(e){
-        console.log('onstart');
-        console.log(e);
+      onstart (event) {
+        this.state = 'onstart'
       },
-      onpause:function(e){
-        console.log('onpause');
+      onpause (event) {
+        this.state = 'onpause'
       },
-      onfinish:function(e){
-        console.log('onfinish');
+      onfinish (event) {
+        this.state = 'onfinish'
       },
-      onfail:function(e){
-        console.log('onfail');
-      },
+      onfail (event) {
+        this.state = 'onfinish'
+      }
     }
   }
 </script>

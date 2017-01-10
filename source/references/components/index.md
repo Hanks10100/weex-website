@@ -41,12 +41,8 @@ We can't guarantee the order of execution between onclick function and href. we 
 <template>
   <div>
     <a href="http://h5.m.taobao.com">
-    <text>Click me to see how 'A' element opens a new world.</text>
-  </a>
+      <text>Click me to see how 'A' element opens a new world.</text>
+    </a>
   </div>
 </template>
 ```
-
-[Try it](http://dotwe.org/d99f6eb55aa501c836a195ec824cada0)
-
-Use [Weex Playground](https://alibaba.github.io/weex/download.html) App to Scan the QR image and view the example for  'a'. 

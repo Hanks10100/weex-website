@@ -64,7 +64,7 @@ check out [common events](../common-event.html)
 * support 'appear' / 'disappear' event. 
 
 
-### Methods
+### Methods <spu>v0.9+</spu>
 
  - `focus()`
 
