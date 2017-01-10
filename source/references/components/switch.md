@@ -2,6 +2,7 @@
 title: <switch>
 type: references
 order: 2.11
+version: 2.1
 ---
 
 # &lt;switch&gt;

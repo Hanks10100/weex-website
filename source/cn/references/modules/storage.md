@@ -1,7 +1,8 @@
 ---
 title: storage
 type: references
-order: 4.6
+order: 3.6
+version: 2.1
 ---
 
 # `storage` 本地存储 

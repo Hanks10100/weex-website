@@ -1,7 +1,8 @@
 ---
 title: Text Style
 type: references
-order: 1.8
+order: 1.6
+version: 2.1
 ---
 
 # Text Style

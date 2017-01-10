@@ -2,6 +2,7 @@
 title: <video>
 type: references
 order: 2.14
+version: 2.1
 ---
 
 # &lt;video&gt;

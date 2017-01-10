@@ -1,7 +1,8 @@
 ---
 title: Gesture
 type: references
-order: 1.4
+order: 1.5
+version: 2.1
 ---
 
 # Gesture
@@ -56,7 +57,7 @@ Example:
 
 ```html
 <template>
-	<div ontouchstart="handleTouchstart"></div>
+	<div @touchstart="handleTouchstart"></div>
 </template>
 
 <script>

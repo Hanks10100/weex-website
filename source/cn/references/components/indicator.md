@@ -2,6 +2,7 @@
 title: <indicator>
 type: references
 order: 2.10
+version: 2.1
 ---
 
 # &lt;indicator&gt;

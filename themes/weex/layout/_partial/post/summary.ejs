@@ -1,6 +1,5 @@
-<% var version = 1.0 %>
-<% result = page.path.match(/(v-)(\d+(\.\d+))/) %>
-<% version = result ? +result[2] : 1.0 %>
+<% var result = page.path.match(/(v-)(\d+(\.\d+))/) %>
+<% var version = result ? +result[2] : 2.1 %>
 
 <div class="summary">
   <h2 class="part-title">

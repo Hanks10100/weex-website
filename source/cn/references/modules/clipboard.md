@@ -1,7 +1,8 @@
 ---
 title: clipboard
 type: references
-order: 4.2
+order: 3.2
+version: 2.1
 ---
 
 # `clipboard` 剪切板

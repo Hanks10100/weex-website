@@ -2,6 +2,7 @@
 title: globalEvent
 type: references
 order: 3.10
+version: 2.1
 ---
 
 # globalEvent

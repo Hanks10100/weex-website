@@ -1,7 +1,8 @@
 ---
 title: List of the names of colors
 type: references
-order: 1.7
+order: 1.4
+version: 2.1
 ---
 
 # List of the names of colors

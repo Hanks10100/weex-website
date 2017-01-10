@@ -1,7 +1,8 @@
 ---
 title: 文本样式
 type: references
-order: 1.7
+order: 1.6
+version: 2.1
 ---
 
 # 文本样式
@@ -36,4 +37,4 @@ order: 1.7
 
 ## 其它参考
 
-- [颜色关键字列表](./references/color-names.html)。
+- [颜色关键字列表](./color-names.html)。

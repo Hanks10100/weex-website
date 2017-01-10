@@ -1,7 +1,8 @@
 ---
 title: 手势
 type: references
-order: 1.4
+order: 1.5
+version: 2.1
 ---
 
 # 手势

@@ -1,7 +1,8 @@
 ---
 title: modal
 type: references
-order: 4.4
+order: 3.4
+version: 2.1
 ---
 
 # `modal` 模态

@@ -2,6 +2,7 @@
 title: clipboard
 type: references
 order: 3.2
+version: 2.1
 ---
 
 # clipboard

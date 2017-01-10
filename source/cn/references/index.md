@@ -1,45 +1,48 @@
 ---
-title: Bootstrap
+title: Weex 实例变量
 type: references
 order: 1
+version: 2.1
 has_chapter_content: false
-chapter_title: 通用选项
+chapter_title: 通用特性
 ---
 
-# Bootstrap
+# Weex 实例变量
 
-除了其默认的意义，`<script>`标签支持在页面的顶级组件中通过 `type` 属性定义两种配置。
-- `type="data"`: 配置初始化数据，这里定义的数据会覆盖定义在`<script>`中的数据；
-- `type="config"`: 定义配置项。
+每个 Weex 页面的 JS 上下文中都有一个相互独立的 `weex` 变量，用来持有当前 Weex 页面相关的单例内容或方法。
 
-``` html
-<script type="data">
-  /* (可选) 定义初始化数据 */
-</script>
+## `weex.config`
 
-<script type="config">
-  /* (可选) 定义配置项 */
-</script>
+该变量包含了当前 Weex 页面的所有环境信息，包括不仅限于：
 
-```
-## 定义初始化数据
+* `bundleUrl: string`: JS bundle 的 URL。
+* `env: Object`: 环境对象。
+    * `weexVersion: string`: Weex sdk 版本。
+    * `appName: string`: 应用名字。
+    * `appVersion: string`: 应用版本。
+    * `platform: string`: 平台信息，是 iOS、Android 还是 Web。
+    * `osVersion: string`: 系统版本。
+    * `deviceModel: string`: 设备型号 (仅原生应用)。
+    * `deviceWidth: number`: 设备宽度，默认为 750。
+    * `deviceHeight: number`: 设备高度。
 
-有时，很难在默认的`<script>`标签中维护巨大的数据结构。所以 Weex 允许我们通过 `<script type="data">` 标签定义初始化数据。在这里定义的数据将完全取代默认的 `<script>` 标签中定义的数据。
+## `weex.require(module: string): Object`
 
-例如：
+获取某个 native module 的所有方法，比如：
 
 ```html
-<script type="data">
-  module.exports = {
-      title: 'Alibaba',
-      date: new Date().toLocaleString()
-  }
+<template>
+  <div><text>Hello World</text></div>
+</template>
+<script>
+  var modal = weex.require('modal')
+  modal.toast({
+    message: 'I am a toast.',
+    duration: 3
+  })
 </script>
 ```
-## 配置项
 
-Weex 也允许我们通过 `<script type="config">` 定义一些配置项，目前，仅只支持配置 `downgrade`。
-- `downgrade.osVersion`
-- `downgrade.appVersion`
-- `downgrade.weexVersion`
-- `downgrade.deviceModel`
+## `weex.document: Document`
+
+返回当前 Weex 页面的文档对象。

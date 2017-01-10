@@ -2,6 +2,7 @@
 title: <slider>
 type: references
 order: 2.9
+version: 2.1
 ---
 
 # &lt;slider&gt;

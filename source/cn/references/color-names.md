@@ -1,7 +1,8 @@
 ---
 title: 颜色名称列表
 type: references
-order: 1.8
+order: 1.4
+version: 2.1
 ---
 
 # Weex 支持的所有颜色名称

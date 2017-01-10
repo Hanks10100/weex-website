@@ -4,6 +4,7 @@ type: references
 order: 2
 has_chapter_content: false
 chapter_title: Build-in Components
+version: 2.1
 ---
 
 # &lt;a&gt;

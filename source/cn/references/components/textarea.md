@@ -2,6 +2,7 @@
 title: <textarea>
 type: references
 order: 2.13
+version: 2.1
 ---
 
 # &lt;textarea&gt;

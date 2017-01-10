@@ -4,6 +4,7 @@ type: references
 order: 2
 has_chapter_content: false
 chapter_title: 内建组件
+version: 2.1
 ---
 
 # &lt;a&gt;

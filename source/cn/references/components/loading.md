@@ -2,6 +2,7 @@
 title: <loading>
 type: references
 order: 2.6
+version: 2.1
 ---
 
 # &lt;loading&gt;

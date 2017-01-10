@@ -1,7 +1,8 @@
 ---
 title: globalEvent
 type: references
-order: 4.9
+order: 3.9
+version: 2.1
 ---
 
 # 全局事件

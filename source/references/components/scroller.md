@@ -2,6 +2,7 @@
 title: <scroller>
 type: references
 order: 2.8
+version: 2.1
 ---
 
 # &lt;scroller&gt;

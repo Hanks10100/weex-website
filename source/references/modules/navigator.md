@@ -2,6 +2,7 @@
 title: navigator
 type: references
 order: 3.5
+version: 2.1
 ---
 
 # Navigator 

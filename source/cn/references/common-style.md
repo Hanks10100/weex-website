@@ -1,7 +1,8 @@
 ---
 title: 通用样式
 type: references
-order: 1.6
+order: 1.3
+version: 2.1
 ---
 
 # 通用样式

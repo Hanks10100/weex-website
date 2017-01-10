@@ -1,48 +1,48 @@
 ---
-title: Bootstrap
+title: Weex variable (Chinese)
 type: references
 order: 1
+version: 2.1
 has_chapter_content: false
 chapter_title: Common Options
 ---
 
-# Bootstrap
+# Weex 实例变量
 
-Besides its default meaning, `<script>` tag supports two more configuration with its `type` property *in the top level component of a page*.
+每个 Weex 页面的 JS 上下文中都有一个相互独立的 `weex` 变量，用来持有当前 Weex 页面相关的单例内容或方法。
 
-* `type="data"`: For initial data configuration, the data defined here will overwrite the data definition in the `<script>`.
-* `type="config"`: For configuration definition.
+## `weex.config`
+
+该变量包含了当前 Weex 页面的所有环境信息，包括不仅限于：
+
+* `bundleUrl: string`: JS bundle 的 URL。
+* `env: Object`: 环境对象。
+    * `weexVersion: string`: Weex sdk 版本。
+    * `appName: string`: 应用名字。
+    * `appVersion: string`: 应用版本。
+    * `platform: string`: 平台信息，是 iOS、Android 还是 Web。
+    * `osVersion: string`: 系统版本。
+    * `deviceModel: string`: 设备型号 (仅原生应用)。
+    * `deviceWidth: number`: 设备宽度，默认为 750。
+    * `deviceHeight: number`: 设备高度。
+
+## `weex.require(module: string): Object`
+
+获取某个 native module 的所有方法，比如：
 
 ```html
-<script type="data">
-  /* (optional) the definition of initial data */
-</script>
-
-<script type="config">
-  /* (optional) the definition of configuration */
+<template>
+  <div><text>Hello World</text></div>
+</template>
+<script>
+  var modal = weex.require('modal')
+  modal.toast({
+    message: 'I am a toast.',
+    duration: 3
+  })
 </script>
 ```
 
-## Initial data definition
+## `weex.document: Document`
 
-Sometimes, it is hard to maintain huge data structure in the default `<script>` tag. So Weex allows us to have a `<script type="data">` tag to define initial data. The data defined in here will totally replace the data defined in the default `<script>` tag.
-
-here is an example:
-
-```html
-<script type="data">
-{
-  title: 'Alibaba',
-  date: new Date().toLocaleString()
-}
-</script>
-```
-
-## script configuration
-
-Weex also allows us to do some configuration with a `<script type="config">`, So far, we only support the `downgrade` configs.
-
-- `downgrade.osVersion`
-- `downgrade.appVersion`
-- `downgrade.weexVersion`
-- `downgrade.deviceModel`
+返回当前 Weex 页面的文档对象。

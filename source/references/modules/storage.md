@@ -2,6 +2,7 @@
 title: storage
 type: references
 order: 3.6
+version: 2.1
 ---
 
 # storage

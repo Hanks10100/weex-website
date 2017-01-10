@@ -1,7 +1,8 @@
 ---
 title: Common Style
 type: references
-order: 1.6
+order: 1.3
+version: 2.1
 ---
 
 # Common Style
@@ -173,13 +174,13 @@ we can use properties below to control placement of weex tag
 <template>
   <div style="flex-direction: column;">
     <div style="height: 3000;">
-      <image src="..." style="top: 50; left: 50; ..."></image>
+      <image src="..." style="top: 50px; left: 50px;"></image>
     </div>
     <div style="height: 3000;">
-      <image src="..." style="position: sticky; ..."></image>
+      <image src="..." style="position: sticky;"></image>
     </div>
     <div style="height: 3000;">
-      <image src="..." style="position: absolute; top: 50; left: 50; ..."></image>
+      <image src="..." style="position: absolute; top: 50px; left: 50px;"></image>
     </div>
   </div>
 </template>

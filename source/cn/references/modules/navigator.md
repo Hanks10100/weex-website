@@ -1,7 +1,8 @@
 ---
 title: navigator
 type: references
-order: 4.5
+order: 3.5
+version: 2.1
 ---
 
 # `navigator` 导航控制
