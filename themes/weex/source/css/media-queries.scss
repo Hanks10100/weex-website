@@ -110,8 +110,14 @@
 
   .header {
 
-    .slide-content .btn-group {
-      bottom: 10%;
+    .slide-content {
+      .page-title {
+        width: 320px;
+        margin-left: -160px;
+      }
+      .btn-group {
+        bottom: 10%;
+      }
     }
   }
 
@@ -136,6 +142,12 @@
     }
   }
 
+  .supporting-vue {
+    .sketch-content.imgbox .imgbox {
+      background-size: 80px;
+    }
+  }
+
   .users .sketch-content {
     .user-logo {
       width: 140px;
@@ -155,6 +167,9 @@
   .feedback {
     .user-feedback {
       /*flex: 1 0 140px;*/
+    }
+    .scene-container .go-2-doc {
+      margin-top: 0;
     }
   }
 }

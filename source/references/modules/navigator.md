@@ -6,6 +6,7 @@ version: 2.1
 ---
 
 # Navigator 
+
 <span class="weex-version">v0.6.1+</span>
 
 As it's known to all that, we can navigate back and forth in the web browser using the navigation bar.

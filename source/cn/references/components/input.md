@@ -89,7 +89,19 @@ Weex 内置的 `<input>` 组件用来创建接收用户输入字符的输入组�
 
   查看 [通用事件](../common-event.html)
 
-# 约束
+
+
+## Methods
+
+- `focus()`
+
+  `focus()` 方法用于将 `input` 组件聚焦。
+
+- `blur()`
+  
+  `blur()` 方法用于从 `input` 组件中移除焦点并关闭软键盘（如果它具有焦点）。
+
+## 约束
 
 目前不支持 `this.$el(id).value = ''` 这种方式改写 input value。只支持在 `<input>` 组件的 `input`、`change` 事件中改写。
 
@@ -98,17 +110,18 @@ Weex 内置的 `<input>` 组件用来创建接收用户输入字符的输入组�
 ```html
 <template>
   <div>
-    <input
-      type="text"
-      placeholder="Input Something"
-      class="input"
-      autofocus="true"
-      value=""
-      onchange="onchange"
-      oninput="oninput" 
-    />
-    <text>oninput: {{txtInput}}</text>
-    <text>onchange: {{txtChange}}</text>
+      <input
+        id="input"
+        type="text"
+        placeholder="Input Something"
+        class="input"
+        autofocus="true"
+        value=""
+        onchange="onchange"
+        oninput="oninput"
+      />
+      <text>oninput: {{txtInput}}</text>
+      <text>onchange: {{txtChange}}</text>
   </div>
 </template>
 
@@ -121,11 +134,15 @@ Weex 内置的 `<input>` 组件用来创建接收用户输入字符的输入组�
 </style>
 
 <script>
+  require('weex-components');
   module.exports = {
     data: {
       txtInput: '',
       txtChange: ''
     },
+    ready: fucntion () {
+      this.$el('input').blur();
+    }
     methods: {
       onchange: function(event) {
         this.txtChange = event.value;

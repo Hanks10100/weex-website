@@ -63,6 +63,17 @@ check out [common events](../common-event.html)
 
 * support 'appear' / 'disappear' event. 
 
+
+### Methods
+
+ - `focus()`
+
+  The `focus()` method is used to give focus to an input component and tigger soft keybord(if it can be focused).
+
+ - `blur()`
+
+  The `blur()` method is used to remove focus from an input component and close soft keybord(if it has focus).
+
 ### Notes
 does not support the common-event 'click'. Please listen to the 'input' or 'change' event instead.
 
@@ -77,6 +88,7 @@ does not support the common-event 'click'. Please listen to the 'input' or '
 <template>
   <div>
       <input
+        id="input"
         type="text"
         placeholder="Input Something"
         class="input"
@@ -105,6 +117,9 @@ does not support the common-event 'click'. Please listen to the 'input' or '
       txtInput: '',
       txtChange: ''
     },
+    ready: fucntion () {
+      this.$el('input').blur();
+    }
     methods: {
       onchange: function(event) {
         this.txtChange = event.value;

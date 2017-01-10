@@ -116,6 +116,7 @@ blockquote {
   background: #ff3e33;
   border: #ff3e33 1px solid;
   border-radius: 2em;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, .16);
 
   &:hover {
     background: #d63f36;
@@ -208,6 +209,10 @@ a.current {
 
 .show {
   display: block !important;
+}
+
+.hide {
+  display: none !important;
 }
 
 table {

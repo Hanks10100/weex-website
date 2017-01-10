@@ -22,7 +22,7 @@ version: 2.1
   - `method {string}`：HTTP 方法 `GET` 或是 `POST`
   - `url {string}`：请求的 URL
   - `headers {Object}`：HTTP 请求头
-  - `type {string}`：请求类型, `json`,`text` 或是 `jsonp` {在原生实现中其实与 json 相同)
+  - `type {string}`：响应类型, `json`,`text` 或是 `jsonp` {在原生实现中其实与 json 相同)
   - `body {string}`：HTTP 请求体。
     
     **注意：**
@@ -45,6 +45,11 @@ version: 2.1
   - `length {number}`：已经接受到的数据长度. 你可以从响应头中获取总长度
   - `statusText {string}`：状态文本
   - `headers {Object}`：响应头
+
+### 注意
+
+ - 默认 Content-Type 是 'application/x-www-form-urlencoded'。
+ - 如果你需要通过 `POST` json ， 你需要将 Content-Type 设为 'application/json'。
 
 #### 示例
 

@@ -1,5 +1,5 @@
 ---
-title: Get Started (Chinses)
+title: 快速上手
 type: guide
 order: 1
 version: 2.1

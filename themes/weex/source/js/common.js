@@ -483,5 +483,29 @@
     }
 
     initGalaxy()
+
+    /**
+     * Index page back to top
+     */
+    function initBack2Top () {
+      var firstScene = BODY.querySelector('.header'),
+          back2top = document.getElementById('back2top')
+
+      new AppearController(firstScene, {
+        threshold: -50,
+        appear: function () {
+          back2top.classList.remove('show')
+        },
+        disappear: function () {
+          back2top.classList.add('show')
+        }
+      })
+      
+      back2top.addEventListener('click', function (e) {
+        window.scrollTo && window.scrollTo(0, 0)
+      })
+    }
+
+    initBack2Top()
   } else {}
 })();

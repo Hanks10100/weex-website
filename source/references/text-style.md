@@ -15,7 +15,15 @@ Text alike components share some common style rules. The text alike components c
 - `color`: &lt;colors&gt; this property set the foreground color of an component's text content.
 - `font-size`: &lt;length&gt; this property specifies the size of the font.
 - `font-style`: &lt;enum&gt; `normal` | `italic`. This property lets you select italic or normal faces within a font-family. Default value is `normal`.
-- `font-weight`: &lt;enum&gt; `normal` | `bold`. This property specifies the boldness of the font. Default value is `normal`.
+- `font-weight`: 
+  * values: `normal`, `bold`, `100`, `200`, `300`, `400`, `500`, `600`, `700`, `800`, `900`
+  * normal is equal to 400, bold equel to 700
+  * default value: `normal`
+  * apply to: `<text>`, `<input>`
+  * ios support showing 9 kind of font-weight. 
+  * android support showing 2 kind of font-weight:400,700, other value will map to 400 or 700
+  * Some standard values like `lighter`, `bolder`, number unit are not supported.
+  * The effect not apply to all elements, just `<text>` and `<input>`. In another way, it's not inherited.
 - `text-decoration`: &lt;enum&gt; `none` | `underline` | `line-through`. This property is used to set the text formatting to underline or line-through. The default value is `none`.
 - `text-align`: &lt;enum&gt; `left` | `center` | `right`. This property describes how inline content like text is aligned in its parent component. The default value is `left`.
 - `font-family`:&lt;string&gt; this property set the font-family of the text. This property **doesn't guarantee** the given font will always be set to the text. If the specified font cannot be found at the device, a typeface fallback will occur and the default typeface will be load. The fallback mechanism may vary in different devices.

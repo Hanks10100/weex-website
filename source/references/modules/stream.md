@@ -25,7 +25,7 @@ Start a network request, use two callbacks to receive server's response data.
 
     * headers(string): the HTTP request headers.
 
-    * type(string): request type, 'json','text' or 'jsonp'(same as 'json' in native implementation)
+    * type(string): response type, 'json','text' or 'jsonp'(same as 'json' in native implementation)
 
     * body(string): the HTTP body.
 
@@ -52,6 +52,11 @@ Start a network request, use two callbacks to receive server's response data.
     * statusText(string): status text.
 
     * headers(object): response headers.
+
+### Note
+
+ - Default Content-Type is 'application/x-www-form-urlencoded'. (The type specified in fetch is the response type!)
+ - You need to set the Content-Type header to 'application/json' manually if you want to post the json body.
 
 ### Example
 

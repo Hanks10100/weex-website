@@ -65,7 +65,7 @@ Notes: There are several style properties that you mustn't use on this component
 * padding and padding-xxs
 * border and border-xxs
 
-Notes: Specially the width and height related properties is not configurable and the size of this component is fixed to 100x60 (for the design width 750px).
+Notes: If the container of `<switch>` is not set to `align-items:flex-start`, the switch in android will be stretched. 
 
 common styles: check out [common styles for components](../common-style.html)
 

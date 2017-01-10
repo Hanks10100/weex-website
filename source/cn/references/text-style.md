@@ -23,7 +23,13 @@ version: 2.1
 
 - `font-style {string}`：字体类别。可选值 `normal` | `italic`，默认为 `normal`。
 
-- `font-weight {string}`：字体粗细程度。可选值 `normal` | `bold`，默认为 `normal`。
+- `font-weight {string}`：字体粗细程度
+
+  * 可选值: `normal`, `bold`, `100`, `200`, `300`, `400`, `500`, `600`, `700`, `800`, `900`
+  * normal 等同于 400, bold 等同于 700；
+  * 默认值: `normal`；
+  * iOS 支持 9 种 font-weight值；Android 仅支持 400 和 700, 其他值会设为 400 或 700
+  * 类似 `lighter`, `bolder` 这样的值暂时不支持
 
 - `text-decoration {string}`：字体装饰，可选值 `none` | `underline` | `line-through`，默认值为 `none`。
 
