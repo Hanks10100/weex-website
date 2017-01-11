@@ -27,10 +27,94 @@ Scroll the page to the specified node. This API should only be used on the eleme
 
 #### Example
 
-```javascript
-var dom = require('@weex-module/dom');
-dom.scrollToElement(this.$el('someId'), {offset: 10});
+```html
+<template>
+  <div class="wrapper">
+    <scroller class="scroller">
+      <div class="row" v-for="(name, index) in rows" :ref="'item'+index">
+        <text class="text" :ref="'text'+index">{{name}}</text>
+      </div>
+    </scroller>
+    <div class="group">
+      <text @click="goto10" class="button">Go to 10</text>
+      <text @click="goto20" class="button">Go to 20</text>
+    </div>
+  </div>
+</template>
+
+<script>
+  const dom = weex.requireModule('dom')
+
+  export default {
+    data () {
+      return {
+        rows: []
+      }
+    },
+    created () {
+      for (let i = 0; i < 30; i++) {
+        this.rows.push('row ' + i)
+      }
+    },
+    methods: {
+      goto10 (count) {
+        const el = this.$refs.item10[0]
+        dom.scrollToElement(el, {})
+      },
+      goto20 (count) {
+        const el = this.$refs.item20[0]
+        dom.scrollToElement(el, { offset: 0 })
+      }
+    }
+  }
+</script>
+
+<style scoped>
+  .scroller {
+    width: 700px;
+    height: 700px;
+    border-width: 3px;
+    border-style: solid;
+    border-color: rgb(162, 217, 192);
+    margin-left: 25px;
+  }
+  .row {
+    height: 100px;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 30px;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    border-bottom-color: #DDDDDD;
+  }
+  .text {
+    font-size: 45px;
+    color: #666666;
+  }
+  .group {
+    flex-direction: row;
+    /*justify-content: space-around;*/
+    justify-content: center;
+    margin-top: 60px;
+  }
+  .button {
+    width: 200px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 40px;
+    margin-left: 30px;
+    margin-right: 30px;
+    text-align: center;
+    color: #41B883;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgb(162, 217, 192);
+    background-color: rgba(162, 217, 192, 0.2);
+  }
+</style>
 ```
+
+[try it](../../examples/dom-scroll.html)
 
 ### getComponentRect(ref,callback)<sup>v0.9.4+</sup>
 
@@ -59,80 +143,62 @@ Example Useage:
 ```html
 <template>
   <div class="wrapper">
-    <div class="box" id="box">
-    </div>
-    <text>Red box: {{boxposition}}</text>
-    <text>Viewport: {{viewportposition}}</text>
-    <div class="row">
-      <div onClick="getBoxPosition" class="button">
-        <text>Get red Box position</text>
-      </div>
-      <div onClick="getViewportPosition" class="button">
-        <text>Get Viewport position</text>
-      </div>
+    <div ref="box" class="box">
+      <text class="info">Width: {{size.width}}</text>
+      <text class="info">Height: {{size.height}}</text>
+      <text class="info">Top: {{size.top}}</text>
+      <text class="info">Bottom: {{size.bottom}}</text>
+      <text class="info">Left: {{size.left}}</text>
+      <text class="info">Right: {{size.right}}</text>
     </div>
   </div>
 </template>
 
-<style>
-.wrapper {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
-.box {
-  width: 300;
-  height: 300;
-  background-color: #f00;
-  position: absolute;
-  top: 300;
-  left: 200;
-}  
-.row {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-}
-.button {
-  flex: 1;
-  background-color: #ddd;
-  border-left-width: 1;
-  border-left-color: #333;
-  border-left-style: solid;
-}
-</style>
-
 <script>
-var dom = require('@weex-module/dom')
+  const dom = weex.requireModule('dom')
 
-module.exports = {
-  data: {
-    boxposition: '',
-    viewportposition: ''
-  },
-  methods: {
-    getBoxPosition: function () {
-      var el = this.$el('box')
-      var self = this
-
-       dom.getComponentRect(el, function(result) {
-        self.boxposition = JSON.stringify(result)
-      })
+  export default {
+    data () {
+      return {
+        size: {
+          width: 0,
+          height: 0,
+          top: 0,
+          bottom: 0,
+          left: 0,
+          right: 0
+        }
+      }
     },
-    getViewportPosition: function () {
-      var self = this
-
-       dom.getComponentRect('viewport', function(result) {
-        self.viewportposition = JSON.stringify(result)
+    mounted () {
+      const result = dom.getComponentRect(this.$refs.box, option => {
+        console.log('getComponentRect:', option)
+        this.size = option.size
       })
+      console.log('return value:', result)
+      console.log('viewport:', dom.getComponentRect('viewport'))
     }
   }
-}
 </script>
+
+<style scoped>
+  .box {
+    margin-top: 200px;
+    margin-left: 150px;
+    width: 450px;
+    height: 450px;
+    background-color: #DDD;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgb(162, 217, 192);
+    background-color: rgba(162, 217, 192, 0.2);
+  }
+  .info {
+    font-size: 40px;
+    font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    color: #41B883;
+  }
+</style>
 ```
+
+[try it](../../examples/dom-rect.html)

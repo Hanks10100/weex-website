@@ -21,33 +21,6 @@ version: 2.1
   - `message {string}`：展示的内容
   - `duration {number}`：展示的持续时间（以秒为单位）
 
-#### 示例
-
-```html
-<template>
-  <div style="height: 200px; width: 400px; background-color: #00bfff;
-    justify-content: center; align-items: center" onclick="{{perform}}">
-    <text style="font-size: 60px; color: #ffffff">Toast</text>
-  </div>
-</template>
-
-<script>
-  module.exports = {
-    methods: {
-      perform: function () {
-        var modal = require('@weex-module/modal');
-        modal.toast({
-          'message': 'I am a toast',
-          'duration': 3
-        });
-      }
-    }
-  }
-</script>
-```
-
-[体验一下](http://dotwe.org/a1b8699c49d1cbb3d0de66c1c5175387)
-
 ### `alert(options, callback)`
 
 警告框经常用于确保用户可以得到某些信息。当警告框出现后，用户需要点击确定按钮才能继续进行操作。
@@ -58,42 +31,6 @@ version: 2.1
   - `message {string}`：警告框内显示的文字信息
   - `okTitle {string}`：确定按钮上显示的文字信息，默认是“OK”
   - `callback {Function}`：用户操作完成后的回调
-
-#### 示例
-
-```html
-<template>
-  <div>
-    <div style="height: 200px; width: 400px; background-color: #00bfff;
-      justify-content: center; align-items: center" onclick="{{perform}}">
-      <text style="font-size: 60px; color: #ffffff">Alert</text>
-    </div>
-    <text>{{params}}</text>
-  </div>
-</template>
-
-<script>
-  module.exports = {
-    data: {
-      params: ''
-    },
-    methods: {
-      perform: function () {
-        var modal = require('@weex-module/modal');
-        var self = this;
-        modal.alert({
-          'message': 'I am alert message',
-          'okTitle': 'YES'
-        }, function (result) {
-          self.params = String(result)
-        });
-      }
-    }
-  }
-</script>
-```
-
-[体验一下](http://dotwe.org/18e2a4bdff4d2f7db865c11eadfcd13e)
 
 ### `confirm(options, callback)`
 
@@ -106,43 +43,6 @@ version: 2.1
   - `okTitle {string}`：确认按钮上显示的文字信息，默认是 `OK`
   - `cancelTitle {string}`：取消按钮上显示的文字信息，默认是 `Cancel`
 - `callback {function (result)}`：用户操作完成后的回调，回调函数的参数 `result` 是确定按钮上的文字信息字符串
-
-#### 示例
-
-```html
-<template>
-  <div>
-    <div style="height: 200px; width: 400px; background-color: #00bfff;
-      justify-content: center; align-items: center" onclick="{{perform}}">
-      <text style="font-size: 60px; color: #ffffff">Confirm</text>
-    </div>
-    <text>{{params}}</text>
-  </div>
-</template>
-
-<script>
-  module.exports = {
-    data: {
-      params: ''
-    },
-    methods: {
-      perform: function () {
-        var modal = require('@weex-module/modal');
-        var self = this;
-        modal.confirm({
-          'message': 'I have read and accept the terms.',
-          'okTitle': 'YES',
-          'cancelTitle': 'NO'
-        }, function (e) {
-          self.params = String(e)
-        });
-      }
-    }
-  }
-</script>
-```
-
-[体验一下](http://dotwe.org/3534b9d5eac99045015d97b20af22c27)
 
 ### `prompt(options, callback)`
 
@@ -158,39 +58,82 @@ version: 2.1
   - `result {string}`：用户按下的按钮上的文字信息
   - `data {string}`：用户输入的文字信息
 
-### 示例
+
+## Example
 
 ```html
 <template>
-  <div>
-    <div style="height: 200px; width: 400px; background-color: #00bfff;
-      justify-content: center; align-items: center" onclick="{{perform}}">
-      <text style="font-size: 60px; color: #ffffff">Prompt</text>
-    </div>
-    <text>{{params}}</text>
+  <div class="wrapper">
+    <text class="button" @click="showToast">Toast</text>
+    <text class="button" @click="showAlert">Alert</text>
+    <text class="button" @click="showConfirm">Confirm</text>
+    <text class="button" @click="showPrompt">Prompt</text>
   </div>
 </template>
 
 <script>
-  module.exports = {
-    data: {
-      params: ''
-    },
+  var modal = weex.requireModule('modal')
+
+  export default {
     methods: {
-      perform: function () {
-        var modal = require('@weex-module/modal');
-        var self = this;
+      showToast (event) {
+        console.log('will show toast')
+        modal.toast({
+          message: 'This is a toast',
+          duration: 0.3
+        })
+      },
+      showAlert (event) {
+        console.log('will show alert')
+        modal.alert({
+          message: 'This is a alert',
+          duration: 0.3
+        }, function (value) {
+          console.log('alert callback', value)
+        })
+      },
+      showConfirm (event) {
+        console.log('will show confirm')
+        modal.confirm({
+          message: 'Do you confirm ?',
+          duration: 0.3
+        }, function (value) {
+          console.log('confirm callback', value)
+        })
+      },
+      showPrompt (event) {
+        console.log('will show prompt')
         modal.prompt({
-          'message': 'I am a prompt',
-          'okTitle': 'YES',
-          'cancelTitle': 'NO'
-        }, function (e) {
-          self.params = JSON.stringify(e)
-        });
+          message: 'This is a prompt',
+          duration: 0.3
+        }, function (value) {
+          console.log('prompt callback', value)
+        })
       }
     }
-  }
+  };
 </script>
+
+<style scoped>
+  .wrapper {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .button {
+    font-size: 60px;
+    width: 450px;
+    text-align: center;
+    margin-top: 30px;
+    margin-left: 150px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-width: 2px;
+    border-style: solid;
+    color: #666666;
+    border-color: #DDDDDD;
+    background-color: #F5F5F5
+  }
+</style>
 ```
 
-[体验一下](http://dotwe.org/9f089100f5808dbc55ef4872a2c0c77b)
+[try it](../../../examples/modal.html)

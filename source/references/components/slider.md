@@ -46,7 +46,7 @@ Other attributes please check out the [common attributes](../references/common-a
 ```html
 <template>
   <div>
-    <slider class="slider">
+    <slider class="slider" interval="3000" auto-play="true">
       <div class="frame" v-for="img in imageList">
         <image class="image" resize="cover" :src="img.src"></image>
       </div>
@@ -89,3 +89,5 @@ Other attributes please check out the [common attributes](../references/common-a
   }
 </script>
 ```
+
+[try it](../../examples/slider.html)

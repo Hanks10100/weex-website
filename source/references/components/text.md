@@ -94,3 +94,5 @@ check out [common events](../common-event.html)
   }
 </style>
 ```
+
+[try it](../../examples/text.html)

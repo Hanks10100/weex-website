@@ -12,9 +12,19 @@ version: 2.1
 
 你可以简单的通过类似 `require('@weex-module/name')` 这样的语法获取一个模块的 API，比如：
 
-```javascript
-var dom = require('@weex-module/dom')
-dom.scrollToElement(this.$el('someIdForElement'), {
-  offset: 0
-})
+```html
+<script>
+  const modal = weex.requireModule('modal')
+
+  module.exports = {
+    data: {},
+    methods: {
+      toast: function () {
+        modal.toast({
+          message: 'props: ' + event.data.join(', ')
+        })
+      }
+    }
+  }
+</script>
 ```

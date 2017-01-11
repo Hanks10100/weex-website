@@ -55,27 +55,27 @@ Weex 内置的 `<input>` 组件用来创建接收用户输入字符的输入组�
 
   - `value`: 触发事件的组件；
   - `timestamp`: 事件发生时的时间戳。
-  
+
 - `change`: 当用户输入完成时触发。通常在 `blur` 事件之后。
 
   事件中 event 对象属性：
 
   - `value`: 触发事件的组件；
-  
+
   - `timestamp`: 事件发生时的时间戳。
-  
+
 - `focus`: 组件获得输入焦点。
 
   事件中 event 对象属性：
 
   - `timestamp`: 事件发生时的时间戳。
-  
+
 - `blur`: 组件失去输入焦点。
 
   事件中 event 对象属性：
 
   - `timestamp`: 事件发生时的时间戳。
-  
+
 - 通用事件
 
   **注意：**
@@ -98,7 +98,7 @@ Weex 内置的 `<input>` 组件用来创建接收用户输入字符的输入组�
   `focus()` 方法用于将 `input` 组件聚焦。
 
 - `blur()`
-  
+
   `blur()` 方法用于从 `input` 组件中移除焦点并关闭软键盘（如果它具有焦点）。
 
 ## 约束
@@ -109,52 +109,64 @@ Weex 内置的 `<input>` 组件用来创建接收用户输入字符的输入组�
 
 ```html
 <template>
-  <div>
-      <input
-        id="input"
-        type="text"
-        placeholder="Input Something"
-        class="input"
-        autofocus="true"
-        value=""
-        onchange="onchange"
-        oninput="oninput"
-      />
-      <text>oninput: {{txtInput}}</text>
-      <text>onchange: {{txtChange}}</text>
+  <div class="wrapper">
+    <input ref="input" class="input" type="text" @input="oninput" @change="onchange" @focus="onfocus" @blur="onblur">
   </div>
 </template>
 
-<style>
-  .input {
-    font-size: 60;
-    height: 80;
-    width: 400;
-  }
-</style>
-
 <script>
-  require('weex-components');
-  module.exports = {
-    data: {
-      txtInput: '',
-      txtChange: ''
-    },
-    ready: fucntion () {
-      this.$el('input').blur();
-    }
+  const modal = weex.requireModule('modal')
+
+  export default {
     methods: {
-      onchange: function(event) {
-        this.txtChange = event.value;
-        console.log('onchange', event.value);
+      oninput (event) {
+        console.log('oninput:', event.value)
+        modal.toast({
+          message: `oninput: ${event.value}`,
+          duration: 0.8
+        })
       },
-      oninput: function(event) {
-        this.txtInput = event.value;
-        console.log('oninput', event.value);
+      onchange (event) {
+        console.log('onchange:', event.value)
+        modal.toast({
+          message: `onchange: ${event.value}`,
+          duration: 0.8
+        })
+      },
+      onfocus (event) {
+        console.log('onfocus:', event.value)
+        modal.toast({
+          message: `onfocus: ${event.value}`,
+          duration: 0.8
+        })
+      },
+      onblur (event) {
+        console.log('onblur:', event.value)
+        modal.toast({
+          message: `input blur: ${event.value}`,
+          duration: 0.8
+        })
       }
     }
-  };
+  }
 </script>
+
+<style>
+  .input {
+    font-size: 50px;
+    width: 650px;
+    margin-top: 50px;
+    margin-left: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: #666666;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #41B883;
+  }
+</style>
 ```
 
-[体验一下](http://dotwe.org/ccf22bec1766abca6a81fd4b658c8827)
+[try it](../../../examples/input.html)

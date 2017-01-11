@@ -39,10 +39,35 @@ We can't guarantee the order of execution between onclick function and href. we 
 
 ```html
 <template>
-  <div>
-    <a href="http://h5.m.taobao.com">
-      <text>Click me to see how 'A' element opens a new world.</text>
+  <div class="wrapper">
+    <a class="button" href="http://dotwe.org/raw/dist/3e0e40f9ddad79f98cd236753965ffd8.js">
+      <text class="text">Jump</text>
     </a>
   </div>
 </template>
+
+<style scoped>
+  .wrapper {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .button {
+    width: 450px;
+    margin-top: 30px;
+    margin-left: 150px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #DDDDDD;
+    background-color: #F5F5F5
+  }
+  .text {
+    font-size: 60px;
+    color: #666666;
+    text-align: center;
+  }
+</style>
 ```
+
+[try it](../../examples/a.html)

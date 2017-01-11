@@ -1,37 +1,12 @@
 <div class="example-wrapper clearfix">
   <div class="horizontal">
-    <pre class="code">
-      <code class="html">
-        <%= page.content %>        
-      </code>
-    </pre>
+    <h2><%- page.title %></h2>
+    <%- page.content %>      
   </div>
   <div class="horizontal phone">
     <div class="mock-phone">
       <div class="inner">
-        <iframe frameborder="0" src="about:blank">
-          <!DOCTYPE html>
-          <html>
-          <head>
-            <meta charset="utf-8">
-            <title>Weex Vue Demo</title>
-            <meta name="viewport" content="width=750, user-scalable=no">
-            <meta name="apple-mobile-web-app-capable" content="yes" />
-            <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-            <meta name="apple-touch-fullscreen" content="yes" />
-            <meta name="format-detection" content="telephone=no, email=no" />
-            <style>
-              body {
-                height: 100%;
-                width: 100%;
-              }
-            </style>
-          </head>
-          <body>
-            <div id="root">aaa</div>
-            <script src=""></script>
-          </body>
-          </html>
+        <iframe frameborder="0" src="about:blank" id="iframe">
         </iframe>
       </div>
       <div class="camera"></div>
@@ -40,8 +15,8 @@
     </div>
   </div>
 </div>
-
-<%- js('js/highlight.pack.js') %>
 <script>
-  hljs.initHighlightingOnLoad();
+  var BUNDLE_URL = '<%- page.web_bundle_url %>'
 </script>
+
+<%- js('js/example.js') %>

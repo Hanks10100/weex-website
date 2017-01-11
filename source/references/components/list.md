@@ -107,10 +107,6 @@ All cells or cell's subcomponents in list support the scrollToElement API in [do
 loading is a child component that can response to the onloading  event, and this event can only be triggered when the  scroller/list has been scrolled down to the bottom.
 onloadmore is an event that will be triggered when the rest of the scroller/list is less than loadmoreoffset long.
 
-
-* [scroller example](http://dotwe.org/85fd3988eefa24f058b7da7966e56203)
-* [list example](http://dotwe.org/62f895249014dde26cc0725c8005e42c)
-
 ### Restrictions
 
 Nested lists or scrollers within the same direction are not supported. In other words. nested lists/scroller must have different directions.
@@ -120,7 +116,7 @@ For example, a vertical list nested in a vertical list or scroller is not allowe
 
 ```html
 <template>
-  <list class="list" @loadmore="fetch" loadmoreoffset="0">
+  <list class="list" @loadmore="fetch" loadmoreoffset="10">
     <cell class="cell" v-for="num in lists">
       <div class="panel">
         <text class="text">{{num}}</text>
@@ -130,7 +126,7 @@ For example, a vertical list nested in a vertical list or scroller is not allowe
 </template>
 
 <script>
-  const modal = weex.require('modal')
+  const modal = weex.requireModule('modal')
   const LOADMORE_COUNT = 4
 
   export default {
@@ -175,3 +171,5 @@ For example, a vertical list nested in a vertical list or scroller is not allowe
   }
 </style>
 ```
+
+[try it](../../examples/list.html)

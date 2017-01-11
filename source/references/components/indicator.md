@@ -115,3 +115,5 @@ There is no specific attribute for this component other than the [common attribu
   }
 </script>
 ```
+
+[try it](../../examples/indicator.html)

@@ -62,30 +62,70 @@ Start a network request, use two callbacks to receive server's response data.
 
 ```html
 <template>
-  <div>
-    <text onclick="startStream">click here to start stream</text>
+  <div class="wrapper">
+    <div class="group">
+      <text class="title">Weex Star :</text>
+      <text class="count">{{weexStar}}</text>
+    </div>
+    <div class="group">
+      <text class="title">Vue Star :</text>
+      <text class="count">{{vueStar}}</text>
+    </div>
   </div>
 </template>
 
 <script>
-  module.exports = {
-    methods: {
-      startStream: function () {
-        var stream_module = require('@weex-module/stream');
-        stream_module.fetch({
-          method: 'GET',
-          url: "http://httpbin.org/get",
-          type:'json'
-        }, function(response) {
-          //finished response
-          console.log("all received:",response);
-        },function(response){
-          //progress response
-          console.log("current bytes received:",response.length);
-        });
+  var stream = weex.requireModule('stream')
+  export default {
+    data () {
+      return {
+        weexStar: 'unknown',
+        vueStar: 'unknown'
       }
+    },
+
+    methods: {
+      getStarCount (repo, callback) {
+        return stream.fetch({
+          method: 'GET',
+          type: 'json',
+          url: 'https://api.github.com/repos/' + repo
+        }, callback)
+      }
+    },
+    created () {
+      this.getStarCount('alibaba/weex', res => {
+        this.weexStar = res.ok ? res.data.stargazers_count : '(network error)'
+      })
+      this.getStarCount('vuejs/vue', res => {
+        this.vueStar = res.ok ? res.data.stargazers_count : '(network error)'
+      })
     }
   }
 </script>
+
+
+<style scoped>
+  .wrapper {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .group {
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 40px;
+  }
+  .title {
+    font-size: 45px;
+    color: #888888;
+  }
+  .count {
+    font-size: 45px;
+    font-weight: bold;
+    margin-left: 12px;
+    color: #41B883;
+  }
+</style>
 ```
-[Try it](http://dotwe.org/6e4ede64fdfe070b9696cc4cc3bdd086)
+
+[try it](../../examples/stream.html)

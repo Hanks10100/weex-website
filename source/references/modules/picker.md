@@ -28,49 +28,6 @@ pick data(single column)
   - `result {string}`:result is one of success,cancel,error
   - `data {number}`:the selected index,it exists when result is success.
 
-#### Example
-
-```html
-<template>
-  <scroller>
-    <div title="picker module">
-      <text style="margin-bottom: 20px;">pick value: {{value}}</text>
-      <text type="default" size="small" value="single pick" onclick="pick" style="width: 180px;height: 50px; border-color: #26a4f4;font-color: #26a4f4;border-width: 2px"></text>
-    </div>
-  </scroller>
-</template>
-
-
-<script>
-  module.exports = {
-    data: {
-      value: '',
-      index: 0,
-    },
-    methods: {
-      pick: function() {
-        var picker = require('@weex-module/picker');
-        var items = new Array("Saab","Volvo","BMW");
-        var self = this;
-        picker.pick({
-          'items':items,
-          'index':self.index
-        },function (ret) {
-          var result = ret.result;
-          if(result == 'success')
-          {
-            self.value = items[ret.data];
-            self.index = ret.data;
-          }
-        });
-      },
-    }
-  }
-</script>
-```
-
-[Have a try](http://dotwe.org/5213cb5cd40106401a93dbe724324400)
-
 ### `pickDate(options, callback[options])`
 
 pick date
@@ -86,47 +43,6 @@ pick date
   - `result {string}`:result is one of success,cancel,error
   - `data {string}`:the selected value，the  form of data is yyyy-MM-dd ,it exists when result is success.
 
-#### Example
-
-```html
-<template>
-  <scroller>
-    <div title="picker module">
-      <text style="margin-bottom: 20px;">pick value: {{value}}</text>
-      <text type="default" size="small" value="pick date" onclick="pickDate" style="width: 180px;height: 50px; border-color: #26a4f4;font-color: #26a4f4;border-width: 2px"></text>
-    </div>
-  </scroller>
-</template>
-
-<script>
-  module.exports = {
-    data: {
-      value: '',
-      index: 0,
-    },
-    methods: {
-      pickDate: function() {
-        var picker = require('@weex-module/picker');
-        var self = this;
-        picker.pickDate({
-          'value':'2016-11-28',
-          'max':'2029-11-28',
-          'min':'2015-11-28'
-        },function (ret) {
-          var result = ret.result;
-          if(result == 'success')
-          {
-            self.value = ret.data;
-          }
-        });
-      }
-    }
-  }
-</script>
-```
-
-[Have a try](http://dotwe.org/2ee6fcdd3508db90c84185b40bf49ee3)
-
 ### `pickTime(options, callback[options])`
 
 pick time
@@ -140,49 +56,74 @@ pick time
   - `result {string}`:result is one of success,cancel,error
   - `data {string}`:the selected value，the form of data is HH:mm,it exists when result is success.
 
-#### Example
+## Example
 
 ```html
 <template>
-  <scroller>
-    <div title="picker module">
-      <text style="margin-bottom: 20px;">pick value: {{value}}</text>
-      <text type="default" size="small" value="pick time" onclick="pickTime" style="width: 180px;height: 50px; border-color: #26a4f4;font-color: #26a4f4;border-width: 2px"></text>
+  <div class="wrapper">
+    <div class="group">
+      <text class="label">Time: </text>
+      <text class="title">{{value}}</text>
     </div>
-  </scroller>
+    <div class="group">
+      <text class="button" @click="pickTime">Pick Time</text>
+    </div>
+  </div>
 </template>
 
-<style>
-  .input {
-    font-size: 60px;
-    height: 80px;
-    width: 400px;
-  }
-</style>
-
 <script>
-  module.exports = {
-    data: {
-      value: '',
-      index: 0,
+  const picker = weex.requireModule('picker')
+
+  export default {
+    data () {
+      return {
+        value: ''
+      }
     },
     methods: {
-      pickTime: function() {
-        var picker = require('@weex-module/picker');
-        var self = this;
+      pickTime () {
         picker.pickTime({
-          'value':'19:24'
-        },function (ret) {
-          var result = ret.result;
-          if(result == 'success')
-          {
-            self.value = ret.data;
+          value: this.value
+        }, event => {
+          if (event.result === 'success') {
+            this.value = event.data
           }
-        });
+        })
       }
     }
   }
 </script>
-```
 
-[Have a try](http://dotwe.org/a9851d2773ac784729006d6b2add99c9)
+<style scoped>
+  .wrapper {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .group {
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 40px;
+    align-items: center;
+  }
+  .label {
+    font-size: 40px;
+    color: #888888;
+  }
+  .title {
+    font-size: 80px;
+    color: #41B883;
+  }
+  .button {
+    font-size: 36px;
+    width: 280px;
+    color: #41B883;
+    text-align: center;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgb(162, 217, 192);
+    background-color: rgba(162, 217, 192, 0.2);
+  }
+</style>
+```

@@ -98,3 +98,5 @@ Other attributes please check out the [common attributes](../common-attrs.html).
   }
 </style>
 ```
+
+[try it](../../examples/image.html)

@@ -42,25 +42,23 @@ There is no specific attribute for this component other than the [common attribu
 ```html
 <template>
   <div>
-    <div class="text">invisible</div>
-    <text class="text">visible in &#60;text&#62;</text>
+    <div class="box"></div>
   </div>
 </template>
 
 <style scoped>
-  .text {
-    text-align: center;
-    width: 600px;
-    margin-left: 75px;
-    margin-top: 75px;
-    padding-top: 12px;
-    padding-bottom: 12px;
+  .box {
     border-width: 2px;
     border-style: solid;
-    border-color: #DDDDDD;
-    font-size: 36px;
-    color: #FF6600
+    border-color: #BBB;
+    width: 250px;
+    height: 250px;
+    margin-top: 250px;
+    margin-left: 250px;
+    background-color: #EEE;
   }
 </style>
 ```
+
+[try it](../../examples/div.html)
 

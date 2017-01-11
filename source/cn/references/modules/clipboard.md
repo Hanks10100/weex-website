@@ -12,64 +12,6 @@ version: 2.1
 
 以前当我们收到一条短信验证码信息时，除了人肉拷贝，我们无法获取拷贝短信的内容。这是非常苦恼的。但是现在我们可以通过简单的调用 `clipboard.getString()` 接口来获取短信内容了。
 
-## 示例
-
-```html
-<template>
-  <div>
-      <div class="div">
-        <text class="text" onclick="onItemClick">hello {{message}}</text>
-      </div>
-      <div class="div">
-        <text class="text" onclick="setContent">click me to set: {{tobecopied}}</text>
-      </div>
-  </div>
-</template>
-
-<script>
-  var clipboard = require('@weex-module/clipboard');
-  module.exports ={
-    data:{
-      tobecopied:'yay!',
-      message:"nothing."
-    },
-    methods:{
-      setContent:function(e){
-        clipboard.setString(this.tobecopied);
-      },
-      onItemClick:function(e){
-        this.message='clicked! ';
-        clipboard.getString(function(ret) {
-          this.message = 'text from clipboard:'+ ret;
-        }.bind(this));
-      }
-    }
-  }
-</script>
-
-<style>
-  .div {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 750;
-    height: 90;
-    padding-left:30;
-    padding-right:30;
-
-    border-bottom-width: 1;
-    border-style: solid;
-    border-color: #dddddd;
-  }
-  .text {
-    width: 750;
-    height: 90;
-  }
-</style>
-```
-
-[体验一下](http://dotwe.org/b6a9d613462d85dce56f81085b094dfa)
-
 **注意**
 
 * 仅支持文本拷贝
@@ -87,15 +29,6 @@ version: 2.1
   - `ret.data`：获取到的文本内容；
   - `ret.result`：返回状态，可能为 `success` 或 `fail`。
 
-#### 示例
-
-```javascript
-var clipboard = require('@weex-module/clipboard');
-clipboard.getString(function(ret) {
-  console.log("text from clipboard： " + ret.data);
-});
-```
-
 ### `setString(text)`
 
 将一段文本复制到剪切板，相当于手动复制文本。
@@ -104,9 +37,64 @@ clipboard.getString(function(ret) {
 
 * `text {string}`：要复制到剪切板的字符串。
 
-#### 示例
+### Example
 
-```javascript
-var clipboard = require('@weex-module/clipboard');
-clipboard.setString("SomeStringHere");
+```html
+<template>
+  <div>
+    <div class="div">
+      <text class="text" @click="onItemClick">{{message}}</text>
+    </div>
+    <div class="div">
+      <text class="text" @click="setContent">Click to copy: {{tobecopied}}</text>
+    </div>
+  </div>
+</template>
+
+<script>
+  const clipboard = weex.requireModule('clipboard')
+
+  export default {
+    data () {
+      return {
+        tobecopied: 'yay!',
+        message: 'nothing.'
+      }
+    },
+
+    methods: {
+      setContent () {
+        clipboard.setString(this.tobecopied)
+      },
+      onItemClick () {
+        this.message = 'clicked! '
+        clipboard.getString(ret => {
+          this.message = 'text from clipboard:' + ret.data
+        })
+      }
+    }
+  }
+</script>
+
+<style scoped>
+  .div {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 750px;
+    height: 90px;
+    padding-left: 30px;
+    padding-right: 30px;
+
+    border-bottom-width: 1px;
+    border-style: solid;
+    border-color: #DDDDDD;
+  }
+  .text {
+    width: 750px;
+    height: 90px;
+  }
+</style>
 ```
+
+[try it](../../../examples/clipboard.html)

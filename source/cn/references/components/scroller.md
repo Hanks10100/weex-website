@@ -13,47 +13,6 @@ version: 2.1
 
 **注意：** `<scroller>` 可以当作根元素或者嵌套元素使用。此组件的滚动方向是垂直方向的形式。
 
-一个简单例子：
-
-```html
-<template>
-  <scroller onloadmore="onloadmore" loadmoreoffset="100">
-    <div repeat="v in items">
-      <text style="font-size: 40; color: #000000">{{v.item}}</text>
-    </div>
-  </scroller>
-</template>
-<script>
-  module.exports = {
-    data: {
-      items: [],
-      triggered: false
-    },
-    created: function () {
-      for (var i = 0; i < 50; i++) {
-        this.items.push({
-          'item': 'test data' + i
-        });
-      }
-    },
-    methods: {
-      onloadmore: function () {
-        if (!this.triggered) {
-          for (var i = 100; i >= 50; i--) {
-            this.items.push({
-              'item': 'onloadmore triggered' + i
-            });
-          }
-        }
-        this.triggered = true;
-      }
-    }
-  }
-</script>
-```
-
-[体验一下](http://dotwe.org/6910f0b87aeabe3f2a0d62c0d658dbd2)
-
 ## 子组件
 
 支持任意类型的 Weex 组件作为其子组件。 其中，还支持以下两个特殊组件作为子组件：
@@ -118,51 +77,6 @@ version: 2.1
 - `options {Object}`：
     - `offset {number}`：一个到其可见位置的偏移距离，默认是0
 
-#### 示例
-
-```html
-<template>
-  <scroller>
-    <div class="row" repeat="item in rows" id="item-{{$index}}">
-      <text class="item-title">row {{item.id}}</text>
-    </div>
-    <div onclick="go" style="width: 750;height: 50; position: fixed; left: 0; right: 0; bottom: 0; background-color: #eeeeee;">
-      <text style="text-align: center;">
-        Go to 50th line.
-      </text>
-    </div>
-  </scroller>
-</template>
-
-<script>
-var dom = require('@weex-module/dom')
-
-module.exports = {
-  data: {
-    rows: []
-  },
-  created: function () {
-    for (var i = 0; i < 100; i++) {
-      this.rows.push({
-        id: i
-      })
-    }
-  },
-  methods: {
-    go: function () {
-      var el = this.$el('item-49')
-
-      dom.scrollToElement(el, {
-        offset: 0
-      })
-    }
-  }
-}
-</script>
-```
-
-[体验一下](http://dotwe.org/483e5c878c52c0891e6e35e478f19854)
-
 ## 约束
 
 **不允许**相同方向的 `<list>` 或者 `<scroller>` 互相嵌套，换句话说就是嵌套的 `<list>`/`<scroller>` 必须是不同的方向。
@@ -171,154 +85,90 @@ module.exports = {
 
 ## 示例
 
-![mobile_preview](../images/div_4.jpg)
-
 ```html
-<style>
-.item {
-  padding: 20;
-  height: 220;
-  border-bottom-width: 1;
-  border-bottom-style: solid;
-  border-bottom-color: #efefef;
-}
-.item-content {
-  flex-direction: row;
-  width: 710;
-  background-color: #ffffff;
-}
-.item-imgbox {
-  height: 180;
-  width: 180;
-  margin-right: 20;
-}
-.item-img {
-  width: 180;
-  height: 180;
-}
-.item-info {
-  height: 180;
-  width: 510;
-  justify-content: center;
-  position: relative;
-}
-.item-info-detail {
-  position: relative;
-  color: #A2A2A2;
-}
-.desc {
-  lines: 4;
-  text-overflow: ellipsis;
-  font-size: 26;
-  line-height: 30;
-  color: #A2A2A2;
-}
-.title {
-  lines: 1;
-  text-overflow: ellipsis;
-  font-size: 32;
-  color: #2D2D2D;
-  line-height: 40;
-}
-.detail-info {
-  margin-top: 15;
-}
-.up {
-  width: 70;
-  height: 70;
-  position: fixed;
-  right: 20;
-  bottom: 20;
-}
-.img {
-  width: 70;
-  height: 70;
-}
-</style>
-
 <template>
-  <div>
-    <scroller>
-      <div class="item" repeat="item in items" id="item-{{$index}}">
-        <div class="item-content">
-          <div class="item-imgbox">
-            <img class="item-img" src="{{item.img}}" alt="" />
-          </div>
-          <div class="item-info">
-            <div class="item-info-detail">
-              <text class="title">{{item.title}}</text>
-              <div class="detail-info">
-                <text class="desc">{{item.desc}}</text>
-              </div>
-            </div>
-          </div>
-        </div>
+  <div class="wrapper">
+    <scroller class="scroller">
+      <div class="row" v-for="(name, index) in rows" :ref="'item'+index">
+        <text class="text" :ref="'text'+index">{{name}}</text>
       </div>
     </scroller>
-    <div class="up" onclick="goToTop">
-      <img class="img" src="https://img.alicdn.com/tps/TB1ZVOEOpXXXXcQaXXXXXXXXXXX-200-200.png"></img>
+    <div class="group">
+      <text @click="goto10" class="button">Go to 10</text>
+      <text @click="goto20" class="button">Go to 20</text>
     </div>
   </div>
 </template>
 
 <script>
-  var dom = require('@weex-module/dom') || {}
+  const dom = weex.requireModule('dom')
 
-  module.exports = {
-    data: {
-      items: [{
-        img: 'https://img.alicdn.com/tps/TB1z.55OFXXXXcLXXXXXXXXXXXX-560-560.jpg',
-        title: 'Who is Alan Mathison Turing?Who is Alan Mathison Turing?',
-        desc: 'Alan Mathison Turing ( 23 June 1912 – 7 June 1954) was an English computer scientist, mathematician, logician, cryptanalyst and theoretical biologist. He was highly influential in the development of theoretical computer science, providing a formalisation of the concepts of algorithm and computation with the Turing machine, which can be considered a model of a general purpose computer.Turing is widely considered to be the father of theoretical computer science and artificial intelligence.'
-      },{
-        img: 'https://img.alicdn.com/tps/TB1z.55OFXXXXcLXXXXXXXXXXXX-560-560.jpg',
-        title: 'Who is Alan Mathison Turing?',
-        desc: 'Alan Mathison Turing ( 23 June 1912 – 7 June 1954) was an English computer scientist, mathematician, logician, cryptanalyst and theoretical biologist. He was highly influential in the development of theoretical computer science, providing a formalisation of the concepts of algorithm and computation with the Turing machine, which can be considered a model of a general purpose computer.Turing is widely considered to be the father of theoretical computer science and artificial intelligence.'
-      },{
-        img: 'https://img.alicdn.com/tps/TB1z.55OFXXXXcLXXXXXXXXXXXX-560-560.jpg',
-        title: 'Who is Alan Mathison Turing?',
-        desc: 'Alan Mathison Turing ( 23 June 1912 – 7 June 1954) was an English computer scientist, mathematician, logician, cryptanalyst and theoretical biologist. He was highly influential in the development of theoretical computer science, providing a formalisation of the concepts of algorithm and computation with the Turing machine, which can be considered a model of a general purpose computer.Turing is widely considered to be the father of theoretical computer science and artificial intelligence.'
-      },{
-        img: 'https://img.alicdn.com/tps/TB1z.55OFXXXXcLXXXXXXXXXXXX-560-560.jpg',
-        title: 'Who is Alan Mathison Turing?',
-        desc: 'Alan Mathison Turing ( 23 June 1912 – 7 June 1954) was an English computer scientist, mathematician, logician, cryptanalyst and theoretical biologist. He was highly influential in the development of theoretical computer science, providing a formalisation of the concepts of algorithm and computation with the Turing machine, which can be considered a model of a general purpose computer.Turing is widely considered to be the father of theoretical computer science and artificial intelligence.'
-      },{
-        img: 'https://img.alicdn.com/tps/TB1z.55OFXXXXcLXXXXXXXXXXXX-560-560.jpg',
-        title: 'Who is Alan Mathison Turing?',
-        desc: 'Alan Mathison Turing ( 23 June 1912 – 7 June 1954) was an English computer scientist, mathematician, logician, cryptanalyst and theoretical biologist. He was highly influential in the development of theoretical computer science, providing a formalisation of the concepts of algorithm and computation with the Turing machine, which can be considered a model of a general purpose computer.Turing is widely considered to be the father of theoretical computer science and artificial intelligence.'
-      },{
-        img: 'https://img.alicdn.com/tps/TB1z.55OFXXXXcLXXXXXXXXXXXX-560-560.jpg',
-        title: 'Who is Alan Mathison Turing?',
-        desc: 'Alan Mathison Turing ( 23 June 1912 – 7 June 1954) was an English computer scientist, mathematician, logician, cryptanalyst and theoretical biologist. He was highly influential in the development of theoretical computer science, providing a formalisation of the concepts of algorithm and computation with the Turing machine, which can be considered a model of a general purpose computer.Turing is widely considered to be the father of theoretical computer science and artificial intelligence.'
-      },{
-        img: 'https://img.alicdn.com/tps/TB1z.55OFXXXXcLXXXXXXXXXXXX-560-560.jpg',
-        title: 'Who is Alan Mathison Turing?',
-        desc: 'Alan Mathison Turing ( 23 June 1912 – 7 June 1954) was an English computer scientist, mathematician, logician, cryptanalyst and theoretical biologist. He was highly influential in the development of theoretical computer science, providing a formalisation of the concepts of algorithm and computation with the Turing machine, which can be considered a model of a general purpose computer.Turing is widely considered to be the father of theoretical computer science and artificial intelligence.'
-      },{
-        img: 'https://img.alicdn.com/tps/TB1z.55OFXXXXcLXXXXXXXXXXXX-560-560.jpg',
-        title: 'Who is Alan Mathison Turing?',
-        desc: 'Alan Mathison Turing ( 23 June 1912 – 7 June 1954) was an English computer scientist, mathematician, logician, cryptanalyst and theoretical biologist. He was highly influential in the development of theoretical computer science, providing a formalisation of the concepts of algorithm and computation with the Turing machine, which can be considered a model of a general purpose computer.Turing is widely considered to be the father of theoretical computer science and artificial intelligence.'
-      },{
-        img: 'https://img.alicdn.com/tps/TB1z.55OFXXXXcLXXXXXXXXXXXX-560-560.jpg',
-        title: 'Who is Alan Mathison Turing?',
-        desc: 'Alan Mathison Turing ( 23 June 1912 – 7 June 1954) was an English computer scientist, mathematician, logician, cryptanalyst and theoretical biologist. He was highly influential in the development of theoretical computer science, providing a formalisation of the concepts of algorithm and computation with the Turing machine, which can be considered a model of a general purpose computer.Turing is widely considered to be the father of theoretical computer science and artificial intelligence.'
-      },{
-        img: 'https://img.alicdn.com/tps/TB1z.55OFXXXXcLXXXXXXXXXXXX-560-560.jpg',
-        title: 'Who is Alan Mathison Turing?',
-        desc: 'Alan Mathison Turing ( 23 June 1912 – 7 June 1954) was an English computer scientist, mathematician, logician, cryptanalyst and theoretical biologist. He was highly influential in the development of theoretical computer science, providing a formalisation of the concepts of algorithm and computation with the Turing machine, which can be considered a model of a general purpose computer.Turing is widely considered to be the father of theoretical computer science and artificial intelligence.'
-      }]
+  export default {
+    data () {
+      return {
+        rows: []
+      }
     },
-    created: function () {
+    created () {
+      for (let i = 0; i < 30; i++) {
+        this.rows.push('row ' + i)
+      }
     },
     methods: {
-      goToTop: function (e) {
-        dom.scrollToElement(this.$el('item-0'), {
-          offset: 0
-        })
+      goto10 (count) {
+        const el = this.$refs.item10[0]
+        dom.scrollToElement(el, {})
+      },
+      goto20 (count) {
+        const el = this.$refs.item20[0]
+        dom.scrollToElement(el, { offset: 0 })
       }
     }
   }
 </script>
+
+<style scoped>
+  .scroller {
+    width: 700px;
+    height: 700px;
+    border-width: 3px;
+    border-style: solid;
+    border-color: rgb(162, 217, 192);
+    margin-left: 25px;
+  }
+  .row {
+    height: 100px;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 30px;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    border-bottom-color: #DDDDDD;
+  }
+  .text {
+    font-size: 45px;
+    color: #666666;
+  }
+  .group {
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 60px;
+  }
+  .button {
+    width: 200px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 40px;
+    margin-left: 30px;
+    margin-right: 30px;
+    text-align: center;
+    color: #41B883;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgb(162, 217, 192);
+    background-color: rgba(162, 217, 192, 0.2);
+  }
+</style>
 ```
 
-[体验一下](http://dotwe.org/799f54b32f5227f9c34cfbb5e6946ba7)
+[try it](../../../examples/scroller.html)

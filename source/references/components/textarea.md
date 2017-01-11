@@ -78,24 +78,36 @@ Other attributes please check out the [common attributes](../common-attrs.html).
 </template>
 
 <script>
-  const modal = weex.require('modal')
+  const modal = weex.requireModule('modal')
 
   export default {
     methods: {
       oninput (event) {
         console.log('oninput:', event.value)
+        modal.toast({
+          message: `oninput: ${event.value}`,
+          duration: 0.8
+        })
       },
       onchange (event) {
         console.log('onchange:', event.value)
+        modal.toast({
+          message: `onchange: ${event.value}`,
+          duration: 0.8
+        })
       },
       onfocus (event) {
         console.log('onfocus:', event.value)
+        modal.toast({
+          message: `onfocus: ${event.value}`,
+          duration: 0.8
+        })
       },
       onblur (event) {
         console.log('onblur:', event.value)
         modal.toast({
           message: `input blur: ${event.value}`,
-          duration: 2
+          duration: 0.8
         })
       }
     }
@@ -119,3 +131,5 @@ Other attributes please check out the [common attributes](../common-attrs.html).
   }
 </style>
 ```
+
+[try it](../../examples/textarea.html)
