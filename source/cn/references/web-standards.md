@@ -1,8 +1,9 @@
 ---
 title: Web 标准
 type: references
-order: 1.8
+order: 8
 version: 2.1
+has_chapter_content: true
 ---
 
 # Weex 中的 Web 标准

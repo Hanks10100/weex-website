@@ -1,8 +1,9 @@
 ---
 title: 通用事件
 type: references
-order: 1.2
+order: 5
 version: 2.1
+has_chapter_content: true
 ---
 
 # 通用事件

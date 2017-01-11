@@ -1,7 +1,7 @@
 ---
 title: Android APIs
 type: references
-order: 1.7
+order: 1.1
 version: 2.1
 ---
 

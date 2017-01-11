@@ -1,11 +1,12 @@
 ---
-title: Web standards (Chinese)
+title: Web standards
 type: references
-order: 1.9
+order: 8
 version: 2.1
+has_chapter_content: true
 ---
 
-# Weex 中的 Web 标准
+# Web standards
 
 ## HTML
 

@@ -288,23 +288,23 @@
   .imgbox{
     height: auto;
     &.ios {
-      background: url("../images/ios.png")  50% 50% no-repeat;
-      background-size: 90%;
-      background-position: left 50% bottom 40px;
+      background: url("../images/ios.png")  50% 50% / contain no-repeat;
+      /*background-size: 90%;*/
+      /*background-position: left 50% bottom 40px;*/
       background-origin: content-box;
     }
 
     &.android {
-      background: url("../images/android.png")  50% 50% no-repeat;
-      background-size: 90%;
-      background-position: left 50% bottom 40px;
+      background: url("../images/android.png")  50% 50% / contain  no-repeat;
+      /*background-size: 90%;*/
+      /*background-position: left 50% bottom 40px;*/
       background-origin: content-box;
     }
 
     &.h5 {
-      background: url("../images/web.png")  50% 50% no-repeat;
-      background-position: left 50% bottom 40px;
-      background-size: contain;
+      background: url("../images/web.png")  50% 50% / contain  no-repeat;
+      /*background-position: left 50% bottom 40px;*/
+      /*background-size: contain;*/
       background-origin: content-box;
     }
   }

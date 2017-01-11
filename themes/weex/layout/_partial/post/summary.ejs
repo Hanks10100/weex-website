@@ -33,7 +33,7 @@
             </ul>
           <% } %>
         <% } else { %>
-          <h3 class="chapter-title"><%- item[0].chapter_title %></h3>
+          <h3 class="chapter-title"><a href="<%= url_for(item[0].path) %>" class="sidebar-link"><%- item[0].chapter_title %></a></h3>
           <% if (item.length > 1) { %>
             <ul class="chapter">
               <% for (var i = 0; i < item.length; i++) { %>

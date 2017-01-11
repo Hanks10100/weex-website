@@ -1,11 +1,12 @@
 ---
-title: List of the names of colors
+title: Color name
 type: references
-order: 1.4
+order: 1.5
 version: 2.1
 ---
 
-# List of the names of colors
+
+List of the names of colors
 
 ### Basic color keywords:
 

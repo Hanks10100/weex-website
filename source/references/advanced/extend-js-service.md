@@ -1,7 +1,7 @@
 ---
 title: Extend JS Service (later)
 type: references
-order: 5.4
+order: 10.4
 version: 2.1
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: 文本样式
 type: references
-order: 1.6
+order: 1.4
 version: 2.1
 ---
 

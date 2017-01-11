@@ -1,8 +1,9 @@
 ---
 title: Path
 type: references
-order: 1.11
+order: 1.7
 version: 2.1
+has_chapter_content: true
 ---
 
 # Path

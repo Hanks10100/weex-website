@@ -1,8 +1,9 @@
 ---
 title: Gesture
 type: references
-order: 1.5
+order: 1.6
 version: 2.1
+has_chapter_content: true
 ---
 
 # Gesture

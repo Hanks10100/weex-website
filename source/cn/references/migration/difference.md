@@ -1,7 +1,7 @@
 ---
 title: Weex 和 Vue 2.x 的语法差异
 type: references
-order: 6.1
+order: 11.1
 version: 2.1
 ---
 

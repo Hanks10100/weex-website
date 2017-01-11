@@ -1,7 +1,7 @@
 ---
 title: 在 Weex 项目中使用 Vuex 和 vue-router
 type: references
-order: 4.1
+order: 9.1
 version: 2.1
 ---
 
