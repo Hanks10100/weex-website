@@ -21,10 +21,6 @@ Vue.js 在 2016 年 10 月正式发布了 2.0 版本，该版本加入了 Virtua
 
  > 开始之前，希望你能对 Weex 和 Vue 有基本的了解，推荐阅读 [Weex Tutorial](../index.html) 和 [Vue Introduction](https://vuejs.org/v2/guide/) 了解更多信息。
 
-~~如果你想尝鲜体验一下用 Vue 写原生应用，可以在 [dotWe](http://dotwe.org) 中写示例代码，通过我们的 [Playground App](https://weex-project/playground.html) 扫码就可以查看原生渲染效果。~~
-
-~~这里有一个 [Hello World](http://dotwe.org/033445af80eaf097d7f8efd11e6e04dc) 的例子。~~
-
 ### 快速创建项目
 
 Weex 官方提供了 [weex-toolkit](https://github.com/weexteam/weex-toolkit) 的脚手架工具来辅助开发和调试。
@@ -32,71 +28,51 @@ Weex 官方提供了 [weex-toolkit](https://github.com/weexteam/weex-toolkit) �
 首先安装 `weex-toolkit` 工具：
 
 ```bash
-npm install weex-toolkit -g
+npm install weex-toolkit@beta -g
 ```
 
-> weex-toolkit 从 0.x.x 版本开始才支持初始化 Vue 项目，使用前请确认版本是否正确。
+> 注：目前 weex-toolkit 仅在 beta 版中才支持初始化 Vue 项目，使用前请确认版本是否正确。
 
 然后初始化 Weex 项目：
 
 ```bash
-weex init vue awesome-project
+weex init awesome-project
 ```
 
- > 注：使用 [vue-cli](https://github.com/vuejs/vue-cli) 也可以初始化 Weex 的项目：
- > `vue init weex awesome-project`
+执行完命令后，在 `awesome-project` 目录中就创建了一个使用 Weex 和 Vue 的模板项目，生成的项目功能和用法可以参考其 package.json 和 README 。
 
-执行完命令后，在 `awesome-project` 目录中就创建了一个使用 Weex 和 Vue 的模板项目。生成的项目结构可以参考 [weex-vue-template](https://github.com/weexteam/weex-vue-template) 中的说明文档。
-
-### 预览和调试
-
-> 学习一些开发原生应用的基础知识，会对你开发 Weex 项目很有帮助。
-
-#### 在 Web 中启动项目
-
-首先执行 `npm install` 安装依赖，然后执行 `npm run start`，会编译源码文件，并且启动本地 Web 服务，监听 12580 端口。在浏览器中打开 `http://localhost:12580` 即可预览 Web 页面。
-
-#### 启动 Android 项目
-
-Android 项目在生成在 `android` 目录中，是一个标准的 [Android Studio](https://developer.android.com/studio/index.html) 项目。在启动之前需要安装 Android Studio 和必要的 Android SDK，配置好基本的开发环境。
-
-如果开发环境已经准备就绪，直接使用 Android Studio 打开 `android` 目录中的项目，即可启动模拟器或者真机预览页面。
-
-#### 启动 iOS 项目
-
-首先应该配置好 [iOS 开发环境](https://developer.apple.com/library/content/documentation/IDEs/Conceptual/AppStoreDistributionTutorial/Setup/Setup.html) 并且安装 [CocoaPods](https://guides.cocoapods.org/using/getting-started.html) 工具。
-
-进入 `ios` 目录，使用 CocoaPods 安装依赖：
-
-```
-pod install
-```
-
-依赖安装成功后，使用 Xcode 打开 `ios` 目录中的项目，即可启动模拟器预览页面。
-
-> 注：如果想在真实的 iOS 设备上查看效果，还需要配置开发者签名等信息。
-
-#### 调试
-
-如果你已经掌握了原生应用的调试技巧，Weex 项目和其他原生项目并没什么不同，这些技巧依然可以用于调试 Weex 的项目。
-
-此外， `weex-toolkit` 针对 Vue 2.x 做了适配，支持在 Native 渲染层调试 Vue 2.x 项目。想了解更多调试技巧，可以参考 [weex-toolkit](https://github.com/weexteam/weex-toolkit) 中的说明文档。
-
-### 编写代码
+## 编写代码
 
 在创建了项目并且配置好了开发环境之后，我们就可以开始写代码了。
 
-虽然开发的是原生应用，但是代码写起来和 Web 中并没什么不一样，你可以选择自己喜欢的前端开发环境、可以写 `.vue` 文件、也可以直接写 javascript 文件、可以使用 ES6+ 、可以使用发布在 npm 上的模块、可以扩展 Weex 的组件或者模块。
+虽然开发的是原生应用，但是代码写起来和 Web 中并没什么不一样。你可以选择自己喜欢的前端开发环境、可以写 `.vue` 文件、也可以直接写 javascript 文件、可以使用 ES6+ 、可以使用发布在 npm 上的模块、可以扩展 Weex 的组件或者模块。
 
-#### 使用其他工具库
+### 注意事项
+
+Vue.js 最初是为 Web 设计的，虽然可以基于 Weex 开发移动应用，但是 Web 开发和原生开发毕竟不同，在功能和开发体验上都有一些差异，这些差异从本质上讲是原生开发平台和 Web 平台之间的差异，Weex 正在努力缩小这个差异的范围。
+
+参考文章[《Vue 2.x 在 Weex 和 Web 中的差异》](../../references/vue/index.html)了解存在差异的原因和细节。
+
+### 使用其他工具库
 
 Vue.js 也有较多周边技术产品，如 [Vuex](https://github.com/vuejs/vuex) 和 [vue-router](https://github.com/vuejs/vue-router) 等，这些库也可以在 Weex 中很好的工作。
 
-我们基于 Weex 和 Vue 开发了一个的完整项目 [weex-hackernews](https://github.com/weexteam/weex-hackernews) ，引入了包含 Vue 2.x 的 WeexSDK，创建了三端的项目和基本的编译配置。在项目中使用了 Vuex 和 vue-router ，能够实现同一份代码，在 iOS、Android、Web 下都能完整地工作。
+关于 Vuex 和 vue-louter 的使用方法，可以参考[《在 Weex 项目中使用 Vuex 和 vue-router》](../../references/vue/difference-of-vuex.html)。
 
-#### 扩展 Weex 的组件和模块
+> 我们基于 Weex 和 Vue 开发了一个的完整项目 [weex-hackernews](https://github.com/weexteam/weex-hackernews) ，引入了包含 Vue 2.x 的 WeexSDK，创建了三端的项目和基本的编译配置。在项目中使用了 Vuex 和 vue-router ，能够实现同一份代码，在 iOS、Android、Web 下都能完整地工作。
+
+### 扩展 Weex
 
 Weex 内置了一些通用的组件和模块，可以满足基本上使用需求。为了控制 SDK 的体积和保持框架的通用性，我们会谨慎地选择内置的组件和模块，并不会包罗万象将所有功能都封装进 SDK。不过我们提供了额外的组件市场，在其中将能找到满足不同需求、各式各样的组件和模块，此外 Weex 也具备横向扩展的能力，开发者可以自行定制和扩展 Weex 组件和模块。
+
+Weex 的底层设计比较灵活，除了组件和模块以外，开发者甚至可以定制 Weex 内置的前端框架，Vue 2.x 就是一个成功的例子。
+
+可以阅读以下文档了解更多信息：
+
++ [《拓展 iOS》](../../references/advanced/index.html)
++ [《Android 扩展》](../../references/advanced/extend-to-android.html)
++ [《如何扩展 Weex Web 端的组件和模块》](../../references/advanced/extend-to-html5.html)
++ [《定制自己的 JS Framework》](../../references/advanced/extend-to-jsfm.html)
 
 ## Vue 2.x 在 Weex 中的特色功能
 
@@ -123,9 +99,3 @@ Weex 内置了一些通用的组件和模块，可以满足基本上使用需求
 ### `<transition>` 过渡状态
 
 Weex 支持了 Vue 2.x 中经典的 `<transition>` 写法，开发者可以通过 `<transition>` 轻松定义一个界面在两种状态中的过渡方式。
-
-## 在 Weex 中使用 Vue 的注意事项
-
-Vue.js 最初是为 Web 设计的，虽然可以基于 Weex 开发移动应用，但是 Web 开发和原生开发毕竟不同，在功能和开发体验上都有一些差异，这些差异从本质上讲是原生开发平台和 Web 平台之间的差异，Weex 正在努力缩小这个差异的范围。
-
-参考文章[《Vue 2.x 在 Weex 和 Web 中的差异》](../../references/vue/index.html)了解存在差异的原因和细节。
