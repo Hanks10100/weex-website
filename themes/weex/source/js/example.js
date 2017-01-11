@@ -21,7 +21,7 @@
             '<body>' +
               '<div id="root"></div>' +
               '<script>' +
-                  'var url = window.parent.BUNDLE_URL;' +
+                  'var url = window.parent.WEB_BUNDLE_URL;' +
                   'var jsTag = document.createElement("script");' +
                   'jsTag.src = url;' +
                   'document.body.appendChild(jsTag);' +

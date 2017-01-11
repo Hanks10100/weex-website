@@ -6,7 +6,7 @@ version: 2.1
 has_chapter_content: true
 ---
 
-#Get started
+# 快速上手
 
 Vue.js 是 Evan You 开发的渐进式 JavaScript 框架，在易用性、灵活性和性能等方面都非常优秀。开发者能够通过撰写 *.vue 文件，基于  `<template>`, `<style>`, `<script>` 快速构建组件化的 web 应用。本章会教你如何搭建本地开发环境进行 Weex 开发。
 
@@ -88,5 +88,44 @@ $ weex init vue awesome-project
 - `serve`: 开启静态服务器
 - `debug`: 调试模式
 
-我们先通过 `npm install` 安装项目依赖。
+我们先通过 `npm install` 安装项目依赖。之后运行 `npm run serve` 和 `npm run dev` 开启服务器和 watch 模式。
 
+然后我们打开浏览器，进入 `localhost:8080/index.html` 即可看到 weex h5 页面。 
+
+初始化时已经为我们创建了基本的示例，我们可以在 `src/foo.vue` 中查看。
+
+代码如下所示：
+
+```html
+<template>
+  <div class="wrapper" @click="update">
+    <image :src="logoUrl" class="logo"></image>
+    <text class="title">Hello {{target}}</text>
+  </div>
+</template>
+
+<style>
+  .wrapper { align-items: center; margin-top: 120px; }
+  .title { font-size: 48px; }
+  .logo { width: 360px; height: 82px; }
+</style>
+
+<script>
+  export default {
+    data: {
+      logoUrl: 'https://alibaba.github.io/weex/img/weex_logo_blue@3x.png',
+      target: 'World'
+    },
+    methods: {
+      update: function (e) {
+        this.target = 'Weex'
+        console.log('target:', this.target)
+      }
+    }
+  }
+</script>
+```
+
+我们暂时不去关心 Weex 的技术细节，仅看大致的代码结构。是不是觉得这些语法有些眼熟？没错，Weex 语法同 [Vue](https://github.com/vuejs/vue) 完全一样，甚至连文件名也是 `.vue`，如果你熟悉 Vue，你会很快适应 Weex 的开发。
+
+关于 Weex 语法部分，你可以直接参考 [Vue Guide](https://vuejs.org/v2/guide/)，这里不再重复介绍。

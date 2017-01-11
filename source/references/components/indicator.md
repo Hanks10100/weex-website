@@ -88,6 +88,8 @@ There is no specific attribute for this component other than the [common attribu
     position: relative;
   }
   .indicator {
+    width: 700px;
+    height: 700px;
     item-color: green;
     item-selected-color: red;
     item-size: 50px;

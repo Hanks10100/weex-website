@@ -6,6 +6,7 @@ version: 2.1
 ---
 
 # `storage` 本地存储
+
 <span class="weex-version">v0.7+</span>
 
 **备注**：0.7及以上版本可用

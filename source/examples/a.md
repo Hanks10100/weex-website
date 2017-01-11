@@ -2,7 +2,7 @@
 title: a
 type: example
 layout: example
-web_bundle_url: ../js/examples/a.web.js
+bundle_name: a
 ---
 
 ```html

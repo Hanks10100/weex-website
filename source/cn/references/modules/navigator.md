@@ -6,6 +6,7 @@ version: 2.1
 ---
 
 # `navigator` 导航控制
+
 <span class="weex-version">v0.6.1+</span>
 
 众所周知，在浏览器里，我们可以通过前进或者回退按钮来切换页面，iOS/Android 的 `navigator` 模块就是用来实现类似的效果的。除了前进、回退功能，该模块还允许我们指定在切换页面的时候是否应用动画效果。

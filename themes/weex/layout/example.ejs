@@ -14,9 +14,27 @@
       <div class="home-btn"></div>
     </div>
   </div>
+  <div class="horizontal qrcode">
+    <div id="qrcode-img"></div>
+    <p>Playground Scan</p>
+    <p>目前还未提供 Playground 正式版下载，需要手动 build playground。</p>
+  </div>
 </div>
 <script>
-  var BUNDLE_URL = '<%- page.web_bundle_url %>'
+  var WEB_BUNDLE_URL = location.origin + '<%- config.root %>' + 'js/examples/' + '<%- page.title %>' + '.web.js'
+  var NATIVE_BUNDLE_URL = location.origin + '<%- config.root %>' + 'js/examples/' + '<%- page.title %>' + '.weex.js'
 </script>
 
+<%- js('js/qrcode.min.js') %>
 <%- js('js/example.js') %>
+
+<script>
+var qrcode = new QRCode(document.getElementById("qrcode-img"), {
+    text: NATIVE_BUNDLE_URL,
+    width: 150,
+    height: 150,
+    colorDark : "#000000",
+    colorLight : "#ffffff",
+    correctLevel : QRCode.CorrectLevel.H
+});
+</script>

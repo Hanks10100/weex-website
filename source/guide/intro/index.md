@@ -1,5 +1,5 @@
 ---
-title: How it works (Chinses)
+title: How it works (preparing)
 type: guide
 order: 4
 has_chapter_content: false

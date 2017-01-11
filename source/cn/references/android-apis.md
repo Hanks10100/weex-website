@@ -209,6 +209,4 @@ Weex 处于发展阶段会增加一些新的特性和功能，但是这些新的
 
 所谓降级功能就是 Weex 无法运行的版本或者手机，可以用 Weex h5 来代替。
 
-前端使用方法：https://weex-project.io/doc/syntax/config-n-data.html
-
 Native 端可以通过接口 IWXRenderListener 中的 onException 方法进行处理，如果是主动降级 errCode 是以“|”分割的字符。“|"前面的字符为1表示主动降级，Native 端可以跳转到对应的 H5 页面。或者用其他的方式提示用户当前环境不支持 Weex。

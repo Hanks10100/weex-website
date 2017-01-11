@@ -13,8 +13,6 @@ version: 2.1
 
 ### `transition(el, options, callback)`
 
-[example](http://dotwe.org/a034a49b5863da099843eb9a0eea9f93)
-
 #### 参数
 
 * `el {Element}`：将要执行动画的元素，通常可以通过调用 [`this.$el(id)`](../api.html) 来获取元素的引用。

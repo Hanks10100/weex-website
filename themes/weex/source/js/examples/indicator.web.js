@@ -204,7 +204,7 @@
 
 
 	// module
-	exports.push([module.id, "\n.image {\n  width: 700px;\n  height: 700px;\n}\n.slider {\n  margin-top: 25px;\n  margin-left: 25px;\n  width: 700px;\n  height: 700px;\n  border-width: 2px;\n  border-style: solid;\n  border-color: #41B883;\n}\n.title {\n  position: absolute;\n  top: 20px;\n  left: 20px;\n  padding-left: 20px;\n  width: 200px;\n  color: #FFFFFF;\n  font-size: 36px;\n  line-height: 60px;\n  background-color: rgba(0, 0, 0, 0.3);\n}\n.frame {\n  width: 700px;\n  height: 700px;\n  position: relative;\n}\n.indicator {\n  item-color: green;\n  item-selected-color: red;\n  item-size: 50px;\n  top: 200px;\n  left: 200px;\n}\n", ""]);
+	exports.push([module.id, "\n.image {\n  width: 700px;\n  height: 700px;\n}\n.slider {\n  margin-top: 25px;\n  margin-left: 25px;\n  width: 700px;\n  height: 700px;\n  border-width: 2px;\n  border-style: solid;\n  border-color: #41B883;\n}\n.title {\n  position: absolute;\n  top: 20px;\n  left: 20px;\n  padding-left: 20px;\n  width: 200px;\n  color: #FFFFFF;\n  font-size: 36px;\n  line-height: 60px;\n  background-color: rgba(0, 0, 0, 0.3);\n}\n.frame {\n  width: 700px;\n  height: 700px;\n  position: relative;\n}\n.indicator {\n  width: 700px;\n  height: 700px;\n  item-color: green;\n  item-selected-color: red;\n  item-size: 50px;\n  top: 200px;\n  left: 200px;\n}\n", ""]);
 
 	// exports
 

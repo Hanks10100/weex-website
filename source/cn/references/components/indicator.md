@@ -102,6 +102,8 @@ version: 2.1
     position: relative;
   }
   .indicator {
+    width: 700px;
+    height: 700px;
     item-color: green;
     item-selected-color: red;
     item-size: 50px;

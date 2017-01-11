@@ -11,7 +11,7 @@ version: 2.1
 
 ## 概述
 
-以下为 picker 相关的 API，用于数据选择，日期选择，时间选择。
+以下为 picker 相关的 API，用于数据选择，日期选择，时间选择。（目前 H5 暂不支持该模块）
 
 ## API
 ### `pick(options, callback[options])`

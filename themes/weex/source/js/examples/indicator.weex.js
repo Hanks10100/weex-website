@@ -178,6 +178,8 @@
 	    "position": "relative"
 	  },
 	  "indicator": {
+			"width": 700,
+			"height": 700,
 	    "itemColor": "green",
 	    "itemSelectedColor": "red",
 	    "itemSize": 50,
