@@ -13,7 +13,7 @@ Weex 本身有一套语法规则，和 Vue 本身很相似，现在 Weex 与 Vue
 
 ## 要解决的问题
 
- > 将内核切换成 Vue 之后，原先基于 Weex 语法开发的项目将如何过渡到 Vue ？
+> 将内核切换成 Vue 之后，原先基于 Weex 语法开发的项目将如何过渡到 Vue ？
 
 首先需要明确一点：Weex 原有的前端框架也会继续存在于 WeexSDK 中，依然支持 `.we` 文件格式的写法。
 
@@ -75,7 +75,7 @@ Migration finished in 0.035s
 
 模板和样式的转换都可以借助工具轻易转换过来，`<script>` 中基本的语法也可以转换；但是由于 javascript 的写法比较灵活，仅仅使用工具做转换，并不一定能完美过渡。工具只能处理语法但是理解不了代码中的逻辑，在 Weex 和 Vue 的框架特性存在一些差异，有些差异还是需要手动修改才可以生效。
 
- > 提示：在代码中使用的“黑科技”越多，项目就越难以转换。
+> 提示：在代码中使用的“黑科技”越多，项目就越难以转换。
 
 ### 样式单位
 
@@ -85,17 +85,12 @@ Migration finished in 0.035s
 
 ### 旧框架中的内置属性
 
-> TODO: More Details
-
-+ `this._app`
-  + `this._app.differ`
-  + `this._app.doc`
-  + `this._app.updateActions()`
-+ `this.$getConfig()`
++ `vm._app`
+  + `vm._app.differ`
+  + `vm._app.doc`
+  + `vm._app.updateActions()`
 
 ### 事件派发机制
-
-> TODO: More Details
 
 + `$dispatch` 、`$broadcast` 、`$call` 方法已经废弃。
 + `$emit` 行为不一致。

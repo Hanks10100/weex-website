@@ -12,66 +12,15 @@ chapter_title: Vue
 
 ## 平台差异
 
-Vue.js 最初是为 Web 平台设计的，虽然可以基于 Weex 开发原生应用，但是 Web 开发和原生开发毕竟不同，在功能和开发体验上都有一些差异，这些差异从本质上讲是原生开发平台和 Web 平台之间的差异，Weex 正在努力缩小这个差异的范围。
+Vue.js 最初是为 Web 平台设计的，虽然可以基于 Weex 开发原生应用，但是 Web 开发和原生开发毕竟不同，在功能和开发体验上都有一些差异，这些差异从本质上讲是原生开发平台和 Web 平台之间的差异，可以通过[《Weex 和 Web 平台的差异》](../platform-difference.html)了解更多细节和原因。
 
-### 原生组件并不是 DOM
+由于运行平台存在差异，Weex 不支持 Vue 中与 DOM 相关的功能：
 
-DOM（Document Object Model），即文档对象模型，是 HTML 和 XML 文档的编程接口，是 Web 中的概念。Weex 的运行环境以原生应用为主，在 Android 和 iOS 环境中渲染出来的而是原生的组件，没有 DOM 。因此也就不支持 DOM 操作，不支持选择器，当然也不支持基于 DOM API 的程序库（如 jQuery）。
-
-#### DOM 事件
-
-Weex 支持在标签上绑定事件，写法和在 Web 中使用 Vue 一模一样。需要注意的是，Weex 中的事件是由原生组件捕获并触发的，行为和 Web 中有所不同，事件中的属性也有 Web 中有差异。
-
-+ 并不支持 Web 中所有的事件类型，详情参考[通用事件的文档](../common-event.html)。
-+ 不区分事件的捕获阶段和冒泡阶段，相当于 DOM 0 级事件。
-+ 不支持 `.prevent` 、`.capture` 、`.stop` 、`.self` 等事件修饰符。
++ 不支持事件冒泡和捕获机制，`.prevent` 、`.capture` 、`.stop` 、`.self` 等事件修饰符在原生环境中无意义。
 + 键盘事件的 `.{keyCode | keyAlias}` 修饰符在原生环境中无意义。
-
-#### 不支持 Vue 中与 DOM 相关的语法
-
-Vue 中与 DOM 相关的接口或者属性，将无法在 Native 环境中使用：
-
-+ 无法通过 `vm.$el` 获取界面元素。
-+ 无需自行调用 `vm.$mount`。
-+ 不支持 `v-html` 属性。
-
-### 原生环境中没有 BOM
-
-BOM（Browser Object Model），即浏览器对象模型，是浏览器环境为 javascript 提供的接口。Weex 在原生端没有并不基于浏览器运行，不支持浏览器提供的 BOM 接口。
-
-#### 没有 `window` 、`screen` 对象
-
-Weex 中并未提供浏览器中的 `window` 和 `screen` 对象，不支持使用全局变量。如果是想要获取设备的屏幕或环境信息，可以使用 `WXEnvironment` 变量。
-
-+ `WXEnvironment`
-  + `weexVersion`: WeexSDK 的版本。
-  + `appName`: 应用的名称。
-  + `appVersion`: 应用的版本。
-  + `platform`: 运行平台，可能的值是 `Web` 、`Android` 、`iOS` 之一。
-  + `osName`: 系统的名称。
-  + `osVersion`: 系统版本。
-  + `deviceWidth`: 设备宽度。
-  + `deviceHeight`: 设备高度。
-
-#### 没有 `document` 对象
-
-在浏览器中 `document` 表示了当前活动的文档模型，在 Android 和 iOS 环境中并没有这个对象，也不支持与其相关的 DOM 操作。
-
-#### 没有 `history` 、`location` 、`navigator` 对象
-
-+ `history` 保存了当前页面的历史记录，并且提供了前进后退操作。
-+ `location` 记录了当前页面 URL 相关的信息。
-+ `navigator` 记录了当前浏览器中的信息。
-
-这些接口与浏览器自身的实现有关，可以控制页面的前进后退并且获取状态信息。虽然在 Android 和 iOS 中也有“历史”和“导航”的概念，但是它是用于多个管理视图之间的跳转的。换句话说，在浏览器中执行“前进”、“后退”仍然会处于同一个页签中，在原生应用中“前进”、“后退”则会真实的跳转到其他页面。
-
-此外 Weex 也提供了 `navigator` 模块来操作页面的跳转，使用方法参考其[文档](../modules/navigator.html)。
-
-### ~~能够调用移动设备原生 API~~
-
-~~原生应用中能够调用移动设备原生 API，如 clipboard 、 navigator 、geolocation 等。使用方法是通过注册、调用模块来实现。~~
-
-~~有些接口在浏览器中也存在，不过在使用时应该注意浏览器的兼容性；如剪贴板功能，出于安全性考虑，绝大多数浏览器都限制其使用。~~
++ 无法通过 `vm.$el` 获取界面元素，原生环境中没有 DOM Element。
++ 无需自行调用 `vm.$mount`，默认会将入口组件挂载到原生应用的视图中。
++ 不支持 `v-html` 和 `v-text` 指令。
 
 ## 功能差异
 
@@ -81,7 +30,7 @@ Vue 除了提供默认的完整包以外，还提供一个更小巧的 `vue.runt
 
 具体的差异有：
 
-+ 定义组件时不支持 `template` 属性。
++ 定义组件时不支持使用 `template` 属性。
 + 不支持使用 `x-templates`。
 + 不支持使用 `Vue.compile`。
 
@@ -154,3 +103,38 @@ Weex 支持了基本的盒模型和 flexbox 布局，以及其他常用样式，
   + `margin`
   + `padding`
   + `flex`
+
+## 编译环境的差异
+
+在 Weex 中使用 Vue.js ，你所需要关注的运行平台除了 Web 之外还有 Android 和 iOS ，在开发和编译环境上还有一些不同点。针对 Web 和原生平台，将 Vue 项目源文件编译成目标文件，有两种不同的方式：
+
++ 针对 Web 平台，和普通 Vue 2.X 项目一样，可以使用任意官方推荐的方式编译源文件，如 Webpack + vue-loader 或者 Browserify + vueify 。
++ 针对 Android 和 iOS 平台，我们提供了 [weex-loader](https://github.com/weexteam/weex-loader) 工具支持编译 `.vue` 格式的单文件组件；也就是说，目前只能使用 Webpack + weex-loader 来生成原生端可用的 js bundle。
+
+### 使用 weex-loader
+
+weex-loader 是 Webpack 的一个加载器，使用方法参考其[官方文档](http://webpack.github.io/docs/using-loaders.html)。需要提醒的是，如果 Webpack 配置的入口文件是个 `.vue` 格式的文件的话，还需要额外传递 `entry` 参数，通常设置为 `true`，表示将当前组件作为入口组件。为了能正常匹配 `.vue` 文件，Webpack 配置文件中 weex-loader 的匹配规则也需要有所调整。
+
+```js
+module.exports = {
+  // 针对 .vue 文件要添加 entry 参数
+  entry: './path/to/App.vue?entry=true',
+
+  // 其他配置项 ...
+
+  module: {
+    loaders: [{
+
+      // 匹配包含了 entry 参数的 .vue 文件路径
+      test: /\.vue(\?[^?]+)?$/,
+      loaders: ['weex-loader']
+    }]
+  },
+}
+```
+
+如果使用 `.js` 文件作为 Webpack 配置的入口文件，则不需要额外配置这些参数，我们推荐使用 Javascript 文件作为编译的入口文件。
+
+### 搭建原生开发环境
+
+Weex 项目生成的是原生应用，学习一些开发原生应用的基础知识，会对你开发 Weex 项目很有帮助。参考[《集成 Weex 到已有应用》](../../guide/integrate-to-your-app.html)了解更多信息。
