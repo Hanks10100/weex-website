@@ -91,11 +91,11 @@
     })
 
     reqwest({
-      url: '/weex-website/content.json', 
+      url: ROOT + 'content.json', 
       type: 'json'
     })
     .then(function (resp) {
-      var root = resp.meta.root || '/weex-website/'
+      var root = resp.meta.root || '/'
 
       Array.prototype.forEach.call(inputElements, function (input, index) {
         input.addEventListener('input', function (e) {
