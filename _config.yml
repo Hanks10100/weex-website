@@ -41,10 +41,18 @@ jsonContent:
     content: false
     type: true
 
+
+# Deployment
+## Docs: https://hexo.io/docs/deployment.html
+deploy:
+  type: git
+  repo: git@github.com:DoranYun/weex.git
+  branch: gh-pages
+
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://alibaba.github.io/
-root: /weex-website/
+url: https://doranyun.github.io
+root: /
 permalink_defaults:
   lang: en
 permalink: :lang/:title/
@@ -97,12 +105,6 @@ pagination_dir: page
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 theme: weex
-
-# Deployment
-## Docs: https://hexo.io/docs/deployment.html
-deploy:
-  type: git
-  repo: git@github.com:Jinjiang/weex-website.git
 
 # css autoprefixer
 autoprefixer:

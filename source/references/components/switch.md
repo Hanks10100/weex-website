@@ -113,3 +113,5 @@ common styles: check out [common styles for components](../common-style.html)
   }
 </style>
 ```
+
+[try it](../../examples/switch.html)

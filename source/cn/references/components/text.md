@@ -58,59 +58,44 @@ version: 2.1
 
 1. `<text>` 里直接写文本头尾空白会被过滤，如果需要保留头尾空白，暂时只能通过数据绑定写头尾空格。
 
-```html
-<template>
-  <div>
-    <text>    测试1，直接放置头尾用空白的文本    </text>
-    <text>{{msg}}</text>
-  </div>
-</template>
-<script>
-module.exports = {
-  data: {
-    msg: '    测试2，使用数据绑定     '
-  }
-}
-</script>
-```
-
-[体验一下](http://dotwe.org/473d451e48ba322b606c4ba2577fd96a)
-
 ## 示例
 
 ```html
 <template>
-  <div>
-    <text>this is text content</text>
-    <text value="this is text value"></text>
-    <text id="textid" onclick={{showtext}}>this is gettext content</text>
-    <text value="{{text}}"></text>
-    <text style="lines: 3;">Alan Mathison Turing ( 23 June 1912 – 7 June 1954) was an English computer scientist, mathematician, logician, cryptanalyst and theoretical biologist. He was highly influential in the development of theoretical computer science, providing a formalisation of the concepts of algorithm and computation with the Turing machine, which can be considered a model of a general purpose computer.Turing is widely considered to be the father of theoretical computer science and artificial intelligence.</text>
-</div>
+  <div class="wrapper">
+    <div class="panel">
+      <text class="text" lines="3">Weex 是一套简单易用的跨平台开发方案，能以 Web 的开发体验构建高性能、可扩展的原生应用。Vue 是一个轻量并且功能强大的渐进式前端框架。</text>
+    </div>
+    <div class="panel">
+      <text class="text" lines="3">Weex is an cross-platform development solution that builds high-performance, scalable native applications with a Web development experience. Vue is a lightweight and powerful progressive front-end framework. </text>
+    </div>
+  </div>
 </template>
 
-<style>
+
+<style scoped>
+  .wrapper {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .panel {
+    width: 600px;
+    margin-left: 75px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #BBB;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-bottom: 30px;
+  }
   .text {
-    font-size: 24;
-    text-decoration: underline;
+    lines: 3;
+    color: #666666;
+    font-size: 32px;
   }
 </style>
-
-<script>
-  module.exports = {
-    data: {
-      price1: '99.99',
-      price2: '88.88',
-      text:''
-    },
-    methods: {
-      showtext: function(event) {
-        var textComponent = this.$el("textid");
-        this.text = textComponent.attr.value;
-      }
-    }
-  };
-</script>
 ```
 
-[体验一下](http://dotwe.org/b2796940d6b9766000778c61446fcd26)
+[try it](../../../examples/text.html)

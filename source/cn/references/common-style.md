@@ -18,7 +18,7 @@ Weex 盒模型基于 [CSS 盒模型](https://www.w3.org/TR/css3-box/)，每个 W
 盒模型描述了一个元素所占用的空间。每一个盒子有四条边界：外边距边界 margin edge, 边框边界 border edge, 内边距边界 padding edge 与内容边界 content edge。这四层边界，形成一层层的盒子包裹起来，这就是盒模型大体上的含义。
 
 **注意：**
-Weex 对于长度值目前只支持*像素*值，单位可省略，不支持相对单位（`em`、`rem`）。
+Weex 对于长度值目前只支持*像素*值，不支持相对单位（`em`、`rem`）。
 
 - `width {length}`：，默认值 0
 - `height {length}`：，默认值 0
@@ -99,7 +99,7 @@ Weex 盒模型的 `box-sizing` 默认为 `border-box`，即盒子的宽高包含
 ```html
 <template>
   <div>
-    <image  style="width: 400; height: 200; margin-left: 20;" src="https://g.alicdn.com/mtb/lab-zikuan/0.0.18/weex/weex_logo_blue@3x.png"></image>
+    <image  style="width: 400px; height: 200px; margin-left: 20px;" src="https://g.alicdn.com/mtb/lab-zikuan/0.0.18/weex/weex_logo_blue@3x.png"></image>
   </div>
 </template>
 ```
@@ -158,8 +158,8 @@ flex 属性定义了 flex 成员项可以占用容器中剩余空间的大小。
 ```html
 <template>
   <div>
-    <div repeat="(i, v) in list" class="row">
-      <div repeat="(k, text) in v" class="item">
+    <div v-for="(v, i) in list" class="row">
+      <div v-for="(text, k) in v" class="item">
         <div>
           <text>{{text}}</text>
         </div>
@@ -167,7 +167,7 @@ flex 属性定义了 flex 成员项可以占用容器中剩余空间的大小。
     </div>
   </div>
 </template>
-<style>
+<style scoped>
   .item{
     flex:1;
     justify-content: center;
@@ -176,7 +176,7 @@ flex 属性定义了 flex 成员项可以占用容器中剩余空间的大小。
   }
   .row{
     flex-direction: row;
-    height:80;
+    height:80px;
   }
 </style>
 <script>
@@ -194,8 +194,6 @@ flex 属性定义了 flex 成员项可以占用容器中剩余空间的大小。
 </script>
 ```
 
-[体验一下](http://dotwe.org/ee6a898fcac2242308c24fe5882c52ac)
-
 一个在相对于屏幕水平居中，全屏居中的 `<div>`。
 
 ```html
@@ -206,7 +204,7 @@ flex 属性定义了 flex 成员项可以占用容器中剩余空间的大小。
   </div>
 </template>
 
-<style>
+<style scoped>
   .wrapper {
     position: absolute;
     top: 0;
@@ -218,14 +216,12 @@ flex 属性定义了 flex 成员项可以占用容器中剩余空间的大小。
     align-items: center;
   }
   .box {
-    width: 200;
-    height: 200;
+    width: 200px;
+    height: 200px;
     background-color: #fc0000;
   }
 </style>
 ```
-
-[体验一下](http://dotwe.org/a76cd89b37c72d308ed576131830e877)
 
 ## 定位
 
@@ -254,7 +250,7 @@ Weex 支持 `position` 定位，用法与 CSS position 类似。为元素设置 
 ![mobile_preview](images/style_2.jpg)
 
 ```html
-<template>
+<template scoped>
   <div class="wrapper">
     <div class="box box1">
     </div>
@@ -275,8 +271,8 @@ Weex 支持 `position` 定位，用法与 CSS position 类似。为元素设置 
     background-color: #cccccc;
   }
   .box {
-    width: 400;
-    height: 400;
+    width: 400px;
+    height: 400px;
     position: absolute;
   }
   .box1 {
@@ -285,34 +281,28 @@ Weex 支持 `position` 定位，用法与 CSS position 类似。为元素设置 
     background-color: #ff0000;
   }
   .box2 {
-    top: 150;
-    left: 150;
+    top: 150px;
+    left: 150px;
     background-color: #0055dd;
   }
   .box3 {
-    top: 300;
-    left: 300;
+    top: 300px;
+    left: 300px;
     background-color: #00ff49;
   }
 </style>
 ```
-
-[体验一下](http://dotwe.org/b04339de27cfabf0710e045c0079e56a)
 
 ## 其他基本样式
 
 - `opacity {number}`：取值范围为 [0, 1] 区间。默认值是 1，即完全不透明；0 是完全透明；0.5 是 50% 的透明度。
 - `background-color {color}`：设定元素的背景色，可选值为色值，支持RGB（ `rgb(255, 0, 0)` ）；RGBA（ `rgba(255, 0, 0, 0.5)` ）；十六进制（ `#ff0000` ）；精简写法的十六进制（ `#f00` ）；色值关键字（`red`），默认值是 `transparent` 。
 
-**注意：** [色值的关键字列表](./color-names.md)。
+**注意：** [色值的关键字列表](./color-names.html)。
 
 ## 上手样式
 
-如果对于样式写法需要更多上手参考，可参考
-
-- [如何做出高性能长列表]()
-- [如何布局]()
-- 以及每个组件的文档中，都有常见的例子可供参考。
+如果对于样式写法需要更多上手参考，可参考每个组件的文档中，都有常见的例子可供参考。
 
 你可以按照以下步骤来规划 Weex 页面的样式。
 

@@ -9,38 +9,6 @@ version: 2.1
 
 `<list>` 组件是提供垂直列表功能的核心组件，拥有平滑的滚动和高效的内存管理，非常适合用于长列表的展示。最简单的使用方法是在 `<list>` 标签内使用一组由简单数组 `repeat` 生成的 `<cell>` 标签填充。
 
-一个最简例子：
-
-```html
-<template>
-  <list class="list">
-    <cell class="row" repeat="item in rows" index="{{$index}}">
-      <text class="item-title">row {{item.id}}</text>
-    </cell>
-  </list>
-</template>
-
-<style></style>
-
-<script>
-module.exports = {
-  data: {
-    rows:[
-      {id: 1},
-      {id: 2},
-      {id: 3},
-      {id: 4},
-      {id: 5}
-    ]
-  }
-}
-</script>
-```
-
-[体验一下](http://dotwe.org/bcaf48a63b49750b828d2d23762d4a15)
-
-![mobile_preview](../images/list_2.jpg)
-
 ## 子组件
 
 `<list>` 组件支持更多高级功能，由以下子组件提供：
@@ -70,34 +38,6 @@ module.exports = {
 **注意：**
 
 `<list>` 的子组件只能包括以上四种组件或是 `fix` 定位的组件，其他形式的组件将不能被正确的渲染。
-
-一个错误的示范，此例子无法在客户端正常渲染，因为 `<list>` 子组件是 `<div>`：
-
-```html
-<template>
-  <list class="list">
-    <div class="row" repeat="item in rows" index="{{$index}}">
-      <text class="item-title">row {{item.id}}</text>
-    </div>
-  </list>
-</template>
-
-<style></style>
-
-<script>
-module.exports = {
-  data: {
-    rows:[
-      {id: 1},
-      {id: 2},
-      {id: 3},
-      {id: 4},
-      {id: 5}
-    ]
-  }
-}
-</script>
-```
 
 ## 特性
 
@@ -146,53 +86,6 @@ module.exports = {
 - `options {Object}`：
   - `offset {number}`：一个到其可见位置的偏移距离，默认是 0
 
-#### 示例
-
-```html
-<template>
-  <list class="list">
-    <cell>
-      <div onclick="go" style="width: 750;height: 50; position: fixed; left: 0; right: 0; bottom: 0; background-color: #eeeeee;">
-        <text style="text-align: center;">
-          Go to 50th line.
-        </text>
-      </div>
-    </cell>
-    <cell class="row" repeat="item in rows" id="item-{{$index}}">
-      <text class="item-title">row {{item.id}}</text>
-    </cell>
-  </list>
-</template>
-
-<script>
-var dom = require('@weex-module/dom')
-
-module.exports = {
-  data: {
-    rows: []
-  },
-  created: function () {
-    for (var i = 0; i < 100; i++) {
-      this.rows.push({
-        id: i
-      })
-    }
-  },
-  methods: {
-    go: function () {
-      var el = this.$el('item-49')
-
-      dom.scrollToElement(el, {
-        offset: 0
-      })
-    }
-  }
-}
-</script>
-```
-
-[体验一下](http://dotwe.org/65d91cb47d0e348c5750d2248d59b6bd)
-
 ## 约束
 
 1. **不允许**相同方向的 `<list>` 或者 `<scroller>` 互相嵌套，换句话说就是嵌套的 `<list>`/`<scroller>` 必须是不同的方向。
@@ -203,173 +96,63 @@ module.exports = {
 
 ## 示例
 
+
 ```html
 <template>
-  <div class="wrapper">
-    <list class="list">
-      <header class="header">
-        <text class="title">Search Results</text>
-      </header>
-      <refresh style="width: 750; padding: 30;" onrefresh="refreshData" display="{{refreshDisplay}}">
-        <text class="text"> ↓ Pull to refresh </text>
-        <loading-indicator class="indicator"></loading-indicator>
-      </refresh>
-      <cell class="row" repeat="item in items" id="item-{{$index}}">
-        <div>
-          <text class="item">Repo name: {{item.full_name}}</text>
-        </div>
-        <div>
-          <text class="item">Repo star: {{item.stargazers_count}}</text>
-        </div>
-      </cell>
-      <loading onloading="loadingData" style="width: 750; padding: 30;" display="{{loadingDisplay}}">
-        <text class="text">{{loadingText}}</text>
-      </loading>
-    </list>
-    <div class="up" onclick="goToTop">
-      <img class="img" src="https://img.alicdn.com/tps/TB1ZVOEOpXXXXcQaXXXXXXXXXXX-200-200.png"></img>
-    </div>
-  </div>
+  <list class="list" @loadmore="fetch" loadmoreoffset="10">
+    <cell class="cell" v-for="num in lists">
+      <div class="panel">
+        <text class="text">{{num}}</text>
+      </div>
+    </cell>
+  </list>
 </template>
 
-<style>
-.wrapper {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
-.list{
-  background-color: #ffffff;
-  flex: 1;
-}
-.header {
-  height: 80;
-  align-items: center;
-  justify-content: center;
-  background-color: #efefef;
-  border-bottom-color: #eeeeee;
-  border-bottom-width: 2;
-  border-bottom-style: solid;
-}
-.title {
-  text-align: center;
-}
-.text {
-  text-align: center;
-}
-.row {
-  padding: 20;
-  border-bottom-color: #eeeeee;
-  border-bottom-width: 2;
-  border-bottom-style: solid;
-}
-.up {
-  width: 70;
-  height: 70;
-  position: fixed;
-  right: 20;
-  bottom: 20;
-}
-.img {
-  width: 70;
-  height: 70;
-}
-</style>
-
 <script>
-var dom = require('@weex-module/dom') || {}
-var stream = require('@weex-module/stream') || {}
-var modal = require('@weex-module/modal') || {}
+  const modal = weex.requireModule('modal')
+  const LOADMORE_COUNT = 4
 
-var SEARCH_URL = 'https://api.github.com/search/repositories?q=language:javascript&sort=stars&order=desc'
-
-module.exports = {
-  data: {
-    isLoaded: true,
-    page: 1,
-    loadingDisplay: 'hide',
-    refreshDisplay: 'hide',
-    loadingText: 'Loading...',
-    items:[]
-  },
-  created: function () {
-    var url = SEARCH_URL + '&page=' + this.page
-
-    this.renderData(url)
-    
-    this.page++
-  },
-  methods: {
-    renderData: function (url) {
-      var self = this
-
-      stream.fetch({
-        method: 'GET',
-        url: url,
-        type:'json'
-      }, function(res) {
-        self.refreshDisplay = 'hide'
-        self.loadingDisplay = 'hide'
-
-        try {
-          var results = res.data.items || []
-          
-          if (Array.isArray(results)) {
-            for(var i = 0; i < results.length; i++) {
-              self.items.push(results[i])
-            }
-          }
-
-          self.isLoaded = true
-        } catch(e) {}
-      },function(res){
-          
-      })
-    },
-    loadingData: function (e) {
-      var url = SEARCH_URL + '&page=' + this.page
-      var self = this
-      
-      if (self.isLoaded === false) return 
-      
-      self.loadingDisplay = 'show'
-      
-      if (self.page <=10 ) {
-        self.renderData(url)
-        self.page++
-      } else {
-        self.loadingDisplay = 'hide'
-        self.loadingText = 'NO MORE!'
+  export default {
+    data () {
+      return {
+        lists: [1, 2, 3, 4, 5]
       }
     },
-    goToTop: function (e) {
-      dom.scrollToElement(this.$el('item-0'), {
-        offset: -100
-      })
-    },
-    refreshData: function (e) {
-      var url = SEARCH_URL + '&page=1'
+    methods: {
+      fetch (event) {
+        modal.toast({ message: 'loadmore', duration: 1 })
 
-      if (this.isLoaded === false) return 
-      
-      this.refreshDisplay = 'show'
-
-      modal.toast({
-        'message': 'Refreshing...', 
-        'duration': 1
-      })
-
-      this.items = []
-      this.page = 1
-      this.renderData(url)
-
-      this.refreshDisplay = 'hide'
+        setTimeout(() => {
+          const length = this.lists.length
+          for (let i = length; i < length + LOADMORE_COUNT; ++i) {
+            this.lists.push(i + 1)
+          }
+        }, 800)
+      }
     }
   }
-}
 </script>
+
+<style scoped>
+  .panel {
+    width: 600px;
+    height: 250px;
+    margin-left: 75px;
+    margin-top: 35px;
+    margin-bottom: 35px;
+    flex-direction: column;
+    justify-content: center;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgb(162, 217, 192);
+    background-color: rgba(162, 217, 192, 0.2);
+  }
+  .text {
+    font-size: 50px;
+    text-align: center;
+    color: #41B883;
+  }
+</style>
 ```
 
-[体验一下](http://dotwe.org/ed524ade679b0fa96e980600c53ea5ce)
+[try it](../../../examples/list.html)

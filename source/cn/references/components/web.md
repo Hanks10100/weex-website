@@ -26,11 +26,11 @@ version: 2.1
   - `width`
 
     组件的宽度，默认值是0。这个样式定义必须指定数值。
-    
+
   - `height`
 
     组件的高度，默认值是0。这个样式定义必须指定数值。
-    
+
   - `flexbox` 布局
   - `position`
   - `opacity`
@@ -62,82 +62,93 @@ version: 2.1
 
 ```html
 <template>
-  <div class="browserStyle">
-    <div style="flex-direction: row">
-      <input id="urlInput" type="url"  autofocus="false"  placeholder="input url" onchange="change" oninput="input" class="textStyle"   value="https://www.baidu.com">
-      </input>
+  <div class="wrapper">
+    <div class="group">
+      <input class="input" ref="input" type="url" autofocus="false" value="https://m.taobao.com"></input>
     </div>
-    <div style="flex-direction: row">
-      <text class="buttonSytle" onclick="loadURL">LoadURL</text>
-      <text class="buttonSytle" onclick="backforward">Backward</text>
-      <text class="buttonSytle"  onclick="forward">Forward</text>
+    <div class="group">
+      <text class="button" @click="loadURL">LoadURL</text>
+      <text class="button" @click="reload">reload</text>
     </div>
-    <div>
-      <web id="webview" src="{{src}}" class="webStyle"></web>
-    </div>
+    <web ref="webview" :src="url" class="webview" @pagestart="start" @pagefinish="finish" @error="error"></web>
   </div>
 </template>
 
-<style>
-  .browserStyle {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-color:#778899 ;
-  }
-
-  .textStyle {
-    width: 750;
-    height: 50;
-    background-color: #D3D3D3;
-    font-size: 30;
-  }
-
-  .buttonSytle {
-    width:200;
-    height: 50;
-    background-color: #D3D3D3;
-    margin:10;
-    padding-left: 5;
-    padding-right: 5;
-    font-size: 30;
-  }
-
-  .webStyle {
-    width: 750;
-    height: 800;
-    background-color: #8B0000;
-  }
-</style>
-
 <script>
-  var web_module = require('@weex-module/webview')
+  const webview = weex.requireModule('webview')
+  const modal = weex.requireModule('modal')
 
-  module.exports = {
-    data: {
-      src : "https://h5.m.taobao.com",
+  export default {
+    data () {
+      return {
+        url : 'https://m.alibaba.com'
+      }
     },
-
     methods: {
-      loadURL: function (e) {
-        var input = this.$el("urlInput");
-        this.src = input.attr.value;
+      loadURL (event) {
+        this.url = this.$refs.input.value
+        modal.toast({ message: 'load url:' + this.url })
+        setTimeout(() => {
+          console.log('will go back.')
+          modal.toast({ message: 'will go back' })
+          webview.goBack(this.$refs.webview)
+        }, 10000)
       },
-
-      backforward: function (e) {
-        var web_element = this.$el('webview');
-        web_module.goBack(web_element);
+      reload (event) {
+        console.log('will reload webview')
+        modal.toast({ message: 'reload' })
+        webview.reload(this.$refs.webview)
       },
-
-      forward: function (e) {
-        var web_element = this.$el('webview');
-        web_module.goForward(web_element);
-       }
+      start (event) {
+        console.log('pagestart', event)
+        modal.toast({ message: 'pagestart' })
+      },
+      finish (event) {
+        console.log('pagefinish', event)
+        modal.toast({ message: 'pagefinish' })
+      },
+      finish (event) {
+        console.log('error', event)
+        modal.toast({ message: 'error' })
+      }
     }
   }
 </script>
+
+<style scoped>
+  .group {
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+  .input {
+    width: 600px;
+    font-size: 36px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #BBBBBB;
+  }
+  .button {
+    width: 225px;
+    text-align: center;
+    background-color: #D3D3D3;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+    font-size: 30px;
+  }
+
+  .webview {
+    margin-left: 75px;
+    width: 600px;
+    height: 750px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #41B883;
+  }
+</style>
 ```
 
-[体验一下](http://dotwe.org/84741a6befeb0f1e5ce11b47ecf1123f)
+[try it](../../../examples/web.html)

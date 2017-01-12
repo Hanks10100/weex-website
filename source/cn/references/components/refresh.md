@@ -11,80 +11,6 @@ version: 2.1
 
 `<refresh>` 为 `<scroller>` 和 `<list>` 提供下拉加载功能。用法与特性与 `<loading>` 类似，`<scroller>` 和 `<list>` 的子组件，且只能在被 `<scroller>` 和 `<list>` 包含时才能被正确的渲染。
 
-一个简单例子：
-
-```html
-<template>
-  <list>
-    <header>
-      <div class="center">
-        <text style="text-align:center">I am the header</text>
-      </div>
-    </header>
-    <refresh onpullingdown='onpullingdown' onrefresh="onrefresh" display="{{refreshDisplay}}" style="width:750;flex-direction: row;justify-content: center;">
-      <loading-indicator style="height:160;width:160;color:#3192e1"></loading-indicator>
-    </refresh>
-    <cell class="row" repeat="i in staffs" index="{{$index}}">
-      <div class="item">
-        <text>{{i.name}}</text>
-      </div>
-    </cell>
-  </list>
-</template>
-
-<style>
-  .row {
-    width: 750;
-  }
-  .item {
-    justify-content: center;
-    border-bottom-width: 2;
-    border-bottom-color: #c0c0c0;
-    height: 100;
-    padding:20;
-  }
-  .center {
-    border-bottom-width: 2;
-    border-bottom-color: #cccccc;
-    height: 100;
-    padding:20;
-    background-color:#FFFFFF;
-    justify-content: center;
-  }
-</style>
-
-<script>
-  module.exports = {
-    data: {
-      staffs:[],
-      refreshDisplay: 'show',
-      loadingDisplay: 'show',
-      loadingText: 'pull up to load more',
-      refreshText: 'pull down to refresh'
-    },
-    created:function() {
-      this.refreshDisplay='show'
-      this.staffs=[{name:'inns'},{name:'connon'},{name:'baos'},{name:'anna'},{name:'dolley'},{name:'lucy'},{name:'john'}, {name:'lily'},{name:'locke'},{name:'jack'},{name:'danny'},{name:'rose'},{name:'harris'},{name:'lotus'},{name:'louis'}];
-    },
-    methods:{
-      onrefresh:function(e){
-        this.refreshDisplay='show';
-        this.staffs=[{name:'anna'},{name:'baos'},{name:'connon'},{name:'inns'}];
-        this.refreshDisplay='hide'
-      },
-      onpullingdown:function(e){
-        console.log('onpullingdown triggered.');
-        console.log('dy:'+e.dy);
-        console.log('headerHeight:'+e.headerHeight);
-        console.log('maxHeight:'+e.maxHeight);
-      }
-    }
-  }
-</script>
-```
-
-[体验一下](http://dotwe.org/64cb982f67186c76f9f27fe3000a2fe8)
-
 ## 子组件
 
 - [`<text>`](./text.html)
@@ -128,77 +54,72 @@ version: 2.1
 
 ```html
 <template>
-  <scroller onloadmore="onloadmore" loadmoreoffset="1000">
-    <refresh onrefresh="onrefresh" display="{{refreshDisplay}}">
-      <text id="refreshText">{{refreshText}}</text>
+  <scroller class="scroller">
+    <refresh class="refresh" @refresh="onrefresh" @pullingdown="onpullingdown" :display="refreshing ? 'show' : 'hide'">
+      <text class="indicator">Refreshing ...</text>
     </refresh>
-    <div repeat="v in items">
-      <text style="font-size: 40; color: #000000">{{v.item}}</text>
+    <div class="cell" v-for="num in lists">
+      <div class="panel">
+        <text class="text">{{num}}</text>
+      </div>
     </div>
-    <loading onloading="onloading" display="{{loadingDisplay}}">
-      <text id="loadingText">{{loadingText}}</text>
-    </loading>
   </scroller>
 </template>
 
 <script>
-  module.exports = {
-    data: {
-      refreshDisplay: 'show',
-      loadingDisplay: 'show',
-      loadingText: 'pull up to load more',
-      refreshText: 'pull down to refresh',
-      items: []
-    },
-    created: function () {
-      for (var i = 0; i < 30; i++) {
-        this.items.push({
-          'item': 'test data' + i
-        });
+  const modal = weex.requireModule('modal')
+
+  export default {
+    data () {
+      return {
+        refreshing: false,
+        lists: [1, 2, 3, 4, 5]
       }
     },
     methods: {
-      onrefresh: function () {
-        var vm = this;
-        vm.refreshDisplay = 'show'
-        if (vm.items.length > 50) {
-          vm.refreshText = "no more data!"
-          vm.refreshDisplay = 'hide'
-          return;
-        }
-        var len = vm.items.length;
-        for (var i = len; i < (len + 20); i++) {
-          vm.items.unshift({
-            'item': 'test data ' + i
-          });
-        }
-        vm.refreshDisplay = 'hide'
+      onrefresh (event) {
+        console.log('is refreshing')
+        modal.toast({ message: 'refresh', duration: 1 })
+        this.refreshing = true
+        setTimeout(() => {
+          this.refreshing = false
+        }, 2000)
       },
-      onloading: function () {
-        var vm = this;
-        vm.loadingDisplay = 'show'
-        if (vm.items.length > 30) {
-          vm.loadingText = "no more data!"
-          vm.loadingDisplay = 'hide'
-          return;
-        }
-
-        var len = vm.items.length;
-        for (var i = len; i < (len + 20); i++) {
-          vm.items.push({
-            'item': 'test data ' + i
-          });
-        }
-        vm.loadingDisplay = 'hide'
-      },
-      onloadmore: function () {
-        console.log("into--[onloadmore]")
+      onpullingdown (event) {
+        console.log('is onpulling down')
+        modal.toast({ message: 'pulling down', duration: 1 })
       }
     }
   }
 </script>
+
+<style scoped>
+  .indicator {
+    color: #888888;
+    font-size: 42px;
+    text-align: center;
+  }
+  .panel {
+    width: 600px;
+    height: 250px;
+    margin-left: 75px;
+    margin-top: 35px;
+    margin-bottom: 35px;
+    flex-direction: column;
+    justify-content: center;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #DDDDDD;
+    background-color: #F5F5F5;
+  }
+  .text {
+    font-size: 50px;
+    text-align: center;
+    color: #41B883;
+  }
+</style>
 ```
 
-[体验一下](http://dotwe.org/80c027d6bfb337195c25cc0ba9317ea5)
+[try it](../../../examples/refresh.html)
 
 更多示例可查看 [`<list>`](./list.html)

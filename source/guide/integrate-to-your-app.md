@@ -1,5 +1,5 @@
 ---
-title: Integrate to Your App (Chinses)
+title: Integrate to Your App (preparing)
 type: guide
 order: 3
 version: 2.1

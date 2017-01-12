@@ -1,5 +1,5 @@
 .example-wrapper {
-  width: 960px;
+  width: 1120px;
   margin: 100px auto;
   display: flex;
   flex-direction: row;
@@ -8,15 +8,13 @@
     flex: 1;
     padding: 20px;
     position: relative;
-    height: 590px;
+    max-width: 620px;
+    height: 600px;
   }
 
-  pre.code {
-    background: #282c34;
-    line-height: 1;
-    code {
-      overflow: hidden;
-    }
+  .highlight {
+    height: 580px;
+    overflow-y: auto;
   }
 
   .phone {
@@ -75,12 +73,31 @@
     left: 12px;
     width: 267px;
     height: 441px;
+    overflow: hidden;
     border: 1px solid #0088fb;
   }
 
   iframe {
-    width: 100%;
-    height: 100%;
     margin: 0;
+    width: 750px;
+    height: 1248px;
+    background: #fff;
+    transform: scaleY(0.35333333);
+    transform: scale(0.35333333, 0.353333333);
+    transform-origin: top left;
+  }
+
+  .qrcode {
+    flex: 0 0 150px;
+    p {
+      text-align: center;
+      margin: 1em 0;
+    }
+  }
+
+  #qrcode-img {
+    padding: 0;
+    width: 150px;
+    height: 150px;
   }
 }

@@ -8,7 +8,7 @@ version: 2.1
 # &lt;web&gt;
 <span class="weex-version">v0.5+</span>
 
-Use web component to display any web content in the weex page. The `src`attribute is used to specify a special source. You also can use `webview` module to control some web operation such as goBack,goForward and reload. see [webview module](https://alibaba.github.io/weex/doc/modules/webview.html).For example,You can use web component and webview module to assemble a browser.
+Use web component to display any web content in the weex page. The `src`attribute is used to specify a special source. You also can use `webview` module to control some web operation such as goBack,goForward and reload. see [webview module](../modules/webview.html).For example,You can use web component and webview module to assemble a browser.
 
 ## Child Components
 
@@ -65,12 +65,13 @@ We use a simple Browser Demo to show how to use web component and webview module
       <text class="button" @click="loadURL">LoadURL</text>
       <text class="button" @click="reload">reload</text>
     </div>
-    <web ref="webview" :src="url" class="webview" @pagestart="start" @pagefinish="finish"></web>
+    <web ref="webview" :src="url" class="webview" @pagestart="start" @pagefinish="finish" @error="error"></web>
   </div>
 </template>
 
 <script>
-  const webview = weex.require('webview')
+  const webview = weex.requireModule('webview')
+  const modal = weex.requireModule('modal')
 
   export default {
     data () {
@@ -81,20 +82,29 @@ We use a simple Browser Demo to show how to use web component and webview module
     methods: {
       loadURL (event) {
         this.url = this.$refs.input.value
+        modal.toast({ message: 'load url:' + this.url })
         setTimeout(() => {
           console.log('will go back.')
+          modal.toast({ message: 'will go back' })
           webview.goBack(this.$refs.webview)
-        }, 2000)
+        }, 10000)
       },
       reload (event) {
         console.log('will reload webview')
+        modal.toast({ message: 'reload' })
         webview.reload(this.$refs.webview)
       },
       start (event) {
         console.log('pagestart', event)
+        modal.toast({ message: 'pagestart' })
       },
       finish (event) {
         console.log('pagefinish', event)
+        modal.toast({ message: 'pagefinish' })
+      },
+      finish (event) {
+        console.log('error', event)
+        modal.toast({ message: 'error' })
       }
     }
   }
@@ -135,3 +145,5 @@ We use a simple Browser Demo to show how to use web component and webview module
   }
 </style>
 ```
+
+[try it](../../examples/web.html)

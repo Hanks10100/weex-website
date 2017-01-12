@@ -10,19 +10,21 @@ version: 2.1
 
 ## How to use
 
-You can use a simply way like `require('@weex-module/name')` to access the apis of module. e.g.
+You can use a simply way like `requireModule('name')` to access the apis of module. e.g.
 
 ```html
 <script>
-var dom = require('@weex-module/dom')
+  const modal = weex.requireModule('modal')
 
-module.exports = {
-  data: {},
-  created: function () {
-    dom.scrollToElement(this.$el('someIdForElement'), {
-    offset: 0
-    })
+  module.exports = {
+    data: {},
+    methods: {
+      toast: function () {
+        modal.toast({
+          message: 'props: ' + event.data.join(', ')
+        })
+      }
+    }
   }
-}
 </script>
 ```

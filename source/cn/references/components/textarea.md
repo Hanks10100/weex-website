@@ -54,27 +54,27 @@ version: 2.1
 
   - `value`: 触发事件的组件；
   - `timestamp`: 事件发生时的时间戳。
-  
+
 - `change`: 当用户输入完成时触发。通常在 `blur` 事件之后。
 
   事件中 event 对象属性：
 
   - `value`: 触发事件的组件；
-  
+
   - `timestamp`: 事件发生时的时间戳。
-  
+
 - `focus`: 组件获得输入焦点。
 
   事件中 event 对象属性：
 
   - `timestamp`: 事件发生时的时间戳。
-  
+
 - `blur`: 组件失去输入焦点。
 
   事件中 event 对象属性：
 
   - `timestamp`: 事件发生时的时间戳。
-  
+
 - 通用事件
 
   **注意：**
@@ -92,24 +92,64 @@ version: 2.1
 
 ```html
 <template>
-  <div>
-    <textarea
-      class="textarea"
-      autofocus="true"
-      placeholder="..."
-      value="我是一个多行版本的input组件">
-    </textarea>
+  <div class="wrapper">
+    <textarea class="textarea" @input="oninput" @change="onchange" @focus="onfocus" @blur="onblur"></textarea>
   </div>
 </template>
+
+<script>
+  const modal = weex.requireModule('modal')
+
+  export default {
+    methods: {
+      oninput (event) {
+        console.log('oninput:', event.value)
+        modal.toast({
+          message: `oninput: ${event.value}`,
+          duration: 0.8
+        })
+      },
+      onchange (event) {
+        console.log('onchange:', event.value)
+        modal.toast({
+          message: `onchange: ${event.value}`,
+          duration: 0.8
+        })
+      },
+      onfocus (event) {
+        console.log('onfocus:', event.value)
+        modal.toast({
+          message: `onfocus: ${event.value}`,
+          duration: 0.8
+        })
+      },
+      onblur (event) {
+        console.log('onblur:', event.value)
+        modal.toast({
+          message: `input blur: ${event.value}`,
+          duration: 0.8
+        })
+      }
+    }
+  }
+</script>
+
 <style>
   .textarea {
-    margin: 20;
-    border-width: 2;
+    font-size: 50px;
+    width: 650px;
+    margin-top: 50px;
+    margin-left: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: #666666;
+    border-width: 2px;
     border-style: solid;
-    border-color: #efefef;
-    border-radius: 5;
+    border-color: #41B883;
   }
 </style>
 ```
 
-[体验一下](http://dotwe.org/31d67beda847cd5b5cf7b78ff21895ba)
+[try it](../../../examples/textarea.html)

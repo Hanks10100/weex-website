@@ -18,31 +18,7 @@ A toast provides simple feedback about an operation in a small popup. For exampl
 - `options` (object): toast options.
  - `message` (string): the text message that the toast shows.
  - `duration` (number): the duration(seconds) that the toast shows.   
-
-**Example:**
-
-```html
-<template>
-  <div style="height: 200px; width: 400px; background-color: #00bfff;
-    justify-content: center; align-items: center" onclick="{{perform}}">
-    <text style="font-size: 60px; color: #ffffff">Toast</text>
-  </div>
-</template>
-
-<script>
-  module.exports = {
-    methods: {
-      perform: function () {
-        var modal = require('@weex-module/modal');
-        modal.toast({
-          'message': 'I am a toast',
-          'duration': 3
-        });
-      }
-    }
-  }
-</script>
-```    
+ 
 ### alert(options, callback)    
 
 An alert box is often used if you want to make sure information comes through to the user.    
@@ -56,40 +32,6 @@ When an alert box pops up, the user will have to click "OK" to proceed.
  - `callback` (function): callback when complete.    
   This method has a callback function whose arguments will be:    
 - `result` (string): the title text of the confirm button that clicked by user.
-
-**Example:**
-
-```html
-<template>
-  <div>
-    <div style="height: 200px; width: 400px; background-color: #00bfff;
-  justify-content: center; align-items: center" onclick="{{perform}}">
-      <text style="font-size: 60px; color: #ffffff">Alert</text>
-    </div>
-    <text>{{params}}</text>
-  </div>
-</template>
-
-<script>
-  module.exports = {
-    data: {
-      params: ''
-    },
-    methods: {
-      perform: function () {
-        var modal = require('@weex-module/modal');
-        var self = this;
-        modal.alert({
-          'message': 'I am alert message',
-          'okTitle' : 'YES'
-        }, function (result) {
-          self.params = String(result)
-        });
-      }
-    }
-  }
-</script>
-```
 
 ### confirm(options, callback)    
 A confirm box is often used if you want the user to verify or accept something.    
@@ -105,40 +47,6 @@ When a confirm box pops up, the user will have to click either confirm or cancel
 
 This method has a callback function whose arguments will be:    
 - `result`(string): the title text of the button that clicked by user.    
-**Example:**
-
-```html
-<template>
-  <div>
-    <div style="height: 200px; width: 400px; background-color: #00bfff;
-  justify-content: center; align-items: center" onclick="{{perform}}">
-      <text style="font-size: 60px; color: #ffffff">Confirm</text>
-    </div>
-    <text>{{params}}</text>
-  </div>
-</template>
-
-<script>
-  module.exports = {
-    data: {
-      params: ''
-    },
-    methods: {
-      perform: function () {
-        var modal = require('@weex-module/modal');
-        var self = this;
-        modal.confirm({
-          'message': 'I have read and accept the terms.',
-          'okTitle' : 'YES',
-          'cancelTitle' : 'NO'
-        }, function (e) {
-          self.params = String(e)
-        });
-      }
-    }
-  }
-</script>
-```    
 
 ### prompt(options, callback)    
 
@@ -156,37 +64,81 @@ When a prompt box pops up, the user will have to click either confirm or cancel 
   - `result` (string): the title of the button that clicked by user.
   - `data` (string): the value of the text that entered by user.     
 
-**Example:**    
+## Example
 
 ```html
 <template>
-  <div>
-    <div style="height: 200px; width: 400px; background-color: #00bfff;
-  justify-content: center; align-items: center" onclick="{{perform}}">
-      <text style="font-size: 60px; color: #ffffff">Prompt</text>
-    </div>
-    <text>{{params}}</text>
+  <div class="wrapper">
+    <text class="button" @click="showToast">Toast</text>
+    <text class="button" @click="showAlert">Alert</text>
+    <text class="button" @click="showConfirm">Confirm</text>
+    <text class="button" @click="showPrompt">Prompt</text>
   </div>
 </template>
 
 <script>
-  module.exports = {
-    data: {
-      params: ''
-    },
+  var modal = weex.requireModule('modal')
+
+  export default {
     methods: {
-      perform: function () {
-        var modal = require('@weex-module/modal');
-        var self = this;
+      showToast (event) {
+        console.log('will show toast')
+        modal.toast({
+          message: 'This is a toast',
+          duration: 0.3
+        })
+      },
+      showAlert (event) {
+        console.log('will show alert')
+        modal.alert({
+          message: 'This is a alert',
+          duration: 0.3
+        }, function (value) {
+          console.log('alert callback', value)
+        })
+      },
+      showConfirm (event) {
+        console.log('will show confirm')
+        modal.confirm({
+          message: 'Do you confirm ?',
+          duration: 0.3
+        }, function (value) {
+          console.log('confirm callback', value)
+        })
+      },
+      showPrompt (event) {
+        console.log('will show prompt')
         modal.prompt({
-          'message': 'I am a prompt',
-          'okTitle' : 'YES',
-          'cancelTitle' : 'NO'
-        }, function (e) {
-          self.params = JSON.stringify(e)
-        });
+          message: 'This is a prompt',
+          duration: 0.3
+        }, function (value) {
+          console.log('prompt callback', value)
+        })
       }
     }
-  }
+  };
 </script>
+
+<style scoped>
+  .wrapper {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .button {
+    font-size: 60px;
+    width: 450px;
+    text-align: center;
+    margin-top: 30px;
+    margin-left: 150px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-width: 2px;
+    border-style: solid;
+    color: #666666;
+    border-color: #DDDDDD;
+    background-color: #F5F5F5
+  }
+</style>
 ```
+
+[try it](../../examples/modal.html)

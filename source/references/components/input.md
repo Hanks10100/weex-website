@@ -86,54 +86,64 @@ does not support the common-event 'click'. Please listen to the 'input' or '
 
 ```html
 <template>
-  <div>
-      <input
-        id="input"
-        type="text"
-        placeholder="Input Something"
-        class="input"
-        autofocus="true"
-        value=""
-        onchange="onchange"
-        oninput="oninput"
-      />
-      <text>oninput: {{txtInput}}</text>
-      <text>onchange: {{txtChange}}</text>
+  <div class="wrapper">
+    <input ref="input" class="input" type="text" @input="oninput" @change="onchange" @focus="onfocus" @blur="onblur">
   </div>
 </template>
 
-<style>
-  .input {
-    font-size: 60;
-    height: 80;
-    width: 400;
-  }
-</style>
-
 <script>
-  require('weex-components');
-  module.exports = {
-    data: {
-      txtInput: '',
-      txtChange: ''
-    },
-    ready: fucntion () {
-      this.$el('input').blur();
-    }
+  const modal = weex.requireModule('modal')
+
+  export default {
     methods: {
-      onchange: function(event) {
-        this.txtChange = event.value;
-        console.log('onchange', event.value);
+      oninput (event) {
+        console.log('oninput:', event.value)
+        modal.toast({
+          message: `oninput: ${event.value}`,
+          duration: 0.8
+        })
       },
-      oninput: function(event) {
-        this.txtInput = event.value;
-        console.log('oninput', event.value);
+      onchange (event) {
+        console.log('onchange:', event.value)
+        modal.toast({
+          message: `onchange: ${event.value}`,
+          duration: 0.8
+        })
+      },
+      onfocus (event) {
+        console.log('onfocus:', event.value)
+        modal.toast({
+          message: `onfocus: ${event.value}`,
+          duration: 0.8
+        })
+      },
+      onblur (event) {
+        console.log('onblur:', event.value)
+        modal.toast({
+          message: `input blur: ${event.value}`,
+          duration: 0.8
+        })
       }
     }
-  };
+  }
 </script>
+
+<style>
+  .input {
+    font-size: 50px;
+    width: 650px;
+    margin-top: 50px;
+    margin-left: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: #666666;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #41B883;
+  }
+</style>
 ```
 
-[Try it](http://dotwe.org/e1b18eb89facb4e2a5467ee4bebd9be6)
-
-Use [Weex Playground](https://alibaba.github.io/weex/download.html) App to Scan the QR image and view the example for  'input'. 
+[try it](../../examples/input.html)
